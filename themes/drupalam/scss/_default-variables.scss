@@ -12,3 +12,8 @@
 
 // Set the proper directory for the Bootstrap Glyphicon font.
 $icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
+
+// Basics of a navbar
+$navbar-default-color:             #777 !default;
+$navbar-default-bg:                #c6c1ae !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
