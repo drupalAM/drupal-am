@@ -1,0 +1,4 @@
+name: 'Views and Entityqueues'
+type: module
+core: 8.x
+package: Content
