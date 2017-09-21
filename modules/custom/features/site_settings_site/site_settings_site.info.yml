@@ -2,14 +2,3 @@ name: Site
 description: 'Provides site components.'
 type: module
 core: 8.x
-dependencies:
-  - block_content
-  - ckeditor
-  - contact
-  - editor
-  - field
-  - filter
-  - rdf
-  - taxonomy
-  - text
-package: 'Site settings'

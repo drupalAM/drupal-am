@@ -1,0 +1,49 @@
+name: Drupal AM
+type: profile
+description: 'Build a site with pre-configured functionality for drupal.am'
+core: 8.x
+distribution:
+  name: Drupal
+  langcode: en
+dependencies:
+  #core
+  - node
+  - block
+  - block_content
+  - breakpoint
+  - color
+  - config
+  - comment
+  - contextual
+  - contact
+  - quickedit
+  - help
+  - image
+  - options
+  - path
+  - taxonomy
+  - dblog
+  - search
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - rdf
+  - views
+  - views_ui
+  - editor
+  - ckeditor
+  # contrib
+  - admin_toolbar
+  # features
+  - features
+  - config_site
+  - content_field_bases
+  - content_views_and_entityqueues
+  - content_vocabularies
+  - user_field_bases
+  - user_roles_and_permissions
+  - user_vocabularies
+themes:
+  - seven
+  - drupalam
