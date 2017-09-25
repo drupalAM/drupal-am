@@ -1,12 +1,12 @@
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - search
   theme:
-    - bootstrap
-id: bootstrap_search
-theme: bootstrap
+    - drupalam
+id: drupalam_search
+theme: drupalam
 region: sidebar_second
 weight: -1
 provider: null

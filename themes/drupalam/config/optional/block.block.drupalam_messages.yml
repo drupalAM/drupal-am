@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bootstrap
-id: bootstrap_messages
-theme: bootstrap
+    - drupalam
+id: drupalam_messages
+theme: drupalam
 region: header
 weight: -50
 provider: null

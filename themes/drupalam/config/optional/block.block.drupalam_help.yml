@@ -1,12 +1,12 @@
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - help
   theme:
-    - bootstrap
-id: bootstrap_help
-theme: bootstrap
+    - drupalam
+id: drupalam_help
+theme: drupalam
 region: help
 weight: -30
 provider: null

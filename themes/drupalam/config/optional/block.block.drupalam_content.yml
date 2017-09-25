@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bootstrap
-id: bootstrap_content
-theme: bootstrap
+    - drupalam
+id: drupalam_content
+theme: drupalam
 region: content
 weight: 0
 provider: null

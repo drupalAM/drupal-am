@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - bootstrap
-id: bootstrap_page_title
-theme: bootstrap
+    - drupalam
+id: drupalam_page_title
+theme: drupalam
 region: header
 weight: 0
 provider: null

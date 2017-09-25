@@ -1,10 +1,10 @@
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
-    - bootstrap
-id: bootstrap_local_tasks
-theme: bootstrap
+    - drupalam
+id: drupalam_local_tasks
+theme: drupalam
 region: header
 weight: 10
 provider: null

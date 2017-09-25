@@ -1,14 +1,14 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.tools
   module:
     - system
   theme:
-    - bootstrap
-id: bootstrap_tools
-theme: bootstrap
+    - drupalam
+id: drupalam_tools
+theme: drupalam
 region: sidebar_second
 weight: 0
 provider: null

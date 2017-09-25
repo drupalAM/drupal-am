@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - bootstrap
-id: bootstrap_branding
-theme: bootstrap
+    - drupalam
+id: drupalam_branding
+theme: drupalam
 region: navigation
 weight: 0
 provider: null
@@ -17,6 +17,6 @@ settings:
   provider: system
   label_display: '0'
   use_site_logo: true
-  use_site_name: true
+  use_site_name: false
   use_site_slogan: false
 visibility: {  }

@@ -33,6 +33,7 @@ dependencies:
   - views_ui
   - editor
   - ckeditor
+  - menu_ui
   # contrib
   - admin_toolbar
   # features
@@ -45,5 +46,6 @@ dependencies:
   - user_roles_and_permissions
   - user_vocabularies
 themes:
-  - seven
+  - bootstrap
   - drupalam
+  - seven

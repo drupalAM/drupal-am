@@ -12,4 +12,9 @@
  *
  * @see system_install()
  */
-function drupal_am_install() {}
+function drupal_am_install() {
+  // Sets default theme
+  $theme_handler = \Drupal::service('theme_handler');
+  $theme_handler->setDefault('drupalam');
+  $theme_handler->refreshInfo();
+}

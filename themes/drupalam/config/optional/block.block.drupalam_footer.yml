@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - bootstrap
-id: bootstrap_footer
-theme: bootstrap
+    - drupalam
+id: drupalam_footer
+theme: drupalam
 region: footer
 weight: 0
 provider: null
