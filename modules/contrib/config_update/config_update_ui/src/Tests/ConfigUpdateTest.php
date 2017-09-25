@@ -17,12 +17,25 @@ class ConfigUpdateTest extends WebTestBase {
    * Use the Search module because it has two included config items in its
    * config/install, assuming node and user are also enabled.
    *
-   * @var array.
+   * @var array
    */
-  public static $modules = ['config', 'config_update', 'config_update_ui', 'search', 'node', 'user', 'block', 'text', 'field', 'filter'];
+  public static $modules = [
+    'config',
+    'config_update',
+    'config_update_ui',
+    'search',
+    'node',
+    'user',
+    'block',
+    'text',
+    'field',
+    'filter',
+  ];
 
   /**
    * The admin user that will be created.
+   *
+   * @var object
    */
   protected $adminUser;
 
@@ -33,7 +46,17 @@ class ConfigUpdateTest extends WebTestBase {
     parent::setUp();
 
     // Create user and log in.
-    $this->adminUser = $this->drupalCreateUser(['access administration pages', 'administer search', 'view config updates report', 'synchronize configuration', 'export configuration', 'import configuration', 'revert configuration', 'delete configuration', 'administer filters']);
+    $this->adminUser = $this->drupalCreateUser([
+      'access administration pages',
+      'administer search',
+      'view config updates report',
+      'synchronize configuration',
+      'export configuration',
+      'import configuration',
+      'revert configuration',
+      'delete configuration',
+      'administer filters',
+    ]);
     $this->drupalLogin($this->adminUser);
 
     // Make sure local tasks and page title are showing.
@@ -99,7 +122,13 @@ class ConfigUpdateTest extends WebTestBase {
     $this->drupalGet('admin/config/development/configuration/report/module/user');
     $this->assertReport('User module', [], [], [], $inactive, ['added', 'changed']);
     $this->assertDrushReports('module', 'user', [], [], [],
-      ['rdf.mapping.user.user', 'search.page.user_search', 'views.view.user_admin_people', 'views.view.who_s_new', 'views.view.who_s_online' ], ['changed']);
+      [
+        'rdf.mapping.user.user',
+        'search.page.user_search',
+        'views.view.user_admin_people',
+        'views.view.who_s_new',
+        'views.view.who_s_online',
+      ], ['changed']);
 
     // Use the import link to get it back. Do this from the search page
     // report to make sure we are importing the right config.
@@ -314,7 +343,7 @@ class ConfigUpdateTest extends WebTestBase {
    * @param string[] $skip
    *   Array of report sections to skip checking.
    */
-  protected function assertReport($title, $missing, $added, $changed, $inactive, $skip = []) {
+  protected function assertReport($title, array $missing, array $added, array $changed, array $inactive, array $skip = []) {
     $this->assertText('Configuration updates report for ' . $title);
     $this->assertText('Generate new report');
 
@@ -393,7 +422,7 @@ class ConfigUpdateTest extends WebTestBase {
    * @param string[] $skip
    *   Array of report sections to skip checking.
    */
-  protected function assertDrushReports($type, $name, $missing, $added, $changed, $inactive, $skip = []) {
+  protected function assertDrushReports($type, $name, array $missing, array $added, array $changed, array $inactive, array $skip = []) {
     if (!in_array('missing', $skip)) {
       $output = drush_config_update_ui_config_missing_report($type, $name);
       $this->assertEqual(count($output), count($missing), 'Drush missing report has correct number of items');
@@ -442,9 +471,10 @@ class ConfigUpdateTest extends WebTestBase {
    */
   protected function assertNoReport() {
     $this->assertText('Report type');
-    $this->assertText('Configuration type');
-    $this->assertText('Module');
-    $this->assertText('Theme');
+    $this->assertText('Full report');
+    $this->assertText('Single configuration type');
+    $this->assertText('Single module');
+    $this->assertText('Single theme');
     $this->assertText('Installation profile');
     $this->assertText('Updates report');
     $this->assertNoText('Missing configuration items');
@@ -454,7 +484,6 @@ class ConfigUpdateTest extends WebTestBase {
 
     // Verify that certain report links are shown or not shown. For extensions,
     // only extensions that have configuration should be shown.
-
     // Modules.
     $this->assertLink('Search');
     $this->assertLink('Field');
@@ -469,7 +498,7 @@ class ConfigUpdateTest extends WebTestBase {
     $this->assertLink('Testing');
 
     // Configuration types.
-    $this->assertLink('All types');
+    $this->assertLink('Everything');
     $this->assertLink('Simple configuration');
     $this->assertLink('Search page');
   }

@@ -164,7 +164,7 @@ class ConfigLister implements ConfigListInterface {
         break;
 
       case 'profile':
-        $name = Settings::get('install_profile');
+        $name = $this->getProfileName();
         // Intentional fall-through here to the 'module' or 'theme' case.
       case 'module':
       case 'theme':
@@ -218,6 +218,28 @@ class ConfigLister implements ConfigListInterface {
     }
 
     return array_values($list);
+  }
+
+  /**
+   * Returns the name of the install profile.
+   *
+   * For backwards compatibility with pre/post 8.3.x, tries to get it from
+   * either configuration or settings.
+   *
+   * @return string
+   *   The name of the install profile.
+   */
+  protected function getProfileName() {
+    // Code adapted from DrupalKernel::getInstalProfile() in Core.
+    // In Core 8.3.x or later, read from config.
+    $config = $this->activeConfigStorage->read('core.extension');
+    if (!empty($config['profile'])) {
+      return $config['profile'];
+    }
+    else {
+      // If system_update_8300() has not yet run, use settings.
+      return Settings::get('install_profile');
+    }
   }
 
 }
