@@ -1,0 +1,7 @@
+share_everywhere.config_form:
+  path: 'admin/config/services/share_everywhere'
+  defaults:
+    _form: '\Drupal\share_everywhere\Form\ShareEverywhereConfigForm'
+    _title: 'Share Everywhere'
+  requirements:
+    _permission: 'administer share everywhere'

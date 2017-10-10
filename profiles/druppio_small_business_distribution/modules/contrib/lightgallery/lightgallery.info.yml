@@ -1,0 +1,14 @@
+name: Light Gallery
+description: Integrate the Light Gallery library with Drupal.
+package: Light Gallery
+type: module
+# core: 8.x
+
+dependencies:
+  - views
+
+# Information added by Drupal.org packaging script on 2016-12-12
+version: '8.x-1.0'
+core: '8.x'
+project: 'lightgallery'
+datestamp: 1481539386

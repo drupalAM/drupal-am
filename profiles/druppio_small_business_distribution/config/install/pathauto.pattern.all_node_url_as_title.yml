@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 7SeB-JTb2uogZAzBfDyCdhhzsAmta0n4Diq1QbyeKDQ
+id: all_node_url_as_title
+label: 'All node URL as title'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  e4aa7425-d1a1-41a9-9f2d-a349c9d9052b:
+    id: node_type
+    bundles:
+      page: page
+      work: work
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e4aa7425-d1a1-41a9-9f2d-a349c9d9052b
+selection_logic: and
+weight: -5
+relationships: {  }

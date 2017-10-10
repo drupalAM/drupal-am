@@ -1,0 +1,151 @@
+name: 'Small Business default content'
+type: module
+description: 'Imports default content when a module is enabled'
+package: Web services
+# core: 8.x
+dependencies:
+  - default_content
+  - file_entity
+  - block_content
+  - config
+  - image
+  - node
+  - menu_link_content
+  - system
+
+default_content:
+  node:
+    - e55b31e8-8420-4551-9e36-fb5fb53a464f
+    - b672d6d9-2039-413d-a488-09f6f6bb70aa
+    - aa8d0c4d-ce20-4f9d-bb65-86d2ddd01263
+    - a5f4b439-3c89-4e4d-9d1c-8830d60146d3
+    - a4a2d6df-6e58-42dd-9be5-930c7745f179
+    - a396dc3e-12ed-4839-9919-9587fa64ad61
+    - 8adcbb8e-d723-4ea3-bc8a-65e4c381ede2
+    - 8641657e-4e02-48d1-a911-7c73ad59ba51
+    - 6a4daf12-d1b7-4a9e-be22-576ee6a64248
+    - 50026540-7788-42b5-92af-ab47c24f84c5
+    - 369a9773-7b04-4971-8a3f-8eabfb813de3
+    - 35b935bb-7d61-4ab0-955b-e8a025bc8e71
+    - 3091d33b-d20a-4d82-b014-74e3dd719a40
+    - 17455d3c-28fd-44c1-a288-989ed0058417
+    - 1468b311-cfc0-4472-90cc-1fb9bd1d6652
+    - 0540c403-3538-4e19-ba92-2def999a6d68
+  file:
+    - 22d503b3-c13e-4b4a-9464-5aad6eb07f69
+    - 669460b9-f61b-4fa2-84ff-5418089138d7
+    - de2738c4-5791-483a-a354-cff6ddcfb92c
+    - b9a6328f-f4f1-4881-9c86-4fd1403777e4
+    - a3ef3c10-9545-4ced-abf1-17d306e88ee7
+    - 7d6f5547-209c-4c06-9b79-7495db4dbb8f
+    - 82b1bcf6-fb04-4644-bbd4-636320a36046
+    - 63ee8ff6-67d0-4828-b1f4-96f07e35c832
+    - ad014862-2442-46c8-b5f6-2c238864183f
+    - c73acfc6-ec68-4360-9754-cc7a07cea1fc
+    - 542e4756-634a-400c-b48b-de39048fcc85
+    - 222f28ce-0aff-4500-9253-6f21a87fb995
+    - fb447382-8a30-4e3f-bd59-832e8ea9bca5
+    - 6020d50a-05a6-423a-91c4-960e744e0fbd
+    - 441d42b8-e358-445d-a479-06dd34a95a3b
+    - fc637143-5574-4937-ab50-98c9240cf091
+    - ba845713-70eb-4bbb-b764-4ce55c219207
+    - a46a1ef4-4b85-4243-9152-4248cf5950fc
+    - 69f3f422-b6bd-4916-a60f-00524fbb35c7
+    - 55f73c1b-9098-46a5-958f-e6cf14196f90
+    - da9b9e74-e66b-4767-b127-664a73d4bd40
+    - e18dd946-81ee-4368-9097-058f84ea1bad
+    - 1265c181-ffd9-4d90-b51f-78d17a3df1cb
+    - d970642c-90f4-4a0b-9dfc-7c911ce0efcf
+    - 27c00b6a-8352-4882-bd4b-a1469675b420
+    - 87e9971c-658e-432f-ac26-ca33f7b91ffd
+    - 06bbeb8e-02a2-41fe-be86-21b7844b3246
+    - 65e1f7c8-c4a8-4f93-8f76-f383ac63c2be
+    - 707b008b-c164-48cc-8eea-d7a8e3af4aee
+    - e9a8d567-ed33-4b91-9b4b-0a82e4643910
+    - 82d24d9a-51d6-4084-b65f-ae2103262b08
+    - d89f0fe5-701e-4e05-a14d-c85ad886e60a
+    - a3d1c79f-3265-47ee-b345-e545091942ea
+    - b47f3b1c-e5c3-4616-8bf4-467ab1071cd8
+    - 52dcb1d1-b970-473b-971c-639318bac767
+    - db95fbe5-15bc-4b05-a5ff-23f1d2ace774
+    - 9cf49bfa-bfd4-4b76-abbb-80902b1dcc23
+    - 74a9dc26-bfea-4c4b-8988-3d58c5a7f5d7
+    - 7a1cc014-ff82-4ee2-a11e-82c604d75213
+    - 787d594a-cd5c-440c-838b-0d735d376069
+    - 4204f8ef-d8f7-4194-9e50-af5b69f06f34
+    - fd3e4033-0bac-4450-849e-01f2c876fc81
+    - 32142f75-8f62-4b95-a5f0-0968f7d24650
+    - d21c4522-afde-4226-a8dc-367bbbb8dbb1
+    - 84943842-540e-4e83-b4f4-b535c3dbf50b
+    - 2097998f-f555-4650-9655-309d4ff213fe
+    - 43562b44-96bb-4af0-b3bd-69e13bec9c38
+    - 9a6d4913-0017-4e9c-86b0-18d7108dfd6a
+    - bfd8eef8-188e-4eba-a1ba-fc1e41e16fa5
+    - 4abe3223-63a5-48f8-ad5c-efd0dafca453
+    - d65b7a13-1081-4b14-a330-8d3f7778d64f
+    - e64bf888-bee3-4a5c-a7aa-301d5e9804e7
+    - 8804e7dc-7d4d-46d5-9391-63dea2794d13
+    - 29de34e6-107d-4103-a1ac-c389b3372e04
+    - 8e45c0d8-ce3a-4153-bff1-3b0e9e2da004
+    - fabc90f3-bf58-40dc-99c3-e93a00fb95e4
+    - 7fda15a8-44e0-42f0-a50d-7865a2b9e10d
+    - 56f7f898-bacc-48eb-a56c-a0385423d033
+    - 926b5860-4aa5-48b1-995e-71f97f43dc22
+    - 3d4850d0-840f-43da-bbeb-9df8e7619733
+    - 7451a18f-68d8-4287-b142-e5644e8052fe
+    - fc6d0a40-2332-48c8-b40d-770d65fabdb8
+    - 9bbe9482-efa2-41ae-831d-40b503b0ab6b
+    - 7fa2f83d-47b3-4fbd-9f6c-e67ab0603a3a
+    - e48e0235-0272-4898-956a-516b3576227e
+    - 03c0bd38-8e61-42fc-aec0-f4cdeb6d761c
+    - e00f8727-82d8-47c5-8e52-e3590fb8d1b7
+    - 949dffa2-b5d6-449f-9ef7-52969ab92f33
+    - f6b12ed6-a2f4-4ba7-8ee5-83f636e54a93
+    - af336603-dc4c-44a6-8e94-2465ef9f9ebb
+    - 9113752d-ac5c-4370-9713-8512e7cef593
+    - 540a30fd-3202-4a46-bdb9-a0aa2e837335
+    - 74402f28-282a-4a00-b17f-75c107184d28
+    - e297b2f1-b1f5-4378-8088-15c3bbc913c7
+    - d94a4310-ea4f-484c-b993-4ed0df44bf0b
+    - 40114079-4230-45f2-bbf3-6ba3b2e92e97
+    - be0148e3-4745-4db3-8f5c-df67c4a200b1
+    - a7869f8c-4c69-455e-b319-3f219872074d
+    - 47e33685-eef1-49c7-8db5-014c7ee6b11c
+    - d631757e-ca55-45e3-b974-1e08b7398d3e
+    - a4e328f6-8d3a-452e-85b9-22820ee02722
+    - 43e54f96-8810-454d-a37e-a4c0ac9a6f27
+    - fede8de8-5fea-474a-8c7a-447063d43298
+    - 240687be-e1f5-4d63-bdca-04630f31d73d
+    - 9d525c6e-617f-4e08-8b88-2b51f31448eb
+    - 0e6d78ab-175e-4f7c-8c5a-856bb81e74ee
+    - f8c44eca-f560-45c5-b3db-f6d317f502a0
+    - 70f43d86-0404-4cbf-84cf-76af5347809e
+    - 7825dcdf-4e5b-428c-8c2a-7c2b946d28cd
+    - 184c091a-8a22-4dba-8eef-f389aaaa3235
+    - 3f5e7731-a44b-473e-887d-a1c93872e929
+    - 00dfc124-db81-4912-a680-6f0583cc5fe3
+    - 88c17b7d-34fc-4698-a12d-7e07eb76e456
+    - 334367a3-c017-4e31-b868-6285aa5c22bf
+    - 2d0c84ce-44b7-4a2b-8df0-b733458933cc
+    - c16f7442-8e85-43bf-9dca-51174fe0bbf6
+  menu_link_content:
+    - f18c16ae-a74f-4947-a081-55a67f1a935b
+    - 8f8fcd67-9c89-47a3-b9ae-079303827682
+    - 69a04c35-6a72-4e85-ae08-6a4f38615a7d
+    - 05fc06c8-d26c-4052-ac45-43b2880fd51c
+    - 49f39053-be70-4272-bc28-d4f4e757b9fd
+  block_content:
+    - a908eaaf-fc31-49a8-aba4-7d67d8553862
+    - a92be27a-04ac-46a2-9442-3b0e5ab100a2
+    - 0b0ebeb9-8cb2-4377-8b76-212f59cff8f3
+    - 02e33400-85ff-4a81-bef6-f1d7bdf93436
+    - eb5607a2-5c2f-49a8-bc1d-632d64b32be7
+    - b3654699-dec3-479b-b6ad-b1fbd14d9ae9
+    - 487040ce-436f-4b95-aef2-ef9a0303096e
+    - ae333caa-efbd-4455-ab87-30f158fec576
+
+# Information added by Drupal.org packaging script on 2017-03-29
+version: '8.x-1.04'
+core: '8.x'
+project: 'druppio_small_business_distribution'
+datestamp: 1490817790

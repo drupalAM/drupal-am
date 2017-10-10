@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hmB2Y_iE6kcEFbCXcCvYyX737NCm-GttDVA9LJUvmlY
+name: 'Full HTML without ckeditor'
+format: full_html_without_ckeditor
+weight: 0
+filters:
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }

@@ -1,0 +1,172 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/about?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_lead_image": [
+            {
+                "href": "http:\/\/default\/file\/81?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": "14"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a396dc3e-12ed-4839-9919-9587fa64ad61"
+        }
+    ],
+    "vid": [
+        {
+            "value": "25"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "page"
+        }
+    ],
+    "title": [
+        {
+            "value": "About",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "523bb05f-db82-48e5-ba23-126386becb86"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "523bb05f-db82-48e5-ba23-126386becb86"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_lead_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/81?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d4850d0-840f-43da-bbeb-9df8e7619733"
+                    }
+                ],
+                "lang": "en",
+                "alt": "",
+                "title": "",
+                "width": "683",
+                "height": "911"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "1488978139",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1488978272",
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": "0"
+        }
+    ],
+    "sticky": [
+        {
+            "value": "0",
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "1488978215"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Lorem ipsum dolor sit amet, ea sea esse homero quidam, mea ea erat fuisset fastidii. Posse menandri appellantur nam cu, id his rationibus cotidieque. Sed tollit labitur definitionem an. Labore semper eos ea. Ad oratio reformidans vix.<\/p>\r\n\r\n<p>Eum nostrum luptatum ut, vel ad rebum minim ridens, libris possit ne est. Ea per quidam ponderum, ancillae mandamus te pri, aeque incorrupte ex duo. Per ex paulo legere forensibus, vim iudico atomorum at, ad mei duis virtute dissentiet. Tibique nostrum accusamus mea at.<\/p>\r\n\r\n<p>Ne eam debet ornatus. Voluptua consetetur ius id, ne quot modus pri. Ut iracundia laboramus est. Mel at ubique mollis option, quem sensibus hendrerit pri in. Id duo decore apeirian abhorreant, sit bonorum inermis an.<\/p>\r\n\r\n<p>Ut odio putent melius nec, te esse posse eam, cum veritus mediocrem id. Sit in ancillae conclusionemque, cu vidit malorum assueverit pro, nec at doming bonorum. Sea quot labores ut, at tempor petentium nec, te sit tibique repudiandae. Posse deseruisse theophrastus ad eum. Noster feugait nam in, has at cibo veri postea.<\/p>\r\n\r\n<p>Legendos suavitate at ius, at mei natum facilisis molestiae. Choro regione saperet id eam, facilisis maiestatis id mel. Mei falli fastidii eleifend ea, per ea nostro moderatius cotidieque. Dico nominati expetenda sea ad, at mei commune eligendi prodesset, ex facete aperiam quaerendum per.<\/p>\r\n",
+            "format": "basic_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

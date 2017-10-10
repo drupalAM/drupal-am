@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Installation file for Light Gallery module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function lightgallery_requirements($phase) {
+  $requirements = array();
+
+  if ($phase == 'runtime') {
+    $requirements['lightgallery']['title'] = 'Light Gallery';
+    $requirements['lightgallery']['value'] = t('Installed');
+
+    if (file_exists(DRUPAL_ROOT . '/libraries/lightgallery/dist/js/lightgallery.min.js')) {
+      $requirements['lightgallery']['severity'] = REQUIREMENT_OK;
+    }
+    else {
+      // Required lightgallery library wasn't found; abort installation.
+      $requirements['lightgallery']['value'] = t('Not found');
+
+      // Provide a download link to the lightgallery jQuery plugin.
+      $requirements['lightgallery']['description'] = t('The <a href="@lightgallery" target="_blank">lightGallery</a> jQuery plugin is missing. See <a href="@readme">README.md</a> for instructions on how to download and extract it.', array(
+        '@lightgallery' => 'http://sachinchoolur.github.io/lightGallery/',
+        '@readme' => '/' . drupal_get_path('module', 'lightgallery') . '/README.md',
+      ));
+      $requirements['lightgallery']['severity'] = REQUIREMENT_ERROR;
+    }
+  }
+
+  return $requirements;
+}

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:eb5607a2-5c2f-49a8-bc1d-632d64b32be7'
+  module:
+    - block_content
+  theme:
+    - druppio_small_business
+id: copyright
+theme: druppio_small_business
+region: footer_first
+weight: -9
+provider: null
+plugin: 'block_content:eb5607a2-5c2f-49a8-bc1d-632d64b32be7'
+settings:
+  id: 'block_content:eb5607a2-5c2f-49a8-bc1d-632d64b32be7'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

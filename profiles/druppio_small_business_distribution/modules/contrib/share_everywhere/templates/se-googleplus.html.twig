@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Default theme implementation for Google+ share button.
+ *
+ * Available variables:
+ *  - url: The url of the page to be shared.
+ *  - content: The button's image or other content to appear on the page. (default: image)
+ *
+ */
+#}
+<a href="https://plus.google.com/share?url={{ url | url_encode }}" target="_blank" >{{ content }}</a>

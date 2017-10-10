@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: work_gallery_image
+label: 'Gallery image'
+effects:
+  1471228c-b3c0-4c26-9146-152108be3036:
+    uuid: 1471228c-b3c0-4c26-9146-152108be3036
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 253
+      height: 253

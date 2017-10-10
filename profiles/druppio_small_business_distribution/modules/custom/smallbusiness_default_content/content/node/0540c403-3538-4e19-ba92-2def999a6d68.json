@@ -1,0 +1,283 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/9?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/work"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/field_gallery": [
+            {
+                "href": "http:\/\/default\/file\/106?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/file\/107?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/file\/108?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/file\/109?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/field_lead_image": [
+            {
+                "href": "http:\/\/default\/file\/105?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": "9"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "0540c403-3538-4e19-ba92-2def999a6d68"
+        }
+    ],
+    "vid": [
+        {
+            "value": "34"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "work"
+        }
+    ],
+    "title": [
+        {
+            "value": "Percipit eum ea.",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "523bb05f-db82-48e5-ba23-126386becb86"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "523bb05f-db82-48e5-ba23-126386becb86"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/field_gallery": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/106?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "240687be-e1f5-4d63-bdca-04630f31d73d"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1329"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/107?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9d525c6e-617f-4e08-8b88-2b51f31448eb"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1329"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/108?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0e6d78ab-175e-4f7c-8c5a-856bb81e74ee"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1329"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/109?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f8c44eca-f560-45c5-b3db-f6d317f502a0"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1329"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/field_lead_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/105?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "fede8de8-5fea-474a-8c7a-447063d43298"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1333"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "1487147941",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1489048263",
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": "0",
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "1489048263"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Has facilisi recusabo ocurreret id, ludus vivendo corrumpit ne per, ne minimum nominavi copiosae usu. Ne agam delectus duo, ne ceteros dolores convenire vix. Reque iudicabit at his, cu quo tamquam fierent. Et cum oporteat democritum, an dico vivendo vel. Sit ut aliquid praesent constituto, wisi sonet scribentur has ei. Eos at labitur dolores, duo suavitate imperdiet id. Veri aliquam reformidans ne nec.<\/p>\r\n\r\n<p>Ex nam quas iudico, nam in libris patrioque vituperatoribus. Placerat elaboraret ius cu, partem bonorum sadipscing eam ex. Cu eos adipisci scribentur voluptatibus, qui option hendrerit at. Eos id propriae probatus mediocritatem. Vel an nobis nonumy ancillae, brute rationibus consequuntur ei sed, cum cu graece latine efficiantur. Eu per dicam virtute, justo falli percipit eum ea.<\/p>\r\n",
+            "format": "basic_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "field_client": [
+        {
+            "value": "Druppio"
+        }
+    ],
+    "field_project_url": [
+        {
+            "value": "http:\/\/www.druppio.com\/"
+        }
+    ],
+    "field_sub_title": [
+        {
+            "value": "Eos at labitur dolores, duo "
+        }
+    ],
+    "field_tags": [
+        {
+            "value": "project, work"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - druppio_small_business
+_core:
+  default_config_hash: GDuB9qHsuoVeRnmrXxS1RQoC6tPH0HzQsMxYbKAmeNw
+id: druppio_small_business_local_tasks
+theme: druppio_small_business
+region: helper
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

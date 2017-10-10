@@ -1,0 +1,50 @@
+name: Druppio Small Business Theme
+type: theme
+description: Theme made from SP starter theme.
+package: Core
+'base theme': classy
+
+force_export: false
+inherit_layout: false
+scss_support: false
+libraries:
+  - druppio_small_business/druppio_small_business
+  - druppio_small_business/rellax
+  - druppio_small_business/cycle
+regions:
+  branding: 'Branding'
+  navigation: 'Navigation'
+  header: 'Header'
+  helper: 'Helper Section'
+  section_first: 'First Section'
+  section_second: 'Second Section'
+  section_third: 'Third Section'
+  section_fourth: 'Fourth Section'
+  content: 'Content'
+  section_fifth: 'Fifth Section'
+  footer_first: 'Footer First'
+  footer_second: 'Footer Second'
+features:
+  logo: true
+  name: true
+  slogan: true
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  main_menu: true
+  secondary_menu: true
+# version: 8.x-1.x
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2017-03-27
+# version: '8.x-1.05+0-dev'
+# core: '8.x'
+# project: 'druppio_small_business'
+# datestamp: 1490598297
+
+# Information added by Drupal.org packaging script on 2017-03-29
+version: '8.x-1.04'
+core: '8.x'
+project: 'druppio_small_business_distribution'
+datestamp: 1490817790

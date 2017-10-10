@@ -1,0 +1,31 @@
+.zero-clipboard {
+  background-color: darken(white, 6%);
+  border: 1px solid darken(white, 30%);
+  border-bottom: 0;
+  width: 60px;
+  padding: 5px 10px;
+  margin-top: 2em;
+  border-radius: 3px 3px 0 0;
+  font-weight: bold;
+}
+
+figure.highlight {
+  display: inline-block;
+  margin: 0;
+  padding: 0 30px;
+  margin: 0 0 1em 0;
+  background-color: darken(white, 3%);
+  border: 1px solid darken(white, 30%);
+  border-radius: 0 0 5px 5px;
+}
+
+.context-typography {
+  .no-style {
+    margin: 40px 0;
+    width: 100%;
+    td {
+      border-top: 1px solid darken(white, 20%);
+      border-bottom: 1px solid darken(white, 20%);
+    }
+  }
+}

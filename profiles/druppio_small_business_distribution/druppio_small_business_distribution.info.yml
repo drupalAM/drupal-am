@@ -1,0 +1,85 @@
+name: Druppio Small Business
+# core: 8.x
+type: profile
+description: 'Complete solution for small business.'
+distribution:
+  name: Druppio Small Business
+
+dependencies:
+  - admin_toolbar
+  - admin_toolbar_tools
+  - automated_cron
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - comment
+  - config
+  - contact
+  - contact_block
+  - contact_storage
+  - contextual
+  - ctools
+  - datetime
+  - dblog
+  - default_content
+  - dynamic_page_cache
+  - editor
+  - editor_advanced_link
+  - editor_file
+  - field
+  - field_ui
+  - file
+  - file_entity
+  - filter
+  - google_analytics
+  - hal
+  - help
+  - history
+  - image
+  - language
+  - libraries
+  - lightgallery
+  - link
+  - link_attributes
+  - mailsystem
+  - menu_ui
+  - metatag
+  - node
+  - options
+  - page_cache
+  - path
+  - quickedit
+  - rdf
+  - redirect
+  - redirect_404
+  - rest
+  - serialization
+  - share_everywhere
+  - shortcut
+  - system
+  - taxonomy
+  - text
+  - token
+  - toolbar
+  - tour
+  - update
+  - user
+  - views_slideshow
+  - views_slideshow_cycle
+  - views_ui
+  - xmlsitemap_engines
+  - menu_link_content
+  - pathauto
+  - xmlsitemap
+  - views
+themes:
+  - bartik
+  - seven
+  - druppio_small_business
+
+# Information added by Drupal.org packaging script on 2017-03-29
+version: '8.x-1.04'
+core: '8.x'
+project: 'druppio_small_business_distribution'
+datestamp: 1490817790

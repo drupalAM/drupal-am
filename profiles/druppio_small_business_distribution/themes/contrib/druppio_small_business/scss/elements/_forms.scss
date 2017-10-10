@@ -1,0 +1,350 @@
+//== form label
+%form-label {
+  display: block;
+  padding-top: 5px;
+  font-weight: normal;
+  color: $color-form-label-text;
+}
+
+.form-item,
+.form-actions {
+  margin: 0;
+  padding: 1em 0;
+}
+
+//== placeholder
+placeholder {
+  color: $color-text;
+}
+
+//==autofill
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: $color-form-bg !important;
+}
+
+//== form elements
+.form-item {
+  padding: 10px 0;
+  label {
+    @extend %form-label;
+  }
+  input,
+  textarea,
+  select {
+    color: $color-form-text;
+    border-color: $color-form-border;
+    background-color: $color-form-bg;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.35em 1.5em;
+    margin: 0.3em 0;
+    font-weight: normal;
+    box-sizing: border-box;
+    box-shadow: none;
+    transition: all 0.15s;
+    &:focus {
+      border-color: $color-form-border-hover;
+      background-color: $color-form-bg-hover;
+      outline: none;
+    }
+  }
+  input.form-text,
+  input.form-email,
+  input.form-number,
+  input.form-date,
+  input.form-time,
+  input.form-search,
+  select {
+    height: 50px;
+  }
+  select {
+    cursor: pointer;
+    option {
+      cursor: pointer;
+    }
+  }
+  input:disabled {
+    background-color: #eee;
+  }
+  .description {
+    color: darken(white, 60%);
+    font-style: italic;
+  }
+  textarea {
+    padding-top: 1em;
+  }
+}
+
+//== file
+input.form-file {
+  background-color: transparent;
+  border: none;
+  padding-left: 0;
+}
+
+.form-managed-file .form-submit {
+  margin: 0;
+  @extend %submit-button;
+}
+
+//=datetime
+.field--type-datetime {
+  .label {
+    @extend %form-label;
+  }
+}
+
+//== Form submit, button
+.form-submit {
+  @extend %submit-button;
+}
+
+//==fieldset
+fieldset {
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $color-form-border;
+  padding: 10px !important;
+  .fieldset-legend {
+    display: block;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+}
+
+//== checkbox ,radio base
+.form-type-checkbox,
+.form-type-radio {
+  position: relative;
+  input {
+    display: none;
+    &[type="checkbox"]:checked +label,
+    &[type="radio"]:checked +label {
+      &:after {
+        transition: all 0.15s;
+      }
+    }
+  }
+  label {
+    margin-top: 5px;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 15px;
+    padding-left: 8px;
+    &:before,
+    &:after {
+      position: absolute;
+      content: " ";
+      display: block;
+      box-sizing: border-box;
+      transition: all 0.15s;
+    }
+    &:before {
+      left: 0;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+    }
+    &:after {
+      left: 4px;
+      top: 20px;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+//== checkbox
+.form-type-checkbox {
+  label {
+    &:before {
+      border: 1px solid $color-checkbox;
+      border-radius: 3px;
+    }
+    &:after {
+      background-color: $color-checkbox;
+      border-radius: 0;
+    }
+  }
+  input[type="checkbox"]:checked +label {
+    &:after {
+      left: 4px;
+      top: 24px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+//== radio button
+.form-type-radio {
+  label {
+    &:before {
+      border: 2px solid $color-radio;
+      border-radius: 50%;
+    }
+    &:after {
+      background-color: $color-radio;
+      border-radius: 50%;
+    }
+  }
+  input[type="radio"]:checked +label {
+    &:after {
+      left: 5px;
+      top: 25px;
+      width: 6px;
+      height: 6px;
+    }
+  }
+}
+
+//== File
+.form-type-managed-file {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+  > label {
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    color: $color-form-text;
+    border-color: $color-form-border;
+    background-color: $color-form-bg;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-top: 0;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 10px;
+    min-width: 80px;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .form-managed-file {
+    input[type="file"] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      opacity: 0;
+    }
+  }
+  .js-hide.button {
+    display: none;
+  }
+  .description,
+  .image-preview {
+    clear: both;
+  }
+}
+
+//== button
+%submit-button {
+  background-color: $color-form-submit-bg;
+  color: $color-form-submit-text;
+  border-color: $color-form-submit-border;
+  border-style: solid;
+  border-width: 0;
+  width: auto;
+  padding: 20px 35px;
+  margin: 5px;
+  transition: all 0.25s;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 22px;
+  position: relative;
+  &:hover,
+  &:active {
+    color: $color-form-submit-text-hover;
+    background-color: $color-form-submit-bg-hover;
+    text-decoration: none;
+    &:before {
+      border-left-width: 30px;
+    }
+  }
+  &:before {
+    position: absolute;
+    right: -18px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 68px solid $color-secondary;
+    display: block;
+    content: "";
+    transition: all 0.25s;
+  }
+  &:hover {
+    background-color: $color-form-submit-bg-hover;
+  }
+	@include breakpoint($narrow) {
+		font-size: 22px;
+		padding: 20px 70px;
+	}
+  @include breakpoint($normal) {
+    padding: 20px 110px;
+  }
+}
+
+%submit-button-second {
+  background-color: $color-form-submit-bg;
+  color: $color-form-submit-text;
+  border-color: $color-form-submit-border;
+  border-style: solid;
+  border-width: 0;
+  width: auto;
+  padding: 20px 70px;
+  margin: 5px 0;
+  transition: all 0.25s;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 22px;
+  position: relative;
+  &:hover,
+  &:active {
+    color: $color-form-submit-text-hover;
+    background-color: $color-form-submit-bg-hover;
+    text-decoration: none;
+  }
+  &:before {
+    position: absolute;
+    right: -22px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 34px solid transparent;
+    border-bottom: 33px solid transparent;
+    border-left: 22px solid $color-secondary;
+    display: block;
+    content: "";
+  }
+  &:hover {
+    background-color: $color-form-submit-bg-hover;
+  }
+  @include breakpoint($normal) {
+    padding: 20px 110px;
+  }
+}
+
+//contact
+.contact-message-feedback-form {
+  .form-actions {
+    @include clearfix;
+  }
+  .form-submit {
+    @include breakpoint($narrow) {
+      margin-left: 5px;
+      float: right;
+    }
+  }
+}

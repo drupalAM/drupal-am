@@ -1,0 +1,30 @@
+$grid-size: 24 !default;
+
+$narrow: 768px !default;
+$normal: 1024px !default;
+$wide: 1600px !default;
+
+$big-menu-width: 220px;
+$small-menu-width: 100px;
+
+$narrow-only: ($narrow $normal - 1px);
+$normal-only: ($normal $wide - 1px);
+
+$container-mobile: 100%;
+$container-normal: calc(100% - #{$small-menu-width});
+$container-node: calc(100% - #{$small-menu-width});
+
+$susy: 
+( 
+	flow: ltr, 
+	math: fluid, 
+	output: float, 
+	gutter-position: after, 
+	container: $container-normal,
+	container-position: right, 
+	columns: $grid-size, 
+	gutters: 0.5, 
+	box-sizing: border-box, 
+	last-flow: to,
+	clearfix: true
+);

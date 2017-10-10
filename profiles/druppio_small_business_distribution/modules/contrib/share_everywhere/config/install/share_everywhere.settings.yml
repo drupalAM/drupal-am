@@ -1,0 +1,67 @@
+buttons:
+  facebook_like:
+    name: 'Facebook like'
+    enabled: true
+  facebook_share:
+    name: 'Facebook share'
+    title: 'Share on Facebook'
+    enabled: true
+    image: 'facebook-share.svg'
+  twitter:
+    name: 'Twitter'
+    title: 'Share on Twitter'
+    enabled: true
+    image: 'twitter.svg'
+  googleplus:
+    name: 'Google+'
+    title: 'Share on Google+'
+    enabled: true
+    image: 'googleplus.svg'
+  linkedin:
+    name: 'LinkedIn'
+    title: 'Share on LinkedIn'
+    enabled: true
+    image: 'linkedin.svg'
+  messenger:
+    name: 'Messenger'
+    title: 'Share via Messenger'
+    enabled: true
+    image: 'messenger.svg'
+  viber:
+    name: 'Viber'
+    title: 'Share via Viber'
+    enabled: true
+    image: 'viber.svg'
+  whatsapp:
+    name: 'WhatsApp'
+    title: 'Share via WhatsApp'
+    enabled: true
+    image: 'whatsapp.svg'
+share_icon:
+  image: 'share-icon.svg'
+  alt: 'Share icon'
+title: 'Share Everywhere'
+display_title: true
+style: 'share_everywhere'
+include_css: true
+include_js: true
+collapsible: true
+location: 'content'
+alignment: 'left'
+content_types:
+  article: 'article'
+  page: 'page'
+view_modes:
+  article:
+    full: 'full'
+  page:
+    full: 'full'
+product_types:
+  default: 'default'
+product_view_modes:
+  default:
+    full: 'full'
+restricted_pages:
+  pages: ''
+  type: 'show'
+weight: 10

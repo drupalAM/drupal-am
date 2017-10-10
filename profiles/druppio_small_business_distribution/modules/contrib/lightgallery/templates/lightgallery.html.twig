@@ -1,0 +1,18 @@
+<div class="lightgallery-wrapper">
+    <ul class="lightgallery" id="lightgallery-{{ id }}">
+        {% for item in items %}
+        <li data-src="{{ item.slide }}" style="{{ item.row_style }}" data-sub-html="{{ item.title }}">
+            {% if item.field_label is not empty %}
+            <div class="field-label">
+                <label>{{ item.field_label }}</label>
+            </div>
+            {% endif %}
+            <div class="field-content">
+                <a href="">
+                    <img class="img-responsive" src="{{ item.thumb }}" />
+                </a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

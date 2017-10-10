@@ -1,0 +1,42 @@
+druppio_small_business:
+  druppio_small_business:
+    allow_clone_for_subtheme: true
+    allow_enable_disable: true
+    title: 'Default library for the druppio_small_business theme'
+    description: 'Default Studio Present theme library description.'
+    scss:
+      css/druppio_small_business.css: 'scss/druppio_small_business.scss'
+  version: VERSION
+  js:
+    js/druppio_small_business.js: {}
+  css:
+    theme:
+      css/druppio_small_business.css: {}
+    layout:
+      css/layout/default-layout.css: {}
+    #component:
+      #css/components/component.css: {}
+  dependencies:
+    - core/jquery
+druppio-smallbusiness-custom:
+  css:
+    theme:
+      '/sites/default/files/druppio-smallbusiness-custom.css': {type: external}
+rellax:
+  remote: https://github.com/dixonandmoe/rellax/
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://github.com/dixonandmoe/rellax/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    'https://rawgit.com/dixonandmoe/rellax/master/rellax.js': {type: external}
+cycle:
+  remote: https://github.com/malsup/cycle/
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://github.com/malsup/cycle/blob/master/README.md
+    gpl-compatible: true
+  js:
+    'https://rawgit.com/malsup/cycle/master/jquery.cycle.all.js': {type: external}

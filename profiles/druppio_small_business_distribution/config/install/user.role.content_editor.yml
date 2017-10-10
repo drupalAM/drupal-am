@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Go_wNtr9vR-C54KKy-k491jpbvb9zRaRtv7ZJKLJcZQ
+id: content_editor
+label: 'Content editor'
+weight: 3
+is_admin: null
+permissions:
+  0: 'access content overview'
+  1: 'administer nodes'
+  2: 'create url aliases'
+  3: 'use text format full_html'
+  4: 'access toolbar'
+  6: 'view the administration theme'
+  7: 'access in-place editing'
+  8: 'use text format restricted_html'
+  9: 'bypass node access'
+  10: 'view files'

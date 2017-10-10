@@ -1,0 +1,15 @@
+.block-local-tasks-block .tabs.primary {
+  margin: 15px 0;
+  li {
+    margin-bottom: 3px;
+    border-left: 3px solid $color-primary-tabs-bg;
+    a {
+      background-color: $color-primary-tabs-bg;
+    }
+    transition: all 0.15s;
+    &.is-active,
+    &:hover {
+      border-left-color: $color-primary-tabs-border;
+    }
+  }
+}

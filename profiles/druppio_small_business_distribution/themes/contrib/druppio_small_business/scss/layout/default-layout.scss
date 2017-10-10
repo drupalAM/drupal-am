@@ -1,0 +1,40 @@
+@import "../../libraries/compass-breakpoint/stylesheets/breakpoint";
+@import '../../libraries/susy/sass/susy';
+@import "../variables/grid";
+.container {
+  @include container($container-mobile);
+  @include breakpoint($normal) {
+    @include container($container-normal);
+  }
+}
+
+.path-node, .path-user {
+  .container {
+    @include container($container-mobile);
+    @include breakpoint($normal) {
+      @include container($container-normal);
+      max-width: calc(100% - #{$big-menu-width} - 23px);
+    }
+  }
+}
+
+@include breakpoint($normal) {
+  /* Home */
+  #header {
+    .container {
+      max-width: calc(100% - #{$small-menu-width});
+    }
+  }
+  /* #footer */
+  .region-footer-first {
+    @include span(16);
+  }
+  .region-footer-second {
+    @include span(last 8);
+  }
+  #footer {
+    .container {
+      max-width: calc(100% - #{$small-menu-width});
+    }
+  }
+}

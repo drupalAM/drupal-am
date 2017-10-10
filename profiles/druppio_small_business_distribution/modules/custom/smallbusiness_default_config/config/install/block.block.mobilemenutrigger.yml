@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ae333caa-efbd-4455-ab87-30f158fec576'
+  module:
+    - block_content
+  theme:
+    - druppio_small_business
+id: mobilemenutrigger
+theme: druppio_small_business
+region: header
+weight: -10
+provider: null
+plugin: 'block_content:ae333caa-efbd-4455-ab87-30f158fec576'
+settings:
+  id: 'block_content:ae333caa-efbd-4455-ab87-30f158fec576'
+  label: 'Mobile menu trigger'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

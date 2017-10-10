@@ -1,0 +1,5 @@
+share_everywhere.config_form:
+  route_name: share_everywhere.config_form
+  title: 'Share Everywhere'
+  description: 'Choose social buttons to appear on your site.'
+  parent: system.admin_config_services

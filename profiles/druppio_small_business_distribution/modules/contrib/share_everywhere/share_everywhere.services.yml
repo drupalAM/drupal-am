@@ -1,0 +1,4 @@
+services:
+  share_everywhere.service:
+    class: '\Drupal\share_everywhere\ShareEverywhereService'
+    arguments: ['@config.factory', '@path.alias_manager']

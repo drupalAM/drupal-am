@@ -1,0 +1,106 @@
+//## README
+//
+//
+// if something is missing from the list,
+// naming conventions:
+//
+// $color-[PREFIX]-[NAME]-[STATE];
+//
+// PREFIX: mobile-menu, navigation, form, table, etc.
+// STATE: hover, active
+//
+// if you need color variable in the FORM or TABLE, or NAVIGATION, use:
+// $color-form-[NAME];
+// $color-table-[NAME];
+// $color-navigation-[NAME];
+//
+// Note: Please look at the variables, and according to create a new one
+
+//== other colors
+$color-yellow: #ffe600;
+$color-green: #01752B;
+$color-blue: #00f;
+$color-red: #f00;
+$color-tile: #B55839;
+$color-black: #251D1B;
+$color-silver: #647785;
+$color-brown: #685B52;
+
+// primary and secondary colors
+
+$color-primary: $color-tile;
+$color-secondary: $color-silver;
+
+//$color-primary: red;
+//$color-secondary: green;
+
+//== $HTML
+$color-bg: #ffffff;
+$color-bg-section-first: #ffffff;
+$color-bg-section-second: #E8E8E8;
+$color-bg-section-third: #ffffff;
+$color-bg-section-fourth: #483D39;
+$color-bg-section-fifth: #ffffff;
+
+//== text color
+$color-text: $color-black;
+$color-header-region: white;
+
+//== h1-h6 color
+$color-title: $color-black;
+$color-block-title: darken(white, 20%);
+
+//== links
+$color-link: $color-text;
+$color-link-hover: $color-text;
+
+//== mobile menu color
+$color-mobile-menu-bg: $color-black;                                   /* mobile menu background color */
+$color-mobile-menu-text: white;                                        /* link text color */
+$color-mobile-menu-text-hover: white;                                  /* hover link text color */
+$color-mobile-menu-text-active: white;                                 /* active link text color */
+$color-mobile-menu-text-active-bg: $color-primary;                     /* active link background color */
+$color-mobile-menu-hamburger: $color-primary;                          /* 3 vertical line color */
+$color-mobile-menu-hamburger-bg: transparent;
+
+//== navigation
+$color-navigation-bg: $color-black;                                    /* UL bg color */
+$color-navigation-link: white;                                         /* link text color */
+$color-navigation-link-hover: white;                                   /* hover link text color */
+$color-navigation-link-active: $color-navigation-link-hover;           /* active link text color */
+$color-navigation-link-bg: $color-black;                               /* text background color */
+$color-navigation-link-bg-hover: $color-primary;                       /* hover text background color */
+$color-navigation-link-bg-active: $color-navigation-link-bg-hover;     /* active text background color */
+
+//== form
+$color-form-label-text: darken(white, 40%);
+$color-form-text: darken(white, 40%);
+$color-form-bg: white;                                                 /* input background color */
+$color-form-bg-hover: white;                                           /* hover input background color */
+$color-form-border: $color-primary;                                    /* input border color */
+$color-form-border-hover: $color-primary;                              /* hover input border color */
+$color-form-submit-text: white !important;                             /* form submit text color */
+$color-form-submit-text-hover: white;                                  /* hover form submit text color */
+$color-form-submit-bg: $color-primary;                                 /* form submit background color */
+$color-form-submit-bg-hover: $color-secondary;                         /* hover form submit background color */
+$color-form-submit-border: transparent;                                /* form submit border color */
+
+//== form radio - checkbox
+$color-checkbox: $color-primary;
+$color-radio: $color-primary;
+
+//== tables
+$color-table-border: $color-primary;
+$color-table-bg: white;
+$color-table-even-bg: rgba($color-primary, 0.2);
+$color-table-header-text: $color-text;
+$color-table-header-bg: white;
+$color-table-text: $color-text;
+
+//== language switcher
+
+$color-lang-switcher-bg: white;
+
+//== primary tabs - Administrator login-edit-view-etc tabs
+$color-primary-tabs-bg: #eee;
+$color-primary-tabs-border:  $color-primary;

@@ -1,0 +1,208 @@
+<?php
+
+/**
+ * @file
+ * A module that adds social buttons to your website.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function share_everywhere_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.share_everywhere':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function share_everywhere_theme($existing, $type, $theme, $path) {
+  $template_vars = [
+    'url' => NULL,
+    'content' => NULL,
+  ];
+  $variables = [
+    'share_everywhere' => [
+      'variables' => [
+        'attributes' => [
+          'class' => NULL,
+        ],
+        'title' => NULL,
+        'share_icon' => NULL,
+        'se_links_id' => NULL,
+        'is_active' => NULL,
+        'facebook_like' => NULL,
+        'buttons' => NULL,
+      ],
+      'template' => 'share-everywhere',
+    ],
+    'se_facebook_like' => [
+      'variables' => [
+        'url' => NULL,
+      ],
+      'template' => 'se-facebook-like',
+    ],
+    'se_facebook_share' => [
+      'variables' => $template_vars,
+      'template' => 'se-facebook-share',
+    ],
+    'se_twitter' => [
+      'variables' => $template_vars,
+      'template' => 'se-twitter',
+    ],
+    'se_googleplus' => [
+      'variables' => $template_vars,
+      'template' => 'se-googleplus',
+    ],
+    'se_linkedin' => [
+      'variables' => $template_vars,
+      'template' => 'se-linkedin',
+    ],
+    'se_messenger' => [
+      'variables' => $template_vars,
+      'template' => 'se-messenger',
+    ],
+    'se_viber' => [
+      'variables' => $template_vars,
+      'template' => 'se-viber',
+    ],
+    'se_whatsapp' => [
+      'variables' => $template_vars,
+      'template' => 'se-whatsapp',
+    ],
+  ];
+  return $variables;
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function share_everywhere_entity_extra_field_info() {
+  $config = \Drupal::config('share_everywhere.settings');
+  $extra = [];
+
+  if ($config->get('location') == 'content') {
+    $entity_info = \Drupal::service('entity_type.bundle.info')->getAllBundleInfo();
+
+    if (isset($entity_info['node'])) {
+      foreach ($entity_info['node'] as $bundle => $bundle_info) {
+        $extra['node'][$bundle]['display'] = [
+          'share_everywhere' => [
+            'label' => t('Share Everywhere'),
+            'description' => t('Share Everywhere buttons'),
+            'weight' => $config->get('weight'),
+          ],
+        ];
+      }
+    }
+    if (isset($entity_info['commerce_product'])) {
+      foreach ($entity_info['commerce_product'] as $bundle => $bundle_info) {
+        $extra['commerce_product'][$bundle]['display'] = [
+          'share_everywhere' => [
+            'label' => t('Share Everywhere'),
+            'description' => t('Share Everywhere buttons'),
+            'weight' => $config->get('weight'),
+          ],
+        ];
+      }
+    }
+  }
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function share_everywhere_node_view(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  $config = \Drupal::config('share_everywhere.settings');
+  $share_service = \Drupal::service('share_everywhere.service');
+  $route_params = \Drupal::routeMatch()->getParameters();
+
+  if ($route_params->has('node_preview')) {
+    if ($route_params->get('node_preview')->in_preview) {
+      return;
+    }
+  }
+
+  $url = $node->toUrl()->setAbsolute()->toString();
+  $current_path = \Drupal::request()->getPathInfo();
+
+  if ($share_service->isRestricted($view_mode, $current_path)) {
+    return;
+  }
+
+  $id = $node->getEntityTypeId() . $node->id();
+  $enabled_types = $config->get('content_types');
+  $enabled_view_modes = $config->get('view_modes.' . $node->bundle());
+  switch ($config->get('location')) {
+    case 'content':
+      if (isset($enabled_types[$node->bundle()]) && $enabled_types[$node->bundle()] === $node->bundle() && $display->getComponent('share_everywhere')) {
+        if (isset($enabled_view_modes[$view_mode]) && $enabled_view_modes[$view_mode]) {
+          $build['share_everywhere'] = $share_service->build($url, $id);
+        }
+      }
+      break;
+
+    case 'links':
+      if (isset($enabled_types[$node->bundle()]) && $enabled_types[$node->bundle()] === $node->bundle() && $display->getComponent('links')) {
+        if (isset($enabled_view_modes[$view_mode]) && $enabled_view_modes[$view_mode]) {
+          $content = $share_service->build($url, $id);
+          $links['share_everywhere'] = [
+            'title' => $content,
+          ];
+          $build['links'] = [
+            '#theme' => 'links',
+            '#links' => $links,
+            '#tag' => 'div',
+            '#type' => 'html_tag',
+          ];
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function share_everywhere_commerce_product_view(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  $config = \Drupal::config('share_everywhere.settings');
+  $share_service = \Drupal::service('share_everywhere.service');
+  $module_handler = \Drupal::service('module_handler');
+  $url = $node->toUrl()->setAbsolute()->toString();
+  $current_path = \Drupal::request()->getPathInfo();
+
+  if (!$module_handler->moduleExists('commerce_product') || $share_service->isRestricted($view_mode, $current_path)) {
+    return;
+  }
+
+  $id = $node->getEntityTypeId() . $node->id();
+  $enabled_types = $config->get('product_types');
+  $enabled_view_modes = $config->get('product_view_modes.' . $node->bundle());
+  if ($config->get('location') == 'content') {
+    if (isset($enabled_types[$node->bundle()]) && $enabled_types[$node->bundle()] === $node->bundle() && $display->getComponent('share_everywhere')) {
+      if (isset($enabled_view_modes[$view_mode]) && $enabled_view_modes[$view_mode]) {
+        $build['share_everywhere'] = $share_service->build($url, $id);
+      }
+    }
+  }
+}

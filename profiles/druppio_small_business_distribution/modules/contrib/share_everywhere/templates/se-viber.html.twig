@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Default theme implementation for Viber share button.
+ *
+ * Available variables:
+ *  - url: The url of the page to be shared.
+ *  - content: The button's image or other content to appear on the page. (default: image)
+ *
+ */
+#}
+<a href="viber://forward?text={{ url | url_encode }}">{{ content }}</a>

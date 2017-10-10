@@ -1,0 +1,170 @@
+// basic page
+.node--type-page,
+.full.work {
+  h1.page-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1;
+  }
+  h2.page-sub-title {
+    padding-top: 0;
+    margin-bottom: 40px;
+    font-family: $body-font;
+    text-transform: uppercase;
+    font-size: 25px;
+    @include breakpoint($narrow) {
+      font-size: 30px;
+    }
+  }
+}
+
+.node--type-page {
+  @include breakpoint($normal) {
+    padding-top: 24px;
+    &.path-frontpage {
+      padding-top: 0;
+    }
+  }
+  .node-left {
+    padding-bottom: 15px;
+    @include breakpoint($normal) {
+      padding-bottom: 25px;
+      width: 40%;
+      float: left;
+    }
+    @include breakpoint($wide) {
+      width: 50%;
+    }
+    img {
+      display: block;
+    }
+  }
+  .node-right {
+    padding: 15px;
+    box-sizing: border-box;
+    @include breakpoint($narrow) {
+      padding: 20px 50px 20px;
+    }
+    @include breakpoint($normal) {
+      padding-top: 0;
+      width: 60%;
+      float: right;
+    }
+    @include breakpoint($wide) {
+      width: 50%;
+    }
+  }
+}
+
+.full.work {
+  .node-work-left {
+    @include breakpoint($normal) {
+      width: 40%;
+      float: left;
+    }
+    @include breakpoint($wide) {
+      width: 50%;
+    }
+    img {
+      display: block;
+    }
+    &.bottom {
+      padding: 15px;
+      box-sizing: border-box;
+      @include breakpoint($narrow) {
+        padding: 50px;
+      }
+      @include breakpoint($normal) {
+        margin-top: 25px;
+        padding: 0;
+        padding-right: 25px;
+      }
+    }
+  }
+  .node-work-right {
+    @include breakpoint($normal) {
+      width: 60%;
+      float: right;
+    }
+    @include breakpoint($wide) {
+      width: 50%;
+    }
+    .node-work-right-container {
+      padding: 15px;
+      @include breakpoint($narrow) {
+        padding: 20px 50px 20px;
+      }
+    }
+    @include breakpoint($normal) {
+      background: linear-gradient(174.5deg, transparent 0%, transparent 91%, darken(white, 15%) 91%);
+      box-sizing: border-box;
+      min-height: 820px;
+      max-height: 820px;
+      overflow: auto;
+      .node-work-right-container {
+        padding: 0 50px;
+        min-height: 735px;
+        max-height: 735px;
+        overflow: auto;
+      }
+    }
+    &.bottom {
+      padding: 15px;
+      @include breakpoint($narrow) {
+        padding: 50px;
+      }
+      background-color: darken(white, 15%);
+      min-height: inherit;
+      .node-work-right-bottom-container {
+        .field {
+          padding: 10px;
+          font-size: 15px;
+          &:nth-child(even) {
+            background-color: white;
+          }
+          .field__label {
+            min-width: 100px;
+            font-weight: 300;
+            font-style: italic;
+          }
+          @include breakpoint($narrow) {
+            font-size: 20px;
+            padding: 20px;
+            .field__label {
+              min-width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include breakpoint($normal) {
+    padding-top: 20px;
+  }
+}
+
+.lightgallery-wrapper ul.lightgallery {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  li {
+    @include gallery(4 of 8);
+    margin-bottom: 20px;
+    @include breakpoint($narrow) {
+      @include gallery(4 of 12);
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.lg-thumb {
+  .lg-thumb-item {
+    img {
+      display: block;
+    }
+  }
+}
+
+.se-block {
+  margin-top: 20px;
+}

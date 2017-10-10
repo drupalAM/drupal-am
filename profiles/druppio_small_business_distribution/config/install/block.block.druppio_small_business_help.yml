@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - druppio_small_business
+_core:
+  default_config_hash: qfVX6fg0LKRB4_kircwXFzIPnxIQS7QTqjnupZIz58I
+id: druppio_small_business_help
+theme: druppio_small_business
+region: helper
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

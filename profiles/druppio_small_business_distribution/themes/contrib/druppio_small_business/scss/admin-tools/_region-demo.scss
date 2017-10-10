@@ -1,0 +1,41 @@
+.theme-demo-block {
+  padding: 20px;
+  font-size: 80%;
+  background: white;
+  border: 1px solid lighten($color-green, 20%);
+  border-left: 8px solid $color-green;
+  border-right: 8px solid $color-green;
+  color: darken($color-green, 20%);
+  margin-top: 20px;
+  border-radius: 2px;
+  opacity: 0.5;
+  transition: opacity .25s ease-in-out;
+  cursor: pointer;
+  &.active-region {
+    border: 1px solid lighten($color-green, 20%);
+    border-left: 8px solid $color-green;
+    border-right: 8px solid $color-green;
+  }
+  &.inactive-region {
+    border: 1px solid lighten($color-yellow, 20%);
+    border-left: 8px solid $color-yellow;
+    border-right: 8px solid $color-yellow;
+    color: darken($color-yellow, 20%);
+  }
+  &:hover {
+    opacity: 1;
+  }
+  h3 {
+    color: $color-text;
+    font-size: 12px;
+    font-weight: normal;
+    font-variant: small-caps;
+    margin: 0;
+  }
+  .demo-block-content p {
+    margin: 0;
+  }
+  ~ .block-region.demo-block {
+    display: none;
+  }
+}

@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the theme druppio_small_business.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\Component\Utility\Crypt;
+use GuzzleHttp\Exception\RequestException;
+
+/**
+ * Implements hook_css_alter().
+ */
+function druppio_small_business_css_alter(&$vars) {
+  $localhost = array('10.1.3.120', '91.150.66.201', '127.0.0.1');
+  if (in_array($_SERVER['REMOTE_ADDR'], $localhost)) {
+    foreach ($vars as $key => $val) {
+      $vars[$key]['preprocess'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function druppio_small_business_preprocess_page(&$vars) {
+  $druppio_small_business_custom_css_enable = theme_get_setting('druppio_small_business_custom_css_enable');
+  if ($druppio_small_business_custom_css_enable == 1) {
+    $vars['#attached']['library'][] = 'druppio_small_business/druppio-smallbusiness-custom';
+  }
+
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $config = \Drupal::config($theme . '.settings');
+  $sections = array('first', 'second', 'third', 'fourth', 'fifth');
+
+  foreach ($sections as $section) {
+    $bg = $config->get('bg_upload_' . $section);
+    if (!empty($bg)) {
+      $bg_image = File::load($bg[0]);
+      $vars['page']['bg_images']['section_' . $section] = file_create_url($bg_image->getFileUri());
+    }
+  }
+  $vars['page']['active_theme_name'] = $theme;
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function druppio_small_business_preprocess_html(&$vars) {
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $config = \Drupal::config($theme . '.settings');
+  $library_cache_url = 'https://rawgit.com/dixonandmoe/rellax/master/rellax.js';
+  $library_cache_url_cycle = 'https://rawgit.com/malsup/cycle/master/jquery.cycle.all.js';
+
+  if ($config->get('druppio_smallbusiness_cache') && $url = _druppio_small_business_cache($library_cache_url)) {
+    if (in_array('druppio_small_business/rellax', $vars['page']['#attached']['library'])) {
+      $index = array_search('druppio_small_business/rellax', $vars['page']['#attached']['library']);
+      unset($vars['page']['#attached']['library'][$index]);
+    }
+
+    $vars['cached_js'][] = array(
+      '#type' => 'html_tag',
+      '#tag' => 'script',
+      '#attributes' => array(
+        'src' => $url,
+      ),
+    );
+  }
+
+  if ($config->get('druppio_smallbusiness_cache') && $url = _druppio_small_business_cache($library_cache_url_cycle)) {
+    if (in_array('druppio_small_business/cycle', $vars['page']['#attached']['library'])) {
+      $index = array_search('druppio_small_business/cycle', $vars['page']['#attached']['library']);
+      unset($vars['page']['#attached']['library'][$index]);
+    }
+
+    $vars['cached_js'][] = array(
+      '#type' => 'html_tag',
+      '#tag' => 'script',
+      '#attributes' => array(
+        'src' => $url,
+      ),
+    );
+  }
+}
+
+/**
+ * Download/Synchronize/Cache JS file locally.
+ *
+ * @param string $location
+ *   The full URL to the external javascript file.
+ * @param bool $synchronize
+ *   Synchronize to local cache if remote file has changed.
+ *
+ * @return mixed
+ *   The path to the local javascript file on success, boolean FALSE on failure.
+ */
+function _druppio_small_business_cache($location, $synchronize = FALSE) {
+  $path = 'public://druppio_small_business';
+  $file_destination = $path . '/' . basename($location);
+
+  if (!file_exists($file_destination) || $synchronize) {
+    // Download the latest JS file.
+    try {
+      $data = \Drupal::httpClient()
+        ->get($location)
+        ->getBody(TRUE);
+
+      if (file_exists($file_destination)) {
+        // Synchronize JS file replace local file if outdated.
+        $data_hash_local = Crypt::hashBase64(file_get_contents($file_destination));
+        $data_hash_remote = Crypt::hashBase64($data);
+        // Check that the files directory is writable.
+        if ($data_hash_local != $data_hash_remote && file_prepare_directory($path)) {
+          // Save updated JS file to disk.
+          file_unmanaged_save_data($data, $file_destination, FILE_EXISTS_REPLACE);
+          \Drupal::logger('druppio_small_business')->info('Locally cached JS file has been updated.');
+
+          // Change query-strings on css/js files to enforce reload for all
+          // users.
+          _drupal_flush_css_js();
+        }
+      }
+      else {
+        // Check that the files directory is writable.
+        if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+          // There is no need to flush JS here as core refreshes JS caches
+          // automatically, if new files are added.
+          file_unmanaged_save_data($data, $file_destination, FILE_EXISTS_REPLACE);
+          \Drupal::logger('druppio_small_business')->info('Locally cached JS file has been saved.');
+
+          // Return the local JS file path.
+          return file_url_transform_relative(file_create_url($file_destination));
+        }
+      }
+    }
+    catch (RequestException $exception) {
+      watchdog_exception('druppio_small_business', $exception);
+    }
+  }
+  else {
+    // Return the local JS file path.
+    return file_url_transform_relative(file_create_url($file_destination));
+  }
+}
+
+/**
+ * Delete cached files and directory.
+ */
+function druppio_small_business_clear_js_cache() {
+  $path = 'public://druppio_small_business';
+  if (file_prepare_directory($path)) {
+    file_scan_directory($path, '/.*/', ['callback' => 'file_unmanaged_delete']);
+    drupal_rmdir($path);
+
+    // Change query-strings on css/js files to enforce reload for all users.
+    _drupal_flush_css_js();
+
+    \Drupal::logger('druppio_small_business')->info('Local cache has been purged.');
+  }
+}
