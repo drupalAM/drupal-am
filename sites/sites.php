@@ -59,4 +59,6 @@ $sites = array(
   'drupal-am.drupal8.local' => 'default',
   'demo-personal.local.drupal.am' => 'demo_personal',
   'demo-personal.drupal-am.drupal8.local' => 'demo_personal',
+  'demo-personal.dev.drupal.am' => 'demo_personal',
+  'demo-personal.drupal.am' => 'demo_personal',
 );
