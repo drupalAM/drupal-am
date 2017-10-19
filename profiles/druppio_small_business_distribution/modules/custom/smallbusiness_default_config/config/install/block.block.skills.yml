@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0b0ebeb9-8cb2-4377-8b76-212f59cff8f3'
+  module:
+    - block_content
+    - system
+  theme:
+    - druppio_small_business
+id: skills
+theme: druppio_small_business
+region: section_third
+weight: 0
+provider: null
+plugin: 'block_content:0b0ebeb9-8cb2-4377-8b76-212f59cff8f3'
+settings:
+  id: 'block_content:0b0ebeb9-8cb2-4377-8b76-212f59cff8f3'
+  label: Skills
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

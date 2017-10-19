@@ -1,0 +1,115 @@
+//work
+.view-works {
+  @include clearfix;
+  .views-row {
+    @include gallery(4 of 8);
+    margin-bottom: 15px;
+    @include breakpoint($narrow) {
+      @include gallery(2 of 6);
+      margin-bottom: 40px;
+    }
+    position: relative;
+    .views-field-field-lead-image {
+      img {
+        display: block;
+      }
+    }
+    .views-field-view-node {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity 0.25s;
+      background-color: rgba($color-primary, 0.8);
+      text-align: center;
+      a {
+        display: block;
+        height: 100%;
+        color: white;
+        padding: 70px 10px;
+        font-size: 17px;
+        &:after{
+          background-image: url(../images/eye.svg);
+          background-position: center bottom;
+          background-repeat: no-repeat;
+          background-size: contain;
+          margin-left: 5px;
+          margin-bottom: -3px;
+          width: 20px;
+          height: 20px;
+          content: " ";
+          display: inline-block;
+
+        }
+        @include breakpoint($wide) {
+          padding: 100px 10px;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    &:hover {
+      .views-field-view-node {
+        opacity: 1;
+      }
+    }
+  }
+  .view-footer {
+    clear: both;
+    float: left;
+  }
+}
+
+//clients
+.view-clients {
+  @include clearfix;
+  .views-row {
+    margin-bottom: 40px;
+    @include clearfix;
+    .views-field-field-client-image {
+      @include breakpoint($narrow) {
+        float: left;
+        margin-right: 30px;
+      }
+      @include breakpoint($normal){
+        @include span(9);
+      }
+    }
+    .views-field-body {
+      margin-top: 5px;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 5px;
+      line-height: 1.5;
+      font-size: 18px;
+      @include breakpoint($narrow) {
+        height: 140px;
+        margin-bottom: 25px;
+        margin-top: 30px;
+      }
+      @include breakpoint($normal){
+        @include span(last 15);
+        height: auto;
+        margin-top: 0;
+      }
+      @include breakpoint($wide){
+        margin-top: 30px;
+      }
+    }
+    .views-field-title {
+      @include breakpoint($normal){
+        @include span(24);
+      }
+      @include breakpoint($wide){
+        width: auto;
+
+      }
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 300;
+    }
+  }
+}

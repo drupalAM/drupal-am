@@ -1,0 +1,19 @@
+//== fonts
+@import 'https://fonts.googleapis.com/css?family=Roboto:300i,400,400i,700,700i&subset=latin-ext';
+@import 'https://fonts.googleapis.com/css?family=Megrim';
+
+$roboto: 'Roboto', sans-serif;
+$megrim: 'Megrim', cursive;
+$body-font: $roboto;
+$header-font: $megrim;
+
+//== heading sizes
+
+$size-font: 16px;
+$size-h1: 140px;
+$size-h2: 20px;
+$size-h3: 18px;
+$size-h4: 16px;
+$size-h5: 14px;
+$size-h6: 12px;
+$size-breadcrumb: 13px;

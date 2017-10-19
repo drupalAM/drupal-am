@@ -1,0 +1,3 @@
+views.field.share_everywhere_field:
+  type: views_field
+  label: 'Share Everywhere field'

@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Default theme implementation for Messenger share button.
+ *
+ * Available variables:
+ *  - url: The url of the page to be shared.
+ *  - content: The button's image or other content to appear on the page. (default: image)
+ *
+ */
+#}
+<a href="fb-messenger://share/?link={{ url | url_encode }}">{{ content }}</a>

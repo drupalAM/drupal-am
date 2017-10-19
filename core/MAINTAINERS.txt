@@ -36,6 +36,8 @@ Provisional membership:
   (Framework Manager - Frontend)
 - Gábor Hojtsy 'Gábor Hojtsy' https://www.drupal.org/u/gábor-hojtsy
   (Product Manager)
+- Lee Rowlands 'larowlan' https://www.drupal.org/u/larowlan
+  (Framework Manager)
 - Roy Scholten 'yoroy' https://www.drupal.org/u/yoroy
   (Product Manager)
 
@@ -168,10 +170,8 @@ CSS
 - John Albin Wilkins 'JohnAlbin' https://www.drupal.org/u/johnalbin
 
 Database API
-- Larry Garfield 'Crell' https://www.drupal.org/u/crell
 
   MySQL DB driver
-  - Larry Garfield 'Crell' https://www.drupal.org/u/crell
   - David Strauss 'David Strauss' https://www.drupal.org/u/david-strauss
 
   PostgreSQL DB driver
@@ -272,6 +272,17 @@ Mail
 Markup
 - ?
 
+Menu
+- Daniel Wehner 'dawehner' https://www.drupal.org/u/dawehner
+- Peter Wolanin 'pwolanin' https://www.drupal.org/u/pwolanin
+
+Menu Link Content
+- Daniel Wehner 'dawehner' https://www.drupal.org/u/dawehner
+- Peter Wolanin 'pwolanin' https://www.drupal.org/u/pwolanin
+
+Menu UI
+- ?
+
 Migrate
 - Adam Globus-Hoenich 'phenaproxima' https://www.drupal.org/u/phenaproxima
 - Ben Dougherty 'benjy' https://www.drupal.org/u/benjy
@@ -284,17 +295,6 @@ Migrate (Drupal)
 - Lucas Hedding 'heddn' https://www.drupal.org/u/heddn
 - Mike Ryan 'mikeryan' https://www.drupal.org/u/mikeryan
 - Vicki Spagnolo 'quietone' https://www.drupal.org/u/quietone
-
-Menu
-- Daniel Wehner 'dawehner' https://www.drupal.org/u/dawehner
-- Peter Wolanin 'pwolanin' https://www.drupal.org/u/pwolanin
-
-Menu Link Content
-- Daniel Wehner 'dawehner' https://www.drupal.org/u/dawehner
-- Peter Wolanin 'pwolanin' https://www.drupal.org/u/pwolanin
-
-Menu UI
-- ?
 
 Node
 - Tim Millwood 'timmillwood' https://www.drupal.org/u/timmillwood
@@ -337,10 +337,9 @@ Render API
 - Moshe Weitzman 'moshe weitzman' https://www.drupal.org/u/moshe-weitzman
 
 Request Processing
-- Larry Garfield 'Crell' https://www.drupal.org/u/crell
+- ?
 
 REST
-- Larry Garfield 'Crell' https://www.drupal.org/u/crell
 - Wim Leers 'Wim Leers' https://www.drupal.org/u/wim-leers
 
 Responsive Image
@@ -349,7 +348,6 @@ Responsive Image
 - Jelle Sebreghts 'Jelle_S' https://www.drupal.org/u/jelle_s
 
 Routing
-- Larry Garfield 'Crell' https://www.drupal.org/u/crell
 - Tim Plunkett 'tim.plunkett' https://www.drupal.org/u/tim.plunkett
 
 Search
@@ -431,6 +429,9 @@ Views
 - Damian Lee 'damiankloip' https://www.drupal.org/u/damiankloip
 - Jess Myrbo 'xjm' https://www.drupal.org/u/xjm
 - Len Swaneveld 'Lendude' https://www.drupal.org/u/lendude
+
+Workflows
+- Sam Becker 'Sam152' https://www.drupal.org/u/sam152
 
 Topic maintainers
 -----------------

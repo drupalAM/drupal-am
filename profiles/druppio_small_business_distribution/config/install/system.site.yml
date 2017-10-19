@@ -1,0 +1,14 @@
+name: StudioPresent
+mail: info@studiopresent.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/1
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+mail_notification: ''
+_core:
+  default_config_hash: 4niQC8G2Qo9dfPn30ccXrg4KeBvYBYqPnNPDFZDUFKA

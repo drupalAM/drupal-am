@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: g3XYqcXbSKPVBDODwnT6pq7oqhCFkPryj4vVqrl_Kfc
+label: 'http://default/'
+chunks: 1
+links: 6
+max_filesize: 962
+context:
+  language: en
+updated: 1488984218

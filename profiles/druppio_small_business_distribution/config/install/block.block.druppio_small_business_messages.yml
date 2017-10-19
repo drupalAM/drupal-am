@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - druppio_small_business
+_core:
+  default_config_hash: 7IK7Qcbf5JvEvJUx2LtopXtclSrOBqLV2XC1A-kE4NM
+id: druppio_small_business_messages
+theme: druppio_small_business
+region: helper
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

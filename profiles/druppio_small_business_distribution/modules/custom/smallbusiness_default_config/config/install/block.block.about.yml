@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a908eaaf-fc31-49a8-aba4-7d67d8553862'
+  module:
+    - block_content
+    - system
+  theme:
+    - druppio_small_business
+id: about
+theme: druppio_small_business
+region: section_first
+weight: 0
+provider: null
+plugin: 'block_content:a908eaaf-fc31-49a8-aba4-7d67d8553862'
+settings:
+  id: 'block_content:a908eaaf-fc31-49a8-aba4-7d67d8553862'
+  label: About
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

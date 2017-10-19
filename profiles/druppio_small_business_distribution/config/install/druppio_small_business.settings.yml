@@ -1,0 +1,34 @@
+variables:
+  fonts:
+    defaultHeaderFont: georgia
+    defaultBodyFont: helvetica
+features:
+  node_user_picture: false
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+logo:
+  use_default: true
+  path: 'public://logo.png'
+favicon:
+  use_default: true
+  path: ''
+layouts: {  }
+breakpoint_group_primary: druppio_small_business.default
+druppio_small_business_block_demo_mode: 0
+twig_cache_status: 0
+_core:
+  default_config_hash: Sga8yY6dp9PseHqb5ZB2YrhEZULEMa9E4qPPoMTP3Eo
+bg_upload_first:
+  - '57'
+bg_upload_second:
+  - '70'
+bg_upload_third:
+  - '71'
+bg_upload_fourth:
+  - '63'
+bg_upload_fifth:
+  - '65'
+druppio_small_business_custom_css: ''
+druppio_small_business_custom_css_enable: 0
+druppio_smallbusiness_cache: 1

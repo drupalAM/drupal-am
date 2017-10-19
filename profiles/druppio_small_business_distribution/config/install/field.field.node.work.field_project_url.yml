@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_url
+    - node.type.work
+id: node.work.field_project_url
+field_name: field_project_url
+entity_type: node
+bundle: work
+label: 'Project URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

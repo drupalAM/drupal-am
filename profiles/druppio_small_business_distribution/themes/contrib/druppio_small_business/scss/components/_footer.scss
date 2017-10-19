@@ -1,0 +1,91 @@
+#footer {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  left: 0;
+  background-color: black;
+  border-top: 5px solid $color-primary;
+  .block-content {
+    color: darken(white, 20%);
+    a {
+      color: darken(white, 20%);
+    }
+  }
+  /*Social Icons*/
+  .region {
+    text-align: center;
+    padding: 10px;
+    @include breakpoint($normal) {
+      text-align: left;
+    }
+    @include breakpoint($wide) {
+      padding-right: 40px;
+      padding-top: 35px;
+      padding-bottom: 35px;
+      &.region-footer-first {
+        padding: 40px 0;
+      }
+    }
+    p {
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+    ul {
+      padding-left: 0;
+      margin: 0;
+      @include clearfix;
+      text-align: center;
+      li {
+        list-style: none;
+        display: inline-block;
+        margin-right: 5px;
+        &:last-child {
+          margin-right: 0;
+        }
+        @include breakpoint($normal) {
+          float: right;
+          &:last-child {
+            margin-right: 5px;
+          }
+        }
+        a {
+          width: 30px;
+          height: 30px;
+          content: " ";
+          display: block;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          text-indent: -9999px;
+          &[href*="facebook"] {
+            background-image: url(../images/social/facebook.svg);
+          }
+          &[href*="plus.google"] {
+            background-image: url(../images/social/google-plus.svg);
+          }
+          &[href*="linkedin"] {
+            background-image: url(../images/social/linkedin.svg);
+          }
+          &[href*="messenger"] {
+            background-image: url(../images/social/messenger.svg);
+          }
+          &[href*="pinterest"] {
+            background-image: url(../images/social/pinterest.svg);
+          }
+          &[href*="twitter"] {
+            background-image: url(../images/social/twitter.svg);
+          }
+          &[href*="viber"] {
+            background-image: url(../images/social/viber.svg);
+          }
+          &[href*="whatsapp"] {
+            background-image: url(../images/social/whatsapp.svg);
+          }
+          &[href*="instagram"] {
+            background-image: url(../images/social/instagram.svg);
+          }
+        }
+      }
+    }
+  }
+}

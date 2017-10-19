@@ -1,0 +1,12 @@
+{
+	"name": "sass-imports",
+	"description": "Required sass imports for building Drupal themes.",
+	"dependencies": {
+		"susy": "~2.2.10",
+		"compass-breakpoint": "~2.6.1",
+		"normalize-libsass": "~1.0.3"
+	},
+	"ignore": [
+		"node_modules"
+	]
+}

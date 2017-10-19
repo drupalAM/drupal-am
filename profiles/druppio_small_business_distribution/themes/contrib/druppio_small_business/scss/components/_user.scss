@@ -1,0 +1,11 @@
+.path-user{
+	#content{
+		.container{
+			padding-left: 20px;
+			padding-right: 20px;
+			@include breakpoint($normal){
+				padding-left: 0;
+			}
+		}
+	}
+}

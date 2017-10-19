@@ -1,0 +1,48 @@
+table {
+  border: 1px solid $color-table-border;
+  tr {
+    th {
+      background-color: $color-table-header-bg;
+      font-weight: bold;
+      color: $color-table-header-text;
+    }
+    td {
+      background-color: $color-table-bg;
+      color: $color-table-text;
+    }
+    td,
+    th {
+      padding: 10px 15px;
+      text-align: left;
+    }
+    &:nth-child(even) {
+      td {
+        background-color: $color-table-even-bg;
+      }
+    }
+  }
+}
+
+//== table without style
+table.no-style {
+  border: none;
+  tr {
+    th {
+      background-color: transparent;
+      font-weight: normal;
+    }
+    td {
+      background-color: transparent;
+    }
+    td,
+    th {
+      padding: 0;
+      text-align: inherit;
+    }
+    &:nth-child(even) {
+      td {
+        background-color: transparent;
+      }
+    }
+  }
+}

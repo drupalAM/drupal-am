@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b3654699-dec3-479b-b6ad-b1fbd14d9ae9'
+  module:
+    - block_content
+    - system
+  theme:
+    - druppio_small_business
+id: contact
+theme: druppio_small_business
+region: section_fifth
+weight: -9
+provider: null
+plugin: 'block_content:b3654699-dec3-479b-b6ad-b1fbd14d9ae9'
+settings:
+  id: 'block_content:b3654699-dec3-479b-b6ad-b1fbd14d9ae9'
+  label: Contact
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

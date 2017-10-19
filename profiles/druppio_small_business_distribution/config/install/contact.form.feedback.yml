@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_storage
+third_party_settings:
+  contact_storage:
+    submit_text: ''
+    show_preview: false
+    disabled_form_message: 'This contact form has been disabled.'
+    maximum_submissions_user: 0
+_core:
+  default_config_hash: CWCM-r4DsbmN695Ui-6lXmQ96cXvl3NL1siN1Y5aQm8
+id: feedback
+label: 'Website feedback'
+recipients:
+  - admin@example.com
+reply: ''
+weight: 0
+message: 'Send it to me'
+redirect: ''

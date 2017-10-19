@@ -1,0 +1,118 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.work.body
+    - field.field.node.work.field_client
+    - field.field.node.work.field_gallery
+    - field.field.node.work.field_lead_image
+    - field.field.node.work.field_project_url
+    - field.field.node.work.field_sub_title
+    - field.field.node.work.field_tags
+    - image.style.work_lead_image
+    - node.type.work
+  module:
+    - image
+    - lightgallery
+    - text
+    - user
+id: node.work.default
+targetEntityType: node
+bundle: work
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_client:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_gallery:
+    weight: 3
+    label: hidden
+    settings:
+      lightgallery_core:
+        thumb_image_style: work_gallery_image
+        lightgallery_image_style: ''
+        title_source: ''
+        mode: lg-slide
+        preload: '1'
+        closable: '1'
+        loop: '1'
+        esc_key: '1'
+        key_press: '1'
+        controls: '1'
+        mouse_wheel: '1'
+        download: '1'
+        counter: '1'
+        drag: '1'
+        touch: '1'
+      lightgallery_thumbs:
+        thumbnails: '1'
+        current_pager_position: left
+        thumb_width: '100'
+        thumb_cont_height: '80'
+        animate_thumb: 0
+      lightgallery_autoplay:
+        autoplay: '1'
+        pause: '5000'
+        progress_bar: '1'
+        autoplay_controls: '1'
+      lightgallery_full_screen:
+        full_screen: '1'
+      lightgallery_pager:
+        pager: '1'
+      lightgallery_zoom:
+        zoom: '1'
+        scale: '1'
+      lightgallery_hash:
+        hash: '1'
+        gallery_id: '1'
+    third_party_settings: {  }
+    type: lightgallery
+  field_lead_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: work_lead_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_project_url:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_sub_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_tags:
+    weight: 6
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  share_everywhere:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

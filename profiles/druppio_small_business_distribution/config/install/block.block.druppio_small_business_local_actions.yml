@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - druppio_small_business
+_core:
+  default_config_hash: ZIQc7iEF4Gc0B01XDzp3yqm45G5_a8UWZImL4TMbnuw
+id: druppio_small_business_local_actions
+theme: druppio_small_business
+region: helper
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

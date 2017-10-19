@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the profilename install profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function druppio_small_business_distribution_install() {
+  // First, do everything in standard profile.
+  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+  standard_install();
+  
+  $tmp_path = 'public://tmp';
+  file_prepare_directory($tmp_path, FILE_CREATE_DIRECTORY);
+  \Drupal::service('module_installer')->install(['smallbusiness_default_config']);
+
+  $backgrounds_images = array(57, 70, 71, 63, 65);
+  foreach ($backgrounds_images as $backgrounds_image) {
+    $file = \Drupal\file\Entity\File::load($backgrounds_image);
+    $file_usage = \Drupal::service('file.usage');
+    $file_usage->add($file, 'druppio_small_business_distribution', 'user', 1);
+  }
+}

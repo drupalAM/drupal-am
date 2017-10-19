@@ -1,0 +1,109 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/3?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "3"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "0b0ebeb9-8cb2-4377-8b76-212f59cff8f3"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "3"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Skills",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1488979620",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1487078774"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "523bb05f-db82-48e5-ba23-126386becb86"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost<\/p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost<\/p>\r\n\r\n<p><strong>Photoshop 95%<\/strong><\/p>\r\n\r\n<p><img src=\"https:\/\/gyazo.com\/cff23659d1a15fda79235ca039d9f606.png\" \/><\/p>\r\n\r\n<p><strong>Illustrator 85%<\/strong><\/p>\r\n\r\n<p><img src=\"https:\/\/gyazo.com\/cff23659d1a15fda79235ca039d9f606.png\" \/><\/p>\r\n\r\n<p><strong>Photoshop 95%<\/strong><\/p>\r\n\r\n<p><img src=\"https:\/\/gyazo.com\/cff23659d1a15fda79235ca039d9f606.png\" \/><\/p>\r\n\r\n<p><strong>Illustrator 85%<\/strong><\/p>\r\n\r\n<p><img src=\"https:\/\/gyazo.com\/cff23659d1a15fda79235ca039d9f606.png\" \/><\/p>\r\n\r\n<p><strong>Photoshop 95%<\/strong><\/p>\r\n\r\n<p><img src=\"https:\/\/gyazo.com\/cff23659d1a15fda79235ca039d9f606.png\" \/><\/p>\r\n\r\n<h3>User friendly design<\/h3>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost<\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "internal:\/skills",
+            "title": "Skills",
+            "options": []
+        }
+    ],
+    "field_subtitle": [
+        {
+            "value": "Design are product of my skills"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+.article {
+  .author {
+    margin: 5px 0 10px;
+    color: darken(white, 50%);
+    font-style: italic;
+    .field--name-uid {
+      font-style: normal;
+    }
+  }
+}

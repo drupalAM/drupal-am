@@ -1,0 +1,7 @@
+allow_insecure_uploads: false
+default_scheme: public
+path:
+  temporary: sites/default/files/tmp
+temporary_maximum_age: 21600
+_core:
+  default_config_hash: Cj6PCAVDzwl8SN5KagcG4HqFRVA7O9rKf_YD-0zgwnc

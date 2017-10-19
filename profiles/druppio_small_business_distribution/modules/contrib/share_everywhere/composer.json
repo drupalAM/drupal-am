@@ -1,0 +1,17 @@
+{
+    "name": "drupal/share_everywhere",
+    "description": "Drupal 8 share module",
+    "type": "drupal-module",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Malatenszki David",
+            "email": "malatenszki.david@gmail.com"
+        },
+        {
+            "name": "Rozsa Arpad",
+            "email": "rozsaarpad44@gmail.com"
+        }
+    ],
+    "require": {}
+}

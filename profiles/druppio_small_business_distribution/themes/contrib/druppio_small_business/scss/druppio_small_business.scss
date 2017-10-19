@@ -1,0 +1,22 @@
+@import "../libraries/normalize-libsass/normalize";
+@import "../libraries/compass-breakpoint/stylesheets/breakpoint";
+@import "../libraries/susy/sass/susy";
+@import "variables/**/*";
+@import "admin-tools/**/*";
+@import "elements/**/*";
+@import "components/**/*";
+
+body {
+  background-color: $color-bg;
+	&:not(.path-frontpage){
+		#content{
+			min-height: calc(100vh - 129px);
+		}
+	}
+	&.path-user{
+		#content{
+			min-height: calc(100vh - 166px);
+		}
+	}
+}
+

@@ -1,0 +1,15 @@
+@include breakpoint($normal) {
+  body.toolbar-fixed .toolbar-oriented,
+  .toolbar-oriented .toolbar-bar,
+  .toolbar-oriented .toolbar-tray {
+    padding-left: $big-menu-width;
+    transition: padding-left 0.25s;
+  }
+  .fixed {
+    &body.toolbar-fixed .toolbar-oriented,
+    .toolbar-oriented .toolbar-bar,
+    .toolbar-oriented .toolbar-tray {
+      padding-left: $small-menu-width;
+    }
+  }
+}

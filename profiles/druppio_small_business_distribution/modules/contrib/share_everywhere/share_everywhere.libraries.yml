@@ -1,0 +1,11 @@
+share_everywhere.css:
+  version: 1.x
+  css:
+    theme:
+      css/share_everywhere.css: {}
+share_everywhere.js:
+  version: 1.x
+  js:
+    js/share_everywhere.js: {}
+  dependencies:
+    - core/jquery

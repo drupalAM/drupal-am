@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_lead_image
+    - image.style.work_lead_image
+    - node.type.page
+  module:
+    - image
+    - text
+    - user
+_core:
+  default_config_hash: 2lRiO3UJOvQcRk-mBvVGS4jMXpapuj1SRya_qAsOUZo
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_lead_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: work_lead_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  langcode: true
+  links: true
+  share_everywhere: true

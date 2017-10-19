@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:487040ce-436f-4b95-aef2-ef9a0303096e'
+  module:
+    - block_content
+    - system
+  theme:
+    - druppio_small_business
+id: clients
+theme: druppio_small_business
+region: section_fourth
+weight: -9
+provider: null
+plugin: 'block_content:487040ce-436f-4b95-aef2-ef9a0303096e'
+settings:
+  id: 'block_content:487040ce-436f-4b95-aef2-ef9a0303096e'
+  label: Clients
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

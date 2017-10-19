@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: client_image
+label: 'Client Image'
+effects:
+  214eaca6-5037-4c48-a907-cd1c39e49eb0:
+    uuid: 214eaca6-5037-4c48-a907-cd1c39e49eb0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 245
+      height: 245

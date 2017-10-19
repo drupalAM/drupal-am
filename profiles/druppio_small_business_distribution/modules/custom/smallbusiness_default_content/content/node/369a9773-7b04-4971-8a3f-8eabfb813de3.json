@@ -1,0 +1,261 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/11?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/work"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/field_gallery": [
+            {
+                "href": "http:\/\/default\/file\/97?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/file\/98?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/file\/99?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/field_lead_image": [
+            {
+                "href": "http:\/\/default\/file\/96?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": "11"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "369a9773-7b04-4971-8a3f-8eabfb813de3"
+        }
+    ],
+    "vid": [
+        {
+            "value": "32"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "work"
+        }
+    ],
+    "title": [
+        {
+            "value": "Lorem ipsum",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "523bb05f-db82-48e5-ba23-126386becb86"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "523bb05f-db82-48e5-ba23-126386becb86"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/field_gallery": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/97?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "40114079-4230-45f2-bbf3-6ba3b2e92e97"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1333"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/98?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "be0148e3-4745-4db3-8f5c-df67c4a200b1"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1333"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/99?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a7869f8c-4c69-455e-b319-3f219872074d"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1333"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/work\/field_lead_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/file\/96?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d94a4310-ea4f-484c-b993-4ed0df44bf0b"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "2000",
+                "height": "1333"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "1488290399",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1489048132",
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": "0",
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "1489048132"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>\r\n\r\n<p>Lorem ipsum dolor sit amet, usu ut admodum eligendi, vix hinc copiosae vituperatoribus cu. Ad cum volumus legendos posidonium. An eos sumo perfecto consectetuer, his ad tation virtute, mel no senserit euripidis evertitur. Eos an meliore scripserit. Viderer fastidii ad pro, sea cu vocibus verterem sadipscing. Ad autem diceret sanctus mel, te qui meis clita.<\/p>\r\n",
+            "format": "basic_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "field_client": [
+        {
+            "value": "Dru Pal"
+        }
+    ],
+    "field_project_url": [
+        {
+            "value": "http:\/\/www.druppio.com\/"
+        }
+    ],
+    "field_sub_title": [
+        {
+            "value": "Tamquam fierent"
+        }
+    ],
+    "field_tags": [
+        {
+            "value": "project, work"
+        }
+    ]
+}

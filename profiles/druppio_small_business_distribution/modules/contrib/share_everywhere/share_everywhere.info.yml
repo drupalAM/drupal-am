@@ -1,0 +1,12 @@
+name: Share Everywhere
+type: module
+description: 'Custom social module for Drupal.'
+package: Custom
+# core: 8.x
+configure: share_everywhere.config_form
+
+# Information added by Drupal.org packaging script on 2017-05-18
+version: '8.x-1.1'
+core: '8.x'
+project: 'share_everywhere'
+datestamp: 1495099989

@@ -1,0 +1,435 @@
+@-webkit-keyframes se-animation-left-inactive {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    left: -400px;
+  }
+  100% {
+    opacity: 0;
+    left: -400px;
+  }
+}
+
+@-moz-keyframes se-animation-left-inactive {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    left: -400px;
+  }
+  100% {
+    opacity: 0;
+    left: -400px;
+  }
+}
+
+@-o-keyframes se-animation-left-inactive {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    left: -400px;
+  }
+  100% {
+    opacity: 0;
+    left: -400px;
+  }
+}
+
+@keyframes se-animation-left-inactive {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    left: -400px;
+  }
+  100% {
+    opacity: 0;
+    left: -400px;
+  }
+}
+
+@-webkit-keyframes se-animation-left-active {
+  0% {
+    left: -400px;
+    opacity: 0;
+  }
+  50% {
+    left: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@-moz-keyframes se-animation-left-active {
+  0% {
+    left: -400px;
+    opacity: 0;
+  }
+  50% {
+    left: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@-o-keyframes se-animation-left-active {
+  0% {
+    left: -400px;
+    opacity: 0;
+  }
+  50% {
+    left: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes se-animation-left-active {
+  0% {
+    left: -400px;
+    opacity: 0;
+  }
+  50% {
+    left: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@-webkit-keyframes se-animation-right-inactive {
+  0% {
+    right: 0;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    right: -400px;
+  }
+  100% {
+    opacity: 0;
+    right: -400px;
+  }
+}
+
+@-moz-keyframes se-animation-right-inactive {
+  0% {
+    right: 0;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    right: -400px;
+  }
+  100% {
+    opacity: 0;
+    right: -400px;
+  }
+}
+
+@-o-keyframes se-animation-right-inactive {
+  0% {
+    right: 0;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    right: -400px;
+  }
+  100% {
+    opacity: 0;
+    right: -400px;
+  }
+}
+
+@keyframes se-animation-right-inactive {
+  0% {
+    right: 0;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    right: -400px;
+  }
+  100% {
+    opacity: 0;
+    right: -400px;
+  }
+}
+
+@-webkit-keyframes se-animation-right-active {
+  0% {
+    right: -400px;
+    opacity: 0;
+  }
+  50% {
+    right: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes se-animation-right-active {
+  0% {
+    right: -400px;
+    opacity: 0;
+  }
+  50% {
+    right: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@-o-keyframes se-animation-right-active {
+  0% {
+    right: -400px;
+    opacity: 0;
+  }
+  50% {
+    right: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes se-animation-right-active {
+  0% {
+    right: -400px;
+    opacity: 0;
+  }
+  50% {
+    right: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+.se-block .block-title {
+  margin: 5px 0;
+}
+
+.se-block .block-content .se-like-container {
+  height: 20px;
+  width: 85px;
+}
+
+.se-block .block-content .se-container {
+  width: 100%;
+}
+
+.se-block .block-content .se-container .se-trigger {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.se-block .block-content .se-container .se-trigger img {
+  max-height: 20px;
+}
+
+.se-block .block-content .se-container .se-trigger.se-disabled {
+  cursor: auto;
+}
+
+.se-block .block-content .se-container .se-links-container {
+  display: inline-block;
+  width: -webkit-calc(100% - 35px);
+  width: -moz-calc(100% - 35px);
+  width: calc(100% - 35px);
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  height: 20px;
+}
+
+.se-block .block-content .se-container .se-links-container .se-links {
+  height: 20px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-animation-duration: 0.75s;
+     -moz-animation-duration: 0.75s;
+       -o-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-iteration-count: 1;
+     -moz-animation-iteration-count: 1;
+       -o-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+     -moz-animation-timing-function: linear;
+       -o-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-direction: alternate;
+     -moz-animation-direction: alternate;
+       -o-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: forwards;
+     -moz-animation-fill-mode: forwards;
+       -o-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.se-block .block-content .se-container .se-links-container .se-links .se-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.se-block .block-content .se-container .se-links-container .se-links .se-link img {
+  max-height: 20px;
+}
+
+.se-block.se-has-like .se-container {
+  width: -webkit-calc(100% - 85px);
+  width: -moz-calc(100% - 85px);
+  width: calc(100% - 85px);
+}
+
+.se-block.se-align-left .block-title {
+  text-align: left;
+}
+
+.se-block.se-align-left .block-content .se-like-container {
+  text-align: left;
+  float: left;
+}
+
+.se-block.se-align-left .block-content .se-container {
+  float: right;
+}
+
+.se-block.se-align-left .block-content .se-container .se-trigger {
+  float: left;
+}
+
+.se-block.se-align-left .block-content .se-container .se-links-container {
+  float: left;
+  margin-left: 12px;
+}
+
+.se-block.se-align-left .block-content .se-container .se-links-container .se-links {
+  text-align: left;
+}
+
+.se-block.se-align-left .block-content .se-container .se-links-container .se-links.se-active {
+  -webkit-animation-name: se-animation-left-active;
+     -moz-animation-name: se-animation-left-active;
+       -o-animation-name: se-animation-left-active;
+          animation-name: se-animation-left-active;
+}
+
+.se-block.se-align-left .block-content .se-container .se-links-container .se-links.se-inactive {
+  -webkit-animation-name: se-animation-left-inactive;
+     -moz-animation-name: se-animation-left-inactive;
+       -o-animation-name: se-animation-left-inactive;
+          animation-name: se-animation-left-inactive;
+}
+
+.se-block.se-align-right .block-title {
+  text-align: right;
+}
+
+.se-block.se-align-right .block-content .se-like-container {
+  text-align: right;
+  float: right;
+}
+
+.se-block.se-align-right .block-content .se-container {
+  float: left;
+}
+
+.se-block.se-align-right .block-content .se-container .se-trigger {
+  float: right;
+}
+
+.se-block.se-align-right .block-content .se-container .se-links-container {
+  float: right;
+  margin-right: 12px;
+}
+
+.se-block.se-align-right .block-content .se-container .se-links-container .se-links {
+  text-align: right;
+}
+
+.se-block.se-align-right .block-content .se-container .se-links-container .se-links.se-active {
+  -webkit-animation-name: se-animation-right-active;
+     -moz-animation-name: se-animation-right-active;
+       -o-animation-name: se-animation-right-active;
+          animation-name: se-animation-right-active;
+}
+
+.se-block.se-align-right .block-content .se-container .se-links-container .se-links.se-inactive {
+  -webkit-animation-name: se-animation-right-inactive;
+     -moz-animation-name: se-animation-right-inactive;
+       -o-animation-name: se-animation-right-inactive;
+          animation-name: se-animation-right-inactive;
+}

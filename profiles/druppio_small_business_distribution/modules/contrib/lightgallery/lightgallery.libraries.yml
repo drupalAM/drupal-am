@@ -1,0 +1,30 @@
+lightgallery:
+  title: 'lightGallery'
+  remote: 'https://github.com/sachinchoolur/lightGallery/tree/1.2.21'
+  license:
+    name: 'Apache License'
+    url: 'https://github.com/sachinchoolur/lightGallery/blob/1.2.21/LICENSE.md'
+    gpl-compatible: false
+  js:
+    /libraries/lightgallery/dist/js/lightgallery.min.js: {}
+    /libraries/lightgallery/dist/js/lg-autoplay.min.js: {}
+    /libraries/lightgallery/dist/js/lg-fullscreen.min.js: {}
+    /libraries/lightgallery/dist/js/lg-thumbnail.min.js: {}
+    /libraries/lightgallery/dist/js/lg-video.min.js: {}
+    /libraries/lightgallery/dist/js/lg-zoom.min.js: {}
+    /libraries/lightgallery/dist/js/lg-hash.min.js: {}
+  css:
+    theme:
+      /libraries/lightgallery/dist/css/lightgallery.min.css: {}
+      /libraries/lightgallery/dist/css/lg-transitions.min.css: {}
+  dependencies:
+    - core/jquery
+lightgallery.load:
+  title: 'Lightgallery Load'
+  js:
+    js/lightgallery_load.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - lightgallery/lightgallery

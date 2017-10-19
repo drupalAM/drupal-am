@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - druppio_small_business
+_core:
+  default_config_hash: UBUYsP44Bg3kuQNugcEl70ZbOO2lFX629_qF6bKkMC8
+id: druppio_small_business_main_menu
+theme: druppio_small_business
+region: navigation
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

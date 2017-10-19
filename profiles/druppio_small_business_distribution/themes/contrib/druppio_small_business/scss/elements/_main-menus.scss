@@ -1,0 +1,241 @@
+.menu,
+.navigation {
+  @include clearfix;
+}
+
+.site-logo img {
+  max-width: 100px;
+  padding: 10px 60px;
+  transition: all 0.25s;
+  @include breakpoint($normal) {
+    max-width: 100%;
+    padding: 30px 50px 20px;
+    box-sizing: border-box;
+  }
+}
+
+@include breakpoint($normal) {
+  .fixed {
+    .site-logo img {
+      padding: 20px;
+    }
+  }
+}
+
+#navigation {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: auto;
+  left: -250px;
+  width: $big-menu-width;
+  transition: all 0.25s;
+  -webkit-overflow-scrolling: touch;
+  z-index: 999;
+  background-color: $color-mobile-menu-bg;
+  box-sizing: border-box;
+  ul.menu {
+    padding: 0;
+    margin: 0;
+    li {
+      margin: 0;
+      display: block;
+      list-style: none;
+      padding-top: 0;
+      margin: 0;
+
+      a {
+        color: $color-mobile-menu-text;
+        display: block;
+        text-align: left;
+        padding: 20px 20px 20px 80px;
+        font-size: 16px;
+        font-weight: normal;
+        transition: all 0.15s;
+        text-indent: 0;
+        border-bottom: 1px solid rgba(white, 0.7);
+        @include breakpoint($normal) {
+          padding: 30px 20px 30px 80px;
+
+        }
+        &.is-active-menu {
+          color: $color-mobile-menu-text-active;
+          background-color: $color-mobile-menu-text-active-bg;
+          position: relative;
+          transition: all 0.15s;
+          border-bottom-color: transparent;
+          &:after {
+            position: absolute;
+            right: -18px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 62px solid $color-silver;
+            transition: all 0.25s;
+            display: block;
+            content: "";
+            @include breakpoint($normal) {
+              border-top: 85px solid $color-secondary;
+            }
+          }
+          &:hover {
+            background-color: $color-form-submit-bg-hover;
+
+            &:after {
+              border-left-width: 30px;
+            }
+            @include breakpoint($normal) {
+              &:before {
+                top: 30px;
+                width: 20px;
+                height: 20px;
+                left: 30px;
+              }
+            }
+          }
+        }
+        &[class*="menu-"] {
+          position: relative;
+          &:before {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            width: 20px;
+            height: 20px;
+            content: "";
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: inline-block;
+            transition: all 0.15s;
+            @include breakpoint($normal) {
+              top: 30px;
+            }
+          }
+        }
+        &:hover {
+//          border-bottom-color: transparent;
+          text-decoration: none;
+          @include breakpoint($normal) {
+            &:before {
+              top: 28px;
+              left: 28px;
+              width: 25px;
+              height: 25px;
+            }
+          }
+        }
+      }
+      li {
+        padding-left: 25px;
+      }
+    }
+  }
+  &.is-visible {
+    left: 0;
+  }
+  @include breakpoint($normal) {
+    left: 0;
+    &.fixed {
+      width: $small-menu-width;
+      ul li a {
+        padding-left: 5px;
+        padding-right: 5px;
+        &:before {
+          top: 35px;
+          left: 35px;
+        }
+        &[class*="menu-"] {
+          padding: 30px 20px 30px 80px;
+          text-indent: -300px;
+          position: relative;
+          &:before {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            width: 20px;
+            height: 20px;
+            @include breakpoint($normal) {
+              top: 30px;
+            }
+          }
+        }
+        transition: all 0.25s;
+        &:hover {
+          width: $big-menu-width;
+          margin-right: calc(#{$big-menu-width} - #{$small-menu-width});
+          text-indent: 0;
+          background-color: $color-mobile-menu-bg;
+        }
+      }
+    }
+    &.animation {
+      ul li a {
+        text-indent: -300px;
+      }
+    }
+  }
+}
+
+.sliding-panel-fade-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 18;
+  background-color: black;
+  transition: all 0.22s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &.is-visible {
+    opacity: 0.4;
+    visibility: visible;
+    @include breakpoint($normal) {
+      visibility: hidden;
+    }
+  }
+}
+
+#block-mobilemenutrigger {
+  z-index: 20;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: $color-secondary;
+  p {
+    margin-bottom: 0;
+  }
+  a {
+    width: 45px;
+    height: 35px;
+    padding: 10px 6px;
+    display: block;
+    span,
+    span:before,
+    span:after {
+      content: " ";
+      width: 33px;
+      height: 3px;
+      background-color: white;
+      display: block;
+    }
+    span {
+      position: relative;
+      margin-top: 6px;
+      &:before {
+        position: absolute;
+        top: -9px;
+      }
+      &:after {
+        position: absolute;
+        top: 9px;
+      }
+    }
+  }
+  @include breakpoint($normal) {
+    display: none;
+  }
+}

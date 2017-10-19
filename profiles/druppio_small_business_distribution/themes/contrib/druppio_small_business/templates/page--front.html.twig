@@ -1,0 +1,159 @@
+{#
+/**
+ * @file
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+ * - hide_site_name: A flag indicating if the site name has been toggled off on
+ *   the theme settings page. If hidden, the "visually-hidden" class is added
+ *   to make the site name visually hidden, but still accessible.
+ * - hide_site_slogan: A flag indicating if the site slogan has been toggled off
+ *   on the theme settings page. If hidden, the "visually-hidden" class is
+ *   added to make the site slogan visually hidden, but still accessible.
+ *
+ * Navigation:
+ * - main_menu: The Main menu links for the site, if they have been configured.
+ * - secondary_menu: The Secondary menu links for the site, if they have been
+ *   configured.
+ * - breadcrumb: The breadcrumb trail for the current page.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title: The page title, for use in the actual content.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - messages: Status and error messages. Should be displayed prominently.
+ * - tabs: Tabs linking to any sub-pages beneath the current page (e.g., the
+ *   view and edit tabs when displaying a node).
+ * - action_links: Actions local to the page, such as "Add menu" on the menu
+ *   administration interface.
+ * - feed_icons: All feed icons for the current page.
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted content region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.footer: Items for the footer region.
+ *
+ * druppio_small_business utility variables
+ * - region_classes.REGION_CONTAINERID - region_classes.main will render classes like with--sidebar-first on container
+ *
+ * @see template_preprocess_page()
+ * @see druppio_small_business_preprocess_page()
+ * @see html.html.twig
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div id="page" class="{{ page_classes }}">
+
+	<header id="navigation">
+        {% if page.branding %}
+            {{ page.branding }}
+        {% endif %}
+
+        {% if page.navigation %}
+            {{ page.navigation }}
+        {% endif %}
+	</header>
+
+	{% if page.header %}
+		<section id="header">
+			<div class="container">{{ page.header }}</div>
+		</section>
+	{% endif %}
+
+    {% if page.helper %}
+		<section id="helper" class="clearfix">
+			<div class="container">{{ page.helper }}</div>
+		</section>
+	{% endif %}
+
+	{% if page.section_first %}
+		<section id="section_first" class="page-section clearfix" {% if page.bg_images.section_first %} style="background-image: url('{{ page.bg_images.section_first }}')" {% endif %}>
+			<div class="container">
+		  	{{ page.section_first }}
+			</div>
+			<div class="section-first-separator">
+		    <img src="{{ directory }}/images/section-separators/section-first.svg" id="section-first-separator-image" class="svg">
+		  </div>
+		</section>
+	{% endif %}
+
+	{% if page.section_second %}
+		<section id="section_second" class="page-section clearfix" {% if page.bg_images.section_second %} style="background-image: url('{{ page.bg_images.section_second }}')" {% endif %}>
+			<div class="container">{{ page.section_second }}</div>
+			<div class="section-second-separator">
+		    <img src="{{ directory }}/images/section-separators/section-second.svg" id="section-second-separator-image" class="svg">
+		  </div>
+		</section>
+	{% endif %}
+
+	{% if page.section_third %}
+		<section id="section_third" class="page-section clearfix" {% if page.bg_images.section_third %} style="background-image: url('{{ page.bg_images.section_third }}')" {% endif %}>
+			<div class="container">{{ page.section_third }}</div>
+			<div class="section-third-separator">
+		    <img src="{{ directory }}/images/section-separators/section-third.svg" id="section-third-separator-image" class="svg">
+		  </div>
+		</section>
+	{% endif %}
+
+	{% if page.section_fourth %}
+		<section id="section_fourth" class="page-section clearfix" {% if page.bg_images.section_fourth %} style="background-image: url('{{ page.bg_images.section_fourth }}')" {% endif %}>
+			<div class="container">{{ page.section_fourth }}</div>
+			<div class="section-fourth-separator">
+		    <img src="{{ directory }}/images/section-separators/section-fourth.svg" id="section-fourth-separator-image" class="svg">
+		  </div>
+		</section>
+	{% endif %}
+	
+	{% if page.section_fifth %}
+		<section id="section_fifth" class="page-section clearfix" {% if page.bg_images.section_fifth %} style="background-image: url('{{ page.bg_images.section_fifth }}')" {% endif %}>
+			<div class="container">{{ page.section_fifth }}</div>
+		</section>
+	{% endif %}
+
+	{% if page.footer_first or page.footer_second or page.footer_third %}
+		<footer id="footer" class="clearfix">
+			<div role="contentinfo" class="{{ region_classes.footer }} container">
+				{% if page.footer_first %}
+					{{ page.footer_first }}
+				{% endif %}
+
+				{% if page.footer_second %}
+					{{ page.footer_second }}
+				{% endif %}
+			</div>
+		</footer>
+	{% endif %}
+
+</div>
+<div class="js-menu-screen sliding-panel-fade-screen"></div>

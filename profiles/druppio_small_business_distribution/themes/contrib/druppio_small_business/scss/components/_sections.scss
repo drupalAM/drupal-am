@@ -1,0 +1,110 @@
+.path-frontpage {
+  #section_first,
+  #section_first .block-title,
+  #section_first .block-content {
+    background-color: $color-bg-section-first;
+  }
+  #section_second,
+  #section_second .block-title,
+  #section_second .block-content {
+    background-color: $color-bg-section-second;
+  }
+  #section_third,
+  #section_third .block-title,
+  #section_third .block-content {
+    background-color: $color-bg-section-third;
+  }
+  //Clients
+  #section_fourth,
+  #section_fourth .block-title,
+  #section_fourth .block-content {
+    background-color: $color-bg-section-fourth;
+    .field,
+    .views-field {
+      color: white;
+    }
+  }
+}
+
+//contact
+#section_fifth,
+#section_fifth .block-title,
+#section_fifth .block-content {
+  background-color: $color-bg-section-fifth;
+}
+
+[id*="section_"] {
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: auto 100%;
+  position: relative;
+  div[class*="separator"] {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    display: none;
+    @include breakpoint($narrow) {
+      display: inherit;
+    }
+    svg {
+      max-width: 100%;
+      height: auto;
+      @include breakpoint($wide) {
+        height: inherit;
+      }
+      #primary {
+        fill: $color-primary;
+      }
+      #secondary {
+        fill: $color-secondary;
+      }
+    }
+  }
+}
+
+@include breakpoint($narrow) {
+  .section-first-separator {
+    bottom: -15px;
+  }
+  .section-second-separator {
+    bottom: -50px;
+  }
+  .section-third-separator {
+    bottom: -20px;
+  }
+  .section-fourth-separator {
+    bottom: -25px;
+  }
+}
+
+@include breakpoint($normal) {
+  .section-first-separator {
+    bottom: -20px;
+  }
+  .section-second-separator {
+    bottom: -60px;
+  }
+  .section-third-separator {
+    bottom: -25px;
+  }
+  .section-fourth-separator {
+    bottom: -35px;
+  }
+}
+
+@include breakpoint($wide) {
+  .section-first-separator {
+    bottom: -30px;
+  }
+  .section-second-separator {
+    bottom: -105px;
+  }
+  .section-third-separator {
+    bottom: -45px;
+  }
+  .section-fourth-separator {
+    bottom: -50px;
+  }
+}

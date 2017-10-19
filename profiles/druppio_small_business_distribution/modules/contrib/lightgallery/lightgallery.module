@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Light Gallery module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Holds hooks and general functionality.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function lightgallery_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.lightgallery':
+      $output = file_get_contents(drupal_get_path('module', 'lightgallery') . '/README.md');
+      return '<pre>' . $output . '</pre>';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function lightgallery_theme() {
+  return array(
+    'lightgallery' => array(
+      'variables' => array('items' => array(), 'id' => NULL),
+      'template' => 'lightgallery',
+    ),
+  );
+}

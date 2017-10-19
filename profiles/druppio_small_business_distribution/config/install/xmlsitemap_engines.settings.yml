@@ -1,0 +1,7 @@
+engines:
+  google: google
+  bing: '0'
+custom_urls: ''
+minimum_lifetime: 604800
+_core:
+  default_config_hash: aSa0_PneaOOVBmWYEIXqDIscxZPzIRR9ZFJ2W90BkpI

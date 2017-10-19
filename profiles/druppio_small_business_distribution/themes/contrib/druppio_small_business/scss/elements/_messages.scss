@@ -1,0 +1,23 @@
+// move the "bar" to the left of the messages inside the box
+// rather than using box shadow
+.messages--warning {
+  box-shadow: none;
+  border-left: 8px solid #E09600;
+}
+
+.messages--status {
+  box-shadow: none;
+  border-left: 8px solid #77B259;
+}
+
+.messages--error {
+  box-shadow: none;
+  border-left: 8px solid #E62600;
+}
+
+.messages--success {
+  box-shadow: none;
+  border-left-width: 8px;
+  border-color: darken(#D9EDF7, 20%);
+  background-color: #D9EDF7;
+}

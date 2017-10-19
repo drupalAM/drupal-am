@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - druppio_small_business
+_core:
+  default_config_hash: sAk22ssMRcVTzxZr_v2zAKp33R6gOyF8qmKu7W75fLk
+id: druppio_small_business_content
+theme: druppio_small_business
+region: content
+weight: -9
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

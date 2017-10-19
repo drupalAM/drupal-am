@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: work_lead_image
+label: 'Lead image'
+effects:
+  6131f259-c3d1-402d-aa9a-3ad7562e1c7d:
+    uuid: 6131f259-c3d1-402d-aa9a-3ad7562e1c7d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 830
+      height: 820

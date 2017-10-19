@@ -1,0 +1,97 @@
+buttons:
+  facebook_like:
+    name: 'Facebook like'
+    enabled: 1
+  facebook_share:
+    name: 'Facebook share'
+    title: 'Share on Facebook'
+    enabled: 1
+    image: facebook-share.svg
+  twitter:
+    name: Twitter
+    title: 'Share on Twitter'
+    enabled: 1
+    image: twitter.svg
+  googleplus:
+    name: Google+
+    title: 'Share on Google+'
+    enabled: 1
+    image: googleplus.svg
+  linkedin:
+    name: LinkedIn
+    title: 'Share on LinkedIn'
+    enabled: 1
+    image: linkedin.svg
+  messenger:
+    name: Messenger
+    title: 'Share via Messenger'
+    enabled: 1
+    image: messenger.svg
+  viber:
+    name: Viber
+    title: 'Share via Viber'
+    enabled: 1
+    image: viber.svg
+  whatsapp:
+    name: WhatsApp
+    title: 'Share via WhatsApp'
+    enabled: 1
+    image: whatsapp.svg
+share_icon:
+  image: share-icon.svg
+  alt: 'Share icon'
+title: 'Share Everywhere'
+display_title: 0
+style: share_everywhere
+include_css: 0
+include_js: 0
+collapsible: '1'
+location: content
+alignment: left
+content_types:
+  work: work
+  clients: 0
+  header: 0
+  page: 0
+view_modes:
+  article:
+    full: full
+  page:
+    full: 0
+    rss: 0
+    search_index: 0
+    search_result: 0
+    teaser: 0
+    token: 0
+  clients:
+    full: 0
+    rss: 0
+    search_index: 0
+    search_result: 0
+    teaser: 0
+    token: 0
+  header:
+    full: 0
+    rss: 0
+    search_index: 0
+    search_result: 0
+    teaser: 0
+    token: 0
+  work:
+    full: full
+    rss: 0
+    search_index: 0
+    search_result: 0
+    teaser: 0
+    token: 0
+product_types:
+  default: default
+product_view_modes:
+  default:
+    full: full
+restricted_pages:
+  pages: ''
+  type: show
+weight: 10
+_core:
+  default_config_hash: GQDoLEOR4E5eoYvZ5ZgimP0c4Edxmwpc_hd9kBF8La0

@@ -1,0 +1,15 @@
+[id*='breadcrumbs'] {
+  li {
+    color: $color-text;
+    a {
+      font-size: $size-breadcrumb;
+    }
+    &:last-child {
+      a {
+        pointer-events: none;
+        cursor: default;
+        font-weight: bold;
+      }
+    }
+  }
+}

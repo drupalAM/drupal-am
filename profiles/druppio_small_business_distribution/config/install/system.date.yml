@@ -1,0 +1,11 @@
+country:
+  default: RS
+first_day: 1
+timezone:
+  default: Europe/Belgrade
+  user:
+    configurable: true
+    warn: false
+    default: 0
+_core:
+  default_config_hash: 8WpQorNk5yJYiSOdLe3wU6gw9fVsPAbUULUFIR20FBo
