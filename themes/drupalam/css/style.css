@@ -6053,11 +6053,11 @@ tbody.collapse.in {
 }
 /* line 401, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-brand {
-  color: #777;
+  color: #ffffff;
 }
 /* line 403, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #5e5e5e;
+  color: #e6e6e6;
   background-color: transparent;
 }
 /* line 410, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
@@ -6066,11 +6066,11 @@ tbody.collapse.in {
 }
 /* line 415, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: #ffffff;
 }
 /* line 418, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #333;
+  color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
 }
 /* line 425, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
@@ -6108,11 +6108,11 @@ tbody.collapse.in {
 @media (max-width: 767px) {
   /* line 473, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #777;
+    color: #ffffff;
   }
   /* line 475, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333;
+    color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
   }
   /* line 482, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
@@ -6128,19 +6128,19 @@ tbody.collapse.in {
 }
 /* line 506, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-link {
-  color: #777;
+  color: #ffffff;
 }
 /* line 508, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-link:hover {
-  color: #333;
+  color: rgba(255, 255, 255, 0.8);
 }
 /* line 513, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .btn-link {
-  color: #777;
+  color: #ffffff;
 }
 /* line 515, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
-  color: #333;
+  color: rgba(255, 255, 255, 0.8);
 }
 /* line 521, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .btn-link[disabled]:hover, .navbar-default .btn-link[disabled]:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] .navbar-default .btn-link:focus {
@@ -9217,6 +9217,11 @@ body.navbar-is-fixed-bottom {
 /* line 69, ../scss/component/_navbar.scss */
 .navbar .logo img {
   width: 200px;
+}
+
+/* line 75, ../scss/component/_navbar.scss */
+#block-drupalam-main-menu {
+  float: right;
 }
 
 /**
