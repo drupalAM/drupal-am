@@ -1,0 +1,26 @@
+{
+  "name": "drupal/linkicon",
+  "description": "A link field formatter to create icon classes based on predefined titles.",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/linkicon",
+  "authors": [
+    {
+      "name": "gausarts",
+      "homepage": "https://www.drupal.org/u/gausarts",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Committers for linkicon",
+      "homepage": "https://www.drupal.org/node/2208459/committers"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/linkicon",
+    "source": "http://cgit.drupalcode.org/linkicon"
+  },
+  "license": "GPL-2.0+",
+  "minimum-stability": "stable",
+  "require": {
+    "link": "8.*"
+  }
+}

@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the Link icon template.
+ *
+ * Available variables:
+ * - items: An array of items containing links with icon formatted.
+ * - settings: An array of settings that decides the link icon output.
+ * - attributes: The array of attributes to hold classes, id and optional
+ *     data-title to display as tooltip.
+ *
+ * @see template_preprocess_linkicon()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set wrapper_classes = [
+    'item-list',
+    'item-list--linkicon',
+    settings.wrapper_class ? settings.wrapper_class|clean_class,
+  ]
+%}
+{% if settings.load %}
+  {%
+    set classes = [
+      not settings.vertical ? 'linkicon--inline',
+      settings.color ? 'linkicon--color',
+      settings.no_text ? 'linkicon--no-text',
+      settings.color ? 'linkicon--' ~ settings.color|clean_class,
+      settings.style ? 'linkicon--' ~ settings.style|clean_class,
+      settings.size ? 'linkicon--' ~ settings.size|clean_class,
+      settings.tooltip ? 'linkicon--tooltip',
+      settings.position ? 'linkicon--' ~ settings.position|clean_class,
+    ]
+  %}
+{% endif %}
+
+{% spaceless %}
+<div{{ wrapper_attributes.addClass(wrapper_classes) }}>
+  <ul id="{{ attributes.id|clean_id }}"{{ attributes.addClass('linkicon', classes) }}>
+    {%- for item in items -%}
+      <li>
+        {{ item }}
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
+{% endspaceless %}

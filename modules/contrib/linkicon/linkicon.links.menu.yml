@@ -1,0 +1,5 @@
+linkicon.settings:
+  title: Linkicon
+  parent: system.admin_config_ui
+  route_name: linkicon.settings
+  description: 'Manage linkicon.'

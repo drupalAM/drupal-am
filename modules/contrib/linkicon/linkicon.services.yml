@@ -1,0 +1,4 @@
+services:
+  linkicon.manager:
+    class: Drupal\linkicon\LinkIconManager
+    arguments: ['@config.factory', '@module_handler']

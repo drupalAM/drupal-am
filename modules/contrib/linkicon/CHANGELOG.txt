@@ -1,0 +1,85 @@
+
+Linkicon 8.x-1.0-dev, 2016-08-30
+--------------------------------
+- Fixed for schema errors if using Views.
+
+Linkicon 8.x-1.0-dev, 2016-08-29
+--------------------------------
+- #2782445 by bapi_22: ! placeholder removed from t() and format_string().
+- A few cleanups.
+
+Linkicon 8.x-1.0-dev, 2016-08-03
+--------------------------------
+- #2769863 by ashwin.shaharkar: Add composer.json.
+
+Linkicon 8.x-1.0-dev, 2016-07-14
+--------------------------------
+- Removed deprecated @file docblock as per [#2665992], [#2304909].
+
+Linkicon 8.x-1.0-dev, 2016-03-29
+--------------------------------
+- #2662424 by heykarthikwithu, gausarts: Replace deprecated usage of
+  drupal_render with renderer.
+
+Linkicon 8.x-1.0-dev, 2016-01-21
+--------------------------------
+- Fixed for Notice: Undefined index: #type in drupal_process_states() (line 580.
+- Issue #2653426 by heykarthikwithu: Replace deprecated usage of \Drupal::url
+  with Url::fromRoute and Remove unused imports in code base
+
+Linkicon 8.x-1.0-dev, 2015-11-22
+--------------------------------
+- Cleaned up trivial things.
+
+Linkicon 8.x-1.0-dev, 2015-11-16
+--------------------------------
+- #2615954 by Sam152: Use strict comparison in hook_field_widget_WIDGET_TYPE_form_alter
+
+Linkicon 8.x-1.0-dev, 2015-10-02
+--------------------------------
+- Fixed the new static links at linkicon_help() for Beta16, see 2575819.
+- Fixed the new $langcode param at LinkIconFormatter::viewElements() for Beta16.
+
+Linkicon 8.x-1.0-dev, 2015-09-22
+--------------------------------
+- #2572501 by benjy: Fix schema errors.
+- Updated linkicon.settings type from mapping to config_object to reflect betas.
+
+Linkicon 8.x-1.0-dev, 2015-09-06
+--------------------------------
+- Updated for SafeMarkup::set() removal since Drupal 8.0.0-beta15, see 2549395.
+
+Linkicon 8.x-1.0-dev, 2015-03-29
+--------------------------------
+Fixed broken styling for Fontawesome >= 4 which uses 'fa' prefix.
+Updated String::checkPlain() to SafeMarkup::checkPlain(), see #2457593.
+Updated link generator as per beta9, see #2392803,
+  dropping 'html' options.
+Updated to drupal 8.0.0-beta9.
+
+Linkicon 8.x-1.0-dev, 2015-03-06
+--------------------------------
+Fixed various pareview.sh complains.
+
+Linkicon 8.x-1.0-dev, 2015-02-28
+--------------------------------
+Fixed extra spaces formatted by grammar_parser.
+Fixed "missing schema" error for "title_predefined" textarea value.
+Changed "predefined" option to use integer to match link.schema.yml as defined
+  under "field.field_settings.link". Be sure to re-save your existing field at:
+  admin/structure/types/manage/[TYPE]/fields/node.page.FIELD_NAME
+  Existing display will still show fine. However since option is changed, please
+  re-save the field till the module has proper hook_update().
+
+Renamed LinkiconSettingsForm.php to LinkIconSettingsForm.php.
+Added linkicon.settings schema.
+
+Linkicon 8.x-1.0-dev, 2015-02-26
+--------------------------------
+Updated to drupal 8.0.0-beta7.
+
+Linkicon 8.x-1.0-dev, 2015-02-16
+--------------------------------
+Converted theme_linkicon_item() to linkicon-item.html.twig.
+Added linkicon.theme.inc
+Added CHANGELOG.txt.

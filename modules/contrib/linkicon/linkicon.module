@@ -1,0 +1,112 @@
+<?php
+
+/**
+ * @file
+ * A link field formatter to create icon classes based on predefined titles.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Play safe predefined option on forms and settings, where DRUPAL_REQUIRED = 2.
+ */
+const LINKICON_PREDEFINED = 5;
+
+/**
+ * Implements hook_library_info_build().
+ */
+function linkicon_library_info_build() {
+  $libraries = [];
+
+  if ($font_path = \Drupal::service('linkicon.manager')->getSetting('font')) {
+    $libraries['linkicon.font'] = [
+      'css' => [
+        'base' => [
+          $font_path => [],
+        ],
+      ],
+    ];
+  }
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function linkicon_theme() {
+  return array(
+    'linkicon' => array(
+      'render element' => 'element',
+      'file' => 'linkicon.theme.inc',
+    ),
+    'linkicon_item' => array(
+      'render element' => 'element',
+      'file' => 'linkicon.theme.inc',
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_info_alter().
+ */
+function linkicon_field_info_alter(&$info) {
+  if (isset($info['link'])) {
+    $info['link']['class'] = '\Drupal\linkicon\LinkIconItem';
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function linkicon_field_widget_link_default_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+  if (isset($element['uri']) && isset($element['title'])) {
+    $items = $context['items'];
+    // @todo drop 'predefined' for the new integer: LINKICON_PREDEFINED.
+    $predefined = $items->getSetting('title') === LINKICON_PREDEFINED || $items->getSetting('title') === 'predefined';
+    if ($predefined && ($title_predefined = $items->getSetting('title_predefined')) !== NULL) {
+      $linkicon = \Drupal::service('linkicon.manager');
+      $options = $linkicon->extractAllowedValues($title_predefined);
+      $element['title']['#type'] = 'select';
+      $element['title']['#options'] = $options;
+      $element['title']['#empty_option'] = t('- Select -');
+      $element['title']['#access'] = TRUE;
+      $element['#element_validate'] = array('\Drupal\linkicon\LinkIconItem::elementValidateLinkIcon');
+    }
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function linkicon_help($route_name, RouteMatchInterface $route_match) {
+  $path = drupal_get_path('module', 'linkicon');
+  switch ($route_name) {
+    case 'help.page.linkicon':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Link icon module is a simple link field formatter to create icon classes based on a predefined set of link titles. Having link title key that matches the icon class name (without prefix) is what makes this module useful. Usage examples: to create social links for community-driven sites, team members, View website, Try now, Buy now, Demo or Hello there links with icons.') . '</p>';
+      $output .= '<h3>' . t('Usage') . '</h3>';
+      $output .= '<ol>';
+      $output .= '<li><p>' . t('Enable this module and its dependency, link.module in core, available under Field types.') . '</p></li>';
+      $output .= '<li><p>' . t('At <a href=":fields">Account settings</a>, or <a href=":content-type">Content types</a> -- click "Manage fields". Create a link field, make sure to choose "Predefined" and input your key|value pairs of titles where key is the icon name (without prefix), and value title. If you have an icon named "icon-facebook" or "fa-facebook", write, e.g.:<br>facebook|Visit my Facebook page<br>google-plus|Google+', array(':fields' => Url::fromRoute('entity.user.admin_form')->toString(), ':content-type' => Url::fromRoute('entity.node_type.collection')->toString())) . '</p>';
+      $output .= '<p>' . t('Avoid hardcoding icon "prefixes" here. The prefix is defined at Display formatter so that you are not stuck in database when the icon vendor change prefixes from "icon-" to just "fa-", etc. Make sure the icon name is available at your icon set.') . '</p></li>';
+      $output .= '<li><p>' . t('Download icon fonts from <a href=":fontello" target="_blank">http://fontello.com</a> or <a href=":icomoon" target="_blank">http://icomoon.io/app/</a>. Place it somewhere (e.g.: <em>/libraries/fontello</em>) and reference it either via <a href=":linkicon_settings" target="_blank">Linkicon settings form</a>, Icon API, fontawesome.module, or your theme.', array(
+        ':fontello' => 'http://fontello.com/',
+        ':icomoon' => 'http://icomoon.io/app/',
+        ':linkicon_settings' => Url::fromRoute('linkicon.settings')->toString())) . '</p></li>';
+      $output .= '<li><p>' . t('At <a href=":fields">Account settings</a>, or <a href=":content-type">Content types</a> -- click "Manage display". Under "Format" of the active view mode, choose "Link icon, based on title".', array(
+        ':fields' => Url::fromRoute('entity.user.admin_form')->toString(),
+        ':content-type' => Url::fromRoute('entity.node_type.collection')->toString())) . '</p></li>';
+      $output .= '<li><p>' . t('Click the "Configure" icon to have some extra options. There is option to hide text so to display the icon only, option to disable module from outputting CSS, if you want total DIY on theming, and a few other.') . '</p></li>';
+      $output .= '</ol>';
+      $output .= '<p>' . t('See the <a href=":field">Field module help</a> and the <a href=":field_ui">Field UI help</a> pages for general information on fields and how to create and manage them. For more information, see the <a href=":link_documentation">online documentation for the Link module</a>. <br />Read <a href=":readme" target="_blank">more info on Linkicon README.txt</a>.', array(
+        ':field' => Url::fromRoute('help.page', array('name' => 'field'))->toString(),
+        ':field_ui' => Url::fromRoute('help.page', array('name' => 'field_ui'))->toString(),
+        ':link_documentation' => 'https://drupal.org/documentation/modules/link',
+        ':readme' => Url::fromUri('base:' . $path . '/README.txt')->toString())) . '</p>';
+
+      return $output;
+  }
+}

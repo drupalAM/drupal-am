@@ -1,0 +1,11 @@
+linkicon:
+  version: VERSION
+  css:
+    theme:
+      css/linkicon.css: {}
+
+linkicon.admin:
+  version: VERSION
+  css:
+    theme:
+      css/linkicon.admin.css: {weight: 101}

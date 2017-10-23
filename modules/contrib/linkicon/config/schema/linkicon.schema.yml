@@ -1,0 +1,89 @@
+# Schema for the configuration files of the Linkicon module.
+linkicon.settings:
+  type: config_object
+  label: 'Linkicon settings'
+  mapping:
+    font:
+      type: string
+      label: 'Path to the icon font CSS file'
+
+# Redefine field settings link since we don't provide field type.
+field.field_settings.link:
+  type: mapping
+  label: 'Link settings'
+  mapping:
+    title:
+      type: integer
+      label: 'Allow link text'
+    link_type:
+      type: integer
+      label: 'Allowed link type'
+    title_predefined:
+      type: text
+      label: 'Allowed link texts'
+
+field.formatter.settings.linkicon:
+  type: mapping
+  label: 'Link icon format settings'
+  mapping:
+    trim_length:
+      type: integer
+      label: 'Trim link text length'
+    url_only:
+      type: boolean
+      label: 'URL only'
+    url_plain:
+      type: boolean
+      label: 'Show URL as plain text'
+    rel:
+      type: string
+      label: 'Add rel="nofollow" to links'
+    target:
+      type: string
+      label: 'Open link in new window'
+    linkicon_prefix:
+      type: string
+      label: 'Icon prefix class'
+    linkicon_wrapper_class:
+      type: string
+      label: 'Additional wrapper class'
+    linkicon_load:
+      type: boolean
+      label: 'Allow linkicon to provide CSS assets'
+    linkicon_vertical:
+      type: boolean
+      label: 'Vertical'
+    linkicon_style:
+      type: string
+      label: 'Icon style'
+    linkicon_color:
+      type: string
+      label: 'Icon background color'
+    linkicon_tooltip:
+      type: boolean
+      label: 'Display title as tooltip'
+    linkicon_no_text:
+      type: boolean
+      label: 'Visually hide the title text'
+    linkicon_maxlength:
+      type: integer
+      label: 'The title and tooltip maxlength'
+    linkicon_position:
+      type: string
+      label: 'Icon position to the title text'
+    linkicon_link:
+      type: boolean
+      label: 'Add the classes to the A tag'
+    linkicon_global_title:
+      type: string
+      label: 'Override title with a generic link title'
+    linkicon_size:
+      type: string
+      label: 'Icon font size'
+    linkicon_bundle:
+      type: string
+      label: 'Icon module integration'
+    opening:
+      type: string
+    linkicon_size_preview:
+      type: string
