@@ -5621,7 +5621,7 @@ tbody.collapse.in {
 /* line 11, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 72px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -5660,8 +5660,8 @@ tbody.collapse.in {
 /* line 50, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-collapse {
   overflow-x: visible;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 14px;
+  padding-left: 14px;
   border-top: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
@@ -5722,8 +5722,8 @@ tbody.collapse.in {
 .container > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -14px;
+  margin-left: -14px;
 }
 @media (min-width: 768px) {
   /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
@@ -5780,10 +5780,10 @@ tbody.collapse.in {
 /* line 163, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 2px 14px;
   font-size: 18px;
   line-height: 20px;
-  height: 50px;
+  height: 72px;
 }
 /* line 170, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-brand:hover, .navbar-brand:focus {
@@ -5796,7 +5796,7 @@ tbody.collapse.in {
 @media (min-width: 768px) {
   /* line 180, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: -15px;
+    margin-left: -14px;
   }
 }
 
@@ -5804,10 +5804,10 @@ tbody.collapse.in {
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: 15px;
+  margin-right: 14px;
   padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 19px;
+  margin-bottom: 19px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
@@ -5837,7 +5837,7 @@ tbody.collapse.in {
 
 /* line 232, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: 1px -14px;
 }
 /* line 235, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-nav > li > a {
@@ -5882,22 +5882,22 @@ tbody.collapse.in {
   }
   /* line 272, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 
 /* line 286, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-form {
-  margin-left: -15px;
-  margin-right: -15px;
-  padding: 10px 15px;
+  margin-left: -14px;
+  margin-right: -14px;
+  padding: 10px 14px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 19px;
+  margin-bottom: 19px;
 }
 @media (min-width: 768px) {
   /* line 478, ../bootstrap/assets/stylesheets/bootstrap/_forms.scss */
@@ -6002,31 +6002,31 @@ tbody.collapse.in {
 
 /* line 343, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-btn {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 19px;
+  margin-bottom: 19px;
 }
 /* line 346, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 21px;
+  margin-bottom: 21px;
 }
 /* line 349, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 /* line 359, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-text {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 26px;
+  margin-bottom: 26px;
 }
 @media (min-width: 768px) {
   /* line 359, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-text {
     float: left;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 14px;
+    margin-right: 14px;
   }
 }
 
@@ -6039,7 +6039,7 @@ tbody.collapse.in {
   /* line 382, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-right {
     float: right !important;
-    margin-right: -15px;
+    margin-right: -14px;
   }
   /* line 386, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-right ~ .navbar-right {
@@ -6085,15 +6085,15 @@ tbody.collapse.in {
 }
 /* line 442, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-toggle {
-  border-color: #ddd;
+  border-color: transparent;
 }
 /* line 444, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #ddd;
+  background-color: transparent;
 }
 /* line 448, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #888;
+  background-color: #fff;
 }
 /* line 453, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-collapse,
@@ -9155,11 +9155,11 @@ body.navbar-is-static-top {
 }
 /* line 18, ../scss/component/_navbar.scss */
 body.navbar-is-fixed-top {
-  margin-top: 65px;
+  margin-top: 87px;
 }
 /* line 21, ../scss/component/_navbar.scss */
 body.navbar-is-fixed-bottom {
-  padding-bottom: 65px;
+  padding-bottom: 87px;
 }
 @media screen and (min-width: 768px) {
   /* line 10, ../scss/component/_navbar.scss */
@@ -9201,27 +9201,128 @@ body.navbar-is-fixed-bottom {
   }
 }
 
-/* line 60, ../scss/component/_navbar.scss */
+/* line 59, ../scss/component/_navbar.scss */
+#navbar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 63, ../scss/component/_navbar.scss */
+#navbar .navbar-toggle {
+  margin: 0;
+}
+@media (max-width: 767px) {
+  /* line 66, ../scss/component/_navbar.scss */
+  #navbar .navbar-collapse {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    margin-top: 20px;
+    width: 100%;
+    background: rgba(17, 17, 17, 0.96);
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  /* line 77, ../scss/component/_navbar.scss */
+  #navbar .navbar-collapse #block-drupalam-main-menu {
+    float: none;
+  }
+  /* line 82, ../scss/component/_navbar.scss */
+  #navbar .navbar-collapse #block-drupalam-main-menu ul li a {
+    display: block;
+    padding: 15px 3%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+}
+
+/* line 95, ../scss/component/_navbar.scss */
 .navbar .logo {
   margin-right: -15px;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 @media screen and (min-width: 768px) {
-  /* line 60, ../scss/component/_navbar.scss */
+  /* line 95, ../scss/component/_navbar.scss */
   .navbar .logo {
     margin-right: 0;
     padding-left: 0;
   }
 }
-/* line 69, ../scss/component/_navbar.scss */
+/* line 106, ../scss/component/_navbar.scss */
 .navbar .logo img {
-  width: 200px;
+  width: 120px;
 }
 
-/* line 75, ../scss/component/_navbar.scss */
+/* line 112, ../scss/component/_navbar.scss */
 #block-drupalam-main-menu {
   float: right;
+}
+/* line 117, ../scss/component/_navbar.scss */
+#block-drupalam-main-menu ul li a {
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+/* line 123, ../scss/component/_navbar.scss */
+#block-drupalam-main-menu ul li a:after {
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  display: block;
+  overflow: hidden;
+  margin-left: 0px;
+  width: 0px;
+  height: 0px;
+  background: #ffffff;
+  content: '-';
+  text-indent: -999em;
+  border-radius: 7px;
+}
+/* line 139, ../scss/component/_navbar.scss */
+#block-drupalam-main-menu ul li a:hover:after {
+  bottom: 0;
+  height: 2px;
+  width: 40px;
+  margin-left: -20px;
+  margin-top: -2px;
+}
+
+/* line 153, ../scss/component/_navbar.scss */
+#block-socialicons {
+  text-align: right;
+}
+/* line 156, ../scss/component/_navbar.scss */
+#block-socialicons ul {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+/* line 161, ../scss/component/_navbar.scss */
+#block-socialicons ul li {
+  display: inline-block;
+  padding: 2px 5px;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+/* line 166, ../scss/component/_navbar.scss */
+#block-socialicons ul li:hover {
+  transform: scale(1.1);
+}
+/* line 169, ../scss/component/_navbar.scss */
+#block-socialicons ul li a {
+  color: #ffffff;
+  font-size: 16px;
 }
 
 /**
@@ -9557,21 +9658,21 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   color: #fff;
 }
 
-/* line 21, ../scss/_overrides.scss */
+/* line 24, ../scss/_overrides.scss */
 ol, ul {
   padding-left: 1.5em;
 }
-/* line 23, ../scss/_overrides.scss */
+/* line 26, ../scss/_overrides.scss */
 .popover ol:last-child, .popover ul:last-child {
   margin-bottom: 0;
 }
 
-/* line 29, ../scss/_overrides.scss */
+/* line 32, ../scss/_overrides.scss */
 .page-header {
   margin-top: 0;
 }
 
-/* line 34, ../scss/_overrides.scss */
+/* line 37, ../scss/_overrides.scss */
 .footer {
   margin-top: 45px;
   padding-top: 35px;
@@ -9579,32 +9680,32 @@ ol, ul {
   border-top: 1px solid #E5E5E5;
 }
 
-/* line 42, ../scss/_overrides.scss */
+/* line 45, ../scss/_overrides.scss */
 p:last-child,
 .form-group:last-child,
 .panel:last-child {
   margin-bottom: 0;
 }
 
-/* line 50, ../scss/_overrides.scss */
+/* line 53, ../scss/_overrides.scss */
 .region-help > .glyphicon {
   font-size: 18px;
   float: left;
   margin: -0.05em 0.5em 0 0;
 }
-/* line 55, ../scss/_overrides.scss */
+/* line 58, ../scss/_overrides.scss */
 .region-help .block {
   overflow: hidden;
 }
 
-/* line 61, ../scss/_overrides.scss */
+/* line 64, ../scss/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #777777;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 66, ../scss/_overrides.scss */
+/* line 69, ../scss/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
 }

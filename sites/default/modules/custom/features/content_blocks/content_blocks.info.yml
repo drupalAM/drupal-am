@@ -1,0 +1,10 @@
+name: Blocks
+type: module
+core: 8.x
+dependencies:
+  - block
+  - block_content
+  - field
+  - link
+  - linkicon
+package: Content

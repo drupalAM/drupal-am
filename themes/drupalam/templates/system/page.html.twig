@@ -72,25 +72,36 @@
       {% if not navbar_attributes.hasClass(container) %}
         <div class="{{ nav_container }}">
       {% endif %}
-      <div class="navbar-header">
-        {{ page.navigation }}
-        {# .btn-navbar is used as the toggle for collapsed navbar content #}
-        {% if page.navigation_collapsible %}
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-            <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        {% endif %}
-      </div>
-
-      {# Navigation (collapsible) #}
-      {% if page.navigation_collapsible %}
-        <div id="navbar-collapse" class="navbar-collapse collapse">
-          {{ page.navigation_collapsible }}
+      <div class="row">
+        <div class="navbar-header col-sm-2">
+          {{ page.navigation }}
+          {# .btn-navbar is used as the toggle for collapsed navbar content #}
+          {% if page.navigation_collapsible %}
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          {% endif %}
         </div>
-      {% endif %}
+
+        {# Navigation (collapsible) #}
+        <div class="col-lg-9 col-md-8 col-sm-8">
+        {% if page.navigation_collapsible %}
+          <div id="navbar-collapse" class="navbar-collapse collapse">
+            {{ page.navigation_collapsible }}
+          </div>
+        {% endif %}
+        </div>
+        
+        {# Social Icons #}
+        <div class="col-lg-1 col-md-2 col-sm-2 hidden-xs">
+          {% if social_icons_block %}
+            {{social_icons_block}}
+          {% endif %}
+        </div>
+      </div>
       {% if not navbar_attributes.hasClass(container) %}
         </div>
       {% endif %}

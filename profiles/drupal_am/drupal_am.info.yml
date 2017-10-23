@@ -39,6 +39,7 @@ dependencies:
   # features
   - features
   - config_site
+  - content_blocks
   - content_field_bases
   - content_views_and_entityqueues
   - content_vocabularies

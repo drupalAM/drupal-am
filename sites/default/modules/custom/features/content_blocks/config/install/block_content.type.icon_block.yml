@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: icon_block
+label: 'Icon block'
+revision: 0
+description: ''

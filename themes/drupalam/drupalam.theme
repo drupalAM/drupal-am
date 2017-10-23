@@ -5,3 +5,15 @@
  *
  * Place your custom PHP code in this file.
  */
+use \Drupal\block\Entity\Block;
+
+/*
+ * Implements hook_preprocess_page()
+ */
+function drupalam_preprocess_page(&$vars) {
+  // load social icons block to render in the template
+  $block = Block::load('socialicons');
+  $vars['social_icons_block'] = \Drupal::entityManager()
+    ->getViewBuilder('block')
+    ->view($block);
+}
