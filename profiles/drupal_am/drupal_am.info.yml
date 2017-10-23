@@ -36,6 +36,8 @@ dependencies:
   - menu_ui
   # contrib
   - admin_toolbar
+  - fontawesome
+  - libraries
   # features
   - features
   - config_site
