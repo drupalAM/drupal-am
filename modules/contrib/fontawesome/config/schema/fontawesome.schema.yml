@@ -1,0 +1,6 @@
+fontawesome.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    fontawesome_use_cdn:
+      type: boolean
