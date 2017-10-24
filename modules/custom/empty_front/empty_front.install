@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Empty Front module.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Performs setup tasks when the module is installed.
+ *
+ */
+function empty_front_install() {
+  // Changes default front page
+  \Drupal::configFactory()->getEditable('system.site')
+    ->set('page', ['front' => '/front'])
+    ->save();
+}

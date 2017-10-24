@@ -1,0 +1,5 @@
+name: Empty front
+description: 'Creates an empty page for front pages that are based on blocks'
+package: Custom
+type: module
+core: 8.x
