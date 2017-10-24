@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Entityqueue module.
+ */
+
+/**
+ * @addtogroup updates-8.x-1.0-alpha
+ * @{
+ */
+
+/**
+ * Updates the internal structure of the entity queue config entities.
+ */
+function entityqueue_update_8001() {
+  $config_factory = \Drupal::configFactory();
+
+  // Iterate over all entity queues.
+  foreach ($config_factory->listAll('entityqueue.entity_queue.') as $queue_id) {
+    $config = $config_factory->getEditable($queue_id);
+
+    $entity_settings = [
+      'target_type' => $config->get('target_type'),
+      'handler' => 'default:' . $config->get('target_type'),
+      'handler_settings' => [],
+    ];
+    $config->set('entity_settings', $entity_settings);
+
+    $queue_settings = [
+      'min_size' => $config->get('min_size'),
+      'max_size' => $config->get('max_size'),
+      'act_as_queue' => $config->get('act_as_queue'),
+    ];
+    $config->set('queue_settings', $queue_settings);
+
+    // Remove outdated properties.
+    $config->clear('min_size')->clear('max_size')->clear('act_as_queue')->clear('target_type');
+
+    $config->save(TRUE);
+  }
+}
+
+/**
+ * Clear views data cache.
+ */
+function entityqueue_update_8002() {
+  // Empty update function that rebuilds the views data in order to account for
+  // the updated entityqueue relationship definition.
+}
+
+/**
+ * Update the definition of the Entity Subqueue entity type.
+ */
+function entityqueue_update_8003() {
+  /** @var \Drupal\Core\Entity\EntityLastInstalledSchemaRepositoryInterface $entity_repository */
+  $entity_repository = \Drupal::service('entity.last_installed_schema.repository');
+
+  $entity_type = $entity_repository->getLastInstalledDefinition('entity_subqueue');
+  $entity_type->setHandlerClass('views_data', 'Drupal\views\EntityViewsData');
+  $entity_type->set('data_table', NULL);
+  $entity_repository->setLastInstalledDefinition($entity_type);
+}
+
+/**
+ * @} End of "addtogroup updates-8.x-1.0-alpha".
+ */

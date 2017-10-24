@@ -1,0 +1,46 @@
+entityqueue.entity_queue.*:
+  type: config_entity
+  label: 'EntityQueue config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    handler:
+      type: string
+      label: 'Queue handler'
+#TODO: Provide a schema for queue handler plugins.
+    handler_configuration:
+      type: ignore
+      label: 'Queue handler configuration'
+    entity_settings:
+      type: mapping
+      label: 'Entity settings'
+      mapping:
+        target_type:
+          type: string
+          label: 'Type of items to queue'
+        handler:
+          type: string
+          label: 'Reference method'
+        handler_settings:
+          type: entity_reference_selection.[%parent.handler]
+          label: 'Entity reference selection plugin settings'
+    queue_settings:
+      type: mapping
+      label: 'Queue settings'
+      mapping:
+        min_size:
+          type: integer
+          label: 'Minimun queue size'
+        max_size:
+          type: integer
+          label: 'Maximum queue size'
+        act_as_queue:
+          type: boolean
+          label: 'Act as queue'
+        reverse_in_admin:
+          type: boolean
+          label: 'Reverse order in admin view'
