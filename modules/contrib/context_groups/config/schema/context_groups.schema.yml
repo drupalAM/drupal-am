@@ -1,0 +1,25 @@
+context.*.third_party.context_groups:
+  type: sequence
+  label: 'Context groups settings on context'
+  sequence:
+    - type: mapping
+      label: A context group
+      mapping:
+        children:
+          type: sequence
+          label: 'The blocks belonging to the group'
+          sequence:
+            - type: string
+              label: 'The block uuid'
+        label:
+          type: string
+          label: 'Readable name of the group'
+        theme:
+          type: string
+          label: 'Theme name'
+        parent:
+          type: string
+          label: 'The parent group of this group'
+        weight:
+          type: integer
+          label: 'The weight of the group'

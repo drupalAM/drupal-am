@@ -1,0 +1,24 @@
+
+context_groups.group_add:
+  path: '/ajax/context_groups/{context}/{theme}/add'
+  defaults:
+    _form: '\Drupal\context_groups\Form\GroupAddForm'
+    _title: 'Add group'
+  requirements:
+    _permission: 'create context groups'
+
+context_groups.group_edit_form:
+  path: '/ajax/context_groups/{context}/{context_group}/edit'
+  defaults:
+    _form: '\Drupal\context_groups\Form\GroupEditForm'
+    _title: 'GroupEditForm'
+  requirements:
+    _permission: 'create context groups'
+
+context_groups.group_delete_form:
+  path: '/context_groups/{context}/{context_group}/remove'
+  defaults:
+    _form: '\Drupal\context_groups\Form\GroupDeleteForm'
+    _title: 'GroupDeleteForm'
+  requirements:
+    _permission: 'create context groups'

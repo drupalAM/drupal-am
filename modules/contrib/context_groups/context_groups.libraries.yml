@@ -1,0 +1,9 @@
+extra:
+  css:
+    theme:
+      assets/css/context_groups.css: {}
+  js:
+    assets/js/context_groups.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.tabledrag

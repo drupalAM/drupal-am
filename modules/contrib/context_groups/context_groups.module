@@ -1,0 +1,194 @@
+<?php
+
+/**
+ * @file
+ * Hooks and helper functions.
+ */
+
+use Drupal\Component\Serialization\Json;
+use Drupal\context\Entity\Context;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function context_groups_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the context_groups module.
+    case 'help.page.context_groups':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('In reactions add an option to add groups within each region.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function context_groups_form_context_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add library to form.
+  $form['#attached']['library'][] = 'context_groups/extra';
+
+  // Alter the view of context reactions.
+  $form['reactions']['#process'][] = 'context_groups_process_reactions';
+
+  // Add submit callback.
+  $submit_actions = $form['actions']['submit']['#submit'];
+  $form['actions']['submit']['#submit'] = array_merge(['context_groups_form_context_edit_submit'], $submit_actions);
+}
+
+/**
+ * Alter the reactions in context_edit_form.
+ */
+function context_groups_process_reactions(&$form, FormStateInterface $form_state) {
+  $context = $form_state->getFormObject()->getEntity();
+
+  // Show button to add group only if any reaction is set.
+  if (!$context->getReactions()->has('blocks')) {
+    return $form;
+  }
+
+  // Get all regions from selected theme.
+  $theme = \Drupal::service('context_groups.manager')->getCurrentTheme($form_state);
+
+  // If user has permission, show him add group button.
+  if (Drupal::currentUser()->hasPermission('create context groups')) {
+    $form['reaction-blocks']['options']['blocks']['group_add'] = [
+      '#type' => 'link',
+      '#title' => t('Add group'),
+      '#attributes' => [
+        'class' => ['use-ajax', 'button', 'button--small', 'button-action'],
+        'data-dialog-type' => 'modal',
+        'data-dialog-options' => Json::encode([
+          'width' => 500,
+        ]),
+      ],
+      '#url' => Url::fromRoute('context_groups.group_add',
+        [
+          'context' => $context->getOriginalId(),
+          'theme' => $theme,
+        ]
+      ),
+      '#weight' => -1,
+    ];
+  }
+
+  // Set weight to Place block button to be the first link.
+  $form['reaction-blocks']['options']['blocks']['block_add']['#weight'] = -2;
+
+  $form_state->loadInclude('context_groups', 'inc', 'includes/context_groups_ui');
+  context_groups_reaction_ui_display_form_alter($form, $form_state);
+
+  return $form;
+}
+
+/**
+ * Submit callback on context edit form save.
+ *
+ * @param array $form
+ *   Form array.
+ * @param FormStateInterface $form_state
+ *   FormStateObject.
+ */
+function context_groups_form_context_edit_submit(array &$form, FormStateInterface $form_state) {
+
+  // Get list of blocks and context groups.
+  $form_values = &$form_state->getValue([
+    'reactions',
+    'blocks',
+    'blocks',
+    'blocks',
+  ]);
+
+  // Get context groups from this context reaction.
+  $complete_form = $form_state->getCompleteForm();
+
+  // If there is no context groups inside context, do nothing.
+  if (!isset($complete_form['reactions']['#context_groups'])) {
+    return;
+  }
+  $context_groups = $complete_form['reactions']['#context_groups'];
+
+  // Remove context groups from list of block in context reaction.
+  $context_groups_values = [];
+  foreach ($context_groups as $group_name) {
+    if (isset($form_values[$group_name])) {
+      $context_groups_values[$group_name] = $form_values[$group_name];
+      unset($form_values[$group_name]);
+    }
+  }
+
+  // Load context.
+  $context = $form_state->getFormObject()->getEntity();
+
+  // Get save context groups.
+  $saved_context_groups = $context->getThirdPartySettings('context_groups');
+
+  // Get all context groups parents of a block.
+  foreach ($form_values as $key => $block) {
+    $form_values[$key]['all_parents'] = \Drupal::service('context_groups.manager')->getAllParentsForGroup($saved_context_groups, $block['parent_wrapper']['parent']);
+  }
+
+  // Update context groups in context.
+  foreach ($context_groups_values as $name => $value) {
+    $group = $saved_context_groups[$name];
+    $group['region'] = $value['region'];
+    $group['weight'] = $value['weight'];
+    $group['parent'] = $value['parent_wrapper']['parent'];
+    $group['all_parents'] = \Drupal::service('context_groups.manager')->getAllParentsForGroup($saved_context_groups, $value['parent_wrapper']['parent']);
+    $context->setThirdPartySetting('context_groups', $name, $group);
+  }
+  $context->save();
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function context_groups_form_context_reaction_delete_confirm_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add context_id to form_state.
+  $context = $form_state->getBuildInfo();
+  $context_id = $context['args'][0]->id();
+  $form_state->set('context_id', $context_id);
+  $form['#submit'][] = 'context_groups_reaction_delete_submit';
+}
+
+/**
+ * Submit callback on reaction delete.
+ */
+function context_groups_reaction_delete_submit(&$form, FormStateInterface $form_state) {
+  $context_id = $form_state->get('context_id');
+  $context = Context::load($context_id);
+  $saved_context_groups = $context->getThirdPartySettings('context_groups');
+
+  // Remove groups from reaction that is deleted.
+  foreach ($saved_context_groups as $context_group => $value) {
+    $context->unsetThirdPartySetting('context_groups', $context_group);
+  }
+  $context->save();
+}
+
+/**
+ * Implements hook_theme().
+ */
+function context_groups_theme($existing, $type, $theme, $path) {
+  return [
+    'context_groups' => [
+      'render element' => 'element',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function context_groups_theme_suggestions_context_groups(array $variables) {
+  $suggestions[] = 'context_groups__' . $variables['element']['#context_id'];
+  $suggestions[] = 'context_groups__' . $variables['element']['#context_group'];
+  $suggestions[] = 'context_groups__' . $variables['element']['#context_id'] . '__' . $variables['element']['#context_group'];
+  return $suggestions;
+}

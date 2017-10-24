@@ -1,0 +1,13 @@
+services:
+  context_groups.manager:
+    class: Drupal\context_groups\ContextGroupsManager
+    arguments: ['@theme_handler']
+  plugin.manager.context_groups:
+    class: Drupal\context_groups\Plugin\ContextGroups\ContextGroupsPluginManager
+    parent: default_plugin_manager
+
+  context_groups.page_display_variant_subscriber:
+    class: Drupal\context_groups\EventSubscriber\BlockPageDisplayVariantSubscriber
+    arguments: ["@context.manager", "@context_groups.manager"]
+    tags:
+      - { name: event_subscriber }

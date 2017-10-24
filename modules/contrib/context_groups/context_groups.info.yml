@@ -1,0 +1,14 @@
+name: Context Groups
+type: module
+description: In reactions add an option to add groups within each region.
+# core: 8.x
+package: Custom
+dependencies:
+  - context
+  - context_ui
+
+# Information added by Drupal.org packaging script on 2017-02-02
+version: '8.x-1.0'
+core: '8.x'
+project: 'context_groups'
+datestamp: 1486023485

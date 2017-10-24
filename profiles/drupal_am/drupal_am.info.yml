@@ -37,6 +37,7 @@ dependencies:
   # contrib
   - admin_toolbar
   - context
+  - context_groups
   - entityqueue
   - fontawesome
   - libraries
