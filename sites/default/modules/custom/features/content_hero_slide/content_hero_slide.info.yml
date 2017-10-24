@@ -2,6 +2,8 @@ name: 'Hero Slide'
 type: module
 core: 8.x
 dependencies:
+  - content_views_and_entityqueues
+  - entityqueue
   - field
   - file
   - image
@@ -12,4 +14,5 @@ dependencies:
   - path
   - text
   - user
+  - views
 package: Content
