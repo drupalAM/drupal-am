@@ -1,0 +1,7 @@
+name: Context
+type: module
+core: 8.x
+dependencies:
+  - context
+  - system
+package: Content

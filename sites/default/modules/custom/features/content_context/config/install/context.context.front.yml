@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: front
+label: Front
+group: Pages
+description: 'Front page'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: 0
+    uuid: 94f11657-c00b-4a95-a289-646cb64fb81f
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      389682c0-01b4-47a4-ada1-b42aeebcdad2:
+        id: 'views_block:hero_slide-block_1'
+        label: ''
+        provider: views
+        label_display: 0
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: front
+        uuid: 389682c0-01b4-47a4-ada1-b42aeebcdad2
+    id: blocks
+    saved: false
+    uuid: 4874a484-46d2-4edf-9462-53e9bc79d7af
+    include_default_blocks: 1
+weight: 0
