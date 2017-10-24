@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_heroslide_text_position
+    - node.type.hero_slide
+  module:
+    - options
+id: node.hero_slide.field_heroslide_text_position
+field_name: field_heroslide_text_position
+entity_type: node
+bundle: hero_slide
+label: 'Text Position'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

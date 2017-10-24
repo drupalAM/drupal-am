@@ -36,6 +36,7 @@ dependencies:
   - menu_ui
   # contrib
   - admin_toolbar
+  - entityqueue
   - fontawesome
   - libraries
   # features
@@ -43,6 +44,7 @@ dependencies:
   - config_site
   - content_blocks
   - content_field_bases
+  - content_hero_slide
   - content_views_and_entityqueues
   - content_vocabularies
   - user_field_bases
