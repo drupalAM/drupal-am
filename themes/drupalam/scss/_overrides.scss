@@ -17,28 +17,38 @@
 @import "component/table-drag";
 @import "component/tabs";
 @import "component/toolbar";
+@import "component/footer";
 
 // jQuery UI style overrides.
 @import "jquery-ui/autocomplete";
 
+body {
+  font-family: $font-family-sans-serif;
+  line-height: 1.7;
+}
 ol, ul {
   padding-left: 1.5em;
   .popover &:last-child {
     margin-bottom: 0;
   }
 }
+h1, h2, h3, h4, h5, h6 {
+  padding: 10px 0;
+  margin-top: 0;
+  color: $gray-dark;
+  font-weight: 100;
+  font-family: $font-family-monospace;
+  line-height: 1.7;
+}
+
+// TODO remove this lines
+.main-container {
+  padding-bottom: 20px; 
+}
 
 // Page header.
 .page-header {
   margin-top: 0;
-}
-
-// Footer.
-.footer {
-  margin-top: 45px;
-  padding-top: 35px;
-  padding-bottom: 36px;
-  border-top: 1px solid #E5E5E5;
 }
 
 // Paragraphs.

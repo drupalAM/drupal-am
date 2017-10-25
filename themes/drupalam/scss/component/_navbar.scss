@@ -74,7 +74,7 @@ body {
       text-transform: uppercase;
       font-size: 12px;
       
-      #block-drupalam-main-menu {
+      .region-navigation-collapsible nav {
         float: none;
         
         ul {
@@ -109,9 +109,11 @@ body {
 }
 
 // Main menu
-#block-drupalam-main-menu {
+.region-navigation-collapsible nav {
   float: right;
-  
+  @include breakpoint(no_mobile) {
+    margin-top: 5px;
+  }
   ul {
     li {
       a {
@@ -150,7 +152,8 @@ body {
 }
 
 // Social icons
-#block-socialicons {
+#block-socialicons,
+.block-socialicons {
   text-align: right;
   
   ul {

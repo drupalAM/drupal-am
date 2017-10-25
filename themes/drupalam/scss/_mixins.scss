@@ -179,3 +179,15 @@
     @media (max-width: $screen-tablet - 1)  { @content ; }
   }
 }
+
+// =============================================================================
+// Anchor color
+// =============================================================================
+
+@mixin anchor_color($color: #fff) {
+  color: $color;
+  &:hover,
+  &:focus {
+    color: $brand-primary;
+  }
+}

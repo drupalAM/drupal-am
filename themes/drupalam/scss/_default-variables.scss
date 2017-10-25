@@ -13,6 +13,41 @@
 // Set the proper directory for the Bootstrap Glyphicon font.
 $icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
 
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:              #252525 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              #333332 !default;
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             #b3b3b1 !default;
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+
+$brand-primary:         #fdd200 !default;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Global text color on `<body>`.
+$text-color:            #777777 !default;
+//** Link hover decoration.
+$link-hover-decoration: none !default;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'Open Sans', Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Montserrat, 'Open Sans', Helvetica, Arial, sans-serif !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+
 // Basics of a navbar
 $navbar-default-color:             #777 !default;
 $navbar-default-bg:                #c6c1ae !default;
@@ -29,6 +64,10 @@ $navbar-default-link-hover-color:          rgba(255, 255, 255, 0.8) !default;
 $navbar-default-toggle-hover-bg:           transparent !default;
 $navbar-default-toggle-icon-bar-bg:        #fff !default;
 $navbar-default-toggle-border-color:       transparent !default;
+
+//=== Shared nav styles
+$nav-link-padding:                          10px 15px !default;
+$nav-link-hover-bg:                         transparent !default;
 
 
 $white: #ffffff;

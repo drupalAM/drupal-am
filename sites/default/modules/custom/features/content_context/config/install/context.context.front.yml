@@ -37,5 +37,5 @@ reactions:
     id: blocks
     saved: false
     uuid: 4874a484-46d2-4edf-9462-53e9bc79d7af
-    include_default_blocks: 1
+    include_default_blocks: 0
 weight: 0

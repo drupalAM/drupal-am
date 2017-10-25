@@ -3,5 +3,6 @@ type: module
 core: 8.x
 dependencies:
   - context
+  - context_groups
   - system
 package: Content
