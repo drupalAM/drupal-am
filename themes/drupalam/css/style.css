@@ -9321,19 +9321,16 @@ body.navbar-is-fixed-bottom {
 }
 
 /* line 169, ../scss/component/_navbar.scss */
-#block-socialicons,
 .block-socialicons {
   text-align: right;
 }
-/* line 173, ../scss/component/_navbar.scss */
-#block-socialicons ul,
+/* line 172, ../scss/component/_navbar.scss */
 .block-socialicons ul {
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;
 }
-/* line 178, ../scss/component/_navbar.scss */
-#block-socialicons ul li,
+/* line 177, ../scss/component/_navbar.scss */
 .block-socialicons ul li {
   display: inline-block;
   padding: 2px 5px;
@@ -9342,13 +9339,11 @@ body.navbar-is-fixed-bottom {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-/* line 183, ../scss/component/_navbar.scss */
-#block-socialicons ul li:hover,
+/* line 182, ../scss/component/_navbar.scss */
 .block-socialicons ul li:hover {
   transform: scale(1.1);
 }
-/* line 186, ../scss/component/_navbar.scss */
-#block-socialicons ul li a,
+/* line 185, ../scss/component/_navbar.scss */
 .block-socialicons ul li a {
   color: #ffffff;
   font-size: 16px;

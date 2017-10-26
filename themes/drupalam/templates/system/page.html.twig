@@ -95,12 +95,12 @@
         {% endif %}
         </div>
         
-        {# Social Icons #}
-        <div class="col-lg-1 col-md-2 col-sm-2 hidden-xs">
-          {% if social_icons_block %}
-            {{social_icons_block}}
-          {% endif %}
-        </div>
+        {# Top Right #}
+        {% if page.top_right%}
+          <div class="col-lg-1 col-md-2 col-sm-2 hidden-xs">
+            {{ page.top_right }}
+          </div>
+        {% endif %}
       </div>
       {% if not navbar_attributes.hasClass(container) %}
         </div>
