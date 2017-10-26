@@ -13,7 +13,9 @@ use \Drupal\block\Entity\Block;
 function drupalam_preprocess_page(&$vars) {
   // load social icons block to render in the template
   $block = Block::load('socialicons');
-  $vars['social_icons_block'] = \Drupal::entityManager()
+  if ($block) {
+    $vars['social_icons_block'] = \Drupal::entityManager()
     ->getViewBuilder('block')
     ->view($block);
+  }
 }
