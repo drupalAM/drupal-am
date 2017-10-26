@@ -60,3 +60,8 @@ themes:
   - bootstrap
   - drupalam
   - seven
+default_content:
+    block_content:
+      - 2755e61c-a966-4273-b529-662b8454bceb
+      - 38443dc1-d8f7-44c5-9c92-108297b553ec
+      - ecee50d2-7f10-46b5-8557-a20d57e29b6c

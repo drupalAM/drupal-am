@@ -221,6 +221,25 @@ reactions:
         unique: 0
         context_id: general
         uuid: fa764ebe-c47d-4d60-ba43-c78e7a64452b
+      ffafff93-50db-4093-a5d8-a085430ab8cf:
+        id: 'block_content:ecee50d2-7f10-46b5-8557-a20d57e29b6c'
+        label: 'Social Icons'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: full
+        weight: '0'
+        region: top_right
+        parent_wrapper:
+          parent: ''
+        all_parents: {  }
+        context_mapping: {  }
+        theme: drupalam
+        css_class: block-socialicons
+        unique: 0
+        context_id: general
+        uuid: ffafff93-50db-4093-a5d8-a085430ab8cf
     id: blocks
     saved: false
     uuid: d20a6f69-417b-4afa-9b52-4a959123de06
