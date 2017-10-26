@@ -33,7 +33,7 @@ function drupal_am_update_8400() {
 }
 
 /**
- * Enable default content module
+ * Enable default_content module
  */
 function drupal_am_update_8401() {
   \Drupal::service('module_installer')->install(
@@ -44,12 +44,23 @@ function drupal_am_update_8401() {
 }
 
 /**
- * Enable 'content_paragraph' feature modules
+ * Enable content_paragraph feature modules
  */
 function drupal_am_update_8402() {
   \Drupal::service('module_installer')->install(
     [
       'content_paragraphs',
+    ]
+  );
+}
+
+/**
+ * Enable default_content_deploy module
+ */
+function drupal_am_update_8403() {
+  \Drupal::service('module_installer')->install(
+    [
+      'default_content_deploy',
     ]
   );
 }
