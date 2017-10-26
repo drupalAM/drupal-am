@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cards_block
+    - field.storage.block_content.field_cards_card
+    - paragraphs.paragraphs_type.card
+  module:
+    - entity_reference_revisions
+id: block_content.cards_block.field_cards_card
+field_name: field_cards_card
+entity_type: block_content
+bundle: cards_block
+label: Card
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+    target_bundles_drag_drop:
+      card:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions
