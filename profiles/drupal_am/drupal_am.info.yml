@@ -38,6 +38,7 @@ dependencies:
   - admin_toolbar
   - context
   - context_groups
+  - default_content
   - entityqueue
   - fontawesome
   - libraries
