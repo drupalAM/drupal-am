@@ -42,3 +42,14 @@ function drupal_am_update_8401() {
     ]
   );
 }
+
+/**
+ * Enable 'content_paragraph' feature modules
+ */
+function drupal_am_update_8402() {
+  \Drupal::service('module_installer')->install(
+    [
+      'content_paragraphs',
+    ]
+  );
+}
