@@ -7,15 +7,15 @@ favicon:
 schemas:
   bootstrap: 8000
   drupalam: 8000
+logo:
+  path: themes/drupalam/logo.png
+  url: ''
+  use_default: false
+table_responsive: '-1'
+table: ''
 features:
   comment_user_picture: true
   comment_user_verification: true
   favicon: true
   node_user_picture: true
-logo:
-  path: themes/drupalam/logo.png
-  url: ''
-  use_default: false
 navbar_position: fixed-top
-table_responsive: '-1'
-table: ''

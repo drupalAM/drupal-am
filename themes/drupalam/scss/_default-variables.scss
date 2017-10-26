@@ -50,8 +50,8 @@ $font-family-base:        $font-family-sans-serif !default;
 
 // Basics of a navbar
 $navbar-default-color:             #777 !default;
-$navbar-default-bg:                #c6c1ae !default;
-$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-bg:                transparent !default;
+$navbar-default-border:            transparent !default;
 $navbar-height:                    72px !default;
 $navbar-padding-vertical:          2px;
 $navbar-padding-horizontal:        14px;

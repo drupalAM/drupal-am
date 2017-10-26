@@ -6048,8 +6048,8 @@ tbody.collapse.in {
 }
 /* line 397, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default {
-  background-color: #c6c1ae;
-  border-color: #b8b29b;
+  background-color: transparent;
+  border-color: transparent;
 }
 /* line 401, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-brand {
@@ -6076,7 +6076,7 @@ tbody.collapse.in {
 /* line 425, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
-  background-color: #b8b29b;
+  background-color: transparent;
 }
 /* line 433, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
@@ -6098,11 +6098,11 @@ tbody.collapse.in {
 /* line 453, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #b8b29b;
+  border-color: transparent;
 }
 /* line 462, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #b8b29b;
+  background-color: transparent;
   color: #555;
 }
 @media (max-width: 767px) {
@@ -6118,7 +6118,7 @@ tbody.collapse.in {
   /* line 482, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555;
-    background-color: #b8b29b;
+    background-color: transparent;
   }
   /* line 490, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
@@ -9153,10 +9153,6 @@ body {
 body.navbar-is-static-top {
   margin-top: 0;
 }
-/* line 18, ../scss/component/_navbar.scss */
-body.navbar-is-fixed-top {
-  margin-top: 87px;
-}
 /* line 21, ../scss/component/_navbar.scss */
 body.navbar-is-fixed-bottom {
   padding-bottom: 87px;
@@ -9205,13 +9201,18 @@ body.navbar-is-fixed-bottom {
 #navbar {
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-bottom: 0;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
-/* line 63, ../scss/component/_navbar.scss */
+/* line 65, ../scss/component/_navbar.scss */
 #navbar .navbar-toggle {
   margin: 0;
 }
 @media (max-width: 767px) {
-  /* line 66, ../scss/component/_navbar.scss */
+  /* line 68, ../scss/component/_navbar.scss */
   #navbar .navbar-collapse {
     position: absolute;
     z-index: 100;
@@ -9222,49 +9223,54 @@ body.navbar-is-fixed-bottom {
     text-transform: uppercase;
     font-size: 12px;
   }
-  /* line 77, ../scss/component/_navbar.scss */
+  /* line 79, ../scss/component/_navbar.scss */
   #navbar .navbar-collapse .region-navigation-collapsible nav {
     float: none;
   }
-  /* line 82, ../scss/component/_navbar.scss */
+  /* line 84, ../scss/component/_navbar.scss */
   #navbar .navbar-collapse .region-navigation-collapsible nav ul li a {
     display: block;
     padding: 15px 3%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
 }
-
-/* line 95, ../scss/component/_navbar.scss */
-.navbar .logo {
+/* line 94, ../scss/component/_navbar.scss */
+#navbar .logo {
   margin-right: -15px;
-  padding-left: 15px;
   padding-right: 15px;
   margin-top: 0;
   margin-bottom: 0;
 }
 @media screen and (min-width: 768px) {
-  /* line 95, ../scss/component/_navbar.scss */
-  .navbar .logo {
+  /* line 94, ../scss/component/_navbar.scss */
+  #navbar .logo {
     margin-right: 0;
     padding-left: 0;
   }
 }
-/* line 106, ../scss/component/_navbar.scss */
-.navbar .logo img {
+/* line 104, ../scss/component/_navbar.scss */
+#navbar .logo img {
   width: 120px;
 }
+/* line 108, ../scss/component/_navbar.scss */
+#navbar.navbar-scrolled-top {
+  background-color: rgba(37, 37, 37, 0.95);
+  min-height: 52px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
 
-/* line 112, ../scss/component/_navbar.scss */
+/* line 117, ../scss/component/_navbar.scss */
 .region-navigation-collapsible nav {
   float: right;
 }
 @media (min-width: 767px) {
-  /* line 112, ../scss/component/_navbar.scss */
+  /* line 117, ../scss/component/_navbar.scss */
   .region-navigation-collapsible nav {
     margin-top: 5px;
   }
 }
-/* line 119, ../scss/component/_navbar.scss */
+/* line 124, ../scss/component/_navbar.scss */
 .region-navigation-collapsible nav ul li a {
   -moz-transition: color 0.3s ease;
   -o-transition: color 0.3s ease;
@@ -9274,7 +9280,7 @@ body.navbar-is-fixed-bottom {
   font-size: 12px;
   letter-spacing: 1px;
 }
-/* line 125, ../scss/component/_navbar.scss */
+/* line 130, ../scss/component/_navbar.scss */
 .region-navigation-collapsible nav ul li a:after {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -9293,7 +9299,7 @@ body.navbar-is-fixed-bottom {
   text-indent: -999em;
   border-radius: 7px;
 }
-/* line 141, ../scss/component/_navbar.scss */
+/* line 146, ../scss/component/_navbar.scss */
 .region-navigation-collapsible nav ul li a:hover:after {
   bottom: 0;
   height: 2px;
@@ -9302,19 +9308,19 @@ body.navbar-is-fixed-bottom {
   margin-top: -2px;
 }
 
-/* line 155, ../scss/component/_navbar.scss */
+/* line 160, ../scss/component/_navbar.scss */
 #block-socialicons,
 .block-socialicons {
   text-align: right;
 }
-/* line 159, ../scss/component/_navbar.scss */
+/* line 164, ../scss/component/_navbar.scss */
 #block-socialicons ul,
 .block-socialicons ul {
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;
 }
-/* line 164, ../scss/component/_navbar.scss */
+/* line 169, ../scss/component/_navbar.scss */
 #block-socialicons ul li,
 .block-socialicons ul li {
   display: inline-block;
@@ -9324,12 +9330,12 @@ body.navbar-is-fixed-bottom {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-/* line 169, ../scss/component/_navbar.scss */
+/* line 174, ../scss/component/_navbar.scss */
 #block-socialicons ul li:hover,
 .block-socialicons ul li:hover {
   transform: scale(1.1);
 }
-/* line 172, ../scss/component/_navbar.scss */
+/* line 177, ../scss/component/_navbar.scss */
 #block-socialicons ul li a,
 .block-socialicons ul li a {
   color: #ffffff;
@@ -9740,6 +9746,19 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
+/* line 107, ../scss/component/_footer.scss */
+.footer .context-groups-footer_bottom.row {
+  margin-left: 0;
+}
+
+/**
+ * Frontpage styles.
+ */
+/* line 7, ../scss/component/_frontpage.scss */
+.path-frontpage .main-container.container-fluid > .row > .col-sm-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 /**
  * jQuery UI autocomplete widget style overrides.
@@ -9790,22 +9809,28 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   color: #fff;
 }
 
-/* line 25, ../scss/_overrides.scss */
+/* line 26, ../scss/_overrides.scss */
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.7;
 }
+@media (min-width: 767px) {
+  /* line 26, ../scss/_overrides.scss */
+  body {
+    margin-top: 0;
+  }
+}
 
-/* line 29, ../scss/_overrides.scss */
+/* line 33, ../scss/_overrides.scss */
 ol, ul {
   padding-left: 1.5em;
 }
-/* line 31, ../scss/_overrides.scss */
+/* line 35, ../scss/_overrides.scss */
 .popover ol:last-child, .popover ul:last-child {
   margin-bottom: 0;
 }
 
-/* line 35, ../scss/_overrides.scss */
+/* line 39, ../scss/_overrides.scss */
 h1, h2, h3, h4, h5, h6 {
   padding: 10px 0;
   margin-top: 0;
@@ -9815,42 +9840,42 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* line 45, ../scss/_overrides.scss */
+/* line 49, ../scss/_overrides.scss */
 .main-container {
   padding-bottom: 20px;
 }
 
-/* line 50, ../scss/_overrides.scss */
+/* line 54, ../scss/_overrides.scss */
 .page-header {
   margin-top: 0;
 }
 
-/* line 55, ../scss/_overrides.scss */
+/* line 59, ../scss/_overrides.scss */
 p:last-child,
 .form-group:last-child,
 .panel:last-child {
   margin-bottom: 0;
 }
 
-/* line 63, ../scss/_overrides.scss */
+/* line 67, ../scss/_overrides.scss */
 .region-help > .glyphicon {
   font-size: 18px;
   float: left;
   margin: -0.05em 0.5em 0 0;
 }
-/* line 68, ../scss/_overrides.scss */
+/* line 72, ../scss/_overrides.scss */
 .region-help .block {
   overflow: hidden;
 }
 
-/* line 74, ../scss/_overrides.scss */
+/* line 78, ../scss/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #b3b3b1;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 79, ../scss/_overrides.scss */
+/* line 83, ../scss/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
 }

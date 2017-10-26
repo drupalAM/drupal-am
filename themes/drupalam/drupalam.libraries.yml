@@ -18,6 +18,7 @@ bootstrap-scripts:
     bootstrap/assets/javascripts/bootstrap/tab.js: {}
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
     
-js-footer:
+drupalam-scripts:
   js:
     js/content-slider.js: {}
+    js/script.js: {}

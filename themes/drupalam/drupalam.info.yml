@@ -22,4 +22,4 @@ regions:
 libraries:
   - 'drupalam/global-styling'
   - 'drupalam/bootstrap-scripts'
-  - 'drupalam/js-footer'
+  - 'drupalam/drupalam-scripts'

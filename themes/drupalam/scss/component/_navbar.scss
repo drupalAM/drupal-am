@@ -16,7 +16,7 @@ body {
     margin-top: 0;
   }
   &.navbar-is-fixed-top {
-    margin-top: ($navbar-height + ($grid-gutter-width / 2));
+   // margin-top: 0;
   }
   &.navbar-is-fixed-bottom {
     padding-bottom: ($navbar-height + ($grid-gutter-width / 2));
@@ -59,6 +59,8 @@ body {
 #navbar {
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-bottom: 0;
+  @include transition(all 0.3s ease);
   
   .navbar-toggle {
     margin: 0;
@@ -89,22 +91,25 @@ body {
       }
     }
   }
-}
+  .logo {
+    margin-right: -($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+    margin-top: 0;
+    margin-bottom: 0;
+    @media #{$grid-breakpoint} {
+      margin-right: 0;
+      padding-left: 0;
+    }
 
-// Branding.
-.navbar .logo {
-  margin-right: -($grid-gutter-width / 2);
-  padding-left: ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
-  margin-top: 0;
-  margin-bottom: 0;
-  @media #{$grid-breakpoint} {
-    margin-right: 0;
-    padding-left: 0;
+    img {
+      width: 120px;
+    }
   }
-  
-  img {
-    width: 120px;
+  &.navbar-scrolled-top {
+    background-color: rgba(37, 37, 37, 0.95);
+    min-height: 52px;
+    padding-top: 7px;
+    padding-bottom: 7px;
   }
 }
 
