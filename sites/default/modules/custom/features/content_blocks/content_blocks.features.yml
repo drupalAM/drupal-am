@@ -1,4 +1,2 @@
 bundle: content
-excluded:
-  - block.block.socialicons
 required: true

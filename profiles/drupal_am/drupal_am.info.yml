@@ -49,6 +49,7 @@ dependencies:
   - features
   - config_site
   - content_blocks
+  - content_paragraphs
   - content_context
   - content_field_bases
   - content_hero_slide
