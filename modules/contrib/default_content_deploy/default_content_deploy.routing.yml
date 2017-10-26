@@ -1,0 +1,17 @@
+default_content_deploy.sandbox:
+  path: '/admin/default_content_deploy/sandbox'
+  defaults:
+    _controller: 'Drupal\default_content_deploy\Controller\SandboxController::sandbox'
+  requirements:
+    _access: 'TRUE'
+
+default_content_deploy.import:
+  path: '/admin/config/development/dcd-import'
+  defaults:
+    _form: 'Drupal\default_content_deploy\Form\ImportForm'
+    _title: 'Default Content Deploy - Import'
+  requirements:
+    _permission: 'import content'
+  options:
+    _admin_route: TRUE
+

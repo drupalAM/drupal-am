@@ -39,6 +39,7 @@ dependencies:
   - context
   - context_groups
   - default_content
+  - default_content_deploy
   - entityqueue
   - fontawesome
   - libraries

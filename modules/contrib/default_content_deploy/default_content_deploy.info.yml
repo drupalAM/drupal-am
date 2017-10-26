@@ -1,0 +1,14 @@
+name: 'Default content deploy'
+type: module
+description: 'Default content deploy solution for Drupal 8. Export and import content continuously.'
+package: Web services
+# core: 8.x
+dependencies:
+  - default_content
+configure: default_content_deploy.import
+
+# Information added by Drupal.org packaging script on 2017-10-13
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'default_content_deploy'
+datestamp: 1507914558
