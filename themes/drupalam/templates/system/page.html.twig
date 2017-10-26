@@ -115,7 +115,7 @@
     <div class="row">
 
       {# Header #}
-      {% if page.header %}
+      {% if page.header and page.header|trim  is not empty %}
         {% block header %}
           <div class="col-sm-12" role="heading">
             {{ page.header }}
