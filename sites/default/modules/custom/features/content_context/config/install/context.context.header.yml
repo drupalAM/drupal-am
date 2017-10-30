@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies: {  }
+name: header
+label: Header
+group: General
+description: ''
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions:
+  blocks:
+    blocks:
+      f07be5f6-1d68-434c-a683-6a0813d7c1a0:
+        id: system_branding_block
+        label: 'Site branding'
+        provider: system
+        label_display: 0
+        use_site_logo: 1
+        use_site_name: 0
+        use_site_slogan: 0
+        region: navigation
+        weight: '-10'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: header
+        uuid: f07be5f6-1d68-434c-a683-6a0813d7c1a0
+      6b63985a-453e-4dc2-aaf2-cb906e0c2252:
+        id: 'system_menu_block:main'
+        label: 'Main navigation'
+        provider: system
+        label_display: 0
+        level: '1'
+        depth: '0'
+        region: navigation_collapsible
+        weight: '-1'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: header
+        uuid: 6b63985a-453e-4dc2-aaf2-cb906e0c2252
+      d1a1a622-4bfc-4083-a090-53c3e2bdb3fd:
+        id: 'block_content:ecee50d2-7f10-46b5-8557-a20d57e29b6c'
+        label: 'Social Icons'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: full
+        region: top_right
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: block-socialicons
+        unique: 0
+        context_id: header
+        uuid: d1a1a622-4bfc-4083-a090-53c3e2bdb3fd
+    id: blocks
+    saved: false
+    uuid: 45d0696e-2682-4ded-8b53-7803143cdfec
+    include_default_blocks: 0
+weight: 0

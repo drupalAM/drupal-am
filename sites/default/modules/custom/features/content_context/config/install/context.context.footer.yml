@@ -43,101 +43,16 @@ third_party_settings:
       class: container
       all_parents:
         - footer_bottom
-name: general
-label: General
-group: null
-description: 'Header and Footer'
+name: footer
+label: Footer
+group: General
+description: ''
 requireAllConditions: false
 disabled: false
 conditions: {  }
 reactions:
   blocks:
     blocks:
-      61276184-4203-4bc1-8df6-6c4d1df776e8:
-        id: system_branding_block
-        label: 'Site branding'
-        provider: system
-        label_display: 0
-        use_site_logo: 1
-        use_site_name: 0
-        use_site_slogan: 0
-        weight: '0'
-        region: navigation
-        parent_wrapper:
-          parent: ''
-        all_parents: {  }
-        context_mapping: {  }
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: general
-        uuid: 61276184-4203-4bc1-8df6-6c4d1df776e8
-      c1895653-07f1-4eaa-a0b5-892fb11e1d3a:
-        id: 'system_menu_block:main'
-        label: 'Main navigation'
-        provider: system
-        label_display: 0
-        level: '1'
-        depth: '0'
-        weight: '1'
-        region: navigation_collapsible
-        parent_wrapper:
-          parent: ''
-        all_parents: {  }
-        context_mapping: {  }
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: general
-        uuid: c1895653-07f1-4eaa-a0b5-892fb11e1d3a
-      8fa0cec1-2e57-4482-8892-c5e39a3356fb:
-        id: system_messages_block
-        label: Messages
-        provider: system
-        label_display: 0
-        weight: '3'
-        region: header
-        parent_wrapper:
-          parent: ''
-        all_parents: {  }
-        context_mapping: {  }
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: general
-        uuid: 8fa0cec1-2e57-4482-8892-c5e39a3356fb
-      8daf2f2c-f4d7-4c23-b577-738aea382066:
-        id: page_title_block
-        label: 'Page title'
-        provider: core
-        label_display: 0
-        weight: '2'
-        region: header
-        parent_wrapper:
-          parent: ''
-        all_parents: {  }
-        context_mapping: {  }
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: general
-        uuid: 8daf2f2c-f4d7-4c23-b577-738aea382066
-      f668b662-54f5-4852-8df6-81aad388a28d:
-        id: system_main_block
-        label: 'Main page content'
-        provider: system
-        label_display: 0
-        weight: '4'
-        region: content
-        parent_wrapper:
-          parent: ''
-        all_parents: {  }
-        context_mapping: {  }
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: general
-        uuid: f668b662-54f5-4852-8df6-81aad388a28d
       e269decc-0872-4101-8bbe-085f81872d0a:
         id: 'block_content:2755e61c-a966-4273-b529-662b8454bceb'
         label: 'About us'
@@ -221,25 +136,6 @@ reactions:
         unique: 0
         context_id: general
         uuid: fa764ebe-c47d-4d60-ba43-c78e7a64452b
-      ffafff93-50db-4093-a5d8-a085430ab8cf:
-        id: 'block_content:ecee50d2-7f10-46b5-8557-a20d57e29b6c'
-        label: 'Social Icons'
-        provider: block_content
-        label_display: 0
-        status: true
-        info: ''
-        view_mode: full
-        weight: '0'
-        region: top_right
-        parent_wrapper:
-          parent: ''
-        all_parents: {  }
-        context_mapping: {  }
-        theme: drupalam
-        css_class: block-socialicons
-        unique: 0
-        context_id: general
-        uuid: ffafff93-50db-4093-a5d8-a085430ab8cf
     id: blocks
     saved: false
     uuid: d20a6f69-417b-4afa-9b52-4a959123de06
