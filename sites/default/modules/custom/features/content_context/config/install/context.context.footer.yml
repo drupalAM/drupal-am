@@ -133,8 +133,8 @@ reactions:
         context_mapping: {  }
         theme: drupalam
         css_class: 'visible-xs block-socialicons'
-        unique: 0
-        context_id: general
+        unique: 1
+        context_id: footer
         uuid: fa764ebe-c47d-4d60-ba43-c78e7a64452b
     id: blocks
     saved: false
