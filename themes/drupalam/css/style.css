@@ -9767,6 +9767,11 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   padding-right: 0;
 }
 
+/* line 25, ../scss/_overrides.scss */
+.cs-slider-ul li {
+  display: block;
+}
+
 /**
  * jQuery UI autocomplete widget style overrides.
  *
@@ -9816,28 +9821,28 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   color: #fff;
 }
 
-/* line 26, ../scss/_overrides.scss */
+/* line 32, ../scss/_overrides.scss */
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.7;
 }
 @media (min-width: 767px) {
-  /* line 26, ../scss/_overrides.scss */
+  /* line 32, ../scss/_overrides.scss */
   body {
     margin-top: 0;
   }
 }
 
-/* line 33, ../scss/_overrides.scss */
+/* line 39, ../scss/_overrides.scss */
 ol, ul {
   padding-left: 1.5em;
 }
-/* line 35, ../scss/_overrides.scss */
+/* line 41, ../scss/_overrides.scss */
 .popover ol:last-child, .popover ul:last-child {
   margin-bottom: 0;
 }
 
-/* line 39, ../scss/_overrides.scss */
+/* line 45, ../scss/_overrides.scss */
 h1, h2, h3, h4, h5, h6 {
   padding: 10px 0;
   margin-top: 0;
@@ -9847,42 +9852,42 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* line 49, ../scss/_overrides.scss */
+/* line 55, ../scss/_overrides.scss */
 .main-container {
   padding-bottom: 20px;
 }
 
-/* line 54, ../scss/_overrides.scss */
+/* line 60, ../scss/_overrides.scss */
 .page-header {
   margin-top: 0;
 }
 
-/* line 59, ../scss/_overrides.scss */
+/* line 65, ../scss/_overrides.scss */
 p:last-child,
 .form-group:last-child,
 .panel:last-child {
   margin-bottom: 0;
 }
 
-/* line 67, ../scss/_overrides.scss */
+/* line 73, ../scss/_overrides.scss */
 .region-help > .glyphicon {
   font-size: 18px;
   float: left;
   margin: -0.05em 0.5em 0 0;
 }
-/* line 72, ../scss/_overrides.scss */
+/* line 78, ../scss/_overrides.scss */
 .region-help .block {
   overflow: hidden;
 }
 
-/* line 78, ../scss/_overrides.scss */
+/* line 84, ../scss/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #b3b3b1;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 83, ../scss/_overrides.scss */
+/* line 89, ../scss/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
 }

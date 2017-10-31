@@ -42,7 +42,7 @@ function onYouTubeIframeAPIReady(){
 			thumbnailPreview  : true,
 			//show the navigation arrows
 			//selectors, classes and IDs
-			ulSel             : '#cs-slider-ul',
+			ulSel             : '.cs-slider-ul',
 			navigationId      : 'cs-navigation',
 			selectedClass     : 'selected',
 			firstBoxSel       : '.cs-content-left',
@@ -114,7 +114,7 @@ function onYouTubeIframeAPIReady(){
 					layout:layout,
 					animation:$li.data('animation')
 				};
-
+                                
 				if(o.thumbnailPreview && $li.data('thumbnail')){
 					slides[i].thumbnail = $li.data('thumbnail');
 				}
@@ -153,8 +153,10 @@ function onYouTubeIframeAPIReady(){
 			}
 
 
-
-			$.when(loadSlideImages(0,0), setSliderPadding()).done(function(){
+      console.log('1');
+			$.when(loadSlideImages(0,0)).done(function(){
+                          // CHANGED $.when(loadSlideImages(0,0), setSliderPadding()).done(function(){
+                          console.log('2');
 				doOnImgLoaded();
 				$root.removeClass(o.loadingClass);
 				showSlide(0);
@@ -610,7 +612,7 @@ function onYouTubeIframeAPIReady(){
 					.css(cssArgs)
 					.insertBefore($root)
 					.animate({opacity:slide.bgOpacity}, 1000);
-
+console.log($newBgImage);
 				if(isIe8){
 					new PEXETO.utils.bgCoverFallback($newBgImage).init();
 				}
@@ -707,7 +709,7 @@ function onYouTubeIframeAPIReady(){
 				mult = settings.mult,
 				pos = 150*mult,
 				$elements = $box.find('.cs-element');
-
+                        
 			if(!$elements.length){
 				def.resolve();
 				return;

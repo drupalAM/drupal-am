@@ -15,5 +15,6 @@
 
     }
   };
-
+  
+ // $(".view-hero-slide .view-content").pexetoContentSlider({"autoplay": false, "pauseOnHover": true, "animationInterval": 3000, "thumbnailPreview": true, "buttons": true, "arrows": true});
 })(jQuery, Drupal, drupalSettings);

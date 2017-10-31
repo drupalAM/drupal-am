@@ -20,5 +20,6 @@ bootstrap-scripts:
     
 drupalam-scripts:
   js:
+    js/main.js: {}
     js/content-slider.js: {}
     js/script.js: {}

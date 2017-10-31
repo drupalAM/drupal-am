@@ -1,0 +1,730 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 30, 2017, 4:39:33 PM
+    Author     : Developer
+*/
+
+/* ------- Content Slider -------- */
+.view-hero-slide .view-content {
+  position: relative;
+}
+.view-hero-slide .view-content .section-boxed {
+  padding: 0 5%;
+}
+.cs-small-title,
+.cs-title {
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+.cs-title {
+  padding-top: 0;
+  padding-bottom: 0;
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 1.2em;
+}
+.cs-content-centered .cs-title:before {
+  margin: auto;
+}
+.cs-loading {
+  background: url("images/cs-loader-w.gif") no-repeat center;
+  background-size: 20px 20px;
+}
+.cs-small-title {
+  margin: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 15px;
+}
+.view-hero-slide .view-content h2.cs-element {
+  color: inherit;
+}
+.view-hero-slide .view-content .button {
+  margin-top: 18px;
+  margin-right: 21px;
+  padding-right: 30px;
+  padding-left: 30px;
+  width: auto;
+  text-transform: uppercase;
+}
+.view-hero-slide .view-content .arrows {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+}
+.view-hero-slide .view-content .arrow-prev {
+  left: 10px;
+}
+.view-hero-slide .view-content .arrow-next {
+  right: 10px;
+}
+.view-hero-slide .view-content .col {
+  margin-bottom: 0;
+}
+.view-hero-slide .view-content {
+  position: relative;
+  overflow: hidden;
+  padding: 180px 5% 130px 5%;
+  color: #ffffff;
+}
+ul.cs-slider-ul {
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  min-height: 320px;
+  width: 100%;
+  list-style: none;
+  padding-left: 0;
+}
+.cs-slider-ul li {
+  position: absolute;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+.cs-slider-ul .two-columns {
+  display: none;
+}
+#cs-navigation {
+  position: absolute;
+  bottom: 5px;
+  display: none;
+  margin: 0;
+  padding-left: 0;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+}
+#cs-navigation li {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 2px;
+  width: 14px;
+  height: 15px;
+  cursor: pointer;
+}
+.cs-content-left,
+.cs-content-right {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  position: relative;
+  padding-left: 0;
+}
+.cs-content-right img {
+  float: right;
+}
+.cs-content-centered {
+  width: 100%;
+  text-align: center;
+}
+.cs-content-centered.col {
+  max-width: 80%;
+  width: 100%;
+}
+.view-hero-slide .view-content .cs-content-centered .button {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.cs-layout-img-text .cs-content-right.col {
+  margin-right: 0;
+}
+.cs-layout-img-text .cs-content-left.col {
+  clear: left;
+}
+ul#cs-navigation li span {
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  -webkit-opacity: 0.3;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+}
+#cs-navigation li.selected span {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  border: 2px solid #ffffff;
+  background-color: transparent;
+}
+.cs-arrows {
+  margin-top: -30px;
+  background-color: none;
+}
+.cs-arrows:hover {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+.cs-prev-arrow {
+  left: 0;
+  background-position: left top;
+}
+.cs-thumbnail {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  max-width: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.cs-next-arrow .cs-thumbnail {
+  left: -50px;
+}
+.cs-prev-arrow .cs-thumbnail {
+  right: -50px;
+  max-width: none;
+}
+.cs-next-arrow:hover .cs-thumbnail {
+  opacity: 1;
+  left: -70px;
+  max-width: none;
+}
+.cs-prev-arrow:hover .cs-thumbnail {
+  opacity: 1;
+  right: -70px;
+}
+.full-bg-image {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.cs-content-centered {
+  float: none;
+  margin: 0 auto;
+}
+.cs-content-left,
+.cs-content-right,
+.cs-content-centered {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+.cs-content-right {
+  float: right;
+}
+.cs-element {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  position: relative;
+}
+.cs-element.cs-animate {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+ul.cs-slider-ul {
+  -webkit-transition: height 1s ease;
+  -moz-transition: height 1s ease;
+  -ms-transition: height 1s ease;
+  -o-transition: height 1s ease;
+  transition: height 1s ease;
+  overflow: visible;
+}
+ul.cs-slider-ul li {
+  display: none;
+}
+.view-hero-slide {
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -ms-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+/* Nivo Slider */
+.nivo-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  background: url("images/cs-loader.gif") no-repeat center center;
+  background-size: 16px 16px;
+}
+.nivo-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  max-width: none;
+}
+.nivo-main-image {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+}
+/* If an image is wrapped in a link */
+.nivo-slider a.nivo-imageLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  display: block;
+  height: 100%;
+}
+.nivo-box {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  overflow: hidden;
+}
+.nivo-box img {
+  display: block;
+}
+/* Caption styles */
+.nivo-caption {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+  display: none;
+  overflow: hidden;
+  padding: 5px 10px;
+  width: 100%;
+  color: #ffffff;
+}
+.nivo-caption p {
+  margin: 0;
+  padding: 5px;
+}
+.nivo-caption a {
+  display: inline !important;
+}
+.nivo-html-caption {
+  display: none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+  cursor: pointer;
+}
+.nivo-prevNav {
+  left: 0;
+  text-indent: -3px;
+}
+.nivo-nextNav {
+  right: 0;
+  text-indent: 3px;
+}
+.rp-header .nivo-nextNav {
+  right: 5px;
+}
+.rp-header .nivo-prevNav {
+  left: 5px;
+}
+.post-gallery .nivo-prevNav {
+  left: 5px;
+}
+.post-gallery .nivo-nextNav {
+  right: 5px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+  position: absolute;
+  bottom: 10px;
+  z-index: 100;
+  padding: 15px 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 10px;
+}
+.nivo-controlNav a {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  top: 50%;
+  display: inline-block;
+  margin: 0 3px;
+  width: 7px;
+  height: 7px;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  list-style: none;
+  vertical-align: middle;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.nivo-controlNav a.active {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  border: 2px solid #ffffff;
+  background: transparent;
+  font-weight: bold;
+}
+/* Nivo Custom */
+#content-container .nivoSlider {
+  height: auto !important;
+  background-image: url(images/cs-loader.gif);
+}
+.post-gallery .nivo-nextNav,
+.post-gallery .nivo-prevNav {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.nivo-nextNav:after,
+.nivo-prevNav:a {
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  display: block;
+  width: 35px;
+  height: 35px;
+  border: 2px red solid;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  content: "";
+}
+.nivo-nextNav:hover:after,
+.nivo-prevNav:hover:after {
+  -webkit-transform: scale(1.35);
+  -moz-transform: scale(1.35);
+  -ms-transform: scale(1.35);
+  -o-transform: scale(1.35);
+  transform: scale(1.35);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+.nivo-nextNav:active:after,
+.nivo-prevNav:active:after {
+  -webkit-transform: scale(1.35);
+  -moz-transform: scale(1.35);
+  -ms-transform: scale(1.35);
+  -o-transform: scale(1.35);
+  transform: scale(1.35);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+.nivo-nextNav:hover,
+.nivo-prevNav:hover {
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  -webkit-opacity: 0.8;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  color: #ffffff;
+}
+.nivo-caption {
+  margin: 3%;
+  padding: 9px 14px;
+  width: auto;
+  height: auto;
+  border: 2px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.07);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.3em;
+  font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+}
+.nivo-caption p {
+  padding-left: 19px;
+  font-size: 14px;
+}
+.post-gallery .nivo-caption {
+  border: 0px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 13px;
+}
+#nivo-controlNav-holder {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+.nivo-wrapper {
+  position: relative;
+}
+#slider-container .nivo-wrapper {
+  min-height: 400px;
+  background: url('images/cs-loader-w.gif') no-repeat center center;
+  background-size: 15px 15px;
+}
+/* Nivo slider in content */
+.custom-page-content .nivo-content {
+  margin: 0;
+}
+.cs-type-video.loading {
+  background: url(images/cs-loader-w.gif) no-repeat center center;
+  background-size: 15px 15px;
+}
+.cs-layout-video-text .cs-content-right.col {
+  margin-right: 0;
+}
+.cs-layout-video-text .cs-content-left.col {
+  clear: left;
+}
+.nivo-prevNav,
+.nivo-nextNav,
+.left-arrow,
+.right-arrow,
+.ps-left-arrow,
+.ps-right-arrow,
+.cs-next-arrow,
+.cs-prev-arrow,
+.ps-left-arrow,
+.ps-right-arrow {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  line-height: 70px;
+}
+.nivo-prevNav:hover,
+.nivo-nextNav:hover,
+.left-arrow:hover,
+.right-arrow:hover,
+.ps-left-arrow:hover,
+.ps-right-arrow:hover,
+.cs-next-arrow:hover,
+.cs-prev-arrow:hover,
+.ps-left-arrow:hover,
+.ps-right-arrow:hover {
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+.nivo-prevNav,
+.left-arrow,
+.cs-prev-arrow {
+  text-indent: -5px;
+}
+/* animate the arrow on click */
+.nivo-prevNav:active,
+.left-arrow:active,
+.cs-prev-arrow:active {
+  text-indent: -12px;
+}
+.ps-left-arrow:active,
+.ps-left-arrow:active {
+  text-indent: -7px;
+}
+.ps-icon,
+.ts-arrow {
+  line-height: 30px;
+}
+.nivo-nextNav,
+.right-arrow,
+.ps-right-arrow,
+.cs-next-arrow,
+.ps-right-arrow {
+  text-indent: 0px;
+}
+/* animate the arrow on click */
+.nivo-nextNav:active,
+.right-arrow:active,
+.ps-right-arrow:active,
+.cs-next-arrow:active,
+.ps-right-arrow:active {
+  text-indent: 3px;
+}
+.left-arrow,
+.right-arrow,
+.ps-left-arrow,
+.ps-right-arrow,
+.cs-arrows,
+.nivo-nextNav,
+.nivo-prevNav {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  z-index: 100;
+  display: block;
+  margin-top: -35px;
+  width: 43px;
+  height: 70px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 35px;
+  line-height: 70px;
+  background-color: rgba(37, 37, 37, 0.8);
+  cursor: pointer;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+.left-arrow,
+.ps-left-arrow,
+.cs-prev-arrow,
+.nivo-prevNav {
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+.left-arrow:hover,
+.right-arrow:hover,
+.ps-left-arrow:hover,
+.ps-right-arrow:hover,
+.cs-arrows:hover,
+.nivo-nextNav:hover,
+.nivo-prevNav:hover {
+  color: #252525;
+}
+.ps-left-arrow {
+  left: 0;
+  text-indent: -3px;
+}
+.ps-right-arrow {
+  right: 0;
+}
+.left-arrow:hover,
+.right-arrow:hover,
+.ps-left-arrow:hover,
+.ps-right-arrow:hover,
+.cs-arrows:hover,
+.nivo-nextNav:hover,
+.nivo-prevNav:hover {
+  background-color: #5bc3ff;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+.pc-next,
+.pc-prev {
+  line-height: 45px;
+}
+.cs-prev-arrow {
+  @include fontawsome-icn("\f104");
+}
+.cs-next-arrow {
+  @include fontawsome-icn("\f105");
+}
