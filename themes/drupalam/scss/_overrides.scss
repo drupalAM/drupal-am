@@ -20,11 +20,7 @@
 @import "component/footer";
 @import "component/frontpage";
 
-// @import "component/content-slider";
-// TODO uncomment line above, comment line below
-.cs-slider-ul li {
-  display: block;
-}
+@import "component/content-slider";
 
 // jQuery UI style overrides.
 @import "jquery-ui/autocomplete";

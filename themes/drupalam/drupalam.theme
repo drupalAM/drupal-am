@@ -13,7 +13,6 @@ function drupalam_preprocess_views_view_list(&$variables) {
     foreach($variables['rows'] as $key => $row) {
       // basic attributes
       $variables['rows'][$key]['attributes']->setAttribute('data-bg_image_opacity', 1);
-      $variables['rows'][$key]['attributes']->setAttribute('data-layout', 'text-img');
       $variables['rows'][$key]['attributes']->setAttribute('data-bg_color', '');
       // nav thumbnail
       $style = \Drupal::entityTypeManager()->getStorage('image_style')->load('crop_70x70');
@@ -21,13 +20,24 @@ function drupalam_preprocess_views_view_list(&$variables) {
       $variables['rows'][$key]['attributes']->setAttribute('data-thumbnail', $style->buildUrl($uri));
       // background image
       $variables['rows'][$key]['attributes']->setAttribute('data-bg_image_url', file_create_url($uri));
-      // content direction
-      $direction = $row['content']['#row']->_entity->get('field_heroslide_text_position')->getValue();
-      $effect = 'slideLeft';
-      if($direction[0] == 'center') {
-        $effect = 'slideUp';
-      }
-      $variables['rows'][$key]['attributes']->setAttribute('data-animation', $effect);
+      // content position, effect direction
+      $positions = array(
+        'centered' => array(
+          'layout' => 'centered',
+          'effect' => 'slideUp',
+        ),
+        'left' => array(
+          'layout' => 'text-img',
+          'effect' => 'slideLeft',
+        ),
+        'right' => array(
+          'layout' => 'img-text',
+          'effect' => 'slideLeft',
+        ),
+      );
+      $position = $row['content']['#row']->_entity->get('field_heroslide_text_position')->getValue()[0]['value'];
+      $variables['rows'][$key]['attributes']->setAttribute('data-layout', $positions[$position]['layout']);
+      $variables['rows'][$key]['attributes']->setAttribute('data-animation', $positions[$position]['effect']);
     }
   }
 }

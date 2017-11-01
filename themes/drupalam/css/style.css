@@ -9767,11 +9767,1027 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   padding-right: 0;
 }
 
-/* line 25, ../scss/_overrides.scss */
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 30, 2017, 4:39:33 PM
+    Author     : Developer
+*/
+/* ------- Content Slider -------- */
+/* line 12, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content {
+  position: relative;
+}
+
+/* line 15, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content .section-boxed {
+  padding: 0 5%;
+}
+
+/* line 18, ../scss/component/_content-slider.scss */
+.cs-small-title,
+.cs-title {
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* line 22, ../scss/component/_content-slider.scss */
+.cs-title {
+  padding-top: 0;
+  padding-bottom: 0;
+  color: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 1.2em;
+}
+
+/* line 31, ../scss/component/_content-slider.scss */
+.cs-content-centered .cs-title:before {
+  margin: auto;
+}
+
+/* line 34, ../scss/component/_content-slider.scss */
+.cs-loading {
+  background: url("images/cs-loader-w.gif") no-repeat center;
+  background-size: 20px 20px;
+}
+
+/* line 38, ../scss/component/_content-slider.scss */
+.cs-small-title {
+  margin: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-size: 15px;
+}
+
+/* line 45, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content h2.cs-element {
+  color: inherit;
+}
+
+/* line 48, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content .button {
+  margin-top: 18px;
+  margin-right: 21px;
+  padding-right: 30px;
+  padding-left: 30px;
+  width: auto;
+  text-transform: uppercase;
+}
+
+/* line 56, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content .arrows {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+}
+
+/* line 61, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content .arrow-prev {
+  left: 10px;
+}
+
+/* line 64, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content .arrow-next {
+  right: 10px;
+}
+
+/* line 67, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content .col {
+  margin-bottom: 0;
+}
+
+/* line 70, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content {
+  position: relative;
+  overflow: hidden;
+  padding: 180px 5% 130px 5%;
+  color: #ffffff;
+}
+
+/* line 76, ../scss/component/_content-slider.scss */
+ul.cs-slider-ul {
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  min-height: 320px;
+  width: 100%;
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 85, ../scss/component/_content-slider.scss */
 .cs-slider-ul li {
+  position: absolute;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* line 92, ../scss/component/_content-slider.scss */
+.cs-slider-ul .two-columns {
+  display: none;
+}
+
+/* line 95, ../scss/component/_content-slider.scss */
+#cs-navigation {
+  position: absolute;
+  bottom: 5px;
+  display: none;
+  margin: 0;
+  padding-left: 0;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  left: 0;
+}
+
+/* line 106, ../scss/component/_content-slider.scss */
+#cs-navigation li {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 2px;
+  width: 14px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* line 115, ../scss/component/_content-slider.scss */
+.cs-content-left,
+.cs-content-right {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  position: relative;
+}
+@media (min-width: 992px) {
+  /* line 115, ../scss/component/_content-slider.scss */
+  .cs-content-left,
+  .cs-content-right {
+    padding-left: 0;
+  }
+}
+
+/* line 128, ../scss/component/_content-slider.scss */
+.cs-content-right img {
+  float: right;
+}
+
+/* line 131, ../scss/component/_content-slider.scss */
+.cs-content-centered {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 135, ../scss/component/_content-slider.scss */
+.cs-content-centered.col {
+  max-width: 80%;
+  width: 100%;
+}
+
+/* line 139, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content .cs-content-centered .button {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* line 143, ../scss/component/_content-slider.scss */
+.cs-layout-img-text .cs-content-right.col {
+  margin-right: 0;
+}
+
+/* line 146, ../scss/component/_content-slider.scss */
+.cs-layout-img-text .cs-content-left.col {
+  clear: left;
+}
+
+/* line 149, ../scss/component/_content-slider.scss */
+ul#cs-navigation li span {
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  -webkit-opacity: 0.3;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+/* line 168, ../scss/component/_content-slider.scss */
+#cs-navigation li.selected span {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  border: 2px solid #ffffff;
+  background-color: transparent;
+}
+
+/* line 178, ../scss/component/_content-slider.scss */
+.cs-arrows {
+  margin-top: -30px;
+  background-color: none;
+}
+
+/* line 182, ../scss/component/_content-slider.scss */
+.cs-arrows:hover {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+/* line 194, ../scss/component/_content-slider.scss */
+.cs-prev-arrow {
+  left: 0;
+  background-position: left top;
+}
+
+/* line 198, ../scss/component/_content-slider.scss */
+.cs-thumbnail {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  max-width: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* line 206, ../scss/component/_content-slider.scss */
+.cs-next-arrow .cs-thumbnail {
+  left: -50px;
+}
+
+/* line 209, ../scss/component/_content-slider.scss */
+.cs-prev-arrow .cs-thumbnail {
+  right: -50px;
+  max-width: none;
+}
+
+/* line 213, ../scss/component/_content-slider.scss */
+.cs-next-arrow:hover .cs-thumbnail {
+  opacity: 1;
+  left: -70px;
+  max-width: none;
+}
+
+/* line 218, ../scss/component/_content-slider.scss */
+.cs-prev-arrow:hover .cs-thumbnail {
+  opacity: 1;
+  right: -70px;
+}
+
+/* line 222, ../scss/component/_content-slider.scss */
+.full-bg-image {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* line 232, ../scss/component/_content-slider.scss */
+.cs-content-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+/* line 236, ../scss/component/_content-slider.scss */
+.cs-content-left,
+.cs-content-right,
+.cs-content-centered {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+
+/* line 246, ../scss/component/_content-slider.scss */
+.cs-content-right {
+  float: right;
+}
+
+/* line 249, ../scss/component/_content-slider.scss */
+.cs-element {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  position: relative;
+}
+
+/* line 258, ../scss/component/_content-slider.scss */
+.cs-element.cs-animate {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 265, ../scss/component/_content-slider.scss */
+ul.cs-slider-ul {
+  -webkit-transition: height 1s ease;
+  -moz-transition: height 1s ease;
+  -ms-transition: height 1s ease;
+  -o-transition: height 1s ease;
+  transition: height 1s ease;
+  overflow: visible;
+}
+
+/* line 273, ../scss/component/_content-slider.scss */
+ul.cs-slider-ul li {
+  display: none;
+}
+
+/* line 276, ../scss/component/_content-slider.scss */
+.view-hero-slide {
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -ms-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+/* Nivo Slider */
+/* line 284, ../scss/component/_content-slider.scss */
+.nivo-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  background: url("images/cs-loader.gif") no-repeat center center;
+  background-size: 16px 16px;
+}
+
+/* line 292, ../scss/component/_content-slider.scss */
+.nivo-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  max-width: none;
+}
+
+/* line 299, ../scss/component/_content-slider.scss */
+.nivo-main-image {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* If an image is wrapped in a link */
+/* line 305, ../scss/component/_content-slider.scss */
+.nivo-slider a.nivo-imageLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* The slices and boxes in the Slider */
+/* line 318, ../scss/component/_content-slider.scss */
+.nivo-slice {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  display: block;
+  height: 100%;
+}
+
+/* line 325, ../scss/component/_content-slider.scss */
+.nivo-box {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  overflow: hidden;
+}
+
+/* line 331, ../scss/component/_content-slider.scss */
+.nivo-box img {
   display: block;
 }
 
+/* Caption styles */
+/* line 335, ../scss/component/_content-slider.scss */
+.nivo-caption {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+  display: none;
+  overflow: hidden;
+  padding: 5px 10px;
+  width: 100%;
+  color: #ffffff;
+}
+
+/* line 350, ../scss/component/_content-slider.scss */
+.nivo-caption p {
+  margin: 0;
+  padding: 5px;
+}
+
+/* line 354, ../scss/component/_content-slider.scss */
+.nivo-caption a {
+  display: inline !important;
+}
+
+/* line 357, ../scss/component/_content-slider.scss */
+.nivo-html-caption {
+  display: none;
+}
+
+/* Direction nav styles (e.g. Next & Prev) */
+/* line 361, ../scss/component/_content-slider.scss */
+.nivo-directionNav a {
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+  cursor: pointer;
+}
+
+/* line 367, ../scss/component/_content-slider.scss */
+.nivo-prevNav {
+  left: 0;
+  text-indent: -3px;
+}
+
+/* line 371, ../scss/component/_content-slider.scss */
+.nivo-nextNav {
+  right: 0;
+  text-indent: 3px;
+}
+
+/* line 375, ../scss/component/_content-slider.scss */
+.rp-header .nivo-nextNav {
+  right: 5px;
+}
+
+/* line 378, ../scss/component/_content-slider.scss */
+.rp-header .nivo-prevNav {
+  left: 5px;
+}
+
+/* line 381, ../scss/component/_content-slider.scss */
+.post-gallery .nivo-prevNav {
+  left: 5px;
+}
+
+/* line 384, ../scss/component/_content-slider.scss */
+.post-gallery .nivo-nextNav {
+  right: 5px;
+}
+
+/* Control nav styles (e.g. 1,2,3...) */
+/* line 388, ../scss/component/_content-slider.scss */
+.nivo-controlNav {
+  position: absolute;
+  bottom: 10px;
+  z-index: 100;
+  padding: 15px 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 10px;
+}
+
+/* line 398, ../scss/component/_content-slider.scss */
+.nivo-controlNav a {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  top: 50%;
+  display: inline-block;
+  margin: 0 3px;
+  width: 7px;
+  height: 7px;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  list-style: none;
+  vertical-align: middle;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* line 423, ../scss/component/_content-slider.scss */
+.nivo-controlNav a.active {
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  border: 2px solid #ffffff;
+  background: transparent;
+  font-weight: bold;
+}
+
+/* Nivo Custom */
+/* line 435, ../scss/component/_content-slider.scss */
+#content-container .nivoSlider {
+  height: auto !important;
+  background-image: url(images/cs-loader.gif);
+}
+
+/* line 439, ../scss/component/_content-slider.scss */
+.post-gallery .nivo-nextNav,
+.post-gallery .nivo-prevNav {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+/* line 447, ../scss/component/_content-slider.scss */
+.nivo-nextNav:after,
+.nivo-prevNav:a {
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  display: block;
+  width: 35px;
+  height: 35px;
+  border: 2px red solid;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  content: "";
+}
+
+/* line 472, ../scss/component/_content-slider.scss */
+.nivo-nextNav:hover:after,
+.nivo-prevNav:hover:after {
+  -webkit-transform: scale(1.35);
+  -moz-transform: scale(1.35);
+  -ms-transform: scale(1.35);
+  -o-transform: scale(1.35);
+  transform: scale(1.35);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+
+/* line 486, ../scss/component/_content-slider.scss */
+.nivo-nextNav:active:after,
+.nivo-prevNav:active:after {
+  -webkit-transform: scale(1.35);
+  -moz-transform: scale(1.35);
+  -ms-transform: scale(1.35);
+  -o-transform: scale(1.35);
+  transform: scale(1.35);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+
+/* line 500, ../scss/component/_content-slider.scss */
+.nivo-nextNav:hover,
+.nivo-prevNav:hover {
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  -webkit-opacity: 0.8;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  color: #ffffff;
+}
+
+/* line 510, ../scss/component/_content-slider.scss */
+.nivo-caption {
+  margin: 3%;
+  padding: 9px 14px;
+  width: auto;
+  height: auto;
+  border: 2px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.07);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.3em;
+  font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+/* line 524, ../scss/component/_content-slider.scss */
+.nivo-caption p {
+  padding-left: 19px;
+  font-size: 14px;
+}
+
+/* line 528, ../scss/component/_content-slider.scss */
+.post-gallery .nivo-caption {
+  border: 0px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 13px;
+}
+
+/* line 534, ../scss/component/_content-slider.scss */
+#nivo-controlNav-holder {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+
+/* line 539, ../scss/component/_content-slider.scss */
+.nivo-wrapper {
+  position: relative;
+}
+
+/* line 542, ../scss/component/_content-slider.scss */
+#slider-container .nivo-wrapper {
+  min-height: 400px;
+  background: url("images/cs-loader-w.gif") no-repeat center center;
+  background-size: 15px 15px;
+}
+
+/* Nivo slider in content */
+/* line 548, ../scss/component/_content-slider.scss */
+.custom-page-content .nivo-content {
+  margin: 0;
+}
+
+/* line 551, ../scss/component/_content-slider.scss */
+.cs-type-video.loading {
+  background: url(images/cs-loader-w.gif) no-repeat center center;
+  background-size: 15px 15px;
+}
+
+/* line 555, ../scss/component/_content-slider.scss */
+.cs-layout-video-text .cs-content-right.col {
+  margin-right: 0;
+}
+
+/* line 558, ../scss/component/_content-slider.scss */
+.cs-layout-video-text .cs-content-left.col {
+  clear: left;
+}
+
+/* line 561, ../scss/component/_content-slider.scss */
+.nivo-prevNav,
+.nivo-nextNav,
+.left-arrow,
+.right-arrow,
+.ps-left-arrow,
+.ps-right-arrow,
+.cs-next-arrow,
+.cs-prev-arrow,
+.ps-left-arrow,
+.ps-right-arrow {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  line-height: 70px;
+}
+
+/* line 578, ../scss/component/_content-slider.scss */
+.nivo-prevNav:hover,
+.nivo-nextNav:hover,
+.left-arrow:hover,
+.right-arrow:hover,
+.ps-left-arrow:hover,
+.ps-right-arrow:hover,
+.cs-next-arrow:hover,
+.cs-prev-arrow:hover,
+.ps-left-arrow:hover,
+.ps-right-arrow:hover {
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+
+/* line 595, ../scss/component/_content-slider.scss */
+.nivo-prevNav,
+.left-arrow,
+.cs-prev-arrow {
+  text-indent: -5px;
+}
+
+/* animate the arrow on click */
+/* line 601, ../scss/component/_content-slider.scss */
+.nivo-prevNav:active,
+.left-arrow:active,
+.cs-prev-arrow:active {
+  text-indent: -12px;
+}
+
+/* line 606, ../scss/component/_content-slider.scss */
+.ps-left-arrow:active,
+.ps-left-arrow:active {
+  text-indent: -7px;
+}
+
+/* line 610, ../scss/component/_content-slider.scss */
+.ps-icon,
+.ts-arrow {
+  line-height: 30px;
+}
+
+/* line 614, ../scss/component/_content-slider.scss */
+.nivo-nextNav,
+.right-arrow,
+.ps-right-arrow,
+.cs-next-arrow,
+.ps-right-arrow {
+  text-indent: 0px;
+}
+
+/* animate the arrow on click */
+/* line 622, ../scss/component/_content-slider.scss */
+.nivo-nextNav:active,
+.right-arrow:active,
+.ps-right-arrow:active,
+.cs-next-arrow:active,
+.ps-right-arrow:active {
+  text-indent: 3px;
+}
+
+/* line 629, ../scss/component/_content-slider.scss */
+.left-arrow,
+.right-arrow,
+.ps-left-arrow,
+.ps-right-arrow,
+.cs-arrows,
+.nivo-nextNav,
+.nivo-prevNav {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  z-index: 100;
+  display: block;
+  margin-top: -35px;
+  width: 43px;
+  height: 70px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 35px;
+  line-height: 70px;
+  background-color: rgba(37, 37, 37, 0.8);
+  cursor: pointer;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  -webkit-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+
+/* line 672, ../scss/component/_content-slider.scss */
+.left-arrow,
+.ps-left-arrow,
+.cs-prev-arrow,
+.nivo-prevNav {
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+/* line 692, ../scss/component/_content-slider.scss */
+.left-arrow:hover,
+.right-arrow:hover,
+.ps-left-arrow:hover,
+.ps-right-arrow:hover,
+.cs-arrows:hover,
+.nivo-nextNav:hover,
+.nivo-prevNav:hover {
+  color: #252525;
+}
+
+/* line 701, ../scss/component/_content-slider.scss */
+.ps-left-arrow {
+  left: 0;
+  text-indent: -3px;
+}
+
+/* line 705, ../scss/component/_content-slider.scss */
+.ps-right-arrow {
+  right: 0;
+}
+
+/* line 708, ../scss/component/_content-slider.scss */
+.left-arrow:hover,
+.right-arrow:hover,
+.ps-left-arrow:hover,
+.ps-right-arrow:hover,
+.cs-arrows:hover,
+.nivo-nextNav:hover,
+.nivo-prevNav:hover {
+  background-color: #5bc3ff;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+
+/* line 724, ../scss/component/_content-slider.scss */
+.pc-next,
+.pc-prev {
+  line-height: 45px;
+}
+
+/* line 108, ../scss/_mixins.scss */
+.cs-prev-arrow:before {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* line 108, ../scss/_mixins.scss */
+.cs-next-arrow:before {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: inherit;
+  color: inherit;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 736, ../scss/component/_content-slider.scss */
+  #cs-navigation {
+    visibility: hidden;
+  }
+
+  /* line 739, ../scss/component/_content-slider.scss */
+  .item-list.container {
+    width: 100%;
+  }
+
+  /* line 742, ../scss/component/_content-slider.scss */
+  ul.cs-slider-ul {
+    min-height: 150px;
+  }
+
+  /* line 745, ../scss/component/_content-slider.scss */
+  .view-hero-slide .view-content {
+    padding: 150px 0 110px 0;
+  }
+
+  /* line 748, ../scss/component/_content-slider.scss */
+  .cs-element {
+    font-size: 12px;
+  }
+
+  /* line 751, ../scss/component/_content-slider.scss */
+  .cs-small-title {
+    font-size: 15px;
+  }
+
+  /* line 754, ../scss/component/_content-slider.scss */
+  .cs-title {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 759, ../scss/component/_content-slider.scss */
+  .cs-content {
+    text-align: center;
+  }
+
+  /* line 762, ../scss/component/_content-slider.scss */
+  .cs-arrows {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7);
+    top: auto;
+    right: 50%;
+    bottom: 20px;
+    margin-right: -41px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+  }
+
+  /* line 776, ../scss/component/_content-slider.scss */
+  .cs-prev-arrow {
+    left: 50%;
+    margin-left: -41px;
+  }
+
+  /* line 780, ../scss/component/_content-slider.scss */
+  .cs-thumbnail {
+    display: none !important;
+  }
+
+  /* line 783, ../scss/component/_content-slider.scss */
+  .cs-small-title {
+    font-size: 13px;
+  }
+
+  /* line 786, ../scss/component/_content-slider.scss */
+  .cs-title {
+    font-size: 32px;
+  }
+}
 /**
  * jQuery UI autocomplete widget style overrides.
  *
@@ -9821,28 +10837,28 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   color: #fff;
 }
 
-/* line 32, ../scss/_overrides.scss */
+/* line 28, ../scss/_overrides.scss */
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.7;
 }
 @media (min-width: 767px) {
-  /* line 32, ../scss/_overrides.scss */
+  /* line 28, ../scss/_overrides.scss */
   body {
     margin-top: 0;
   }
 }
 
-/* line 39, ../scss/_overrides.scss */
+/* line 35, ../scss/_overrides.scss */
 ol, ul {
   padding-left: 1.5em;
 }
-/* line 41, ../scss/_overrides.scss */
+/* line 37, ../scss/_overrides.scss */
 .popover ol:last-child, .popover ul:last-child {
   margin-bottom: 0;
 }
 
-/* line 45, ../scss/_overrides.scss */
+/* line 41, ../scss/_overrides.scss */
 h1, h2, h3, h4, h5, h6 {
   padding: 10px 0;
   margin-top: 0;
@@ -9852,42 +10868,42 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* line 55, ../scss/_overrides.scss */
+/* line 51, ../scss/_overrides.scss */
 .main-container {
   padding-bottom: 20px;
 }
 
-/* line 60, ../scss/_overrides.scss */
+/* line 56, ../scss/_overrides.scss */
 .page-header {
   margin-top: 0;
 }
 
-/* line 65, ../scss/_overrides.scss */
+/* line 61, ../scss/_overrides.scss */
 p:last-child,
 .form-group:last-child,
 .panel:last-child {
   margin-bottom: 0;
 }
 
-/* line 73, ../scss/_overrides.scss */
+/* line 69, ../scss/_overrides.scss */
 .region-help > .glyphicon {
   font-size: 18px;
   float: left;
   margin: -0.05em 0.5em 0 0;
 }
-/* line 78, ../scss/_overrides.scss */
+/* line 74, ../scss/_overrides.scss */
 .region-help .block {
   overflow: hidden;
 }
 
-/* line 84, ../scss/_overrides.scss */
+/* line 80, ../scss/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #b3b3b1;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 89, ../scss/_overrides.scss */
+/* line 85, ../scss/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
 }

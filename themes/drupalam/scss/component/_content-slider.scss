@@ -101,6 +101,7 @@ ul.cs-slider-ul {
   width: 100%;
   list-style: none;
   text-align: center;
+  left: 0;
 }
 #cs-navigation li {
   position: relative;
@@ -120,7 +121,9 @@ ul.cs-slider-ul {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   position: relative;
-  padding-left: 0;
+  @include breakpoint(laptop_and_desktop) {
+    padding-left: 0;
+  }
 }
 .cs-content-right img {
   float: right;
@@ -727,4 +730,61 @@ ul.cs-slider-ul li {
 }
 .cs-next-arrow {
   @include fontawsome-icn("\f105");
+}
+
+@media screen and (max-width: 1000px){
+  #cs-navigation {
+    visibility: hidden;
+  }
+  .item-list.container {
+    width: 100%;
+  }
+  ul.cs-slider-ul {
+    min-height: 150px;
+  }
+  .view-hero-slide .view-content {
+    padding: 150px 0 110px 0;
+  }
+  .cs-element {
+    font-size: 12px;
+  }
+  .cs-small-title {
+    font-size: 15px;
+  }
+  .cs-title {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cs-content {
+    text-align: center;
+  }
+  .cs-arrows {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
+    transform: scale(0.7);
+    top: auto;
+    right: 50%;
+    bottom: 20px;
+    margin-right: -41px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+  }
+  .cs-prev-arrow {
+    left: 50%;
+    margin-left: -41px;
+  }
+  .cs-thumbnail {
+    display: none !important;
+  }
+  .cs-small-title {
+    font-size: 13px;
+  }
+  .cs-title {
+    font-size: 32px;
+  }
+  
 }

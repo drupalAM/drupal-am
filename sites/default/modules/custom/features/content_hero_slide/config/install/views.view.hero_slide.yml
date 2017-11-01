@@ -615,7 +615,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: 'cs-content-{{field_heroslide_text_position}} cs-content col-md-6'
+          element_wrapper_class: 'cs-content-{{field_heroslide_text_position}} cs-content col-sm-6'
           element_default_classes: true
           empty: ''
           hide_empty: false
