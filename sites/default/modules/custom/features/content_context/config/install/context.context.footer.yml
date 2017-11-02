@@ -20,7 +20,7 @@ third_party_settings:
       label: 'Footer bottom'
       region: footer
       parent: ''
-      weight: '6'
+      weight: '2'
       theme: drupalam
       class: row
       all_parents: {  }
@@ -29,7 +29,7 @@ third_party_settings:
       label: 'Footer column container'
       region: footer
       parent: ''
-      weight: '5'
+      weight: '0'
       theme: drupalam
       class: container
       all_parents: {  }
