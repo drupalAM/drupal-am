@@ -9,6 +9,7 @@ dependencies:
   - editor
   - field
   - filter
+  - image
   - rdf
   - site_settings_site
   - taxonomy

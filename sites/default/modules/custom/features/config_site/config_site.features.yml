@@ -5,5 +5,4 @@ excluded:
   - block_content.type.basic
   - core.entity_form_display.block_content.basic.default
   - core.entity_view_display.block_content.basic.default
-  - taxonomy.vocabulary.test
 required: true
