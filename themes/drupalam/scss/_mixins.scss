@@ -67,18 +67,6 @@
 }
 
 // =============================================================================
-// Box Shadow
-// =============================================================================
-
-@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-
-  -webkit-box-shadow:$top $left $blur $color #{$inset};
-  -moz-box-shadow:$top $left $blur $color #{$inset};
-  box-shadow:$top $left $blur $color #{$inset};
-}
-
-
-// =============================================================================
 // Spin Animation
 // =============================================================================
 @mixin spinner ($animation, $duration, $iteration, $timing) {

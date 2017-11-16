@@ -612,7 +612,7 @@ function onYouTubeIframeAPIReady(){
 					.css(cssArgs)
 					.insertBefore($root)
 					.animate({opacity:slide.bgOpacity}, 1000);
-console.log($newBgImage);
+                                
 				if(isIe8){
 					new PEXETO.utils.bgCoverFallback($newBgImage).init();
 				}

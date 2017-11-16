@@ -11,10 +11,56 @@ and open the template in the editor.
 /* ------- Content Slider -------- */
 .view-hero-slide .view-content {
   position: relative;
+  overflow: hidden;
+  padding: 180px 5% 130px 5%;
+  color: $white;
+  
+  .section-boxed {
+    padding: 0 5%;
+  }
+  h2.cs-element {
+    color: inherit;
+  }
+  .button {
+    display: inline-block;
+    a {
+      @extend .btn;
+      @extend .btn-primary;
+      margin-top: 18px;
+      margin-right: 21px;
+      padding-right: 30px;
+      padding-left: 30px;
+      width: auto;
+      text-transform: uppercase;
+    }
+    &.btn-alt {
+      a {
+        @extend .btn-info;
+      }
+    }
+  }
+  .cs-content-centered .button {
+    a {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+  }
+  .arrows {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+  }
+  .arrow-prev {
+    left: 10px;
+  }
+  .arrow-next {
+    right: 10px;
+  }
+  .col {
+    margin-bottom: 0;
+  }
 }
-.view-hero-slide .view-content .section-boxed {
-  padding: 0 5%;
-}
+
 .cs-small-title,
 .cs-title {
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
@@ -42,37 +88,6 @@ and open the template in the editor.
   letter-spacing: 7px;
   font-size: 15px;
 }
-.view-hero-slide .view-content h2.cs-element {
-  color: inherit;
-}
-.view-hero-slide .view-content .button {
-  margin-top: 18px;
-  margin-right: 21px;
-  padding-right: 30px;
-  padding-left: 30px;
-  width: auto;
-  text-transform: uppercase;
-}
-.view-hero-slide .view-content .arrows {
-  position: absolute;
-  top: 50%;
-  margin-top: -10px;
-}
-.view-hero-slide .view-content .arrow-prev {
-  left: 10px;
-}
-.view-hero-slide .view-content .arrow-next {
-  right: 10px;
-}
-.view-hero-slide .view-content .col {
-  margin-bottom: 0;
-}
-.view-hero-slide .view-content {
-  position: relative;
-  overflow: hidden;
-  padding: 180px 5% 130px 5%;
-  color: #ffffff;
-}
 ul.cs-slider-ul {
   position: relative;
   overflow: hidden;
@@ -84,8 +99,7 @@ ul.cs-slider-ul {
 }
 .cs-slider-ul li {
   position: absolute;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   max-width: 100%;
   width: 100%;
 }
@@ -114,12 +128,7 @@ ul.cs-slider-ul {
 }
 .cs-content-left,
 .cs-content-right {
-  -moz-opacity: 0;
-  -khtml-opacity: 0;
-  -webkit-opacity: 0;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
+  @include opacity(0);
   position: relative;
   @include breakpoint(laptop_and_desktop) {
     padding-left: 0;
@@ -136,10 +145,6 @@ ul.cs-slider-ul {
   max-width: 80%;
   width: 100%;
 }
-.view-hero-slide .view-content .cs-content-centered .button {
-  margin-right: 10px;
-  margin-left: 10px;
-}
 .cs-layout-img-text .cs-content-right.col {
   margin-right: 0;
 }
@@ -147,14 +152,7 @@ ul.cs-slider-ul {
   clear: left;
 }
 ul#cs-navigation li span {
-  -moz-opacity: 0.3;
-  -khtml-opacity: 0.3;
-  -webkit-opacity: 0.3;
-  opacity: 0.3;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-  filter: alpha(opacity=30);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
+  @include opacity(0.3);
   border-radius: 20px;
   position: absolute;
   top: 2px;
@@ -162,17 +160,12 @@ ul#cs-navigation li span {
   display: inline-block;
   width: 9px;
   height: 9px;
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
+  background-color: $white;
+  border: 2px solid $white;
 }
 #cs-navigation li.selected span {
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-  border: 2px solid #ffffff;
+  @include opacity(1);
+  border: 2px solid $white;
   background-color: transparent;
 }
 .cs-arrows {
@@ -180,14 +173,7 @@ ul#cs-navigation li span {
   background-color: none;
 }
 .cs-arrows:hover {
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
+  @include opacity(1);
   border-radius: 0;
   cursor: pointer;
 }
@@ -200,7 +186,7 @@ ul#cs-navigation li span {
   height: 70px;
   width: 70px;
   max-width: none;
-  opacity: 0;
+  @include opacity(0);
   transition: all 0.5s ease;
 }
 .cs-next-arrow .cs-thumbnail {
@@ -211,12 +197,12 @@ ul#cs-navigation li span {
   max-width: none;
 }
 .cs-next-arrow:hover .cs-thumbnail {
-  opacity: 1;
+  @include opacity(1);
   left: -70px;
   max-width: none;
 }
 .cs-prev-arrow:hover .cs-thumbnail {
-  opacity: 1;
+  @include opacity(1);
   right: -70px;
 }
 .full-bg-image {
@@ -228,6 +214,7 @@ ul#cs-navigation li span {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  @include opacity(0.3);
 }
 .cs-content-centered {
   float: none;
@@ -236,49 +223,27 @@ ul#cs-navigation li span {
 .cs-content-left,
 .cs-content-right,
 .cs-content-centered {
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
+  @include opacity(1);
 }
 .cs-content-right {
   float: right;
 }
 .cs-element {
-  -moz-opacity: 0;
-  -khtml-opacity: 0;
-  -webkit-opacity: 0;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
+  @include opacity(0);
   position: relative;
 }
 .cs-element.cs-animate {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  @include transition(all 0.5s ease);
 }
 ul.cs-slider-ul {
-  -webkit-transition: height 1s ease;
-  -moz-transition: height 1s ease;
-  -ms-transition: height 1s ease;
-  -o-transition: height 1s ease;
-  transition: height 1s ease;
+  @include transition(height 1s ease);
   overflow: visible;
 }
 ul.cs-slider-ul li {
   display: none;
 }
 .view-hero-slide {
-  -webkit-transition: background-color 0.5s ease;
-  -moz-transition: background-color 0.5s ease;
-  -ms-transition: background-color 0.5s ease;
-  -o-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease;
+  @include transition(background-color 0.5s ease);
 }
 /* Nivo Slider */
 .nivo-slider {
@@ -333,10 +298,7 @@ ul.cs-slider-ul li {
 }
 /* Caption styles */
 .nivo-caption {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -ms-box-sizing: border-box;
+  @include box-sizing(border-box);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -345,7 +307,7 @@ ul.cs-slider-ul li {
   overflow: hidden;
   padding: 5px 10px;
   width: 100%;
-  color: #ffffff;
+  color: $white;
 }
 .nivo-caption p {
   margin: 0;
@@ -396,38 +358,24 @@ ul.cs-slider-ul li {
   line-height: 10px;
 }
 .nivo-controlNav a {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
+  @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
   border-radius: 50px;
-  -moz-opacity: 0.5;
-  -khtml-opacity: 0.5;
-  -webkit-opacity: 0.5;
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
+  @include opacity(0.5);
   top: 50%;
   display: inline-block;
   margin: 0 3px;
   width: 7px;
   height: 7px;
-  background: #ffffff;
-  border: 2px solid #ffffff;
+  background: $white;
+  border: 2px solid $white;
   list-style: none;
   vertical-align: middle;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 .nivo-controlNav a.active {
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-  border: 2px solid #ffffff;
+  @include opacity(1);
+  border: 2px solid $white;
   background: transparent;
   font-weight: bold;
 }
@@ -438,25 +386,12 @@ ul.cs-slider-ul li {
 }
 .post-gallery .nivo-nextNav,
 .post-gallery .nivo-prevNav {
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  -o-transform: scale(0.8);
-  transform: scale(0.8);
+  @include scale(0.8);
 }
 .nivo-nextNav:after,
 .nivo-prevNav:a {
-  -webkit-transition: all 0.15s ease;
-  -moz-transition: all 0.15s ease;
-  -ms-transition: all 0.15s ease;
-  -o-transition: all 0.15s ease;
-  transition: all 0.15s ease;
-  -moz-opacity: 0;
-  -khtml-opacity: 0;
-  -webkit-opacity: 0;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
+  @include transition(all 0.15s ease);
+  @include opacity(0);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -464,55 +399,30 @@ ul.cs-slider-ul li {
   width: 35px;
   height: 35px;
   border: 2px red solid;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
   border-radius: 100px;
   content: "";
 }
 .nivo-nextNav:hover:after,
 .nivo-prevNav:hover:after {
-  -webkit-transform: scale(1.35);
-  -moz-transform: scale(1.35);
-  -ms-transform: scale(1.35);
-  -o-transform: scale(1.35);
-  transform: scale(1.35);
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
+  @include scale(1.35);
+  @include opacity(1);
 }
 .nivo-nextNav:active:after,
 .nivo-prevNav:active:after {
-  -webkit-transform: scale(1.35);
-  -moz-transform: scale(1.35);
-  -ms-transform: scale(1.35);
-  -o-transform: scale(1.35);
-  transform: scale(1.35);
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
+  @include scale(1.35);
+  @include opacity(1);
 }
 .nivo-nextNav:hover,
 .nivo-prevNav:hover {
-  -moz-opacity: 0.8;
-  -khtml-opacity: 0.8;
-  -webkit-opacity: 0.8;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80);
-  color: #ffffff;
+  @include opacity(0.8);
+  color: $white;
 }
 .nivo-caption {
   margin: 3%;
   padding: 9px 14px;
   width: auto;
   height: auto;
-  border: 2px solid #ffffff;
+  border: 2px solid $white;
   background-color: rgba(0, 0, 0, 0.07);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   letter-spacing: 2px;
@@ -568,11 +478,7 @@ ul.cs-slider-ul li {
 .cs-prev-arrow,
 .ps-left-arrow,
 .ps-right-arrow {
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  @include transition(all 0.2s ease);
   line-height: 70px;
 }
 .nivo-prevNav:hover,
@@ -585,12 +491,7 @@ ul.cs-slider-ul li {
 .cs-prev-arrow:hover,
 .ps-left-arrow:hover,
 .ps-right-arrow:hover {
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
-  filter: alpha(opacity=90);
+  @include opacity(0.9);
 }
 .nivo-prevNav,
 .left-arrow,
@@ -641,52 +542,28 @@ ul.cs-slider-ul li {
   margin-top: -35px;
   width: 43px;
   height: 70px;
-  color: #ffffff;
+  color: $white;
   text-align: center;
   font-size: 35px;
   line-height: 70px;
   background-color: rgba(37, 37, 37, 0.8);
   cursor: pointer;
-  -webkit-border-top-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
   border-top-left-radius: 3px;
-  -webkit-border-top-right-radius: 0px;
-  -moz-border-radius-topright: 0px;
   border-top-right-radius: 0px;
-  -webkit-border-bottom-right-radius: 0px;
-  -moz-border-radius-bottomright: 0px;
   border-bottom-right-radius: 0px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
   border-bottom-left-radius: 3px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
   background-clip: padding-box;
-  -moz-opacity: 0.9;
-  -khtml-opacity: 0.9;
-  -webkit-opacity: 0.9;
-  opacity: 0.9;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
-  filter: alpha(opacity=90);
+  @include opacity(0.9);
 }
 .left-arrow,
 .ps-left-arrow,
 .cs-prev-arrow,
 .nivo-prevNav {
-  -webkit-border-top-left-radius: 0px;
-  -moz-border-radius-topleft: 0px;
   border-top-left-radius: 0px;
-  -webkit-border-top-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
   border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-bottomright: 3px;
   border-bottom-right-radius: 3px;
-  -webkit-border-bottom-left-radius: 0px;
-  -moz-border-radius-bottomleft: 0px;
   border-bottom-left-radius: 0px;
   -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
   background-clip: padding-box;
 }
 .left-arrow:hover,
@@ -713,12 +590,7 @@ ul.cs-slider-ul li {
 .nivo-nextNav:hover,
 .nivo-prevNav:hover {
   background-color: #5bc3ff;
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
+  @include opacity(1);
   cursor: pointer;
 }
 .pc-next,
@@ -760,17 +632,11 @@ ul.cs-slider-ul li {
     text-align: center;
   }
   .cs-arrows {
-    -webkit-transform: scale(0.7);
-    -moz-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    -o-transform: scale(0.7);
-    transform: scale(0.7);
+    @include scale(0.7);
     top: auto;
     right: 50%;
     bottom: 20px;
     margin-right: -41px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-radius: 2px;
   }
   .cs-prev-arrow {
