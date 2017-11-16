@@ -15,9 +15,9 @@
 
     }
   };
-  
+  // Front Page hero slider
   $(".view-hero-slide .view-content").pexetoContentSlider({
-    "autoplay": false, 
+    "autoplay": true, 
     "pauseOnHover": true, 
     "animationInterval": 3000, 
     "thumbnailPreview": true, 
