@@ -26,9 +26,7 @@ and open the template in the editor.
     a {
       @extend .btn;
       @extend .btn-primary;
-      margin-top: 18px;
-      margin-right: 21px;
-      padding-right: 30px;
+      margin: 18px 10px 0 0;
       padding-left: 30px;
       width: auto;
       text-transform: uppercase;
@@ -36,13 +34,13 @@ and open the template in the editor.
     &.btn-alt {
       a {
         @extend .btn-info;
+        margin: 18px 0 0 10px;
       }
     }
   }
   .cs-content-centered .button {
     a {
-      margin-right: 10px;
-      margin-left: 10px;
+      margin: 18px 10px 0 10px;
     }
   }
   .arrows {
@@ -220,10 +218,11 @@ ul#cs-navigation li span {
   float: none;
   margin: 0 auto;
 }
-.cs-content-left,
-.cs-content-right,
-.cs-content-centered {
-  @include opacity(1);
+$types: ("left", "right", "centered");
+@each $type in $types {
+  .cs-content-#{$type} {
+    @include opacity(1);
+  }
 }
 .cs-content-right {
   float: right;
@@ -627,10 +626,12 @@ ul.cs-slider-ul li {
     font-size: 50px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .cs-content {
     text-align: center;
   }
+}
+@media screen and (max-width: 768px) {
   .cs-arrows {
     @include scale(0.7);
     top: auto;

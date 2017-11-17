@@ -9060,52 +9060,58 @@ html.js .ajax-new-content:empty {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+@media (max-width: 768px) {
+  /* line 6, ../scss/component/_form.scss */
+  .btn, .view-hero-slide .view-content .button a {
+    font-size: 12px;
+  }
+}
 
-/* line 9, ../scss/component/_form.scss */
+/* line 12, ../scss/component/_form.scss */
 .btn-primary, .view-hero-slide .view-content .button a {
   border-width: 2px;
 }
 
-/* line 12, ../scss/component/_form.scss */
+/* line 15, ../scss/component/_form.scss */
 .btn-info, .view-hero-slide .view-content .button.btn-alt a {
   border: 2px solid;
 }
-/* line 15, ../scss/component/_form.scss */
+/* line 18, ../scss/component/_form.scss */
 .btn-info:hover, .view-hero-slide .view-content .button.btn-alt a:hover, .btn-info:focus, .view-hero-slide .view-content .button.btn-alt a:focus {
   border-color: #c90834;
 }
 
-/* line 25, ../scss/component/_form.scss */
+/* line 28, ../scss/component/_form.scss */
 table .checkbox.form-no-label, table .radio.form-no-label {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-/* line 34, ../scss/component/_form.scss */
+/* line 37, ../scss/component/_form.scss */
 .select-wrapper {
   display: inline-block;
   position: relative;
   width: 100%;
 }
-/* line 38, ../scss/component/_form.scss */
+/* line 41, ../scss/component/_form.scss */
 .form-inline .select-wrapper {
   width: auto;
 }
-/* line 41, ../scss/component/_form.scss */
+/* line 44, ../scss/component/_form.scss */
 .input-group .select-wrapper {
   display: table-cell;
 }
-/* line 44, ../scss/component/_form.scss */
+/* line 47, ../scss/component/_form.scss */
 .input-group .select-wrapper:first-child .form-control:first-child {
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
 }
-/* line 47, ../scss/component/_form.scss */
+/* line 50, ../scss/component/_form.scss */
 .input-group .select-wrapper:last-child .form-control:first-child {
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
 }
-/* line 51, ../scss/component/_form.scss */
+/* line 54, ../scss/component/_form.scss */
 .select-wrapper select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -9113,11 +9119,11 @@ table .checkbox.form-no-label, table .radio.form-no-label {
   line-height: 1;
   padding-right: 2em;
 }
-/* line 57, ../scss/component/_form.scss */
+/* line 60, ../scss/component/_form.scss */
 .select-wrapper select::-ms-expand {
   opacity: 0;
 }
-/* line 61, ../scss/component/_form.scss */
+/* line 64, ../scss/component/_form.scss */
 .select-wrapper:after {
   color: #fdd200;
   content: 'Γû╝';
@@ -9132,7 +9138,7 @@ table .checkbox.form-no-label, table .radio.form-no-label {
   top: 50%;
   z-index: 10;
 }
-/* line 76, ../scss/component/_form.scss */
+/* line 79, ../scss/component/_form.scss */
 .has-glyphicons .select-wrapper:after {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9140,20 +9146,20 @@ table .checkbox.form-no-label, table .radio.form-no-label {
   display: inline-block;
   font-family: 'Glyphicons Halflings';
 }
-/* line 83, ../scss/component/_form.scss */
+/* line 86, ../scss/component/_form.scss */
 .has-error .select-wrapper:after {
   color: #a94442;
 }
-/* line 86, ../scss/component/_form.scss */
+/* line 89, ../scss/component/_form.scss */
 .has-success .select-wrapper:after {
   color: #3c763d;
 }
-/* line 89, ../scss/component/_form.scss */
+/* line 92, ../scss/component/_form.scss */
 .has-warning .select-wrapper:after {
   color: #8a6d3b;
 }
 
-/* line 98, ../scss/component/_form.scss */
+/* line 101, ../scss/component/_form.scss */
 .form-required:after {
   background-image: url(../images/required.svg);
   background-size: 10px 7px;
@@ -9164,11 +9170,11 @@ table .checkbox.form-no-label, table .radio.form-no-label {
   width: 10px;
 }
 
-/* line 110, ../scss/component/_form.scss */
+/* line 113, ../scss/component/_form.scss */
 .form-actions .btn, .form-actions .view-hero-slide .view-content .button a, .view-hero-slide .view-content .button .form-actions a, .form-actions .btn-group {
   margin-right: 10px;
 }
-/* line 114, ../scss/component/_form.scss */
+/* line 117, ../scss/component/_form.scss */
 .form-actions .btn-group .btn, .form-actions .btn-group .view-hero-slide .view-content .button a, .view-hero-slide .view-content .button .form-actions .btn-group a {
   margin-right: 0;
 }
@@ -9852,44 +9858,45 @@ and open the template in the editor.
 }
 /* line 26, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .button a {
-  margin-top: 18px;
-  margin-right: 21px;
-  padding-right: 30px;
+  margin: 18px 10px 0 0;
   padding-left: 30px;
   width: auto;
   text-transform: uppercase;
 }
+/* line 35, ../scss/component/_content-slider.scss */
+.view-hero-slide .view-content .button.btn-alt a {
+  margin: 18px 0 0 10px;
+}
 /* line 43, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .cs-content-centered .button a {
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 18px 10px 0 10px;
 }
-/* line 48, ../scss/component/_content-slider.scss */
+/* line 47, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .arrows {
   position: absolute;
   top: 50%;
   margin-top: -10px;
 }
-/* line 53, ../scss/component/_content-slider.scss */
+/* line 52, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .arrow-prev {
   left: 10px;
 }
-/* line 56, ../scss/component/_content-slider.scss */
+/* line 55, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .arrow-next {
   right: 10px;
 }
-/* line 59, ../scss/component/_content-slider.scss */
+/* line 58, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .col {
   margin-bottom: 0;
 }
 
-/* line 64, ../scss/component/_content-slider.scss */
+/* line 63, ../scss/component/_content-slider.scss */
 .cs-small-title,
 .cs-title {
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 68, ../scss/component/_content-slider.scss */
+/* line 67, ../scss/component/_content-slider.scss */
 .cs-title {
   padding-top: 0;
   padding-bottom: 0;
@@ -9900,18 +9907,18 @@ and open the template in the editor.
   line-height: 1.2em;
 }
 
-/* line 77, ../scss/component/_content-slider.scss */
+/* line 76, ../scss/component/_content-slider.scss */
 .cs-content-centered .cs-title:before {
   margin: auto;
 }
 
-/* line 80, ../scss/component/_content-slider.scss */
+/* line 79, ../scss/component/_content-slider.scss */
 .cs-loading {
   background: url("images/cs-loader-w.gif") no-repeat center;
   background-size: 20px 20px;
 }
 
-/* line 84, ../scss/component/_content-slider.scss */
+/* line 83, ../scss/component/_content-slider.scss */
 .cs-small-title {
   margin: 0;
   margin-bottom: 0;
@@ -9920,7 +9927,7 @@ and open the template in the editor.
   font-size: 15px;
 }
 
-/* line 91, ../scss/component/_content-slider.scss */
+/* line 90, ../scss/component/_content-slider.scss */
 ul.cs-slider-ul {
   position: relative;
   overflow: hidden;
@@ -9931,7 +9938,7 @@ ul.cs-slider-ul {
   padding-left: 0;
 }
 
-/* line 100, ../scss/component/_content-slider.scss */
+/* line 99, ../scss/component/_content-slider.scss */
 .cs-slider-ul li {
   position: absolute;
   -webkit-box-sizing: border-box;
@@ -9941,12 +9948,12 @@ ul.cs-slider-ul {
   width: 100%;
 }
 
-/* line 106, ../scss/component/_content-slider.scss */
+/* line 105, ../scss/component/_content-slider.scss */
 .cs-slider-ul .two-columns {
   display: none;
 }
 
-/* line 109, ../scss/component/_content-slider.scss */
+/* line 108, ../scss/component/_content-slider.scss */
 #cs-navigation {
   position: absolute;
   bottom: 5px;
@@ -9959,7 +9966,7 @@ ul.cs-slider-ul {
   left: 0;
 }
 
-/* line 120, ../scss/component/_content-slider.scss */
+/* line 119, ../scss/component/_content-slider.scss */
 #cs-navigation li {
   position: relative;
   display: inline-block;
@@ -9970,7 +9977,7 @@ ul.cs-slider-ul {
   cursor: pointer;
 }
 
-/* line 129, ../scss/component/_content-slider.scss */
+/* line 128, ../scss/component/_content-slider.scss */
 .cs-content-left,
 .cs-content-right {
   opacity: 0;
@@ -9978,41 +9985,41 @@ ul.cs-slider-ul {
   position: relative;
 }
 @media (min-width: 992px) {
-  /* line 129, ../scss/component/_content-slider.scss */
+  /* line 128, ../scss/component/_content-slider.scss */
   .cs-content-left,
   .cs-content-right {
     padding-left: 0;
   }
 }
 
-/* line 137, ../scss/component/_content-slider.scss */
+/* line 136, ../scss/component/_content-slider.scss */
 .cs-content-right img {
   float: right;
 }
 
-/* line 140, ../scss/component/_content-slider.scss */
+/* line 139, ../scss/component/_content-slider.scss */
 .cs-content-centered {
   width: 100%;
   text-align: center;
 }
 
-/* line 144, ../scss/component/_content-slider.scss */
+/* line 143, ../scss/component/_content-slider.scss */
 .cs-content-centered.col {
   max-width: 80%;
   width: 100%;
 }
 
-/* line 148, ../scss/component/_content-slider.scss */
+/* line 147, ../scss/component/_content-slider.scss */
 .cs-layout-img-text .cs-content-right.col {
   margin-right: 0;
 }
 
-/* line 151, ../scss/component/_content-slider.scss */
+/* line 150, ../scss/component/_content-slider.scss */
 .cs-layout-img-text .cs-content-left.col {
   clear: left;
 }
 
-/* line 154, ../scss/component/_content-slider.scss */
+/* line 153, ../scss/component/_content-slider.scss */
 ul#cs-navigation li span {
   opacity: 0.3;
   filter: alpha(opacity=30);
@@ -10027,7 +10034,7 @@ ul#cs-navigation li span {
   border: 2px solid #fff;
 }
 
-/* line 166, ../scss/component/_content-slider.scss */
+/* line 165, ../scss/component/_content-slider.scss */
 #cs-navigation li.selected span {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -10035,13 +10042,13 @@ ul#cs-navigation li span {
   background-color: transparent;
 }
 
-/* line 171, ../scss/component/_content-slider.scss */
+/* line 170, ../scss/component/_content-slider.scss */
 .cs-arrows {
   margin-top: -30px;
   background-color: none;
 }
 
-/* line 175, ../scss/component/_content-slider.scss */
+/* line 174, ../scss/component/_content-slider.scss */
 .cs-arrows:hover {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -10049,13 +10056,13 @@ ul#cs-navigation li span {
   cursor: pointer;
 }
 
-/* line 180, ../scss/component/_content-slider.scss */
+/* line 179, ../scss/component/_content-slider.scss */
 .cs-prev-arrow {
   left: 0;
   background-position: left top;
 }
 
-/* line 184, ../scss/component/_content-slider.scss */
+/* line 183, ../scss/component/_content-slider.scss */
 .cs-thumbnail {
   position: absolute;
   height: 70px;
@@ -10066,18 +10073,18 @@ ul#cs-navigation li span {
   transition: all 0.5s ease;
 }
 
-/* line 192, ../scss/component/_content-slider.scss */
+/* line 191, ../scss/component/_content-slider.scss */
 .cs-next-arrow .cs-thumbnail {
   left: -50px;
 }
 
-/* line 195, ../scss/component/_content-slider.scss */
+/* line 194, ../scss/component/_content-slider.scss */
 .cs-prev-arrow .cs-thumbnail {
   right: -50px;
   max-width: none;
 }
 
-/* line 199, ../scss/component/_content-slider.scss */
+/* line 198, ../scss/component/_content-slider.scss */
 .cs-next-arrow:hover .cs-thumbnail {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -10085,14 +10092,14 @@ ul#cs-navigation li span {
   max-width: none;
 }
 
-/* line 204, ../scss/component/_content-slider.scss */
+/* line 203, ../scss/component/_content-slider.scss */
 .cs-prev-arrow:hover .cs-thumbnail {
   opacity: 1;
   filter: alpha(opacity=100);
   right: -70px;
 }
 
-/* line 208, ../scss/component/_content-slider.scss */
+/* line 207, ../scss/component/_content-slider.scss */
 .full-bg-image {
   position: absolute;
   right: 0;
@@ -10106,15 +10113,25 @@ ul#cs-navigation li span {
   filter: alpha(opacity=30);
 }
 
-/* line 219, ../scss/component/_content-slider.scss */
+/* line 218, ../scss/component/_content-slider.scss */
 .cs-content-centered {
   float: none;
   margin: 0 auto;
 }
 
-/* line 223, ../scss/component/_content-slider.scss */
-.cs-content-left,
-.cs-content-right,
+/* line 224, ../scss/component/_content-slider.scss */
+.cs-content-left {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 224, ../scss/component/_content-slider.scss */
+.cs-content-right {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* line 224, ../scss/component/_content-slider.scss */
 .cs-content-centered {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -10699,13 +10716,14 @@ ul.cs-slider-ul li {
     font-size: 50px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   /* line 631, ../scss/component/_content-slider.scss */
   .cs-content {
     text-align: center;
   }
-
-  /* line 634, ../scss/component/_content-slider.scss */
+}
+@media screen and (max-width: 768px) {
+  /* line 636, ../scss/component/_content-slider.scss */
   .cs-arrows {
     -webkit-transform: scale(0.7);
     -moz-transform: scale(0.7);
@@ -10718,23 +10736,23 @@ ul.cs-slider-ul li {
     border-radius: 2px;
   }
 
-  /* line 642, ../scss/component/_content-slider.scss */
+  /* line 644, ../scss/component/_content-slider.scss */
   .cs-prev-arrow {
     left: 50%;
     margin-left: -41px;
   }
 
-  /* line 646, ../scss/component/_content-slider.scss */
+  /* line 648, ../scss/component/_content-slider.scss */
   .cs-thumbnail {
     display: none !important;
   }
 
-  /* line 649, ../scss/component/_content-slider.scss */
+  /* line 651, ../scss/component/_content-slider.scss */
   .cs-small-title {
     font-size: 13px;
   }
 
-  /* line 652, ../scss/component/_content-slider.scss */
+  /* line 654, ../scss/component/_content-slider.scss */
   .cs-title {
     font-size: 32px;
   }
