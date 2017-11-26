@@ -36,6 +36,7 @@ dependencies:
   - menu_ui
   # contrib
   - admin_toolbar
+  - bootstrap_layouts
   - context
   - context_groups
   - default_content
@@ -43,8 +44,10 @@ dependencies:
   - entityqueue
   - fontawesome
   - libraries
+  - linked_field
   # custom
   - empty_front
+  - heading_formatter
   # features
   - features
   - config_site
