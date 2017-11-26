@@ -1,0 +1,6 @@
+name: Heading Formatter
+description: Custom Field Formatter.
+package: Custom
+
+type: module
+core: 8.x
