@@ -6,7 +6,13 @@ dependencies:
     - field.field.block_content.cards_block.field_cards_card
     - field.field.block_content.cards_block.field_cards_title
   module:
+    - field_layout
+    - layout_discovery
     - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: block_content.cards_block.default
 targetEntityType: block_content
 bundle: cards_block

@@ -24,8 +24,9 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             #b3b3b1 !default;
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         #fdd200 !default;
+$brand-primary:         #5bc3ff !default;
 $brand-red:             #c90834 !default;
+$brand-orange:          #fdd200 !default;
 
 
 //== Scaffolding
@@ -34,6 +35,10 @@ $brand-red:             #c90834 !default;
 
 //** Global text color on `<body>`.
 $text-color:            #777777 !default;
+//** Global textual link color.
+$link-color:            $gray-base !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      $brand-primary !default;
 //** Link hover decoration.
 $link-hover-decoration: none !default;
 

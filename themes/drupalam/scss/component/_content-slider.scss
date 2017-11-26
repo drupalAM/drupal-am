@@ -242,6 +242,7 @@ ul.cs-slider-ul li {
   display: none;
 }
 .view-hero-slide {
+  position: relative;
   @include transition(background-color 0.5s ease);
 }
 /* Nivo Slider */

@@ -34,6 +34,22 @@ reactions:
         unique: 0
         context_id: front
         uuid: 389682c0-01b4-47a4-ada1-b42aeebcdad2
+      09ca0c8a-7058-4760-a863-e371f8e51217:
+        id: 'block_content:f7d022f8-cb5a-4277-b43a-2b49241e65e2'
+        label: 'Why Use Drupal?'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: full
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: why-use-drupal
+        unique: 0
+        context_id: front
+        uuid: 09ca0c8a-7058-4760-a863-e371f8e51217
     id: blocks
     saved: false
     uuid: 4874a484-46d2-4edf-9462-53e9bc79d7af

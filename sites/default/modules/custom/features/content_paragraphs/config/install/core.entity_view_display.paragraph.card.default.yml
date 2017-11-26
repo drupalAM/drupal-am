@@ -8,9 +8,16 @@ dependencies:
     - image.style.medium
     - paragraphs.paragraphs_type.card
   module:
+    - field_layout
     - image
+    - layout_discovery
     - link
+    - linked_field
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: paragraph.card.default
 targetEntityType: paragraph
 bundle: card
@@ -41,7 +48,12 @@ content:
     settings:
       image_style: medium
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_card_link
+        advanced: {  }
     type: image
     region: content
 hidden: {  }

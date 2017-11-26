@@ -7,6 +7,13 @@ dependencies:
     - field.field.block_content.cards_block.field_cards_title
   module:
     - entity_reference_revisions
+    - field_layout
+    - heading_formatter
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: block_content.cards_block.default
 targetEntityType: block_content
 bundle: cards_block
@@ -15,7 +22,7 @@ content:
   field_cards_card:
     type: entity_reference_revisions_entity_view
     weight: 1
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -23,10 +30,10 @@ content:
     region: content
   field_cards_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
-      link_to_entity: false
+      heading_type: h2
     third_party_settings: {  }
-    type: string
+    type: heading_formatter
     region: content
 hidden: {  }

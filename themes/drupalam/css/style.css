@@ -1748,12 +1748,12 @@ textarea {
 
 /* line 48, ../bootstrap/assets/stylesheets/bootstrap/_scaffolding.scss */
 a {
-  color: #fdd200;
+  color: #252525;
   text-decoration: none;
 }
 /* line 52, ../bootstrap/assets/stylesheets/bootstrap/_scaffolding.scss */
 a:hover, a:focus {
-  color: #b19300;
+  color: #5bc3ff;
   text-decoration: none;
 }
 /* line 58, ../bootstrap/assets/stylesheets/bootstrap/_scaffolding.scss */
@@ -2016,13 +2016,13 @@ mark,
 
 /* line 5, ../bootstrap/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
 .text-primary {
-  color: #fdd200;
+  color: #5bc3ff;
 }
 
 /* line 8, ../bootstrap/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #caa800;
+  color: #28b0ff;
 }
 
 /* line 5, ../bootstrap/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss */
@@ -2076,13 +2076,13 @@ a.text-danger:focus {
 
 /* line 5, ../bootstrap/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
 .bg-primary {
-  background-color: #fdd200;
+  background-color: #5bc3ff;
 }
 
 /* line 8, ../bootstrap/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #caa800;
+  background-color: #28b0ff;
 }
 
 /* line 5, ../bootstrap/assets/stylesheets/bootstrap/mixins/_background-variant.scss */
@@ -2358,36 +2358,36 @@ pre code {
 }
 
 /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-.container {
+.container, .block.why-use-drupal {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 14, ../bootstrap/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container:before, .container:after {
+.container:before, .block.why-use-drupal:before, .container:after, .block.why-use-drupal:after {
   content: " ";
   display: table;
 }
 /* line 19, ../bootstrap/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container:after {
+.container:after, .block.why-use-drupal:after {
   clear: both;
 }
 @media (min-width: 768px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container {
+  .container, .block.why-use-drupal {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container {
+  .container, .block.why-use-drupal {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container {
+  .container, .block.why-use-drupal {
     width: 1170px;
   }
 }
@@ -2425,7 +2425,7 @@ pre code {
 }
 
 /* line 11, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2694,7 +2694,7 @@ pre code {
 
 @media (min-width: 768px) {
   /* line 27, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
 
@@ -2724,7 +2724,7 @@ pre code {
   }
 
   /* line 35, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-6 {
+  .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item {
     width: 50%;
   }
 
@@ -2955,7 +2955,7 @@ pre code {
 }
 @media (min-width: 992px) {
   /* line 27, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -2970,7 +2970,7 @@ pre code {
   }
 
   /* line 35, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-md-3 {
+  .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item {
     width: 25%;
   }
 
@@ -4755,7 +4755,7 @@ a.btn.disabled, .view-hero-slide .view-content .button a.disabled, fieldset[disa
 
 /* line 96, ../bootstrap/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link {
-  color: #fdd200;
+  color: #252525;
   font-weight: normal;
   border-radius: 0;
 }
@@ -4771,7 +4771,7 @@ a.btn.disabled, .view-hero-slide .view-content .button a.disabled, fieldset[disa
 }
 /* line 115, ../bootstrap/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link:hover, .btn-link:focus {
-  color: #b19300;
+  color: #5bc3ff;
   text-decoration: none;
   background-color: transparent;
 }
@@ -4948,7 +4948,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #fdd200;
+  background-color: #5bc3ff;
 }
 
 /* line 103, ../bootstrap/assets/stylesheets/bootstrap/_dropdowns.scss */
@@ -5500,7 +5500,7 @@ tbody.collapse.in {
 /* line 46, ../bootstrap/assets/stylesheets/bootstrap/_navs.scss */
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: transparent;
-  border-color: #fdd200;
+  border-color: #252525;
 }
 /* line 59, ../bootstrap/assets/stylesheets/bootstrap/_navs.scss */
 .nav .nav-divider {
@@ -5558,7 +5558,7 @@ tbody.collapse.in {
 /* line 131, ../bootstrap/assets/stylesheets/bootstrap/_navs.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #fdd200;
+  background-color: #5bc3ff;
 }
 
 /* line 144, ../bootstrap/assets/stylesheets/bootstrap/_navs.scss */
@@ -5750,8 +5750,9 @@ tbody.collapse.in {
 }
 
 /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-.container > .navbar-header,
+.container > .navbar-header, .block.why-use-drupal > .navbar-header,
 .container > .navbar-collapse,
+.block.why-use-drupal > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -14px;
@@ -5759,8 +5760,9 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-  .container > .navbar-header,
+  .container > .navbar-header, .block.why-use-drupal > .navbar-header,
   .container > .navbar-collapse,
+  .block.why-use-drupal > .navbar-collapse,
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
     margin-right: 0;
@@ -5827,7 +5829,7 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 180, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  .navbar > .container .navbar-brand, .navbar > .block.why-use-drupal .navbar-brand, .navbar > .container-fluid .navbar-brand {
     margin-left: -14px;
   }
 }
@@ -6330,7 +6332,7 @@ tbody.collapse.in {
   padding: 8px 25px;
   line-height: 1.7;
   text-decoration: none;
-  color: #fdd200;
+  color: #252525;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -6353,7 +6355,7 @@ tbody.collapse.in {
 .pagination > li > span:hover,
 .pagination > li > span:focus {
   z-index: 2;
-  color: #b19300;
+  color: #5bc3ff;
   background-color: white;
   border-color: #ddd;
 }
@@ -6364,8 +6366,8 @@ tbody.collapse.in {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: #fdd200;
-  border-color: #fdd200;
+  background-color: #5bc3ff;
+  border-color: #5bc3ff;
   cursor: default;
 }
 /* line 64, ../bootstrap/assets/stylesheets/bootstrap/_pagination.scss */
@@ -6517,11 +6519,11 @@ a.label:hover, a.label:focus {
 
 /* line 48, ../bootstrap/assets/stylesheets/bootstrap/_labels.scss */
 .label-primary {
-  background-color: #fdd200;
+  background-color: #5bc3ff;
 }
 /* line 7, ../bootstrap/assets/stylesheets/bootstrap/mixins/_labels.scss */
 .label-primary[href]:hover, .label-primary[href]:focus {
-  background-color: #caa800;
+  background-color: #28b0ff;
 }
 
 /* line 52, ../bootstrap/assets/stylesheets/bootstrap/_labels.scss */
@@ -6591,7 +6593,7 @@ a.label:hover, a.label:focus {
 }
 /* line 41, ../bootstrap/assets/stylesheets/bootstrap/_badges.scss */
 .list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-  color: #fdd200;
+  color: #252525;
   background-color: #fff;
 }
 /* line 47, ../bootstrap/assets/stylesheets/bootstrap/_badges.scss */
@@ -6638,13 +6640,13 @@ a.badge:hover, a.badge:focus {
   border-top-color: #e6e6e6;
 }
 /* line 28, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-.container .jumbotron, .container-fluid .jumbotron {
+.container .jumbotron, .block.why-use-drupal .jumbotron, .container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 35, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-.jumbotron .container {
+.jumbotron .container, .jumbotron .block.why-use-drupal {
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -6654,7 +6656,7 @@ a.badge:hover, a.badge:focus {
     padding-bottom: 48px;
   }
   /* line 43, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-  .container .jumbotron, .container-fluid .jumbotron {
+  .container .jumbotron, .block.why-use-drupal .jumbotron, .container-fluid .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -6697,7 +6699,7 @@ a.badge:hover, a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #fdd200;
+  border-color: #252525;
 }
 
 /* line 9, ../bootstrap/assets/stylesheets/bootstrap/_alerts.scss */
@@ -6836,7 +6838,7 @@ a.thumbnail.active {
   line-height: 23px;
   color: #fff;
   text-align: center;
-  background-color: #fdd200;
+  background-color: #5bc3ff;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -7047,8 +7049,8 @@ button.list-group-item {
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #fdd200;
-  border-color: #fdd200;
+  background-color: #5bc3ff;
+  border-color: #5bc3ff;
 }
 /* line 96, ../bootstrap/assets/stylesheets/bootstrap/_list-group.scss */
 .list-group-item.active .list-group-item-heading,
@@ -7062,7 +7064,7 @@ button.list-group-item {
 }
 /* line 101, ../bootstrap/assets/stylesheets/bootstrap/_list-group.scss */
 .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
-  color: #fff6ca;
+  color: white;
 }
 
 /* line 4, ../bootstrap/assets/stylesheets/bootstrap/mixins/_list-group.scss */
@@ -7528,26 +7530,26 @@ button.list-group-item-danger.active:focus {
 
 /* line 257, ../bootstrap/assets/stylesheets/bootstrap/_panels.scss */
 .panel-primary {
-  border-color: #fdd200;
+  border-color: #5bc3ff;
 }
 /* line 6, ../bootstrap/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #fdd200;
-  border-color: #fdd200;
+  background-color: #5bc3ff;
+  border-color: #5bc3ff;
 }
 /* line 11, ../bootstrap/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #fdd200;
+  border-top-color: #5bc3ff;
 }
 /* line 14, ../bootstrap/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-heading .badge {
-  color: #fdd200;
+  color: #5bc3ff;
   background-color: #fff;
 }
 /* line 20, ../bootstrap/assets/stylesheets/bootstrap/mixins/_panels.scss */
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #fdd200;
+  border-bottom-color: #5bc3ff;
 }
 
 /* line 260, ../bootstrap/assets/stylesheets/bootstrap/_panels.scss */
@@ -8900,7 +8902,7 @@ html.js .form-item .input-group-addon .glyphicon {
 }
 /* line 30, ../scss/component/_ajax.scss */
 html.js .form-item .input-group-addon .glyphicon.glyphicon-spin {
-  color: #fdd200;
+  color: #5bc3ff;
   opacity: 1;
 }
 /* line 35, ../scss/component/_ajax.scss */
@@ -8961,7 +8963,7 @@ html.js .ajax-new-content:empty {
 /* line 10, ../scss/component/_file.scss */
 .file > span {
   background: #fff;
-  color: #fdd200;
+  color: #5bc3ff;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
 }
@@ -9125,7 +9127,7 @@ table .checkbox.form-no-label, table .radio.form-no-label {
 }
 /* line 64, ../scss/component/_form.scss */
 .select-wrapper:after {
-  color: #fdd200;
+  color: #5bc3ff;
   content: 'Γû╝';
   font-style: normal;
   font-weight: 400;
@@ -9240,19 +9242,19 @@ body.navbar-is-fixed-bottom {
 
 @media screen and (min-width: 768px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container {
+  .navbar.container, .navbar.block.why-use-drupal {
     max-width: 720px;
   }
 }
 @media screen and (min-width: 992px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container {
+  .navbar.container, .navbar.block.why-use-drupal {
     max-width: 940px;
   }
 }
 @media screen and (min-width: 1200px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container {
+  .navbar.container, .navbar.block.why-use-drupal {
     max-width: 1140px;
   }
 }
@@ -9493,7 +9495,7 @@ body.navbar-is-fixed-bottom {
 }
 /* line 20, ../scss/component/_table-drag.scss */
 .tabledrag-handle:hover, .tabledrag-handle:focus {
-  color: #fdd200;
+  color: #5bc3ff;
 }
 
 /* line 24, ../scss/component/_table-drag.scss */
@@ -9774,7 +9776,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 }
 /* line 177, ../scss/_mixins.scss */
 .footer .context-groups-footer_bottom ul.menu li a:hover, .footer .context-groups-footer_bottom ul.menu li a:focus {
-  color: #fdd200;
+  color: #5bc3ff;
 }
 /* line 66, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom ul.menu li a:after {
@@ -9827,6 +9829,56 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   padding-right: 0;
 }
 
+/* line 14, ../scss/component/_frontpage.scss */
+.block.why-use-drupal {
+  margin: 90px auto;
+}
+/* line 18, ../scss/component/_frontpage.scss */
+.block.why-use-drupal .block-title {
+  text-align: center;
+}
+/* line 21, ../scss/component/_frontpage.scss */
+.block.why-use-drupal .field--name-field-cards-title h2 {
+  color: #252525;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-style: normal;
+  font-size: 26px;
+  font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+}
+/* line 31, ../scss/component/_frontpage.scss */
+.block.why-use-drupal .field--name-field-cards-card > .field--item {
+  margin: 40px 0;
+  text-align: center;
+}
+@media (min-width: 767px) {
+  /* line 31, ../scss/component/_frontpage.scss */
+  .block.why-use-drupal .field--name-field-cards-card > .field--item {
+    margin: 20px 0;
+  }
+}
+/* line 41, ../scss/component/_frontpage.scss */
+.block.why-use-drupal .field--name-field-cards-card .field--name-field-icon img {
+  margin: 0 auto;
+}
+/* line 45, ../scss/component/_frontpage.scss */
+.block.why-use-drupal .field--name-field-cards-card .field--name-field-card-link {
+  padding: 10px 10px 0 10px;
+}
+/* line 48, ../scss/component/_frontpage.scss */
+.block.why-use-drupal .field--name-field-cards-card .field--name-field-card-link a {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 0;
+  font-weight: 600;
+  font-size: 17px;
+}
+/* line 56, ../scss/component/_frontpage.scss */
+.block.why-use-drupal .field--name-field-cards-card .field--name-field-card-text {
+  margin: 7px 10px 10px 10px;
+}
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -9867,36 +9919,36 @@ and open the template in the editor.
 .view-hero-slide .view-content .button.btn-alt a {
   margin: 18px 0 0 10px;
 }
-/* line 43, ../scss/component/_content-slider.scss */
+/* line 42, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .cs-content-centered .button a {
   margin: 18px 10px 0 10px;
 }
-/* line 47, ../scss/component/_content-slider.scss */
+/* line 46, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .arrows {
   position: absolute;
   top: 50%;
   margin-top: -10px;
 }
-/* line 52, ../scss/component/_content-slider.scss */
+/* line 51, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .arrow-prev {
   left: 10px;
 }
-/* line 55, ../scss/component/_content-slider.scss */
+/* line 54, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .arrow-next {
   right: 10px;
 }
-/* line 58, ../scss/component/_content-slider.scss */
+/* line 57, ../scss/component/_content-slider.scss */
 .view-hero-slide .view-content .col {
   margin-bottom: 0;
 }
 
-/* line 63, ../scss/component/_content-slider.scss */
+/* line 62, ../scss/component/_content-slider.scss */
 .cs-small-title,
 .cs-title {
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 67, ../scss/component/_content-slider.scss */
+/* line 66, ../scss/component/_content-slider.scss */
 .cs-title {
   padding-top: 0;
   padding-bottom: 0;
@@ -9907,18 +9959,18 @@ and open the template in the editor.
   line-height: 1.2em;
 }
 
-/* line 76, ../scss/component/_content-slider.scss */
+/* line 75, ../scss/component/_content-slider.scss */
 .cs-content-centered .cs-title:before {
   margin: auto;
 }
 
-/* line 79, ../scss/component/_content-slider.scss */
+/* line 78, ../scss/component/_content-slider.scss */
 .cs-loading {
   background: url("images/cs-loader-w.gif") no-repeat center;
   background-size: 20px 20px;
 }
 
-/* line 83, ../scss/component/_content-slider.scss */
+/* line 82, ../scss/component/_content-slider.scss */
 .cs-small-title {
   margin: 0;
   margin-bottom: 0;
@@ -9927,7 +9979,7 @@ and open the template in the editor.
   font-size: 15px;
 }
 
-/* line 90, ../scss/component/_content-slider.scss */
+/* line 89, ../scss/component/_content-slider.scss */
 ul.cs-slider-ul {
   position: relative;
   overflow: hidden;
@@ -9938,7 +9990,7 @@ ul.cs-slider-ul {
   padding-left: 0;
 }
 
-/* line 99, ../scss/component/_content-slider.scss */
+/* line 98, ../scss/component/_content-slider.scss */
 .cs-slider-ul li {
   position: absolute;
   -webkit-box-sizing: border-box;
@@ -9948,12 +10000,12 @@ ul.cs-slider-ul {
   width: 100%;
 }
 
-/* line 105, ../scss/component/_content-slider.scss */
+/* line 104, ../scss/component/_content-slider.scss */
 .cs-slider-ul .two-columns {
   display: none;
 }
 
-/* line 108, ../scss/component/_content-slider.scss */
+/* line 107, ../scss/component/_content-slider.scss */
 #cs-navigation {
   position: absolute;
   bottom: 5px;
@@ -9966,7 +10018,7 @@ ul.cs-slider-ul {
   left: 0;
 }
 
-/* line 119, ../scss/component/_content-slider.scss */
+/* line 118, ../scss/component/_content-slider.scss */
 #cs-navigation li {
   position: relative;
   display: inline-block;
@@ -9977,7 +10029,7 @@ ul.cs-slider-ul {
   cursor: pointer;
 }
 
-/* line 128, ../scss/component/_content-slider.scss */
+/* line 127, ../scss/component/_content-slider.scss */
 .cs-content-left,
 .cs-content-right {
   opacity: 0;
@@ -9985,41 +10037,41 @@ ul.cs-slider-ul {
   position: relative;
 }
 @media (min-width: 992px) {
-  /* line 128, ../scss/component/_content-slider.scss */
+  /* line 127, ../scss/component/_content-slider.scss */
   .cs-content-left,
   .cs-content-right {
     padding-left: 0;
   }
 }
 
-/* line 136, ../scss/component/_content-slider.scss */
+/* line 135, ../scss/component/_content-slider.scss */
 .cs-content-right img {
   float: right;
 }
 
-/* line 139, ../scss/component/_content-slider.scss */
+/* line 138, ../scss/component/_content-slider.scss */
 .cs-content-centered {
   width: 100%;
   text-align: center;
 }
 
-/* line 143, ../scss/component/_content-slider.scss */
+/* line 142, ../scss/component/_content-slider.scss */
 .cs-content-centered.col {
   max-width: 80%;
   width: 100%;
 }
 
-/* line 147, ../scss/component/_content-slider.scss */
+/* line 146, ../scss/component/_content-slider.scss */
 .cs-layout-img-text .cs-content-right.col {
   margin-right: 0;
 }
 
-/* line 150, ../scss/component/_content-slider.scss */
+/* line 149, ../scss/component/_content-slider.scss */
 .cs-layout-img-text .cs-content-left.col {
   clear: left;
 }
 
-/* line 153, ../scss/component/_content-slider.scss */
+/* line 152, ../scss/component/_content-slider.scss */
 ul#cs-navigation li span {
   opacity: 0.3;
   filter: alpha(opacity=30);
@@ -10034,7 +10086,7 @@ ul#cs-navigation li span {
   border: 2px solid #fff;
 }
 
-/* line 165, ../scss/component/_content-slider.scss */
+/* line 164, ../scss/component/_content-slider.scss */
 #cs-navigation li.selected span {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -10042,13 +10094,13 @@ ul#cs-navigation li span {
   background-color: transparent;
 }
 
-/* line 170, ../scss/component/_content-slider.scss */
+/* line 169, ../scss/component/_content-slider.scss */
 .cs-arrows {
   margin-top: -30px;
   background-color: none;
 }
 
-/* line 174, ../scss/component/_content-slider.scss */
+/* line 173, ../scss/component/_content-slider.scss */
 .cs-arrows:hover {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -10056,13 +10108,13 @@ ul#cs-navigation li span {
   cursor: pointer;
 }
 
-/* line 179, ../scss/component/_content-slider.scss */
+/* line 178, ../scss/component/_content-slider.scss */
 .cs-prev-arrow {
   left: 0;
   background-position: left top;
 }
 
-/* line 183, ../scss/component/_content-slider.scss */
+/* line 182, ../scss/component/_content-slider.scss */
 .cs-thumbnail {
   position: absolute;
   height: 70px;
@@ -10073,18 +10125,18 @@ ul#cs-navigation li span {
   transition: all 0.5s ease;
 }
 
-/* line 191, ../scss/component/_content-slider.scss */
+/* line 190, ../scss/component/_content-slider.scss */
 .cs-next-arrow .cs-thumbnail {
   left: -50px;
 }
 
-/* line 194, ../scss/component/_content-slider.scss */
+/* line 193, ../scss/component/_content-slider.scss */
 .cs-prev-arrow .cs-thumbnail {
   right: -50px;
   max-width: none;
 }
 
-/* line 198, ../scss/component/_content-slider.scss */
+/* line 197, ../scss/component/_content-slider.scss */
 .cs-next-arrow:hover .cs-thumbnail {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -10092,14 +10144,14 @@ ul#cs-navigation li span {
   max-width: none;
 }
 
-/* line 203, ../scss/component/_content-slider.scss */
+/* line 202, ../scss/component/_content-slider.scss */
 .cs-prev-arrow:hover .cs-thumbnail {
   opacity: 1;
   filter: alpha(opacity=100);
   right: -70px;
 }
 
-/* line 207, ../scss/component/_content-slider.scss */
+/* line 206, ../scss/component/_content-slider.scss */
 .full-bg-image {
   position: absolute;
   right: 0;
@@ -10113,43 +10165,43 @@ ul#cs-navigation li span {
   filter: alpha(opacity=30);
 }
 
-/* line 218, ../scss/component/_content-slider.scss */
+/* line 217, ../scss/component/_content-slider.scss */
 .cs-content-centered {
   float: none;
   margin: 0 auto;
 }
 
-/* line 224, ../scss/component/_content-slider.scss */
+/* line 223, ../scss/component/_content-slider.scss */
 .cs-content-left {
   opacity: 1;
   filter: alpha(opacity=100);
 }
 
-/* line 224, ../scss/component/_content-slider.scss */
+/* line 223, ../scss/component/_content-slider.scss */
 .cs-content-right {
   opacity: 1;
   filter: alpha(opacity=100);
 }
 
-/* line 224, ../scss/component/_content-slider.scss */
+/* line 223, ../scss/component/_content-slider.scss */
 .cs-content-centered {
   opacity: 1;
   filter: alpha(opacity=100);
 }
 
-/* line 228, ../scss/component/_content-slider.scss */
+/* line 227, ../scss/component/_content-slider.scss */
 .cs-content-right {
   float: right;
 }
 
-/* line 231, ../scss/component/_content-slider.scss */
+/* line 230, ../scss/component/_content-slider.scss */
 .cs-element {
   opacity: 0;
   filter: alpha(opacity=0);
   position: relative;
 }
 
-/* line 235, ../scss/component/_content-slider.scss */
+/* line 234, ../scss/component/_content-slider.scss */
 .cs-element.cs-animate {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -10157,7 +10209,7 @@ ul#cs-navigation li span {
   transition: all 0.5s ease;
 }
 
-/* line 238, ../scss/component/_content-slider.scss */
+/* line 237, ../scss/component/_content-slider.scss */
 ul.cs-slider-ul {
   -moz-transition: height 1s ease;
   -o-transition: height 1s ease;
@@ -10166,13 +10218,14 @@ ul.cs-slider-ul {
   overflow: visible;
 }
 
-/* line 242, ../scss/component/_content-slider.scss */
+/* line 241, ../scss/component/_content-slider.scss */
 ul.cs-slider-ul li {
   display: none;
 }
 
-/* line 245, ../scss/component/_content-slider.scss */
+/* line 244, ../scss/component/_content-slider.scss */
 .view-hero-slide {
+  position: relative;
   -moz-transition: background-color 0.5s ease;
   -o-transition: background-color 0.5s ease;
   -webkit-transition: background-color 0.5s ease;
@@ -10687,7 +10740,7 @@ ul.cs-slider-ul li {
   }
 
   /* line 611, ../scss/component/_content-slider.scss */
-  .item-list.container {
+  .item-list.container, .item-list.block.why-use-drupal {
     width: 100%;
   }
 
@@ -10802,7 +10855,7 @@ ul.cs-slider-ul li {
 }
 /* line 44, ../scss/jquery-ui/_autocomplete.scss */
 .ui-autocomplete .ui-menu-item.ui-state-active, .ui-autocomplete .ui-menu-item.ui-state-focus {
-  background: #fdd200;
+  background: #5bc3ff;
   color: #fff;
 }
 

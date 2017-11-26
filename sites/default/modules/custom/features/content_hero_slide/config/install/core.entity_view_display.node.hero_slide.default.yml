@@ -11,11 +11,17 @@ dependencies:
     - field.field.node.hero_slide.field_heroslide_title_prefix
     - node.type.hero_slide
   module:
+    - field_layout
     - image
+    - layout_discovery
     - link
     - options
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.hero_slide.default
 targetEntityType: node
 bundle: hero_slide
