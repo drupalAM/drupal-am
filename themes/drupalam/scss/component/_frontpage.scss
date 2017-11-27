@@ -11,3 +11,50 @@
   }
 }
 
+.block.why-use-drupal {
+  @extend .container;
+  margin: 90px auto;
+  
+  .block-title {
+    text-align: center;
+  }
+  .field--name-field-cards-title h2 {
+    color: $gray-base;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-style: normal;
+    font-size: 26px;
+    font-family: $font-family-monospace;
+  }
+  .field--name-field-cards-card {
+    > .field--item {
+      @extend .col-md-3;
+      @extend .col-sm-6;
+      margin: 40px 0;
+      text-align: center;
+      @include breakpoint(no_mobile) {
+        margin: 20px 0;
+      }
+    }
+    .field--name-field-icon {
+      img {
+        margin: 0 auto;
+      }
+    }
+    .field--name-field-card-link {
+      padding: 10px 10px 0 10px;
+          
+      a {
+        display: block;
+        padding-top: 5px;
+        padding-bottom: 0;
+        font-weight: 600;
+        font-size: 17px;
+      }
+    }
+    .field--name-field-card-text {
+      margin: 7px 10px 10px 10px;
+    }
+  }
+}

@@ -64,3 +64,11 @@ function drupal_am_update_8403() {
     ]
   );
 }
+
+/**
+* Import new created default content.
+*/
+function drupal_am_update_8404() {
+  $importer = \Drupal::service('default_content_deploy.importer');
+  $importer->deployContent(FALSE, TRUE);
+}

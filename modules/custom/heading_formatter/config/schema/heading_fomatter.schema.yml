@@ -1,0 +1,7 @@
+field.formatter.settings.heading_formatter:
+  type: mapping
+  label: 'Heading Formatter Type'
+  mapping:
+    heading_type:
+      type: string
+      label: 'Heading type'

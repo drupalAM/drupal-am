@@ -1,0 +1,13 @@
+name: Bootstrap Layouts
+type: module
+description: This module is going to generate layouts with Bootstrap grid system.
+# core: 8.x
+package: Layout
+dependencies:
+  - layout_discovery
+
+# Information added by Drupal.org packaging script on 2017-10-12
+version: '8.x-5.0'
+core: '8.x'
+project: 'bootstrap_layouts'
+datestamp: 1507846447

@@ -5,8 +5,10 @@ dependencies:
   - content_views_and_entityqueues
   - entityqueue
   - field
+  - field_layout
   - file
   - image
+  - layout_discovery
   - link
   - menu_ui
   - node
