@@ -4,6 +4,7 @@ core: 8.x
 package: Content
 dependencies:
   - field
+  - file
   - image
   - path
   - taxonomy
