@@ -9858,13 +9858,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
     margin: 20px 0;
   }
   /* line 38, ../scss/component/_frontpage.scss */
-  .block.why-use-drupal .field--name-field-cards-card > .field--item:nth-child(5) {
+  .block.why-use-drupal .field--name-field-cards-card > .field--item:nth-child(4n + 1) {
     clear: left;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   /* line 43, ../scss/component/_frontpage.scss */
-  .block.why-use-drupal .field--name-field-cards-card > .field--item:nth-child(3) {
+  .block.why-use-drupal .field--name-field-cards-card > .field--item:nth-child(2n + 1) {
     clear: left;
   }
 }

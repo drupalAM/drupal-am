@@ -35,12 +35,12 @@
       text-align: center;
       @include breakpoint(no_mobile) {
         margin: 20px 0;
-        &:nth-child(5) {
+        &:nth-child(4n + 1) {
           clear: left;
         }
       }
       @include breakpoint(tablet) {
-        &:nth-child(3) {
+        &:nth-child(2n + 1) {
           clear: left;
         }
       }
