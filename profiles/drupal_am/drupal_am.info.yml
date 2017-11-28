@@ -36,6 +36,7 @@ dependencies:
   - menu_ui
   # contrib
   - admin_toolbar
+  - better_normalizers
   - bootstrap_layouts
   - context
   - context_groups
@@ -45,6 +46,7 @@ dependencies:
   - fontawesome
   - libraries
   - linked_field
+  - token
   # custom
   - empty_front
   - heading_formatter

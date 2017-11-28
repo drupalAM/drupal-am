@@ -5,6 +5,8 @@
  * Install, update and uninstall functions for the minimal installation profile.
  */
 
+use Drupal\Component\Serialization\Json;
+
 /**
  * Implements hook_install().
  *
@@ -66,9 +68,24 @@ function drupal_am_update_8403() {
 }
 
 /**
-* Import new created default content.
+* Enable several modules
 */
 function drupal_am_update_8404() {
+  \Drupal::service('module_installer')->install(
+    [
+      'better_normalizers',
+      'bootstrap_layouts',
+      'heading_formatter',
+      'linked_field',
+      'token',
+    ]
+  );
+}
+
+/**
+* Import new created default content.
+*/
+function drupal_am_update_8405() {
   $importer = \Drupal::service('default_content_deploy.importer');
   $importer->deployContent(FALSE, TRUE);
 }

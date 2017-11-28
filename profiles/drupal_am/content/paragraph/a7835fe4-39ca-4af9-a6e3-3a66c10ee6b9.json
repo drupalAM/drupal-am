@@ -62,7 +62,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0b888c03-a66f-49cd-af43-4f2394920b0c"
+                        "value": "913e7b14-f25d-4665-b663-ef48837dc01d"
                     }
                 ],
                 "lang": "en"
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0b888c03-a66f-49cd-af43-4f2394920b0c"
+                        "value": "913e7b14-f25d-4665-b663-ef48837dc01d"
                     }
                 ]
             }
@@ -97,14 +97,13 @@
                 },
                 "uuid": [
                     {
-                        "value": "d574c6ff-84ad-42f9-87b5-229a23a8e4e1"
+                        "value": "4fea19ee-7480-49b9-8f93-b7cf82d8b07a"
                     }
                 ],
-                "uri": [
-                    {
-                        "value": "http:\/\/default\/sites\/default\/files\/2017-11\/icon4.png"
-                    }
-                ]
+                "alt": "icon",
+                "title": "",
+                "width": "200",
+                "height": "50"
             }
         ]
     },

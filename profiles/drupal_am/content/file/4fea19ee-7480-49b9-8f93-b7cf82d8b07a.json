@@ -1,0 +1,91 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2017-11\/icon4.png"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 11
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4fea19ee-7480-49b9-8f93-b7cf82d8b07a"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "913e7b14-f25d-4665-b663-ef48837dc01d"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "icon4.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2017-11\/icon4.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 3088
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-11-28T07:29:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-11-28T07:30:59+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyCAYAAAAZUZThAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw\/eHBhY2tldCBiZWdpbj0i77u\/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5OTQzQjJGN0Q1REUxMUUzOEI2REU5QzFGQkMyNjgzRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5OTQzQjJGOEQ1REUxMUUzOEI2REU5QzFGQkMyNjgzRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk5NDNCMkY1RDVERTExRTM4QjZERTlDMUZCQzI2ODNGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk5NDNCMkY2RDVERTExRTM4QjZERTlDMUZCQzI2ODNGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ZTt37wAACIJJREFUeNrsXQmMFEUUreUShRUBUU4FOTwWg4CCYjAKqEBA8EABDwQFOb2CF3giKt4ED1RUJKAoigJLWKJENCpKAAVZISLsshLBIJ4IKOCu\/1mvsuVkju6d3Zll97\/kpbp7qqc7U\/3m\/1\/1qzqjqKjIKEqOZi1OKI2vqSYcKxwhPFFYIHxL+Ijwj3gnbsvP00YoQ2SoQNIukLrChcKuUT7bIryQpQokDaiiP0FaUVOYQ3HkUQw1hGcKVwtbCpcKG+hPpQKpjHhA2Fm4WdhF+L7wgHCl8FzhJ8JWwpn6U6mLVdlcrHbCNcJCiuSrKHUaCnOF9YWXCt9VF0stSGXBJGFV4bQY4gB+FE7wrI22l1qQSmFBTqFl2CNsIdwVpy56uDaxXn8G9GpB1IJUaNyAPyfhrATiAA4Kp3J7hP50akEqugWpRtepPuOQrwOcU0+4XVhd2FS4Qy2ICuRQEwge3B50n+rw2F5jB\/2+Y5yBh7y7cJlwgzArxKXeo4s1Uvgijx0r7CBsIzxOWJvHMbi4EdcRAX2vrVRyVNOfIGkcw0B7QACXdStFYyJjiQBYSIEMF3akGFskOKdQBIwR+XEilJ+1qdSCpNp6wPXBmAXGKvYZO+i3SvgLq2TyIYalaO9ZFsP66LadTYvyT5w4sZvwRmHfiM92G9tVvJHi+81zyc4wduCxlrEj8Z1VJCqQVAvkaSlupvuEh\/eHONWr8kHHYGAhg\/QMfobzXhC+JNzJY0cxmB9N98nHdGMHD9fIQ18Y5\/4aS7GAYnlW6o7TVgsH7cVKDn1YjkggDkML4VzaT4XNhfcwPmkifFCYjwdZCOEhdphCccAC3MuHHcilpSqMd0ERxHZT3PPVS5tLBZJqNGH5TcD67VmupgAmG5u921O4QniEcAytEtyzz4W9ha0poGU8\/7QQ9+jurZE2lwok1dgR8uHL8iyAA7pu23qfFXqW4VRje6lqcn8ty3Yh7rExS40\/VCAph0sR6RawfhuWmz23B\/\/wTzCAX0zrgF4qZPHWppVZzxhnE89rGeIee7Jcoc2lAkk13mQ52gu448E92BinmCNcYmwPGARwHkWwnpaiF7mB5y1icP63sYOMmQE6EXBPo7j7tjaXCiTVWMTgHLHFZQnqoru1Lrc\/EF5pbFfveLpRH0U5ZyndqVuMzdtCRu9h\/Oz4APc3kOfn814VKpDUYVt+3n4p7ucuep7qxane1NvGBKjP6E49aWy+VSy4XCzEIx96x+9kUB\/LetTldwP3yb0e0BZTgaQDrwo\/NrZH6+UYdVp5Lg6sxq3Cc7yYIghgBXrQLTO0QF+IEFrHqD+DnQfL6c4pVCBpAXqchgh\/FV7Mf3Yf6KZdRQsArKS1KSzBtTCqW8Dt\/fzO1SKSPhHW43a6Y7inoWI9dDRYBZJWFFAkGAx8mP\/uwEj6\/hgVd0mDe5K81u8sHxfOEx4pXCCiGE1xXMJ7wL0MEXEUaPOoQMoDsoVI5cig24UcK\/Q6IcUEy\/dM8FysZC0W8CeD8Ilsx+dEHG9IOZfXRIJitjaLCqQ8AYJAeghWJrnK2AUYhlMcRZ5rlAx2s8QYSZGIANbiGn7vIF57ihyfrs2hAjlUYpSyRo2IfZ3GoAIplxjLIB3\/5nB3kEbyCmOCjBgPc1hkei5WVXGrHuM1atC9wrXHy\/E7tDlUIOUJSOmYSldqGAP1UQyW76JIgMNLqc3gYmGW4W28xhhxqwZLOZj7D0X2bilUIOkCEgLnMDhGCvvrPI45HnhI0d3q5nTUSvJabtIVunKRmoK0lf4ijudxUMr5DNxxL7NEJA21eVQg6QYmLyE\/KtuzFA5IF8GEpXXc70xXLKME18E5LsUE7huygjuJKBb7lWT\/UWNnK9ajSBUqkLThCuEFxs4EHGaKe6t8YMLT5Z6L9QyF0zzEdTB1FzlcvbkPK4VptN\/GqH+9sen4\/cSKDNJmUoGkHPLgobdokufyxFvjapu3vZOiQuYuJkfF63X6b0yDdbt7x2El9sa8WH4e3Lrx3EU8Ul1bTAWSaiAdHXM8sGjC7AR19zEWAXowZkGgjbSTL41drDpa4I91s6YxdkF84cZRtga4v7l07WB9LtLmUoGkGgNZYlAuyHiHe88HUk+upruEyVPIqVrOGAbbSFHPIbHOFtJU+hnbK4buXMwO3J3oYszBcjHIAG0uFUiq0YllTsD6Lnu3lXdeFl0h9Eahx2stLQqsB8Y67haeZGxOV5sIoQWBu7cu2lwqkFTDvdhmR8D6bgGFtt4xpKPkmuJ56lW8dkHcgQUe\/uK+W6xhXYh73M6yvjZXeGhKQnKAMOrQDVoVoL6bw366seMiyNca4lkGxCkzGWdcJzzL2N4uWAwsdN2B9daGuMeskCJWqEBKDTl0f+Dn9\/X+raMBvVFu5uDZxk6AcpYi2sJxWOYH6fJYPA5z0id53wUL1JGCi7dwXCN+Zxg3UOFBV1ZMAqW09CjGM7DaYrylR883dnAxMnXELT26gYJzb8SNXHoUS8BjzGSXtpoKJNUiCbt4NYRxsrEj7hNDXAqu2Gu0GhBFdxNg8WpjJ1WNU3GoQNIlELeJmMK9\/iDTsxKY0bfJlM3rDxoyLmlt\/v\/6A1gW9\/oDnVGoAikXAgkT9yXzAp1mfqyjL9ApW2g3b+px0BRn+wZ9pRp6u7Ae1tIEHQEKFUiFAFykIsYVRwewODdxe4b+dCqQygDEH9mMGRLN\/BsqhB+HQUZdHVFjkAofgzgg\/kBvFHqa\/PkiPhCE5zJewdKm8yMraAyiFqSiAoJ4ioH3O8a+kNMHlhWdR3EsiSYOhQqkogNvjXIDjVir1w3sIQkSy5l2NTbb91r9qdTFqmwulkMDWoeuUT7bQtHEzN5VF0stSEXHT8YOHuIVB8jeRaIi0kawAF0HEy61XVHK+FeAAQB4IzYHlw0x7wAAAABJRU5ErkJggg=="
+        }
+    ]
+}

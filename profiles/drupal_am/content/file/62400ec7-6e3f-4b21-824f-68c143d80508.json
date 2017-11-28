@@ -1,0 +1,91 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2017-11\/icon7.png"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 15
+        }
+    ],
+    "uuid": [
+        {
+            "value": "62400ec7-6e3f-4b21-824f-68c143d80508"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "913e7b14-f25d-4665-b663-ef48837dc01d"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "icon7.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2017-11\/icon7.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2646
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-11-28T07:32:51+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-11-28T07:33:47+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyCAYAAAAZUZThAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw\/eHBhY2tldCBiZWdpbj0i77u\/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4MjUzRERCNEQ1REYxMUUzOEI2REU5QzFGQkMyNjgzRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4MjUzRERCNUQ1REYxMUUzOEI2REU5QzFGQkMyNjgzRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjgyNTNEREIyRDVERjExRTM4QjZERTlDMUZCQzI2ODNGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgyNTNEREIzRDVERjExRTM4QjZERTlDMUZCQzI2ODNGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+H0+EKgAABshJREFUeNrsXWlsVUUYnbpQW6qCUSRqwUIElyARNwSVCsaCgopKVCSkJEaNhIhrNEawLgF3DRhj1MSFH+7GJalbMBjEKLilSNVKK1SDRlG0qLSW1nMy3w3TG1Tse+\/23nJOcjLvTV\/fu7nfO2++75uZb4o6Ozud0H2UVwzpzr9dC54KTgRzMkBzU6OMUEDsolvQIzgcPA08U7dCAhG6ogxstcfzwCLdEglE8JgCfgFeCraDo8DJui0SyM6OPuAi8BWwP3idiaPdxCKkFLvpFhQce4Mvg+PAVeAF4Fr72yRwuT3eywL30eAw8EBwD3PHfgK\/Aj8Al4IbdFuTQZGyWLnhP7JYFMfb4DHgk+AlQfwRgYK4ygL24qD\/F\/BXEw7fZ1fr7zCRPEjhNTc1yoASSCYFQreqFhwPPmKuVHizh4IPgGfY84\/AZ8Fl4Ofg5th7DQdPAqfae9I9\/gScDZG8L0tIIFkTCH\/hLwefBmeAW4O\/VVtMwozW6+DN5j7tKCiuG8BZ9vx2sAZC2SqLSCBZEMgUC8gZc4wF26L7Dd4K3ghuNJfrxRw+\/lhwicUsL4HTIZItsooEkmaBcFRgKrcfODIIyIkF4PXgGvB0cF0eLqHMXLNJJspzNJLkD0rz5h9M4TIDtTAmjpkmjtVgZZ7EwaUmjFXOMnEw0L9LJtAIktYRhKNGk\/OZKsYJv1s\/X1QH0v0ZlS9xmECi6yhFw2B9BAN\/9NfKOhpB0oaZJpIFgTgIZqtKLeZYV4gPhiD+cH6OhfHOYgimWOaQQNKGapBf1CeCPs5zcDkJs1UvFPLDIZJ6NPfZiDVL5pBA0gR+KY9yfu5jU9A\/19pbErqOu52fQ5krk0ggacIEa18L+va0APoziw8KDowiG22kGg436ziZRQJJC4639r2gr9L59VTPJXwt0edVySwSSFpwhLk2a2PxB\/FuwtfCz+OarRNkFgkkLRgMrrcvZoRDra1L8kLgZrXYtRwms0ggaQH3efwc6xsA\/hkL2pPCd+C+MosEkhYw1miJ9TFIb+uh6+GkZJnMIoGkBS0miHhfnxQJVpBAegybzc0K8QNYsp3+JHCQ8zsRBQkkFVhvgXpYpeRLa0ckeSHlFUO4C7EcrJdZJJC0YI35\/EODvhXWjkv4Wk42266QWSSQtCCaIKwM+rh9llms8xK+lmnWviGzSCBpwVJrJ8biElY0OdL5nYVJuFdM7Z5L96q5qXGVzCKBpAXcB8LCC5NjQfm91t6U0HVww1Zf8H6ZRAJJG55yvnTPjKBvpfO7\/aoK7Wph9OBylyvABvBxmSN3aEdh7l\/K8Ck3S3FDFGfOWUghqoF1sPPLTf4Cj7bRJi+I7Sj80PnC2FXof0vW0QiSNlAY3LA0CLwm6P\/G+bpYdL3eBPfLs0g5Gfm88wsm75E4NIKkdQQh+EtebyIYae5OhBrnK7qzjCirkOTjcA\/OebB00ASnqiYaQTIAbrmd7fxSj2esjTDf+Z2Fwyygv8jldvwB5zs+NnGw9M80iUMCyQK4q3Cx81twH42JYL4Jg\/d+icUNp\/zP96crxfTxMotvOCpdCHG06dbLxUq7ixUhrM37sPNlSMO9IoMtXplqz+ssjuB8ymrXdYk83Tbu7TiRLpTzNXopOpYrnQNhrJQlJJCsCYRgVXZWMxlt7la188vQQzCrdaV98UuCfq7E5YjAqu79gn66UJwhZ+3fWlZ3Z4kftK2yhgSSNYEQXJ\/Furk8++NT8HwL0uPg5B7XbHHGnZXcB1r8wtTwj\/Y\/dMfesedEsQmvBALR\/nMJJJMCIXhQ0R02Umyxx3c6v04rV7zq\/Oz9WIhEixMVpGcSPGrtaudTu987f9wBizvwOOh9uvmeHF1YyTFaPTxPt1kjSFZHkLgrNScQR6sF8ySrkTS4rmeJhD9mFSBrXdGdYqHq\/hanbLCgf4wO05FAsi6QMDaZDl7s\/BFtUSqYX\/ivwd+cXw3c14L9Qa7rHnO+hmlinl7FavLMaPEQnRpZRQLpDQIJMdDcL9axYjr3AHB\/E0dUFYU7FpkK5hJ2zn\/wDJJwLdYheNwgi0ggvVEg2wPPLuSEI49aW\/hPL4oEIihIF4TEoXPS04VSC8RZkWS89TE+YRr3W+dXBW\/SbZKLtTO5WCx6fbbzk4QUw+7\/8toOi0MYg3D+YylcrA5ZQQLpbQLhOi1mry5z20oCcWnJcufXYXFDFWtaMZPF5ezMYvGDuBlqjNu2n4QjymPgYghFI4sEknmBMJXLY9J4RBvnLZjG5TnqTNeyKkr7DsaNPOeQKWKuCh5gYroNfEgreiWQ3uZi5QRlsQqLvwUYAHVMy4RL+cB1AAAAAElFTkSuQmCC"
+        }
+    ]
+}
