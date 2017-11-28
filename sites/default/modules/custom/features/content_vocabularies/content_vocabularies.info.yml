@@ -1,4 +1,10 @@
-name: Vocabularies
+name: 'Content Vocabularies'
 type: module
 core: 8.x
 package: Content
+dependencies:
+  - field
+  - image
+  - path
+  - taxonomy
+  - text

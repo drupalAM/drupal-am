@@ -1,0 +1,17 @@
+name: 'Case Study'
+description: 'Provides Case Study content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - entityqueue
+  - field
+  - file
+  - image
+  - link
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user
+package: Content

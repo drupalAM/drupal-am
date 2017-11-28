@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Industries
+vid: industries
+description: ''
+hierarchy: 0
+weight: 0

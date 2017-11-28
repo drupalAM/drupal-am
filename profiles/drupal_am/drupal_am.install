@@ -46,7 +46,7 @@ function drupal_am_update_8401() {
 }
 
 /**
- * Enable content_paragraph feature modules
+ * Enable content_paragraph feature module
  */
 function drupal_am_update_8402() {
   \Drupal::service('module_installer')->install(
@@ -88,4 +88,15 @@ function drupal_am_update_8404() {
 function drupal_am_update_8405() {
   $importer = \Drupal::service('default_content_deploy.importer');
   $importer->deployContent(FALSE, TRUE);
+}
+
+/**
+ * Enable content_case_study feature module
+ */
+function drupal_am_update_8406() {
+  \Drupal::service('module_installer')->install(
+    [
+      'content_case_study',
+    ]
+  );
 }

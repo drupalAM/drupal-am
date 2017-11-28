@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_industry
+    - node.type.case_study
+    - taxonomy.vocabulary.industries
+id: node.case_study.field_term_industry
+field_name: field_term_industry
+entity_type: node
+bundle: case_study
+label: Industry
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      industries: industries
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
