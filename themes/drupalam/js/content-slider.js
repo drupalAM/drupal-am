@@ -153,10 +153,8 @@ function onYouTubeIframeAPIReady(){
 			}
 
 
-      console.log('1');
 			$.when(loadSlideImages(0,0)).done(function(){
                           // CHANGED $.when(loadSlideImages(0,0), setSliderPadding()).done(function(){
-                          console.log('2');
 				doOnImgLoaded();
 				$root.removeClass(o.loadingClass);
 				showSlide(0);

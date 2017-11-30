@@ -1,0 +1,20 @@
+#cboxWrapper {
+  background: transparent;
+}
+#cboxClose {
+  background: url(../images/sprite_bot.png) 0 0 no-repeat;
+  background-size: 56px 18px;
+  background-position: -33px 0;
+  width: 22px;
+  height: 18px;
+  border-left: 1px solid #efefef;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  outline: none;
+}
+#cboxClose:hover {
+  background: url(../images/sprite_bot.png) 0 0 no-repeat;
+  background-size: 56px 18px;
+  background-position: -33px 0;
+  @include opacity(0.7);
+}

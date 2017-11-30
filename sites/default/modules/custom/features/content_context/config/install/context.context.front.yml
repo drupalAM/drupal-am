@@ -27,7 +27,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         theme: drupalam
         css_class: ''
@@ -50,6 +50,21 @@ reactions:
         unique: 0
         context_id: front
         uuid: 09ca0c8a-7058-4760-a863-e371f8e51217
+      91dfab0c-0113-4348-89d8-8148086042d2:
+        id: 'views_block:case_study-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '1'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: carousel-block
+        unique: 0
+        context_id: front
+        uuid: 91dfab0c-0113-4348-89d8-8148086042d2
     id: blocks
     saved: false
     uuid: 4874a484-46d2-4edf-9462-53e9bc79d7af

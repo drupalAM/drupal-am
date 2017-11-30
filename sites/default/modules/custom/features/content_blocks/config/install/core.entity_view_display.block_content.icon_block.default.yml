@@ -5,13 +5,7 @@ dependencies:
     - block_content.type.icon_block
     - field.field.block_content.icon_block.field_social_icons
   module:
-    - field_layout
-    - layout_discovery
     - linkicon
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: block_content.icon_block.default
 targetEntityType: block_content
 bundle: icon_block

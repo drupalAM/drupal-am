@@ -22,4 +22,5 @@ drupalam-scripts:
   js:
     js/main.js: {}
     js/content-slider.js: {}
+    js/content-carousel.js: {}
     js/script.js: {}

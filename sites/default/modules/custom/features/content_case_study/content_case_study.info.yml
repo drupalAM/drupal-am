@@ -1,8 +1,11 @@
-name: 'Case Study'
+name: 'Content Case Study'
 description: 'Provides Case Study content type and related configuration. '
 type: module
 core: 8.x
 dependencies:
+  - colorbox
+  - content_vocabularies
+  - ds
   - entityqueue
   - field
   - file

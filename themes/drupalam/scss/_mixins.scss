@@ -22,6 +22,17 @@
   -webkit-transition: $transition;
   transition:         $transition;
 }
+// =============================================================================
+// Transition Timing Function
+// =============================================================================
+
+@mixin transition-timing-function($transition) {
+  -moz-transition-timing-function:    $transition;
+  -webkit-transition-timing-function: $transition;
+  -o-transition-timing-function:      $transition;
+  -ms-transition-timing-function:     $transition;
+  transition-timing-function:         $transition;
+}
 
 // =============================================================================
 // Scale
@@ -97,6 +108,21 @@
     content: $icon;
     display: inline-block;
     font-family: FontAwesome;
+    font-size: $size;
+    color: $color;
+    @content;
+  }
+}
+
+// =============================================================================
+// Pexeto Icon
+// =============================================================================
+
+@mixin pexeto-icn($icon, $color:inherit, $size:inherit, $place:"before") {
+  &:#{$place} {
+    content: $icon;
+    display: inline-block;
+    font-family: PexetoIcons;
     font-size: $size;
     color: $color;
     @content;

@@ -3,9 +3,11 @@ description: 'A basic feature to include all paragraph types'
 type: module
 core: 8.x
 dependencies:
+  - content_blocks
+  - entity_reference_revisions
   - field
-  - field_layout
   - file
+  - heading_formatter
   - image
   - layout_discovery
   - link

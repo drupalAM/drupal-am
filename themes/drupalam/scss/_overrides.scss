@@ -19,11 +19,17 @@
 @import "component/toolbar";
 @import "component/footer";
 @import "component/frontpage";
-
+// media
 @import "component/content-slider";
+@import "component/content-carousel";
+@import "component/colorbox";
 
 // jQuery UI style overrides.
 @import "jquery-ui/autocomplete";
+
+// Fonts
+@include font-face("PexetoIcons", "../fonts/PexetoIcons/PexetoIcons",  null, null, eot woff ttf svg);
+//@include font-face("Montserrat", "../fonts/Montserrat/Montserrat",  null, null, ttf);
 
 body {
   font-family: $font-family-sans-serif;
@@ -84,5 +90,30 @@ p:last-child,
   padding: 0;
   &:first-child {
     margin-top: 0;
+  }
+}
+
+// Titles
+.section-title {
+  margin-bottom: 0px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: normal;
+  display: table;
+  margin: auto;
+  padding: 0;
+  letter-spacing: -2px;
+  font-size: 40px;
+  line-height: 1.3em;
+  
+  &:after {
+    content: "";
+    display: block;
+    width: 62%;
+    height: 2px;
+    background: $brand-primary;
+    margin: auto;
+    margin-top: 11px;
+    margin-bottom: 5px;
   }
 }

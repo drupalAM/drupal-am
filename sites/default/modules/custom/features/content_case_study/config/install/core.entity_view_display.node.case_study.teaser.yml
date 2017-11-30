@@ -4,8 +4,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.case_study.body
+    - field.field.node.case_study.field_case_study_image
+    - field.field.node.case_study.field_case_study_screens
+    - field.field.node.case_study.field_case_study_site_link
+    - field.field.node.case_study.field_term_industry
+    - field.field.node.case_study.field_term_project_category
     - node.type.case_study
   module:
+    - image
     - text
     - user
 id: node.case_study.teaser
@@ -16,12 +22,23 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 1
     settings:
       trim_length: 600
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
+  field_case_study_screens:
+    type: image
+    weight: 0
     region: content
-hidden: {  }
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_case_study_image: true
+  field_case_study_site_link: true
+  field_term_industry: true
+  field_term_project_category: true
+  links: true

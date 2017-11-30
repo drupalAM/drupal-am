@@ -1,7 +1,11 @@
-name: 'Views And Entityqueues'
+name: 'Content Views And Entityqueues'
 type: module
 core: 8.x
 package: Content
 dependencies:
+  - content_case_study
   - entityqueue
+  - image
   - node
+  - user
+  - views

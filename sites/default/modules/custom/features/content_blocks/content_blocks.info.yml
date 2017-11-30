@@ -7,7 +7,6 @@ dependencies:
   - content_paragraphs
   - entity_reference_revisions
   - field
-  - field_layout
   - heading_formatter
   - layout_discovery
   - link

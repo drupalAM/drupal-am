@@ -2,23 +2,23 @@ core: 8.x
 type: theme
 base theme: bootstrap
 
-name: 'DrupalAM'
+name:        'DrupalAM'
 description: 'Uses the Bootstrap framework Sass source files and must be compiled (not for beginners).'
-package: 'Bootstrap'
+package:     'Bootstrap'
 
 regions:
-  navigation: 'Navigation'
+  navigation:             'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
-  top_right: 'Top Right'
-  header: 'Top Bar'
-  highlighted: 'Highlighted'
-  help: 'Help'
-  content: 'Content'
-  sidebar_first: 'Primary'
-  sidebar_second: 'Secondary'
-  footer: 'Footer'
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
+  top_right:              'Top Right'
+  header:                 'Top Bar'
+  highlighted:            'Highlighted'
+  help:                   'Help'
+  content:                'Content'
+  sidebar_first:          'Primary'
+  sidebar_second:         'Secondary'
+  footer:                 'Footer'
+  page_top:               'Page top'
+  page_bottom:            'Page bottom'
 
 libraries:
   - 'drupalam/global-styling'

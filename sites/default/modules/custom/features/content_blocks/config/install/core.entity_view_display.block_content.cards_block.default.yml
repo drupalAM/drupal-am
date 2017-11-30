@@ -7,13 +7,7 @@ dependencies:
     - field.field.block_content.cards_block.field_cards_title
   module:
     - entity_reference_revisions
-    - field_layout
     - heading_formatter
-    - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: block_content.cards_block.default
 targetEntityType: block_content
 bundle: cards_block

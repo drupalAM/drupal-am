@@ -2358,36 +2358,36 @@ pre code {
 }
 
 /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-.container, .block.why-use-drupal {
+.container, .block.why-use-drupal, .carousel-block .views-element-container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 14, ../bootstrap/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container:before, .block.why-use-drupal:before, .container:after, .block.why-use-drupal:after {
+.container:before, .block.why-use-drupal:before, .carousel-block .views-element-container:before, .container:after, .block.why-use-drupal:after, .carousel-block .views-element-container:after {
   content: " ";
   display: table;
 }
 /* line 19, ../bootstrap/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container:after, .block.why-use-drupal:after {
+.container:after, .block.why-use-drupal:after, .carousel-block .views-element-container:after {
   clear: both;
 }
 @media (min-width: 768px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal {
+  .container, .block.why-use-drupal, .carousel-block .views-element-container {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal {
+  .container, .block.why-use-drupal, .carousel-block .views-element-container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal {
+  .container, .block.why-use-drupal, .carousel-block .views-element-container {
     width: 1170px;
   }
 }
@@ -5750,9 +5750,10 @@ tbody.collapse.in {
 }
 
 /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-.container > .navbar-header, .block.why-use-drupal > .navbar-header,
+.container > .navbar-header, .block.why-use-drupal > .navbar-header, .carousel-block .views-element-container > .navbar-header,
 .container > .navbar-collapse,
 .block.why-use-drupal > .navbar-collapse,
+.carousel-block .views-element-container > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -14px;
@@ -5760,9 +5761,10 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-  .container > .navbar-header, .block.why-use-drupal > .navbar-header,
+  .container > .navbar-header, .block.why-use-drupal > .navbar-header, .carousel-block .views-element-container > .navbar-header,
   .container > .navbar-collapse,
   .block.why-use-drupal > .navbar-collapse,
+  .carousel-block .views-element-container > .navbar-collapse,
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
     margin-right: 0;
@@ -5829,7 +5831,7 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 180, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar > .container .navbar-brand, .navbar > .block.why-use-drupal .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  .navbar > .container .navbar-brand, .navbar > .block.why-use-drupal .navbar-brand, .carousel-block .navbar > .views-element-container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     margin-left: -14px;
   }
 }
@@ -6640,13 +6642,13 @@ a.badge:hover, a.badge:focus {
   border-top-color: #e6e6e6;
 }
 /* line 28, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-.container .jumbotron, .block.why-use-drupal .jumbotron, .container-fluid .jumbotron {
+.container .jumbotron, .block.why-use-drupal .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 35, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-.jumbotron .container, .jumbotron .block.why-use-drupal {
+.jumbotron .container, .jumbotron .block.why-use-drupal, .jumbotron .carousel-block .views-element-container, .carousel-block .jumbotron .views-element-container {
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -6656,7 +6658,7 @@ a.badge:hover, a.badge:focus {
     padding-bottom: 48px;
   }
   /* line 43, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-  .container .jumbotron, .block.why-use-drupal .jumbotron, .container-fluid .jumbotron {
+  .container .jumbotron, .block.why-use-drupal .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -9242,19 +9244,19 @@ body.navbar-is-fixed-bottom {
 
 @media screen and (min-width: 768px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal {
+  .navbar.container, .navbar.block.why-use-drupal, .carousel-block .navbar.views-element-container {
     max-width: 720px;
   }
 }
 @media screen and (min-width: 992px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal {
+  .navbar.container, .navbar.block.why-use-drupal, .carousel-block .navbar.views-element-container {
     max-width: 940px;
   }
 }
 @media screen and (min-width: 1200px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal {
+  .navbar.container, .navbar.block.why-use-drupal, .carousel-block .navbar.views-element-container {
     max-width: 1140px;
   }
 }
@@ -9422,6 +9424,128 @@ body.navbar-is-fixed-bottom {
 /* line 9, ../scss/component/_node.scss */
 .node-preview-form-select {
   padding: 15px;
+}
+
+/* line 15, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel {
+  position: relative;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 6px;
+}
+/* line 21, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel .field--name-field-case-study-screens {
+  position: relative;
+  overflow: hidden;
+  -moz-transition: opacity 0.1s ease;
+  -o-transition: opacity 0.1s ease;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: #252525;
+}
+/* line 28, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel .field--name-field-case-study-screens img {
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+/* line 122, ../scss/_mixins.scss */
+.node--type-case-study.node--view-mode-carousel .field--name-field-case-study-screens:before {
+  content: "";
+  display: inline-block;
+  font-family: PexetoIcons;
+  font-size: 30px;
+  color: #fff;
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  margin-top: -30px;
+  margin-left: -30px;
+  line-height: 40px;
+  text-align: center;
+  background: #5bc3ff;
+  border-radius: 3px;
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 15;
+}
+/* line 52, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel .field--name-node-title h2 {
+  padding: 15px 10px 0 10px;
+  margin-bottom: 8px;
+  color: #252525;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+/* line 61, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel .field--name-node-title h2:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #5bc3ff;
+  margin: auto;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+/* line 73, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel .field--name-field-term-project-category,
+.node--type-case-study.node--view-mode-carousel .field--name-field-term-industry {
+  color: #b3b3b1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+/* line 80, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel .field--name-field-term-project-category {
+  display: inline;
+}
+/* line 84, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel .field--name-field-term-project-category + .field--name-field-term-industry .hidden {
+  display: inline !important;
+}
+/* line 91, ../scss/component/_node.scss */
+.node--type-case-study.node--view-mode-carousel:hover .field--name-field-case-study-screens img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+/* line 122, ../scss/_mixins.scss */
+.node--type-case-study.node--view-mode-carousel:hover .field--name-field-case-study-screens:before {
+  content: "";
+  display: inline-block;
+  font-family: PexetoIcons;
+  font-size: 30px;
+  color: #fff;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 /**
@@ -9774,7 +9898,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   font-size: 10px;
   padding: 0;
 }
-/* line 177, ../scss/_mixins.scss */
+/* line 203, ../scss/_mixins.scss */
 .footer .context-groups-footer_bottom ul.menu li a:hover, .footer .context-groups-footer_bottom ul.menu li a:focus {
   color: #5bc3ff;
 }
@@ -10725,7 +10849,7 @@ ul.cs-slider-ul li {
   line-height: 45px;
 }
 
-/* line 96, ../scss/_mixins.scss */
+/* line 107, ../scss/_mixins.scss */
 .cs-prev-arrow:before {
   content: "";
   display: inline-block;
@@ -10734,7 +10858,7 @@ ul.cs-slider-ul li {
   color: inherit;
 }
 
-/* line 96, ../scss/_mixins.scss */
+/* line 107, ../scss/_mixins.scss */
 .cs-next-arrow:before {
   content: "";
   display: inline-block;
@@ -10750,7 +10874,7 @@ ul.cs-slider-ul li {
   }
 
   /* line 611, ../scss/component/_content-slider.scss */
-  .item-list.container, .item-list.block.why-use-drupal {
+  .item-list.container, .item-list.block.why-use-drupal, .carousel-block .item-list.views-element-container {
     width: 100%;
   }
 
@@ -10820,6 +10944,306 @@ ul.cs-slider-ul li {
     font-size: 32px;
   }
 }
+/* line 1, ../scss/component/_content-carousel.scss */
+.carousel-block {
+  padding: 90px 0;
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
+}
+/* line 10, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin: 55px auto 30px auto;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 18, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .carousel-holder {
+  position: relative;
+  float: left;
+  clear: both;
+  overflow: hidden;
+  margin-left: -1px;
+  padding-right: 1px;
+  padding-left: 1px;
+  width: 100%;
+  height: auto;
+}
+/* line 30, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .views-field-title {
+  padding: 0;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+/* line 41, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .view-content {
+  position: relative;
+  display: inline-block;
+  margin-left: -6px;
+}
+/* line 45, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .view-content .item {
+  display: block;
+  float: left;
+}
+/* line 51, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .page-wrapper {
+  float: left;
+}
+/* line 54, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .item {
+  padding: 0px 6px 0 6px;
+  width: 137px;
+}
+/* line 59, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  vertical-align: bottom;
+}
+/* line 68, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .carousel-title h4.small-title, .carousel-block .views-element-container .carousel-title .link-title {
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 3px;
+  width: auto;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 400;
+}
+/* line 80, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .portfolio-carousel .link-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #252525;
+  border-radius: 2px;
+  padding: 4px 26px 8px 26px;
+  margin-top: 20px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 11px;
+  text-align: center;
+}
+/* line 91, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .portfolio-carousel .link-title .more-arrow {
+  top: 1px;
+  font-weight: bold;
+}
+/* line 95, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .portfolio-carousel .link-title:hover {
+  background: #777777;
+}
+/* line 101, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .carousel-title .link-title:before {
+  margin-right: 7px;
+  content: "";
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-style: normal;
+  font-size: 15px;
+}
+/* line 108, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .carousel-title .small-title {
+  font-weight: bold;
+}
+/* line 112, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .carousel-title .link-title .more-arrow {
+  position: relative;
+  top: 3px;
+  left: -2px;
+}
+/* line 117, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .carousel-title .link-title:hover .more-arrow {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  left: 0;
+}
+/* line 124, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-next, .carousel-block .views-element-container .pc-prev {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  background-clip: padding-box;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
+  margin-top: -26px;
+  right: 0;
+  padding: 4px;
+  width: 33px;
+  height: 53px;
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.73);
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 10;
+}
+/* line 145, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-next:hover, .carousel-block .views-element-container .pc-prev:hover {
+  border-color: transparent;
+  background-color: #5bc3ff;
+}
+/* line 149, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-next:active, .carousel-block .views-element-container .pc-prev:active {
+  text-indent: 3px;
+}
+/* line 107, ../scss/_mixins.scss */
+.carousel-block .views-element-container .pc-next:before {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: inherit;
+  color: inherit;
+  font-size: 26px;
+}
+/* line 158, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-prev {
+  left: 1px;
+  background-position: left top;
+  border-top-left-radius: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+  background-clip: padding-box;
+}
+/* line 107, ../scss/_mixins.scss */
+.carousel-block .views-element-container .pc-prev:before {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: inherit;
+  color: inherit;
+  font-size: 26px;
+}
+/* line 169, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-prev:active {
+  text-indent: -3px;
+}
+/* line 173, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .ps-navigation .disabled {
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  cursor: default;
+}
+/* line 178, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-wrapper .icon-circle, .carousel-block .views-element-container .pg-item .icon-circle, .carousel-block .views-element-container .qg-img .icon-circle {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -o-transform: scale(2);
+  transform: scale(2);
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  top: 50%;
+  left: 50%;
+  z-index: 15;
+  display: block;
+  margin-top: -30px;
+  margin-left: -30px;
+  padding: 0;
+  padding: 10px;
+  background: #5bc3ff;
+}
+/* line 193, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pg-element-loading .icon-circle {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 197, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .qg-overlay .icon-circle {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -o-transform: scale(0.7);
+  transform: scale(0.7);
+}
+/* line 202, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-effect-icon .pc-item a:hover .icon-circle,
+.carousel-block .views-element-container .pg-effect-icon .pg-item:hover .icon-circle,
+.carousel-block .views-element-container .qg-overlay:hover .icon-circle {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 210, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pg-element-loading .pg-info {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 211, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pg-element-loading .pg-info .pg-icon {
+  background: url("images/ajax-loader.gif") no-repeat center center;
+  background-image: none;
+  background-size: 15px 15px;
+}
+/* line 218, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pg-element-loading .icon-circle {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  display: inline-block;
+}
+/* line 225, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-no-title .pc-header {
+  margin: 7px 0;
+  border-bottom: 0;
+}
+/* line 229, ../scss/component/_content-carousel.scss */
+.carousel-block .views-element-container .pc-no-title .carousel-title {
+  font-size: 18px;
+}
+
+/* line 1, ../scss/component/_colorbox.scss */
+#cboxWrapper {
+  background: transparent;
+}
+
+/* line 4, ../scss/component/_colorbox.scss */
+#cboxClose {
+  background: url(../images/sprite_bot.png) 0 0 no-repeat;
+  background-size: 56px 18px;
+  background-position: -33px 0;
+  width: 22px;
+  height: 18px;
+  border-left: 1px solid #efefef;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  outline: none;
+}
+
+/* line 15, ../scss/component/_colorbox.scss */
+#cboxClose:hover {
+  background: url(../images/sprite_bot.png) 0 0 no-repeat;
+  background-size: 56px 18px;
+  background-position: -33px 0;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
 /**
  * jQuery UI autocomplete widget style overrides.
  *
@@ -10869,28 +11293,32 @@ ul.cs-slider-ul li {
   color: #fff;
 }
 
-/* line 28, ../scss/_overrides.scss */
+@font-face {
+  font-family: "PexetoIcons";
+  src: url("../fonts/PexetoIcons/PexetoIcons.eot?") format("eot"), url("../fonts/PexetoIcons/PexetoIcons.woff") format("woff"), url("../fonts/PexetoIcons/PexetoIcons.ttf") format("truetype"), url("../fonts/PexetoIcons/PexetoIcons.svg#PexetoIcons") format("svg");
+}
+/* line 34, ../scss/_overrides.scss */
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.7;
 }
 @media (min-width: 767px) {
-  /* line 28, ../scss/_overrides.scss */
+  /* line 34, ../scss/_overrides.scss */
   body {
     margin-top: 0;
   }
 }
 
-/* line 35, ../scss/_overrides.scss */
+/* line 41, ../scss/_overrides.scss */
 ol, ul {
   padding-left: 1.5em;
 }
-/* line 37, ../scss/_overrides.scss */
+/* line 43, ../scss/_overrides.scss */
 .popover ol:last-child, .popover ul:last-child {
   margin-bottom: 0;
 }
 
-/* line 41, ../scss/_overrides.scss */
+/* line 47, ../scss/_overrides.scss */
 h1, h2, h3, h4, h5, h6 {
   padding: 10px 0;
   margin-top: 0;
@@ -10900,42 +11328,67 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* line 51, ../scss/_overrides.scss */
+/* line 57, ../scss/_overrides.scss */
 .main-container {
   padding-bottom: 20px;
 }
 
-/* line 56, ../scss/_overrides.scss */
+/* line 62, ../scss/_overrides.scss */
 .page-header {
   margin-top: 0;
 }
 
-/* line 61, ../scss/_overrides.scss */
+/* line 67, ../scss/_overrides.scss */
 p:last-child,
 .form-group:last-child,
 .panel:last-child {
   margin-bottom: 0;
 }
 
-/* line 69, ../scss/_overrides.scss */
+/* line 75, ../scss/_overrides.scss */
 .region-help > .glyphicon {
   font-size: 18px;
   float: left;
   margin: -0.05em 0.5em 0 0;
 }
-/* line 74, ../scss/_overrides.scss */
+/* line 80, ../scss/_overrides.scss */
 .region-help .block {
   overflow: hidden;
 }
 
-/* line 80, ../scss/_overrides.scss */
+/* line 86, ../scss/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #b3b3b1;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 85, ../scss/_overrides.scss */
+/* line 91, ../scss/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
+}
+
+/* line 97, ../scss/_overrides.scss */
+.section-title, .carousel-block h2.block-title {
+  margin-bottom: 0px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: normal;
+  display: table;
+  margin: auto;
+  padding: 0;
+  letter-spacing: -2px;
+  font-size: 40px;
+  line-height: 1.3em;
+}
+/* line 109, ../scss/_overrides.scss */
+.section-title:after, .carousel-block h2.block-title:after {
+  content: "";
+  display: block;
+  width: 62%;
+  height: 2px;
+  background: #5bc3ff;
+  margin: auto;
+  margin-top: 11px;
+  margin-bottom: 5px;
 }

@@ -8,16 +8,10 @@ dependencies:
     - image.style.medium
     - paragraphs.paragraphs_type.card
   module:
-    - field_layout
     - image
-    - layout_discovery
     - link
     - linked_field
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: paragraph.card.default
 targetEntityType: paragraph
 bundle: card
