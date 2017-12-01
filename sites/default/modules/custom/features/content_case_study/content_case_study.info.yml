@@ -4,6 +4,7 @@ type: module
 core: 8.x
 dependencies:
   - colorbox
+  - content_hero_slide
   - content_vocabularies
   - ds
   - entityqueue
