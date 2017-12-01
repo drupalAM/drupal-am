@@ -5,6 +5,7 @@ core: 8.x
 dependencies:
   - colorbox
   - content_hero_slide
+  - content_views_and_entityqueues
   - content_vocabularies
   - ds
   - entityqueue
@@ -18,4 +19,5 @@ dependencies:
   - taxonomy
   - text
   - user
+  - views
 package: Content
