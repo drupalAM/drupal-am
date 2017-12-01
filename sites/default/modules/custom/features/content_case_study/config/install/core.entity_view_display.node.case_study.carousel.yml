@@ -57,8 +57,8 @@ content:
       colorbox_image_style: ''
       colorbox_gallery: post
       colorbox_gallery_custom: ''
-      colorbox_caption: auto
-      colorbox_caption_custom: ''
+      colorbox_caption: custom
+      colorbox_caption_custom: '<a href="[node:url]">[translatable-string:Read More]</a>'
     third_party_settings:
       ds:
         ds_limit: ''

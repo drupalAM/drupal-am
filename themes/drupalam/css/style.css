@@ -10954,8 +10954,8 @@ ul.cs-slider-ul li {
 .carousel-block .views-element-container {
   opacity: 0;
   filter: alpha(opacity=0);
-  margin: 55px auto 30px auto;
   position: relative;
+  margin: 55px auto 30px auto;
   text-align: center;
   overflow: hidden;
 }
@@ -10963,15 +10963,14 @@ ul.cs-slider-ul li {
 .carousel-block .views-element-container .carousel-holder {
   position: relative;
   float: left;
-  clear: both;
-  overflow: hidden;
-  margin-left: -1px;
-  padding-right: 1px;
-  padding-left: 1px;
   width: 100%;
   height: auto;
+  padding-right: 1px;
+  padding-left: 1px;
+  clear: both;
+  overflow: hidden;
 }
-/* line 30, ../scss/component/_content-carousel.scss */
+/* line 29, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .views-field-title {
   padding: 0;
   padding-bottom: 0px;
@@ -10982,27 +10981,27 @@ ul.cs-slider-ul li {
   font-size: 18px;
   letter-spacing: 1px;
 }
-/* line 41, ../scss/component/_content-carousel.scss */
+/* line 40, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .view-content {
   position: relative;
   display: inline-block;
   margin-left: -6px;
 }
-/* line 45, ../scss/component/_content-carousel.scss */
+/* line 44, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .view-content .item {
   display: block;
   float: left;
 }
-/* line 51, ../scss/component/_content-carousel.scss */
+/* line 50, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .page-wrapper {
   float: left;
 }
-/* line 54, ../scss/component/_content-carousel.scss */
+/* line 53, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .item {
   padding: 0px 6px 0 6px;
   width: 137px;
 }
-/* line 59, ../scss/component/_content-carousel.scss */
+/* line 58, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container img {
   position: relative;
   z-index: 1;
@@ -11010,7 +11009,7 @@ ul.cs-slider-ul li {
   width: 100%;
   vertical-align: bottom;
 }
-/* line 68, ../scss/component/_content-carousel.scss */
+/* line 67, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .carousel-title h4.small-title, .carousel-block .views-element-container .carousel-title .link-title {
   display: block;
   margin-top: 2px;
@@ -11021,7 +11020,7 @@ ul.cs-slider-ul li {
   line-height: 1em;
   font-weight: 400;
 }
-/* line 80, ../scss/component/_content-carousel.scss */
+/* line 79, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .portfolio-carousel .link-title {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -11034,16 +11033,16 @@ ul.cs-slider-ul li {
   font-size: 11px;
   text-align: center;
 }
-/* line 91, ../scss/component/_content-carousel.scss */
+/* line 90, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .portfolio-carousel .link-title .more-arrow {
   top: 1px;
   font-weight: bold;
 }
-/* line 95, ../scss/component/_content-carousel.scss */
+/* line 94, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .portfolio-carousel .link-title:hover {
   background: #777777;
 }
-/* line 101, ../scss/component/_content-carousel.scss */
+/* line 100, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .carousel-title .link-title:before {
   margin-right: 7px;
   content: "";
@@ -11052,23 +11051,23 @@ ul.cs-slider-ul li {
   font-style: normal;
   font-size: 15px;
 }
-/* line 108, ../scss/component/_content-carousel.scss */
+/* line 107, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .carousel-title .small-title {
   font-weight: bold;
 }
-/* line 112, ../scss/component/_content-carousel.scss */
+/* line 111, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .carousel-title .link-title .more-arrow {
   position: relative;
   top: 3px;
   left: -2px;
 }
-/* line 117, ../scss/component/_content-carousel.scss */
+/* line 116, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .carousel-title .link-title:hover .more-arrow {
   opacity: 1;
   filter: alpha(opacity=100);
   left: 0;
 }
-/* line 124, ../scss/component/_content-carousel.scss */
+/* line 123, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-next, .carousel-block .views-element-container .pc-prev {
   border-top-left-radius: 2px;
   border-top-right-radius: 0;
@@ -11094,12 +11093,12 @@ ul.cs-slider-ul li {
   cursor: pointer;
   z-index: 10;
 }
-/* line 145, ../scss/component/_content-carousel.scss */
+/* line 144, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-next:hover, .carousel-block .views-element-container .pc-prev:hover {
   border-color: transparent;
   background-color: #5bc3ff;
 }
-/* line 149, ../scss/component/_content-carousel.scss */
+/* line 148, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-next:active, .carousel-block .views-element-container .pc-prev:active {
   text-indent: 3px;
 }
@@ -11112,7 +11111,7 @@ ul.cs-slider-ul li {
   color: inherit;
   font-size: 26px;
 }
-/* line 158, ../scss/component/_content-carousel.scss */
+/* line 157, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-prev {
   left: 1px;
   background-position: left top;
@@ -11131,17 +11130,17 @@ ul.cs-slider-ul li {
   color: inherit;
   font-size: 26px;
 }
-/* line 169, ../scss/component/_content-carousel.scss */
+/* line 168, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-prev:active {
   text-indent: -3px;
 }
-/* line 173, ../scss/component/_content-carousel.scss */
+/* line 172, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .ps-navigation .disabled {
   opacity: 0.3;
   filter: alpha(opacity=30);
   cursor: default;
 }
-/* line 178, ../scss/component/_content-carousel.scss */
+/* line 177, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-wrapper .icon-circle, .carousel-block .views-element-container .pg-item .icon-circle, .carousel-block .views-element-container .qg-img .icon-circle {
   opacity: 0;
   filter: alpha(opacity=0);
@@ -11163,14 +11162,14 @@ ul.cs-slider-ul li {
   padding: 10px;
   background: #5bc3ff;
 }
-/* line 193, ../scss/component/_content-carousel.scss */
+/* line 192, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pg-element-loading .icon-circle {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 197, ../scss/component/_content-carousel.scss */
+/* line 196, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .qg-overlay .icon-circle {
   opacity: 0;
   filter: alpha(opacity=0);
@@ -11179,7 +11178,7 @@ ul.cs-slider-ul li {
   -o-transform: scale(0.7);
   transform: scale(0.7);
 }
-/* line 202, ../scss/component/_content-carousel.scss */
+/* line 201, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-effect-icon .pc-item a:hover .icon-circle,
 .carousel-block .views-element-container .pg-effect-icon .pg-item:hover .icon-circle,
 .carousel-block .views-element-container .qg-overlay:hover .icon-circle {
@@ -11190,29 +11189,29 @@ ul.cs-slider-ul li {
   opacity: 1;
   filter: alpha(opacity=100);
 }
-/* line 210, ../scss/component/_content-carousel.scss */
+/* line 209, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pg-element-loading .pg-info {
   opacity: 1;
   filter: alpha(opacity=100);
 }
-/* line 211, ../scss/component/_content-carousel.scss */
+/* line 210, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pg-element-loading .pg-info .pg-icon {
   background: url("images/ajax-loader.gif") no-repeat center center;
   background-image: none;
   background-size: 15px 15px;
 }
-/* line 218, ../scss/component/_content-carousel.scss */
+/* line 217, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pg-element-loading .icon-circle {
   opacity: 0.8;
   filter: alpha(opacity=80);
   display: inline-block;
 }
-/* line 225, ../scss/component/_content-carousel.scss */
+/* line 224, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-no-title .pc-header {
   margin: 7px 0;
   border-bottom: 0;
 }
-/* line 229, ../scss/component/_content-carousel.scss */
+/* line 228, ../scss/component/_content-carousel.scss */
 .carousel-block .views-element-container .pc-no-title .carousel-title {
   font-size: 18px;
 }

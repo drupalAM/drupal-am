@@ -33,7 +33,7 @@
   }
   $('.carousel-block .views-element-container').pexetoCarousel()
   // Frontpage case study colorbox
-  $('.block-views-blockcase-study-block-1 .node').on('click', function(){
+  $('.block-views-blockcase-study-block-1 .node').on('click', ':not(.contextual)', function(){
     $(this).find('.colorbox').colorbox({open: true});
   });
 
