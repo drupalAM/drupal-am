@@ -38,16 +38,19 @@ dependencies:
   - admin_toolbar
   - better_normalizers
   - bootstrap_layouts
+  - colorbox
   - context
   - context_groups
   - default_content
   - default_content_deploy
+  - ds
   - entityqueue
   - fontawesome
   - libraries
   - linked_field
   - token
   # custom
+  - drupalam_customization
   - empty_front
   - heading_formatter
   # features

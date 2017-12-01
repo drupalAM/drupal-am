@@ -100,3 +100,16 @@ function drupal_am_update_8406() {
     ]
   );
 }
+
+/**
+* Enable several modules
+*/
+function drupal_am_update_8407() {
+  \Drupal::service('module_installer')->install(
+    [
+      'ds',
+      'colorbox',
+      'drupalam_customization',
+    ]
+  );
+}
