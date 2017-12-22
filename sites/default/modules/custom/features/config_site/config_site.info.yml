@@ -1,4 +1,4 @@
-name: Site
+name: 'Config Site'
 description: 'Provides site components.'
 type: module
 core: 8.x
