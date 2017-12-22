@@ -41,7 +41,7 @@ reactions:
         label_display: 0
         status: true
         info: ''
-        view_mode: full
+        view_mode: cards
         region: content
         weight: '0'
         context_mapping: {  }
@@ -65,6 +65,22 @@ reactions:
         unique: 0
         context_id: front
         uuid: 91dfab0c-0113-4348-89d8-8148086042d2
+      94261b1a-ab61-4ceb-85f4-a0f6b94babac:
+        id: 'block_content:0c75389a-6acf-4065-a5aa-7ad62a90d4e5'
+        label: 'Where Do I Start?'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: full
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: where-do-i-start
+        unique: 0
+        context_id: front
+        uuid: 94261b1a-ab61-4ceb-85f4-a0f6b94babac
     id: blocks
     saved: false
     uuid: 4874a484-46d2-4edf-9462-53e9bc79d7af

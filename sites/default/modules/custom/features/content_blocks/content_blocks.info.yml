@@ -1,4 +1,4 @@
-name: Blocks
+name: 'Content Blocks'
 type: module
 core: 8.x
 dependencies:
@@ -8,8 +8,10 @@ dependencies:
   - entity_reference_revisions
   - field
   - heading_formatter
+  - image
   - layout_discovery
   - link
   - linkicon
   - paragraphs
+  - text
 package: Content

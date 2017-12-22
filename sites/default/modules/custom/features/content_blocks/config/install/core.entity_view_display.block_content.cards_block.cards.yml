@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - block_content.type.cards_block
+    - core.entity_view_mode.block_content.cards
     - field.field.block_content.cards_block.field_cards_background_image
     - field.field.block_content.cards_block.field_cards_card
     - field.field.block_content.cards_block.field_cards_description
@@ -10,22 +11,11 @@ dependencies:
   module:
     - entity_reference_revisions
     - heading_formatter
-    - image
-    - text
-id: block_content.cards_block.default
+id: block_content.cards_block.cards
 targetEntityType: block_content
 bundle: cards_block
-mode: default
+mode: cards
 content:
-  field_cards_background_image:
-    weight: 3
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
   field_cards_card:
     type: entity_reference_revisions_entity_view
     weight: 1
@@ -35,19 +25,14 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-  field_cards_description:
-    weight: 2
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_cards_title:
+    type: heading_formatter
     weight: 0
+    region: content
     label: hidden
     settings:
       heading_type: h2
     third_party_settings: {  }
-    type: heading_formatter
-    region: content
-hidden: {  }
+hidden:
+  field_cards_background_image: true
+  field_cards_description: true
