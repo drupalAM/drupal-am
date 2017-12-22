@@ -1,0 +1,32 @@
+conf_block.project_settings:
+  path: '/admin/project_config'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    link_id: 'conf_block.project_settings'
+    _title: 'Project Configuration'
+  requirements:
+    _permission: 'access project settings'
+
+conf_block.project_settings_blocks:
+  path: '/admin/project_config/blocks'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Blocks'
+  requirements:
+    _permission: 'edit conf blocks'
+
+conf_block.project_settings_blocks_text:
+  path: '/admin/project_config/blocks_text'
+  defaults:
+    _form: 'Drupal\conf_block\Form\ConfBlockForm'
+    _title: 'HTML Blocks'
+  requirements:
+    _permission: 'edit conf blocks'
+
+conf_block.conf_form:
+  path: '/admin/config/content/conf_block'
+  defaults:
+    _form: 'Drupal\conf_block\Form\ConfBlockSettingsForm'
+    _title: 'Conf Block settings'
+  requirements:
+    _permission: 'administer conf blocks'

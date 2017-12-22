@@ -38,6 +38,7 @@ dependencies:
   - admin_toolbar
   - better_normalizers
   - bootstrap_layouts
+  - conf_block
   - colorbox
   - context
   - context_groups

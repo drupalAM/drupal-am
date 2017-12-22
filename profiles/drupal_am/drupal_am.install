@@ -113,3 +113,14 @@ function drupal_am_update_8407() {
     ]
   );
 }
+
+/**
+* Enable conf_block module
+*/
+function drupal_am_update_8408() {
+  \Drupal::service('module_installer')->install(
+    [
+      'conf_block',
+    ]
+  );
+}

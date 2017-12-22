@@ -1,0 +1,12 @@
+name: 'Configurable Blocks'
+type: module
+description: 'Custom configurable blocks'
+package: Other
+# core: 8.x
+dependencies:
+  - block
+# Information added by Drupal.org packaging script on 2017-11-24
+version: '8.x-1.0-rc1'
+core: '8.x'
+project: 'conf_block'
+datestamp: 1511533386

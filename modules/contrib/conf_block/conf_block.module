@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Configurable blocks with possibility to export configuration without content.
+ */
+
+/**
+ * TODO: Implements hook_preprocess_views_view()
+ */
+
+/**
+ * Implements hook_menu_contextual_links_alter()
+ */
+function conf_block_menu_contextual_links_alter(&$links, $router_item, $root_path) {
+
+  global $conf_blocks;
+
+  if($root_path == "admin/structure/block/manage/%/%") {
+    if ($router_item['page_arguments'][1] == 'conf_block') {
+      $selected_group = $i = 0;
+      foreach ($conf_blocks as $group) {
+        foreach ($group as $delta => $block_title) {
+          if ($delta == $router_item['page_arguments'][2]) {
+            $selected_group = $i;
+            break 2;
+          }
+        }
+        $i++;
+      }
+      $links['block-configure']['href'] = url('admin/custom_config/blocks/texts/', array('fragment' => "edit-fieldset-" . $selected_group, 'absolute' => true ));
+    }
+  }
+}
