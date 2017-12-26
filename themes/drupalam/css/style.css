@@ -2358,36 +2358,36 @@ pre code {
 }
 
 /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-.container, .block.why-use-drupal, .carousel-block .views-element-container {
+.container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .carousel-block .views-element-container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 14, ../bootstrap/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container:before, .block.why-use-drupal:before, .carousel-block .views-element-container:before, .container:after, .block.why-use-drupal:after, .carousel-block .views-element-container:after {
+.container:before, .block.why-use-drupal:before, .block.where-do-i-start .field--name-field-cards-card:before, .carousel-block .views-element-container:before, .container:after, .block.why-use-drupal:after, .block.where-do-i-start .field--name-field-cards-card:after, .carousel-block .views-element-container:after {
   content: " ";
   display: table;
 }
 /* line 19, ../bootstrap/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container:after, .block.why-use-drupal:after, .carousel-block .views-element-container:after {
+.container:after, .block.why-use-drupal:after, .block.where-do-i-start .field--name-field-cards-card:after, .carousel-block .views-element-container:after {
   clear: both;
 }
 @media (min-width: 768px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal, .carousel-block .views-element-container {
+  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .carousel-block .views-element-container {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal, .carousel-block .views-element-container {
+  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .carousel-block .views-element-container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal, .carousel-block .views-element-container {
+  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .carousel-block .views-element-container {
     width: 1170px;
   }
 }
@@ -2425,7 +2425,7 @@ pre code {
 }
 
 /* line 11, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .block.where-do-i-start .field--name-field-cards-card > .field--item, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2955,7 +2955,7 @@ pre code {
 }
 @media (min-width: 992px) {
   /* line 27, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-md-1, .col-md-2, .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .block.where-do-i-start .field--name-field-cards-card > .field--item, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
 
@@ -2970,7 +2970,7 @@ pre code {
   }
 
   /* line 35, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item {
+  .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .block.where-do-i-start .field--name-field-cards-card > .field--item {
     width: 25%;
   }
 
@@ -5750,9 +5750,10 @@ tbody.collapse.in {
 }
 
 /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-.container > .navbar-header, .block.why-use-drupal > .navbar-header, .carousel-block .views-element-container > .navbar-header,
+.container > .navbar-header, .block.why-use-drupal > .navbar-header, .block.where-do-i-start .field--name-field-cards-card > .navbar-header, .carousel-block .views-element-container > .navbar-header,
 .container > .navbar-collapse,
 .block.why-use-drupal > .navbar-collapse,
+.block.where-do-i-start .field--name-field-cards-card > .navbar-collapse,
 .carousel-block .views-element-container > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
@@ -5761,9 +5762,10 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-  .container > .navbar-header, .block.why-use-drupal > .navbar-header, .carousel-block .views-element-container > .navbar-header,
+  .container > .navbar-header, .block.why-use-drupal > .navbar-header, .block.where-do-i-start .field--name-field-cards-card > .navbar-header, .carousel-block .views-element-container > .navbar-header,
   .container > .navbar-collapse,
   .block.why-use-drupal > .navbar-collapse,
+  .block.where-do-i-start .field--name-field-cards-card > .navbar-collapse,
   .carousel-block .views-element-container > .navbar-collapse,
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
@@ -5831,7 +5833,7 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 180, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar > .container .navbar-brand, .navbar > .block.why-use-drupal .navbar-brand, .carousel-block .navbar > .views-element-container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  .navbar > .container .navbar-brand, .navbar > .block.why-use-drupal .navbar-brand, .block.where-do-i-start .navbar > .field--name-field-cards-card .navbar-brand, .carousel-block .navbar > .views-element-container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     margin-left: -14px;
   }
 }
@@ -6642,13 +6644,13 @@ a.badge:hover, a.badge:focus {
   border-top-color: #e6e6e6;
 }
 /* line 28, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-.container .jumbotron, .block.why-use-drupal .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
+.container .jumbotron, .block.why-use-drupal .jumbotron, .block.where-do-i-start .field--name-field-cards-card .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 35, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-.jumbotron .container, .jumbotron .block.why-use-drupal, .jumbotron .carousel-block .views-element-container, .carousel-block .jumbotron .views-element-container {
+.jumbotron .container, .jumbotron .block.why-use-drupal, .jumbotron .block.where-do-i-start .field--name-field-cards-card, .block.where-do-i-start .jumbotron .field--name-field-cards-card, .jumbotron .carousel-block .views-element-container, .carousel-block .jumbotron .views-element-container {
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -6658,7 +6660,7 @@ a.badge:hover, a.badge:focus {
     padding-bottom: 48px;
   }
   /* line 43, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-  .container .jumbotron, .block.why-use-drupal .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
+  .container .jumbotron, .block.why-use-drupal .jumbotron, .block.where-do-i-start .field--name-field-cards-card .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -9244,19 +9246,19 @@ body.navbar-is-fixed-bottom {
 
 @media screen and (min-width: 768px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal, .carousel-block .navbar.views-element-container {
+  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .carousel-block .navbar.views-element-container {
     max-width: 720px;
   }
 }
 @media screen and (min-width: 992px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal, .carousel-block .navbar.views-element-container {
+  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .carousel-block .navbar.views-element-container {
     max-width: 940px;
   }
 }
 @media screen and (min-width: 1200px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal, .carousel-block .navbar.views-element-container {
+  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .carousel-block .navbar.views-element-container {
     max-width: 1140px;
   }
 }
@@ -10020,6 +10022,77 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 /* line 64, ../scss/component/_frontpage.scss */
 .block.why-use-drupal .field--name-field-cards-card .field--name-field-card-text {
   margin: 7px 10px 10px 10px;
+}
+
+/* line 70, ../scss/component/_frontpage.scss */
+.block.where-do-i-start {
+  text-align: center;
+  color: #fff;
+  background-attachment: fixed;
+}
+/* line 73, ../scss/component/_frontpage.scss */
+.block.where-do-i-start a {
+  color: #fff;
+}
+/* line 78, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-cards-card {
+  margin-top: 30px;
+}
+/* line 86, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-cards-title h2 {
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: normal;
+  display: table;
+  margin: auto;
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 1.3em;
+}
+/* line 99, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-cards-title h2:after {
+  content: "";
+  width: 62%;
+  display: block;
+  height: 2px;
+  background: #5bc3ff;
+  margin: auto;
+  margin-top: 4px;
+  margin-bottom: 7px;
+}
+/* line 110, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-cards-description {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1.3em;
+}
+/* line 118, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-icon {
+  background-color: #5bc3ff;
+  width: 90px;
+  height: 90px;
+  display: block;
+  border-radius: 100%;
+  margin: auto;
+}
+/* line 126, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-icon img {
+  padding: 25px;
+  filter: brightness(0) invert(1);
+}
+/* line 131, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-card-link {
+  padding-top: 5px;
+  padding-bottom: 8px;
+  font-weight: 600;
+  font-size: 17px;
 }
 
 /*
@@ -10883,7 +10956,7 @@ ul.cs-slider-ul li {
   }
 
   /* line 611, ../scss/component/_content-slider.scss */
-  .item-list.container, .item-list.block.why-use-drupal, .carousel-block .item-list.views-element-container {
+  .item-list.container, .item-list.block.why-use-drupal, .block.where-do-i-start .item-list.field--name-field-cards-card, .carousel-block .item-list.views-element-container {
     width: 100%;
   }
 

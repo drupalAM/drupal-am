@@ -66,3 +66,72 @@
     }
   }
 }
+
+.block.where-do-i-start {
+  text-align: center;
+  color: $white;
+  a {
+    color: $white;
+  }
+  background-attachment: fixed;
+      
+  .field--name-field-cards-card {
+    @extend .container;
+    margin-top: 30px;
+        
+    > .field--item {
+      @extend .col-md-3;
+    }
+  }
+  .field--name-field-cards-title h2 {
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: normal;
+    display: table;
+    margin: auto;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1.3em;
+    
+    &:after {
+      content: "";
+      width: 62%;
+      display: block;
+      height: 2px;
+      background: #5bc3ff;
+      margin: auto;
+      margin-top: 4px;
+      margin-bottom: 7px;
+    }
+  }
+  .field--name-field-cards-description {
+    @include opacity(0.8);
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1.3em;
+  }
+  .field--name-field-icon {
+    background-color: #5bc3ff;
+    width: 90px;
+    height: 90px;
+    display: block;
+    border-radius: 100%; 
+    margin: auto;
+    
+    img {
+      padding: 25px;
+      filter: brightness(0) invert(1);
+    }
+  }
+  .field--name-field-card-link {
+    padding-top: 5px;
+    padding-bottom: 8px;
+    font-weight: 600;
+    font-size: 17px;
+  }
+}
