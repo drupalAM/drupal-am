@@ -19,13 +19,12 @@ bundle: cards_block
 mode: full
 content:
   field_cards_background_image:
-    type: image
+    type: image_url
     weight: 0
     region: content
     label: hidden
     settings:
       image_style: ''
-      image_link: ''
     third_party_settings: {  }
   field_cards_card:
     type: entity_reference_revisions_entity_view
