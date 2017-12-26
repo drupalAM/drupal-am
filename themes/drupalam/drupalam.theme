@@ -3,7 +3,6 @@
  * @file
  * Bootstrap sub-theme.
  *
- * Place your custom PHP code in this file.
  */
 
 function drupalam_preprocess_views_view_list(&$variables) {
@@ -21,23 +20,42 @@ function drupalam_preprocess_views_view_list(&$variables) {
       // background image
       $variables['rows'][$key]['attributes']->setAttribute('data-bg_image_url', file_create_url($uri));
       // content position, effect direction
-      $positions = array(
-        'centered' => array(
+      $positions = [
+        'centered' => [
           'layout' => 'centered',
           'effect' => 'slideUp',
-        ),
-        'left' => array(
+        ],
+        'left' => [
           'layout' => 'text-img',
           'effect' => 'slideLeft',
-        ),
-        'right' => array(
+        ],
+        'right' => [
           'layout' => 'img-text',
           'effect' => 'slideLeft',
-        ),
-      );
+        ],
+      ];
       $position = $row['content']['#row']->_entity->get('field_heroslide_text_position')->getValue()[0]['value'];
       $variables['rows'][$key]['attributes']->setAttribute('data-layout', $positions[$position]['layout']);
       $variables['rows'][$key]['attributes']->setAttribute('data-animation', $positions[$position]['effect']);
     }
   }
+}
+
+function drupalam_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if($variables['field_name'] == 'field_cards_background_image') {
+    if($element['#bundle'] == 'cards_block' && $element['#view_mode'] == 'full') {
+      $img = $variables['items'][0]['content']['#markup'];
+      $css = '.block.where-do-i-start { background-image: url(' . $img . '); }';
+      $variables['#attached']['html_head'][] = [
+        [
+          '#tag' => 'style',
+          '#value' => $css,
+        ],
+        'where-do-i-start'
+      ];
+    }
+    unset($variables['items']);
+  }
+
 }

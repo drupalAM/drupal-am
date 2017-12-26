@@ -68,27 +68,50 @@
 }
 
 .block.where-do-i-start {
+  position: relative;
+  padding: 90px 0;
   text-align: center;
   color: $white;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include opacity(.6);
+    background-color: $gray-base;
+  }
   a {
     color: $white;
+    
+    &:hover {
+      color: $brand-primary;
+    }
   }
-  background-attachment: fixed;
-      
   .field--name-field-cards-card {
     @extend .container;
-    margin-top: 30px;
+    margin-top: 40px;
         
     > .field--item {
       @extend .col-md-3;
+      @extend .col-sm-6;
+      margin-bottom: 27px;
     }
   }
   .field--name-field-cards-title h2 {
     margin-bottom: 5px;
-    color: #ffffff;
+    color: $white;
     text-align: center;
     letter-spacing: normal;
     display: table;
+    position: relative;
     margin: auto;
     padding: 0;
     text-transform: uppercase;
@@ -101,7 +124,7 @@
       width: 62%;
       display: block;
       height: 2px;
-      background: #5bc3ff;
+      background: $brand-primary;
       margin: auto;
       margin-top: 4px;
       margin-bottom: 7px;
@@ -116,7 +139,7 @@
     line-height: 1.3em;
   }
   .field--name-field-icon {
-    background-color: #5bc3ff;
+    background-color: $brand-primary;
     width: 90px;
     height: 90px;
     display: block;
@@ -129,7 +152,7 @@
     }
   }
   .field--name-field-card-link {
-    padding-top: 5px;
+    padding-top: 12px;
     padding-bottom: 8px;
     font-weight: 600;
     font-size: 17px;

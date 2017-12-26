@@ -2425,7 +2425,7 @@ pre code {
 }
 
 /* line 11, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .block.where-do-i-start .field--name-field-cards-card > .field--item, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .block.why-use-drupal .field--name-field-cards-card > .field--item, .block.where-do-i-start .field--name-field-cards-card > .field--item, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .block.where-do-i-start .field--name-field-cards-card > .field--item, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2694,7 +2694,7 @@ pre code {
 
 @media (min-width: 768px) {
   /* line 27, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .block.where-do-i-start .field--name-field-cards-card > .field--item, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   }
 
@@ -2724,7 +2724,7 @@ pre code {
   }
 
   /* line 35, ../bootstrap/assets/stylesheets/bootstrap/mixins/_grid-framework.scss */
-  .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item {
+  .col-sm-6, .block.why-use-drupal .field--name-field-cards-card > .field--item, .block.where-do-i-start .field--name-field-cards-card > .field--item {
     width: 50%;
   }
 
@@ -10026,25 +10026,52 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 
 /* line 70, ../scss/component/_frontpage.scss */
 .block.where-do-i-start {
+  position: relative;
+  padding: 90px 0;
   text-align: center;
   color: #fff;
   background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
 }
-/* line 73, ../scss/component/_frontpage.scss */
+/* line 80, ../scss/component/_frontpage.scss */
+.block.where-do-i-start:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  background-color: #252525;
+}
+/* line 91, ../scss/component/_frontpage.scss */
 .block.where-do-i-start a {
   color: #fff;
 }
-/* line 78, ../scss/component/_frontpage.scss */
-.block.where-do-i-start .field--name-field-cards-card {
-  margin-top: 30px;
+/* line 94, ../scss/component/_frontpage.scss */
+.block.where-do-i-start a:hover {
+  color: #5bc3ff;
 }
-/* line 86, ../scss/component/_frontpage.scss */
+/* line 98, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-cards-card {
+  margin-top: 40px;
+}
+/* line 102, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-cards-card > .field--item {
+  margin-bottom: 27px;
+}
+/* line 108, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-cards-title h2 {
   margin-bottom: 5px;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   letter-spacing: normal;
   display: table;
+  position: relative;
   margin: auto;
   padding: 0;
   text-transform: uppercase;
@@ -10052,7 +10079,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   font-size: 40px;
   line-height: 1.3em;
 }
-/* line 99, ../scss/component/_frontpage.scss */
+/* line 122, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-cards-title h2:after {
   content: "";
   width: 62%;
@@ -10063,7 +10090,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   margin-top: 4px;
   margin-bottom: 7px;
 }
-/* line 110, ../scss/component/_frontpage.scss */
+/* line 133, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-cards-description {
   opacity: 0.8;
   filter: alpha(opacity=80);
@@ -10073,7 +10100,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   font-size: 20px;
   line-height: 1.3em;
 }
-/* line 118, ../scss/component/_frontpage.scss */
+/* line 141, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-icon {
   background-color: #5bc3ff;
   width: 90px;
@@ -10082,14 +10109,14 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   border-radius: 100%;
   margin: auto;
 }
-/* line 126, ../scss/component/_frontpage.scss */
+/* line 149, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-icon img {
   padding: 25px;
   filter: brightness(0) invert(1);
 }
-/* line 131, ../scss/component/_frontpage.scss */
+/* line 154, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-card-link {
-  padding-top: 5px;
+  padding-top: 12px;
   padding-bottom: 8px;
   font-weight: 600;
   font-size: 17px;
