@@ -1,0 +1,13 @@
+name: Members
+description: 'Provide User related configuration.'
+type: module
+core: 8.x
+dependencies:
+  - ds
+  - entityqueue
+  - field
+  - file
+  - image
+  - text
+  - user
+  - views

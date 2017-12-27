@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: featured_community_members
+label: 'Featured Community Members'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: user
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

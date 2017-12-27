@@ -68,6 +68,7 @@ dependencies:
   - user_field_bases
   - user_roles_and_permissions
   - user_vocabularies
+  - user_members
 themes:
   - bootstrap
   - drupalam
