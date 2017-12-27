@@ -26,6 +26,14 @@
       font-weight: bold;
       font-size: 17px;
     }
+    a {
+      color: $white;
+      text-decoration: underline;
+      
+      &:hover {
+        color: $brand-primary;
+      }
+    }
   }
   .context-groups-footer_bottom {
     padding: 25px 0;

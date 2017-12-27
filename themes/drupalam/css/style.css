@@ -9862,14 +9862,23 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   font-weight: bold;
   font-size: 17px;
 }
-/* line 30, ../scss/component/_footer.scss */
+/* line 29, ../scss/component/_footer.scss */
+.footer .context-groups-footer_columns a {
+  color: #fff;
+  text-decoration: underline;
+}
+/* line 33, ../scss/component/_footer.scss */
+.footer .context-groups-footer_columns a:hover {
+  color: #5bc3ff;
+}
+/* line 38, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom {
   padding: 25px 0;
   width: 100%;
   height: auto;
   background-color: #1f1f1f;
 }
-/* line 36, ../scss/component/_footer.scss */
+/* line 44, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom .copyright {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -9879,29 +9888,29 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   margin: 10px 0;
 }
 @media (min-width: 767px) {
-  /* line 36, ../scss/component/_footer.scss */
+  /* line 44, ../scss/component/_footer.scss */
   .footer .context-groups-footer_bottom .copyright {
     text-align: left;
     margin: 0;
   }
 }
-/* line 48, ../scss/component/_footer.scss */
+/* line 56, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom ul.menu {
   line-height: 1em;
   text-align: center;
 }
 @media (min-width: 767px) {
-  /* line 48, ../scss/component/_footer.scss */
+  /* line 56, ../scss/component/_footer.scss */
   .footer .context-groups-footer_bottom ul.menu {
     text-align: right;
   }
 }
-/* line 55, ../scss/component/_footer.scss */
+/* line 63, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom ul.menu li {
   display: inline-block;
   letter-spacing: 1px;
 }
-/* line 59, ../scss/component/_footer.scss */
+/* line 67, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom ul.menu li a {
   color: #fff;
   text-transform: uppercase;
@@ -9913,30 +9922,30 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 .footer .context-groups-footer_bottom ul.menu li a:hover, .footer .context-groups-footer_bottom ul.menu li a:focus {
   color: #5bc3ff;
 }
-/* line 66, ../scss/component/_footer.scss */
+/* line 74, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom ul.menu li a:after {
   content: "/";
   margin-left: 10px;
   margin-right: 7px;
 }
-/* line 72, ../scss/component/_footer.scss */
+/* line 80, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom ul.menu li a:hover:after {
   color: #fff;
 }
-/* line 78, ../scss/component/_footer.scss */
+/* line 86, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom ul.menu li:last-child a:after {
   content: none;
 }
-/* line 84, ../scss/component/_footer.scss */
+/* line 92, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom .block-socialicons {
   text-align: center;
   margin-top: 10px;
 }
-/* line 89, ../scss/component/_footer.scss */
+/* line 97, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom .block-socialicons ul li {
   padding: 2px 3px;
 }
-/* line 92, ../scss/component/_footer.scss */
+/* line 100, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom .block-socialicons ul li a {
   display: inline-block;
   border-radius: 2px;
@@ -9945,12 +9954,12 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   border: 0px;
   background: rgba(255, 255, 255, 0.1);
 }
-/* line 100, ../scss/component/_footer.scss */
+/* line 108, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom .block-socialicons ul li a .fa {
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
-/* line 107, ../scss/component/_footer.scss */
+/* line 115, ../scss/component/_footer.scss */
 .footer .context-groups-footer_bottom.row {
   margin-left: 0;
 }
@@ -10094,13 +10103,16 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 .block.where-do-i-start .field--name-field-cards-description {
   opacity: 0.8;
   filter: alpha(opacity=80);
-  margin: 0;
-  margin-bottom: 1em;
-  padding: 0;
+  margin: 0 0 1em 0;
+  padding: 0 15px;
   font-size: 20px;
   line-height: 1.3em;
 }
-/* line 141, ../scss/component/_frontpage.scss */
+/* line 140, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .field--name-field-cards-description p {
+  margin: 0 0 3px;
+}
+/* line 144, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-icon {
   background-color: #5bc3ff;
   width: 90px;
@@ -10109,12 +10121,12 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   border-radius: 100%;
   margin: auto;
 }
-/* line 149, ../scss/component/_frontpage.scss */
+/* line 152, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-icon img {
   padding: 25px;
   filter: brightness(0) invert(1);
 }
-/* line 154, ../scss/component/_frontpage.scss */
+/* line 157, ../scss/component/_frontpage.scss */
 .block.where-do-i-start .field--name-field-card-link {
   padding-top: 12px;
   padding-bottom: 8px;
