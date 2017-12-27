@@ -123,7 +123,7 @@ function drupal_am_update_8408() {
       'conf_block',
     ]
   );
-}\
+}
 
 /**
 * Enable user_members feature
