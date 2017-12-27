@@ -27,7 +27,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '-1'
+        weight: '-2'
         context_mapping: {  }
         theme: drupalam
         css_class: ''
@@ -43,7 +43,7 @@ reactions:
         info: ''
         view_mode: cards
         region: content
-        weight: '0'
+        weight: '-1'
         context_mapping: {  }
         theme: drupalam
         css_class: why-use-drupal
@@ -58,7 +58,7 @@ reactions:
         views_label: ''
         items_per_page: none
         region: content
-        weight: '1'
+        weight: '0'
         context_mapping: {  }
         theme: drupalam
         css_class: carousel-block
@@ -74,13 +74,28 @@ reactions:
         info: ''
         view_mode: full
         region: content
-        weight: '2'
+        weight: '1'
         context_mapping: {  }
         theme: drupalam
         css_class: where-do-i-start
         unique: 0
         context_id: front
         uuid: 94261b1a-ab61-4ceb-85f4-a0f6b94babac
+      960236c3-792a-420a-9060-8f3ae9eeaf5f:
+        id: 'views_block:community_members-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: front
+        uuid: 960236c3-792a-420a-9060-8f3ae9eeaf5f
     id: blocks
     saved: false
     uuid: 4874a484-46d2-4edf-9462-53e9bc79d7af
