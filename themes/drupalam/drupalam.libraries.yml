@@ -17,10 +17,15 @@ bootstrap-scripts:
     bootstrap/assets/javascripts/bootstrap/scrollspy.js: {}
     bootstrap/assets/javascripts/bootstrap/tab.js: {}
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
-    
-drupalam-scripts:
+ 
+global-scripts:
   js:
+    js/script.js: {}
+    
+front-scripts:
+  js:
+    js/jquery-migrate-3.0.1.js: {}
     js/main.js: {}
     js/content-slider.js: {}
     js/content-carousel.js: {}
-    js/script.js: {}
+    js/front.js: {}

@@ -23,4 +23,4 @@ regions:
 libraries:
   - 'drupalam/global-styling'
   - 'drupalam/bootstrap-scripts'
-  - 'drupalam/drupalam-scripts'
+  - 'drupalam/global-scripts'

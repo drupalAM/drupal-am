@@ -96,7 +96,6 @@
         columns = 2;
       }
       itemWidth = Math.floor(($container.width() + o.itemMargin - 2 * o.shadowWidth) / columns) - o.itemMargin;
-      console.log(itemWidth);
       $items.width(itemWidth + 1);
 
       pageWidth = $root.find(o.pageWrapperSelector).eq(0).width();

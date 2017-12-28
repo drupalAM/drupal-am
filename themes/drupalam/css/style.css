@@ -10137,14 +10137,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 /* line 165, ../scss/component/_frontpage.scss */
 .community-members {
   margin: 90px auto;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
 }
-/* line 170, ../scss/component/_frontpage.scss */
+/* line 168, ../scss/component/_frontpage.scss */
 .community-members .view-content {
   padding: 0 3%;
   text-align: center;
 }
-/* line 174, ../scss/component/_frontpage.scss */
+/* line 172, ../scss/component/_frontpage.scss */
 .community-members h2.block-title {
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -10158,12 +10157,12 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
-/* line 186, ../scss/component/_frontpage.scss */
+/* line 184, ../scss/component/_frontpage.scss */
 .community-members .field--name-user-picture {
   position: relative;
   display: inline-block;
 }
-/* line 190, ../scss/component/_frontpage.scss */
+/* line 188, ../scss/component/_frontpage.scss */
 .community-members .field--name-user-picture:after {
   position: absolute;
   top: -5px;
@@ -10175,13 +10174,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   content: "";
 }
-/* line 202, ../scss/component/_frontpage.scss */
+/* line 200, ../scss/component/_frontpage.scss */
 .community-members .user--view-mode-featured {
   position: relative;
   display: inline-block;
   margin-bottom: 30px;
 }
-/* line 207, ../scss/component/_frontpage.scss */
+/* line 205, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name {
   opacity: 0;
   transform: scale(0.8);
@@ -10198,22 +10197,22 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   line-height: 1.5em;
   transition: all 0.4s ease;
 }
-/* line 223, ../scss/component/_frontpage.scss */
+/* line 221, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 227, ../scss/component/_frontpage.scss */
+/* line 225, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div a {
   font-weight: 600;
   font-size: 17px;
   color: #102119;
 }
-/* line 232, ../scss/component/_frontpage.scss */
+/* line 230, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div a:hover {
   color: #5bc3ff;
 }
-/* line 236, ../scss/component/_frontpage.scss */
+/* line 234, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div:after {
   content: "";
   display: block;
@@ -10227,10 +10226,34 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   left: 50%;
   margin-left: -30px;
 }
-/* line 251, ../scss/component/_frontpage.scss */
+/* line 249, ../scss/component/_frontpage.scss */
 .community-members .user--view-mode-featured:hover .field--name-dynamic-token-fielduser-field-user-full-name {
   transform: scale(1);
   opacity: 1;
+}
+
+/* line 255, ../scss/component/_frontpage.scss */
+.parallax-element {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+/* line 261, ../scss/component/_frontpage.scss */
+.parallax-scaled-original {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 
 /*
