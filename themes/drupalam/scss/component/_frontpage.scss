@@ -161,3 +161,95 @@
     font-size: 17px;
   }
 }
+
+.community-members {
+  margin: 90px auto;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 
+  0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
+  
+  .view-content {
+    padding: 0 3%; 
+    text-align: center;
+  }
+  h2.block-title {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-style: normal;
+    font-size: 14px;
+    text-align: center;
+    color: $gray-base;
+    margin: 0;
+    margin-bottom: 35px;
+    line-height: 1em;
+    @include opacity(0.8);
+  }
+  .field--name-user-picture {
+    position: relative;
+    display: inline-block;
+    
+    &:after {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      z-index: 10;
+      display: block;
+      width: 230px;
+      height: 230px;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+      content: "";
+    }
+  }
+  .user--view-mode-featured {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  .field--name-dynamic-token-fielduser-field-user-full-name {
+    opacity: 0;
+    transform: scale(0.8);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: 100;
+    display: table;
+    padding: 20px;
+    width: 230px;
+    height: 230px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #252525;
+    line-height: 1.5em;
+    transition: all 0.4s ease;
+    
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      
+      a {
+        font-weight: 600;
+        font-size: 17px;
+        color: #102119;
+        
+        &:hover {
+          color: $brand-primary;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 2px;
+        background-color: $brand-primary;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 11px;
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+      }
+    }
+  }
+  .user--view-mode-featured:hover .field--name-dynamic-token-fielduser-field-user-full-name {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

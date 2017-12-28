@@ -92,7 +92,7 @@ reactions:
         weight: '2'
         context_mapping: {  }
         theme: drupalam
-        css_class: ''
+        css_class: community-members
         unique: 0
         context_id: front
         uuid: 960236c3-792a-420a-9060-8f3ae9eeaf5f

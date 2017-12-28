@@ -3,8 +3,8 @@ label: 'Full name'
 ui_limit: ''
 properties:
   content:
-    value: "<a href=\"[user:url]\">[user:field_user_first_name] [user:field_user_last_name]</a>\r\n"
-    format: basic_html
+    value: "<div><a href=\"url]\">[user:field_user_first_name] [user:field_user_last_name]</a></div>\r\n"
+    format: full_html
 type: token
 type_label: 'Token field'
 entities:

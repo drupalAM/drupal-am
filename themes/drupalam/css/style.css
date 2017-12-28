@@ -10134,6 +10134,105 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   font-size: 17px;
 }
 
+/* line 165, ../scss/component/_frontpage.scss */
+.community-members {
+  margin: 90px auto;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
+}
+/* line 170, ../scss/component/_frontpage.scss */
+.community-members .view-content {
+  padding: 0 3%;
+  text-align: center;
+}
+/* line 174, ../scss/component/_frontpage.scss */
+.community-members h2.block-title {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-style: normal;
+  font-size: 14px;
+  text-align: center;
+  color: #252525;
+  margin: 0;
+  margin-bottom: 35px;
+  line-height: 1em;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+/* line 186, ../scss/component/_frontpage.scss */
+.community-members .field--name-user-picture {
+  position: relative;
+  display: inline-block;
+}
+/* line 190, ../scss/component/_frontpage.scss */
+.community-members .field--name-user-picture:after {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 10;
+  display: block;
+  width: 230px;
+  height: 230px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  content: "";
+}
+/* line 202, ../scss/component/_frontpage.scss */
+.community-members .user--view-mode-featured {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+/* line 207, ../scss/component/_frontpage.scss */
+.community-members .field--name-dynamic-token-fielduser-field-user-full-name {
+  opacity: 0;
+  transform: scale(0.8);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  z-index: 100;
+  display: table;
+  padding: 20px;
+  width: 230px;
+  height: 230px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #252525;
+  line-height: 1.5em;
+  transition: all 0.4s ease;
+}
+/* line 223, ../scss/component/_frontpage.scss */
+.community-members .field--name-dynamic-token-fielduser-field-user-full-name > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 227, ../scss/component/_frontpage.scss */
+.community-members .field--name-dynamic-token-fielduser-field-user-full-name > div a {
+  font-weight: 600;
+  font-size: 17px;
+  color: #102119;
+}
+/* line 232, ../scss/component/_frontpage.scss */
+.community-members .field--name-dynamic-token-fielduser-field-user-full-name > div a:hover {
+  color: #5bc3ff;
+}
+/* line 236, ../scss/component/_frontpage.scss */
+.community-members .field--name-dynamic-token-fielduser-field-user-full-name > div:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #5bc3ff;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 11px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+}
+/* line 251, ../scss/component/_frontpage.scss */
+.community-members .user--view-mode-featured:hover .field--name-dynamic-token-fielduser-field-user-full-name {
+  transform: scale(1);
+  opacity: 1;
+}
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates

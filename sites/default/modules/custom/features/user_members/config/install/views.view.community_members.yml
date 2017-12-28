@@ -53,6 +53,10 @@ display:
           offset: 0
       style:
         type: default
+        options:
+          row_class: 'col-lg-3 col-md-4 col-sm-6'
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:user'
         options:
@@ -149,6 +153,7 @@ display:
           plugin_id: entity_queue
       arguments: {  }
       display_extenders: {  }
+      css_class: container
     cache_metadata:
       max-age: -1
       contexts:
