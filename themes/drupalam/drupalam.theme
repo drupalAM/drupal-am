@@ -60,9 +60,7 @@ function drupalam_preprocess_field(&$variables) {
 }
 
 function drupalam_preprocess_page(&$variables) {
-  //
   if($variables['is_front']) {
     $variables['#attached']['library'][] = 'drupalam/front-scripts';
   }
-  //kint($variables);
 }
