@@ -1,2 +1,9 @@
 bundle: content
+excluded:
+  - core.entity_form_display.block_content.testimonials.default
+  - core.entity_view_display.block_content.testimonials.default
+  - field.field.block_content.testimonials.field_testimonial
+  - field.storage.block_content.field_testimonial
+  - image.style.crop_90x90
+  - block_content.type.testimonials
 required: true

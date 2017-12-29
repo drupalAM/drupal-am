@@ -1,8 +1,9 @@
-name: Paragraphs
+name: 'Content Paragraphs'
 description: 'A basic feature to include all paragraph types'
 type: module
 core: 8.x
 dependencies:
+  - block_content
   - content_blocks
   - ds
   - entity_reference_revisions
