@@ -10,6 +10,7 @@ dependencies:
     - image.style.crop_90x90
     - paragraphs.paragraphs_type.testimonial
   module:
+    - heading_formatter
     - image
     - link
     - text
@@ -41,9 +42,9 @@ content:
     weight: 1
     label: hidden
     settings:
-      link_to_entity: false
+      heading_type: h2
     third_party_settings: {  }
-    type: string
+    type: heading_formatter
     region: content
   field_testimonial_author_photo:
     weight: 0

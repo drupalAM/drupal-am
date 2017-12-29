@@ -54,11 +54,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-// TODO remove this lines
-.main-container {
-  padding-bottom: 20px; 
-}
-
 // Page header.
 .page-header {
   margin-top: 0;
@@ -117,4 +112,17 @@ p:last-child,
     margin-top: 11px;
     margin-bottom: 5px;
   }
+}
+
+.section-title-light {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-style: normal;
+  font-size: 14px;
+  text-align: center;
+  color: $gray-base;
+  margin: 0;
+  margin-bottom: 35px;
+  line-height: 1em;
+  @include opacity(0.8);
 }

@@ -2358,36 +2358,36 @@ pre code {
 }
 
 /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-.container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .carousel-block .views-element-container {
+.container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .block.testimonials .field--name-field-testimonial, .carousel-block .views-element-container {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 14, ../bootstrap/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container:before, .block.why-use-drupal:before, .block.where-do-i-start .field--name-field-cards-card:before, .carousel-block .views-element-container:before, .container:after, .block.why-use-drupal:after, .block.where-do-i-start .field--name-field-cards-card:after, .carousel-block .views-element-container:after {
+.container:before, .block.why-use-drupal:before, .block.where-do-i-start .field--name-field-cards-card:before, .block.testimonials .field--name-field-testimonial:before, .carousel-block .views-element-container:before, .container:after, .block.why-use-drupal:after, .block.where-do-i-start .field--name-field-cards-card:after, .block.testimonials .field--name-field-testimonial:after, .carousel-block .views-element-container:after {
   content: " ";
   display: table;
 }
 /* line 19, ../bootstrap/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.container:after, .block.why-use-drupal:after, .block.where-do-i-start .field--name-field-cards-card:after, .carousel-block .views-element-container:after {
+.container:after, .block.why-use-drupal:after, .block.where-do-i-start .field--name-field-cards-card:after, .block.testimonials .field--name-field-testimonial:after, .carousel-block .views-element-container:after {
   clear: both;
 }
 @media (min-width: 768px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .carousel-block .views-element-container {
+  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .block.testimonials .field--name-field-testimonial, .carousel-block .views-element-container {
     width: 750px;
   }
 }
 @media (min-width: 992px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .carousel-block .views-element-container {
+  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .block.testimonials .field--name-field-testimonial, .carousel-block .views-element-container {
     width: 970px;
   }
 }
 @media (min-width: 1200px) {
   /* line 10, ../bootstrap/assets/stylesheets/bootstrap/_grid.scss */
-  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .carousel-block .views-element-container {
+  .container, .block.why-use-drupal, .block.where-do-i-start .field--name-field-cards-card, .block.testimonials .field--name-field-testimonial, .carousel-block .views-element-container {
     width: 1170px;
   }
 }
@@ -5750,10 +5750,11 @@ tbody.collapse.in {
 }
 
 /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-.container > .navbar-header, .block.why-use-drupal > .navbar-header, .block.where-do-i-start .field--name-field-cards-card > .navbar-header, .carousel-block .views-element-container > .navbar-header,
+.container > .navbar-header, .block.why-use-drupal > .navbar-header, .block.where-do-i-start .field--name-field-cards-card > .navbar-header, .block.testimonials .field--name-field-testimonial > .navbar-header, .carousel-block .views-element-container > .navbar-header,
 .container > .navbar-collapse,
 .block.why-use-drupal > .navbar-collapse,
 .block.where-do-i-start .field--name-field-cards-card > .navbar-collapse,
+.block.testimonials .field--name-field-testimonial > .navbar-collapse,
 .carousel-block .views-element-container > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
@@ -5762,10 +5763,11 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 108, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-  .container > .navbar-header, .block.why-use-drupal > .navbar-header, .block.where-do-i-start .field--name-field-cards-card > .navbar-header, .carousel-block .views-element-container > .navbar-header,
+  .container > .navbar-header, .block.why-use-drupal > .navbar-header, .block.where-do-i-start .field--name-field-cards-card > .navbar-header, .block.testimonials .field--name-field-testimonial > .navbar-header, .carousel-block .views-element-container > .navbar-header,
   .container > .navbar-collapse,
   .block.why-use-drupal > .navbar-collapse,
   .block.where-do-i-start .field--name-field-cards-card > .navbar-collapse,
+  .block.testimonials .field--name-field-testimonial > .navbar-collapse,
   .carousel-block .views-element-container > .navbar-collapse,
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
@@ -5833,7 +5835,7 @@ tbody.collapse.in {
 }
 @media (min-width: 768px) {
   /* line 180, ../bootstrap/assets/stylesheets/bootstrap/_navbar.scss */
-  .navbar > .container .navbar-brand, .navbar > .block.why-use-drupal .navbar-brand, .block.where-do-i-start .navbar > .field--name-field-cards-card .navbar-brand, .carousel-block .navbar > .views-element-container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  .navbar > .container .navbar-brand, .navbar > .block.why-use-drupal .navbar-brand, .block.where-do-i-start .navbar > .field--name-field-cards-card .navbar-brand, .block.testimonials .navbar > .field--name-field-testimonial .navbar-brand, .carousel-block .navbar > .views-element-container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     margin-left: -14px;
   }
 }
@@ -6644,13 +6646,13 @@ a.badge:hover, a.badge:focus {
   border-top-color: #e6e6e6;
 }
 /* line 28, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-.container .jumbotron, .block.why-use-drupal .jumbotron, .block.where-do-i-start .field--name-field-cards-card .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
+.container .jumbotron, .block.why-use-drupal .jumbotron, .block.where-do-i-start .field--name-field-cards-card .jumbotron, .block.testimonials .field--name-field-testimonial .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
 }
 /* line 35, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-.jumbotron .container, .jumbotron .block.why-use-drupal, .jumbotron .block.where-do-i-start .field--name-field-cards-card, .block.where-do-i-start .jumbotron .field--name-field-cards-card, .jumbotron .carousel-block .views-element-container, .carousel-block .jumbotron .views-element-container {
+.jumbotron .container, .jumbotron .block.why-use-drupal, .jumbotron .block.where-do-i-start .field--name-field-cards-card, .block.where-do-i-start .jumbotron .field--name-field-cards-card, .jumbotron .block.testimonials .field--name-field-testimonial, .block.testimonials .jumbotron .field--name-field-testimonial, .jumbotron .carousel-block .views-element-container, .carousel-block .jumbotron .views-element-container {
   max-width: 100%;
 }
 @media screen and (min-width: 768px) {
@@ -6660,7 +6662,7 @@ a.badge:hover, a.badge:focus {
     padding-bottom: 48px;
   }
   /* line 43, ../bootstrap/assets/stylesheets/bootstrap/_jumbotron.scss */
-  .container .jumbotron, .block.why-use-drupal .jumbotron, .block.where-do-i-start .field--name-field-cards-card .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
+  .container .jumbotron, .block.why-use-drupal .jumbotron, .block.where-do-i-start .field--name-field-cards-card .jumbotron, .block.testimonials .field--name-field-testimonial .jumbotron, .carousel-block .views-element-container .jumbotron, .container-fluid .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -9246,19 +9248,19 @@ body.navbar-is-fixed-bottom {
 
 @media screen and (min-width: 768px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .carousel-block .navbar.views-element-container {
+  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .block.testimonials .navbar.field--name-field-testimonial, .carousel-block .navbar.views-element-container {
     max-width: 720px;
   }
 }
 @media screen and (min-width: 992px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .carousel-block .navbar.views-element-container {
+  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .block.testimonials .navbar.field--name-field-testimonial, .carousel-block .navbar.views-element-container {
     max-width: 940px;
   }
 }
 @media screen and (min-width: 1200px) {
   /* line 47, ../scss/component/_navbar.scss */
-  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .carousel-block .navbar.views-element-container {
+  .navbar.container, .navbar.block.why-use-drupal, .block.where-do-i-start .navbar.field--name-field-cards-card, .block.testimonials .navbar.field--name-field-testimonial, .carousel-block .navbar.views-element-container {
     max-width: 1140px;
   }
 }
@@ -10150,33 +10152,16 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 
 /* line 172, ../scss/component/_frontpage.scss */
 .community-members {
-  margin: 90px auto;
-}
-/* line 175, ../scss/component/_frontpage.scss */
-.community-members .view-content {
-  padding: 0 3%;
+  padding: 90px 3%;
   text-align: center;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
 }
-/* line 179, ../scss/component/_frontpage.scss */
-.community-members h2.block-title {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-style: normal;
-  font-size: 14px;
-  text-align: center;
-  color: #252525;
-  margin: 0;
-  margin-bottom: 35px;
-  line-height: 1em;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-/* line 191, ../scss/component/_frontpage.scss */
+/* line 181, ../scss/component/_frontpage.scss */
 .community-members .field--name-user-picture {
   position: relative;
   display: inline-block;
 }
-/* line 195, ../scss/component/_frontpage.scss */
+/* line 185, ../scss/component/_frontpage.scss */
 .community-members .field--name-user-picture:after {
   position: absolute;
   top: -5px;
@@ -10188,13 +10173,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   content: "";
 }
-/* line 207, ../scss/component/_frontpage.scss */
+/* line 197, ../scss/component/_frontpage.scss */
 .community-members .user--view-mode-featured {
   position: relative;
   display: inline-block;
   margin-bottom: 30px;
 }
-/* line 212, ../scss/component/_frontpage.scss */
+/* line 202, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name {
   opacity: 0;
   transform: scale(0.8);
@@ -10211,22 +10196,22 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   line-height: 1.5em;
   transition: all 0.4s ease;
 }
-/* line 228, ../scss/component/_frontpage.scss */
+/* line 218, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 232, ../scss/component/_frontpage.scss */
+/* line 222, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div a {
   font-weight: 600;
   font-size: 17px;
   color: #102119;
 }
-/* line 237, ../scss/component/_frontpage.scss */
+/* line 227, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div a:hover {
   color: #5bc3ff;
 }
-/* line 241, ../scss/component/_frontpage.scss */
+/* line 231, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div:after {
   content: "";
   display: block;
@@ -10240,12 +10225,12 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   left: 50%;
   margin-left: -30px;
 }
-/* line 256, ../scss/component/_frontpage.scss */
+/* line 246, ../scss/component/_frontpage.scss */
 .community-members .user--view-mode-featured:hover .field--name-dynamic-token-fielduser-field-user-full-name {
   transform: scale(1);
   opacity: 1;
 }
-/* line 260, ../scss/component/_frontpage.scss */
+/* line 250, ../scss/component/_frontpage.scss */
 .community-members .parallax-element {
   opacity: 0;
   filter: alpha(opacity=0);
@@ -10258,7 +10243,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
-/* line 265, ../scss/component/_frontpage.scss */
+/* line 255, ../scss/component/_frontpage.scss */
 .community-members .parallax-scaled-original {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -10266,6 +10251,52 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   -moz-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
+}
+
+/* line 261, ../scss/component/_frontpage.scss */
+.block.testimonials {
+  padding: 90px 3%;
+  text-align: center;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
+}
+/* line 274, ../scss/component/_frontpage.scss */
+.block.testimonials .field--name-field-testimonial-author-photo img {
+  margin: 0 auto;
+  border-radius: 100%;
+}
+/* line 279, ../scss/component/_frontpage.scss */
+.block.testimonials .field--name-field-testimonial-author h2 {
+  display: block;
+  padding: 12px 0 3px 0;
+  margin: 0;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;
+  color: #102119;
+}
+/* line 288, ../scss/component/_frontpage.scss */
+.block.testimonials .field--name-field-testimonial-author-role,
+.block.testimonials .field--name-field-testimonail-company {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+/* line 296, ../scss/component/_frontpage.scss */
+.block.testimonials .field--name-field-testimonial-author-role a,
+.block.testimonials .field--name-field-testimonail-company a {
+  color: #5bc3ff;
+}
+/* line 300, ../scss/component/_frontpage.scss */
+.block.testimonials .field--name-field-testimonail-body {
+  max-width: 80%;
+  width: 80%;
+  margin: 0 auto;
+  font: italic 170%/150% Georgia, "Times New Roman", Times, serif;
+  font-weight: 300;
+  padding: 7px 0;
 }
 
 /*
@@ -11129,7 +11160,7 @@ ul.cs-slider-ul li {
   }
 
   /* line 611, ../scss/component/_content-slider.scss */
-  .item-list.container, .item-list.block.why-use-drupal, .block.where-do-i-start .item-list.field--name-field-cards-card, .carousel-block .item-list.views-element-container {
+  .item-list.container, .item-list.block.why-use-drupal, .block.where-do-i-start .item-list.field--name-field-cards-card, .block.testimonials .item-list.field--name-field-testimonial, .carousel-block .item-list.views-element-container {
     width: 100%;
   }
 
@@ -11583,46 +11614,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* line 58, ../scss/_overrides.scss */
-.main-container {
-  padding-bottom: 20px;
-}
-
-/* line 63, ../scss/_overrides.scss */
 .page-header {
   margin-top: 0;
 }
 
-/* line 68, ../scss/_overrides.scss */
+/* line 63, ../scss/_overrides.scss */
 p:last-child,
 .form-group:last-child,
 .panel:last-child {
   margin-bottom: 0;
 }
 
-/* line 76, ../scss/_overrides.scss */
+/* line 71, ../scss/_overrides.scss */
 .region-help > .glyphicon {
   font-size: 18px;
   float: left;
   margin: -0.05em 0.5em 0 0;
 }
-/* line 81, ../scss/_overrides.scss */
+/* line 76, ../scss/_overrides.scss */
 .region-help .block {
   overflow: hidden;
 }
 
-/* line 87, ../scss/_overrides.scss */
+/* line 82, ../scss/_overrides.scss */
 .help-block, .control-group .help-inline {
   color: #b3b3b1;
   font-size: 12px;
   margin: 5px 0 10px;
   padding: 0;
 }
-/* line 92, ../scss/_overrides.scss */
+/* line 87, ../scss/_overrides.scss */
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
 }
 
-/* line 98, ../scss/_overrides.scss */
+/* line 93, ../scss/_overrides.scss */
 .section-title, .carousel-block h2.block-title {
   margin-bottom: 0px;
   text-align: center;
@@ -11635,7 +11661,7 @@ p:last-child,
   font-size: 40px;
   line-height: 1.3em;
 }
-/* line 110, ../scss/_overrides.scss */
+/* line 105, ../scss/_overrides.scss */
 .section-title:after, .carousel-block h2.block-title:after {
   content: "";
   display: block;
@@ -11645,4 +11671,19 @@ p:last-child,
   margin: auto;
   margin-top: 11px;
   margin-bottom: 5px;
+}
+
+/* line 117, ../scss/_overrides.scss */
+.section-title-light, .community-members h2.block-title, .block.testimonials h2.block-title {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-style: normal;
+  font-size: 14px;
+  text-align: center;
+  color: #252525;
+  margin: 0;
+  margin-bottom: 35px;
+  line-height: 1em;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
 }
