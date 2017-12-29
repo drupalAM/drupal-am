@@ -8,10 +8,34 @@ dependencies:
     - image.style.medium
     - paragraphs.paragraphs_type.card
   module:
+    - ds
     - image
     - link
     - linked_field
     - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class:
+            parallax-element: parallax-element
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_icon
+        - field_card_link
+        - field_card_text
 id: paragraph.card.default
 targetEntityType: paragraph
 bundle: card
@@ -28,14 +52,14 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
+    region: ds_content
   field_card_text:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: ds_content
   field_icon:
     weight: 0
     label: hidden
@@ -49,5 +73,5 @@ content:
         destination: field_card_link
         advanced: {  }
     type: image
-    region: content
+    region: ds_content
 hidden: {  }

@@ -10133,17 +10133,31 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   font-weight: 600;
   font-size: 17px;
 }
+/* line 163, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .parallax-element {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+/* line 167, ../scss/component/_frontpage.scss */
+.block.where-do-i-start .parallax-scaled-original {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
 
-/* line 165, ../scss/component/_frontpage.scss */
+/* line 172, ../scss/component/_frontpage.scss */
 .community-members {
   margin: 90px auto;
 }
-/* line 168, ../scss/component/_frontpage.scss */
+/* line 175, ../scss/component/_frontpage.scss */
 .community-members .view-content {
   padding: 0 3%;
   text-align: center;
 }
-/* line 172, ../scss/component/_frontpage.scss */
+/* line 179, ../scss/component/_frontpage.scss */
 .community-members h2.block-title {
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -10157,12 +10171,12 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
-/* line 184, ../scss/component/_frontpage.scss */
+/* line 191, ../scss/component/_frontpage.scss */
 .community-members .field--name-user-picture {
   position: relative;
   display: inline-block;
 }
-/* line 188, ../scss/component/_frontpage.scss */
+/* line 195, ../scss/component/_frontpage.scss */
 .community-members .field--name-user-picture:after {
   position: absolute;
   top: -5px;
@@ -10174,13 +10188,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
   content: "";
 }
-/* line 200, ../scss/component/_frontpage.scss */
+/* line 207, ../scss/component/_frontpage.scss */
 .community-members .user--view-mode-featured {
   position: relative;
   display: inline-block;
   margin-bottom: 30px;
 }
-/* line 205, ../scss/component/_frontpage.scss */
+/* line 212, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name {
   opacity: 0;
   transform: scale(0.8);
@@ -10197,22 +10211,22 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   line-height: 1.5em;
   transition: all 0.4s ease;
 }
-/* line 221, ../scss/component/_frontpage.scss */
+/* line 228, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 225, ../scss/component/_frontpage.scss */
+/* line 232, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div a {
   font-weight: 600;
   font-size: 17px;
   color: #102119;
 }
-/* line 230, ../scss/component/_frontpage.scss */
+/* line 237, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div a:hover {
   color: #5bc3ff;
 }
-/* line 234, ../scss/component/_frontpage.scss */
+/* line 241, ../scss/component/_frontpage.scss */
 .community-members .field--name-dynamic-token-fielduser-field-user-full-name > div:after {
   content: "";
   display: block;
@@ -10226,14 +10240,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   left: 50%;
   margin-left: -30px;
 }
-/* line 249, ../scss/component/_frontpage.scss */
+/* line 256, ../scss/component/_frontpage.scss */
 .community-members .user--view-mode-featured:hover .field--name-dynamic-token-fielduser-field-user-full-name {
   transform: scale(1);
   opacity: 1;
 }
-
-/* line 255, ../scss/component/_frontpage.scss */
-.parallax-element {
+/* line 260, ../scss/component/_frontpage.scss */
+.community-members .parallax-element {
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transform: scale(0.5);
@@ -10245,9 +10258,8 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
-
-/* line 261, ../scss/component/_frontpage.scss */
-.parallax-scaled-original {
+/* line 265, ../scss/component/_frontpage.scss */
+.community-members .parallax-scaled-original {
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transform: scale(1);
@@ -10343,7 +10355,7 @@ and open the template in the editor.
 
 /* line 78, ../scss/component/_content-slider.scss */
 .cs-loading {
-  background: url("images/cs-loader-w.gif") no-repeat center;
+  background: url("../images/cs-loader-w.gif") no-repeat center;
   background-size: 20px 20px;
 }
 
@@ -10901,7 +10913,7 @@ ul.cs-slider-ul li {
 /* line 452, ../scss/component/_content-slider.scss */
 #slider-container .nivo-wrapper {
   min-height: 400px;
-  background: url("images/cs-loader-w.gif") no-repeat center center;
+  background: url("../images/cs-loader-w.gif") no-repeat center center;
   background-size: 15px 15px;
 }
 
@@ -10913,7 +10925,7 @@ ul.cs-slider-ul li {
 
 /* line 461, ../scss/component/_content-slider.scss */
 .cs-type-video.loading {
-  background: url(images/cs-loader-w.gif) no-repeat center center;
+  background: url(../images/cs-loader-w.gif) no-repeat center center;
   background-size: 15px 15px;
 }
 

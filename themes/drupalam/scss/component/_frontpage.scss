@@ -160,6 +160,13 @@
     font-weight: 600;
     font-size: 17px;
   }
+  .parallax-element {
+    @include opacity(0);
+    @include transition(all 0.4s ease-out);
+  }
+  .parallax-scaled-original {
+    @include opacity(1);
+  }
 }
 
 .community-members {
@@ -250,15 +257,13 @@
     transform: scale(1);
     opacity: 1;
   }
-}
-
-.parallax-element {
-  @include opacity(0);
-  @include scale(.5);
-  @include transition(all 0.4s ease-out);
-}
-
-.parallax-scaled-original {
-  @include opacity(1);
-  @include scale(1);
+  .parallax-element {
+    @include opacity(0);
+    @include scale(.5);
+    @include transition(all 0.4s ease-out);
+  }
+  .parallax-scaled-original {
+    @include opacity(1);
+    @include scale(1);
+  }
 }

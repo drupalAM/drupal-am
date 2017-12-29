@@ -76,7 +76,7 @@ and open the template in the editor.
   margin: auto;
 }
 .cs-loading {
-  background: url("images/cs-loader-w.gif") no-repeat center;
+  background: url("../images/cs-loader-w.gif") no-repeat center;
   background-size: 20px 20px;
 }
 .cs-small-title {
@@ -451,7 +451,7 @@ ul.cs-slider-ul li {
 }
 #slider-container .nivo-wrapper {
   min-height: 400px;
-  background: url('images/cs-loader-w.gif') no-repeat center center;
+  background: url('../images/cs-loader-w.gif') no-repeat center center;
   background-size: 15px 15px;
 }
 /* Nivo slider in content */
@@ -459,7 +459,7 @@ ul.cs-slider-ul li {
   margin: 0;
 }
 .cs-type-video.loading {
-  background: url(images/cs-loader-w.gif) no-repeat center center;
+  background: url(../images/cs-loader-w.gif) no-repeat center center;
   background-size: 15px 15px;
 }
 .cs-layout-video-text .cs-content-right.col {

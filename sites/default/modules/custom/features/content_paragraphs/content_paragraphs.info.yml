@@ -4,6 +4,7 @@ type: module
 core: 8.x
 dependencies:
   - content_blocks
+  - ds
   - entity_reference_revisions
   - field
   - file

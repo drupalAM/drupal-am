@@ -23,7 +23,19 @@
   $('.block-views-blockcase-study-block-1 .node').on('click', ':not(.contextual)', function () {
     $(this).find('.colorbox').colorbox({open: true});
   });
-  // Community members effect
+  // Where do I start elements parallax effect
+  $('.where-do-i-start').each(function () {
+    new PEXETO.parallax(
+      $(this),
+      'list',
+      {
+        children: $(this).find('.parallax-element'),
+        initProp: {opacity: 0, top: 50, position: 'relative'},
+        endProp: {opacity: 1, top: 0}
+      }
+    ).init();
+  });
+  // Community members parallax effect
   $('.view-community-members').each(function () {
     new PEXETO.parallax(
       $(this),
