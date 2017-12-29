@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.testimonial.field_testimonail_body
+    - field.field.paragraph.testimonial.field_testimonail_company
+    - field.field.paragraph.testimonial.field_testimonial_author
+    - field.field.paragraph.testimonial.field_testimonial_author_photo
+    - field.field.paragraph.testimonial.field_testimonial_author_role
+    - image.style.crop_90x90
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - image
+    - link
+    - text
+id: paragraph.testimonial.default
+targetEntityType: paragraph
+bundle: testimonial
+mode: default
+content:
+  field_testimonail_body:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_testimonail_company:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_testimonial_author:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_testimonial_author_photo:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: crop_90x90
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_testimonial_author_role:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }
