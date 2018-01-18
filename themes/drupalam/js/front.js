@@ -46,5 +46,14 @@
       }
     ).init();
   });
+  // Testimonials slider
+  $('.field--name-field-testimonial').each(function () {
+    new PEXETO.utils.fadeSlider($(this), {
+      itemSel: '>.field--item',
+      leftArrowClass: 'ts-arrow ts-left-arrow',
+      rightArrowClass: 'ts-arrow ts-right-arrow',
+      autoplay: true
+    }).init();
+  });
 
 })(jQuery, Drupal, drupalSettings);

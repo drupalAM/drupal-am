@@ -1105,16 +1105,7 @@ var PEXETO = PEXETO || {};
 				new PEXETO.utils.stickyHeader($('#header'), {}).init();
 				init.ieIframeFix();
 			}
-
-			$('.testimonial-slider').each(function(){
-				new PEXETO.utils.fadeSlider($(this), {
-					itemSel : '.testimonial-container',
-					leftArrowClass : 'ts-arrow ts-left-arrow',
-					rightArrowClass : 'ts-arrow ts-right-arrow',
-					autoplay : ($(this).data('autoplay') ? true : false)
-				}).init();
-			});
-
+                        
 			init.resizeEvents();
 			init.blogMobileFilter();
 
