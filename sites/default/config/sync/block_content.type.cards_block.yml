@@ -1,0 +1,10 @@
+uuid: 2ca66c79-e698-4449-a809-33bdbc40759a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8tSLcgcpZ1GcoOLWr_vGU3u5M8bdqU3qoxWje2u5qDs
+id: cards_block
+label: 'Cards block'
+revision: 0
+description: 'Collection of Cards'

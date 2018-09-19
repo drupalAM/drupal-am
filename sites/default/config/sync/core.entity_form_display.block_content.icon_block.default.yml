@@ -1,0 +1,38 @@
+uuid: b1ce2bcd-78a4-44f8-9ec8-243132ff6766
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.icon_block
+    - field.field.block_content.icon_block.field_social_icons
+  module:
+    - field_layout
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+_core:
+  default_config_hash: nV5G3t_JSVpZLcGNGMvVD8JpXdsxi232RtIH6EX6VFo
+id: block_content.icon_block.default
+targetEntityType: block_content
+bundle: icon_block
+mode: default
+content:
+  field_social_icons:
+    weight: 27
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

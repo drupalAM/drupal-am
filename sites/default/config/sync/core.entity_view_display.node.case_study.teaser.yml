@@ -1,0 +1,47 @@
+uuid: 07510781-108a-47b1-858f-fe49d8127562
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.case_study.body
+    - field.field.node.case_study.field_case_study_image
+    - field.field.node.case_study.field_case_study_screens
+    - field.field.node.case_study.field_case_study_site_link
+    - field.field.node.case_study.field_term_industry
+    - field.field.node.case_study.field_term_project_category
+    - node.type.case_study
+  module:
+    - image
+    - text
+    - user
+_core:
+  default_config_hash: jRPFLlz0YlUTniYcIdtlCJwGb5IG6XkGwtElTCEs0j0
+id: node.case_study.teaser
+targetEntityType: node
+bundle: case_study
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_case_study_screens:
+    type: image
+    weight: 0
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_case_study_image: true
+  field_case_study_site_link: true
+  field_term_industry: true
+  field_term_project_category: true
+  links: true

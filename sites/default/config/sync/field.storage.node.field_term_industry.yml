@@ -1,0 +1,22 @@
+uuid: 940bc6ce-d1a4-4d96-be1c-795ad5cf4cbf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: xQ7FOYxpV7lKQ19QI4PBynGJqHlZf5t4LsZkFBwM-Gk
+id: node.field_term_industry
+field_name: field_term_industry
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

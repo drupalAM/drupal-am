@@ -1,0 +1,34 @@
+uuid: 2a1e9d45-86ba-48de-a69c-3e1bbfb1564e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.project_categories.field_project_category_icon
+    - taxonomy.vocabulary.project_categories
+  module:
+    - image
+    - text
+_core:
+  default_config_hash: otbNIW9xnuLU0hccHTsapMU8hJNa-_gmR-ScqWc68gk
+id: taxonomy_term.project_categories.default
+targetEntityType: taxonomy_term
+bundle: project_categories
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_project_category_icon:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

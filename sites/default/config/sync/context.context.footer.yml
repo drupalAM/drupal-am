@@ -1,0 +1,140 @@
+uuid: 1bba3faf-443a-445e-a793-d1cbc0ab411f
+langcode: en
+status: true
+dependencies:
+  module:
+    - context_groups
+third_party_settings:
+  context_groups:
+    footer_columns:
+      name: footer_columns
+      label: 'Footer columns'
+      region: footer
+      parent: footer_column_container
+      weight: '6'
+      theme: drupalam
+      class: row
+      all_parents:
+        - footer_column_container
+    footer_bottom:
+      name: footer_bottom
+      label: 'Footer bottom'
+      region: footer
+      parent: ''
+      weight: '1'
+      theme: drupalam
+      class: row
+      all_parents: {  }
+    footer_column_container:
+      name: footer_column_container
+      label: 'Footer column container'
+      region: footer
+      parent: ''
+      weight: '0'
+      theme: drupalam
+      class: container
+      all_parents: {  }
+    footer_bottom_container:
+      name: footer_bottom_container
+      label: 'Footer bottom container'
+      region: footer
+      parent: footer_bottom
+      weight: '7'
+      theme: drupalam
+      class: container
+      all_parents:
+        - footer_bottom
+_core:
+  default_config_hash: 2VadMlFW_Md1HcATLZ7Y6RD1Z8cMQZDRZAMFAg68sHk
+name: footer
+label: Footer
+group: General
+description: ''
+requireAllConditions: false
+disabled: false
+conditions: {  }
+reactions:
+  blocks:
+    blocks:
+      12e7abb0-489c-4035-b02b-0d528034cea4:
+        id: 'system_menu_block:footer'
+        label: Footer
+        provider: system
+        label_display: 0
+        level: '1'
+        depth: '0'
+        weight: '8'
+        region: footer
+        parent_wrapper:
+          parent: footer_bottom_container
+        all_parents:
+          - footer_bottom
+          - footer_bottom_container
+        context_mapping: {  }
+        theme: drupalam
+        css_class: col-sm-6
+        unique: 0
+        context_id: general
+        uuid: 12e7abb0-489c-4035-b02b-0d528034cea4
+      fa764ebe-c47d-4d60-ba43-c78e7a64452b:
+        id: 'block_content:ecee50d2-7f10-46b5-8557-a20d57e29b6c'
+        label: 'Social Icons'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: full
+        weight: '9'
+        region: footer
+        parent_wrapper:
+          parent: footer_bottom_container
+        all_parents:
+          - footer_bottom
+          - footer_bottom_container
+        context_mapping: {  }
+        theme: drupalam
+        css_class: 'visible-xs block-socialicons'
+        unique: 1
+        context_id: footer
+        uuid: fa764ebe-c47d-4d60-ba43-c78e7a64452b
+      cd26a454-fbc4-4c87-8c18-0feacb2958c6:
+        id: 'conf_block_block:global__footer_text'
+        label: 'About Us'
+        provider: conf_block
+        label_display: visible
+        weight: '1'
+        region: footer
+        parent_wrapper:
+          parent: footer_columns
+        all_parents:
+          - footer_column_container
+          - footer_columns
+        context_mapping: {  }
+        theme: drupalam
+        css_class: 'col-md-3 col-sm-4'
+        unique: 0
+        context_id: footer
+        uuid: cd26a454-fbc4-4c87-8c18-0feacb2958c6
+      a03183b4-32a8-4481-91c5-e7e3eae55fab:
+        id: 'conf_block_block:global__copyright'
+        label: Copyright
+        provider: conf_block
+        label_display: 0
+        weight: '2'
+        region: footer
+        parent_wrapper:
+          parent: footer_bottom_container
+        all_parents:
+          - footer_bottom
+          - footer_bottom_container
+        context_mapping: {  }
+        theme: drupalam
+        css_class: 'col-sm-6 copyright'
+        unique: 0
+        context_id: footer
+        uuid: a03183b4-32a8-4481-91c5-e7e3eae55fab
+    id: blocks
+    saved: false
+    uuid: d20a6f69-417b-4afa-9b52-4a959123de06
+    include_default_blocks: 0
+weight: 0

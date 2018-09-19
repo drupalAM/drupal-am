@@ -1,0 +1,32 @@
+uuid: 1c00e142-2387-495f-a73a-5b5c9162e978
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - taxonomy
+_core:
+  default_config_hash: J2KDZ0idaS-1KV-r0AIPqtgsE2ZjMQVU7QdgLVUx6M0
+id: taxonomy_term.field_industry_icon
+field_name: field_industry_icon
+entity_type: taxonomy_term
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

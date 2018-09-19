@@ -1,0 +1,21 @@
+uuid: 91327712-e68c-41fd-8f50-9443c647504f
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+_core:
+  default_config_hash: vrGV02GtuqedSGzY2bwvawOMe_wHQw6zCahlXxP_2AA
+id: paragraph.field_testimonail_company
+field_name: field_testimonail_company
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

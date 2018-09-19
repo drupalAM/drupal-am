@@ -1,0 +1,47 @@
+uuid: 8479afd6-76cb-48ac-be3f-9cde0936eaa6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.hero_slide.body
+    - field.field.node.hero_slide.field_heroslide_external_link
+    - field.field.node.hero_slide.field_heroslide_image
+    - field.field.node.hero_slide.field_heroslide_images
+    - field.field.node.hero_slide.field_heroslide_show_cont_link
+    - field.field.node.hero_slide.field_heroslide_text_position
+    - field.field.node.hero_slide.field_heroslide_title_prefix
+    - node.type.hero_slide
+  module:
+    - field_layout
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+_core:
+  default_config_hash: KFviU3Fb-AAmX7save_8GxvUeDO5zrrF6GSxrbfAi2I
+id: node.hero_slide.teaser
+targetEntityType: node
+bundle: hero_slide
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_heroslide_external_link: true
+  field_heroslide_image: true
+  field_heroslide_images: true
+  field_heroslide_show_cont_link: true
+  field_heroslide_text_position: true
+  field_heroslide_title_prefix: true

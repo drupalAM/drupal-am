@@ -1,0 +1,31 @@
+uuid: 2993f09a-a593-47ae-99ea-2b1af637a74f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_project_category
+    - node.type.case_study
+    - taxonomy.vocabulary.project_categories
+_core:
+  default_config_hash: V3BYyHXHkTuE4juIDSqgnvKB6OS1mTS9yS66IONerOU
+id: node.case_study.field_term_project_category
+field_name: field_term_project_category
+entity_type: node
+bundle: case_study
+label: Category
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      project_categories: project_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

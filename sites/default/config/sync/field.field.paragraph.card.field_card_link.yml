@@ -1,0 +1,26 @@
+uuid: 3260c6ec-01eb-4fe3-997e-796e4f1b68cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_link
+    - paragraphs.paragraphs_type.card
+  module:
+    - link
+_core:
+  default_config_hash: VcpS4wKgSGj8kVskARr1C4zIu4lnHMz1Tkv5q1KvxSU
+id: paragraph.card.field_card_link
+field_name: field_card_link
+entity_type: paragraph
+bundle: card
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+  title_predefined: ''
+field_type: link

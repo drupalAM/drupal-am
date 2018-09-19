@@ -1,0 +1,10 @@
+uuid: e9481ad2-8e72-411a-903d-3f86669371f9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: C7dfgaLc47By38gVfDmRW1LABNkBXJaYWlEi-xvPoLA
+id: testimonials
+label: Testimonials
+revision: 0
+description: ''

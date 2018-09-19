@@ -1,0 +1,23 @@
+cdn_provider: ''
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: themes/drupalam/favicon.ico
+  url: 'http://local.drupal.am/themes/drupalam/favicon.ico'
+  use_default: false
+schemas:
+  bootstrap: 8000
+  drupalam: 8000
+logo:
+  path: themes/drupalam/logo.png
+  url: ''
+  use_default: false
+table_responsive: '-1'
+table: ''
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+navbar_position: fixed-top
+_core:
+  default_config_hash: JD59Dv5MxzVXsyuxBxxV6E0BRswdklHMASjFjaKstX8

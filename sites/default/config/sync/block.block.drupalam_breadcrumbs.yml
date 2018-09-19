@@ -1,0 +1,22 @@
+uuid: ee152e7e-36ea-4559-ae3e-6a3b75e08ad1
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - drupalam
+_core:
+  default_config_hash: 3NWdOdenDMsSOL_nP5hznMZ95FOt61urEbDwfqvb9bY
+id: drupalam_breadcrumbs
+theme: drupalam
+region: header
+weight: -8
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

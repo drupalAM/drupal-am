@@ -1,0 +1,12 @@
+uuid: 42dda736-9c92-42b1-864d-2753655580bc
+name: 'Drupal AM'
+mail: contact@drupal.am
+slogan: ''
+page:
+  front: /front
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo

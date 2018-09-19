@@ -1,0 +1,20 @@
+uuid: f92025af-e67b-445a-8432-6fffd0ab3ad0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - drupalam
+_core:
+  default_config_hash: nmWTMLx686R9Ut0cxCEY-1HRqp1UKWNmACeYCyaZs-c
+id: drupalam_page_title
+theme: drupalam
+region: header
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

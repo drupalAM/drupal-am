@@ -1,0 +1,23 @@
+uuid: fff563f0-5158-46e4-bc79-734cce0136ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_text
+    - paragraphs.paragraphs_type.card
+  module:
+    - text
+_core:
+  default_config_hash: 5hNLp1LRE9MjsmGSIy9FHehcQOy9n0oodT3hLFdJzCo
+id: paragraph.card.field_card_text
+field_name: field_card_text
+entity_type: paragraph
+bundle: card
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

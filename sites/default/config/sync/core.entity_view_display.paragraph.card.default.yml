@@ -1,0 +1,80 @@
+uuid: 30cfb3c1-1589-4d9b-a8a0-c2d9bf8badba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card.field_card_link
+    - field.field.paragraph.card.field_card_text
+    - field.field.paragraph.card.field_icon
+    - image.style.medium
+    - paragraphs.paragraphs_type.card
+  module:
+    - ds
+    - image
+    - link
+    - linked_field
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class:
+            parallax-element: parallax-element
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_icon
+        - field_card_link
+        - field_card_text
+_core:
+  default_config_hash: NC1HZ-gD-f9OyMwgMBFOHbqoMuy8oCxLDHr4Qg2IClg
+id: paragraph.card.default
+targetEntityType: paragraph
+bundle: card
+mode: default
+content:
+  field_card_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: ds_content
+  field_card_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: ds_content
+  field_icon:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_card_link
+        advanced: {  }
+    type: image
+    region: ds_content
+hidden: {  }

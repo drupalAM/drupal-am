@@ -1,0 +1,22 @@
+uuid: d2819605-77fb-433c-a6a9-0fe35d3a7f87
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - drupalam
+_core:
+  default_config_hash: PJd0gdW1E8BxrBVfy0t97rZb9wLLQJrRilWcX9ASS7I
+id: drupalam_messages
+theme: drupalam
+region: header
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

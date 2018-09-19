@@ -1,0 +1,41 @@
+uuid: 1bc2326d-6a93-4fd8-b3f2-69d671f30976
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cards_block
+    - core.entity_view_mode.block_content.cards
+    - field.field.block_content.cards_block.field_cards_background_image
+    - field.field.block_content.cards_block.field_cards_card
+    - field.field.block_content.cards_block.field_cards_description
+    - field.field.block_content.cards_block.field_cards_title
+  module:
+    - entity_reference_revisions
+    - heading_formatter
+_core:
+  default_config_hash: cpyhcxzt3B1sh2Iit8i3iYq0rIR8bciykOAW-e4EyoE
+id: block_content.cards_block.cards
+targetEntityType: block_content
+bundle: cards_block
+mode: cards
+content:
+  field_cards_card:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_cards_title:
+    type: heading_formatter
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      heading_type: h2
+    third_party_settings: {  }
+hidden:
+  field_cards_background_image: true
+  field_cards_description: true

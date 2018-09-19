@@ -1,0 +1,20 @@
+uuid: 7b59a770-2422-480f-b036-bb5ad2854bef
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 2P27xGgL3fbxm5b7gjDduHRIbqc8SLmPgEyTPFkFeI4
+id: node.field_heroslide_show_cont_link
+field_name: field_heroslide_show_cont_link
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 698cba2b-272a-4930-b3a7-a7387cec23ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_heroslide_title_prefix
+    - node.type.hero_slide
+_core:
+  default_config_hash: on4ffrq-JqSmJb4LeoOJYXz7d7v6NkVm_XhuhEvxfEk
+id: node.hero_slide.field_heroslide_title_prefix
+field_name: field_heroslide_title_prefix
+entity_type: node
+bundle: hero_slide
+label: 'Title prefix'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

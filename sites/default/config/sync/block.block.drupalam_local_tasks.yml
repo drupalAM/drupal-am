@@ -1,0 +1,22 @@
+uuid: 829928de-c0ba-452b-a849-fe96e5352ad7
+langcode: en
+status: false
+dependencies:
+  theme:
+    - drupalam
+_core:
+  default_config_hash: CAPvaR3H1GuELmD1fgQ8SY2LYvjyxJpAE-i1GxcGWWU
+id: drupalam_local_tasks
+theme: drupalam
+region: header
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,34 @@
+uuid: ad7cf91f-5e97-4662-abb7-8c314d437434
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.industries.field_industry_icon
+    - taxonomy.vocabulary.industries
+  module:
+    - image
+    - text
+_core:
+  default_config_hash: xTLMhCa0LZdnhOAXYp8uNak-3gZ2CeY6LEz0oUY02Ec
+id: taxonomy_term.industries.default
+targetEntityType: taxonomy_term
+bundle: industries
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_industry_icon:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

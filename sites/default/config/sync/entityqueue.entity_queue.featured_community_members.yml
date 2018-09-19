@@ -1,0 +1,25 @@
+uuid: 1507e4f0-cb5c-4d56-80fb-8fb1a6a98535
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: 4Gb6pwqWclLHdXBnUmvuR94mW9k7NjRLiBnmj6Gn1O4
+id: featured_community_members
+label: 'Featured Community Members'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: user
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

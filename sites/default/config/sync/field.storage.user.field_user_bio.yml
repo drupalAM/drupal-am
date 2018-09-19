@@ -1,0 +1,21 @@
+uuid: 88bbad77-f920-45bb-8dd3-e08cbd5f180a
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: oo7CJOxuz5m0MZCAPa8ZHynBN854O1naxG4RW-31luQ
+id: user.field_user_bio
+field_name: field_user_bio
+entity_type: user
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

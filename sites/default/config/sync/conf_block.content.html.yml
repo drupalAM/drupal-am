@@ -1,0 +1,25 @@
+values:
+  global__footer_text:
+    title: 'About Us'
+    body:
+      format: basic_html
+      value: "<p>Drupal is free, open source software, produced by over a million users in 230 countries.<br />\r\nThe Armenian Drupal community is growing all the time. Become a part of it.</p>\r\n\r\n<p>Drupal is a&nbsp;<a href=\"http://drupal.com/trademark\">registered trademark</a>&nbsp;of&nbsp;<a href=\"https://dri.es/\">Dries Buytaert</a>.</p>\r\n\r\n<p>&nbsp;</p>\r\n"
+    admin_label: 'Footer text'
+  global__copyright:
+    title: ''
+    body:
+      format: basic_html
+      value: '© COPYRIGHT DRUPAL.AM'
+    admin_label: Copyright
+  homepage__home_block:
+    title: Title
+    body:
+      format: basic_html
+      value: "<p>Do lobortis Marianna recusandae parturient, Anna aenean sed qui Nane consequat!</p>\r\n"
+    admin_label: 'Home Block'
+  homepage__home_block_2:
+    title: Title
+    body:
+      format: basic_html
+      value: "<p>Do lobortis Marianna recusandae parturient, Anna aenean sed qui Nane consequat!</p>\r\n"
+    admin_label: 'Home Block 2'

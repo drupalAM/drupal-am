@@ -1,0 +1,12 @@
+uuid: 7689662f-b8fa-46d8-ada9-3cd4935d6317
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: 0z7f8KL1nwdSCRGK8EuUQbj9VgXjo-PvB2vl82FPszs
+id: block_content.cards
+label: Cards
+targetEntityType: block_content
+cache: true

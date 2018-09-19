@@ -1,0 +1,26 @@
+uuid: 2e604144-2913-4d8b-996d-b542c907a832
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testimonail_company
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - link
+_core:
+  default_config_hash: jgGTtLki4yNLRbj4-y7PC4OWFp5A1j80FZymNL3ia8c
+id: paragraph.testimonial.field_testimonail_company
+field_name: field_testimonail_company
+entity_type: paragraph
+bundle: testimonial
+label: Company
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+  title_predefined: ''
+field_type: link

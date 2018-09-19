@@ -1,0 +1,40 @@
+uuid: f33bd0bc-2300-4e9f-ba49-fe061cd4db14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_industry_icon
+    - taxonomy.vocabulary.industries
+  module:
+    - image
+_core:
+  default_config_hash: hGM9PeXI5bXG9VcObIIKdi8uQdqB-51On737G9fGFHA
+id: taxonomy_term.industries.field_industry_icon
+field_name: field_industry_icon
+entity_type: taxonomy_term
+bundle: industries
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

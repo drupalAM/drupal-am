@@ -1,0 +1,20 @@
+uuid: e8ad55b9-fc66-4aa4-9b23-fc8dcc5abc5b
+langcode: en
+status: false
+dependencies:
+  theme:
+    - drupalam
+_core:
+  default_config_hash: TE5uDfVFciiH8SLOiHh5soL2YHl1KMO7hegmxXRl1dI
+id: drupalam_local_actions
+theme: drupalam
+region: header
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

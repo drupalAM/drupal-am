@@ -1,0 +1,12 @@
+uuid: 4fd0b9fc-a548-4086-a5ff-4621868ac5d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: phN-svqeaNtT4kA3ZgUwLTv8XiwDUw4EUf4pu1AQUXs
+id: user.featured
+label: Featured
+targetEntityType: user
+cache: true

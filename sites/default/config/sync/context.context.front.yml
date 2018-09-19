@@ -1,0 +1,122 @@
+uuid: c4c11d82-790d-4473-8796-362f2f5e37e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+_core:
+  default_config_hash: DhJ-Wi8PGaZGgB2UnWcurByokYeqLSG_-fM_bHvRzdw
+name: front
+label: Front
+group: Pages
+description: 'Front page'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: 0
+    uuid: 94f11657-c00b-4a95-a289-646cb64fb81f
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      389682c0-01b4-47a4-ada1-b42aeebcdad2:
+        id: 'views_block:hero_slide-block_1'
+        label: ''
+        provider: views
+        label_display: 0
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '-2'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: front
+        uuid: 389682c0-01b4-47a4-ada1-b42aeebcdad2
+      09ca0c8a-7058-4760-a863-e371f8e51217:
+        id: 'block_content:f7d022f8-cb5a-4277-b43a-2b49241e65e2'
+        label: 'Why Use Drupal?'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: cards
+        region: content
+        weight: '-1'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: why-use-drupal
+        unique: 0
+        context_id: front
+        uuid: 09ca0c8a-7058-4760-a863-e371f8e51217
+      91dfab0c-0113-4348-89d8-8148086042d2:
+        id: 'views_block:case_study-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: carousel-block
+        unique: 0
+        context_id: front
+        uuid: 91dfab0c-0113-4348-89d8-8148086042d2
+      94261b1a-ab61-4ceb-85f4-a0f6b94babac:
+        id: 'block_content:0c75389a-6acf-4065-a5aa-7ad62a90d4e5'
+        label: 'Where Do I Start?'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: full
+        region: content
+        weight: '1'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: where-do-i-start
+        unique: 0
+        context_id: front
+        uuid: 94261b1a-ab61-4ceb-85f4-a0f6b94babac
+      960236c3-792a-420a-9060-8f3ae9eeaf5f:
+        id: 'views_block:community_members-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '2'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: community-members
+        unique: 0
+        context_id: front
+        uuid: 960236c3-792a-420a-9060-8f3ae9eeaf5f
+      00e7a719-0604-47bc-927f-92727747167e:
+        id: 'block_content:99a16204-a743-4ef3-b20a-2d707c3a9dff'
+        label: Testimonaials
+        provider: block_content
+        label_display: visible
+        status: true
+        info: ''
+        view_mode: full
+        region: content
+        weight: '3'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: testimonials
+        unique: 0
+        context_id: front
+        uuid: 00e7a719-0604-47bc-927f-92727747167e
+    id: blocks
+    saved: false
+    uuid: 4874a484-46d2-4edf-9462-53e9bc79d7af
+    include_default_blocks: 0
+weight: 0

@@ -1,0 +1,17 @@
+sections:
+  global:
+    label: Global
+    blocks:
+      footer_text:
+        name: 'Footer text'
+      copyright:
+        name: Copyright
+  homepage:
+    label: Homepage
+    blocks:
+      home_block:
+        name: 'Home Block'
+      home_block_2:
+        name: 'Home Block 2'
+_core:
+  default_config_hash: XIpL9CMzTZppedmqP68r1OIEUR4JYvFDpc76pPjsxWw

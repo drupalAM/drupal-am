@@ -1,0 +1,21 @@
+uuid: 5fd035f6-bdf2-4fdf-9adf-2b99b27818e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testimonial_author_role
+    - paragraphs.paragraphs_type.testimonial
+_core:
+  default_config_hash: TN4ANq5Y3VEZMExCzxSzpqS8ZMvdi2CXgq60wPRbgZQ
+id: paragraph.testimonial.field_testimonial_author_role
+field_name: field_testimonial_author_role
+entity_type: paragraph
+bundle: testimonial
+label: 'Author Role'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

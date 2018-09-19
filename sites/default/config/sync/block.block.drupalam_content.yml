@@ -1,0 +1,22 @@
+uuid: aeb2439a-4abd-4076-9db2-8f08fae0bf1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - drupalam
+_core:
+  default_config_hash: maRCWDcmHtHp2tkK2-xKIWzanm-3LzDBxNuMYdEyjOk
+id: drupalam_content
+theme: drupalam
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

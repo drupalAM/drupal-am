@@ -1,0 +1,97 @@
+uuid: d0d10d0b-dc4c-44ca-af4e-95bfaa11789d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hero_slide.body
+    - field.field.node.hero_slide.field_heroslide_external_link
+    - field.field.node.hero_slide.field_heroslide_image
+    - field.field.node.hero_slide.field_heroslide_images
+    - field.field.node.hero_slide.field_heroslide_show_cont_link
+    - field.field.node.hero_slide.field_heroslide_text_position
+    - field.field.node.hero_slide.field_heroslide_title_prefix
+    - node.type.hero_slide
+  module:
+    - field_layout
+    - image
+    - link
+    - options
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+_core:
+  default_config_hash: mI-8wSfbHhnsIL45j5gwJgks1YTQa7Ga2-hFFL7pPx8
+id: node.hero_slide.default
+targetEntityType: node
+bundle: hero_slide
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_heroslide_external_link:
+    weight: 108
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_heroslide_image:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_heroslide_images:
+    weight: 106
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_heroslide_show_cont_link:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_heroslide_text_position:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_heroslide_title_prefix:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

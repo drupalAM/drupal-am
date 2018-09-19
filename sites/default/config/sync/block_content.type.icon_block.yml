@@ -1,0 +1,10 @@
+uuid: 6b42cf44-9148-424e-b4f0-9e58437a069a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: J072Pc1hKmBrHYp80z-h-qRLRkL7NaJExhz7qB31D2U
+id: icon_block
+label: 'Icon block'
+revision: 0
+description: ''
