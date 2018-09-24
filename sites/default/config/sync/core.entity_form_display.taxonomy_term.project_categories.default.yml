@@ -10,6 +10,10 @@ dependencies:
     - image
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: T7N74qdjvVnZ-8MxRwJZxuZpyUPZFTWKf8UNDftLzNs
 id: taxonomy_term.project_categories.default

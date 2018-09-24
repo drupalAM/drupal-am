@@ -7,6 +7,10 @@ dependencies:
     - field.field.block_content.testimonials.field_testimonial
   module:
     - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: W3AId6ZDqsLzwmYsh1RHVSeccCG6K6_XzuVnwW5gB5c
 id: block_content.testimonials.default

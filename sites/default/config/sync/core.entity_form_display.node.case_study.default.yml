@@ -16,6 +16,10 @@ dependencies:
     - link
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: GAxCGCFXGEGJ13ZrsiloEPfZgn1OjsEmofCecRxxwSE
 id: node.case_study.default

@@ -12,6 +12,10 @@ dependencies:
     - image
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: 9qa-3tnXWNWjfyEMryAihNnE0izTidEW3zjc8cM9R2w
 id: user.user.default
