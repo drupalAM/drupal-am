@@ -2,8 +2,6 @@ name: Druppio Small Business
 # core: 8.x
 type: profile
 description: 'Complete solution for small business.'
-distribution:
-  name: Druppio Small Business
 
 dependencies:
   - admin_toolbar
