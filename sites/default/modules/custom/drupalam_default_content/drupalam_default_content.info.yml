@@ -1,0 +1,8 @@
+name: Drupal Am Default Content
+description: 'Contains default content for Drupal Am.'
+type: module
+core: 8.x
+package: Custom
+
+dependencies:
+  - default_content:default_content

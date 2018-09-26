@@ -1,0 +1,252 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/10?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/case_study"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/field_case_study_image": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-12\/2016-03-16%2010.25.32.png"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/field_case_study_screens": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-12\/team11.png"
+            },
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-12\/team22.jpg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/field_term_industry": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 10
+        }
+    ],
+    "uuid": [
+        {
+            "value": "315a44b9-5187-4d60-9fc0-103e71180a80"
+        }
+    ],
+    "vid": [
+        {
+            "value": 23
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "case_study"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2017-12-28T17:26:51+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2993eda0-dd8f-44c9-b1d8-fb2a2487cdfd"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2993eda0-dd8f-44c9-b1d8-fb2a2487cdfd"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/field_case_study_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-12\/2016-03-16%2010.25.32.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "047bff76-5ef7-4a91-bf29-af8863fd62f7"
+                    }
+                ],
+                "alt": "Alt text",
+                "title": "",
+                "width": "2373",
+                "height": "1456"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/field_case_study_screens": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-12\/team11.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b54af642-2d63-44b0-9396-564ab5abcebf"
+                    }
+                ],
+                "alt": "ddd",
+                "title": "",
+                "width": "1920",
+                "height": "1080"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-12\/team22.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "055058b5-6d24-4b2c-8483-fb29210ffbf0"
+                    }
+                ],
+                "alt": "dddd",
+                "title": "",
+                "width": "445",
+                "height": "297"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/case_study\/field_term_industry": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/industries"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "01d17480-cd02-40b2-846c-db1f65f19088"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Test case study CT",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-12-28T17:22:03+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-12-28T17:26:51+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Body hre...<\/p>\r\n\r\n<p>Amet torquent cras id deleniti aperiam, atque minus saepe justo laboris? Odit nisi commodi maiores adipiscing quisquam tincidunt. <strong>Ac natus harum. Ne<\/strong>sciunt repellendus dolorum, ultrices magni nascetur laboris. Harum maecenas! Orci consectetur accusamus natus alias. Euismod pellentesque mollitia tenetur, minim mollitia pariatur aliquet officia volutpat habitant.<\/p>\r\n\r\n<h2>officia<\/h2>\r\n\r\n<p>Euismod pellentesque mollitia tenetur, m officia volutpat habitant.<\/p>\r\n\r\n<p>Euismod pellentesque mollitia tenetur, minim mollitia pariatur aliquet officia volutpat habitant.<\/p>\r\n",
+            "format": "basic_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

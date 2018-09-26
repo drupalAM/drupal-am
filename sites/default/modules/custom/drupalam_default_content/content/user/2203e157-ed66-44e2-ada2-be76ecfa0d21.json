@@ -1,0 +1,90 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/user\/15?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/user\/user\/user_picture": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/pictures\/2017-12\/team11.png",
+                "lang": "en"
+            }
+        ]
+    },
+    "uid": [
+        {
+            "value": 15
+        }
+    ],
+    "uuid": [
+        {
+            "value": "2203e157-ed66-44e2-ada2-be76ecfa0d21"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "harris"
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-12-28T12:47:51+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2017-12-28T12:47:54+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_user_first_name": [
+        {
+            "value": "John"
+        }
+    ],
+    "field_user_last_name": [
+        {
+            "value": "Harris"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/user\/user\/user_picture": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/pictures\/2017-12\/team11.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "803ec568-7e75-4c1b-89fa-b7dfa38aeaa9"
+                    }
+                ],
+                "lang": "en",
+                "alt": "",
+                "title": "",
+                "width": "310",
+                "height": "310"
+            }
+        ]
+    }
+}
