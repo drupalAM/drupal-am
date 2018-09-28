@@ -49,6 +49,7 @@ module:
   heading_formatter: 0
   help: 0
   image: 0
+  kint: 0
   layout_discovery: 0
   libraries: 0
   link: 0
@@ -60,6 +61,7 @@ module:
   quickedit: 0
   rdf: 0
   search: 0
+  search_kint: 0
   serialization: 0
   shortcut: 0
   site_settings_site: 0
