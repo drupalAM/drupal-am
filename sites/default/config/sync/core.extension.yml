@@ -37,8 +37,6 @@ module:
   empty_front: 0
   entity_reference_revisions: 0
   entityqueue: 0
-  features: 0
-  features_ui: 0
   field: 0
   field_layout: 0
   field_ui: 0

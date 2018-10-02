@@ -1,6 +1,0 @@
-bundle: content
-excluded:
-  - entityqueue.entity_queue.homepage_case_study
-  - taxonomy.vocabulary.industries
-  - taxonomy.vocabulary.project_categories
-required: true

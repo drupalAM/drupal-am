@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: cards_block
-label: 'Cards block'
-revision: 0
-description: 'Collection of Cards'
