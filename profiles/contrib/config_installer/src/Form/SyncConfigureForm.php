@@ -38,7 +38,7 @@ class SyncConfigureForm extends FormBase {
     $form['sync_directory'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Synchronisation directory'),
-      '#default_value' => config_get_config_directory(CONFIG_SYNC_DIRECTORY),
+      '#default_value' => 'sites/default/config/sync', // config_get_config_directory(CONFIG_SYNC_DIRECTORY),
       '#maxlength' => 255,
       '#description' => $this->t('Path to the config directory you wish to import, can be relative to document root or an absolute path.'),
       '#required' => TRUE,
