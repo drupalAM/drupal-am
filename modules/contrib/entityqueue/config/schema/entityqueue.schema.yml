@@ -11,9 +11,8 @@ entityqueue.entity_queue.*:
     handler:
       type: string
       label: 'Queue handler'
-#TODO: Provide a schema for queue handler plugins.
     handler_configuration:
-      type: ignore
+      type: entityqueue_handler_configuration.[%parent.handler]
       label: 'Queue handler configuration'
     entity_settings:
       type: mapping
@@ -44,3 +43,20 @@ entityqueue.entity_queue.*:
         reverse_in_admin:
           type: boolean
           label: 'Reverse order in admin view'
+
+# Base schema for all entity queue handler schemas.
+entityqueue_handler_configuration:
+  type: mapping
+  label: 'Entity queue handler configuration'
+
+# Schema for all entity queue handlers that are not providing a specific schema.
+entityqueue_handler_configuration.*:
+  type: entityqueue_handler_configuration
+
+views.relationship.entity_queue:
+  type: views_relationship
+  label: 'Entity queue'
+  mapping:
+    limit_queue:
+      type: string
+      label: 'Limit to a specific entity queue'

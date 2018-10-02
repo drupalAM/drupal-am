@@ -20,7 +20,7 @@ entity.entity_queue.edit_form:
     _entity_form: 'entity_queue.edit'
     _title: 'Edit Entity Queue'
   requirements:
-    _permission: 'administer entityqueue+manipulate entityqueues+manipulate all entityqueues'
+    _permission: 'administer entityqueue'
 
 entity.entity_queue.delete_form:
   path: '/admin/structure/entityqueue/{entity_queue}/delete'
@@ -28,7 +28,7 @@ entity.entity_queue.delete_form:
     _entity_form: 'entity_queue.delete'
     _title: 'Delete Entity Queue'
   requirements:
-    _permission: 'administer entityqueue+manipulate entityqueues+manipulate all entityqueues'
+    _permission: 'administer entityqueue'
 
 entity.entity_queue.enable:
   path: '/admin/structure/entityqueue/{entity_queue}/enable'
@@ -63,3 +63,21 @@ entity.entity_subqueue.add_form:
     _title: 'Add subqueue'
   requirements:
     _entity_create_access: 'entity_subqueue:{entity_queue}'
+
+entity.entity_subqueue.add_item:
+  path: '/admin/structure/entityqueue/{entity_queue}/{entity_subqueue}/{entity}/add-item'
+  defaults:
+    _controller: '\Drupal\entityqueue\Controller\EntityQueueUIController::subqueueAjaxOperation'
+    op: addItem
+  requirements:
+    _permission: 'administer entityqueue+manipulate entityqueues+manipulate all entityqueues'
+    _csrf_token: 'TRUE'
+
+entity.entity_subqueue.remove_item:
+  path: '/admin/structure/entityqueue/{entity_queue}/{entity_subqueue}/{entity}/remove-item'
+  defaults:
+    _controller: '\Drupal\entityqueue\Controller\EntityQueueUIController::subqueueAjaxOperation'
+    op: removeItem
+  requirements:
+    _permission: 'administer entityqueue+manipulate entityqueues+manipulate all entityqueues'
+    _csrf_token: 'TRUE'

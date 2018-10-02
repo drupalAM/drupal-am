@@ -1,6 +1,10 @@
 fontawesome.settings:
-  type: mapping
-  label: Settings
+  type: config_object
+  label: 'Fontawesome settings'
   mapping:
     fontawesome_use_cdn:
       type: boolean
+      label: 'Use CDN'
+    fontawesome_external_location:
+      type: string
+      label: 'External location'

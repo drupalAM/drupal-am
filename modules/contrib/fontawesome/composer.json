@@ -1,0 +1,8 @@
+{
+  "name": "drupal/fontawesome",
+  "description": "Iconic font designed for use with Twitter Bootstrap.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/fontawesome",
+  "minimum-stability": "dev"
+}

@@ -57,38 +57,55 @@ function entityqueue_views_data_alter(array &$data) {
       'field field' => $columns['target_id'],
     ];
 
-    $data[$target_base_table]['entityqueue_relationship']['sort'] = array(
-      'id' => 'entity_queue_position',
+    $data[$target_base_table]['entityqueue_relationship_in_queue']['sort'] = [
+      'id' => 'entity_queue_in_queue',
       'group' => t('Entityqueue'),
-      'title' => t('@target_label Queue Position', array(
+      'title' => t('In @target_label queue', [
         '@target_label' => $entity_type->getLabel(),
-      )),
-      'label' => t('@target_label Queue Position', array(
+      ]),
+      'label' => t('In @target_label queue', [
         '@target_label' => $entity_type->getLabel(),
-      )),
-      'help' => t('Position of item in the @target_label queue.', array(
+      ]),
+      'help' => t('Filter to ensure a(n) @target_label IS or IS NOT in the related queue', [
         '@target_label' => $entity_type->getLabel(),
-      )),
+      ]),
       'field' => 'delta',
       'field table' => $subqueue_items_table_name,
       'field_name' => $field_name,
-    );
+    ];
 
-    $data[$target_base_table]['entityqueue_relationship']['filter'] = array(
+    $data[$target_base_table]['entityqueue_relationship']['sort'] = [
+      'id' => 'entity_queue_position',
+      'group' => t('Entityqueue'),
+      'title' => t('@target_label Queue Position', [
+        '@target_label' => $entity_type->getLabel(),
+      ]),
+      'label' => t('@target_label Queue Position', [
+        '@target_label' => $entity_type->getLabel(),
+      ]),
+      'help' => t('Position of item in the @target_label queue.', [
+        '@target_label' => $entity_type->getLabel(),
+      ]),
+      'field' => 'delta',
+      'field table' => $subqueue_items_table_name,
+      'field_name' => $field_name,
+    ];
+
+    $data[$target_base_table]['entityqueue_relationship']['filter'] = [
       'id' => 'entity_queue_in_queue',
       'type' => 'yes-no',
       'group' => t('Entityqueue'),
-      'title' => t('@target_label In Queue', array(
+      'title' => t('@target_label In Queue', [
         '@target_label' => $entity_type->getLabel(),
-      )),
-      'label' => t('@target_label In Queue', array(
+      ]),
+      'label' => t('@target_label In Queue', [
         '@target_label' => $entity_type->getLabel(),
-      )),
-      'help' => t('Filter for entities that are available or not in the @target_label entity queue.', array(
+      ]),
+      'help' => t('Filter for entities that are available or not in the @target_label entity queue.', [
         '@target_label' => $entity_type->getLabel(),
-      )),
+      ]),
       'field table' => $subqueue_items_table_name,
       'field field' => $columns['target_id'],
-    );
+    ];
   }
 }

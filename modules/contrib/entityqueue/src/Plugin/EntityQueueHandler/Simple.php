@@ -51,15 +51,20 @@ class Simple extends EntityQueueHandlerBase {
    */
   public function onQueuePostSave(EntityQueueInterface $queue, EntityStorageInterface $storage, $update = TRUE) {
     // Make sure that every simple queue has a subqueue.
-    if (!$update) {
+    if ($update) {
+      $subqueue = EntitySubqueue::load($queue->id());
+      $subqueue->setTitle($queue->label());
+    }
+    else {
       $subqueue = EntitySubqueue::create([
         'queue' => $queue->id(),
         'name' => $queue->id(),
         'title' => $queue->label(),
         'langcode' => $queue->language()->getId(),
       ]);
-      $subqueue->save();
     }
+
+    $subqueue->save();
   }
 
   /**

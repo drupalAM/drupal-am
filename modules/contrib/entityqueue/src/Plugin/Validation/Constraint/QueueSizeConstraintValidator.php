@@ -33,7 +33,6 @@ class QueueSizeConstraintValidator extends ConstraintValidator {
       $this->context->buildViolation($constraint->messageMaxSize, ['%max_size' => $max_size])
         ->addViolation();
     }
-
   }
 
 }

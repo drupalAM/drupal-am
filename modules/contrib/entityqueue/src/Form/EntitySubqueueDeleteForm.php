@@ -5,7 +5,7 @@ namespace Drupal\entityqueue\Form;
 use Drupal\Core\Entity\ContentEntityDeleteForm;
 
 /**
- * Provides the comment delete confirmation form.
+ * Provides the entity subqueue delete confirmation form.
  */
 class EntitySubqueueDeleteForm extends ContentEntityDeleteForm {
 

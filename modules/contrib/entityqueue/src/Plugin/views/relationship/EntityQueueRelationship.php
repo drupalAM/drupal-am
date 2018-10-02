@@ -33,17 +33,17 @@ class EntityQueueRelationship extends EntityReverse implements CacheableDependen
    */
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     $queues = EntityQueue::loadMultipleByTargetType($this->getEntityType());
-    $options = array();
+    $options = [];
     foreach ($queues as $queue) {
       $options[$queue->id()] = $queue->label();
     }
 
-    $form['limit_queue'] = array(
+    $form['limit_queue'] = [
       '#type' => 'radios',
       '#title' => $this->t('Limit to a specific entity queue'),
       '#options' => $options,
       '#default_value' => $this->options['limit_queue'],
-    );
+    ];
 
     parent::buildOptionsForm($form, $form_state);
   }

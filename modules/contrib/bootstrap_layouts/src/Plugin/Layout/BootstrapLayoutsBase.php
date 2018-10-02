@@ -6,6 +6,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Form\SubformStateInterface;
 use Drupal\Core\Plugin\PluginFormInterface;
 use Drupal\Core\Layout\LayoutDefault;
 
@@ -66,7 +67,15 @@ class BootstrapLayoutsBase extends LayoutDefault implements PluginFormInterface 
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    //$form = parent::buildConfigurationForm($form, $form_state);
+    // This can potentially be invoked within a subform instead of a normal
+    // form. There is an ongoing discussion around this which could result in
+    // the passed form state going back to a full form state. In order to
+    // prevent BC breaks, check which type of FormStateInterface has been
+    // passed and act accordingly.
+    // @see https://www.drupal.org/node/2868254
+    // @todo Re-evaluate once https://www.drupal.org/node/2798261 makes it in.
+    $complete_form_state = $form_state instanceof SubformStateInterface ? $form_state->getCompleteFormState() : $form_state;
+
     $configuration = $this->getConfiguration();
 
     /** @var \Drupal\bootstrap_layouts\BootstrapLayoutsManager $manager */
@@ -108,28 +117,28 @@ class BootstrapLayoutsBase extends LayoutDefault implements PluginFormInterface 
       '#type' => 'select',
       '#title' => $this->t('Wrapper'),
       '#options' => $wrapper_options,
-      '#default_value' => $form_state->getValue(['layout', 'wrapper'], $configuration['layout']['wrapper']),
+      '#default_value' => $complete_form_state->getValue(['layout', 'wrapper'], $configuration['layout']['wrapper']),
     ];
 
     $form['layout']['classes'] = [
       '#type' => 'select',
       '#title' => $this->t('Classes'),
       '#options' => $classes,
-      '#default_value' => $form_state->getValue(['layout', 'classes'], $configuration['layout']['classes']) ?: [],
+      '#default_value' => $complete_form_state->getValue(['layout', 'classes'], $configuration['layout']['classes']) ?: [],
       '#multiple' => TRUE,
     ];
 
     $form['layout']['add_layout_class'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Add layout specific class: <code>@class</code>', ['@class' => Html::cleanCssIdentifier($this->getPluginId())]),
-      '#default_value' => (int) $form_state->getValue(['layout', 'add_layout_class'], $configuration['layout']['add_layout_class']),
+      '#default_value' => (int) $complete_form_state->getValue(['layout', 'add_layout_class'], $configuration['layout']['add_layout_class']),
     ];
 
     $form['layout']['attributes'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Additional attributes'),
       '#description' => 'E.g. id|custom-id,role|navigation,data-something|some value',
-      '#default_value' => $form_state->getValue(['layout', 'attributes'], $configuration['layout']['attributes']),
+      '#default_value' => $complete_form_state->getValue(['layout', 'attributes'], $configuration['layout']['attributes']),
     ];
 
     if ($tokens) {
@@ -142,7 +151,7 @@ class BootstrapLayoutsBase extends LayoutDefault implements PluginFormInterface 
       $default_values = NestedArray::mergeDeep(
         $this->getRegionDefaults(),
         isset($configuration['regions'][$region]) ? $configuration['regions'][$region] : [],
-        $form_state->getValue(['regions', $region], [])
+        $complete_form_state->getValue(['regions', $region], [])
       );
 
       $form[$region] = [

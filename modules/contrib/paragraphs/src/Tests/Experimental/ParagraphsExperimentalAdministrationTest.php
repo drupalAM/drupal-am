@@ -4,6 +4,7 @@ namespace Drupal\paragraphs\Tests\Experimental;
 
 use Drupal\field_ui\Tests\FieldUiTestTrait;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Tests\paragraphs\FunctionalJavascript\ParagraphsTestBaseTrait;
 
 /**
  * Tests the configuration of paragraphs.
@@ -13,6 +14,7 @@ use Drupal\paragraphs\Entity\Paragraph;
 class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTestBase {
 
   use FieldUiTestTrait;
+  use ParagraphsTestBaseTrait;
 
   /**
    * Modules to enable.
@@ -43,6 +45,7 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
       'create paragraphs content',
       'administer node display',
       'edit any paragraphs content',
+      'administer nodes',
     ]);
 
     // Create paragraphs type Headline + Block.
@@ -72,7 +75,7 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
       'field_paragraphs[0][subform][field_text][0][value]' => 'Test text 1',
       'field_paragraphs[1][subform][field_text][0][value]' => 'Test text 2',
     ];
-    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $this->drupalPostForm(NULL, $edit + ['status[value]' => TRUE], t('Save'));
 
     $node = $this->drupalGetNodeByTitle('TEST TITEL');
     $paragraph1 = $node->field_paragraphs[0]->target_id;
@@ -86,7 +89,7 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
       'field_paragraphs[0][subform][field_text][0][value]' => 'Foo Bar 1',
       'revision' => FALSE,
     ];
-    $this->drupalPostForm('node/' . $node->id() . '/edit', $edit, t('Save and keep published'));
+    $this->drupalPostForm('node/' . $node->id() . '/edit', $edit, t('Save'));
 
     $this->countRevisions($node, $paragraph1, $paragraph2, 1);
 
@@ -97,7 +100,7 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
       'field_paragraphs[0][subform][field_text][0][value]' => 'Foo Bar 2',
       'revision' => TRUE,
     ];
-    $this->drupalPostForm('node/' . $node->id() . '/edit', $edit, t('Save and keep published'));
+    $this->drupalPostForm('node/' . $node->id() . '/edit', $edit, t('Save'));
 
     $this->countRevisions($node, $paragraph1, $paragraph2, 2);
 
@@ -129,7 +132,7 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
    */
   public function testParagraphsCreation() {
     // Create an article with paragraphs field.
-    $this->addParagraphedContentType('article', 'field_paragraphs');
+    $this->addParagraphedContentType('article');
     $this->loginAsAdmin([
       'administer site configuration',
       'create article content',
@@ -157,8 +160,8 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     $this->assertUrl('admin/structure/paragraphs_type/add');
 
     $this->drupalGet('admin/structure/paragraphs_type');
-    $this->clickLink(t('Add paragraphs type'));
-    $this->assertTitle('Add paragraphs type | Drupal');
+    $this->clickLink(t('Add paragraph type'));
+    $this->assertTitle('Add Paragraphs type | Drupal');
     // Create paragraph type text + image.
     $this->addParagraphsType('text_image');
     $this->drupalGet('admin/structure/paragraphs_type/text_image');
@@ -224,29 +227,30 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
 
     // Add two Text + Image paragraphs in article.
     $this->drupalGet('node/add/article');
-
-    // Checking changes on article.
-    $this->assertRaw('<div class="paragraphs-dropbutton-wrapper"><input', 'Updated value in article.');
-
     $this->drupalPostAjaxForm(NULL, array(), 'field_paragraphs_text_image_add_more');
     $this->drupalPostAjaxForm(NULL, array(), 'field_paragraphs_text_image_add_more');
-    // Create an 'image' file, upload it.
-    $text = 'Trust me I\'m an image';
-    file_put_contents('temporary://myImage1.jpg', $text);
-    file_put_contents('temporary://myImage2.jpg', $text);
+
+    // Upload some images.
+    $files = $this->drupalGetTestFiles('image');
+    $file_system = \Drupal::service('file_system');
 
     $edit = array(
       'title[0][value]' => 'Test article',
       'field_paragraphs[0][subform][field_text][0][value]' => 'Test text 1',
-      'files[field_paragraphs_0_subform_field_image_0]' => drupal_realpath('temporary://myImage1.jpg'),
+      'files[field_paragraphs_0_subform_field_image_0]' => $file_system->realpath($files[0]->uri),
       'field_paragraphs[1][subform][field_text][0][value]' => 'Test text 2',
-      'files[field_paragraphs_1_subform_field_image_0]' => drupal_realpath('temporary://myImage2.jpg'),
+      'files[field_paragraphs_1_subform_field_image_0]' => $file_system->realpath($files[1]->uri),
     );
-    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $this->drupalPostForm(NULL, $edit, t('Save'));
+    $this->assertText('article Test article has been created.');
 
     $node = $this->drupalGetNodeByTitle('Test article');
-    $img1_url = file_create_url(\Drupal::token()->replace('public://[date:custom:Y]-[date:custom:m]/myImage1.jpg'));
-    $img2_url = file_create_url(\Drupal::token()->replace('public://[date:custom:Y]-[date:custom:m]/myImage2.jpg'));
+    $img1_url = file_create_url(\Drupal::token()->replace('public://[date:custom:Y]-[date:custom:m]/' . $files[0]->filename));
+    $img2_url = file_create_url(\Drupal::token()->replace('public://[date:custom:Y]-[date:custom:m]/' . $files[1]->filename));
+    $img1_size = filesize($files[0]->uri);
+    $img2_size = filesize($files[1]->uri);
+    $img1_mime = \Drupal::service('file.mime_type.guesser')->guess($files[0]->uri);
+    $img2_mime = \Drupal::service('file.mime_type.guesser')->guess($files[1]->uri);
 
     // Check the text and image after publish.
     $this->assertText('Test text 1');
@@ -271,15 +275,19 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     // The textareas for paragraphs should not be visible.
     $this->assertNoRaw('field_paragraphs[0][subform][field_text][0][value]');
     $this->assertNoRaw('field_paragraphs[1][subform][field_text][0][value]');
-    $this->assertRaw('<div class="paragraphs-collapsed-description">myImage1.jpg, Test text 1');
-    $this->assertRaw('<div class="paragraphs-collapsed-description">myImage2.jpg, Test text 2');
+    $this->assertRaw('<div class="paragraphs-collapsed-description">Test text 1, ' . $files[0]->filename);
+    $this->assertRaw('<div class="paragraphs-collapsed-description">Test text 2, ' . $files[1]->filename);
 
     // Test for preview option.
     $this->drupalGet('admin/structure/types/manage/article/form-display');
     $this->drupalPostAjaxForm(NULL, array(), "field_paragraphs_settings_edit");
-    $edit = array('fields[field_paragraphs][settings_edit_form][settings][edit_mode]' => 'preview');
+    $edit = [
+      'fields[field_paragraphs][settings_edit_form][settings][edit_mode]' => 'closed',
+      'fields[field_paragraphs][settings_edit_form][settings][closed_mode]' => 'preview',
+    ];
     $this->drupalPostForm(NULL, $edit, t('Save'));
-    $this->assertText('Edit mode: Preview', 'Checking the settings value.');
+    $this->assertText('Edit mode: Closed', 'Checking the "Edit mode" setting value.');
+    $this->assertText('Closed mode: Preview', 'Checking the "Closed mode" settings value.');
     $this->drupalGet('node/1/edit');
     // The texts in the paragraphs should be visible.
     $this->assertNoRaw('field_paragraphs[0][subform][field_text][0][value]');
@@ -290,8 +298,9 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     // Test for open option.
     $this->drupalGet('admin/structure/types/manage/article/form-display');
     $this->drupalPostAjaxForm(NULL, array(), "field_paragraphs_settings_edit");
-    // Assert the 'Preview' option is selected.
-    $this->assertOptionSelected('edit-fields-field-paragraphs-settings-edit-form-settings-edit-mode', 'preview', 'Updated value correctly.');
+    // Assert the "Closed" and "Preview" options are selected.
+    $this->assertOptionSelected('edit-fields-field-paragraphs-settings-edit-form-settings-edit-mode', 'closed', 'Correctly updated the "Edit mode" value.');
+    $this->assertOptionSelected('edit-fields-field-paragraphs-settings-edit-form-settings-closed-mode', 'preview', 'Correctly updated the "Closed mode" value.');
     // Restore the value to Open for next test.
     $edit = array('fields[field_paragraphs][settings_edit_form][settings][edit_mode]' => 'open');
     $this->drupalPostForm(NULL, $edit, t('Save'));
@@ -307,28 +316,28 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     $this->drupalGet('node/' . $node->id() . '/edit');
     // Check both paragraphs in edit page.
     $this->assertFieldByName('field_paragraphs[0][subform][field_text][0][value]', 'Test text 1');
-    $this->assertRaw('<a href="' . $img1_url . '" type="image/jpeg; length=21">myImage1.jpg</a>');
+    $this->assertRaw('<a href="' . $img1_url . '" type="' . $img1_mime . '; length=' . $img1_size . '">' . $files[0]->filename . '</a>');
     $this->assertFieldByName('field_paragraphs[1][subform][field_text][0][value]', 'Test text 2');
-    $this->assertRaw('<a href="' . $img2_url . '" type="image/jpeg; length=21">myImage2.jpg</a>');
+    $this->assertRaw('<a href="' . $img2_url . '" type="' . $img2_mime . '; length=' . $img2_size . '">' . $files[1]->filename . '</a>');
     // Remove 2nd paragraph.
     $this->drupalPostForm(NULL, NULL, t('Remove'));
     $this->assertNoField('field_paragraphs[1][subform][field_text][0][value]');
-    $this->assertNoRaw('<a href="' . $img2_url . '" type="image/jpeg; length=21">myImage2.jpg</a>');
+    $this->assertNoRaw('<a href="' . $img2_url . '" type="' . $img2_mime . '; length=' . $img2_size . '">' . $files[1]->filename . '</a>');
     // Assert the paragraph is not deleted unless the user saves the node.
     $this->drupalGet('node/' . $node->id() . '/edit');
-    $this->assertRaw('<a href="' . $img2_url . '" type="image/jpeg; length=21">myImage2.jpg</a>');
+    $this->assertRaw('<a href="' . $img2_url . '" type="' . $img2_mime . '; length=' . $img2_size . '">' . $files[1]->filename . '</a>');
     // Remove the second paragraph.
     $this->drupalPostForm(NULL, [], t('Remove'));
-    $this->assertNoRaw('<a href="' . $img2_url . '" type="image/jpeg; length=21">myImage2.jpg</a>');
+    $this->assertNoRaw('<a href="' . $img2_url . '" type="' . $img2_mime . '; length=' . $img2_size . '">' . $files[1]->filename . '</a>');
     $edit = [
       'field_paragraphs[0][subform][field_image][0][alt]' => 'test_alt',
       'field_paragraphs[0][subform][field_image][0][width]' => 300,
       'field_paragraphs[0][subform][field_image][0][height]' => 300,
     ];
-    $this->drupalPostForm(NULL, $edit, t('Save and keep published'));
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     // Assert the paragraph is deleted after the user saves the node.
     $this->drupalGet('node/' . $node->id() . '/edit');
-    $this->assertNoRaw('<a href="' . $img2_url . '" type="image/jpeg; length=21">myImage2.jpg</a>');
+    $this->assertNoRaw('<a href="' . $img2_url . '" type="' . $img2_mime . '; length=' . $img2_size . '">' . $files[1]->filename . '</a>');
 
     // Delete the node.
     $this->clickLink(t('Delete'));
@@ -350,13 +359,13 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
       'title[0][value]' => 'Example publish/unpublish',
       'field_paragraphs[0][subform][field_text][0][value]' => 'Example published and unpublished',
     ];
-    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     $this->assertText(t('Example published and unpublished'));
     $this->clickLink(t('Edit'));
     $edit = [
       'field_paragraphs[0][subform][status][value]' => FALSE,
     ];
-    $this->drupalPostForm(NULL, $edit, t('Save and keep published'));
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     $this->assertNoText(t('Example published and unpublished'));
 
     // Set the fields as required.
@@ -370,6 +379,10 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     // Add a new article.
     $this->drupalGet('node/add/article');
     $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_nested_test_add_more');
+
+    // Ensure that nested header actions do not add a visible weight field.
+    $this->assertNoFieldByName('field_paragraphs[0][subform][field_paragraphs][header_actions][_weight]');
+
     $edit = [
       'field_paragraphs[0][subform][field_paragraphs][add_more][add_more_select]' => 'image',
     ];
@@ -380,15 +393,13 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     // Add an image to the required field.
     $edit = array(
       'title[0][value]' => 'test required',
-      'files[field_paragraphs_0_subform_field_paragraphs_0_subform_field_image_only_0]' => drupal_realpath('temporary://myImage2.jpg'),
+      'files[field_paragraphs_0_subform_field_paragraphs_0_subform_field_image_only_0]' => $file_system->realpath($files[2]->uri),
     );
-    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     $edit = [
-      'field_paragraphs[0][subform][field_paragraphs][0][subform][field_image_only][0][width]' => 100,
-      'field_paragraphs[0][subform][field_paragraphs][0][subform][field_image_only][0][height]' => 100,
       'field_paragraphs[0][subform][field_paragraphs][0][subform][field_image_only][0][alt]' => 'Alternative_text',
     ];
-    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     $this->assertText('test required has been created.');
     $this->assertNoRaw('This value should not be null.');
 
@@ -409,7 +420,7 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     $this->drupalPostForm(NULL, $edit, t('Save and continue'));
     $this->assertNoOption('edit-settings-target-type', 'paragraph');
 
-    // Test that all paragraph types can be referenced if none is selected.
+    // Test that all Paragraph types can be referenced if none is selected.
     $this->addParagraphsType('nested_double_test');
     static::fieldUIAddExistingField('admin/structure/paragraphs_type/nested_double_test', 'field_paragraphs', 'paragraphs_1');
     $this->clickLink(t('Manage form display'));
@@ -430,7 +441,7 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     $edit = array(
       'title[0][value]' => 'Nested twins',
     );
-    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     $this->assertText('Nested twins has been created.');
     $this->assertNoText('This entity (paragraph: ) cannot be referenced.');
 
@@ -439,10 +450,13 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
     $this->clickLink('Edit', 1);
     $this->drupalPostForm(NULL, ['required' => FALSE], t('Save settings'));
 
-    // Set the Paragraph field edit mode to 'Closed'.
-    $this->drupalPostAjaxForm('admin/structure/types/manage/article/form-display', [], 'field_paragraphs_settings_edit');
-    $this->drupalPostForm(NULL, ['fields[field_paragraphs][settings_edit_form][settings][edit_mode]' => 'closed'], t('Update'));
-    $this->drupalPostForm(NULL, [], t('Save'));
+    // Set the Paragraph field edit mode to "Closed" and the closed mode to
+    // "Summary".
+    $settings = [
+      'edit_mode' => 'closed',
+      'closed_mode' => 'summary',
+    ];
+    $this->setParagraphsWidgetSettings('article', 'field_paragraphs', $settings);
 
     $this->addParagraphsType('node_test');
 
@@ -463,57 +477,75 @@ class ParagraphsExperimentalAdministrationTest extends ParagraphsExperimentalTes
       'field_paragraphs[0][subform][field_entity_reference][0][target_id]' => $node->label() . ' (' . $node->id() . ')',
       'title[0][value]' => 'choke test',
     ];
-    $this->drupalPostForm(NULL, $edit, t('Save and publish'));
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     // Delete the referenced node.
     $node->delete();
     // Edit the node with the reference.
     $this->clickLink(t('Edit'));
-    // Since we have validation error (reference to deleted node), paragraph is
-    // by default in edit mode.
-    $this->assertFieldByName('field_paragraphs[0][subform][field_entity_reference][0][target_id]');
-    $this->assertFieldByName('field_paragraphs[0][subform][field_entity_reference][1][target_id]');
-    // Assert the validation error message.
-    $this->assertText('The referenced entity (node: 4) does not exist');
-    // Triggering unrelated button, assert that error message is still present.
-    $this->drupalPostForm(NULL, [], t('Add another item'));
-    $this->assertText('The referenced entity (node: 4) does not exist');
-    $this->assertText('Entity reference (value 1) field is required.');
+
+    // Adding another required paragraph and deleting that again should not
+    // validate closed paragraphs but trying to save the node should.
+    $this->drupalPostAjaxForm(NULL, array(), 'field_paragraphs_node_test_add_more');
+    $this->assertNoText('The referenced entity (node: ' . $node->id() . ') does not exist.');
+    $this->assertFieldByName('field_paragraphs[1][subform][field_entity_reference][0][target_id]');
+    $this->drupalPostAjaxForm(NULL, array(), 'field_paragraphs_1_remove');
+    $this->assertNoText('The referenced entity (node: ' . $node->id() . ') does not exist.');
+    $this->assertNoFieldByName('field_paragraphs[1][subform][field_entity_reference][0][target_id]');
+    $this->drupalPostForm(NULL, [], t('Save'));
+    $this->assertText('The referenced entity (node: ' . $node->id() . ') does not exist.');
+
+    // Attempt to edit the Paragraph.
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_0_edit');
+    // Validate that the reference is removed.
+    $this->assertNoErrorsLogged();
     // Try to collapse with an invalid reference.
     $this->drupalPostAjaxForm(NULL, ['field_paragraphs[0][subform][field_entity_reference][0][target_id]' => 'foo'], 'field_paragraphs_0_collapse');
     // Paragraph should be still in edit mode.
     $this->assertFieldByName('field_paragraphs[0][subform][field_entity_reference][0][target_id]');
     $this->assertFieldByName('field_paragraphs[0][subform][field_entity_reference][1][target_id]');
-    $this->drupalPostForm(NULL, [], t('Add another item'));
     // Assert the validation message.
     $this->assertText('There are no entities matching "foo".');
     // Fix the broken reference.
     $node = $this->drupalGetNodeByTitle('Example publish/unpublish');
-    $this->drupalPostForm(NULL, ['field_paragraphs[0][subform][field_entity_reference][0][target_id]' => $node->label() . ' (' . $node->id() . ')'], t('Save and keep published'));
+    $edit = ['field_paragraphs[0][subform][field_entity_reference][0][target_id]' => $node->label() . ' (' . $node->id() . ')'];
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     $this->assertText('choke test has been updated.');
     $this->assertLink('Example publish/unpublish');
     // Delete the new referenced node.
     $node->delete();
 
-    // Set the Paragraph field edit mode to 'Preview'.
-    $this->drupalPostAjaxForm('admin/structure/types/manage/article/form-display', [], 'field_paragraphs_settings_edit');
-    $this->drupalPostForm(NULL, ['fields[field_paragraphs][settings_edit_form][settings][edit_mode]' => 'preview'], t('Update'));
-    $this->drupalPostForm(NULL, [], t('Save'));
+    // Set the Paragraph field closed mode to "Preview".
+    $settings = [
+      'edit_mode' => 'closed',
+      'closed_mode' => 'preview',
+    ];
+    $this->setParagraphsWidgetSettings('article', 'field_paragraphs', $settings);
 
     $node = $this->drupalGetNodeByTitle('choke test');
     // Attempt to edit the Paragraph.
-    $this->drupalPostAjaxForm('node/' . $node->id() . '/edit', [], 'field_paragraphs_0_edit');
-    // Try to collapse with an invalid reference.
-    $this->drupalPostAjaxForm(NULL, ['field_paragraphs[0][subform][field_entity_reference][0][target_id]' => 'foo'], 'field_paragraphs_0_collapse');
+    $this->drupalGet('node/' . $node->id() . '/edit');
+    // Attempt to edit the Paragraph.
+    $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_0_edit');
+    // Try to save with an invalid reference.
+    $edit = ['field_paragraphs[0][subform][field_entity_reference][0][target_id]' => 'foo'];
+    $this->drupalPostForm(NULL, $edit, t('Save'));
     $this->assertText('There are no entities matching "foo".');
     // Remove the Paragraph and save the node.
     $this->drupalPostAjaxForm(NULL, [], 'field_paragraphs_0_remove');
-    $this->drupalPostForm(NULL, [], t('Save and keep published'));
+    $this->drupalPostForm(NULL, [], t('Save'));
     $this->assertText('choke test has been updated.');
 
+    $this->drupalGet('admin/structure/types/manage/article/fields');
+    $this->clickLink('Edit');
+    $this->drupalPostForm(NULL, ['description' => 'This is the description of the field.'], 'Save settings');
     // Verify that the text displayed is correct when no paragraph has been
     // added yet.
     $this->drupalGet('node/add/article');
-    $this->assertText('No Paragraph added yet.');
+    $this->assertText('This is the description of the field.');
+    $elements = $this->xpath('//table[@id="field-paragraphs-values"]/tbody');
+    $header = $this->xpath('//table[@id="field-paragraphs-values"]/thead');
+    $this->assertEqual($elements, []);
+    $this->assertNotEqual($header, []);
 
     $this->drupalGet('admin/content/files');
     $this->clickLink('1 place');

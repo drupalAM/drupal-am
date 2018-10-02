@@ -4,6 +4,7 @@ namespace Drupal\entityqueue;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\user\EntityOwnerInterface;
 
 /**
@@ -28,6 +29,26 @@ interface EntitySubqueueInterface extends ContentEntityInterface, EntityChangedI
    * @return $this
    */
   public function setQueue(EntityQueueInterface $queue);
+
+  /**
+   * Adds an entity to a subqueue
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   An entity object.
+   *
+   * @return $this
+   */
+  public function addItem(EntityInterface $entity);
+
+  /**
+   * Removes an entity from a subqueue
+   *
+   * @param \Drupal\Core\Entity\EntityInterface $entity
+   *   An entity object.
+   *
+   * @return $this
+   */
+  public function removeItem(EntityInterface $entity);
 
   /**
    * Gets the subqueue title.

@@ -2,6 +2,8 @@
 
 namespace Drupal\entityqueue;
 
+use Drupal\Component\Plugin\DerivativeInspectionInterface;
+use Drupal\Component\Plugin\PluginInspectionInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Plugin\PluginFormInterface;
 use Drupal\Component\Plugin\ConfigurablePluginInterface;
@@ -14,7 +16,7 @@ use Drupal\Component\Plugin\ConfigurablePluginInterface;
  * @see \Drupal\entityqueue\EntityQueueHandlerBase
  * @see plugin_api
  */
-interface EntityQueueHandlerInterface extends PluginFormInterface, ConfigurablePluginInterface {
+interface EntityQueueHandlerInterface extends PluginFormInterface, ConfigurablePluginInterface, PluginInspectionInterface, DerivativeInspectionInterface {
 
   /**
    * Sets the entity queue that is using this plugin.
@@ -55,7 +57,7 @@ interface EntityQueueHandlerInterface extends PluginFormInterface, ConfigurableP
   /**
    * Acts on an entity queue before the presave hook is invoked.
    *
-   * @param \Drupal\entityqueue\EntityQueueInterface
+   * @param \Drupal\entityqueue\EntityQueueInterface $queue
    *   The entity queue object.
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
    *   The entity storage object.
@@ -65,7 +67,7 @@ interface EntityQueueHandlerInterface extends PluginFormInterface, ConfigurableP
   /**
    * Acts on an entity queue before the insert or update hook is invoked.
    *
-   * @param \Drupal\entityqueue\EntityQueueInterface
+   * @param \Drupal\entityqueue\EntityQueueInterface $queue
    *   The entity queue object.
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
    *   The entity storage object.
@@ -77,7 +79,7 @@ interface EntityQueueHandlerInterface extends PluginFormInterface, ConfigurableP
   /**
    * Acts on entity queues before they are deleted and before hooks are invoked.
    *
-   * @param \Drupal\entityqueue\EntityQueueInterface
+   * @param \Drupal\entityqueue\EntityQueueInterface $queue
    *   The entity queue object.
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
    *   The entity storage object.
@@ -87,7 +89,7 @@ interface EntityQueueHandlerInterface extends PluginFormInterface, ConfigurableP
   /**
    * Acts on deleted entity queues before the delete hook is invoked.
    *
-   * @param \Drupal\entityqueue\EntityQueueInterface
+   * @param \Drupal\entityqueue\EntityQueueInterface $queue
    *   The entity queue object.
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
    *   The entity storage object.
@@ -97,7 +99,7 @@ interface EntityQueueHandlerInterface extends PluginFormInterface, ConfigurableP
   /**
    * Acts on loaded entity queues.
    *
-   * @param \Drupal\entityqueue\EntityQueueInterface
+   * @param \Drupal\entityqueue\EntityQueueInterface $queue
    *   The entity queue object.
    * @param \Drupal\Core\Entity\EntityStorageInterface $storage
    *   The entity storage object.

@@ -10,21 +10,29 @@ use Drupal\Core\Config\Entity\ConfigEntityInterface;
 interface EntityQueueInterface extends ConfigEntityInterface {
 
   /**
-   * Gets the EntityQueueHandler plugin id.
+   * Gets the EntityQueueHandler plugin ID.
    *
    * @return string
    */
   public function getHandler();
 
   /**
+   * Gets the handler plugin configuration for this queue.
+   *
+   * @return mixed[]
+   *   The handler plugin configuration.
+   */
+  public function getHandlerConfiguration();
+
+  /**
    * Sets the EntityQueueHandler.
    *
-   * @param string $handler
+   * @param string $handler_id
    *   The handler name.
    *
    * @return $this
    */
-  public function setHandler($handler);
+  public function setHandler($handler_id);
 
   /**
    * Gets the EntityQueueHandler plugin object.
@@ -32,6 +40,16 @@ interface EntityQueueInterface extends ConfigEntityInterface {
    * @return EntityQueueHandlerInterface
    */
   public function getHandlerPlugin();
+
+  /**
+   * Sets the EntityQueueHandler plugin object.
+   *
+   * @param \Drupal\entityqueue\EntityQueueHandlerInterface $handler
+   *   A queue handler plugin.
+   *
+   * @return $this
+   */
+  public function setHandlerPlugin($handler);
 
   /**
    * Gets the ID of the target entity type.

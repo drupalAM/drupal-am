@@ -101,10 +101,10 @@ interface ParagraphsBehaviorInterface extends PluginFormInterface, ConfigurableP
   public function view(array &$build, Paragraph $paragraph, EntityViewDisplayInterface $display, $view_mode);
 
   /**
-   * Returns if the plugin can be used for the provided paragraphs type.
+   * Returns if the plugin can be used for the provided Paragraphs type.
    *
    * @param \Drupal\paragraphs\Entity\ParagraphsType $paragraphs_type
-   *   The paragraphs type entity that should be checked.
+   *   The Paragraphs type entity that should be checked.
    *
    * @return bool
    *   TRUE if the formatter can be used, FALSE otherwise.
@@ -123,8 +123,23 @@ interface ParagraphsBehaviorInterface extends PluginFormInterface, ConfigurableP
   public function settingsSummary(Paragraph $paragraph);
 
   /**
-   * Returns list of field names for the given paragraph type and field type.
+   * Returns a short info icon for the current behavior settings.
    *
+   * Usually the information is in the form of an icon or a badge or some
+   * similar graphical representation.
+   *
+   * @param \Drupal\paragraphs\Entity\Paragraph $paragraph
+   *   The paragraph.
+   *
+   * @return string[]
+   *   The plugin settings.
+   *
+   * @see ParagraphInterface::getIcons()
+   */
+  public function settingsIcon(Paragraph $paragraph);
+
+  /**
+   * Returns list of field names for the given paragraph type and field type.
    *
    * @param \Drupal\paragraphs\Entity\ParagraphsType $paragraphs_type
    *   The paragraphs type entity.

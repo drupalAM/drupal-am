@@ -2,15 +2,11 @@ name: 'Font Awesome'
 type: module
 description: 'Iconic font designed for use with Twitter Bootstrap.'
 
-dependencies:
-  - 'libraries'
-
 # core: 8.x
-# project: fontawesome
-# datestamp: '1445924954'
+configure: fontawesome.admin_settings
 
-# Information added by Drupal.org packaging script on 2017-02-13
-version: '8.x-1.2'
+# Information added by Drupal.org packaging script on 2018-04-17
+version: '8.x-1.4'
 core: '8.x'
 project: 'fontawesome'
-datestamp: 1486972094
+datestamp: 1523983089

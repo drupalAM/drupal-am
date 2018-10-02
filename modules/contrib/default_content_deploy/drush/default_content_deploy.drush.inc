@@ -60,12 +60,10 @@ function default_content_deploy_drush_command() {
     'aliases' => ['dcdes'],
     'description' => dt('Exports a site.'),
     'options' => [
-      'add_entity_type' => dt('The entity types to add.'),
       'skip_entity_type' => dt('The entity types to skip.'),
     ],
     'examples' => [
       'drush dcdes' => 'Export complete website.',
-      'drush dcdes --add_entity_type=collection,my_custom_entity' => 'Export complete website plus custom entities collection and my_custom_entity.',
       'drush dcdes --skip_entity_type=node,user' => 'Export complete website but skip nodes and users.',
     ],
   ] + $base;
@@ -80,7 +78,7 @@ function default_content_deploy_drush_command() {
 
   $items['default-content-deploy-import'] = [
     'aliases' => ['dcdi'],
-    'description' => dt('Import all the content defined in a module.'),
+    'description' => dt('Import all the content defined in a content directory.'),
     'options' => [
       'force-update' => dt('Content with different UUID but same ID will be updated (UUID will be replaced).'),
     ],
@@ -167,16 +165,14 @@ function drush_default_content_deploy_export_with_references($entity_type_id) {
  * Add entitytype and Skip entity type can be delimited by comma.
  *
  * @example drush dcdes node
- * @example drush dcdes node --add_entity_type=collection,feedsource
  * @example drush dcdes node --skip_entity_type=node
  */
 function drush_default_content_deploy_export_site() {
-  $add_entity_type = drush_get_option('add_entity_type', '');
   $skip_entity_type = drush_get_option('skip_entity_type', '');
 
   /** @var \Drupal\default_content_deploy\Exporter $exporter */
   $exporter = \Drupal::service('default_content_deploy.exporter');
-  $count = $exporter->exportSite($add_entity_type, $skip_entity_type);
+  $count = $exporter->exportSite($skip_entity_type);
 
   foreach ($count as $entity => $value) {
     drush_log(dt('Exported @count entities of type @entity.', [
@@ -222,6 +218,7 @@ function drush_default_content_deploy_import() {
   $entities_todo = $result_info['created'] + $result_info['updated'] + $result_info['file_created'];
   if ($entities_todo == 0) {
     drush_print(dt('Nothing to do.'));
+    return FALSE;
   }
   if ($entities_todo == 0 || !drush_confirm(dt('Do you really want to continue?'))) {
     return drush_user_abort();
@@ -258,7 +255,7 @@ function drush_default_content_deploy_import_aliases() {
 }
 
 /**
- * Get UUID info
+ * Get UUID info.
  *
  * Get System site, Admin and Anonymous UUIDs and Admin's name
  * and display current values.

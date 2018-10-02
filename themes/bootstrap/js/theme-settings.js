@@ -62,7 +62,12 @@
       $context.find('#edit-javascript').drupalSetSummary(function () {
         var summary = [];
         if ($context.find('input[name="modal_enabled"]').is(':checked')) {
-          summary.push(Drupal.t('Modals'));
+          if ($context.find('input[name="modal_jquery_ui_bridge"]').is(':checked')) {
+            summary.push(Drupal.t('Modals (Bridged)'));
+          }
+          else {
+            summary.push(Drupal.t('Modals'));
+          }
         }
         if ($context.find('input[name="popover_enabled"]').is(':checked')) {
           summary.push(Drupal.t('Popovers'));
@@ -111,7 +116,7 @@
         // Unfortunately getbootstrap.com does not have HTTPS enabled, so the
         // preview image cannot be protocol relative.
         // @todo Make protocol relative if/when Bootstrap enables HTTPS.
-        $preview.append('<a id="bootstrap-theme-preview-bootstrap_theme" class="bootswatch-preview element-invisible" href="http://getbootstrap.com/examples/theme/" target="_blank"><img class="img-responsive" src="http://getbootstrap.com/examples/screenshots/theme.jpg" alt="' + Drupal.t('Preview of the Bootstrap theme') + '" /></a>');
+        $preview.append('<a id="bootstrap-theme-preview-bootstrap_theme" class="bootswatch-preview element-invisible" href="https://getbootstrap.com/docs/3.3/examples/theme/" target="_blank"><img class="img-responsive" src="//getbootstrap.com/docs/3.3/examples/screenshots/theme.jpg" alt="' + Drupal.t('Preview of the Bootstrap theme') + '" /></a>');
 
         // Retrieve the Bootswatch theme preview images.
         // @todo This should be moved into PHP.

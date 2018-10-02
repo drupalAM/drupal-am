@@ -9,6 +9,8 @@ use Drupal\Core\Entity\EntityReferenceSelection\SelectionPluginManagerInterface;
 use Drupal\Core\Entity\EntityTypeRepositoryInterface;
 use Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Form\SubformState;
+use Drupal\entityqueue\EntityQueueInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -34,7 +36,7 @@ class EntityQueueForm extends BundleEntityFormBase {
   /**
    * The entity queue handler plugin manager.
    *
-   * @var \Drupal\Component\Plugin\PluginManagerInterface
+   * @var \Drupal\entityqueue\EntityQueueHandlerManager
    */
   protected $entityQueueHandlerManager;
 
@@ -67,9 +69,9 @@ class EntityQueueForm extends BundleEntityFormBase {
   /**
    * Constructs a EntityQueueForm.
    *
-   * @param \Drupal\Core\Entity\EntityTypeRepositoryInterface
+   * @param \Drupal\Core\Entity\EntityTypeRepositoryInterface $entity_type_repository
    *   The entity type repository.
-   * @param \Drupal\Component\Plugin\PluginManagerInterface
+   * @param \Drupal\Component\Plugin\PluginManagerInterface $entity_queue_handler_manager
    *   The entity queue handler plugin manager.
    * @param \Psr\Log\LoggerInterface $logger
    *   A logger instance.
@@ -110,15 +112,42 @@ class EntityQueueForm extends BundleEntityFormBase {
       '#disabled' => !$queue->isNew(),
     ];
 
-    $handlers = $this->entityQueueHandlerManager->getAllEntityQueueHandlers();
+    $handler_plugin = $this->getHandlerPlugin($this->getEntity(), $form_state);
     $form['handler'] = [
       '#type' => 'radios',
       '#title' => $this->t('Type'),
-      '#options' => $handlers,
-      '#default_value' => $queue->getHandler(),
+      '#options' => $this->entityQueueHandlerManager->getAllEntityQueueHandlers(),
+      '#default_value' => $handler_plugin->getPluginId(),
       '#required' => TRUE,
       '#disabled' => !$queue->isNew(),
+      '#ajax' => [
+        'callback' => '::settingsAjax',
+        'wrapper' => 'entityqueue-handler-settings-wrapper',
+        'trigger_as' => ['name' => 'handler_change'],
+      ],
     ];
+    $form['handler_change'] = [
+      '#type' => 'submit',
+      '#name' => 'handler_change',
+      '#value' => $this->t('Change type'),
+      '#limit_validation_errors' => [],
+      '#submit' => [[get_called_class(), 'settingsAjaxSubmit']],
+      '#attributes' => ['class' => ['js-hide']],
+      '#ajax' => [
+        'callback' => '::settingsAjax',
+        'wrapper' => 'entityqueue-handler-settings-wrapper',
+      ],
+    ];
+
+    $form['handler_settings_wrapper'] = [
+      '#type' => 'container',
+      '#id' => 'entityqueue-handler-settings-wrapper',
+      '#tree' => TRUE,
+    ];
+
+    $form['handler_settings_wrapper']['handler_settings'] = [];
+    $subform_state = SubformState::createForSubform($form['handler_settings_wrapper']['handler_settings'], $form, $form_state);
+    $form['handler_settings_wrapper']['handler_settings'] = $handler_plugin->buildConfigurationForm($form['handler_settings_wrapper']['handler_settings'], $subform_state);
 
     $form['settings'] = [
       '#type' => 'vertical_tabs',
@@ -256,6 +285,47 @@ class EntityQueueForm extends BundleEntityFormBase {
   }
 
   /**
+   * Gets the handler plugin for the currently selected queue handler.
+   *
+   * @param \Drupal\entityqueue\EntityQueueInterface $entity
+   *   The current form entity.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   *
+   * @return \Drupal\entityqueue\EntityQueueHandlerInterface
+   *   The queue handler plugin.
+   */
+  protected function getHandlerPlugin(EntityQueueInterface $entity, FormStateInterface $form_state) {
+    if (!$handler_plugin = $form_state->get('handler_plugin')) {
+      $stored_handler_id = $entity->getHandler();
+      // Use selected handler if it exists, falling back to the stored handler.
+      $handler_id = $form_state->getValue('handler', $stored_handler_id);
+      // If the current handler is the stored handler, use the stored handler
+      // settings. Otherwise leave the settings empty.
+      $handler_configuration = $handler_id === $stored_handler_id ? $entity->getHandlerConfiguration() : [];
+
+      $handler_plugin = $this->entityQueueHandlerManager->createInstance($handler_id, $handler_configuration);
+      $form_state->set('handler_plugin', $handler_plugin);
+    }
+    return $handler_plugin;
+  }
+
+  /**
+   * Ajax callback for the queue settings form.
+   */
+  public static function settingsAjax($form, FormStateInterface $form_state) {
+    return $form['handler_settings_wrapper'];
+  }
+
+  /**
+   * Submit handler for the non-JS case.
+   */
+  public static function settingsAjaxSubmit($form, FormStateInterface $form_state) {
+    $form_state->set('handler_plugin', NULL);
+    $form_state->setRebuild();
+  }
+
+  /**
    * Form element validation handler; Invokes selection plugin's validation.
    *
    * @param array $form
@@ -285,12 +355,27 @@ class EntityQueueForm extends BundleEntityFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildEntity(array $form, FormStateInterface $form_state) {
-    $entity = parent::buildEntity($form, $form_state);
-    if ($handler = $entity->get('handler')) {
-      $entity->setHandler($handler);
-    }
-    return $entity;
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    parent::validateForm($form, $form_state);
+
+    $handler_plugin = $this->getHandlerPlugin($this->getEntity(), $form_state);
+    $subform_state = SubformState::createForSubform($form['handler_settings_wrapper']['handler_settings'], $form, $form_state);
+    $handler_plugin->validateConfigurationForm($form['handler_settings_wrapper']['handler_settings'], $subform_state);
+  }
+
+  /**
+   * Overrides \Drupal\field_ui\Form\EntityDisplayFormBase::submitForm().
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    parent::submitForm($form, $form_state);
+
+    /** @var \Drupal\entityqueue\EntityQueueInterface $queue */
+    $queue = $this->getEntity();
+    $handler_plugin = $this->getHandlerPlugin($queue, $form_state);
+    $subform_state = SubformState::createForSubform($form['handler_settings_wrapper']['handler_settings'], $form, $form_state);
+    $handler_plugin->submitConfigurationForm($form['handler_settings_wrapper']['handler_settings'], $subform_state);
+
+    $queue->setHandlerPlugin($handler_plugin);
   }
 
   /**
@@ -307,7 +392,7 @@ class EntityQueueForm extends BundleEntityFormBase {
     }
     else {
       drupal_set_message($this->t('The entity queue %label has been added.', ['%label' => $queue->label()]));
-      $this->logger->notice('The entity queue %label has been added.', ['%label' => $queue->label(), 'link' =>  $edit_link]);
+      $this->logger->notice('The entity queue %label has been added.', ['%label' => $queue->label(), 'link' => $edit_link]);
     }
 
     $form_state->setRedirectUrl($queue->toUrl('collection'));

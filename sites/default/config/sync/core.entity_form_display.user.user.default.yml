@@ -9,7 +9,9 @@ dependencies:
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - field_layout
     - image
+    - layout_discovery
     - text
     - user
 third_party_settings:

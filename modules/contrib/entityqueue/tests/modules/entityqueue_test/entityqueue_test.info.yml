@@ -1,0 +1,15 @@
+name: Entityqueue test
+type: module
+description: 'Test content for entityqueue module.'
+package: Testing
+# core: 8.x
+dependencies:
+ - drupal:node
+ - drupal:views
+ - entityqueue:entityqueue
+
+# Information added by Drupal.org packaging script on 2018-09-05
+version: '8.x-1.0-alpha8'
+core: '8.x'
+project: 'entityqueue'
+datestamp: 1536140287

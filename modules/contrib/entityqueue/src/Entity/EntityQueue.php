@@ -22,7 +22,8 @@ use Drupal\entityqueue\EntityQueueInterface;
  *       "add" = "Drupal\entityqueue\Form\EntityQueueForm",
  *       "edit" = "Drupal\entityqueue\Form\EntityQueueForm",
  *       "delete" = "Drupal\Core\Entity\EntityDeleteForm"
- *     }
+ *     },
+ *     "access" = "Drupal\entityqueue\EntityQueueAccessControlHandler",
  *   },
  *   admin_permission = "administer entityqueue",
  *   config_prefix = "entity_queue",
@@ -174,9 +175,16 @@ class EntityQueue extends ConfigEntityBundleBase implements EntityQueueInterface
   /**
    * {@inheritdoc}
    */
-  public function setHandler($handler) {
-    $this->handler = $handler;
-    $this->getPluginCollection()->addInstanceID($handler, []);
+  public function getHandlerConfiguration() {
+    return $this->handler_configuration;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setHandler($handler_id) {
+    $this->handler = $handler_id;
+    $this->getPluginCollection()->addInstanceID($handler_id, []);
 
     return $this;
   }
@@ -186,6 +194,15 @@ class EntityQueue extends ConfigEntityBundleBase implements EntityQueueInterface
    */
   public function getHandlerPlugin() {
     return $this->getPluginCollection()->get($this->handler);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setHandlerPlugin($handler) {
+    $this->getPluginCollection()->set($handler->getPluginId(), $handler);
+
+    return $this;
   }
 
   /**

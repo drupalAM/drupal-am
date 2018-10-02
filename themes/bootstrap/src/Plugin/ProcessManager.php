@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\bootstrap\Plugin\ProcessManager.
- */
 
 namespace Drupal\bootstrap\Plugin;
 
@@ -92,7 +88,8 @@ class ProcessManager extends PluginManager {
     $ajax = $element->getProperty('ajax');
 
     // Show throbber AJAX requests in an input button group.
-    if (!$element->isType('hidden') && (!isset($ajax['progress']['type']) || $ajax['progress']['type'] === 'throbber')) {
+    $ignore_types = ['checkbox', 'checkboxes', 'hidden', 'radio', 'radios'];
+    if ((!isset($ajax['progress']['type']) || $ajax['progress']['type'] === 'throbber') && !$element->isType($ignore_types)) {
       // Use an icon for autocomplete "throbber".
       $icon = Bootstrap::glyphicon('refresh');
       $element->appendProperty('field_suffix', Element::create($icon)->addClass(['ajax-progress', 'ajax-progress-throbber']));
@@ -124,7 +121,7 @@ class ProcessManager extends PluginManager {
       $parent = Element::create(NestedArray::getValue($complete_form, $array_parents), $form_state);
 
       // Find the closest button.
-      if ($button = self::findButton($parent)) {
+      if ($button = &$parent->findButton()) {
         // Since this button is technically being "moved", it needs to be
         // rendered now, so it doesn't get printed twice (in the original spot).
         $element->appendProperty('field_suffix', $button->setIcon()->render());
@@ -158,20 +155,15 @@ class ProcessManager extends PluginManager {
    * @param \Drupal\bootstrap\Utility\Element $element
    *   The element to iterate over.
    *
-   * @return \Drupal\bootstrap\Utility\Element|FALSE
+   * @return \Drupal\bootstrap\Utility\Element|false
    *   The first button element or FALSE if no button could be found.
+   *
+   * @deprecated Will be removed in a future release.
+   *   Use \Drupal\bootstrap\Utility\Element::findButton() directly.
    */
   protected static function &findButton(Element $element) {
-    $button = FALSE;
-    foreach ($element->children() as $child) {
-      if ($child->isButton()) {
-        $button = $child;
-      }
-      if ($result = &self::findButton($child)) {
-        $button = $result;
-      }
-    }
-    return $button;
+    Bootstrap::deprecated();
+    return $element->findButton();
   }
 
 }

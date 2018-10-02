@@ -5,6 +5,7 @@ namespace Drupal\paragraphs\Form;
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\SubformState;
+use Drupal\Core\Messenger\Messenger;
 use Drupal\field_ui\FieldUI;
 use Drupal\paragraphs\ParagraphsBehaviorManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -29,13 +30,23 @@ class ParagraphsTypeForm extends EntityForm {
   protected $entity;
 
   /**
+   * Provides messenger service.
+   *
+   * @var \Drupal\Core\Messenger\Messenger
+   */
+  protected $messenger;
+
+  /**
    * GeneralSettingsForm constructor.
    *
    * @param \Drupal\paragraphs\ParagraphsBehaviorManager $paragraphs_behavior_manager
    *   The paragraphs type feature manager service.
+   * @param \Drupal\Core\Messenger\Messenger $messenger
+   *   The messenger service.
    */
-  public function __construct(ParagraphsBehaviorManager $paragraphs_behavior_manager) {
+  public function __construct(ParagraphsBehaviorManager $paragraphs_behavior_manager, Messenger $messenger) {
     $this->paragraphsBehaviorManager = $paragraphs_behavior_manager;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -43,7 +54,8 @@ class ParagraphsTypeForm extends EntityForm {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('plugin.manager.paragraphs.behavior')
+      $container->get('plugin.manager.paragraphs.behavior'),
+      $container->get('messenger')
     );
   }
 
@@ -76,8 +88,29 @@ class ParagraphsTypeForm extends EntityForm {
       '#machine_name' => array(
         'exists' => 'paragraphs_type_load',
       ),
+      '#maxlength' => 32,
       '#disabled' => !$paragraphs_type->isNew(),
     );
+
+    $form['icon_file'] = [
+      '#title' => $this->t('Paragraph type icon'),
+      '#type' => 'managed_file',
+      '#upload_location' => 'public://paragraphs_type_icon/',
+      '#upload_validators' => [
+        'file_validate_extensions' => ['png jpg svg'],
+      ],
+    ];
+
+    if ($file = $this->entity->getIconFile()) {
+      $form['icon_file']['#default_value'] = ['target_id' => $file->id()];
+    }
+
+    $form['description'] = [
+      '#title' => t('Description'),
+      '#type' => 'textarea',
+      '#default_value' => $paragraphs_type->getDescription(),
+      '#description' => t('This text will be displayed on the <em>Add new paragraph</em> page.'),
+    ];
 
     // Loop over the plugins that can be applied to this paragraph type.
     if ($behavior_plugin_definitions = $this->paragraphsBehaviorManager->getApplicableDefinitions($paragraphs_type)) {
@@ -93,6 +126,10 @@ class ParagraphsTypeForm extends EntityForm {
         '#open' => TRUE
       ];
       $config = $paragraphs_type->get('behavior_plugins');
+      // Alphabetically sort plugins by plugin label.
+      uasort($behavior_plugin_definitions, function ($a, $b) {
+        return strcmp($a['label'], $b['label']);
+      });
       foreach ($behavior_plugin_definitions as $id => $behavior_plugin_definition) {
         $description = $behavior_plugin_definition['description'];
         $form['behavior_plugins'][$id]['enabled'] = [
@@ -129,6 +166,15 @@ class ParagraphsTypeForm extends EntityForm {
     parent::validateForm($form, $form_state);
 
     $paragraphs_type = $this->entity;
+
+    $icon_file = $form_state->getValue(['icon_file', '0']);
+    // Set the file UUID to the paragraph configuration.
+    if (!empty($icon_file) && $file = $this->entityTypeManager->getStorage('file')->load($icon_file)) {
+      $paragraphs_type->set('icon_uuid', $file->uuid());
+    }
+    else {
+      $paragraphs_type->set('icon_uuid', NULL);
+    }
 
     if ($behavior_plugin_definitions = $this->paragraphsBehaviorManager->getApplicableDefinitions($paragraphs_type)) {
       foreach ($behavior_plugin_definitions as $id => $behavior_plugin_definition) {
@@ -169,7 +215,7 @@ class ParagraphsTypeForm extends EntityForm {
     }
 
     $status = $paragraphs_type->save();
-    drupal_set_message($this->t('Saved the %label Paragraphs type.', array(
+    $this->messenger->addMessage($this->t('Saved the %label Paragraphs type.', array(
       '%label' => $paragraphs_type->label(),
     )));
     if (($status == SAVED_NEW && \Drupal::moduleHandler()->moduleExists('field_ui'))

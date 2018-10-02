@@ -6,11 +6,11 @@ use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Entity\ContentEntityForm;
-use Drupal\Core\Entity\EntityChangedInterface;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityManagerInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
+use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\ElementInfoManagerInterface;
 use Drupal\inline_entity_form\Plugin\Field\FieldWidget\InlineEntityFormBase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -28,6 +28,13 @@ class EntitySubqueueForm extends ContentEntityForm {
   protected $entity;
 
   /**
+   * The element info manager.
+   *
+   * @var \Drupal\Core\Render\ElementInfoManagerInterface
+   */
+  protected $elementInfo;
+
+  /**
    * A logger instance.
    *
    * @var \Psr\Log\LoggerInterface
@@ -40,6 +47,9 @@ class EntitySubqueueForm extends ContentEntityForm {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('entity.manager'),
+      $container->get('entity_type.bundle.info'),
+      $container->get('datetime.time'),
+      $container->get('element_info'),
       $container->get('logger.factory')->get('entityqueue')
     );
   }
@@ -47,12 +57,21 @@ class EntitySubqueueForm extends ContentEntityForm {
   /**
    * Constructs a EntitySubqueueForm.
    *
+   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
+   *   The entity manager.
+   * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
+   *   The entity type bundle service.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   The time service.
+   * @param \Drupal\Core\Render\ElementInfoManagerInterface $element_info
+   *   The element info manager.
    * @param \Psr\Log\LoggerInterface $logger
    *   A logger instance.
    */
-  public function __construct(EntityManagerInterface $entity_manager, LoggerInterface $logger) {
-    parent::__construct($entity_manager);
+  public function __construct(EntityManagerInterface $entity_manager, EntityTypeBundleInfoInterface $entity_type_bundle_info, TimeInterface $time, ElementInfoManagerInterface $element_info, LoggerInterface $logger) {
+    parent::__construct($entity_manager, $entity_type_bundle_info, $time);
 
+    $this->elementInfo = $element_info;
     $this->logger = $logger;
   }
 
@@ -87,20 +106,44 @@ class EntitySubqueueForm extends ContentEntityForm {
     $form['#prefix'] = '<div id="' . $wrapper_id . '">';
     $form['#suffix'] = '</div>';
 
-    // @todo Consider creating a 'Machine name' field widget.
+    // @todo Use the 'Machine name' field widget when
+    //   https://www.drupal.org/node/2685749 is committed.
+    $element_info = $this->elementInfo->getInfo('machine_name');
     $form['name'] = [
       '#type' => 'machine_name',
       '#default_value' => $this->entity->id(),
-      '#machine_name' => array(
+      '#source_field' => 'title',
+      '#process' => array_merge([[get_class($this), 'processMachineNameSource']], $element_info['#process']),
+      '#machine_name' => [
         'exists' => '\Drupal\entityqueue\Entity\EntitySubqueue::load',
-        'source' => ['title', 'widget', 0, 'value'],
-      ),
+      ],
       '#disabled' => !$this->entity->isNew(),
       '#weight' => -5,
       '#access' => !$this->entity->getQueue()->getHandlerPlugin()->hasAutomatedSubqueues(),
     ];
 
     return $form;
+  }
+
+  /**
+   * Form API callback: Sets the 'source' property of a machine_name element.
+   *
+   * This method is assigned as a #process callback in formElement() method.
+   */
+  public static function processMachineNameSource($element, FormStateInterface $form_state, $form) {
+    $source_field_state = WidgetBase::getWidgetState($form['#parents'], $element['#source_field'], $form_state);
+
+    // Hide the field widget if the source field is not configured properly or
+    // if it doesn't exist in the form.
+    if (empty($element['#source_field']) || empty($source_field_state['array_parents'])) {
+      $element['#access'] = FALSE;
+    }
+    else {
+      $source_field_element = NestedArray::getValue($form_state->getCompleteForm(), $source_field_state['array_parents']);
+      $element['#machine_name']['source'] = $source_field_element[0]['value']['#array_parents'];
+    }
+
+    return $element;
   }
 
   /**
@@ -259,7 +302,7 @@ class EntitySubqueueForm extends ContentEntityForm {
     }
     else {
       drupal_set_message($this->t('The entity subqueue %label has been added.', ['%label' => $subqueue->label()]));
-      $this->logger->notice('The entity subqueue %label has been added.', ['%label' => $subqueue->label(), 'link' =>  $edit_link]);
+      $this->logger->notice('The entity subqueue %label has been added.', ['%label' => $subqueue->label(), 'link' => $edit_link]);
     }
 
     $queue = $subqueue->getQueue();
@@ -268,16 +311,6 @@ class EntitySubqueueForm extends ContentEntityForm {
     }
     else {
       $form_state->setRedirectUrl($queue->toUrl('collection'));
-    }
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function updateChangedTime(EntityInterface $entity) {
-    // @todo Remove this method when Drupal 8.2.x is no longer supported.
-    if ($entity->getEntityType()->isSubclassOf(EntityChangedInterface::class)) {
-      $entity->setChangedTime(REQUEST_TIME);
     }
   }
 

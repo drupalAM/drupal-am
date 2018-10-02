@@ -1,0 +1,3 @@
+entityqueue.entities:
+  class: \Drupal\Core\Menu\LocalTaskDefault
+  deriver: \Drupal\entityqueue\Plugin\Derivative\EntityqueueLocalTask

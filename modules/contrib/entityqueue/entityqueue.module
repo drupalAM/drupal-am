@@ -39,11 +39,6 @@ function entityqueue_views_pre_render(ViewExecutable $view) {
     return;
   }
 
-  // Proceed only if there is entityqueue sort criteria available.
-  if (!$sort_key = entityqueue_get_entityqueue_sort($view)) {
-    return;
-  }
-
   // Allow to disable the contextual links.
   if (!$view->display_handler->getOption('show_admin_links')) {
     return;
@@ -76,35 +71,14 @@ function entityqueue_views_pre_render(ViewExecutable $view) {
  * Change Entityqueue on views into offcanvas links if available.
  */
 function entityqueue_contextual_links_view_alter(&$element, $items) {
-  if (\Drupal::moduleHandler()->moduleExists('outside_in') && isset($element['#links']['entityentity-subqueueedit-form'])) {
+  if (\Drupal::moduleHandler()->moduleExists('settings_tray') && isset($element['#links']['entityentity-subqueueedit-form'])) {
     $element['#links']['entityentity-subqueueedit-form']['attributes'] = [
       'class' => ['use-ajax'],
       'data-dialog-type' => 'dialog',
-      'data-dialog-renderer' => 'offcanvas',
-      'data-outside-in-edit' => TRUE,
+      'data-dialog-renderer' => 'off_canvas',
+      'data-settings-tray-edit' => TRUE,
     ];
-
-    $element['#attached']['library'][] = 'outside_in/drupal.off_canvas';
   }
-}
-
-/**
- * Get the entityqueue position sort of a view if there is one and return its
- * ID. If there are multiple of these sorts the first is returned.
- *
- * @param $view
- *   The view object.
- *
- * @return
- *   The ID of the sort or FALSE if there isn't one.
- */
-function entityqueue_get_entityqueue_sort($view) {
-  foreach ($view->sort as $id => $sort) {
-    if ($sort->definition['id'] == 'entity_queue_position') {
-      return $id;
-    }
-  }
-  return FALSE;
 }
 
 /**
@@ -116,23 +90,20 @@ function entityqueue_entity_delete(EntityInterface $entity) {
   // Get all the entity queues referencing the targets entity type.
   $queues = EntityQueue::loadMultipleByTargetType($entity->getEntityTypeId());
   foreach ($queues as $queue) {
-    $entity_settings = $queue->getEntitySettings();
+    // Get all the subqueues which are referencing the deleted entity.
+    $query = \Drupal::entityQuery('entity_subqueue')
+      ->condition('queue', $queue->id())
+      ->condition('items', $entity->id());
+    $result = $query->execute();
+    $subqueues = EntitySubqueue::loadMultiple($result);
 
-    // Check if the queue's bundle also matches that of the target entity.
-    if (is_array($entity_settings['handler_settings']['target_bundles']) && in_array($entity->bundle(), $entity_settings['handler_settings']['target_bundles'])) {
-      // Get subqueues.
-      $query = \Drupal::entityQuery('entity_subqueue')->condition('queue', $queue->id());
-      $result = $query->execute();
-      $subqueues = EntitySubqueue::loadMultiple($result);
-
-      // Check if the entity is referenced in a subqueue.
-      foreach ($subqueues as $subqueue) {
-        $items = $subqueue->get('items')->getValue();
-        if (($item_key = array_search($entity->id(), array_column($items, 'target_id'))) !== FALSE) {
-          unset($items[$item_key]);
-          $subqueue->set('items', $items);
-          $subqueue->save();
-        }
+    // Check if the entity is referenced in a subqueue.
+    foreach ($subqueues as $subqueue) {
+      $items = $subqueue->get('items')->getValue();
+      if (($item_key = array_search($entity->id(), array_column($items, 'target_id'))) !== FALSE) {
+        unset($items[$item_key]);
+        $subqueue->set('items', $items);
+        $subqueue->save();
       }
     }
   }

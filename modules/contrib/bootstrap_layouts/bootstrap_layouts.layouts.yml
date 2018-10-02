@@ -1,6 +1,6 @@
 # One column.
 bs_1col:
-  label: '1 Column'
+  label: 'One column'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -12,9 +12,9 @@ bs_1col:
       classes:
         - col-sm-12
 
-# One column (stacked).
+# One column stacked.
 bs_1col_stacked:
-  label: '1 Column (Stacked)'
+  label: 'One column stacked'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -34,9 +34,9 @@ bs_1col_stacked:
       classes:
         - col-sm-12
 
-# Two columns.
+# Two column.
 bs_2col:
-  label: '2 Columns'
+  label: 'Two column'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -52,9 +52,9 @@ bs_2col:
       classes:
         - col-sm-6
 
-# Two columns (bricked).
+# Two column bricks.
 bs_2col_bricked:
-  label: '2 Columns (Bricked)'
+  label: 'Two column bricks'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -90,9 +90,9 @@ bs_2col_bricked:
       classes:
         - col-sm-12
 
-# Two columns (stacked).
+# Two column stacked.
 bs_2col_stacked:
-  label: '2 Columns (Stacked)'
+  label: 'Two column stacked'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -116,9 +116,9 @@ bs_2col_stacked:
       classes:
         - col-sm-12
 
-# Three columns.
+# Three column.
 bs_3col:
-  label: '3 Columns'
+  label: 'Three column'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -138,9 +138,9 @@ bs_3col:
       classes:
         - col-sm-4
 
-# Three columns (bricked).
+# Three column bricks.
 bs_3col_bricked:
-  label: '3 Columns (Bricked)'
+  label: 'Three column bricks'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -184,9 +184,9 @@ bs_3col_bricked:
       classes:
         - col-sm-12
 
-# Three columns (stacked).
+# Three column stacked.
 bs_3col_stacked:
-  label: '3 Columns (Stacked)'
+  label: 'Three column stacked'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -214,9 +214,9 @@ bs_3col_stacked:
       classes:
         - col-sm-12
 
-# Four columns.
+# Four column.
 bs_4col:
-  label: '4 Columns'
+  label: 'Four column'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -240,9 +240,9 @@ bs_4col:
       classes:
         - col-sm-3
 
-# Four columns (bricked).
+# Four column bricks.
 bs_4col_bricked:
-  label: '4 Columns (Bricked)'
+  label: 'Four column bricks'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial
@@ -294,9 +294,9 @@ bs_4col_bricked:
       classes:
         - col-sm-12
 
-# Four columns (stacked).
+# Four column stacked.
 bs_4col_stacked:
-  label: '4 Columns (Stacked)'
+  label: 'Four column stacked'
   category: 'Bootstrap'
   class: '\Drupal\bootstrap_layouts\Plugin\Layout\BootstrapLayoutsBase'
   type: partial

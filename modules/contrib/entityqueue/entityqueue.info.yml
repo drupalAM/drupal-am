@@ -5,8 +5,8 @@ package: Entityqueue
 # core: 8.x
 configure: entity.entity_queue.collection
 
-# Information added by Drupal.org packaging script on 2017-10-01
-version: '8.x-1.0-alpha7'
+# Information added by Drupal.org packaging script on 2018-09-05
+version: '8.x-1.0-alpha8'
 core: '8.x'
 project: 'entityqueue'
-datestamp: 1506839349
+datestamp: 1536140287

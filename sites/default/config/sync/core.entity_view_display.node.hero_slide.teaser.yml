@@ -38,6 +38,8 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_heroslide_external_link: true
   field_heroslide_image: true
