@@ -10,7 +10,6 @@ use Drupal\Core\Plugin\Discovery\ContainerDerivativeDiscoveryDecorator;
 use Drupal\Core\Plugin\Discovery\YamlDiscovery;
 use Drupal\Core\Plugin\Factory\ContainerFactory;
 
-
 /**
  * Manages discovery, instantiation, and tree building of menu link plugins.
  *
@@ -93,7 +92,6 @@ class MenuLinkManager implements MenuLinkManagerInterface {
    * @var \Drupal\Core\Extension\ModuleHandlerInterface
    */
   protected $moduleHandler;
-
 
   /**
    * Constructs a \Drupal\Core\Menu\MenuLinkManager object.

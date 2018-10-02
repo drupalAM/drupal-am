@@ -4,7 +4,6 @@ namespace Drupal\Tests\views\Functional;
 
 use Drupal\comment\CommentInterface;
 use Drupal\comment\Tests\CommentTestTrait;
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Url;
@@ -53,7 +52,7 @@ class DefaultViewsTest extends ViewTestBase {
     $vocabulary = Vocabulary::create([
       'name' => $this->randomMachineName(),
       'description' => $this->randomMachineName(),
-      'vid' => Unicode::strtolower($this->randomMachineName()),
+      'vid' => mb_strtolower($this->randomMachineName()),
       'langcode' => LanguageInterface::LANGCODE_NOT_SPECIFIED,
       'help' => '',
       'nodes' => ['page' => 'page'],
@@ -62,7 +61,7 @@ class DefaultViewsTest extends ViewTestBase {
     $vocabulary->save();
 
     // Create a field.
-    $field_name = Unicode::strtolower($this->randomMachineName());
+    $field_name = mb_strtolower($this->randomMachineName());
 
     $handler_settings = [
       'target_bundles' => [
@@ -97,7 +96,7 @@ class DefaultViewsTest extends ViewTestBase {
         'status' => CommentInterface::PUBLISHED,
         'entity_id' => $node->id(),
         'entity_type' => 'node',
-        'field_name' => 'comment'
+        'field_name' => 'comment',
       ];
       Comment::create($comment)->save();
 
@@ -174,16 +173,19 @@ class DefaultViewsTest extends ViewTestBase {
     // Create additional nodes compared to the one in the setup method.
     // Create two nodes in the same month, and one in each following month.
     $node = [
-      'created' => 280299600, // Sun, 19 Nov 1978 05:00:00 GMT
+      // Sun, 19 Nov 1978 05:00:00 GMT.
+      'created' => 280299600,
     ];
     $this->drupalCreateNode($node);
     $this->drupalCreateNode($node);
     $node = [
-      'created' => 282891600, // Tue, 19 Dec 1978 05:00:00 GMT
+      // Tue, 19 Dec 1978 05:00:00 GMT.
+      'created' => 282891600,
     ];
     $this->drupalCreateNode($node);
     $node = [
-      'created' => 285570000, // Fri, 19 Jan 1979 05:00:00 GMT
+      // Fri, 19 Jan 1979 05:00:00 GMT.
+      'created' => 285570000,
     ];
     $this->drupalCreateNode($node);
 

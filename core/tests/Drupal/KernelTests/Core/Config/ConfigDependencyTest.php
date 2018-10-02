@@ -50,9 +50,9 @@ class ConfigDependencyTest extends EntityKernelTestBase {
         'id' => 'entity1',
         'dependencies' => [
           'enforced' => [
-            'module' => ['node']
-          ]
-        ]
+            'module' => ['node'],
+          ],
+        ],
       ]
     );
     $entity1->save();
@@ -200,7 +200,7 @@ class ConfigDependencyTest extends EntityKernelTestBase {
         'id' => 'entity1',
         'dependencies' => [
           'enforced' => [
-            'module' => ['node', 'config_test']
+            'module' => ['node', 'config_test'],
           ],
         ],
       ]
@@ -235,9 +235,9 @@ class ConfigDependencyTest extends EntityKernelTestBase {
     // Ensure that alphabetical order has no influence on dependency fixing and
     // removal.
     return [
-      [['a', 'b', 'c', 'd']],
-      [['d', 'c', 'b', 'a']],
-      [['c', 'd', 'a', 'b']],
+      [['a', 'b', 'c', 'd', 'e']],
+      [['e', 'd', 'c', 'b', 'a']],
+      [['e', 'c', 'd', 'a', 'b']],
     ];
   }
 
@@ -264,7 +264,7 @@ class ConfigDependencyTest extends EntityKernelTestBase {
         'id' => 'entity_' . $entity_id_suffixes[0],
         'dependencies' => [
           'enforced' => [
-            'module' => ['node', 'config_test']
+            'module' => ['node', 'config_test'],
           ],
         ],
       ]
@@ -309,12 +309,31 @@ class ConfigDependencyTest extends EntityKernelTestBase {
         'dependencies' => [
           'enforced' => [
             'config' => [$entity_1->getConfigDependencyName()],
-            'module' => ['node', 'config_test']
+            'module' => ['node', 'config_test'],
           ],
         ],
       ]
     );
     $entity_4->save();
+
+    // Entity 5 will be fixed because it is dependent on entity 3, which is
+    // unchanged, and entity 1 which will be fixed because
+    // \Drupal\config_test\Entity::onDependencyRemoval() will remove the
+    // dependency.
+    $entity_5 = $storage->create(
+      [
+        'id' => 'entity_' . $entity_id_suffixes[4],
+        'dependencies' => [
+          'enforced' => [
+            'config' => [
+              $entity_1->getConfigDependencyName(),
+              $entity_3->getConfigDependencyName(),
+            ],
+          ],
+        ],
+      ]
+    );
+    $entity_5->save();
 
     // Set a more complicated test where dependencies will be fixed.
     \Drupal::state()->set('config_test.fix_dependencies', [$entity_1->getConfigDependencyName()]);
@@ -323,14 +342,22 @@ class ConfigDependencyTest extends EntityKernelTestBase {
     // Do a dry run using
     // \Drupal\Core\Config\ConfigManager::getConfigEntitiesToChangeOnDependencyRemoval().
     $config_entities = $config_manager->getConfigEntitiesToChangeOnDependencyRemoval('module', ['node']);
+
+    // Assert that \Drupal\config_test\Entity\ConfigTest::onDependencyRemoval()
+    // is called as expected and with the correct dependencies.
+    $called = \Drupal::state()->get('config_test.on_dependency_removal_called', []);
+    $this->assertArrayNotHasKey($entity_3->id(), $called, 'ConfigEntityInterface::onDependencyRemoval() is not called for entity 3.');
+    $this->assertSame([$entity_1->id(), $entity_4->id(), $entity_2->id(), $entity_5->id()], array_keys($called), 'The most dependent entites have ConfigEntityInterface::onDependencyRemoval() called first.');
+    $this->assertSame(['config' => [], 'content' => [], 'module' => ['node'], 'theme' => []], $called[$entity_1->id()]);
+    $this->assertSame(['config' => [$entity_1->getConfigDependencyName()], 'content' => [], 'module' => [], 'theme' => []], $called[$entity_2->id()]);
+    $this->assertSame(['config' => [$entity_1->getConfigDependencyName()], 'content' => [], 'module' => ['node'], 'theme' => []], $called[$entity_4->id()]);
+    $this->assertSame(['config' => [$entity_1->getConfigDependencyName()], 'content' => [], 'module' => [], 'theme' => []], $called[$entity_5->id()]);
+
     $this->assertEqual($entity_1->uuid(), $config_entities['delete'][1]->uuid(), 'Entity 1 will be deleted.');
-    $this->assertEqual($entity_2->uuid(), reset($config_entities['update'])->uuid(), 'Entity 2 will be updated.');
+    $this->assertEqual($entity_2->uuid(), $config_entities['update'][0]->uuid(), 'Entity 2 will be updated.');
     $this->assertEqual($entity_3->uuid(), reset($config_entities['unchanged'])->uuid(), 'Entity 3 is not changed.');
     $this->assertEqual($entity_4->uuid(), $config_entities['delete'][0]->uuid(), 'Entity 4 will be deleted.');
-
-    $called = \Drupal::state()->get('config_test.on_dependency_removal_called', []);
-    $this->assertFalse(in_array($entity_3->id(), $called), 'ConfigEntityInterface::onDependencyRemoval() is not called for entity 3.');
-    $this->assertSame([$entity_1->id(), $entity_4->id(), $entity_2->id()], $called, 'The most dependent entites have ConfigEntityInterface::onDependencyRemoval() called first.');
+    $this->assertEqual($entity_5->uuid(), $config_entities['update'][1]->uuid(), 'Entity 5 is updated.');
 
     // Perform a module rebuild so we can know where the node module is located
     // and uninstall it.
@@ -443,8 +470,11 @@ class ConfigDependencyTest extends EntityKernelTestBase {
     $this->assertSame($expected, $config_entity_ids);
 
     $called = \Drupal::state()->get('config_test.on_dependency_removal_called', []);
-    $this->assertFalse(in_array($entity_3->id(), $called), 'ConfigEntityInterface::onDependencyRemoval() is not called for entity 3.');
-    $this->assertSame([$entity_1->id(), $entity_4->id(), $entity_2->id()], $called, 'The most dependent entities have ConfigEntityInterface::onDependencyRemoval() called first.');
+    $this->assertArrayNotHasKey($entity_3->id(), $called, 'ConfigEntityInterface::onDependencyRemoval() is not called for entity 3.');
+    $this->assertSame([$entity_1->id(), $entity_4->id(), $entity_2->id()], array_keys($called), 'The most dependent entities have ConfigEntityInterface::onDependencyRemoval() called first.');
+    $this->assertSame(['config' => [], 'content' => [], 'module' => ['node'], 'theme' => []], $called[$entity_1->id()]);
+    $this->assertSame(['config' => [], 'content' => [], 'module' => ['node'], 'theme' => []], $called[$entity_2->id()]);
+    $this->assertSame(['config' => [], 'content' => [], 'module' => ['node'], 'theme' => []], $called[$entity_4->id()]);
 
     // Perform a module rebuild so we can know where the node module is located
     // and uninstall it.
@@ -478,7 +508,7 @@ class ConfigDependencyTest extends EntityKernelTestBase {
     // Test dependencies between configuration entities.
     $entity1 = $storage->create(
       [
-        'id' => 'entity1'
+        'id' => 'entity1',
       ]
     );
     $entity1->save();
@@ -591,7 +621,7 @@ class ConfigDependencyTest extends EntityKernelTestBase {
         'id' => 'entity1',
         'dependencies' => [
           'enforced' => [
-            'content' => [$content_entity->getConfigDependencyName()]
+            'content' => [$content_entity->getConfigDependencyName()],
           ],
         ],
       ]
@@ -602,7 +632,7 @@ class ConfigDependencyTest extends EntityKernelTestBase {
         'id' => 'entity2',
         'dependencies' => [
           'enforced' => [
-            'config' => [$entity1->getConfigDependencyName()]
+            'config' => [$entity1->getConfigDependencyName()],
           ],
         ],
       ]

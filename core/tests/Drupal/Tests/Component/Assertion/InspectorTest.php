@@ -157,19 +157,19 @@ class InspectorTest extends TestCase {
       'strchr',
       [$this, 'callMe'],
       [__CLASS__, 'callMeStatic'],
-      function() {
+      function () {
         return TRUE;
-      }
+      },
     ]));
 
     $this->assertFalse(Inspector::assertAllCallable([
       'strchr',
       [$this, 'callMe'],
       [__CLASS__, 'callMeStatic'],
-      function() {
+      function () {
         return TRUE;
       },
-      "I'm not callable"
+      "I'm not callable",
     ]));
   }
 
@@ -256,6 +256,7 @@ class InspectorTest extends TestCase {
  * Quick class for testing for objects with __toString.
  */
 class StringObject {
+
   /**
    * {@inheritdoc}
    */

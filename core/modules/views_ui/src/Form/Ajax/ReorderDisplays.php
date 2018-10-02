@@ -2,12 +2,14 @@
 
 namespace Drupal\views_ui\Form\Ajax;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
 /**
  * Displays the display reorder form.
+ *
+ * @internal
  */
 class ReorderDisplays extends ViewsFormBase {
 
@@ -42,7 +44,7 @@ class ReorderDisplays extends ViewsFormBase {
     ]);
     $form['view'] = [
       '#type' => 'value',
-      '#value' => $view
+      '#value' => $view,
     ];
 
     $displays = $view->get('display');
@@ -66,7 +68,7 @@ class ReorderDisplays extends ViewsFormBase {
           'action' => 'order',
           'relationship' => 'sibling',
           'group' => 'weight',
-        ]
+        ],
       ],
       '#tree' => TRUE,
       '#prefix' => '<div class="scroll" data-drupal-views-scroll>',
@@ -115,7 +117,7 @@ class ReorderDisplays extends ViewsFormBase {
         ],
         'link' => [
           '#type' => 'link',
-          '#title' => SafeMarkup::format('<span>@text</span>', ['@text' => $this->t('Remove')]),
+          '#title' => new FormattableMarkup('<span>@text</span>', ['@text' => $this->t('Remove')]),
           '#url' => Url::fromRoute('<none>'),
           '#attributes' => [
             'id' => 'display-remove-link-' . $id,

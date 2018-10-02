@@ -131,7 +131,6 @@ class ContentEntityCloneTest extends EntityKernelTestBase {
     }
     $this->assertTrue($different_references, 'The entity object and the cloned entity object reference different field item list objects.');
 
-
     // Reload the entity, initialize one translation, clone it and check that
     // both entity objects reference different field instances.
     $entity = $this->reloadEntity($entity);
@@ -298,7 +297,7 @@ class ContentEntityCloneTest extends EntityKernelTestBase {
     // Retrieve the entity properties.
     $reflection = new \ReflectionClass($entity);
     $properties = $reflection->getProperties(~\ReflectionProperty::IS_STATIC);
-    $translation_unique_properties = ['activeLangcode', 'translationInitialize', 'fieldDefinitions', 'languages', 'langcodeKey', 'defaultLangcode', 'defaultLangcodeKey', 'validated', 'validationRequired', 'entityTypeId', 'typedData', 'cacheContexts', 'cacheTags', 'cacheMaxAge', '_serviceIds'];
+    $translation_unique_properties = ['activeLangcode', 'translationInitialize', 'fieldDefinitions', 'languages', 'langcodeKey', 'defaultLangcode', 'defaultLangcodeKey', 'revisionTranslationAffectedKey', 'validated', 'validationRequired', 'entityTypeId', 'typedData', 'cacheContexts', 'cacheTags', 'cacheMaxAge', '_serviceIds', '_entityStorages'];
 
     foreach ($properties as $property) {
       // Modify each entity property on the clone and assert that the change is
@@ -307,9 +306,17 @@ class ContentEntityCloneTest extends EntityKernelTestBase {
       $property->setValue($entity, 'default-value');
       $property->setValue($translation, 'default-value');
       $property->setValue($clone, 'test-entity-cloning');
-      $this->assertEquals('default-value', $property->getValue($entity), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
-      $this->assertEquals('default-value', $property->getValue($translation), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
-      $this->assertEquals('test-entity-cloning', $property->getValue($clone), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
+      // Static properties remain the same across all instances of the class.
+      if ($property->isStatic()) {
+        $this->assertEquals('test-entity-cloning', $property->getValue($entity), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
+        $this->assertEquals('test-entity-cloning', $property->getValue($translation), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
+        $this->assertEquals('test-entity-cloning', $property->getValue($clone), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
+      }
+      else {
+        $this->assertEquals('default-value', $property->getValue($entity), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
+        $this->assertEquals('default-value', $property->getValue($translation), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
+        $this->assertEquals('test-entity-cloning', $property->getValue($clone), (string) new FormattableMarkup('Entity property %property_name is not cloned properly.', ['%property_name' => $property->getName()]));
+      }
 
       // Modify each entity property on the translation entity object and assert
       // that the change is propagated to the default translation entity object

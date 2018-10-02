@@ -11,6 +11,7 @@ use Drupal\Core\Database\IntegrityConstraintViolationException;
  * @group Database
  */
 class InvalidDataTest extends DatabaseTestBase {
+
   /**
    * Tests aborting of traditional SQL database systems with invalid data.
    */
@@ -24,7 +25,8 @@ class InvalidDataTest extends DatabaseTestBase {
           'age' => 63,
           'job' => 'Singer',
         ])->values([
-          'name' => 'John', // <-- Duplicate value on unique field.
+          // Duplicate value on unique field.
+          'name' => 'John',
           'age' => 17,
           'job' => 'Consultant',
         ])

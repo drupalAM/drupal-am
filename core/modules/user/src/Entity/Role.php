@@ -12,6 +12,13 @@ use Drupal\user\RoleInterface;
  * @ConfigEntityType(
  *   id = "user_role",
  *   label = @Translation("Role"),
+ *   label_collection = @Translation("Roles"),
+ *   label_singular = @Translation("role"),
+ *   label_plural = @Translation("roles"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count role",
+ *     plural = "@count roles",
+ *   ),
  *   handlers = {
  *     "storage" = "Drupal\user\RoleStorage",
  *     "access" = "Drupal\user\RoleAccessControlHandler",
@@ -173,7 +180,7 @@ class Role extends ConfigEntityBase implements RoleInterface {
 
     if (!isset($this->weight) && ($roles = $storage->loadMultiple())) {
       // Set a role weight to make this new role last.
-      $max = array_reduce($roles, function($max, $role) {
+      $max = array_reduce($roles, function ($max, $role) {
         return $max > $role->weight ? $max : $role->weight;
       });
       $this->weight = $max + 1;

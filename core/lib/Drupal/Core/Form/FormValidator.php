@@ -3,7 +3,6 @@
 namespace Drupal\Core\Form;
 
 use Drupal\Component\Utility\NestedArray;
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Access\CsrfTokenGenerator;
 use Drupal\Core\Render\Element;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -257,10 +256,12 @@ class FormValidator implements FormValidatorInterface {
         // length if it's a string, and the item count if it's an array.
         // An unchecked checkbox has a #value of integer 0, different than
         // string '0', which could be a valid value.
-        $is_empty_multiple = (!count($elements['#value']));
-        $is_empty_string = (is_string($elements['#value']) && Unicode::strlen(trim($elements['#value'])) == 0);
+        $is_countable = is_array($elements['#value']) || $elements['#value'] instanceof \Countable;
+        $is_empty_multiple = $is_countable && count($elements['#value']) == 0;
+        $is_empty_string = (is_string($elements['#value']) && mb_strlen(trim($elements['#value'])) == 0);
         $is_empty_value = ($elements['#value'] === 0);
-        if ($is_empty_multiple || $is_empty_string || $is_empty_value) {
+        $is_empty_null = is_null($elements['#value']);
+        if ($is_empty_multiple || $is_empty_string || $is_empty_value || $is_empty_null) {
           // Flag this element as #required_but_empty to allow #element_validate
           // handlers to set a custom required error message, but without having
           // to re-implement the complex logic to figure out whether the field
@@ -286,7 +287,7 @@ class FormValidator implements FormValidatorInterface {
       // #element_validate handlers changed any properties. If $is_empty_value
       // is defined, then above #required validation code ran, so the other
       // variables are also known to be defined and we can test them again.
-      if (isset($is_empty_value) && ($is_empty_multiple || $is_empty_string || $is_empty_value)) {
+      if (isset($is_empty_value) && ($is_empty_multiple || $is_empty_string || $is_empty_value || $is_empty_null)) {
         if (isset($elements['#required_error'])) {
           $form_state->setError($elements, $elements['#required_error']);
         }
@@ -329,8 +330,8 @@ class FormValidator implements FormValidatorInterface {
    */
   protected function performRequiredValidation(&$elements, FormStateInterface &$form_state) {
     // Verify that the value is not longer than #maxlength.
-    if (isset($elements['#maxlength']) && Unicode::strlen($elements['#value']) > $elements['#maxlength']) {
-      $form_state->setError($elements, $this->t('@name cannot be longer than %max characters but is currently %length characters long.', ['@name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title'], '%max' => $elements['#maxlength'], '%length' => Unicode::strlen($elements['#value'])]));
+    if (isset($elements['#maxlength']) && mb_strlen($elements['#value']) > $elements['#maxlength']) {
+      $form_state->setError($elements, $this->t('@name cannot be longer than %max characters but is currently %length characters long.', ['@name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title'], '%max' => $elements['#maxlength'], '%length' => mb_strlen($elements['#value'])]));
     }
 
     if (isset($elements['#options']) && isset($elements['#value'])) {

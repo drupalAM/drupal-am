@@ -23,6 +23,9 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
  *     "id" = "id",
  *     "status" = "status"
  *   },
+ *   handlers = {
+ *     "access" = "\Drupal\Core\Entity\Entity\Access\EntityFormDisplayAccessControlHandler",
+ *   },
  *   config_export = {
  *     "id",
  *     "targetEntityType",
@@ -141,7 +144,7 @@ class EntityFormDisplay extends EntityDisplayBase implements EntityFormDisplayIn
         'form_mode' => $this->originalMode,
         // No need to prepare, defaults have been merged in setComponent().
         'prepare' => FALSE,
-        'configuration' => $configuration
+        'configuration' => $configuration,
       ]);
     }
     else {
@@ -327,7 +330,7 @@ class EntityFormDisplay extends EntityDisplayBase implements EntityFormDisplayIn
     }
 
     return [
-      'widgets' => new EntityDisplayPluginCollection($this->pluginManager, $configurations)
+      'widgets' => new EntityDisplayPluginCollection($this->pluginManager, $configurations),
     ];
   }
 

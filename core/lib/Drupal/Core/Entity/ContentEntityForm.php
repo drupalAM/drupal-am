@@ -16,13 +16,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ContentEntityForm extends EntityForm implements ContentEntityFormInterface {
 
   /**
-   * The entity manager.
-   *
-   * @var \Drupal\Core\Entity\EntityManagerInterface
-   */
-  protected $entityManager;
-
-  /**
    * The entity being used by this form.
    *
    * @var \Drupal\Core\Entity\ContentEntityInterface|\Drupal\Core\Entity\RevisionLogInterface
@@ -44,18 +37,28 @@ class ContentEntityForm extends EntityForm implements ContentEntityFormInterface
   protected $time;
 
   /**
+   * The entity repository service.
+   *
+   * @var \Drupal\Core\Entity\EntityRepositoryInterface
+   */
+  protected $entityRepository;
+
+  /**
    * Constructs a ContentEntityForm object.
    *
-   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
-   *   The entity manager.
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository service.
    * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
    *   The entity type bundle service.
    * @param \Drupal\Component\Datetime\TimeInterface $time
    *   The time service.
    */
-  public function __construct(EntityManagerInterface $entity_manager, EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL, TimeInterface $time = NULL) {
-    $this->entityManager = $entity_manager;
-
+  public function __construct(EntityRepositoryInterface $entity_repository, EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL, TimeInterface $time = NULL) {
+    if ($entity_repository instanceof EntityManagerInterface) {
+      @trigger_error('Passing the entity.manager service to ContentEntityForm::__construct() is deprecated in Drupal 8.6.0 and will be removed before Drupal 9.0.0. Pass the entity.repository service instead. See https://www.drupal.org/node/2549139.', E_USER_DEPRECATED);
+      $this->entityManager = $entity_repository;
+    }
+    $this->entityRepository = $entity_repository;
     $this->entityTypeBundleInfo = $entity_type_bundle_info ?: \Drupal::service('entity_type.bundle.info');
     $this->time = $time ?: \Drupal::service('datetime.time');
   }
@@ -65,7 +68,7 @@ class ContentEntityForm extends EntityForm implements ContentEntityFormInterface
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity.manager'),
+      $container->get('entity.repository'),
       $container->get('entity_type.bundle.info'),
       $container->get('datetime.time')
     );
@@ -127,6 +130,15 @@ class ContentEntityForm extends EntityForm implements ContentEntityFormInterface
       $this->addRevisionableFormFields($form);
     }
 
+    $form['footer'] = [
+      '#type' => 'container',
+      '#weight' => 99,
+      '#attributes' => [
+        'class' => ['entity-content-form-footer'],
+      ],
+      '#optional' => TRUE,
+    ];
+
     return $form;
   }
 
@@ -179,10 +191,29 @@ class ContentEntityForm extends EntityForm implements ContentEntityFormInterface
 
     $violations = $entity->validate();
 
-    // Remove violations of inaccessible fields and not edited fields.
-    $violations
-      ->filterByFieldAccess($this->currentUser())
-      ->filterByFields(array_diff(array_keys($entity->getFieldDefinitions()), $this->getEditedFieldNames($form_state)));
+    // Remove violations of inaccessible fields.
+    $violations->filterByFieldAccess($this->currentUser());
+
+    // In case a field-level submit button is clicked, for example the 'Add
+    // another item' button for multi-value fields or the 'Upload' button for a
+    // File or an Image field, make sure that we only keep violations for that
+    // specific field.
+    $edited_fields = [];
+    if ($limit_validation_errors = $form_state->getLimitValidationErrors()) {
+      foreach ($limit_validation_errors as $section) {
+        $field_name = reset($section);
+        if ($entity->hasField($field_name)) {
+          $edited_fields[] = $field_name;
+        }
+      }
+      $edited_fields = array_unique($edited_fields);
+    }
+    else {
+      $edited_fields = $this->getEditedFieldNames($form_state);
+    }
+
+    // Remove violations for fields that are not edited.
+    $violations->filterByFields(array_diff(array_keys($entity->getFieldDefinitions()), $edited_fields));
 
     $this->flagViolations($violations, $form, $form_state);
 
@@ -279,7 +310,7 @@ class ContentEntityForm extends EntityForm implements ContentEntityFormInterface
       // Imply a 'view' operation to ensure users edit entities in the same
       // language they are displayed. This allows to keep contextual editing
       // working also for multilingual entities.
-      $form_state->set('langcode', $this->entityManager->getTranslationFromContext($this->entity)->language()->getId());
+      $form_state->set('langcode', $this->entityRepository->getTranslationFromContext($this->entity)->language()->getId());
     }
   }
 

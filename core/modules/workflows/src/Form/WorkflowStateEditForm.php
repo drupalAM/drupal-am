@@ -13,6 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class WorkflowStateEditForm.
+ *
+ * @internal
  */
 class WorkflowStateEditForm extends EntityForm {
 
@@ -77,10 +79,9 @@ class WorkflowStateEditForm extends EntityForm {
 
     $form['label'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Label'),
+      '#title' => $this->t('State label'),
       '#maxlength' => 255,
       '#default_value' => $state->label(),
-      '#description' => $this->t('Label for the state.'),
       '#required' => TRUE,
     ];
 
@@ -120,14 +121,14 @@ class WorkflowStateEditForm extends EntityForm {
         'title' => $this->t('Edit'),
         'url' => Url::fromRoute('entity.workflow.edit_transition_form', [
           'workflow' => $workflow->id(),
-          'workflow_transition' => $transition->id()
+          'workflow_transition' => $transition->id(),
         ]),
       ];
       $links['delete'] = [
         'title' => t('Delete'),
         'url' => Url::fromRoute('entity.workflow.delete_transition_form', [
           'workflow' => $workflow->id(),
-          'workflow_transition' => $transition->id()
+          'workflow_transition' => $transition->id(),
         ]),
       ];
       $form['transitions'][$transition->id()] = [
@@ -160,6 +161,10 @@ class WorkflowStateEditForm extends EntityForm {
    *   The current state of the form.
    */
   protected function copyFormValuesToEntity(EntityInterface $entity, array $form, FormStateInterface $form_state) {
+    if (!$form_state->isValidationComplete()) {
+      // Only do something once form validation is complete.
+      return;
+    }
     /** @var \Drupal\workflows\WorkflowInterface $entity */
     $values = $form_state->getValues();
     $entity->getTypePlugin()->setStateLabel($values['id'], $values['label']);
@@ -200,7 +205,7 @@ class WorkflowStateEditForm extends EntityForm {
     }
 
     $workflow->save();
-    drupal_set_message($this->t('Saved %label state.', [
+    $this->messenger()->addStatus($this->t('Saved %label state.', [
       '%label' => $workflow->getTypePlugin()->getState($this->stateId)->label(),
     ]));
     $form_state->setRedirectUrl($workflow->toUrl('edit-form'));
@@ -225,8 +230,8 @@ class WorkflowStateEditForm extends EntityForm {
       ],
       '#url' => Url::fromRoute('entity.workflow.delete_state_form', [
         'workflow' => $this->entity->id(),
-        'workflow_state' => $this->stateId
-      ])
+        'workflow_state' => $this->stateId,
+      ]),
     ];
 
     return $actions;

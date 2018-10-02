@@ -73,15 +73,17 @@
           break;
 
         case 'active':
-          var textElement = this.$textElement.get(0);
-          var toolbarView = fieldModel.toolbarView;
-          this.textEditor.attachInlineEditor(textElement, this.textFormat, toolbarView.getMainWysiwygToolgroupId(), toolbarView.getFloatedWysiwygToolgroupId());
+          {
+            var textElement = this.$textElement.get(0);
+            var toolbarView = fieldModel.toolbarView;
+            this.textEditor.attachInlineEditor(textElement, this.textFormat, toolbarView.getMainWysiwygToolgroupId(), toolbarView.getFloatedWysiwygToolgroupId());
 
-          this.textEditor.onChange(textElement, function (htmlText) {
-            editorModel.set('currentValue', htmlText);
-            fieldModel.set('state', 'changed');
-          });
-          break;
+            this.textEditor.onChange(textElement, function (htmlText) {
+              editorModel.set('currentValue', htmlText);
+              fieldModel.set('state', 'changed');
+            });
+            break;
+          }
 
         case 'changed':
           break;
@@ -102,7 +104,12 @@
       }
     },
     getQuickEditUISettings: function getQuickEditUISettings() {
-      return { padding: true, unifiedToolbar: true, fullWidthToolbar: true, popup: false };
+      return {
+        padding: true,
+        unifiedToolbar: true,
+        fullWidthToolbar: true,
+        popup: false
+      };
     },
     revert: function revert() {
       this.$textElement.html(this.model.get('originalValue'));

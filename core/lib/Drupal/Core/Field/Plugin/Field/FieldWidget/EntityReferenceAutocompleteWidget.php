@@ -107,7 +107,7 @@ class EntityReferenceAutocompleteWidget extends WidgetBase {
     if ($this->getSelectionHandlerSetting('auto_create') && ($bundle = $this->getAutocreateBundle())) {
       $element['#autocreate'] = [
         'bundle' => $bundle,
-        'uid' => ($entity instanceof EntityOwnerInterface) ? $entity->getOwnerId() : \Drupal::currentUser()->id()
+        'uid' => ($entity instanceof EntityOwnerInterface) ? $entity->getOwnerId() : \Drupal::currentUser()->id(),
       ];
     }
 
@@ -118,7 +118,7 @@ class EntityReferenceAutocompleteWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function errorElement(array $element, ConstraintViolationInterface $error, array $form, FormStateInterface $form_state) {
-    return isset($element['target_id']) ? $element['target_id'] : FALSE;
+    return $element['target_id'];
   }
 
   /**

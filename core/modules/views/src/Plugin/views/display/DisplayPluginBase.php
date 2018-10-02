@@ -4,7 +4,7 @@ namespace Drupal\views\Plugin\views\display;
 
 use Drupal\Component\Plugin\DependentPluginInterface;
 use Drupal\Component\Utility\Html;
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Cache\CacheableDependencyInterface;
@@ -163,7 +163,6 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
         }
       }
     }
-
 
     $this->setOptionDefaults($this->options, $this->defineOptions());
     $this->display = &$display;
@@ -963,7 +962,6 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     return $this->dependencies;
   }
 
-
   /**
    * {@inheritdoc}
    */
@@ -1023,7 +1021,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
     }
 
     if (!empty($class)) {
-      $text = SafeMarkup::format('<span>@text</span>', ['@text' => $text]);
+      $text = new FormattableMarkup('<span>@text</span>', ['@text' => $text]);
     }
 
     if (empty($title)) {
@@ -1034,13 +1032,13 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
         'js' => 'nojs',
         'view' => $this->view->storage->id(),
         'display_id' => $this->display['id'],
-        'type' => $section
+        'type' => $section,
       ], [
         'attributes' => [
           'class' => ['views-ajax-link', $class],
           'title' => $title,
-          'id' => Html::getUniqueId('views-' . $this->display['id'] . '-' . $section)
-        ]
+          'id' => Html::getUniqueId('views-' . $this->display['id'] . '-' . $section),
+        ],
     ]));
   }
 
@@ -1471,7 +1469,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
           '#title' => $this->t('Show contextual links'),
           '#default_value' => $this->getOption('show_admin_links'),
         ];
-      break;
+        break;
       case 'use_more':
         $form['#title'] .= $this->t('Add a more link to the bottom of the display.');
         $form['use_more'] = [
@@ -1866,7 +1864,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
         if (preg_match('/[^a-zA-Z0-9-_ ]/', $css_class)) {
           $form_state->setError($form['css_class'], $this->t('CSS classes must be alphanumeric or dashes only.'));
         }
-      break;
+        break;
       case 'display_id':
         if ($form_state->getValue('display_id')) {
           if (preg_match('/[^a-z0-9_]/', $form_state->getValue('display_id'))) {
@@ -2588,7 +2586,7 @@ abstract class DisplayPluginBase extends PluginBase implements DisplayPluginInte
   public function getPagerText() {
     return [
       'items per page title' => $this->t('Items to display'),
-      'items per page description' => $this->t('Enter 0 for no limit.')
+      'items per page description' => $this->t('Enter 0 for no limit.'),
     ];
   }
 

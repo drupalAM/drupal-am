@@ -14,6 +14,8 @@ use Drupal\Core\KeyValueStore\KeyValueStoreExpirableInterface;
 
 /**
  * Builds a confirmation form to uninstall selected modules.
+ *
+ * @internal
  */
 class ModulesUninstallConfirmForm extends ConfirmFormBase {
   use ConfigDependencyDeleteFormTrait;
@@ -129,7 +131,7 @@ class ModulesUninstallConfirmForm extends ConfirmFormBase {
 
     // Prevent this page from showing when the module list is empty.
     if (empty($this->modules)) {
-      drupal_set_message($this->t('The selected modules could not be uninstalled, either due to a website problem or due to the uninstall confirmation form timing out. Please try again.'), 'error');
+      $this->messenger()->addError($this->t('The selected modules could not be uninstalled, either due to a website problem or due to the uninstall confirmation form timing out. Please try again.'));
       return $this->redirect('system.modules_uninstall');
     }
 
@@ -159,7 +161,7 @@ class ModulesUninstallConfirmForm extends ConfirmFormBase {
     // Uninstall the modules.
     $this->moduleInstaller->uninstall($this->modules);
 
-    drupal_set_message($this->t('The selected modules have been uninstalled.'));
+    $this->messenger()->addStatus($this->t('The selected modules have been uninstalled.'));
     $form_state->setRedirectUrl($this->getCancelUrl());
   }
 

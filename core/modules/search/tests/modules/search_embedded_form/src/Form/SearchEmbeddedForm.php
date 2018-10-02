@@ -7,6 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Form controller for search_embedded_form form.
+ *
+ * @internal
  */
 class SearchEmbeddedForm extends FormBase {
 
@@ -48,7 +50,7 @@ class SearchEmbeddedForm extends FormBase {
     $state = \Drupal::state();
     $submit_count = (int) $state->get('search_embedded_form.submit_count');
     $state->set('search_embedded_form.submit_count', $submit_count + 1);
-    drupal_set_message($this->t('Test form was submitted'));
+    $this->messenger()->addStatus($this->t('Test form was submitted'));
   }
 
 }

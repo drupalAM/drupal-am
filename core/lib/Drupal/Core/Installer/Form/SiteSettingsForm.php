@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a form to configure and rewrite settings.php.
+ *
+ * @internal
  */
 class SiteSettingsForm extends FormBase {
 
@@ -122,7 +124,7 @@ class SiteSettingsForm extends FormBase {
       $form['settings'][$key]['#states'] = [
         'visible' => [
           ':input[name=driver]' => ['value' => $key],
-        ]
+        ],
       ];
     }
 
@@ -176,7 +178,7 @@ class SiteSettingsForm extends FormBase {
    */
   protected function getDatabaseErrors(array $database, $settings_file) {
     $errors = install_database_errors($database, $settings_file);
-    $form_errors = array_filter($errors, function($value) {
+    $form_errors = array_filter($errors, function ($value) {
       // Errors keyed by something other than an integer already are linked to
       // form elements.
       return is_int($value);
@@ -221,11 +223,6 @@ class SiteSettingsForm extends FormBase {
     ];
     $settings['settings']['hash_salt'] = (object) [
       'value'    => Crypt::randomBytesBase64(55),
-      'required' => TRUE,
-    ];
-    // Remember the profile which was used.
-    $settings['settings']['install_profile'] = (object) [
-      'value' => $install_state['parameters']['profile'],
       'required' => TRUE,
     ];
 

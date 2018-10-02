@@ -10,7 +10,6 @@ use Drupal\views\Views;
 use Drupal\views_test_data\Plugin\views\argument_default\ArgumentDefaultTest as ArgumentDefaultTestPlugin;
 use Symfony\Component\HttpFoundation\Request;
 
-
 /**
  * Tests pluggable argument_default for views.
  *
@@ -56,9 +55,9 @@ class ArgumentDefaultTest extends ViewTestBase {
     $options = [
       'default_argument_type' => 'argument_default_test',
       'default_argument_options' => [
-        'value' => 'John'
+        'value' => 'John',
       ],
-      'default_action' => 'default'
+      'default_action' => 'default',
     ];
     $id = $view->addHandler('default', 'argument', 'views_test_data', 'name', $options);
     $view->initHandlers();
@@ -81,7 +80,6 @@ class ArgumentDefaultTest extends ViewTestBase {
     $expected_result = [['name' => 'George']];
     $this->assertIdenticalResultset($view, $expected_result, ['views_test_data_name' => 'name']);
   }
-
 
   /**
    * Tests the use of a default argument plugin that provides no options.

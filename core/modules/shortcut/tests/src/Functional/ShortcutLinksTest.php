@@ -3,7 +3,6 @@
 namespace Drupal\Tests\shortcut\Functional;
 
 use Drupal\block_content\Entity\BlockContentType;
-use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Url;
 use Drupal\shortcut\Entity\Shortcut;
@@ -65,6 +64,11 @@ class ShortcutLinksTest extends ShortcutTestBase {
       '/admin/config/system/site-information',
     ];
 
+    // Test the add shortcut form UI. Test that the base field description is
+    // there.
+    $this->drupalGet('admin/config/user-interface/shortcut/manage/' . $set->id() . '/add-link');
+    $this->assertRaw('The location this shortcut points to.');
+
     // Check that each new shortcut links where it should.
     foreach ($test_cases as $test_path) {
       $title = $this->randomMachineName();
@@ -80,10 +84,10 @@ class ShortcutLinksTest extends ShortcutTestBase {
       $this->assertTrue(in_array('internal:' . $test_path, $paths), 'Shortcut created: ' . $test_path);
 
       if (in_array($test_path, $test_cases_non_access)) {
-        $this->assertNoLink($title, SafeMarkup::format('Shortcut link %url not accessible on the page.', ['%url' => $test_path]));
+        $this->assertNoLink($title, new FormattableMarkup('Shortcut link %url not accessible on the page.', ['%url' => $test_path]));
       }
       else {
-        $this->assertLink($title, 0, SafeMarkup::format('Shortcut link %url found on the page.', ['%url' => $test_path]));
+        $this->assertLink($title, 0, new FormattableMarkup('Shortcut link %url found on the page.', ['%url' => $test_path]));
       }
     }
     $saved_set = ShortcutSet::load($set->id());
@@ -458,7 +462,7 @@ class ShortcutLinksTest extends ShortcutTestBase {
    */
   protected function assertShortcutQuickLink($label, $index = 0, $message = '', $group = 'Other') {
     $links = $this->xpath('//a[normalize-space()=:label]', [':label' => $label]);
-    $message = ($message ? $message : SafeMarkup::format('Shortcut quick link with label %label found.', ['%label' => $label]));
+    $message = ($message ? $message : new FormattableMarkup('Shortcut quick link with label %label found.', ['%label' => $label]));
     return $this->assert(isset($links[$index]), $message, $group);
   }
 

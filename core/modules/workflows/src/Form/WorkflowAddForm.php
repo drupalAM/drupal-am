@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Form for adding workflows.
+ *
+ * @internal
  */
 class WorkflowAddForm extends EntityForm {
 
@@ -64,9 +66,8 @@ class WorkflowAddForm extends EntityForm {
       ],
     ];
 
-    $workflow_types = array_map(function ($plugin_definition) {
-      return $plugin_definition['label'];
-    }, $this->workflowTypePluginManager->getDefinitions());
+    $workflow_types = array_column($this->workflowTypePluginManager->getDefinitions(), 'label', 'id');
+
     $form['workflow_type'] = [
       '#type' => 'select',
       '#title' => $this->t('Workflow type'),
@@ -85,13 +86,13 @@ class WorkflowAddForm extends EntityForm {
     $workflow = $this->entity;
     $return = $workflow->save();
     if (empty($workflow->getTypePlugin()->getStates())) {
-      drupal_set_message($this->t('Created the %label Workflow. In order for the workflow to be enabled there needs to be at least one state.', [
+      $this->messenger()->addStatus($this->t('Created the %label Workflow. In order for the workflow to be enabled there needs to be at least one state.', [
         '%label' => $workflow->label(),
       ]));
       $form_state->setRedirectUrl($workflow->toUrl('add-state-form'));
     }
     else {
-      drupal_set_message($this->t('Created the %label Workflow.', [
+      $this->messenger()->addStatus($this->t('Created the %label Workflow.', [
         '%label' => $workflow->label(),
       ]));
       $form_state->setRedirectUrl($workflow->toUrl('edit-form'));

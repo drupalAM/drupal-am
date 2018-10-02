@@ -137,6 +137,10 @@ class KernelTestBaseTest extends KernelTestBase {
     $this->assertInstanceOf('Symfony\Component\HttpFoundation\Request', $new_request);
     $this->assertSame($new_request, \Drupal::request());
     $this->assertSame($request, $new_request);
+
+    // Ensure getting the router.route_provider does not trigger a deprecation
+    // message that errors.
+    $this->container->get('router.route_provider');
   }
 
   /**
@@ -300,6 +304,17 @@ class KernelTestBaseTest extends KernelTestBase {
 
       $this->assertTrue(empty($result), 'All test tables have been removed.');
     }
+  }
+
+  /**
+   * Ensures KernelTestBase tests can access modules in profiles.
+   */
+  public function testProfileModules() {
+    $this->assertFileExists('core/profiles/demo_umami/modules/demo_umami_content/demo_umami_content.info.yml');
+    $this->assertSame(
+      'core/profiles/demo_umami/modules/demo_umami_content/demo_umami_content.info.yml',
+      \Drupal::service('extension.list.module')->getPathname('demo_umami_content')
+    );
   }
 
 }

@@ -115,7 +115,7 @@ class WebAssert extends MinkWebAssert {
     $container = $container ?: $this->session->getPage();
     $node = $container->find('named', [
       'select',
-      $this->session->getSelectorsHandler()->xpathLiteral($select),
+      $select,
     ]);
 
     if ($node === NULL) {
@@ -145,7 +145,7 @@ class WebAssert extends MinkWebAssert {
     $container = $container ?: $this->session->getPage();
     $select_field = $container->find('named', [
       'select',
-      $this->session->getSelectorsHandler()->xpathLiteral($select),
+      $select,
     ]);
 
     if ($select_field === NULL) {
@@ -155,7 +155,7 @@ class WebAssert extends MinkWebAssert {
     $option_field = $select_field->find('named', ['option', $option]);
 
     if ($option_field === NULL) {
-      throw new ElementNotFoundException($this->session, 'select', 'id|name|label|value', $option);
+      throw new ElementNotFoundException($this->session->getDriver(), 'select', 'id|name|label|value', $option);
     }
 
     return $option_field;
@@ -178,7 +178,7 @@ class WebAssert extends MinkWebAssert {
     $container = $container ?: $this->session->getPage();
     $select_field = $container->find('named', [
       'select',
-      $this->session->getSelectorsHandler()->xpathLiteral($select),
+      $select,
     ]);
 
     if ($select_field === NULL) {
@@ -202,7 +202,7 @@ class WebAssert extends MinkWebAssert {
   public function titleEquals($expected_title) {
     $title_element = $this->session->getPage()->find('css', 'title');
     if (!$title_element) {
-      throw new ExpectationException('No title element found on the page', $this->session);
+      throw new ExpectationException('No title element found on the page', $this->session->getDriver());
     }
     $actual_title = $title_element->getText();
     $this->assert($expected_title === $actual_title, 'Title found');
@@ -305,7 +305,7 @@ class WebAssert extends MinkWebAssert {
    *   Link position counting from zero.
    * @param string $message
    *   (optional) A message to display with the assertion. Do not translate
-   *   messages: use \Drupal\Component\Utility\SafeMarkup::format() to embed
+   *   messages: use \Drupal\Component\Render\FormattableMarkup to embed
    *   variables in the message text, not t(). If left blank, a default message
    *   will be displayed.
    *
@@ -326,7 +326,7 @@ class WebAssert extends MinkWebAssert {
    *   The full or partial value of the 'href' attribute of the anchor tag.
    * @param string $message
    *   (optional) A message to display with the assertion. Do not translate
-   *   messages: use \Drupal\Component\Utility\SafeMarkup::format() to embed
+   *   messages: use \Drupal\Component\Render\FormattableMarkup to embed
    *   variables in the message text, not t(). If left blank, a default message
    *   will be displayed.
    *
@@ -451,7 +451,7 @@ class WebAssert extends MinkWebAssert {
    * @throws \Behat\Mink\Exception\ElementNotFoundException
    * @throws \Behat\Mink\Exception\ExpectationException
    */
-  public function fieldDisabled($field, TraversableElement $container = NULL)  {
+  public function fieldDisabled($field, TraversableElement $container = NULL) {
     $container = $container ?: $this->session->getPage();
     $node = $container->findField($field);
 
@@ -488,7 +488,7 @@ class WebAssert extends MinkWebAssert {
   }
 
   /**
-   * Checks that specific hidden field does not exists.
+   * Checks that specific hidden field does not exist.
    *
    * @param string $field
    *   One of id|name|value for the hidden field.

@@ -98,11 +98,12 @@ class BlockContentController extends ControllerBase {
    *   The current request object.
    *
    * @return array
-   *   A form array as expected by drupal_render().
+   *   A form array as expected by
+   *   \Drupal\Core\Render\RendererInterface::render().
    */
   public function addForm(BlockContentTypeInterface $block_content_type, Request $request) {
     $block = $this->blockContentStorage->create([
-      'type' => $block_content_type->id()
+      'type' => $block_content_type->id(),
     ]);
     if (($theme = $request->query->get('theme')) && in_array($theme, array_keys($this->themeHandler->listInfo()))) {
       // We have navigated to this page from the block library and will keep track

@@ -8,6 +8,7 @@ namespace Drupal\KernelTests\Core\Database;
  * @group Database
  */
 class CaseSensitivityTest extends DatabaseTestBase {
+
   /**
    * Tests BINARY collation in MySQL.
    */
@@ -16,7 +17,8 @@ class CaseSensitivityTest extends DatabaseTestBase {
 
     db_insert('test')
       ->fields([
-        'name' => 'john', // <- A record already exists with name 'John'.
+        // A record already exists with name 'John'.
+        'name' => 'john',
         'age' => 2,
         'job' => 'Baby',
       ])

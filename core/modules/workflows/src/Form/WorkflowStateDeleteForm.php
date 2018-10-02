@@ -9,6 +9,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Builds the form to delete states from Workflow entities.
+ *
+ * @internal
  */
 class WorkflowStateDeleteForm extends ConfirmFormBase {
 
@@ -96,7 +98,7 @@ class WorkflowStateDeleteForm extends ConfirmFormBase {
       ->deleteState($this->stateId);
     $this->workflow->save();
 
-    drupal_set_message($this->t(
+    $this->messenger()->addStatus($this->t(
       'State %label deleted.',
       ['%label' => $workflow_label]
     ));

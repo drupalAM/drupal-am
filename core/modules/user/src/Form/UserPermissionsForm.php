@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides the user permissions administration form.
+ *
+ * @internal
  */
 class UserPermissionsForm extends FormBase {
 
@@ -127,6 +129,21 @@ class UserPermissionsForm extends FormBase {
       $permissions_by_provider[$permission['provider']][$permission_name] = $permission;
     }
 
+    // Move the access content permission to the Node module if it is installed.
+    if ($this->moduleHandler->moduleExists('node')) {
+      // Insert 'access content' before the 'view own unpublished content' key
+      // in order to maintain the UI even though the permission is provided by
+      // the system module.
+      $keys = array_keys($permissions_by_provider['node']);
+      $offset = (int) array_search('view own unpublished content', $keys);
+      $permissions_by_provider['node'] = array_merge(
+        array_slice($permissions_by_provider['node'], 0, $offset),
+        ['access content' => $permissions_by_provider['system']['access content']],
+        array_slice($permissions_by_provider['node'], $offset)
+      );
+      unset($permissions_by_provider['system']['access content']);
+    }
+
     foreach ($permissions_by_provider as $provider => $permissions) {
       // Module name.
       $form['permissions'][$provider] = [
@@ -199,7 +216,7 @@ class UserPermissionsForm extends FormBase {
       user_role_change_permissions($role_name, (array) $form_state->getValue($role_name));
     }
 
-    drupal_set_message($this->t('The changes have been saved.'));
+    $this->messenger()->addStatus($this->t('The changes have been saved.'));
   }
 
 }

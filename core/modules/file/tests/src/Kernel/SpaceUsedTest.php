@@ -1,6 +1,7 @@
 <?php
 
 namespace Drupal\Tests\file\Kernel;
+
 use Drupal\file\Entity\File;
 
 /**
@@ -9,6 +10,7 @@ use Drupal\file\Entity\File;
  * @group file
  */
 class SpaceUsedTest extends FileManagedUnitTestBase {
+
   protected function setUp() {
     parent::setUp();
 

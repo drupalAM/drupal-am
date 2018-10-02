@@ -21,6 +21,13 @@ class LocaleConfigTranslationImportTest extends BrowserTestBase {
   public static $modules = ['language', 'locale_test_translate'];
 
   /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    parent::setUp();
+  }
+
+  /**
    * Test update changes configuration translations if enabled after language.
    */
   public function testConfigTranslationImport() {
@@ -39,6 +46,7 @@ class LocaleConfigTranslationImportTest extends BrowserTestBase {
     // tests.
     $this->config('locale.settings')
       ->set('translation.import_enabled', TRUE)
+      ->set('translation.use_source', LOCALE_TRANSLATION_USE_SOURCE_LOCAL)
       ->save();
 
     // Add translation permissions now that the locale module has been enabled.
@@ -84,6 +92,7 @@ class LocaleConfigTranslationImportTest extends BrowserTestBase {
     // tests.
     $this->config('locale.settings')
       ->set('translation.import_enabled', TRUE)
+      ->set('translation.use_source', LOCALE_TRANSLATION_USE_SOURCE_LOCAL)
       ->save();
 
     // Add predefined language.
@@ -122,7 +131,7 @@ class LocaleConfigTranslationImportTest extends BrowserTestBase {
     $expected = [
       'translatable_no_default' => 'This translation is preserved',
       'translatable_default_with_translation' => 'This translation is preserved',
-      'translatable_default_with_no_translation' => 'This translation is preserved'
+      'translatable_default_with_no_translation' => 'This translation is preserved',
     ];
     $this->assertEqual($expected, $override->get());
   }
@@ -142,6 +151,7 @@ class LocaleConfigTranslationImportTest extends BrowserTestBase {
     // tests.
     $this->config('locale.settings')
       ->set('translation.import_enabled', TRUE)
+      ->set('translation.use_source', LOCALE_TRANSLATION_USE_SOURCE_LOCAL)
       ->save();
 
     // Add predefined language.
@@ -179,6 +189,7 @@ class LocaleConfigTranslationImportTest extends BrowserTestBase {
     // tests.
     $this->config('locale.settings')
       ->set('translation.import_enabled', TRUE)
+      ->set('translation.use_source', LOCALE_TRANSLATION_USE_SOURCE_LOCAL)
       ->save();
 
     // Add predefined language.
@@ -193,7 +204,7 @@ class LocaleConfigTranslationImportTest extends BrowserTestBase {
     $expected = [
       'translatable_default_with_translation' => 'Locale can translate Afrikaans',
       'translatable_no_default' => 'This translation is preserved',
-      'translatable_default_with_no_translation' => 'This translation is preserved'
+      'translatable_default_with_no_translation' => 'This translation is preserved',
     ];
     $this->assertEqual($expected, $override->get());
 
@@ -215,7 +226,7 @@ class LocaleConfigTranslationImportTest extends BrowserTestBase {
     $override = \Drupal::languageManager()->getLanguageConfigOverride('af', 'locale_test_translate.settings');
     $expected = [
       'translatable_no_default' => 'This translation is preserved',
-      'translatable_default_with_no_translation' => 'This translation is preserved'
+      'translatable_default_with_no_translation' => 'This translation is preserved',
     ];
     $this->assertEqual($expected, $override->get());
   }

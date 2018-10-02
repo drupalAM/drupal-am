@@ -12,6 +12,8 @@ use Drupal\field_ui\FieldUI;
 
 /**
  * Provides a form for the field settings form.
+ *
+ * @internal
  */
 class FieldConfigEditForm extends EntityForm {
 
@@ -75,7 +77,7 @@ class FieldConfigEditForm extends EntityForm {
     $ids = (object) [
       'entity_type' => $this->entity->getTargetEntityTypeId(),
       'bundle' => $this->entity->getTargetBundle(),
-      'entity_id' => NULL
+      'entity_id' => NULL,
     ];
     $form['#entity'] = _field_create_entity_from_ids($ids);
     $items = $form['#entity']->get($this->entity->getName());
@@ -175,7 +177,7 @@ class FieldConfigEditForm extends EntityForm {
   public function save(array $form, FormStateInterface $form_state) {
     $this->entity->save();
 
-    drupal_set_message($this->t('Saved %label configuration.', ['%label' => $this->entity->getLabel()]));
+    $this->messenger()->addStatus($this->t('Saved %label configuration.', ['%label' => $this->entity->getLabel()]));
 
     $request = $this->getRequest();
     if (($destinations = $request->query->get('destinations')) && $next_destination = FieldUI::getNextDestination($destinations)) {

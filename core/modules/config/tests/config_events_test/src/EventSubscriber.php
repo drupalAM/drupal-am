@@ -2,7 +2,6 @@
 
 namespace Drupal\config_events_test;
 
-
 use Drupal\Core\Config\ConfigCrudEvent;
 use Drupal\Core\Config\ConfigEvents;
 use Drupal\Core\State\StateInterface;
@@ -41,7 +40,7 @@ class EventSubscriber implements EventSubscriberInterface {
       'event_name' => $name,
       'current_config_data' => $config->get(),
       'original_config_data' => $config->getOriginal(),
-      'raw_config_data' => $config->getRawData()
+      'raw_config_data' => $config->getRawData(),
     ]);
   }
 

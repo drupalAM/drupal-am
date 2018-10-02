@@ -2,7 +2,8 @@
 
 namespace Drupal\Tests\migrate_drupal_ui\Functional\d7;
 
-use Drupal\Tests\migrate_drupal_ui\Functional\MigrateUpgradeTestBase;
+use Drupal\node\Entity\Node;
+use Drupal\Tests\migrate_drupal_ui\Functional\MigrateUpgradeExecuteTestBase;
 use Drupal\user\Entity\User;
 
 /**
@@ -12,12 +13,27 @@ use Drupal\user\Entity\User;
  *
  * @group migrate_drupal_ui
  */
-class MigrateUpgrade7Test extends MigrateUpgradeTestBase {
+class MigrateUpgrade7Test extends MigrateUpgradeExecuteTestBase {
 
   /**
-   * {@inheritdoc}
+   * Modules to enable.
+   *
+   * @var array
    */
-  public static $modules = ['file'];
+  public static $modules = [
+    'file',
+    'language',
+    'content_translation',
+    'migrate_drupal_ui',
+    'telephone',
+    'aggregator',
+    'book',
+    'forum',
+    'statistics',
+    'migration_provider_test',
+    // Required for translation migrations.
+    'migrate_drupal_multilingual',
+  ];
 
   /**
    * {@inheritdoc}
@@ -39,27 +55,30 @@ class MigrateUpgrade7Test extends MigrateUpgradeTestBase {
    */
   protected function getEntityCounts() {
     return [
-      'aggregator_item' => 10,
+      'aggregator_item' => 11,
       'aggregator_feed' => 1,
       'block' => 25,
       'block_content' => 1,
       'block_content_type' => 1,
-      'comment' => 1,
+      'comment' => 2,
+      // The 'standard' profile provides the 'comment' comment type, and the
+      // migration creates 6 comment types, one per node type.
       'comment_type' => 7,
-      // Module 'language' comes with 'en', 'und', 'zxx'. Migration adds 'is'.
-      'configurable_language' => 4,
+      // Module 'language' comes with 'en', 'und', 'zxx'. Migration adds 'is'
+      // and 'fr'.
+      'configurable_language' => 5,
       'contact_form' => 3,
       'editor' => 2,
-      'field_config' => 61,
-      'field_storage_config' => 44,
+      'field_config' => 67,
+      'field_storage_config' => 50,
       'file' => 3,
       'filter_format' => 7,
       'image_style' => 6,
-      'language_content_settings' => 2,
+      'language_content_settings' => 6,
       'migration' => 73,
       'node' => 5,
       'node_type' => 6,
-      'rdf_mapping' => 7,
+      'rdf_mapping' => 8,
       'search_page' => 2,
       'shortcut' => 6,
       'shortcut_set' => 2,
@@ -70,7 +89,7 @@ class MigrateUpgrade7Test extends MigrateUpgradeTestBase {
       'tour' => 4,
       'user' => 4,
       'user_role' => 3,
-      'menu_link_content' => 7,
+      'menu_link_content' => 12,
       'view' => 16,
       'date_format' => 11,
       'entity_form_display' => 17,
@@ -82,15 +101,120 @@ class MigrateUpgrade7Test extends MigrateUpgradeTestBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  protected function getEntityCountsIncremental() {
+    $counts = $this->getEntityCounts();
+    $counts['block_content'] = 2;
+    $counts['comment'] = 3;
+    $counts['file'] = 4;
+    $counts['menu_link_content'] = 13;
+    $counts['node'] = 6;
+    $counts['taxonomy_term'] = 19;
+    $counts['user'] = 5;
+    return $counts;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getAvailablePaths() {
+    return [
+      'aggregator',
+      'block',
+      'book',
+      'color',
+      'comment',
+      'contact',
+      'date',
+      'dblog',
+      'email',
+      'entityreference',
+      'field',
+      'field_sql_storage',
+      'file',
+      'filter',
+      'forum',
+      'image',
+      'language',
+      'link',
+      'list',
+      'locale',
+      'menu',
+      'node',
+      'number',
+      'options',
+      'path',
+      'phone',
+      'rdf',
+      'search',
+      'shortcut',
+      'statistics',
+      'system',
+      'taxonomy',
+      'text',
+      'user',
+      // Include modules that do not have an upgrade path and are enabled in the
+      // source database, defined in the $noUpgradePath property
+      // in MigrateUpgradeForm.
+      'blog',
+      'contextual',
+      'date_api',
+      'entity',
+      'field_ui',
+      'help',
+      'php',
+      'simpletest',
+      'toolbar',
+      'translation',
+      'trigger',
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getMissingPaths() {
+    return [
+      // These modules are in the missing path list because they are installed
+      // on the source site but they are not installed on the destination site.
+      'syslog',
+      'tracker',
+      'update',
+    ];
+  }
+
+  /**
    * Executes all steps of migrations upgrade.
    */
-  public function testMigrateUpgrade() {
-    parent::testMigrateUpgrade();
+  public function testMigrateUpgradeExecute() {
+    parent::testMigrateUpgradeExecute();
 
     // Ensure migrated users can log in.
     $user = User::load(2);
     $user->passRaw = 'a password';
     $this->drupalLogin($user);
+    $this->assertFollowUpMigrationResults();
+  }
+
+  /**
+   * Tests that follow-up migrations have been run successfully.
+   */
+  protected function assertFollowUpMigrationResults() {
+    $node = Node::load(2);
+    $this->assertSame('4', $node->get('field_reference')->target_id);
+    $this->assertSame('4', $node->get('field_reference_2')->target_id);
+    $translation = $node->getTranslation('is');
+    $this->assertSame('4', $translation->get('field_reference')->target_id);
+    $this->assertSame('4', $translation->get('field_reference_2')->target_id);
+
+    $node = Node::load(4);
+    $this->assertSame('2', $node->get('field_reference')->target_id);
+    $this->assertSame('2', $node->get('field_reference_2')->target_id);
+    $translation = $node->getTranslation('en');
+    $this->assertSame('2', $translation->get('field_reference')->target_id);
+    $this->assertSame('2', $translation->get('field_reference_2')->target_id);
+
   }
 
 }

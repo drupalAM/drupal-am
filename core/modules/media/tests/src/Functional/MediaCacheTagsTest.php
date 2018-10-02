@@ -4,16 +4,17 @@ namespace Drupal\Tests\media\Functional;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\media\Entity\Media;
-use Drupal\system\Tests\Entity\EntityWithUriCacheTagsTestBase;
+use Drupal\Tests\media\Traits\MediaTypeCreationTrait;
+use Drupal\Tests\system\Functional\Entity\EntityWithUriCacheTagsTestBase;
 
 /**
- * Tests the media entity's cache tags.
+ * Tests the media items cache tags.
  *
  * @group media
  */
 class MediaCacheTagsTest extends EntityWithUriCacheTagsTestBase {
 
-  use MediaFunctionalTestCreateMediaTypeTrait;
+  use MediaTypeCreationTrait;
 
   /**
    * {@inheritdoc}
@@ -28,7 +29,7 @@ class MediaCacheTagsTest extends EntityWithUriCacheTagsTestBase {
    */
   protected function createEntity() {
     // Create a media type.
-    $mediaType = $this->createMediaType();
+    $mediaType = $this->createMediaType('test');
 
     // Create a media item.
     $media = Media::create([

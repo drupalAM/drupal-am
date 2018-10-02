@@ -14,7 +14,7 @@ class TypeLinkManager extends LinkManagerBase implements TypeLinkManagerInterfac
   /**
    * Injected cache backend.
    *
-   * @var \Drupal\Core\Cache\CacheBackendInterface;
+   * @var \Drupal\Core\Cache\CacheBackendInterface
    */
   protected $cache;
 
@@ -69,12 +69,9 @@ class TypeLinkManager extends LinkManagerBase implements TypeLinkManagerInterfac
     // installed that adds such content, but requires this URL to be different
     // (e.g., include a language prefix), then the module must also override the
     // TypeLinkManager class/service to return the desired URL.
-    $uri = $this->getLinkDomain() . "/rest/type/$entity_type/$bundle";
+    $uri = $this->getLinkDomain($context) . "/rest/type/$entity_type/$bundle";
     $this->moduleHandler->alter('hal_type_uri', $uri, $context);
-    // @deprecated in Drupal 8.3.x and will be removed before Drupal 9.0.0. This
-    // hook is invoked to maintain backwards compatibility
-    // @see https://www.drupal.org/node/2830467
-    $this->moduleHandler->alter('rest_type_uri', $uri, $context);
+    $this->moduleHandler->alterDeprecated('This hook is deprecated in Drupal 8.3.x and will be removed before Drupal 9.0.0. Implement hook_hal_type_uri_alter() instead.', 'rest_type_uri', $uri, $context);
     return $uri;
   }
 

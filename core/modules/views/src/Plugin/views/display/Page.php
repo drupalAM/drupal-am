@@ -85,6 +85,18 @@ class Page extends PathPluginBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  protected function getRoute($view_id, $display_id) {
+    $route = parent::getRoute($view_id, $display_id);
+
+    // Explicitly set HTML as the format for Page displays.
+    $route->setRequirement('_format', 'html');
+
+    return $route;
+  }
+
+  /**
    * Sets the current page views render array.
    *
    * @param array $element
@@ -247,7 +259,7 @@ class Page extends PathPluginBase {
             'none' => $this->t('No menu entry'),
             'normal' => $this->t('Normal menu entry'),
             'tab' => $this->t('Menu tab'),
-            'default tab' => $this->t('Default menu tab')
+            'default tab' => $this->t('Default menu tab'),
           ],
           '#default_value' => $menu['type'],
         ];
@@ -520,7 +532,7 @@ class Page extends PathPluginBase {
   public function getPagerText() {
     return [
       'items per page title' => $this->t('Items per page'),
-      'items per page description' => $this->t('Enter 0 for no limit.')
+      'items per page description' => $this->t('Enter 0 for no limit.'),
     ];
   }
 

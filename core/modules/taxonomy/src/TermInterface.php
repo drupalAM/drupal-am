@@ -4,11 +4,12 @@ namespace Drupal\taxonomy;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
+use Drupal\Core\Entity\EntityPublishedInterface;
 
 /**
  * Provides an interface defining a taxonomy term entity.
  */
-interface TermInterface extends ContentEntityInterface, EntityChangedInterface {
+interface TermInterface extends ContentEntityInterface, EntityChangedInterface, EntityPublishedInterface {
 
   /**
    * Gets the term's description.
@@ -57,7 +58,7 @@ interface TermInterface extends ContentEntityInterface, EntityChangedInterface {
   /**
    * Sets the name of the term.
    *
-   * @param int $name
+   * @param string $name
    *   The term's name.
    *
    * @return $this

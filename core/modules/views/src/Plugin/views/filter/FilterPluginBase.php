@@ -53,6 +53,8 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
 
   /**
    * Contains the operator which is used on the query.
+   *
+   * @var string
    */
   public $operator = '=';
 
@@ -103,7 +105,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
       $this->group_info = array_filter($options['group_info']['default_group_multiple']);
       $this->options['expose']['multiple'] = TRUE;
     }
-
 
     // If there are relationships in the view, allow empty should be true
     // so that we can do IS NULL checks on items. Not all filters respect
@@ -655,7 +656,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     return FALSE;
   }
 
-
   /**
    * Validate the build group options form.
    */
@@ -834,7 +834,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     }
   }
 
-
   /**
    * Render our chunk of the exposed filter form when selecting
    *
@@ -995,7 +994,9 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
       '#default_value' => $this->options['group_info']['remember'],
     ];
 
-    $groups = ['All' => $this->t('- Any -')]; // The string '- Any -' will not be rendered see @theme_views_ui_build_group_filter_form
+    // The string '- Any -' will not be rendered.
+    // @see theme_views_ui_build_group_filter_form()
+    $groups = ['All' => $this->t('- Any -')];
 
     // Provide 3 options to start when we are in a new group.
     if (count($this->options['group_info']['group_items']) == 0) {
@@ -1102,7 +1103,7 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
       '#required' => TRUE,
       '#attributes' => [
         'class' => ['default-radios'],
-      ]
+      ],
     ];
     // From all groups, let chose which is the default.
     $form['group_info']['default_group_multiple'] = [
@@ -1111,7 +1112,7 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
       '#default_value' => $this->options['group_info']['default_group_multiple'],
       '#attributes' => [
         'class' => ['default-checkboxes'],
-      ]
+      ],
     ];
 
     $form['group_info']['add_group'] = [
@@ -1162,7 +1163,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
     $form_state->get('force_build_group_options', TRUE);
   }
 
-
   /**
    * Make some translations to a form item to make it more suitable to
    * exposing.
@@ -1203,7 +1203,6 @@ abstract class FilterPluginBase extends HandlerBase implements CacheableDependen
       $form['#required'] = TRUE;
     }
   }
-
 
   /**
    * Sanitizes the HTML select element's options.

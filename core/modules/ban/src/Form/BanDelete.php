@@ -11,6 +11,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Provides a form to unban IP addresses.
+ *
+ * @internal
  */
 class BanDelete extends ConfirmFormBase {
 
@@ -94,7 +96,7 @@ class BanDelete extends ConfirmFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->ipManager->unbanIp($this->banIp);
     $this->logger('user')->notice('Deleted %ip', ['%ip' => $this->banIp]);
-    drupal_set_message($this->t('The IP address %ip was deleted.', ['%ip' => $this->banIp]));
+    $this->messenger()->addStatus($this->t('The IP address %ip was deleted.', ['%ip' => $this->banIp]));
     $form_state->setRedirectUrl($this->getCancelUrl());
   }
 

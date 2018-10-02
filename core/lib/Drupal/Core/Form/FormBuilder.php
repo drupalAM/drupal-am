@@ -84,11 +84,15 @@ class FormBuilder implements FormBuilderInterface, FormValidatorInterface, FormS
   protected $themeManager;
 
   /**
+   * The form validator.
+   *
    * @var \Drupal\Core\Form\FormValidatorInterface
    */
   protected $formValidator;
 
   /**
+   * The form submitter.
+   *
    * @var \Drupal\Core\Form\FormSubmitterInterface
    */
   protected $formSubmitter;
@@ -774,9 +778,9 @@ class FormBuilder implements FormBuilderInterface, FormValidatorInterface, FormS
           '#attached' => [
             'placeholders' => [
               $placeholder => [
-                '#lazy_builder' => ['form_builder:renderFormTokenPlaceholder', [$placeholder]]
-              ]
-            ]
+                '#lazy_builder' => ['form_builder:renderFormTokenPlaceholder', [$placeholder]],
+              ],
+            ],
           ],
           '#cache' => [
             'max-age' => 0,

@@ -6,6 +6,55 @@
 **/
 
 (function ($, Drupal, window) {
+  function processNodeNewIndicators($placeholders) {
+    var newNodeString = Drupal.t('new');
+    var updatedNodeString = Drupal.t('updated');
+
+    $placeholders.each(function (index, placeholder) {
+      var timestamp = parseInt(placeholder.getAttribute('data-history-node-timestamp'), 10);
+      var nodeID = placeholder.getAttribute('data-history-node-id');
+      var lastViewTimestamp = Drupal.history.getLastRead(nodeID);
+
+      if (timestamp > lastViewTimestamp) {
+        var message = lastViewTimestamp === 0 ? newNodeString : updatedNodeString;
+        $(placeholder).append('<span class="marker">' + message + '</span>');
+      }
+    });
+  }
+
+  function processNewRepliesIndicators($placeholders) {
+    var placeholdersToUpdate = {};
+    $placeholders.each(function (index, placeholder) {
+      var timestamp = parseInt(placeholder.getAttribute('data-history-node-last-comment-timestamp'), 10);
+      var nodeID = placeholder.previousSibling.previousSibling.getAttribute('data-history-node-id');
+      var lastViewTimestamp = Drupal.history.getLastRead(nodeID);
+
+      if (timestamp > lastViewTimestamp) {
+        placeholdersToUpdate[nodeID] = placeholder;
+      }
+    });
+
+    var nodeIDs = Object.keys(placeholdersToUpdate);
+    if (nodeIDs.length === 0) {
+      return;
+    }
+    $.ajax({
+      url: Drupal.url('comments/render_new_comments_node_links'),
+      type: 'POST',
+      data: { 'node_ids[]': nodeIDs },
+      dataType: 'json',
+      success: function success(results) {
+        Object.keys(results || {}).forEach(function (nodeID) {
+          if (placeholdersToUpdate.hasOwnProperty(nodeID)) {
+            var url = results[nodeID].first_new_comment_link;
+            var text = Drupal.formatPlural(results[nodeID].new_comment_count, '1 new', '@count new');
+            $(placeholdersToUpdate[nodeID]).append('<br /><a href="' + url + '">' + text + '</a>');
+          }
+        });
+      }
+    });
+  }
+
   Drupal.behaviors.trackerHistory = {
     attach: function attach(context) {
       var nodeIDs = [];
@@ -48,53 +97,4 @@
       });
     }
   };
-
-  function processNodeNewIndicators($placeholders) {
-    var newNodeString = Drupal.t('new');
-    var updatedNodeString = Drupal.t('updated');
-
-    $placeholders.each(function (index, placeholder) {
-      var timestamp = parseInt(placeholder.getAttribute('data-history-node-timestamp'), 10);
-      var nodeID = placeholder.getAttribute('data-history-node-id');
-      var lastViewTimestamp = Drupal.history.getLastRead(nodeID);
-
-      if (timestamp > lastViewTimestamp) {
-        var message = lastViewTimestamp === 0 ? newNodeString : updatedNodeString;
-        $(placeholder).append('<span class="marker">' + message + '</span>');
-      }
-    });
-  }
-
-  function processNewRepliesIndicators($placeholders) {
-    var placeholdersToUpdate = {};
-    $placeholders.each(function (index, placeholder) {
-      var timestamp = parseInt(placeholder.getAttribute('data-history-node-last-comment-timestamp'), 10);
-      var nodeID = placeholder.previousSibling.previousSibling.getAttribute('data-history-node-id');
-      var lastViewTimestamp = Drupal.history.getLastRead(nodeID);
-
-      if (timestamp > lastViewTimestamp) {
-        placeholdersToUpdate[nodeID] = placeholder;
-      }
-    });
-
-    var nodeIDs = Object.keys(placeholdersToUpdate);
-    if (nodeIDs.length === 0) {
-      return;
-    }
-    $.ajax({
-      url: Drupal.url('comments/render_new_comments_node_links'),
-      type: 'POST',
-      data: { 'node_ids[]': nodeIDs },
-      dataType: 'json',
-      success: function success(results) {
-        for (var nodeID in results) {
-          if (results.hasOwnProperty(nodeID) && placeholdersToUpdate.hasOwnProperty(nodeID)) {
-            var url = results[nodeID].first_new_comment_link;
-            var text = Drupal.formatPlural(results[nodeID].new_comment_count, '1 new', '@count new');
-            $(placeholdersToUpdate[nodeID]).append('<br /><a href="' + url + '">' + text + '</a>');
-          }
-        }
-      }
-    });
-  }
 })(jQuery, Drupal, window);

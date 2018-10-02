@@ -24,7 +24,7 @@ class FieldFieldTest extends ViewsKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = ['field', 'entity_test', 'user', 'views_test_formatter'];
+  public static $modules = ['field', 'entity_test', 'user', 'views_test_formatter', 'views_entity_test'];
 
   /**
    * {@inheritdoc}
@@ -82,7 +82,7 @@ class FieldFieldTest extends ViewsKernelTestBase {
       $this->testUsers[$i] = User::create([
         'name' => 'test ' . $i,
         'timezone' => User::getAllowedTimezones()[$i],
-        'created' => REQUEST_TIME - rand(0, 3600)
+        'created' => REQUEST_TIME - rand(0, 3600),
       ]);
       $this->testUsers[$i]->save();
     }
@@ -234,13 +234,13 @@ class FieldFieldTest extends ViewsKernelTestBase {
 
     $this->assertIdenticalResultset($executable,
       [
-        ['id' => 1, 'field_test' => 3],
-        ['id' => 2, 'field_test' => 0],
-        ['id' => 3, 'field_test' => 8],
-        ['id' => 4, 'field_test' => 5],
-        ['id' => 5, 'field_test' => 6],
+        ['id' => 1, 'field_test' => 3, 'user_id' => 2],
+        ['id' => 2, 'field_test' => 0, 'user_id' => 3],
+        ['id' => 3, 'field_test' => 8, 'user_id' => 4],
+        ['id' => 4, 'field_test' => 5, 'user_id' => 5],
+        ['id' => 5, 'field_test' => 6, 'user_id' => 6],
       ],
-      ['id' => 'id', 'field_test' => 'field_test']
+      ['id' => 'id', 'field_test' => 'field_test', 'user_id' => 'user_id']
     );
   }
 
@@ -279,8 +279,8 @@ class FieldFieldTest extends ViewsKernelTestBase {
     $render = $executable->display_handler->render();
     $expected_attachments = [
       'library' => [
-        'views/views.module'
-      ]
+        'views/views.module',
+      ],
     ];
     foreach ($this->entities as $entity) {
       $expected_attachments['library'][] = 'foo/fake_library';

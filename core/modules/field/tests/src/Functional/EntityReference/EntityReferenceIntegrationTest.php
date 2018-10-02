@@ -2,12 +2,12 @@
 
 namespace Drupal\Tests\field\Functional\EntityReference;
 
-use Drupal\Component\Utility\SafeMarkup;
-use Drupal\config\Tests\AssertConfigEntityImportTrait;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\entity_test\Entity\EntityTest;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\Tests\BrowserTestBase;
 use Drupal\field\Tests\EntityReference\EntityReferenceTestTrait;
+use Drupal\Tests\config\Traits\AssertConfigEntityImportTrait;
 
 /**
  * Tests various Entity reference UI components.
@@ -149,7 +149,7 @@ class EntityReferenceIntegrationTest extends BrowserTestBase {
       // Ensure the configuration has the expected dependency on the entity that
       // is being used a default value.
       $field = FieldConfig::loadByName($this->entityType, $this->bundle, $this->fieldName);
-      $this->assertTrue(in_array($referenced_entities[0]->getConfigDependencyName(), $field->getDependencies()[$key]), SafeMarkup::format('Expected @type dependency @name found', ['@type' => $key, '@name' => $referenced_entities[0]->getConfigDependencyName()]));
+      $this->assertTrue(in_array($referenced_entities[0]->getConfigDependencyName(), $field->getDependencies()[$key]), new FormattableMarkup('Expected @type dependency @name found', ['@type' => $key, '@name' => $referenced_entities[0]->getConfigDependencyName()]));
       // Ensure that the field can be imported without change even after the
       // default value deleted.
       $referenced_entities[0]->delete();
@@ -163,7 +163,7 @@ class EntityReferenceIntegrationTest extends BrowserTestBase {
       $field = FieldConfig::loadByName($this->entityType, $this->bundle, $this->fieldName);
       $field->save();
       $dependencies = $field->getDependencies();
-      $this->assertFalse(isset($dependencies[$key]) && in_array($referenced_entities[0]->getConfigDependencyName(), $dependencies[$key]), SafeMarkup::format('@type dependency @name does not exist.', ['@type' => $key, '@name' => $referenced_entities[0]->getConfigDependencyName()]));
+      $this->assertFalse(isset($dependencies[$key]) && in_array($referenced_entities[0]->getConfigDependencyName(), $dependencies[$key]), new FormattableMarkup('@type dependency @name does not exist.', ['@type' => $key, '@name' => $referenced_entities[0]->getConfigDependencyName()]));
     }
   }
 
@@ -197,9 +197,10 @@ class EntityReferenceIntegrationTest extends BrowserTestBase {
    *   An array of entity objects.
    */
   protected function getTestEntities() {
-    $config_entity_1 = entity_create('config_test', ['id' => $this->randomMachineName(), 'label' => $this->randomMachineName()]);
+    $storage = \Drupal::entityTypeManager()->getStorage('config_test');
+    $config_entity_1 = $storage->create(['id' => $this->randomMachineName(), 'label' => $this->randomMachineName()]);
     $config_entity_1->save();
-    $config_entity_2 = entity_create('config_test', ['id' => $this->randomMachineName(), 'label' => $this->randomMachineName()]);
+    $config_entity_2 = $storage->create(['id' => $this->randomMachineName(), 'label' => $this->randomMachineName()]);
     $config_entity_2->save();
 
     $content_entity_1 = EntityTest::create(['name' => $this->randomMachineName()]);

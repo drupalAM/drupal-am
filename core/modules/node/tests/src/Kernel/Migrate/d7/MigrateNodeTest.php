@@ -31,6 +31,8 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
     'language',
     'link',
     'menu_ui',
+    // Required for translation migrations.
+    'migrate_drupal_multilingual',
     'node',
     'taxonomy',
     'telephone',
@@ -68,7 +70,20 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
       'd7_field_instance',
       'd7_node',
       'd7_node_translation',
+      'd7_node_entity_translation',
     ]);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getFileMigrationInfo() {
+    return [
+      'path' => 'public://sites/default/files/cube.jpeg',
+      'size' => '3620',
+      'base_path' => 'public://',
+      'plugin_id' => 'd7_file',
+    ];
   }
 
   /**
@@ -139,8 +154,8 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
    * Test node migration from Drupal 7 to 8.
    */
   public function testNode() {
-    $this->assertEntity(1, 'test_content_type', 'en', 'A Node', '2', TRUE, '1421727515', '1441032132', TRUE, FALSE);
-    $this->assertRevision(1, 'A Node', '1', NULL, '1441032132');
+    $this->assertEntity(1, 'test_content_type', 'en', 'An English Node', '2', TRUE, '1421727515', '1441032132', TRUE, FALSE);
+    $this->assertRevision(1, 'An English Node', '1', NULL, '1441032132');
 
     $node = Node::load(1);
     $this->assertTrue($node->field_boolean->value);
@@ -164,6 +179,15 @@ class MigrateNodeTest extends MigrateDrupal7TestBase {
     $this->assertEquals('default@example.com', $node->field_email->value);
     $this->assertEquals('another@example.com', $node->field_email[1]->value);
     $this->assertEquals(CommentItemInterface::OPEN, $node->comment_node_test_content_type->status);
+    $this->assertEquals('3.1416', $node->field_float_list[0]->value);
+
+    // Test that fields translated with Entity Translation are migrated.
+    $node_fr = $node->getTranslation('fr');
+    $this->assertEquals('A French Node', $node_fr->getTitle());
+    $this->assertEquals('6', $node_fr->field_integer->value);
+    $node_is = $node->getTranslation('is');
+    $this->assertEquals('An Icelandic Node', $node_is->getTitle());
+    $this->assertEquals('7', $node_is->field_integer->value);
 
     $node = Node::load(2);
     $this->assertEquals('en', $node->langcode->value);

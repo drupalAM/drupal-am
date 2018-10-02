@@ -12,6 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Contains a form for switching the view mode of a node during preview.
+ *
+ * @internal
  */
 class NodePreviewForm extends FormBase {
 
@@ -105,7 +107,7 @@ class NodePreviewForm extends FormBase {
       '#default_value' => $view_mode,
       '#attributes' => [
         'data-drupal-autosubmit' => TRUE,
-      ]
+      ],
     ];
 
     $form['submit'] = [

@@ -10,6 +10,7 @@ use Drupal\comment\CommentManagerInterface;
  * @group comment
  */
 class CommentThreadingTest extends CommentTestBase {
+
   /**
    * Tests the comment threading.
    */
@@ -53,7 +54,6 @@ class CommentThreadingTest extends CommentTestBase {
     $this->assertEqual($comment1_3->getThread(), '01.00/');
     // Confirm that there is a link to the parent comment.
     $this->assertParentLink($comment1_3->id(), $comment1->id());
-
 
     // Reply to comment #1_3 creating comment #1_3_4.
     $this->drupalGet('comment/reply/node/' . $this->node->id() . '/comment/' . $comment1_3->id());

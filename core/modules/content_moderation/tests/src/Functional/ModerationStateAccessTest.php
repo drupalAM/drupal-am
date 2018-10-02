@@ -5,7 +5,7 @@ namespace Drupal\Tests\content_moderation\Functional;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
 use Drupal\Tests\BrowserTestBase;
-use Drupal\workflows\Entity\Workflow;
+use Drupal\Tests\content_moderation\Traits\ContentModerationTestTrait;
 
 /**
  * Tests the view access control handler for moderation state entities.
@@ -13,6 +13,8 @@ use Drupal\workflows\Entity\Workflow;
  * @group content_moderation
  */
 class ModerationStateAccessTest extends BrowserTestBase {
+
+  use ContentModerationTestTrait;
 
   /**
    * {@inheritdoc}
@@ -88,18 +90,18 @@ class ModerationStateAccessTest extends BrowserTestBase {
    * @param string $machine_name
    *   The machine name of the type to create.
    *
-   * @return NodeType
+   * @return \Drupal\node\Entity\NodeType
    *   The node type just created.
    */
   protected function createNodeType($label, $machine_name) {
-    /** @var NodeType $node_type */
+    /** @var \Drupal\node\Entity\NodeType $node_type */
     $node_type = NodeType::create([
       'type' => $machine_name,
       'label' => $label,
     ]);
     $node_type->save();
 
-    $workflow = Workflow::load('editorial');
+    $workflow = $this->createEditorialWorkflow();
     $workflow->getTypePlugin()->addEntityTypeAndBundle('node', $machine_name);
     $workflow->save();
     return $node_type;

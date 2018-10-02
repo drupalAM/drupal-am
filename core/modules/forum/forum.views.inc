@@ -74,7 +74,7 @@ function forum_views_data() {
     'filter' => [
       'title' => t('Has taxonomy term'),
       'id' => 'taxonomy_index_tid',
-      'hierarchy table' => 'taxonomy_term_hierarchy',
+      'hierarchy table' => 'taxonomy_term__parent',
       'numeric' => TRUE,
       'skip base' => 'taxonomy_term_data',
       'allow empty' => TRUE,
@@ -86,7 +86,6 @@ function forum_views_data() {
     ],
   ];
 
-
   $data['forum_index']['created'] = [
     'title' => t('Post date'),
     'help' => t('The date the content was posted.'),
@@ -94,7 +93,7 @@ function forum_views_data() {
       'id' => 'date',
     ],
     'sort' => [
-      'id' => 'date'
+      'id' => 'date',
     ],
     'filter' => [
       'id' => 'date',

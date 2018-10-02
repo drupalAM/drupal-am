@@ -32,7 +32,7 @@ use Drupal\Core\Utility\LinkGeneratorInterface;
 class ResponsiveImageFormatter extends ImageFormatterBase implements ContainerFactoryPluginInterface {
 
   /**
-   * @var EntityStorageInterface
+   * @var \Drupal\Core\Entity\EntityStorageInterface
    */
   protected $responsiveImageStyleStorage;
 
@@ -138,7 +138,7 @@ class ResponsiveImageFormatter extends ImageFormatterBase implements ContainerFa
     $elements['responsive_image_style'] = [
       '#title' => t('Responsive image style'),
       '#type' => 'select',
-      '#default_value' => $this->getSetting('responsive_image_style'),
+      '#default_value' => $this->getSetting('responsive_image_style') ?: NULL,
       '#required' => TRUE,
       '#options' => $responsive_image_options,
       '#description' => [

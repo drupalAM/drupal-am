@@ -5,7 +5,7 @@ namespace Drupal\Tests\locale\Functional;
 use Drupal\Core\StreamWrapper\PublicStream;
 use Drupal\file\Entity\File;
 use Drupal\Tests\BrowserTestBase;
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 
 /**
  * Base class for testing updates to string translations.
@@ -63,6 +63,7 @@ abstract class LocaleUpdateBase extends BrowserTestBase {
     // tests.
     $this->config('locale.settings')
       ->set('translation.import_enabled', TRUE)
+      ->set('translation.use_source', LOCALE_TRANSLATION_USE_SOURCE_LOCAL)
       ->save();
   }
 
@@ -88,7 +89,7 @@ abstract class LocaleUpdateBase extends BrowserTestBase {
     $edit = ['predefined_langcode' => $langcode];
     $this->drupalPostForm('admin/config/regional/language/add', $edit, t('Add language'));
     $this->container->get('language_manager')->reset();
-    $this->assertTrue(\Drupal::languageManager()->getLanguage($langcode), SafeMarkup::format('Language %langcode added.', ['%langcode' => $langcode]));
+    $this->assertTrue(\Drupal::languageManager()->getLanguage($langcode), new FormattableMarkup('Language %langcode added.', ['%langcode' => $langcode]));
   }
 
   /**
@@ -138,7 +139,7 @@ EOF;
       'status' => FILE_STATUS_PERMANENT,
     ]);
     file_put_contents($file->getFileUri(), $po_header . $text);
-    touch(drupal_realpath($file->getFileUri()), $timestamp);
+    touch(\Drupal::service('file_system')->realpath($file->getFileUri()), $timestamp);
     $file->save();
   }
 

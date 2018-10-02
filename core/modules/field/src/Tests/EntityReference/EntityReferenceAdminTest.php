@@ -2,7 +2,6 @@
 
 namespace Drupal\field\Tests\EntityReference;
 
-use Drupal\Component\Utility\Unicode;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\field_ui\Tests\FieldUiTestTrait;
@@ -94,6 +93,8 @@ class EntityReferenceAdminTest extends WebTestBase {
 
     // The base handler settings should be displayed.
     $entity_type_id = 'node';
+    // Check that the type label is correctly displayed.
+    $this->assertText('Content type');
     $bundles = $this->container->get('entity_type.bundle.info')->getBundleInfo($entity_type_id);
     foreach ($bundles as $bundle_name => $bundle_info) {
       $this->assertFieldByName('settings[handler_settings][target_bundles][' . $bundle_name . ']');
@@ -292,7 +293,7 @@ class EntityReferenceAdminTest extends WebTestBase {
 
     $edit = [
       'title[0][value]' => 'Example',
-      'field_test_entity_ref_field[0][target_id]' => 'Test'
+      'field_test_entity_ref_field[0][target_id]' => 'Test',
     ];
     $this->drupalPostForm('node/add/' . $this->type, $edit, t('Save'));
 
@@ -301,7 +302,7 @@ class EntityReferenceAdminTest extends WebTestBase {
 
     $edit = [
       'title[0][value]' => 'Test',
-      'field_test_entity_ref_field[0][target_id]' => $node1->getTitle()
+      'field_test_entity_ref_field[0][target_id]' => $node1->getTitle(),
     ];
     $this->drupalPostForm('node/add/' . $this->type, $edit, t('Save'));
 
@@ -314,7 +315,7 @@ class EntityReferenceAdminTest extends WebTestBase {
 
     $edit = [
       'title[0][value]' => 'Test',
-      'field_test_entity_ref_field[0][target_id]' => $node1->getTitle() . ' (' . $node1->id() . ')'
+      'field_test_entity_ref_field[0][target_id]' => $node1->getTitle() . ' (' . $node1->id() . ')',
     ];
     $this->drupalPostForm('node/add/' . $this->type, $edit, t('Save'));
     $this->assertLink($node1->getTitle());
@@ -330,6 +331,12 @@ class EntityReferenceAdminTest extends WebTestBase {
     $this->drupalPostForm(NULL, $edit, t('Save field settings'));
     $this->drupalGet($bundle_path . '/fields/' . $field_path);
     $term_name = $this->randomString();
+    $result = \Drupal::entityQuery('taxonomy_term')
+      ->condition('name', $term_name)
+      ->condition('vid', 'tags')
+      ->accessCheck(FALSE)
+      ->execute();
+    $this->assertIdentical(0, count($result), "No taxonomy terms exist with the name '$term_name'.");
     $edit = [
       // This must be set before new entities will be auto-created.
       'settings[handler_settings][auto_create]' => 1,
@@ -342,8 +349,12 @@ class EntityReferenceAdminTest extends WebTestBase {
     ];
     $this->drupalPostForm(NULL, $edit, t('Save settings'));
     // The term should now exist.
-    $term = taxonomy_term_load_multiple_by_name($term_name, 'tags')[1];
-    $this->assertIdentical(1, count($term), 'Taxonomy term was auto created when set as field default.');
+    $result = \Drupal::entityQuery('taxonomy_term')
+      ->condition('name', $term_name)
+      ->condition('vid', 'tags')
+      ->accessCheck(FALSE)
+      ->execute();
+    $this->assertIdentical(1, count($result), 'Taxonomy term was auto created when set as field default.');
   }
 
   /**
@@ -412,7 +423,7 @@ class EntityReferenceAdminTest extends WebTestBase {
     /** @var \Drupal\taxonomy\Entity\Vocabulary[] $vocabularies */
     $vocabularies = [];
     for ($i = 0; $i < 2; $i++) {
-      $vid = Unicode::strtolower($this->randomMachineName());
+      $vid = mb_strtolower($this->randomMachineName());
       $vocabularies[$i] = Vocabulary::create([
         'name' => $this->randomString(),
         'vid' => $vid,

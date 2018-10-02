@@ -1,7 +1,7 @@
 <?php
 
 namespace Drupal\Tests\node\Functional;
-use Drupal\Component\Utility\Unicode;
+
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 
@@ -28,7 +28,7 @@ class MultiStepNodeFormBasicOptionsTest extends NodeTestBase {
     $this->drupalLogin($web_user);
 
     // Create an unlimited cardinality field.
-    $this->fieldName = Unicode::strtolower($this->randomMachineName());
+    $this->fieldName = mb_strtolower($this->randomMachineName());
     FieldStorageConfig::create([
       'field_name' => $this->fieldName,
       'entity_type' => 'node',

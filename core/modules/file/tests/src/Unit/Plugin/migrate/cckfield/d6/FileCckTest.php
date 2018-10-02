@@ -33,12 +33,12 @@ class FileCckTest extends UnitTestCase {
 
     $migration = $this->prophesize(MigrationInterface::class);
 
-    // The plugin's processFieldValues() method will call
+    // The plugin's defineValueProcessPipeline() method will call
     // mergeProcessOfProperty() and return nothing. So, in order to examine the
     // process pipeline created by the plugin, we need to ensure that
     // getProcess() always returns the last input to mergeProcessOfProperty().
     $migration->mergeProcessOfProperty(Argument::type('string'), Argument::type('array'))
-      ->will(function($arguments) use ($migration) {
+      ->will(function ($arguments) use ($migration) {
         $migration->getProcess()->willReturn($arguments[1]);
       });
     $this->migration = $migration->reveal();
@@ -64,7 +64,7 @@ class FileCckTest extends UnitTestCase {
     return [
       ['image', 'imagefield_widget'],
       ['file', 'filefield_widget'],
-      ['file', 'x_widget']
+      ['file', 'x_widget'],
     ];
   }
 

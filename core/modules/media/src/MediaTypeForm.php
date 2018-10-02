@@ -2,6 +2,7 @@
 
 namespace Drupal\media;
 
+use Drupal\Component\Plugin\PluginManagerInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Entity\EntityFieldManagerInterface;
@@ -15,13 +16,15 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Form controller for media type forms.
+ *
+ * @internal
  */
 class MediaTypeForm extends EntityForm {
 
   /**
    * Media source plugin manager.
    *
-   * @var \Drupal\media\MediaSourceManager
+   * @var \Drupal\Component\Plugin\PluginManagerInterface
    */
   protected $sourceManager;
 
@@ -35,12 +38,12 @@ class MediaTypeForm extends EntityForm {
   /**
    * Constructs a new class instance.
    *
-   * @param \Drupal\media\MediaSourceManager $source_manager
+   * @param \Drupal\Component\Plugin\PluginManagerInterface $source_manager
    *   Media source plugin manager.
    * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entity_field_manager
    *   Entity field manager service.
    */
-  public function __construct(MediaSourceManager $source_manager, EntityFieldManagerInterface $entity_field_manager) {
+  public function __construct(PluginManagerInterface $source_manager, EntityFieldManagerInterface $entity_field_manager) {
     $this->sourceManager = $source_manager;
     $this->entityFieldManager = $entity_field_manager;
   }
@@ -116,19 +119,24 @@ class MediaTypeForm extends EntityForm {
       '#attributes' => ['id' => 'source-dependent'],
     ];
 
+    if (!$this->entity->isNew()) {
+      $source_description = $this->t('<em>The media source cannot be changed after the media type is created.</em>');
+    }
+    else {
+      $source_description = $this->t('Media source that is responsible for additional logic related to this media type.');
+    }
     $form['source_dependent']['source'] = [
       '#type' => 'select',
       '#title' => $this->t('Media source'),
       '#default_value' => $source ? $source->getPluginId() : NULL,
       '#options' => $options,
-      '#description' => $this->t('Media source that is responsible for additional logic related to this media type.'),
+      '#description' => $source_description,
       '#ajax' => ['callback' => '::ajaxHandlerData'],
       '#required' => TRUE,
+      // Once the media type is created, its source plugin cannot be changed
+      // anymore.
+      '#disabled' => !$this->entity->isNew(),
     ];
-
-    if (!$source) {
-      $form['type']['#empty_option'] = $this->t('- Select media source -');
-    }
 
     if ($source) {
       // Media source plugin configuration.
@@ -262,7 +270,7 @@ class MediaTypeForm extends EntityForm {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
 
-    if ($form['source_dependent']['source_configuration']) {
+    if (isset($form['source_dependent']['source_configuration'])) {
       // Let the selected plugin validate its settings.
       $this->entity->getSource()->validateConfigurationForm($form['source_dependent']['source_configuration'], $this->getSourceSubFormState($form, $form_state));
     }
@@ -285,7 +293,7 @@ class MediaTypeForm extends EntityForm {
       ->setStatus((bool) $form_state->getValue(['options', 'status']))
       ->setNewRevision((bool) $form_state->getValue(['options', 'new_revision']));
 
-    if ($form['source_dependent']['source_configuration']) {
+    if (isset($form['source_dependent']['source_configuration'])) {
       // Let the selected plugin save its settings.
       $this->entity->getSource()->submitConfigurationForm($form['source_dependent']['source_configuration'], $this->getSourceSubFormState($form, $form_state));
     }
@@ -325,39 +333,28 @@ class MediaTypeForm extends EntityForm {
 
       // Add the new field to the default form and view displays for this
       // media type.
-      $field_name = $source_field->getName();
-      $field_type = $source_field->getType();
-
       if ($source_field->isDisplayConfigurable('form')) {
-        // Use the default widget and settings.
-        $component = \Drupal::service('plugin.manager.field.widget')
-          ->prepareConfiguration($field_type, []);
-
         // @todo Replace entity_get_form_display() when #2367933 is done.
         // https://www.drupal.org/node/2872159.
-        entity_get_form_display('media', $media_type->id(), 'default')
-          ->setComponent($field_name, $component)
-          ->save();
+        $display = entity_get_form_display('media', $media_type->id(), 'default');
+        $source->prepareFormDisplay($media_type, $display);
+        $display->save();
       }
       if ($source_field->isDisplayConfigurable('view')) {
-        // Use the default formatter and settings.
-        $component = \Drupal::service('plugin.manager.field.formatter')
-          ->prepareConfiguration($field_type, []);
-
         // @todo Replace entity_get_display() when #2367933 is done.
         // https://www.drupal.org/node/2872159.
-        entity_get_display('media', $media_type->id(), 'default')
-          ->setComponent($field_name, $component)
-          ->save();
+        $display = entity_get_display('media', $media_type->id(), 'default');
+        $source->prepareViewDisplay($media_type, $display);
+        $display->save();
       }
     }
 
     $t_args = ['%name' => $media_type->label()];
     if ($status === SAVED_UPDATED) {
-      drupal_set_message($this->t('The media type %name has been updated.', $t_args));
+      $this->messenger()->addStatus($this->t('The media type %name has been updated.', $t_args));
     }
     elseif ($status === SAVED_NEW) {
-      drupal_set_message($this->t('The media type %name has been added.', $t_args));
+      $this->messenger()->addStatus($this->t('The media type %name has been added.', $t_args));
       $this->logger('media')->notice('Added media type %name.', $t_args);
     }
 

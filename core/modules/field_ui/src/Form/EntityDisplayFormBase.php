@@ -94,11 +94,11 @@ abstract class EntityDisplayFormBase extends EntityForm {
       'content' => [
         'title' => $this->t('Content'),
         'invisible' => TRUE,
-        'message' => $this->t('No field is displayed.')
+        'message' => $this->t('No field is displayed.'),
       ],
       'hidden' => [
         'title' => $this->t('Disabled', [], ['context' => 'Plural']),
-        'message' => $this->t('No field is hidden.')
+        'message' => $this->t('No field is hidden.'),
       ],
     ];
   }
@@ -125,7 +125,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
    */
   protected function getFieldDefinitions() {
     $context = $this->displayContext;
-    return array_filter($this->entityManager->getFieldDefinitions($this->entity->getTargetEntityTypeId(), $this->entity->getTargetBundle()), function(FieldDefinitionInterface $field_definition) use ($context) {
+    return array_filter($this->entityManager->getFieldDefinitions($this->entity->getTargetEntityTypeId(), $this->entity->getTargetBundle()), function (FieldDefinitionInterface $field_definition) use ($context) {
       return $field_definition->isDisplayConfigurable($context);
     });
   }
@@ -147,7 +147,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
     ];
 
     if (empty($field_definitions) && empty($extra_fields) && $route_info = FieldUI::getOverviewRouteInfo($this->entity->getTargetEntityTypeId(), $this->entity->getTargetBundle())) {
-      drupal_set_message($this->t('There are no fields yet added. You can add new fields on the <a href=":link">Manage fields</a> page.', [':link' => $route_info->toString()]), 'warning');
+      $this->messenger()->addWarning($this->t('There are no fields yet added. You can add new fields on the <a href=":link">Manage fields</a> page.', [':link' => $route_info->toString()]));
       return $form;
     }
 
@@ -210,6 +210,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
         if ($enabled_displays = array_filter($this->getDisplayStatuses())) {
           $default = array_keys(array_intersect_key($display_mode_options, $enabled_displays));
         }
+        natcasesort($display_mode_options);
         $form['modes']['display_modes_custom'] = [
           '#type' => 'checkboxes',
           '#title' => $this->t('Use custom display settings for the following @display_context modes', ['@display_context' => $this->displayContext]),
@@ -241,7 +242,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
         // spinners will be added manually by the client-side script.
         'progress' => 'none',
       ],
-      '#attributes' => ['class' => ['visually-hidden']]
+      '#attributes' => ['class' => ['visually-hidden']],
     ];
 
     $form['actions'] = ['#type' => 'actions'];
@@ -544,7 +545,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
 
           $display_mode_label = $display_modes[$mode]['label'];
           $url = $this->getOverviewUrl($mode);
-          drupal_set_message($this->t('The %display_mode mode now uses custom display settings. You might want to <a href=":url">configure them</a>.', ['%display_mode' => $display_mode_label, ':url' => $url->toString()]));
+          $this->messenger()->addStatus($this->t('The %display_mode mode now uses custom display settings. You might want to <a href=":url">configure them</a>.', ['%display_mode' => $display_mode_label, ':url' => $url->toString()]));
         }
         $statuses[$mode] = !empty($value);
       }
@@ -552,7 +553,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
       $this->saveDisplayStatuses($statuses);
     }
 
-    drupal_set_message($this->t('Your settings have been saved.'));
+    $this->messenger()->addStatus($this->t('Your settings have been saved.'));
   }
 
   /**
@@ -702,7 +703,7 @@ abstract class EntityDisplayFormBase extends EntityForm {
    *
    * @return array
    *
-   * @see drupal_render()
+   * @see \Drupal\Core\Render\RendererInterface::render()
    * @see \Drupal\Core\Render\Element\Table::preRenderTable()
    *
    * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.

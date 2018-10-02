@@ -2,7 +2,6 @@
 
 namespace Drupal\Tests\taxonomy\Functional\Views;
 
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\language\Entity\ConfigurableLanguage;
 use Drupal\node\Entity\Node;
@@ -50,7 +49,7 @@ class TaxonomyTermViewTest extends TaxonomyTestBase {
 
     // Create a vocabulary and add two term reference fields to article nodes.
 
-    $this->fieldName1 = Unicode::strtolower($this->randomMachineName());
+    $this->fieldName1 = mb_strtolower($this->randomMachineName());
 
     $handler_settings = [
       'target_bundles' => [
@@ -92,8 +91,7 @@ class TaxonomyTermViewTest extends TaxonomyTestBase {
     $this->assertText($node->label());
 
     \Drupal::service('module_installer')->install(['language', 'content_translation']);
-    $language = ConfigurableLanguage::createFromLangcode('ur');
-    $language->save();
+    ConfigurableLanguage::createFromLangcode('ur')->save();
     // Enable translation for the article content type and ensure the change is
     // picked up.
     \Drupal::service('content_translation.manager')->setEnabled('node', 'article', TRUE);

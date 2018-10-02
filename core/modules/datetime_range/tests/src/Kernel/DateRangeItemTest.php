@@ -2,7 +2,6 @@
 
 namespace Drupal\Tests\datetime_range\Kernel;
 
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\datetime_range\Plugin\Field\FieldType\DateRangeItem;
 use Drupal\entity_test\Entity\EntityTest;
@@ -47,7 +46,7 @@ class DateRangeItemTest extends FieldKernelTestBase {
 
     // Add a datetime range field.
     $this->fieldStorage = FieldStorageConfig::create([
-      'field_name' => Unicode::strtolower($this->randomMachineName()),
+      'field_name' => mb_strtolower($this->randomMachineName()),
       'entity_type' => 'entity_test',
       'type' => 'daterange',
       'settings' => ['datetime_type' => DateRangeItem::DATETIME_TYPE_DATE],
@@ -100,6 +99,8 @@ class DateRangeItemTest extends FieldKernelTestBase {
     sleep(1);
     $end_date = $entity->{$field_name}->end_date;
     $this->assertEquals($start_date->getTimestamp(), $end_date->getTimestamp());
+    $this->assertEquals('12:00:00', $start_date->format('H:i:s'));
+    $this->assertEquals('12:00:00', $end_date->format('H:i:s'));
   }
 
 }

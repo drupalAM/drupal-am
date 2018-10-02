@@ -96,16 +96,16 @@ class MigrateExecutable implements MigrateExecutableInterface {
    * @param \Drupal\migrate\Plugin\MigrationInterface $migration
    *   The migration to run.
    * @param \Drupal\migrate\MigrateMessageInterface $message
-   *   The migrate message service.
+   *   (optional) The migrate message service.
    * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $event_dispatcher
-   *   The event dispatcher.
+   *   (optional) The event dispatcher.
    *
    * @throws \Drupal\migrate\MigrateException
    */
-  public function __construct(MigrationInterface $migration, MigrateMessageInterface $message, EventDispatcherInterface $event_dispatcher = NULL) {
+  public function __construct(MigrationInterface $migration, MigrateMessageInterface $message = NULL, EventDispatcherInterface $event_dispatcher = NULL) {
     $this->migration = $migration;
-    $this->message = $message;
-    $this->migration->getIdMap()->setMessage($message);
+    $this->message = $message ?: new MigrateMessage();
+    $this->migration->getIdMap()->setMessage($this->message);
     $this->eventDispatcher = $event_dispatcher;
     // Record the memory limit in bytes
     $limit = trim(ini_get('memory_limit'));
@@ -221,7 +221,9 @@ class MigrateExecutable implements MigrateExecutableInterface {
       if ($save) {
         try {
           $this->getEventDispatcher()->dispatch(MigrateEvents::PRE_ROW_SAVE, new MigratePreRowSaveEvent($this->migration, $this->message, $row));
-          $destination_id_values = $destination->import($row, $id_map->lookupDestinationId($this->sourceIdValues));
+          $destination_ids = $id_map->lookupDestinationIds($this->sourceIdValues);
+          $destination_id_values = $destination_ids ? reset($destination_ids) : [];
+          $destination_id_values = $destination->import($row, $destination_id_values);
           $this->getEventDispatcher()->dispatch(MigrateEvents::POST_ROW_SAVE, new MigratePostRowSaveEvent($this->migration, $this->message, $row, $destination_id_values));
           if ($destination_id_values) {
             // We do not save an idMap entry for config.
@@ -386,9 +388,14 @@ class MigrateExecutable implements MigrateExecutableInterface {
           $multiple = $plugin->multiple();
         }
       }
-      // No plugins or no value means do not set.
-      if ($plugins && !is_null($value)) {
-        $row->setDestinationProperty($destination, $value);
+      // Ensure all values, including nulls, are migrated.
+      if ($plugins) {
+        if (isset($value)) {
+          $row->setDestinationProperty($destination, $value);
+        }
+        else {
+          $row->setEmptyDestinationProperty($destination);
+        }
       }
       // Reset the value.
       $value = NULL;

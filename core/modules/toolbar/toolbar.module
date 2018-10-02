@@ -217,7 +217,7 @@ function toolbar_toolbar() {
  * @return array
  *   The updated renderable array.
  *
- * @see drupal_render()
+ * @see \Drupal\Core\Render\RendererInterface::render()
  */
 function toolbar_prerender_toolbar_administration_tray(array $element) {
   $menu_tree = \Drupal::service('toolbar.menu_tree');
@@ -345,7 +345,7 @@ function _toolbar_do_get_rendered_subtrees(array $data) {
     // Many routes have dots as route name, while some special ones like <front>
     // have <> characters in them.
     $url = $link->getUrlObject();
-    $id = str_replace(['.', '<', '>'], ['-', '', '' ], $url->isRouted() ? $url->getRouteName() : $url->getUri());
+    $id = str_replace(['.', '<', '>'], ['-', '', ''], $url->isRouted() ? $url->getRouteName() : $url->getUri());
 
     $subtrees[$id] = $output;
   }

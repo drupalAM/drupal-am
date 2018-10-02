@@ -97,7 +97,6 @@ class ActiveLinkResponseFilter implements EventSubscriberInterface {
     ));
   }
 
-
   /**
    * Sets the "is-active" class on relevant links.
    *
@@ -126,6 +125,9 @@ class ActiveLinkResponseFilter implements EventSubscriberInterface {
   public static function setLinkActiveClass($html_markup, $current_path, $is_front, $url_language, array $query) {
     $search_key_current_path = 'data-drupal-link-system-path="' . $current_path . '"';
     $search_key_front = 'data-drupal-link-system-path="&lt;front&gt;"';
+
+    // Receive the query in a standardized manner.
+    ksort($query);
 
     $offset = 0;
     // There are two distinct conditions that can make a link be marked active:

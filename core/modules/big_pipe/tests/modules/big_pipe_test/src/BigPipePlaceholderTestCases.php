@@ -45,7 +45,6 @@ class BigPipePlaceholderTestCases {
       'contexts' => ['session.exists', 'cookies:big_pipe_nojs'],
     ];
 
-
     // 1. Real-world example of HTML placeholder.
     $status_messages = new BigPipePlaceholderTestCase(
       ['#type' => 'status_messages'],
@@ -53,7 +52,7 @@ class BigPipePlaceholderTestCases {
       [
         '#lazy_builder' => [
           'Drupal\Core\Render\Element\StatusMessages::renderMessages',
-          [NULL]
+          [NULL],
         ],
       ]
     );
@@ -96,7 +95,6 @@ class BigPipePlaceholderTestCases {
       $status_messages->embeddedHtmlResponse = '<div role="contentinfo" aria-label="Status message" class="messages messages--status">' . "\n" . '                  <h2 class="visually-hidden">Status message</h2>' . "\n" . '                    Hello from BigPipe!' . "\n" . '            </div>' . "\n    \n";
     }
 
-
     // 2. Real-world example of HTML attribute value placeholder: form action.
     $form_action = new BigPipePlaceholderTestCase(
       $container ? $container->get('form_builder')->getForm('Drupal\big_pipe_test\Form\BigPipeTestForm') : [],
@@ -119,7 +117,6 @@ class BigPipePlaceholderTestCases {
       $form_action->embeddedHtmlResponse = '<form class="big-pipe-test-form" data-drupal-selector="big-pipe-test-form" action="' . base_path() . 'big_pipe_test"';
     }
 
-
     // 3. Real-world example of HTML attribute value subset placeholder: CSRF
     // token in link.
     $csrf_token = new BigPipePlaceholderTestCase(
@@ -132,7 +129,7 @@ class BigPipePlaceholderTestCases {
       [
         '#lazy_builder' => [
           'route_processor_csrf:renderPlaceholderCsrfToken',
-          ['admin/config/user-interface/shortcut/manage/default/add-link-inline']
+          ['admin/config/user-interface/shortcut/manage/default/add-link-inline'],
         ],
       ]
     );
@@ -150,7 +147,6 @@ class BigPipePlaceholderTestCases {
       $csrf_token->embeddedHtmlResponse = $container->get('csrf_token')->get('admin/appearance/default');
     }
 
-
     // 4. Edge case: custom string to be considered as a placeholder that
     // happens to not be valid HTML.
     $hello = new BigPipePlaceholderTestCase(
@@ -159,14 +155,14 @@ class BigPipePlaceholderTestCases {
         '#attached' => [
           'placeholders' => [
             '<hello' => ['#lazy_builder' => ['\Drupal\big_pipe_test\BigPipeTestController::helloOrYarhar', []]],
-          ]
+          ],
         ],
       ],
       '<hello',
       [
         '#lazy_builder' => [
           'hello_or_yarhar',
-          []
+          [],
         ],
       ]
     );
@@ -182,7 +178,6 @@ class BigPipePlaceholderTestCases {
     ];
     $hello->embeddedHtmlResponse = '<marquee>Yarhar llamas forever!</marquee>';
 
-
     // 5. Edge case: non-#lazy_builder placeholder.
     $current_time = new BigPipePlaceholderTestCase(
       [
@@ -193,9 +188,9 @@ class BigPipePlaceholderTestCases {
               '#pre_render' => [
                 '\Drupal\big_pipe_test\BigPipeTestController::currentTime',
               ],
-            ]
-          ]
-        ]
+            ],
+          ],
+        ],
       ],
       '<time>CURRENT TIME</time>',
       [
@@ -238,7 +233,6 @@ class BigPipePlaceholderTestCases {
       ],
     ];
     $current_time->embeddedHtmlResponse = '<time datetime="1991-03-14"></time>';
-
 
     // 6. Edge case: #lazy_builder that throws an exception.
     $exception = new BigPipePlaceholderTestCase(

@@ -4,7 +4,6 @@ namespace Drupal\node\Tests;
 
 use Drupal\comment\Tests\CommentTestTrait;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Url;
 use Drupal\field\Tests\EntityReference\EntityReferenceTestTrait;
@@ -88,7 +87,7 @@ class PagePreviewTest extends NodeTestBase {
     $field_config->save();
 
     // Create a field.
-    $this->fieldName = Unicode::strtolower($this->randomMachineName());
+    $this->fieldName = mb_strtolower($this->randomMachineName());
     $handler_settings = [
       'target_bundles' => [
         $this->vocabulary->id() => $this->vocabulary->id(),
@@ -134,7 +133,7 @@ class PagePreviewTest extends NodeTestBase {
       'type' => 'text',
       'settings' => [
         'max_length' => 50,
-      ]
+      ],
     ]);
     $field_storage->save();
     FieldConfig::create([
@@ -171,7 +170,7 @@ class PagePreviewTest extends NodeTestBase {
 
     // Upload an image.
     $test_image = current($this->drupalGetTestFiles('image', 39325));
-    $edit['files[field_image_0][]'] = drupal_realpath($test_image->uri);
+    $edit['files[field_image_0][]'] = \Drupal::service('file_system')->realpath($test_image->uri);
     $this->drupalPostForm('node/add/page', $edit, t('Upload'));
 
     // Add an alt tag and preview the node.
@@ -183,6 +182,10 @@ class PagePreviewTest extends NodeTestBase {
     $this->assertText($edit[$body_key], 'Body displayed.');
     $this->assertText($edit[$term_key], 'Term displayed.');
     $this->assertLink(t('Back to content editing'));
+
+    // Check that we see the class of the node type on the body element.
+    $body_class_element = $this->xpath("//body[contains(@class, 'page-node-type-page')]");
+    $this->assertTrue(!empty($body_class_element), 'Node type body class found.');
 
     // Get the UUID.
     $url = parse_url($this->getUrl());
@@ -316,11 +319,13 @@ class PagePreviewTest extends NodeTestBase {
     $this->assertUrl($node->toUrl());
     $this->assertResponse(200);
 
+    /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+    $file_system = \Drupal::service('file_system');
     // Assert multiple items can be added and are not lost when previewing.
     $test_image_1 = current($this->drupalGetTestFiles('image', 39325));
-    $edit_image_1['files[field_image_0][]'] = drupal_realpath($test_image_1->uri);
+    $edit_image_1['files[field_image_0][]'] = $file_system->realpath($test_image_1->uri);
     $test_image_2 = current($this->drupalGetTestFiles('image', 39325));
-    $edit_image_2['files[field_image_1][]'] = drupal_realpath($test_image_2->uri);
+    $edit_image_2['files[field_image_1][]'] = $file_system->realpath($test_image_2->uri);
     $edit['field_image[0][alt]'] = 'Alt 1';
 
     $this->drupalPostForm('node/add/page', $edit_image_1, t('Upload'));

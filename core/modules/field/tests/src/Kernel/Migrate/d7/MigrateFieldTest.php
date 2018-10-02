@@ -93,6 +93,7 @@ class MigrateFieldTest extends MigrateDrupal7TestBase {
     $this->assertEntity('node.taxonomy_forums', 'entity_reference', TRUE, 1);
     $this->assertEntity('node.field_text', 'string', TRUE, 1);
     $this->assertEntity('node.field_text_list', 'list_string', TRUE, 3);
+    $this->assertEntity('node.field_float_list', 'list_float', TRUE, 1);
     $this->assertEntity('node.field_boolean', 'boolean', TRUE, 1);
     $this->assertEntity('node.field_email', 'email', TRUE, -1);
     $this->assertEntity('node.field_phone', 'telephone', TRUE, 1);
@@ -101,6 +102,18 @@ class MigrateFieldTest extends MigrateDrupal7TestBase {
     $this->assertEntity('node.field_node_entityreference', 'entity_reference', TRUE, -1);
     $this->assertEntity('node.field_user_entityreference', 'entity_reference', TRUE, 1);
     $this->assertEntity('node.field_term_entityreference', 'entity_reference', TRUE, -1);
+    $this->assertEntity('node.field_date_without_time', 'datetime', TRUE, 1);
+    $this->assertEntity('node.field_datetime_without_time', 'datetime', TRUE, 1);
+
+    // Tests that fields created by the Title module are not migrated.
+    $title_field = FieldStorageConfig::load('node.title_field');
+    $this->assertNull($title_field);
+    $subject_field = FieldStorageConfig::load('comment.subject_field');
+    $this->assertNull($subject_field);
+    $name_field = FieldStorageConfig::load('taxonomy_term.name_field');
+    $this->assertNull($name_field);
+    $description_field = FieldStorageConfig::load('taxonomy_term.description_field');
+    $this->assertNull($description_field);
 
     // Assert that the taxonomy term reference fields are referencing the
     // correct entity type.
@@ -117,6 +130,18 @@ class MigrateFieldTest extends MigrateDrupal7TestBase {
     $this->assertEquals('user', $field->getSetting('target_type'));
     $field = FieldStorageConfig::load('node.field_term_entityreference');
     $this->assertEquals('taxonomy_term', $field->getSetting('target_type'));
+
+    // Make sure that datetime fields get the right datetime_type setting
+    $field = FieldStorageConfig::load('node.field_date');
+    $this->assertEquals('datetime', $field->getSetting('datetime_type'));
+    $field = FieldStorageConfig::load('node.field_date_without_time');
+    $this->assertEquals('date', $field->getSetting('datetime_type'));
+    $field = FieldStorageConfig::load('node.field_datetime_without_time');
+    $this->assertEquals('date', $field->getSetting('datetime_type'));
+    // Except for field_date_with_end_time which is a timestamp and so does not
+    // have a datetime_type setting.
+    $field = FieldStorageConfig::load('node.field_date_with_end_time');
+    $this->assertNull($field->getSetting('datetime_type'));
   }
 
   /**
@@ -149,7 +174,7 @@ class MigrateFieldTest extends MigrateDrupal7TestBase {
     // message with the required steps to fix this.
     $migration = $this->getMigration('d7_field');
     $messages = $migration->getIdMap()->getMessageIterator()->fetchAll();
-    $errors = array_map(function($message) {
+    $errors = array_map(function ($message) {
       return $message->message;
     }, $messages);
     sort($errors);

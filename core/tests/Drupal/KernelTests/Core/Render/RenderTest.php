@@ -16,7 +16,7 @@ class RenderTest extends KernelTestBase {
    *
    * @var array
    */
-  public static $modules = ['system', 'common_test'];
+  public static $modules = ['system', 'common_test', 'theme_test'];
 
   /**
    * Tests theme preprocess functions being able to attach assets.
@@ -36,11 +36,28 @@ class RenderTest extends KernelTestBase {
       'library' => [
         'test/generic_preprocess',
         'test/specific_preprocess',
-      ]
+      ],
     ];
     $this->assertEqual($expected_attached, $test_element['#attached'], 'All expected assets from theme preprocess hooks attached.');
 
     \Drupal::state()->set('theme_preprocess_attached_test', FALSE);
+  }
+
+  /**
+   * Ensures that render array children are processed correctly.
+   */
+  public function testRenderChildren() {
+    // Ensure that #prefix and #suffix is only being printed once since that is
+    // the behaviour the caller code expects.
+    $build = [
+      '#type' => 'container',
+      '#theme' => 'theme_test_render_element_children',
+      '#prefix' => 'kangaroo',
+      '#suffix' => 'kitten',
+    ];
+    $this->render($build);
+    $this->removeWhiteSpace();
+    $this->assertNoRaw('<div>kangarookitten</div>');
   }
 
   /**

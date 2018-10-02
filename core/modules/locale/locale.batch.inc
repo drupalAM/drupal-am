@@ -104,22 +104,22 @@ function locale_translation_batch_status_finished($success, $results) {
       else {
         $message = \Drupal::translation()->formatPlural(count($results['failed_files']), 'One translation files could not be checked. See the log for details.', '@count translation files could not be checked. See the log for details.');
       }
-      drupal_set_message($message, 'error');
+      \Drupal::messenger()->addError($message);
     }
     if (isset($results['files'])) {
-      drupal_set_message(\Drupal::translation()->formatPlural(
+      \Drupal::messenger()->addStatus(\Drupal::translation()->formatPlural(
         count($results['files']),
         'Checked available interface translation updates for one project.',
         'Checked available interface translation updates for @count projects.'
       ));
     }
     if (!isset($results['failed_files']) && !isset($results['files'])) {
-      drupal_set_message(t('Nothing to check.'));
+      \Drupal::messenger()->addStatus(t('Nothing to check.'));
     }
     \Drupal::state()->set('locale.translation_last_checked', REQUEST_TIME);
   }
   else {
-    drupal_set_message(t('An error occurred trying to check available interface translation updates.'), 'error');
+    \Drupal::messenger()->addError(t('An error occurred trying to check available interface translation updates.'));
   }
 }
 
@@ -240,9 +240,9 @@ function locale_translation_http_check($uri) {
     $actual_uri = NULL;
     $response = \Drupal::service('http_client_factory')->fromOptions([
       'allow_redirects' => [
-        'on_redirect' => function(RequestInterface $request, ResponseInterface $response, UriInterface $request_uri) use (&$actual_uri) {
+        'on_redirect' => function (RequestInterface $request, ResponseInterface $response, UriInterface $request_uri) use (&$actual_uri) {
           $actual_uri = (string) $request_uri;
-        }
+        },
       ],
     ])->head($uri);
     $result = [];
@@ -292,7 +292,7 @@ function locale_translation_http_check($uri) {
  *   File object if download was successful. FALSE on failure.
  */
 function locale_translation_download_source($source_file, $directory = 'temporary://') {
-  if ($uri = system_retrieve_file($source_file->uri, $directory)) {
+  if ($uri = system_retrieve_file($source_file->uri, $directory, FALSE, FILE_EXISTS_REPLACE)) {
     $file = clone($source_file);
     $file->type = LOCALE_TRANSLATION_LOCAL;
     $file->uri = $uri;

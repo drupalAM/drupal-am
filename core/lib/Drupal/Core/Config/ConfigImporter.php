@@ -405,6 +405,14 @@ class ConfigImporter {
     $module_list = array_reverse($module_list);
     $this->extensionChangelist['module']['install'] = array_intersect(array_keys($module_list), $install);
 
+    // If we're installing the install profile ensure it comes last. This will
+    // occur when installing a site from configuration.
+    $install_profile_key = array_search($new_extensions['profile'], $this->extensionChangelist['module']['install'], TRUE);
+    if ($install_profile_key !== FALSE) {
+      unset($this->extensionChangelist['module']['install'][$install_profile_key]);
+      $this->extensionChangelist['module']['install'][] = $new_extensions['profile'];
+    }
+
     // Work out what themes to install and to uninstall.
     $this->extensionChangelist['theme']['install'] = array_keys(array_diff_key($new_extensions['theme'], $current_extensions['theme']));
     $this->extensionChangelist['theme']['uninstall'] = array_keys(array_diff_key($current_extensions['theme'], $new_extensions['theme']));
@@ -725,7 +733,8 @@ class ConfigImporter {
       }
       $this->eventDispatcher->dispatch(ConfigEvents::IMPORT_VALIDATE, new ConfigImporterEvent($this));
       if (count($this->getErrors())) {
-        throw new ConfigImporterException('There were errors validating the config synchronization.');
+        $errors = array_merge(['There were errors validating the config synchronization.'], $this->getErrors());
+        throw new ConfigImporterException(implode(PHP_EOL, $errors));
       }
       else {
         $this->validated = TRUE;
@@ -788,9 +797,8 @@ class ConfigImporter {
       // services.
       $this->reInjectMe();
       // During a module install or uninstall the container is rebuilt and the
-      // module handler is called from drupal_get_complete_schema(). This causes
-      // the container's instance of the module handler not to have loaded all
-      // the enabled modules.
+      // module handler is called. This causes the container's instance of the
+      // module handler not to have loaded all the enabled modules.
       $this->moduleHandler->loadAll();
     }
     if ($type == 'theme') {

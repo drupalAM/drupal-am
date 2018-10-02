@@ -52,17 +52,23 @@
       }
     },
     getQuickEditUISettings: function getQuickEditUISettings() {
-      return { padding: true, unifiedToolbar: true, fullWidthToolbar: true, popup: true };
+      return {
+        padding: true,
+        unifiedToolbar: true,
+        fullWidthToolbar: true,
+        popup: true
+      };
     },
     loadForm: function loadForm() {
       var fieldModel = this.fieldModel;
 
-      var id = 'quickedit-form-for-' + fieldModel.id.replace(/[\/\[\]]/g, '_');
+      var id = 'quickedit-form-for-' + fieldModel.id.replace(/[/[\]]/g, '_');
 
-      var $formContainer = this.$formContainer = $(Drupal.theme('quickeditFormContainer', {
+      var $formContainer = $(Drupal.theme('quickeditFormContainer', {
         id: id,
         loadingMsg: Drupal.t('Loading…')
       }));
+      this.$formContainer = $formContainer;
       $formContainer.find('.quickedit-form').addClass('quickedit-editable quickedit-highlighted quickedit-editing').attr('role', 'dialog');
 
       if (this.$el.css('display') === 'inline') {
@@ -121,15 +127,15 @@
       var editorModel = this.model;
       var fieldModel = this.fieldModel;
 
-      function cleanUpAjax() {
-        Drupal.quickedit.util.form.unajaxifySaving(formSaveAjax);
-        formSaveAjax = null;
-      }
-
       var formSaveAjax = Drupal.quickedit.util.form.ajaxifySaving({
         nocssjs: false,
         other_view_modes: fieldModel.findOtherViewModes()
       }, $submit);
+
+      function cleanUpAjax() {
+        Drupal.quickedit.util.form.unajaxifySaving(formSaveAjax);
+        formSaveAjax = null;
+      }
 
       formSaveAjax.commands.quickeditFieldFormSaved = function (ajax, response, status) {
         cleanUpAjax();

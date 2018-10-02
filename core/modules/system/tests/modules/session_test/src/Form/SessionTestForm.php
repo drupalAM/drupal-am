@@ -2,12 +2,14 @@
 
 namespace Drupal\session_test\Form;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Form controller for the test config edit forms.
+ *
+ * @internal
  */
 class SessionTestForm extends FormBase {
 
@@ -41,7 +43,7 @@ class SessionTestForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    drupal_set_message(SafeMarkup::format('Ok: @input', ['@input' => $form_state->getValue('input')]));
+    $this->messenger()->addStatus(new FormattableMarkup('Ok: @input', ['@input' => $form_state->getValue('input')]));
   }
 
 }

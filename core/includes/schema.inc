@@ -130,12 +130,12 @@ function drupal_install_schema($module) {
  *   The module for which the tables will be removed.
  */
 function drupal_uninstall_schema($module) {
-  $schema = drupal_get_module_schema($module);
-  _drupal_schema_initialize($schema, $module, FALSE);
-
-  foreach ($schema as $table) {
-    if (db_table_exists($table['name'])) {
-      db_drop_table($table['name']);
+  $tables = drupal_get_module_schema($module);
+  _drupal_schema_initialize($tables, $module, FALSE);
+  $schema = \Drupal::database()->schema();
+  foreach ($tables as $table) {
+    if ($schema->tableExists($table['name'])) {
+      $schema->dropTable($table['name']);
     }
   }
 }
@@ -202,7 +202,7 @@ function _drupal_schema_initialize(&$schema, $module, $remove_descriptions = TRU
 }
 
 /**
- * Typecasts values to proper datatypes.
+ * Typecasts values to proper data types.
  *
  * MySQL PDO silently casts, e.g. FALSE and '' to 0, when inserting the value
  * into an integer column, but PostgreSQL PDO does not. Look up the schema

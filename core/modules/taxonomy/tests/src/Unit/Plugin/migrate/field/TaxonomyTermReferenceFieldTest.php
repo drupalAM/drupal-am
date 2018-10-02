@@ -31,12 +31,12 @@ class TaxonomyTermReferenceFieldTest extends UnitTestCase {
 
     $migration = $this->prophesize(MigrationInterface::class);
 
-    // The plugin's processFieldValues() method will call
+    // The plugin's defineValueProcessPipeline() method will call
     // setProcessOfProperty() and return nothing. So, in order to examine the
     // process pipeline created by the plugin, we need to ensure that
     // getProcess() always returns the last input to setProcessOfProperty().
     $migration->setProcessOfProperty(Argument::type('string'), Argument::type('array'))
-      ->will(function($arguments) use ($migration) {
+      ->will(function ($arguments) use ($migration) {
         $migration->getProcess()->willReturn($arguments[1]);
       });
 
@@ -44,13 +44,13 @@ class TaxonomyTermReferenceFieldTest extends UnitTestCase {
   }
 
   /**
-   * @covers ::processFieldValues
+   * @covers ::defineValueProcessPipeline
    */
-  public function testProcessFieldValues() {
-    $this->plugin->processFieldValues($this->migration, 'somefieldname', []);
+  public function testDefineValueProcessPipeline($method = 'defineValueProcessPipeline') {
+    $this->plugin->$method($this->migration, 'somefieldname', []);
 
     $expected = [
-      'plugin' => 'iterator',
+      'plugin' => 'sub_process',
       'source' => 'somefieldname',
       'process' => [
         'target_id' => 'tid',

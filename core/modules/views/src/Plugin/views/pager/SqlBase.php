@@ -132,7 +132,6 @@ abstract class SqlBase extends PagerPluginBase implements CacheableDependencyInt
       ],
     ];
 
-
     $form['expose']['items_per_page_options_all'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Allow user to display all items'),
@@ -233,7 +232,6 @@ abstract class SqlBase extends PagerPluginBase implements CacheableDependencyInt
     $this->view->query->setLimit($limit);
     $this->view->query->setOffset($offset);
   }
-
 
   /**
    * Set the current page.

@@ -38,7 +38,7 @@ class TextCckTest extends UnitTestCase {
     // process pipeline created by the plugin, we need to ensure that
     // getProcess() always returns the last input to setProcessOfProperty().
     $migration->setProcessOfProperty(Argument::type('string'), Argument::type('array'))
-      ->will(function($arguments) use ($migration) {
+      ->will(function ($arguments) use ($migration) {
         $migration->getProcess()->willReturn($arguments[1]);
       });
 
@@ -55,7 +55,7 @@ class TextCckTest extends UnitTestCase {
     $this->plugin->processCckFieldValues($this->migration, 'body', $field_info);
 
     $process = $this->migration->getProcess();
-    $this->assertSame('iterator', $process['plugin']);
+    $this->assertSame('sub_process', $process['plugin']);
     $this->assertSame('body', $process['source']);
     $this->assertSame('value', $process['process']['value']);
 
@@ -76,7 +76,7 @@ class TextCckTest extends UnitTestCase {
       'widget_type' => 'optionwidgets_onoff',
       'global_settings' => [
         'allowed_values' => "foo\nbar",
-      ]
+      ],
     ];
     $this->plugin->processCckFieldValues($this->migration, 'field', $info);
 
@@ -101,7 +101,7 @@ class TextCckTest extends UnitTestCase {
       'widget_type' => 'optionwidgets_onoff',
       'global_settings' => [
         'allowed_values' => "foo|Foo\nbaz|Baz",
-      ]
+      ],
     ];
     $this->plugin->processCckFieldValues($this->migration, 'field', $info);
 

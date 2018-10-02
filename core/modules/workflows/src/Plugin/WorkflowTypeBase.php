@@ -7,6 +7,7 @@ use Drupal\Core\Plugin\PluginWithFormsTrait;
 use Drupal\workflows\State;
 use Drupal\workflows\StateInterface;
 use Drupal\workflows\Transition;
+use Drupal\workflows\TransitionInterface;
 use Drupal\workflows\WorkflowInterface;
 use Drupal\workflows\WorkflowTypeInterface;
 
@@ -151,7 +152,7 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
    */
   public function getState($state_id) {
     if (!isset($this->configuration['states'][$state_id])) {
-      throw new \InvalidArgumentException("The state '$state_id' does not exist in workflow.'");
+      throw new \InvalidArgumentException("The state '$state_id' does not exist in workflow.");
     }
     return new State(
       $this,
@@ -166,7 +167,7 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
    */
   public function setStateLabel($state_id, $label) {
     if (!$this->hasState($state_id)) {
-      throw new \InvalidArgumentException("The state '$state_id' does not exist in workflow.'");
+      throw new \InvalidArgumentException("The state '$state_id' does not exist in workflow.");
     }
     $this->configuration['states'][$state_id]['label'] = $label;
     return $this;
@@ -177,7 +178,11 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
    */
   public function setStateWeight($state_id, $weight) {
     if (!$this->hasState($state_id)) {
-      throw new \InvalidArgumentException("The state '$state_id' does not exist in workflow.'");
+      throw new \InvalidArgumentException("The state '$state_id' does not exist in workflow.");
+    }
+    if (!is_numeric($weight)) {
+      $label = $this->getState($state_id)->label();
+      throw new \InvalidArgumentException("The weight '$weight' must be numeric for state '$label'.");
     }
     $this->configuration['states'][$state_id]['weight'] = $weight;
     return $this;
@@ -188,7 +193,7 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
    */
   public function deleteState($state_id) {
     if (!$this->hasState($state_id)) {
-      throw new \InvalidArgumentException("The state '$state_id' does not exist in workflow.'");
+      throw new \InvalidArgumentException("The state '$state_id' does not exist in workflow.");
     }
     if (count($this->configuration['states']) === 1) {
       throw new \InvalidArgumentException("The state '$state_id' can not be deleted from workflow as it is the only state.");
@@ -221,14 +226,14 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
    */
   public function addTransition($transition_id, $label, array $from_state_ids, $to_state_id) {
     if ($this->hasTransition($transition_id)) {
-      throw new \InvalidArgumentException("The transition '$transition_id' already exists in workflow.'");
+      throw new \InvalidArgumentException("The transition '$transition_id' already exists in workflow.");
     }
     if (preg_match(static::VALID_ID_REGEX, $transition_id)) {
       throw new \InvalidArgumentException("The transition ID '$transition_id' must contain only lowercase letters, numbers, and underscores.");
     }
 
     if (!$this->hasState($to_state_id)) {
-      throw new \InvalidArgumentException("The state '$to_state_id' does not exist in workflow.'");
+      throw new \InvalidArgumentException("The state '$to_state_id' does not exist in workflow.");
     }
     $this->configuration['transitions'][$transition_id] = [
       'label' => $label,
@@ -306,7 +311,7 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
    */
   public function getTransition($transition_id) {
     if (!$this->hasTransition($transition_id)) {
-      throw new \InvalidArgumentException("The transition '$transition_id' does not exist in workflow.'");
+      throw new \InvalidArgumentException("The transition '$transition_id' does not exist in workflow.");
     }
     return new Transition(
       $this,
@@ -328,7 +333,7 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
   /**
    * {@inheritdoc}
    */
-  public function getTransitionsForState($state_id, $direction = 'from') {
+  public function getTransitionsForState($state_id, $direction = TransitionInterface::DIRECTION_FROM) {
     $transition_ids = array_keys(array_filter($this->configuration['transitions'], function ($transition) use ($state_id, $direction) {
       return in_array($state_id, (array) $transition[$direction], TRUE);
     }));
@@ -341,7 +346,7 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
   public function getTransitionFromStateToState($from_state_id, $to_state_id) {
     $transition_id = $this->getTransitionIdFromStateToState($from_state_id, $to_state_id);
     if (empty($transition_id)) {
-      throw new \InvalidArgumentException("The transition from '$from_state_id' to '$to_state_id' does not exist in workflow.'");
+      throw new \InvalidArgumentException("The transition from '$from_state_id' to '$to_state_id' does not exist in workflow.");
     }
     return $this->getTransition($transition_id);
   }
@@ -389,7 +394,11 @@ abstract class WorkflowTypeBase extends PluginBase implements WorkflowTypeInterf
    */
   public function setTransitionWeight($transition_id, $weight) {
     if (!$this->hasTransition($transition_id)) {
-      throw new \InvalidArgumentException("The transition '$transition_id' does not exist in workflow.'");
+      throw new \InvalidArgumentException("The transition '$transition_id' does not exist in workflow.");
+    }
+    if (!is_numeric($weight)) {
+      $label = $this->getTransition($transition_id)->label();
+      throw new \InvalidArgumentException("The weight '$weight' must be numeric for transition '$label'.");
     }
     $this->configuration['transitions'][$transition_id]['weight'] = $weight;
     return $this;

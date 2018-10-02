@@ -3,7 +3,7 @@
 namespace Drupal\Core\Entity;
 
 use Drupal\Component\Plugin\Definition\PluginDefinition;
-use Drupal\Component\Utility\Unicode;
+use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\Entity\Exception\EntityTypeIdLengthException;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
@@ -15,6 +15,7 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  */
 class EntityType extends PluginDefinition implements EntityTypeInterface {
 
+  use DependencySerializationTrait;
   use StringTranslationTrait;
 
   /**
@@ -155,6 +156,13 @@ class EntityType extends PluginDefinition implements EntityTypeInterface {
   protected $data_table = NULL;
 
   /**
+   * Indicates whether the entity data is internal.
+   *
+   * @var bool
+   */
+  protected $internal = FALSE;
+
+  /**
    * Indicates whether entities of this type have multilingual support.
    *
    * @var bool
@@ -288,7 +296,7 @@ class EntityType extends PluginDefinition implements EntityTypeInterface {
    */
   public function __construct($definition) {
     // Throw an exception if the entity type ID is longer than 32 characters.
-    if (Unicode::strlen($definition['id']) > static::ID_MAX_LENGTH) {
+    if (mb_strlen($definition['id']) > static::ID_MAX_LENGTH) {
       throw new EntityTypeIdLengthException('Attempt to create an entity type with an ID longer than ' . static::ID_MAX_LENGTH . " characters: {$definition['id']}.");
     }
 
@@ -311,10 +319,15 @@ class EntityType extends PluginDefinition implements EntityTypeInterface {
       $this->checkStorageClass($this->handlers['storage']);
     }
 
-    // Automatically add the EntityChanged constraint if the entity type tracks
-    // the changed time.
-    if ($this->entityClassImplements(EntityChangedInterface::class) ) {
+    // Automatically add the "EntityChanged" constraint if the entity type
+    // tracks the changed time.
+    if ($this->entityClassImplements(EntityChangedInterface::class)) {
       $this->addConstraint('EntityChanged');
+    }
+    // Automatically add the "EntityUntranslatableFields" constraint if we have
+    // an entity type supporting translatable fields and pending revisions.
+    if ($this->entityClassImplements(ContentEntityInterface::class)) {
+      $this->addConstraint('EntityUntranslatableFields');
     }
 
     // Ensure a default list cache tag is set.
@@ -347,6 +360,13 @@ class EntityType extends PluginDefinition implements EntityTypeInterface {
       $this->additional[$property] = $value;
     }
     return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isInternal() {
+    return $this->internal;
   }
 
   /**
@@ -677,7 +697,15 @@ class EntityType extends PluginDefinition implements EntityTypeInterface {
    * {@inheritdoc}
    */
   public function getBundleLabel() {
-    return (string) $this->bundle_label;
+    // If there is no bundle label defined, try to provide some sensible
+    // fallbacks.
+    if (!empty($this->bundle_label)) {
+      return (string) $this->bundle_label;
+    }
+    elseif ($bundle_entity_type_id = $this->getBundleEntityType()) {
+      return (string) \Drupal::entityTypeManager()->getDefinition($bundle_entity_type_id)->getLabel();
+    }
+    return (string) new TranslatableMarkup('@type_label bundle', ['@type_label' => $this->getLabel()], [], $this->getStringTranslation());
   }
 
   /**
@@ -741,7 +769,7 @@ class EntityType extends PluginDefinition implements EntityTypeInterface {
    * {@inheritdoc}
    */
   public function getLowercaseLabel() {
-    return Unicode::strtolower($this->getLabel());
+    return mb_strtolower($this->getLabel());
   }
 
   /**
@@ -809,7 +837,6 @@ class EntityType extends PluginDefinition implements EntityTypeInterface {
   public function getGroup() {
     return $this->group;
   }
-
 
   /**
    * {@inheritdoc}

@@ -2,7 +2,7 @@
 
 namespace Drupal\datetime\Plugin\Field\FieldFormatter;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
@@ -110,10 +110,6 @@ class DateTimeTimeAgoFormatter extends FormatterBase implements ContainerFactory
       $date = $item->date;
       $output = [];
       if (!empty($item->date)) {
-        if ($this->getFieldSetting('datetime_type') == 'date') {
-          // A date without time will pick up the current time, use the default.
-          datetime_date_default_time($date);
-        }
         $output = $this->formatDate($date);
       }
       $elements[$delta] = $output;
@@ -186,13 +182,13 @@ class DateTimeTimeAgoFormatter extends FormatterBase implements ContainerFactory
     if ($this->request->server->get('REQUEST_TIME') > $timestamp) {
       $result = $this->dateFormatter->formatTimeDiffSince($timestamp, $options);
       $build = [
-        '#markup' => SafeMarkup::format($this->getSetting('past_format'), ['@interval' => $result->getString()]),
+        '#markup' => new FormattableMarkup($this->getSetting('past_format'), ['@interval' => $result->getString()]),
       ];
     }
     else {
       $result = $this->dateFormatter->formatTimeDiffUntil($timestamp, $options);
       $build = [
-        '#markup' => SafeMarkup::format($this->getSetting('future_format'), ['@interval' => $result->getString()]),
+        '#markup' => new FormattableMarkup($this->getSetting('future_format'), ['@interval' => $result->getString()]),
       ];
     }
     CacheableMetadata::createFromObject($result)->applyTo($build);

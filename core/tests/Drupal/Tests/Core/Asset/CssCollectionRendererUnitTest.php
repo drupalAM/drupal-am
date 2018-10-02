@@ -15,7 +15,7 @@ class CssCollectionRendererUnitTest extends UnitTestCase {
   /**
    * A CSS asset renderer.
    *
-   * @var \Drupal\Core\Asset\CssRenderer object.
+   * @var \Drupal\Core\Asset\CssCollectionRenderer
    */
   protected $renderer;
 
@@ -76,7 +76,7 @@ class CssCollectionRendererUnitTest extends UnitTestCase {
    * @see testRender
    */
   public function providerTestRender() {
-    $create_link_element = function($href, $media = 'all', $browsers = []) {
+    $create_link_element = function ($href, $media = 'all', $browsers = []) {
       return [
         '#type' => 'html_tag',
         '#tag' => 'link',
@@ -88,20 +88,20 @@ class CssCollectionRendererUnitTest extends UnitTestCase {
         '#browsers' => $browsers,
       ];
     };
-    $create_style_element = function($value, $media, $browsers = []) {
+    $create_style_element = function ($value, $media, $browsers = []) {
       $style_element = [
         '#type' => 'html_tag',
         '#tag' => 'style',
         '#value' => $value,
         '#attributes' => [
-          'media' => $media
+          'media' => $media,
         ],
         '#browsers' => $browsers,
       ];
       return $style_element;
     };
 
-    $create_file_css_asset = function($data, $media = 'all', $preprocess = TRUE) {
+    $create_file_css_asset = function ($data, $media = 'all', $preprocess = TRUE) {
       return ['group' => 0, 'type' => 'file', 'media' => $media, 'preprocess' => $preprocess, 'data' => $data, 'browsers' => []];
     };
 
@@ -461,7 +461,7 @@ class CssCollectionRendererUnitTest extends UnitTestCase {
       'media' => 'all',
       'preprocess' => TRUE,
       'browsers' => [],
-      'data' => 'http://example.com/popular.js'
+      'data' => 'http://example.com/popular.js',
     ];
     $this->renderer->render($css_group);
   }
@@ -473,9 +473,11 @@ class CssCollectionRendererUnitTest extends UnitTestCase {
  * Component/Utility.
  */
 if (!function_exists('Drupal\Tests\Core\Asset\file_create_url')) {
+
   function file_create_url($uri) {
     return 'file_create_url:' . $uri;
   }
+
 }
 
 /**
@@ -483,9 +485,11 @@ if (!function_exists('Drupal\Tests\Core\Asset\file_create_url')) {
  * Component/Utility.
  */
 if (!function_exists('Drupal\Tests\Core\Asset\file_url_transform_relative')) {
+
   function file_url_transform_relative($uri) {
     return 'file_url_transform_relative:' . $uri;
   }
+
 }
 
 /**

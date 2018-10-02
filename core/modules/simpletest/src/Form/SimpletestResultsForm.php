@@ -17,6 +17,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  * Note that the UI strings are not translated because this form is also used
  * from run-tests.sh.
  *
+ * @internal
+ *
  * @see simpletest_script_open_browser()
  * @see run-tests.sh
  */
@@ -110,7 +112,7 @@ class SimpletestResultsForm extends FormBase {
     // performed.
     $results = [];
     if (is_numeric($test_id) && !$results = $this->getResults($test_id)) {
-      drupal_set_message($this->t('No test results to display.'), 'error');
+      $this->messenger()->addError($this->t('No test results to display.'));
       return new RedirectResponse($this->url('simpletest.test_form', [], ['absolute' => TRUE]));
     }
 
@@ -288,7 +290,7 @@ class SimpletestResultsForm extends FormBase {
       'Filename',
       'Line',
       'Function',
-      ['colspan' => 2, 'data' => 'Status']
+      ['colspan' => 2, 'data' => 'Status'],
     ];
     $form['result']['results'] = [];
     foreach ($test_results as $group => $assertions) {

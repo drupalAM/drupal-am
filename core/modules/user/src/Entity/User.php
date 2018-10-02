@@ -9,6 +9,8 @@ use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\user\RoleInterface;
+use Drupal\user\StatusItem;
+use Drupal\user\TimeZoneItem;
 use Drupal\user\UserInterface;
 
 /**
@@ -20,6 +22,13 @@ use Drupal\user\UserInterface;
  * @ContentEntityType(
  *   id = "user",
  *   label = @Translation("User"),
+ *   label_collection = @Translation("Users"),
+ *   label_singular = @Translation("user"),
+ *   label_plural = @Translation("users"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count user",
+ *     plural = "@count users",
+ *   ),
  *   handlers = {
  *     "storage" = "Drupal\user\UserStorage",
  *     "storage_schema" = "Drupal\user\UserStorageSchema",
@@ -346,6 +355,7 @@ class User extends ContentEntityBase implements UserInterface {
   public function isAuthenticated() {
     return $this->id() > 0;
   }
+
   /**
    * {@inheritdoc}
    */
@@ -418,7 +428,7 @@ class User extends ContentEntityBase implements UserInterface {
         'name' => [LanguageInterface::LANGCODE_DEFAULT => ''],
         // Explicitly set the langcode to ensure that field definitions do not
         // need to be fetched to figure out a default.
-        'langcode' => [LanguageInterface::LANGCODE_DEFAULT => LanguageInterface::LANGCODE_NOT_SPECIFIED]
+        'langcode' => [LanguageInterface::LANGCODE_DEFAULT => LanguageInterface::LANGCODE_NOT_SPECIFIED],
       ], $entity_type->id());
     }
     return clone static::$anonymousUser;
@@ -498,11 +508,13 @@ class User extends ContentEntityBase implements UserInterface {
       ->addPropertyConstraints('value', [
         'AllowedValues' => ['callback' => __CLASS__ . '::getAllowedTimezones'],
       ]);
+    $fields['timezone']->getItemDefinition()->setClass(TimeZoneItem::class);
 
     $fields['status'] = BaseFieldDefinition::create('boolean')
       ->setLabel(t('User status'))
       ->setDescription(t('Whether the user is active or blocked.'))
       ->setDefaultValue(FALSE);
+    $fields['status']->getItemDefinition()->setClass(StatusItem::class);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))

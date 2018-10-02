@@ -295,7 +295,7 @@ class ViewExecutableTest extends UnitTestCase {
     unset($view->display_handler);
     $expected = [
       'test_hook__test_view',
-      'test_hook'
+      'test_hook',
     ];
     $this->assertEquals($expected, $view->buildThemeFunctions('test_hook'));
 
@@ -307,7 +307,7 @@ class ViewExecutableTest extends UnitTestCase {
       'test_hook__two',
       'test_hook__and_three',
       'test_hook__test_view',
-      'test_hook'
+      'test_hook',
     ];
     $this->assertEquals($expected, $view->buildThemeFunctions('test_hook'));
 
@@ -323,7 +323,7 @@ class ViewExecutableTest extends UnitTestCase {
       'test_hook__test_view__default2',
       'test_hook__default2',
       'test_hook__test_view',
-      'test_hook'
+      'test_hook',
     ];
     $this->assertEquals($expected, $view->buildThemeFunctions('test_hook'));
   }
@@ -362,7 +362,7 @@ class ViewExecutableTest extends UnitTestCase {
     foreach (['field', 'filter', 'argument', 'sort'] as $handler_type) {
       $display->expects($this->atLeastOnce())
         ->method('setOption')
-        ->with($this->callback(function($argument) {
+        ->with($this->callback(function ($argument) {
           return $argument;
         }), [
           'test_field' => [
@@ -405,7 +405,7 @@ class ViewExecutableTest extends UnitTestCase {
     foreach (['field', 'filter', 'argument', 'sort'] as $handler_type) {
       $display->expects($this->atLeastOnce())
         ->method('setOption')
-        ->with($this->callback(function($argument) {
+        ->with($this->callback(function ($argument) {
           return $argument;
         }), [
           'test_field' => [

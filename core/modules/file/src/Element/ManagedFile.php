@@ -8,6 +8,7 @@ use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
 use Drupal\Core\Render\Element\FormElement;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Url;
@@ -175,6 +176,9 @@ class ManagedFile extends FormElement {
 
     $form_parents = explode('/', $request->query->get('element_parents'));
 
+    // Sanitize form parents before using them.
+    $form_parents = array_filter($form_parents, [Element::class, 'child']);
+
     // Retrieve the element to be rendered.
     $form = NestedArray::getValue($form, $form_parents);
 
@@ -295,6 +299,10 @@ class ManagedFile extends FormElement {
 
       // Add the upload progress callback.
       $element['upload_button']['#ajax']['progress']['url'] = Url::fromRoute('file.ajax_progress', ['key' => $upload_progress_key]);
+
+      // Set a custom submit event so we can modify the upload progress
+      // identifier element before the form gets submitted.
+      $element['upload_button']['#ajax']['event'] = 'fileUpload';
     }
 
     // The file upload field itself.

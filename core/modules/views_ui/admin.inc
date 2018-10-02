@@ -255,7 +255,8 @@ function views_ui_standard_display_dropdown(&$form, FormStateInterface $form_sta
 
   $form['override']['dropdown'] = [
     '#type' => 'select',
-    '#title' => t('For'), // @TODO: Translators may need more context than this.
+    // @TODO: Translators may need more context than this.
+    '#title' => t('For'),
     '#options' => $display_dropdown,
   ];
   if ($current_display->isDefaulted($section)) {
@@ -285,7 +286,7 @@ function views_ui_build_form_url(FormStateInterface $form_state) {
   $route_parameters = [
     'js' => $ajax,
     'view' => $name,
-    'display_id' => $display_id
+    'display_id' => $display_id,
   ];
   $url = Url::fromRoute($route_name, $route_parameters);
   if ($type = $form_state->get('type')) {

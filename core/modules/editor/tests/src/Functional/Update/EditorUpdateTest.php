@@ -8,6 +8,7 @@ use Drupal\FunctionalTests\Update\UpdatePathTestBase;
  * Tests Editor module database updates.
  *
  * @group editor
+ * @group legacy
  */
 class EditorUpdateTest extends UpdatePathTestBase {
 
@@ -45,7 +46,6 @@ class EditorUpdateTest extends UpdatePathTestBase {
     $this->assertFalse($format_full_html->get('status'));
     $this->assertTrue($editor_full_html->get('status'));
     $this->assertNotIdentical($format_full_html->get('status'), $editor_full_html->get('status'));
-
 
     // Run updates.
     $this->runUpdates();

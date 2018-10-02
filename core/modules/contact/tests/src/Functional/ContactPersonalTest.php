@@ -2,7 +2,7 @@
 
 namespace Drupal\Tests\contact\Functional;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Render\PlainTextOutput;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Test\AssertMailTrait;
@@ -98,9 +98,9 @@ class ContactPersonalTest extends BrowserTestBase {
     $placeholders = [
       '@sender_name' => $this->webUser->username,
       '@sender_email' => $this->webUser->getEmail(),
-      '@recipient_name' => $this->contactUser->getUsername()
+      '@recipient_name' => $this->contactUser->getUsername(),
     ];
-    $this->assertRaw(SafeMarkup::format('@sender_name (@sender_email) sent @recipient_name an email.', $placeholders));
+    $this->assertRaw(new FormattableMarkup('@sender_name (@sender_email) sent @recipient_name an email.', $placeholders));
     // Ensure an unescaped version of the email does not exist anywhere.
     $this->assertNoRaw($this->webUser->getEmail());
   }
@@ -139,7 +139,7 @@ class ContactPersonalTest extends BrowserTestBase {
     $this->drupalGet('user/' . $this->contactUser->id());
     $contact_link = '/user/' . $this->contactUser->id() . '/contact';
     $this->assertResponse(200);
-    $this->assertNoLinkByHref ($contact_link, 'The "contact" tab is hidden on profiles for users with no email address');
+    $this->assertNoLinkByHref($contact_link, 'The "contact" tab is hidden on profiles for users with no email address');
 
     // Restore original email address.
     $this->contactUser->setEmail($original_email)->save();

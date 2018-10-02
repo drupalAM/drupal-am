@@ -3,7 +3,7 @@
  * Handles AJAX fetching of views, including filter submission and response.
  */
 
-(function ($, Drupal, drupalSettings) {
+(function($, Drupal, drupalSettings) {
   /**
    * Attaches the AJAX behavior to exposed filters forms and key View links.
    *
@@ -13,13 +13,29 @@
    *   Attaches ajaxView functionality to relevant elements.
    */
   Drupal.behaviors.ViewsAjaxView = {};
-  Drupal.behaviors.ViewsAjaxView.attach = function () {
-    if (drupalSettings && drupalSettings.views && drupalSettings.views.ajaxViews) {
-      const ajaxViews = drupalSettings.views.ajaxViews;
-      for (const i in ajaxViews) {
-        if (ajaxViews.hasOwnProperty(i)) {
-          Drupal.views.instances[i] = new Drupal.views.ajaxView(ajaxViews[i]);
-        }
+  Drupal.behaviors.ViewsAjaxView.attach = function(context, settings) {
+    if (settings && settings.views && settings.views.ajaxViews) {
+      const {
+        views: { ajaxViews },
+      } = settings;
+      Object.keys(ajaxViews || {}).forEach(i => {
+        Drupal.views.instances[i] = new Drupal.views.ajaxView(ajaxViews[i]);
+      });
+    }
+  };
+  Drupal.behaviors.ViewsAjaxView.detach = (context, settings, trigger) => {
+    if (trigger === 'unload') {
+      if (settings && settings.views && settings.views.ajaxViews) {
+        const {
+          views: { ajaxViews },
+        } = settings;
+        Object.keys(ajaxViews || {}).forEach(i => {
+          const selector = `.js-view-dom-id-${ajaxViews[i].view_dom_id}`;
+          if ($(selector, context).length) {
+            delete Drupal.views.instances[i];
+            delete settings.views.ajaxViews[i];
+          }
+        });
       }
     }
   };
@@ -44,33 +60,35 @@
    * @param {string} settings.view_dom_id
    *   The DOM id of the view.
    */
-  Drupal.views.ajaxView = function (settings) {
+  Drupal.views.ajaxView = function(settings) {
     const selector = `.js-view-dom-id-${settings.view_dom_id}`;
     this.$view = $(selector);
 
     // Retrieve the path to use for views' ajax.
-    let ajax_path = drupalSettings.views.ajax_path;
+    let ajaxPath = drupalSettings.views.ajax_path;
 
     // If there are multiple views this might've ended up showing up multiple
     // times.
-    if (ajax_path.constructor.toString().indexOf('Array') !== -1) {
-      ajax_path = ajax_path[0];
+    if (ajaxPath.constructor.toString().indexOf('Array') !== -1) {
+      ajaxPath = ajaxPath[0];
     }
 
     // Check if there are any GET parameters to send to views.
     let queryString = window.location.search || '';
     if (queryString !== '') {
       // Remove the question mark and Drupal path component if any.
-      queryString = queryString.slice(1).replace(/q=[^&]+&?|&?render=[^&]+/, '');
+      queryString = queryString
+        .slice(1)
+        .replace(/q=[^&]+&?|&?render=[^&]+/, '');
       if (queryString !== '') {
-        // If there is a '?' in ajax_path, clean url are on and & should be
+        // If there is a '?' in ajaxPath, clean url are on and & should be
         // used to add parameters.
-        queryString = ((/\?/.test(ajax_path)) ? '&' : '?') + queryString;
+        queryString = (/\?/.test(ajaxPath) ? '&' : '?') + queryString;
       }
     }
 
     this.element_settings = {
-      url: ajax_path + queryString,
+      url: ajaxPath + queryString,
       submit: settings,
       setClick: true,
       event: 'click',
@@ -81,15 +99,23 @@
     this.settings = settings;
 
     // Add the ajax to exposed forms.
-    this.$exposed_form = $(`form#views-exposed-form-${settings.view_name.replace(/_/g, '-')}-${settings.view_display_id.replace(/_/g, '-')}`);
-    this.$exposed_form.once('exposed-form').each($.proxy(this.attachExposedFormAjax, this));
+    this.$exposed_form = $(
+      `form#views-exposed-form-${settings.view_name.replace(
+        /_/g,
+        '-',
+      )}-${settings.view_display_id.replace(/_/g, '-')}`,
+    );
+    this.$exposed_form
+      .once('exposed-form')
+      .each($.proxy(this.attachExposedFormAjax, this));
 
     // Add the ajax to pagers.
     this.$view
       // Don't attach to nested views. Doing so would attach multiple behaviors
       // to a given element.
       .filter($.proxy(this.filterNestedViews, this))
-      .once('ajax-pager').each($.proxy(this.attachPagerAjax, this));
+      .once('ajax-pager')
+      .each($.proxy(this.attachPagerAjax, this));
 
     // Add a trigger to update this view specifically. In order to trigger a
     // refresh use the following code.
@@ -97,36 +123,38 @@
     // @code
     // $('.view-name').trigger('RefreshView');
     // @endcode
-    const self_settings = $.extend({}, this.element_settings, {
+    const selfSettings = $.extend({}, this.element_settings, {
       event: 'RefreshView',
       base: this.selector,
       element: this.$view.get(0),
     });
-    this.refreshViewAjax = Drupal.ajax(self_settings);
+    this.refreshViewAjax = Drupal.ajax(selfSettings);
   };
 
   /**
    * @method
    */
-  Drupal.views.ajaxView.prototype.attachExposedFormAjax = function () {
+  Drupal.views.ajaxView.prototype.attachExposedFormAjax = function() {
     const that = this;
     this.exposedFormAjax = [];
     // Exclude the reset buttons so no AJAX behaviours are bound. Many things
     // break during the form reset phase if using AJAX.
-    $('input[type=submit], input[type=image]', this.$exposed_form).not('[data-drupal-selector=edit-reset]').each(function (index) {
-      const self_settings = $.extend({}, that.element_settings, {
-        base: $(this).attr('id'),
-        element: this,
+    $('input[type=submit], input[type=image]', this.$exposed_form)
+      .not('[data-drupal-selector=edit-reset]')
+      .each(function(index) {
+        const selfSettings = $.extend({}, that.element_settings, {
+          base: $(this).attr('id'),
+          element: this,
+        });
+        that.exposedFormAjax[index] = Drupal.ajax(selfSettings);
       });
-      that.exposedFormAjax[index] = Drupal.ajax(self_settings);
-    });
   };
 
   /**
    * @return {bool}
    *   If there is at least one parent with a view class return false.
    */
-  Drupal.views.ajaxView.prototype.filterNestedViews = function () {
+  Drupal.views.ajaxView.prototype.filterNestedViews = function() {
     // If there is at least one parent with a view class, this view
     // is nested (e.g., an attachment). Bail.
     return !this.$view.parents('.view').length;
@@ -135,8 +163,11 @@
   /**
    * Attach the ajax behavior to each link.
    */
-  Drupal.views.ajaxView.prototype.attachPagerAjax = function () {
-    this.$view.find('ul.js-pager__items > li > a, th.views-field a, .attachment .views-summary a')
+  Drupal.views.ajaxView.prototype.attachPagerAjax = function() {
+    this.$view
+      .find(
+        'ul.js-pager__items > li > a, th.views-field a, .attachment .views-summary a',
+      )
       .each($.proxy(this.attachPagerLinkAjax, this));
   };
 
@@ -148,7 +179,7 @@
    * @param {HTMLElement} link
    *   The link element.
    */
-  Drupal.views.ajaxView.prototype.attachPagerLinkAjax = function (id, link) {
+  Drupal.views.ajaxView.prototype.attachPagerLinkAjax = function(id, link) {
     const $link = $(link);
     const viewData = {};
     const href = $link.attr('href');
@@ -162,12 +193,12 @@
       Drupal.Views.parseViewArgs(href, this.settings.view_base_path),
     );
 
-    const self_settings = $.extend({}, this.element_settings, {
+    const selfSettings = $.extend({}, this.element_settings, {
       submit: viewData,
       base: false,
       element: link,
     });
-    this.pagerAjax = Drupal.ajax(self_settings);
+    this.pagerAjax = Drupal.ajax(selfSettings);
   };
 
   /**
@@ -180,7 +211,7 @@
    * @param {string} response.selector
    *   Selector to use.
    */
-  Drupal.AjaxCommands.prototype.viewsScrollTop = function (ajax, response) {
+  Drupal.AjaxCommands.prototype.viewsScrollTop = function(ajax, response) {
     // Scroll to the top of the view. This will allow users
     // to browse newly loaded content after e.g. clicking a pager
     // link.
@@ -195,7 +226,7 @@
     }
     // Only scroll upward.
     if (offset.top - 10 < $(scrollTarget).scrollTop()) {
-      $(scrollTarget).animate({ scrollTop: (offset.top - 10) }, 500);
+      $(scrollTarget).animate({ scrollTop: offset.top - 10 }, 500);
     }
   };
-}(jQuery, Drupal, drupalSettings));
+})(jQuery, Drupal, drupalSettings);

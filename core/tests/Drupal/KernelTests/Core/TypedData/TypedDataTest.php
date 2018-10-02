@@ -250,7 +250,7 @@ class TypedDataTest extends KernelTestBase {
     $files = [];
     for ($i = 0; $i < 3; $i++) {
       $path = "public://example_$i.png";
-      file_unmanaged_copy(\Drupal::root() . '/core/misc/druplicon.png', $path);
+      file_unmanaged_copy($this->root . '/core/misc/druplicon.png', $path);
       $image = File::create(['uri' => $path]);
       $image->save();
       $files[] = $image;
@@ -399,7 +399,7 @@ class TypedDataTest extends KernelTestBase {
     // Check that an all-pass filter leaves the list untouched.
     $value = ['zero', 'one'];
     $typed_data = $this->createTypedData(ListDataDefinition::create('string'), $value);
-    $typed_data->filter(function(TypedDataInterface $item) {
+    $typed_data->filter(function (TypedDataInterface $item) {
       return TRUE;
     });
     $this->assertEqual($typed_data->count(), 2);
@@ -411,7 +411,7 @@ class TypedDataTest extends KernelTestBase {
     // Check that a none-pass filter empties the list.
     $value = ['zero', 'one'];
     $typed_data = $this->createTypedData(ListDataDefinition::create('string'), $value);
-    $typed_data->filter(function(TypedDataInterface $item) {
+    $typed_data->filter(function (TypedDataInterface $item) {
       return FALSE;
     });
     $this->assertEqual($typed_data->count(), 0);
@@ -419,7 +419,7 @@ class TypedDataTest extends KernelTestBase {
     // Check that filtering correctly renumbers elements.
     $value = ['zero', 'one', 'two'];
     $typed_data = $this->createTypedData(ListDataDefinition::create('string'), $value);
-    $typed_data->filter(function(TypedDataInterface $item) {
+    $typed_data->filter(function (TypedDataInterface $item) {
       return $item->getValue() !== 'one';
     });
     $this->assertEqual($typed_data->count(), 2);
@@ -470,7 +470,7 @@ class TypedDataTest extends KernelTestBase {
     $this->assertEqual($value, [
       'one' => 'uno',
       'two' => 'zwei',
-      'three' => 'drei'
+      'three' => 'drei',
     ]);
 
     $properties = $typed_data->getProperties();

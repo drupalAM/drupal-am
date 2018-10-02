@@ -4,12 +4,14 @@ namespace Drupal\Tests\serialization\Unit\Normalizer;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\TypedData\Type\IntegerInterface;
 use Drupal\Core\TypedData\TypedDataInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem;
+use Drupal\locale\StringInterface;
 use Drupal\serialization\Normalizer\EntityReferenceFieldItemNormalizer;
 use Drupal\Tests\UnitTestCase;
 use Prophecy\Argument;
@@ -22,6 +24,8 @@ use Symfony\Component\Serializer\Serializer;
  * @group serialization
  */
 class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
+
+  use InternalTypedDataTestTrait;
 
   /**
    * The mock serializer.
@@ -68,7 +72,7 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
     $this->serializer = $this->prophesize(Serializer::class);
     // Set up the serializer to return an entity property.
     $this->serializer->normalize(Argument::cetera())
-      ->willReturn(['value' => 'test']);
+      ->willReturn('test');
 
     $this->normalizer->setSerializer($this->serializer->reveal());
 
@@ -118,17 +122,68 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
       ->willReturn($entity->reveal())
       ->shouldBeCalled();
 
+    $field_definition = $this->prophesize(FieldDefinitionInterface::class);
+    $field_definition->getSetting('target_type')
+      ->willReturn('test_type');
+
+    $this->fieldItem->getFieldDefinition()
+      ->willReturn($field_definition->reveal());
+
     $this->fieldItem->get('entity')
       ->willReturn($entity_reference)
+      ->shouldBeCalled();
+
+    $this->fieldItem->getProperties(TRUE)
+      ->willReturn(['target_id' => $this->getTypedDataProperty(FALSE)])
       ->shouldBeCalled();
 
     $normalized = $this->normalizer->normalize($this->fieldItem->reveal());
 
     $expected = [
-      'target_id' => ['value' => 'test'],
+      'target_id' => 'test',
       'target_type' => 'test_type',
       'target_uuid' => '080e3add-f9d5-41ac-9821-eea55b7b42fb',
       'url' => $test_url,
+    ];
+    $this->assertSame($expected, $normalized);
+  }
+
+  /**
+   * @covers ::normalize
+   */
+  public function testNormalizeWithEmptyTaxonomyTermReference() {
+    // Override the serializer prophecy from setUp() to return a zero value.
+    $this->serializer = $this->prophesize(Serializer::class);
+    // Set up the serializer to return an entity property.
+    $this->serializer->normalize(Argument::cetera())
+      ->willReturn(0);
+
+    $this->normalizer->setSerializer($this->serializer->reveal());
+
+    $entity_reference = $this->prophesize(TypedDataInterface::class);
+    $entity_reference->getValue()
+      ->willReturn(NULL)
+      ->shouldBeCalled();
+
+    $field_definition = $this->prophesize(FieldDefinitionInterface::class);
+    $field_definition->getSetting('target_type')
+      ->willReturn('taxonomy_term');
+
+    $this->fieldItem->getFieldDefinition()
+      ->willReturn($field_definition->reveal());
+
+    $this->fieldItem->get('entity')
+      ->willReturn($entity_reference)
+      ->shouldBeCalled();
+
+    $this->fieldItem->getProperties(TRUE)
+      ->willReturn(['target_id' => $this->getTypedDataProperty(FALSE)])
+      ->shouldBeCalled();
+
+    $normalized = $this->normalizer->normalize($this->fieldItem->reveal());
+
+    $expected = [
+      'target_id' => NULL,
     ];
     $this->assertSame($expected, $normalized);
   }
@@ -142,14 +197,25 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
       ->willReturn(NULL)
       ->shouldBeCalled();
 
+    $field_definition = $this->prophesize(FieldDefinitionInterface::class);
+    $field_definition->getSetting('target_type')
+      ->willReturn('test_type');
+
+    $this->fieldItem->getFieldDefinition()
+      ->willReturn($field_definition->reveal());
+
     $this->fieldItem->get('entity')
       ->willReturn($entity_reference->reveal())
+      ->shouldBeCalled();
+
+    $this->fieldItem->getProperties(TRUE)
+      ->willReturn(['target_id' => $this->getTypedDataProperty(FALSE)])
       ->shouldBeCalled();
 
     $normalized = $this->normalizer->normalize($this->fieldItem->reveal());
 
     $expected = [
-      'target_id' => ['value' => 'test'],
+      'target_id' => 'test',
     ];
     $this->assertSame($expected, $normalized);
   }
@@ -159,7 +225,7 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
    */
   public function testDenormalizeWithTypeAndUuid() {
     $data = [
-      'target_id' => ['value' => 'test'],
+      'target_id' => 'test',
       'target_type' => 'test_type',
       'target_uuid' => '080e3add-f9d5-41ac-9821-eea55b7b42fb',
     ];
@@ -173,6 +239,9 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
       ->willReturn($entity)
       ->shouldBeCalled();
 
+    $this->fieldItem->getProperties()->willReturn([
+      'target_id' => $this->prophesize(IntegerInterface::class),
+    ]);
     $this->fieldItem->setValue(['target_id' => 'test'])->shouldBeCalled();
 
     $this->assertDenormalize($data);
@@ -183,7 +252,7 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
    */
   public function testDenormalizeWithUuidWithoutType() {
     $data = [
-      'target_id' => ['value' => 'test'],
+      'target_id' => 'test',
       'target_uuid' => '080e3add-f9d5-41ac-9821-eea55b7b42fb',
     ];
 
@@ -196,6 +265,9 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
       ->willReturn($entity)
       ->shouldBeCalled();
 
+    $this->fieldItem->getProperties()->willReturn([
+      'target_id' => $this->prophesize(IntegerInterface::class),
+    ]);
     $this->fieldItem->setValue(['target_id' => 'test'])->shouldBeCalled();
 
     $this->assertDenormalize($data);
@@ -208,7 +280,7 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
     $this->setExpectedException(UnexpectedValueException::class, 'The field "field_reference" property "target_type" must be set to "test_type" or omitted.');
 
     $data = [
-      'target_id' => ['value' => 'test'],
+      'target_id' => 'test',
       'target_type' => 'wrong_type',
       'target_uuid' => '080e3add-f9d5-41ac-9821-eea55b7b42fb',
     ];
@@ -228,7 +300,7 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
     $this->setExpectedException(InvalidArgumentException::class, 'No "test_type" entity found with UUID "unique-but-none-non-existent" for field "field_reference"');
 
     $data = [
-      'target_id' => ['value' => 'test'],
+      'target_id' => 'test',
       'target_type' => 'test_type',
       'target_uuid' => 'unique-but-none-non-existent',
     ];
@@ -241,7 +313,6 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
       ->willReturn('field_reference')
       ->shouldBeCalled();
 
-
     $this->assertDenormalize($data);
   }
 
@@ -252,7 +323,7 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
     $this->setExpectedException(InvalidArgumentException::class, 'If provided "target_uuid" cannot be empty for field "test_type".');
 
     $data = [
-      'target_id' => ['value' => 'test'],
+      'target_id' => 'test',
       'target_type' => 'test_type',
       'target_uuid' => '',
     ];
@@ -260,7 +331,6 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
       ->getName()
       ->willReturn('field_reference')
       ->shouldBeCalled();
-
 
     $this->assertDenormalize($data);
   }
@@ -270,7 +340,7 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
    */
   public function testDenormalizeWithId() {
     $data = [
-      'target_id' => ['value' => 'test'],
+      'target_id' => 'test',
     ];
     $this->fieldItem->setValue($data)->shouldBeCalled();
 
@@ -297,6 +367,38 @@ class EntityReferenceFieldItemNormalizerTest extends UnitTestCase {
     $context = ['target_instance' => $this->fieldItem->reveal()];
     $denormalized = $this->normalizer->denormalize($data, EntityReferenceItem::class, 'json', $context);
     $this->assertSame($context['target_instance'], $denormalized);
+  }
+
+  /**
+   * @covers ::constructValue
+   */
+  public function testConstructValueProperties() {
+    $data = [
+      'target_id' => 'test',
+      'target_type' => 'test_type',
+      'target_uuid' => '080e3add-f9d5-41ac-9821-eea55b7b42fb',
+      'extra_property' => 'extra_value',
+    ];
+
+    $entity = $this->prophesize(FieldableEntityInterface::class);
+    $entity->id()
+      ->willReturn('test')
+      ->shouldBeCalled();
+    $this->entityRepository
+      ->loadEntityByUuid($data['target_type'], $data['target_uuid'])
+      ->willReturn($entity)
+      ->shouldBeCalled();
+
+    $this->fieldItem->getProperties()->willReturn([
+      'target_id' => $this->prophesize(IntegerInterface::class),
+      'extra_property' => $this->prophesize(StringInterface::class),
+    ]);
+    $this->fieldItem->setValue([
+      'target_id' => 'test',
+      'extra_property' => 'extra_value',
+    ])->shouldBeCalled();
+
+    $this->assertDenormalize($data);
   }
 
 }

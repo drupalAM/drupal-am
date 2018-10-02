@@ -3,7 +3,6 @@
 namespace Drupal\node\Plugin\EntityReferenceSelection;
 
 use Drupal\Core\Entity\Plugin\EntityReferenceSelection\DefaultSelection;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 
 /**
@@ -18,15 +17,6 @@ use Drupal\node\NodeInterface;
  * )
  */
 class NodeSelection extends DefaultSelection {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form = parent::buildConfigurationForm($form, $form_state);
-    $form['target_bundles']['#title'] = $this->t('Content types');
-    return $form;
-  }
 
   /**
    * {@inheritdoc}
@@ -52,7 +42,7 @@ class NodeSelection extends DefaultSelection {
 
     // In order to create a referenceable node, it needs to published.
     /** @var \Drupal\node\NodeInterface $node */
-    $node->setPublished(TRUE);
+    $node->setPublished();
 
     return $node;
   }

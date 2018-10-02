@@ -60,11 +60,22 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
   }
 
   /**
-   * {@inheritdoc}
+   * Gets the plugin discovery.
+   *
+   * This method overrides DefaultPluginManager::getDiscovery() in order to
+   * search for migration configurations in the MODULENAME/migrations and
+   * MODULENAME/migration_templates directories. Throws a deprecation notice if
+   * the MODULENAME/migration_templates directory exists.
    */
   protected function getDiscovery() {
     if (!isset($this->discovery)) {
-      $directories = array_map(function($directory) {
+      $directories = array_map(function ($directory) {
+        // Check for use of the @deprecated /migration_templates directory.
+        // @todo Remove use of /migration_templates in Drupal 9.0.0.
+        if (is_dir($directory . '/migration_templates')) {
+          @trigger_error('Use of the /migration_templates directory to store migration configuration files is deprecated in Drupal 8.1.0 and will be removed before Drupal 9.0.0. See https://www.drupal.org/node/2920988.', E_USER_DEPRECATED);
+        }
+        // But still accept configurations found in /migration_templates.
         return [$directory . '/migration_templates', $directory . '/migrations'];
       }, $this->moduleHandler->getModuleDirectories());
 
@@ -72,7 +83,7 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
       // This gets rid of migrations which try to use a non-existent source
       // plugin. The common case for this is if the source plugin has, or
       // specifies, a non-existent provider.
-      $only_with_source_discovery  = new NoSourcePluginDecorator($yaml_discovery);
+      $only_with_source_discovery = new NoSourcePluginDecorator($yaml_discovery);
       // This gets rid of migrations with explicit providers set if one of the
       // providers do not exist before we try to use a potentially non-existing
       // deriver. This is a rare case.
@@ -116,16 +127,10 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
   }
 
   /**
-   * Create migrations given a tag.
-   *
-   * @param string $tag
-   *   A migration tag we want to filter by.
-   *
-   * @return array|\Drupal\migrate\Plugin\MigrationInterface[]
-   *   An array of migration objects with the given tag.
+   * {@inheritdoc}
    */
   public function createInstancesByTag($tag) {
-    $migrations = array_filter($this->getDefinitions(), function($migration) use ($tag) {
+    $migrations = array_filter($this->getDefinitions(), function ($migration) use ($tag) {
       return !empty($migration['migration_tags']) && in_array($tag, $migration['migration_tags']);
     });
     return $this->createInstances(array_keys($migrations));
@@ -154,7 +159,6 @@ class MigrationPluginManager extends DefaultPluginManager implements MigrationPl
     }
     return $plugin_ids;
   }
-
 
   /**
    * {@inheritdoc}

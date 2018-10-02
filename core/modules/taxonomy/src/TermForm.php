@@ -7,6 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Base for handler for taxonomy term edit forms.
+ *
+ * @internal
  */
 class TermForm extends ContentEntityForm {
 
@@ -36,14 +38,17 @@ class TermForm extends ContentEntityForm {
     // before loading the full vocabulary. Contrib modules can then intercept
     // before hook_form_alter to provide scalable alternatives.
     if (!$this->config('taxonomy.settings')->get('override_selector')) {
-      $parent = array_keys($taxonomy_storage->loadParents($term->id()));
-      $children = $taxonomy_storage->loadTree($vocabulary->id(), $term->id());
+      $exclude = [];
+      if (!$term->isNew()) {
+        $parent = array_keys($taxonomy_storage->loadParents($term->id()));
+        $children = $taxonomy_storage->loadTree($vocabulary->id(), $term->id());
 
-      // A term can't be the child of itself, nor of its children.
-      foreach ($children as $child) {
-        $exclude[] = $child->tid;
+        // A term can't be the child of itself, nor of its children.
+        foreach ($children as $child) {
+          $exclude[] = $child->tid;
+        }
+        $exclude[] = $term->id();
       }
-      $exclude[] = $term->id();
 
       $tree = $taxonomy_storage->loadTree($vocabulary->id());
       $options = ['<' . $this->t('root') . '>'];
@@ -127,11 +132,11 @@ class TermForm extends ContentEntityForm {
     $view_link = $term->link($term->getName());
     switch ($result) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created new term %term.', ['%term' => $view_link]));
+        $this->messenger()->addStatus($this->t('Created new term %term.', ['%term' => $view_link]));
         $this->logger('taxonomy')->notice('Created new term %term.', ['%term' => $term->getName(), 'link' => $edit_link]);
         break;
       case SAVED_UPDATED:
-        drupal_set_message($this->t('Updated term %term.', ['%term' => $view_link]));
+        $this->messenger()->addStatus($this->t('Updated term %term.', ['%term' => $view_link]));
         $this->logger('taxonomy')->notice('Updated term %term.', ['%term' => $term->getName(), 'link' => $edit_link]);
         break;
     }

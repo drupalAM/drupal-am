@@ -2,7 +2,9 @@
 
 namespace Drupal\Core\Plugin\Context;
 
+use Drupal\Component\Plugin\Definition\ContextAwarePluginDefinitionInterface;
 use Drupal\Component\Plugin\Exception\ContextException;
+use Drupal\Component\Plugin\Exception\MissingValueContextException;
 use Drupal\Core\Cache\CacheableDependencyInterface;
 use Drupal\Core\Plugin\ContextAwarePluginInterface;
 
@@ -16,14 +18,35 @@ class ContextHandler implements ContextHandlerInterface {
    */
   public function filterPluginDefinitionsByContexts(array $contexts, array $definitions) {
     return array_filter($definitions, function ($plugin_definition) use ($contexts) {
-      // If this plugin doesn't need any context, it is available to use.
-      if (!isset($plugin_definition['context'])) {
-        return TRUE;
-      }
+      $context_definitions = $this->getContextDefinitions($plugin_definition);
 
-      // Check the set of contexts against the requirements.
-      return $this->checkRequirements($contexts, $plugin_definition['context']);
+      if ($context_definitions) {
+        // Check the set of contexts against the requirements.
+        return $this->checkRequirements($contexts, $context_definitions);
+      }
+      // If this plugin doesn't need any context, it is available to use.
+      return TRUE;
     });
+  }
+
+  /**
+   * Returns the context definitions associated with a plugin definition.
+   *
+   * @param array|\Drupal\Component\Plugin\Definition\ContextAwarePluginDefinitionInterface $plugin_definition
+   *   The plugin definition.
+   *
+   * @return \Drupal\Component\Plugin\Context\ContextDefinitionInterface[]|null
+   *   The context definitions, or NULL if the plugin definition does not
+   *   support contexts.
+   */
+  protected function getContextDefinitions($plugin_definition) {
+    if ($plugin_definition instanceof ContextAwarePluginDefinitionInterface) {
+      return $plugin_definition->getContextDefinitions();
+    }
+    if (is_array($plugin_definition) && isset($plugin_definition['context'])) {
+      return $plugin_definition['context'];
+    }
+    return NULL;
   }
 
   /**
@@ -43,23 +66,7 @@ class ContextHandler implements ContextHandlerInterface {
    */
   public function getMatchingContexts(array $contexts, ContextDefinitionInterface $definition) {
     return array_filter($contexts, function (ContextInterface $context) use ($definition) {
-      $context_definition = $context->getContextDefinition();
-
-      // If the data types do not match, this context is invalid unless the
-      // expected data type is any, which means all data types are supported.
-      if ($definition->getDataType() != 'any' && $definition->getDataType() != $context_definition->getDataType()) {
-        return FALSE;
-      }
-
-      // If any constraint does not match, this context is invalid.
-      foreach ($definition->getConstraints() as $constraint_name => $constraint) {
-        if ($context_definition->getConstraint($constraint_name) != $constraint) {
-          return FALSE;
-        }
-      }
-
-      // All contexts with matching data type and contexts are valid.
-      return TRUE;
+      return $definition->isSatisfiedBy($context);
     });
   }
 
@@ -107,14 +114,16 @@ class ContextHandler implements ContextHandlerInterface {
       }
     }
 
-    // If there are any required contexts without a value, throw an exception.
-    if ($missing_value) {
-      throw new ContextException(sprintf('Required contexts without a value: %s.', implode(', ', $missing_value)));
-    }
-
     // If there are any mappings that were not satisfied, throw an exception.
+    // This is a more severe problem than missing values, so check and throw
+    // this first.
     if (!empty($mappings)) {
       throw new ContextException('Assigned contexts were not satisfied: ' . implode(',', array_keys($mappings)));
+    }
+
+    // If there are any required contexts without a value, throw an exception.
+    if ($missing_value) {
+      throw new MissingValueContextException($missing_value);
     }
   }
 

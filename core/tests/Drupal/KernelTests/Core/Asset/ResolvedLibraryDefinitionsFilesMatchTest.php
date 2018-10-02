@@ -108,6 +108,10 @@ class ResolvedLibraryDefinitionsFilesMatchTest extends KernelTestBase {
       }
       return TRUE;
     });
+    // Remove demo_umami_content module as its install hook creates content
+    // that relies on the presence of entity tables and various other elements
+    // not present in a kernel test.
+    unset($all_modules['demo_umami_content']);
     $this->allModules = array_keys($all_modules);
     $this->allModules[] = 'system';
     sort($this->allModules);
@@ -145,7 +149,6 @@ class ResolvedLibraryDefinitionsFilesMatchTest extends KernelTestBase {
    *   so on.
    */
   protected function verifyLibraryFilesExist($library_definitions) {
-    $root = \Drupal::root();
     foreach ($library_definitions as $extension => $libraries) {
       foreach ($libraries as $library_name => $library) {
         if (in_array("$extension/$library_name", $this->librariesToSkip)) {
@@ -156,7 +159,7 @@ class ResolvedLibraryDefinitionsFilesMatchTest extends KernelTestBase {
         foreach (['css', 'js'] as $asset_type) {
           foreach ($library[$asset_type] as $asset) {
             $file = $asset['data'];
-            $path = $root . '/' . $file;
+            $path = $this->root . '/' . $file;
             // Only check and assert each file path once.
             if (!isset($this->pathsChecked[$path])) {
               $this->assertTrue(is_file($path), "$file file referenced from the $extension/$library_name library exists.");
@@ -188,10 +191,9 @@ class ResolvedLibraryDefinitionsFilesMatchTest extends KernelTestBase {
 
     $libraries['core'] = $this->libraryDiscovery->getLibrariesByExtension('core');
 
-    $root = \Drupal::root();
     foreach ($extensions as $extension_name => $extension) {
       $library_file = $extension->getPath() . '/' . $extension_name . '.libraries.yml';
-      if (is_file($root . '/' . $library_file)) {
+      if (is_file($this->root . '/' . $library_file)) {
         $libraries[$extension_name] = $this->libraryDiscovery->getLibrariesByExtension($extension_name);
       }
     }

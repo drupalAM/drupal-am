@@ -9,6 +9,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Form controller for the responsive image edit/add forms.
+ *
+ * @internal
  */
 class ResponsiveImageStyleForm extends EntityForm {
 
@@ -257,7 +259,7 @@ class ResponsiveImageStyleForm extends EntityForm {
               'image_mapping' => [
                 'sizes' => $image_style_mapping['sizes'],
                 'sizes_image_styles' => array_keys(array_filter($image_style_mapping['sizes_image_styles'])),
-              ]
+              ],
             ];
             $responsive_image_style->addImageStyleMapping($breakpoint_id, $multiplier, $mapping);
           }
@@ -274,7 +276,7 @@ class ResponsiveImageStyleForm extends EntityForm {
     $responsive_image_style->save();
 
     $this->logger('responsive_image')->notice('Responsive image style @label saved.', ['@label' => $responsive_image_style->label()]);
-    drupal_set_message($this->t('Responsive image style %label saved.', ['%label' => $responsive_image_style->label()]));
+    $this->messenger()->addStatus($this->t('Responsive image style %label saved.', ['%label' => $responsive_image_style->label()]));
 
     // Redirect to edit form after creating a new responsive image style or
     // after selecting another breakpoint group.

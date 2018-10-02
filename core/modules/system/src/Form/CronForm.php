@@ -14,6 +14,8 @@ use Drupal\Core\Form\ConfigFormBaseTrait;
 
 /**
  * Configure cron settings for this site.
+ *
+ * @internal
  */
 class CronForm extends FormBase {
 
@@ -43,7 +45,7 @@ class CronForm extends FormBase {
   /**
    * The module handler service.
    *
-   * @var \Drupal\Core\Extension\ModuleHandlerInterface $moduleHandler
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
    */
   protected $moduleHandler;
 
@@ -153,7 +155,7 @@ class CronForm extends FormBase {
     $this->config('system.cron')
       ->set('logging', $form_state->getValue('logging'))
       ->save();
-    drupal_set_message(t('The configuration options have been saved.'));
+    $this->messenger()->addStatus(t('The configuration options have been saved.'));
   }
 
   /**
@@ -161,10 +163,10 @@ class CronForm extends FormBase {
    */
   public function runCron(array &$form, FormStateInterface $form_state) {
     if ($this->cron->run()) {
-      drupal_set_message($this->t('Cron ran successfully.'));
+      $this->messenger()->addStatus($this->t('Cron ran successfully.'));
     }
     else {
-      drupal_set_message($this->t('Cron run failed.'), 'error');
+      $this->messenger()->addError($this->t('Cron run failed.'));
     }
   }
 

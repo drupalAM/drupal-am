@@ -4,6 +4,11 @@ namespace Drupal\form_test\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Builds a form to test table select with '#multiple" set to FALSE.
+ *
+ * @internal
+ */
 class FormTestTableSelectMultipleFalseForm extends FormTestTableSelectFormBase {
 
   /**
@@ -24,7 +29,7 @@ class FormTestTableSelectMultipleFalseForm extends FormTestTableSelectFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    drupal_set_message(t('Submitted: @value', ['@value' => $form_state->getValue('tableselect')]));
+    $this->messenger()->addStatus($this->t('Submitted: @value', ['@value' => $form_state->getValue('tableselect')]));
   }
 
 }

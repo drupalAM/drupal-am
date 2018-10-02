@@ -120,16 +120,13 @@
     AJAXRefreshRows: function AJAXRefreshRows(rows) {
       var rowNames = [];
       var ajaxElements = [];
-      var rowName = void 0;
-      for (rowName in rows) {
-        if (rows.hasOwnProperty(rowName)) {
-          rowNames.push(rowName);
-          ajaxElements.push(rows[rowName]);
-        }
-      }
+      Object.keys(rows || {}).forEach(function (rowName) {
+        rowNames.push(rowName);
+        ajaxElements.push(rows[rowName]);
+      });
 
       if (rowNames.length) {
-        $(ajaxElements).after('<div class="ajax-progress ajax-progress-throbber"><div class="throbber">&nbsp;</div></div>');
+        $(ajaxElements).after(Drupal.theme.ajaxProgressThrobber());
 
         $('input[name=refresh_rows]').val(rowNames.join(' '));
         $('input[data-drupal-selector="edit-refresh"]').trigger('mousedown');

@@ -3,7 +3,7 @@
 namespace Drupal\Tests\views\Functional\Wizard;
 
 use Drupal\Component\Serialization\Json;
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Url;
 use Drupal\views\Views;
 
@@ -163,8 +163,9 @@ class BasicTest extends WizardTestBase {
     $this->drupalPostForm('admin/structure/views/add', $view4, t('Save and edit'));
     $this->assertRaw(t('The view %view has been saved.', ['%view' => $view4['label']]));
 
-    // Check that the REST export path works.
-    $this->drupalGet($view4['rest_export[path]']);
+    // Check that the REST export path works. JSON will work, as all core
+    // formats will be allowed. JSON and XML by default.
+    $this->drupalGet($view4['rest_export[path]'], ['query' => ['_format' => 'json']]);
     $this->assertResponse(200);
     $data = Json::decode($this->getSession()->getPage()->getContent());
     $this->assertEqual(count($data), 1, 'Only the node of type page is exported.');
@@ -195,7 +196,7 @@ class BasicTest extends WizardTestBase {
 
     foreach ($displays as $display) {
       foreach (['query', 'exposed_form', 'pager', 'style', 'row'] as $type) {
-        $this->assertFalse(empty($display['display_options'][$type]['options']), SafeMarkup::format('Default options found for @plugin.', ['@plugin' => $type]));
+        $this->assertFalse(empty($display['display_options'][$type]['options']), new FormattableMarkup('Default options found for @plugin.', ['@plugin' => $type]));
       }
     }
   }

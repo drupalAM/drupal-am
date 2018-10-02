@@ -2,7 +2,7 @@
 
 namespace Drupal\Tests\book\Functional;
 
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Entity\EntityInterface;
 
 /**
@@ -51,11 +51,16 @@ trait BookTestTrait {
      *  |- Node 4
      */
     $nodes = [];
-    $nodes[] = $this->createBookNode($book->id(), NULL, $edit); // Node 0.
-    $nodes[] = $this->createBookNode($book->id(), $nodes[0]->book['nid'], $edit); // Node 1.
-    $nodes[] = $this->createBookNode($book->id(), $nodes[0]->book['nid'], $edit); // Node 2.
-    $nodes[] = $this->createBookNode($book->id(), NULL, $edit); // Node 3.
-    $nodes[] = $this->createBookNode($book->id(), NULL, $edit); // Node 4.
+    // Node 0.
+    $nodes[] = $this->createBookNode($book->id(), NULL, $edit);
+    // Node 1.
+    $nodes[] = $this->createBookNode($book->id(), $nodes[0]->book['nid'], $edit);
+    // Node 2.
+    $nodes[] = $this->createBookNode($book->id(), $nodes[0]->book['nid'], $edit);
+    // Node 3.
+    $nodes[] = $this->createBookNode($book->id(), NULL, $edit);
+    // Node 4.
+    $nodes[] = $this->createBookNode($book->id(), NULL, $edit);
 
     $this->drupalLogout();
 
@@ -99,7 +104,7 @@ trait BookTestTrait {
       /** @var \Drupal\Core\Url $url */
       $url = $previous->urlInfo();
       $url->setOptions(['attributes' => ['rel' => ['prev'], 'title' => t('Go to previous page')]]);
-      $text = SafeMarkup::format('<b>‹</b> @label', ['@label' => $previous->label()]);
+      $text = new FormattableMarkup('<b>‹</b> @label', ['@label' => $previous->label()]);
       $this->assertRaw(\Drupal::l($text, $url), 'Previous page link found.');
     }
 
@@ -114,7 +119,7 @@ trait BookTestTrait {
       /** @var \Drupal\Core\Url $url */
       $url = $next->urlInfo();
       $url->setOptions(['attributes' => ['rel' => ['next'], 'title' => t('Go to next page')]]);
-      $text = SafeMarkup::format('@label <b>›</b>', ['@label' => $next->label()]);
+      $text = new FormattableMarkup('@label <b>›</b>', ['@label' => $next->label()]);
       $this->assertRaw(\Drupal::l($text, $url), 'Next page link found.');
     }
 
@@ -179,7 +184,8 @@ trait BookTestTrait {
   public function createBookNode($book_nid, $parent = NULL, $edit = []) {
     // $number does not use drupal_static as it should not be reset
     // since it uniquely identifies each call to createBookNode().
-    static $number = 0; // Used to ensure that when sorted nodes stay in same order.
+    // Used to ensure that when sorted nodes stay in same order.
+    static $number = 0;
 
     $edit['title[0][value]'] = str_pad($number, 2, '0', STR_PAD_LEFT) . ' - SimpleTest test node ' . $this->randomMachineName(10);
     $edit['body[0][value]'] = 'SimpleTest test body ' . $this->randomMachineName(32) . ' ' . $this->randomMachineName(32);

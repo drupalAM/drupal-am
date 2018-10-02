@@ -281,6 +281,9 @@ EOF;
               ],
               'Kernel' => [
                 'KernelExampleTest3.php' => str_replace(['FunctionalExampleTest', '@group example'], ['KernelExampleTest3', '@group example2'], $test_file),
+                'KernelExampleTestBase.php' => str_replace(['FunctionalExampleTest', '@group example'], ['KernelExampleTestBase', '@group example2'], $test_file),
+                'KernelExampleTrait.php' => str_replace(['FunctionalExampleTest', '@group example'], ['KernelExampleTrait', '@group example2'], $test_file),
+                'KernelExampleInterface.php' => str_replace(['FunctionalExampleTest', '@group example'], ['KernelExampleInterface', '@group example2'], $test_file),
               ],
             ],
           ],
@@ -383,6 +386,36 @@ EOF;
     $data['core-functionaljavascripttest'] = ['\Drupal\FunctionalJavascriptTests\ExampleTest', 'FunctionalJavascript'];
 
     return $data;
+  }
+
+  /**
+   * Ensure that classes are not reflected when the docblock is empty.
+   *
+   * @covers ::getTestInfo
+   */
+  public function testGetTestInfoEmptyDocblock() {
+    // If getTestInfo() performed reflection, it won't be able to find the
+    // class we asked it to analyze, so it will throw a ReflectionException.
+    // We want to make sure it didn't do that, because we already did some
+    // analysis and already have an empty docblock. getTestInfo() will throw
+    // MissingGroupException because the annotation is empty.
+    $this->setExpectedException(MissingGroupException::class);
+    TestDiscovery::getTestInfo('Drupal\Tests\simpletest\ThisTestDoesNotExistTest', '');
+  }
+
+  /**
+   * Ensure TestDiscovery::scanDirectory() ignores certain abstract file types.
+   *
+   * @covers ::scanDirectory
+   */
+  public function testScanDirectoryNoAbstract() {
+    $this->setupVfsWithTestClasses();
+    $files = TestDiscovery::scanDirectory('Drupal\\Tests\\test_module\\Kernel\\', vfsStream::url('drupal/modules/test_module/tests/src/Kernel'));
+    $this->assertNotEmpty($files);
+    $this->assertArrayNotHasKey('Drupal\Tests\test_module\Kernel\KernelExampleTestBase', $files);
+    $this->assertArrayNotHasKey('Drupal\Tests\test_module\Kernel\KernelExampleTrait', $files);
+    $this->assertArrayNotHasKey('Drupal\Tests\test_module\Kernel\KernelExampleInterface', $files);
+    $this->assertArrayHasKey('Drupal\Tests\test_module\Kernel\KernelExampleTest3', $files);
   }
 
 }

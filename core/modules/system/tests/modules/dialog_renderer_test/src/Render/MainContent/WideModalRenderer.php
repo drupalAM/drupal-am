@@ -38,7 +38,6 @@ class WideModalRenderer extends ModalRenderer {
     $this->mode = $mode;
   }
 
-
   /**
    * {@inheritdoc}
    */
@@ -69,7 +68,6 @@ class WideModalRenderer extends ModalRenderer {
         $options['width'] = 1000;
         break;
     }
-
 
     $response->addCommand(new OpenModalDialogCommand($title, $content, $options));
     return $response;

@@ -2,13 +2,13 @@
 
 namespace Drupal\Tests\file\Kernel;
 
-
 /**
  * Tests the file_validate() function.
  *
  * @group file
  */
 class ValidateTest extends FileManagedUnitTestBase {
+
   /**
    * Test that the validators passed into are checked.
    */

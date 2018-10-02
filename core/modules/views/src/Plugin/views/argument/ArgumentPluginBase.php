@@ -325,7 +325,8 @@ abstract class ArgumentPluginBase extends HandlerBase implements CacheableDepend
               '#suffix' => '</div>',
               '#type' => 'item',
               // Even if the plugin has no options add the key to the form_state.
-              '#input' => TRUE, // trick it into checking input to make #process run
+              // trick it into checking input to make #process run.
+              '#input' => TRUE,
               '#states' => [
                 'visible' => [
                   ':input[name="options[specify_validation]"]' => ['checked' => TRUE],
@@ -396,7 +397,6 @@ abstract class ArgumentPluginBase extends HandlerBase implements CacheableDepend
 
     return $output;
   }
-
 
   public function validateOptionsForm(&$form, FormStateInterface $form_state) {
     $option_values = &$form_state->getValue('options');
@@ -498,12 +498,14 @@ abstract class ArgumentPluginBase extends HandlerBase implements CacheableDepend
         'method' => 'defaultDefault',
         'form method' => 'defaultArgumentForm',
         'has default argument' => TRUE,
-        'default only' => TRUE, // this can only be used for missing argument, not validation failure
+        // This can only be used for missing argument, not validation failure.
+        'default only' => TRUE,
       ],
       'not found' => [
         'title' => $this->t('Hide view'),
         'method' => 'defaultNotFound',
-        'hard fail' => TRUE, // This is a hard fail condition
+        // This is a hard fail condition.
+        'hard fail' => TRUE,
       ],
       'summary' => [
         'title' => $this->t('Display a summary'),
@@ -547,7 +549,7 @@ abstract class ArgumentPluginBase extends HandlerBase implements CacheableDepend
       '#type' => 'checkbox',
       '#title' => $this->t('Skip default argument for view URL'),
       '#default_value' => $this->options['default_argument_skip_url'],
-      '#description' => $this->t('Select whether to include this default argument when constructing the URL for this view. Skipping default arguments is useful e.g. in the case of feeds.')
+      '#description' => $this->t('Select whether to include this default argument when constructing the URL for this view. Skipping default arguments is useful e.g. in the case of feeds.'),
     ];
 
     $form['default_argument_type'] = [
@@ -637,7 +639,7 @@ abstract class ArgumentPluginBase extends HandlerBase implements CacheableDepend
       '#default_value' => $this->options['summary']['number_of_records'],
       '#options' => [
         0 => $this->getSortName(),
-        1 => $this->t('Number of records')
+        1 => $this->t('Number of records'),
       ],
       '#states' => [
         'visible' => [
@@ -669,7 +671,8 @@ abstract class ArgumentPluginBase extends HandlerBase implements CacheableDepend
           '#suffix' => '</div>',
           '#id' => 'edit-options-summary-options-' . $id,
           '#type' => 'item',
-          '#input' => TRUE, // trick it into checking input to make #process run
+          // Trick it into checking input to make #process run.
+          '#input' => TRUE,
           '#states' => [
             'visible' => [
               ':input[name="options[default_action]"]' => ['value' => 'summary'],
@@ -717,6 +720,7 @@ abstract class ArgumentPluginBase extends HandlerBase implements CacheableDepend
     $info = $this->defaultActions($this->options['validate']['fail']);
     return $this->defaultAction($info);
   }
+
   /**
    * Default action: ignore.
    *

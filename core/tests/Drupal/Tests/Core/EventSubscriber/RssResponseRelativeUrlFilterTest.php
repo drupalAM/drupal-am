@@ -100,7 +100,6 @@ D rupal is an open source content management platform powering millions of websi
 </rss>
 RSS;
 
-
     $data['invalid-feed'] = [$invalid_feed, $invalid_feed];
     return $data;
   }
@@ -117,7 +116,7 @@ RSS;
       Request::create('/'),
       'foo',
       new Response($content, 200, [
-        'Content-Type' => 'application/rss+xml'
+        'Content-Type' => 'application/rss+xml',
       ])
     );
 

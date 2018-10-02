@@ -7,6 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Configure forum settings for this site.
+ *
+ * @internal
  */
 class ForumSettingsForm extends ConfigFormBase {
 
@@ -50,7 +52,7 @@ class ForumSettingsForm extends ConfigFormBase {
       1 => $this->t('Date - newest first'),
       2 => $this->t('Date - oldest first'),
       3 => $this->t('Posts - most active first'),
-      4 => $this->t('Posts - least active first')
+      4 => $this->t('Posts - least active first'),
     ];
     $form['forum_order'] = [
       '#type' => 'radios',

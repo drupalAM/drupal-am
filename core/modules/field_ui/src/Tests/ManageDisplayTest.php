@@ -2,7 +2,6 @@
 
 namespace Drupal\field_ui\Tests;
 
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Entity\Entity\EntityFormDisplay;
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\Core\Entity\EntityInterface;
@@ -48,7 +47,7 @@ class ManageDisplayTest extends WebTestBase {
     $vocabulary = Vocabulary::create([
       'name' => $this->randomMachineName(),
       'description' => $this->randomMachineName(),
-      'vid' => Unicode::strtolower($this->randomMachineName()),
+      'vid' => mb_strtolower($this->randomMachineName()),
       'langcode' => LanguageInterface::LANGCODE_NOT_SPECIFIED,
       'help' => '',
       'nodes' => ['article' => 'article'],
@@ -85,7 +84,7 @@ class ManageDisplayTest extends WebTestBase {
 
     // Check whether formatter weights are respected.
     $result = $this->xpath('//select[@id=:id]/option', [':id' => 'edit-fields-field-test-type']);
-    $options = array_map(function($item) {
+    $options = array_map(function ($item) {
       return (string) $item->attributes()->value[0];
     }, $result);
     $expected_options = [
@@ -119,7 +118,7 @@ class ManageDisplayTest extends WebTestBase {
     $edit = [
       'fields[field_test][type]' => 'field_test_multiple',
       'fields[field_test][region]' => 'content',
-      'refresh_rows' => 'field_test'
+      'refresh_rows' => 'field_test',
     ];
     $this->drupalPostAjaxForm(NULL, $edit, ['op' => t('Refresh')]);
     $format = 'field_test_multiple';
@@ -247,11 +246,12 @@ class ManageDisplayTest extends WebTestBase {
 
     // Check whether widget weights are respected.
     $result = $this->xpath('//select[@id=:id]/option', [':id' => 'edit-fields-field-test-type']);
-    $options = array_map(function($item) {
+    $options = array_map(function ($item) {
       return (string) $item->attributes()->value[0];
     }, $result);
     $expected_options = [
       'test_field_widget',
+      'test_field_widget_multilingual',
       'test_field_widget_multiple',
     ];
     $this->assertEqual($options, $expected_options, 'The expected widget ordering is respected.');
@@ -313,8 +313,8 @@ class ManageDisplayTest extends WebTestBase {
     $this->drupalGet($manage_display);
 
     // Checks if the select elements contain the specified options.
-    $this->assertFieldSelectOptions('fields[field_test][type]', ['test_field_widget', 'test_field_widget_multiple']);
-    $this->assertFieldSelectOptions('fields[field_onewidgetfield][type]', ['test_field_widget']);
+    $this->assertFieldSelectOptions('fields[field_test][type]', ['test_field_widget', 'test_field_widget_multilingual', 'test_field_widget_multiple']);
+    $this->assertFieldSelectOptions('fields[field_onewidgetfield][type]', ['test_field_widget', 'test_field_widget_multilingual']);
 
     // Ensure that fields can be hidden directly by changing the region.
     $this->assertFieldByName('fields[field_test][region]', 'content');
@@ -452,7 +452,7 @@ class ManageDisplayTest extends WebTestBase {
   /**
    * Asserts that a string is found in the rendered node in a view mode.
    *
-   * @param EntityInterface $node
+   * @param \Drupal\Core\Entity\EntityInterface $node
    *   The node.
    * @param $view_mode
    *   The view mode in which the node should be displayed.
@@ -471,7 +471,7 @@ class ManageDisplayTest extends WebTestBase {
   /**
    * Asserts that a string is not found in the rendered node in a view mode.
    *
-   * @param EntityInterface $node
+   * @param \Drupal\Core\Entity\EntityInterface $node
    *   The node.
    * @param $view_mode
    *   The view mode in which the node should be displayed.
@@ -492,7 +492,7 @@ class ManageDisplayTest extends WebTestBase {
    * This helper function is used by assertNodeViewText() and
    * assertNodeViewNoText().
    *
-   * @param EntityInterface $node
+   * @param \Drupal\Core\Entity\EntityInterface $node
    *   The node.
    * @param $view_mode
    *   The view mode in which the node should be displayed.

@@ -2,7 +2,7 @@
 
 namespace Drupal\Tests\shortcut\Functional;
 
-use Drupal\content_translation\Tests\ContentTranslationUITestBase;
+use Drupal\Tests\content_translation\Functional\ContentTranslationUITestBase;
 use Drupal\Core\Entity\EntityChangedInterface;
 use Drupal\Core\Language\Language;
 
@@ -28,7 +28,7 @@ class ShortcutTranslationUITest extends ContentTranslationUITestBase {
     'content_translation',
     'link',
     'shortcut',
-    'toolbar'
+    'toolbar',
   ];
 
   /**

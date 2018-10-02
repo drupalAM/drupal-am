@@ -53,7 +53,7 @@ class EntityReverse extends RelationshipPluginBase {
       'left_field' => $left_field,
       'table' => $this->definition['field table'],
       'field' => $this->definition['field field'],
-      'adjusted' => TRUE
+      'adjusted' => TRUE,
     ];
     if (!empty($this->options['required'])) {
       $first['type'] = 'INNER';
@@ -71,7 +71,6 @@ class EntityReverse extends RelationshipPluginBase {
     }
     $first_join = $this->joinManager->createInstance($id, $first);
 
-
     $this->first_alias = $this->query->addTable($this->definition['field table'], $this->relationship, $first_join);
 
     // Second, relate the field table to the entity specified using
@@ -81,7 +80,7 @@ class EntityReverse extends RelationshipPluginBase {
       'left_field' => 'entity_id',
       'table' => $this->definition['base'],
       'field' => $this->definition['base field'],
-      'adjusted' => TRUE
+      'adjusted' => TRUE,
     ];
 
     if (!empty($this->options['required'])) {

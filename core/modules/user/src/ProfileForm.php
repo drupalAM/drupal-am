@@ -6,6 +6,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Form handler for the profile forms.
+ *
+ * @internal
  */
 class ProfileForm extends AccountForm {
 
@@ -36,7 +38,7 @@ class ProfileForm extends AccountForm {
     $account->save();
     $form_state->setValue('uid', $account->id());
 
-    drupal_set_message($this->t('The changes have been saved.'));
+    $this->messenger()->addStatus($this->t('The changes have been saved.'));
   }
 
   /**

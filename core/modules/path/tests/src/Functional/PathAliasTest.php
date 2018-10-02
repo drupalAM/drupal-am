@@ -2,7 +2,6 @@
 
 namespace Drupal\Tests\path\Functional;
 
-use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Database\Database;
 
@@ -84,7 +83,7 @@ class PathAliasTest extends PathTestBase {
     $this->drupalGet($edit['alias']);
     $this->assertText($node1->label(), 'Alias works lower case.');
     $this->assertResponse(200);
-    $this->drupalGet(Unicode::strtoupper($edit['alias']));
+    $this->drupalGet(mb_strtoupper($edit['alias']));
     $this->assertText($node1->label(), 'Alias works upper case.');
     $this->assertResponse(200);
 
@@ -92,7 +91,8 @@ class PathAliasTest extends PathTestBase {
     $pid = $this->getPID($edit['alias']);
 
     $previous = $edit['alias'];
-    $edit['alias'] = '/alias' . // Lower-case letters.
+    // Lower-case letters.
+    $edit['alias'] = '/alias' .
       // "Special" ASCII characters.
       "- ._~!$'\"()*@[]?&+%#,;=:" .
       // Characters that look like a percent-escaped string.
@@ -110,7 +110,7 @@ class PathAliasTest extends PathTestBase {
     $this->drupalPostForm('admin/config/search/path/edit/' . $pid, $edit, t('Save'));
 
     // Confirm that the alias works.
-    $this->drupalGet(Unicode::strtoupper($edit['alias']));
+    $this->drupalGet(mb_strtoupper($edit['alias']));
     $this->assertText($node1->label(), 'Changed alias works.');
     $this->assertResponse(200);
 
@@ -132,7 +132,7 @@ class PathAliasTest extends PathTestBase {
     $this->assertRaw(t('The alias %alias is already in use in this language.', ['%alias' => $edit['alias']]), 'Attempt to move alias was rejected.');
 
     $edit_upper = $edit;
-    $edit_upper['alias'] = Unicode::strtoupper($edit['alias']);
+    $edit_upper['alias'] = mb_strtoupper($edit['alias']);
     $this->drupalPostForm('admin/config/search/path/add', $edit_upper, t('Save'));
     $this->assertRaw(t('The alias %alias could not be added because it is already in use in this language with different capitalization: %stored_alias.', [
       '%alias' => $edit_upper['alias'],
@@ -246,7 +246,8 @@ class PathAliasTest extends PathTestBase {
 
     $previous = $edit['path[0][alias]'];
     // Change alias to one containing "exotic" characters.
-    $edit['path[0][alias]'] = '/alias' . // Lower-case letters.
+    // Lower-case letters.
+    $edit['path[0][alias]'] = '/alias' .
       // "Special" ASCII characters.
       "- ._~!$'\"()*@[]?&+%#,;=:" .
       // Characters that look like a percent-escaped string.
@@ -264,7 +265,7 @@ class PathAliasTest extends PathTestBase {
     $this->drupalPostForm('node/' . $node1->id() . '/edit', $edit, t('Save'));
 
     // Confirm that the alias works.
-    $this->drupalGet(Unicode::strtoupper($edit['path[0][alias]']));
+    $this->drupalGet(mb_strtoupper($edit['path[0][alias]']));
     $this->assertText($node1->label(), 'Changed alias works.');
     $this->assertResponse(200);
 

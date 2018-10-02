@@ -1,7 +1,6 @@
 <?php
 
 namespace Drupal\Tests\taxonomy\Functional;
-use Drupal\Component\Utility\Unicode;
 
 use Drupal\Core\Url;
 use Drupal\taxonomy\Entity\Vocabulary;
@@ -38,7 +37,7 @@ class VocabularyUiTest extends TaxonomyTestBase {
     // Create a new vocabulary.
     $this->clickLink(t('Add vocabulary'));
     $edit = [];
-    $vid = Unicode::strtolower($this->randomMachineName());
+    $vid = mb_strtolower($this->randomMachineName());
     $edit['name'] = $this->randomMachineName();
     $edit['description'] = $this->randomMachineName();
     $edit['vid'] = $vid;
@@ -130,7 +129,7 @@ class VocabularyUiTest extends TaxonomyTestBase {
    */
   public function testTaxonomyAdminDeletingVocabulary() {
     // Create a vocabulary.
-    $vid = Unicode::strtolower($this->randomMachineName());
+    $vid = mb_strtolower($this->randomMachineName());
     $edit = [
       'name' => $this->randomMachineName(),
       'vid' => $vid,

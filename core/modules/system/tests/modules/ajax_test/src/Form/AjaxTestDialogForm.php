@@ -11,6 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Dummy form for testing DialogRenderer with _form routes.
+ *
+ * @internal
  */
 class AjaxTestDialogForm extends FormBase {
 
@@ -29,7 +31,7 @@ class AjaxTestDialogForm extends FormBase {
     // to have a dummy field we can set in WebTestBase::drupalPostForm() else it won't
     // submit anything.
     $form['textfield'] = [
-      '#type' => 'hidden'
+      '#type' => 'hidden',
     ];
     $form['button1'] = [
       '#type' => 'submit',
@@ -65,7 +67,6 @@ class AjaxTestDialogForm extends FormBase {
     $form_state->setRedirect('ajax_test.dialog_contents');
   }
 
-
   /**
    * AJAX callback handler for AjaxTestDialogForm.
    */
@@ -79,7 +80,6 @@ class AjaxTestDialogForm extends FormBase {
   public function nonModal(&$form, FormStateInterface $form_state) {
     return $this->dialog(FALSE);
   }
-
 
   /**
    * Util to render dialog in ajax callback.

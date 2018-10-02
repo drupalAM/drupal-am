@@ -47,7 +47,8 @@ class ContactController extends ControllerBase {
    *   The contact form to use.
    *
    * @return array
-   *   The form as render array as expected by drupal_render().
+   *   The form as render array as expected by
+   *   \Drupal\Core\Render\RendererInterface::render().
    *
    * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
    *   Exception is thrown when user tries to access non existing default
@@ -64,9 +65,9 @@ class ContactController extends ControllerBase {
       // If there are no forms, do not display the form.
       if (empty($contact_form)) {
         if ($this->currentUser()->hasPermission('administer contact forms')) {
-          drupal_set_message($this->t('The contact form has not been configured. <a href=":add">Add one or more forms</a> .', [
+          $this->messenger()->addError($this->t('The contact form has not been configured. <a href=":add">Add one or more forms</a> .', [
             ':add' => $this->url('contact.form_add'),
-          ]), 'error');
+          ]));
           return [];
         }
         else {
@@ -95,7 +96,8 @@ class ContactController extends ControllerBase {
    *   The account for which a personal contact form should be generated.
    *
    * @return array
-   *   The personal contact form as render array as expected by drupal_render().
+   *   The personal contact form as render array as expected by
+   *   \Drupal\Core\Render\RendererInterface::render().
    *
    * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
    *   Exception is thrown when user tries to access a contact form for a

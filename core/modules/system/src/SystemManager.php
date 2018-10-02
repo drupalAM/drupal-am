@@ -110,7 +110,7 @@ class SystemManager {
 
     // Check run-time requirements and status information.
     $requirements = $this->moduleHandler->invokeAll('requirements', ['runtime']);
-    uasort($requirements, function($a, $b) {
+    uasort($requirements, function ($a, $b) {
       if (!isset($a['weight'])) {
         if (!isset($b['weight'])) {
           return strcasecmp($a['title'], $b['title']);
@@ -152,7 +152,8 @@ class SystemManager {
    * hidden, so we supply the contents of the block.
    *
    * @return array
-   *   A render array suitable for drupal_render.
+   *   A render array suitable for
+   *   \Drupal\Core\Render\RendererInterface::render().
    */
   public function getBlockContents() {
     // We hard-code the menu name here since otherwise a link in the tools menu

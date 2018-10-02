@@ -2,8 +2,8 @@
 
 namespace Drupal\block_content\Entity;
 
-use Drupal\Core\Entity\ContentEntityBase;
-use Drupal\Core\Entity\EntityChangedTrait;
+use Drupal\block_content\Access\RefinableDependentAccessTrait;
+use Drupal\Core\Entity\EditorialContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
@@ -16,6 +16,13 @@ use Drupal\user\UserInterface;
  * @ContentEntityType(
  *   id = "block_content",
  *   label = @Translation("Custom block"),
+ *   label_collection = @Translation("Custom blocks"),
+ *   label_singular = @Translation("custom block"),
+ *   label_plural = @Translation("custom blocks"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count custom block",
+ *     plural = "@count custom blocks",
+ *   ),
  *   bundle_label = @Translation("Custom block type"),
  *   handlers = {
  *     "storage" = "Drupal\Core\Entity\Sql\SqlContentEntityStorage",
@@ -51,7 +58,8 @@ use Drupal\user\UserInterface;
  *     "bundle" = "type",
  *     "label" = "info",
  *     "langcode" = "langcode",
- *     "uuid" = "uuid"
+ *     "uuid" = "uuid",
+ *     "published" = "status",
  *   },
  *   revision_metadata_keys = {
  *     "revision_user" = "revision_user",
@@ -68,9 +76,9 @@ use Drupal\user\UserInterface;
  * caching.
  * See https://www.drupal.org/node/2284917#comment-9132521 for more information.
  */
-class BlockContent extends ContentEntityBase implements BlockContentInterface {
+class BlockContent extends EditorialContentEntityBase implements BlockContentInterface {
 
-  use EntityChangedTrait;
+  use RefinableDependentAccessTrait;
 
   /**
    * The theme the block is being created in.
@@ -113,7 +121,9 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
    */
   public function postSave(EntityStorageInterface $storage, $update = TRUE) {
     parent::postSave($storage, $update);
-    static::invalidateBlockPluginCache();
+    if ($this->isReusable() || (isset($this->original) && $this->original->isReusable())) {
+      static::invalidateBlockPluginCache();
+    }
   }
 
   /**
@@ -121,7 +131,14 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
    */
   public static function postDelete(EntityStorageInterface $storage, array $entities) {
     parent::postDelete($storage, $entities);
-    static::invalidateBlockPluginCache();
+    /** @var \Drupal\block_content\BlockContentInterface $block */
+    foreach ($entities as $block) {
+      if ($block->isReusable()) {
+        // If any deleted blocks are reusable clear the block cache.
+        static::invalidateBlockPluginCache();
+        return;
+      }
+    }
   }
 
   /**
@@ -174,6 +191,8 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
     $fields['type']->setLabel(t('Block type'))
       ->setDescription(t('The block type.'));
 
+    $fields['revision_log']->setDescription(t('The log entry explaining the changes in this revision.'));
+
     $fields['info'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Block description'))
       ->setDescription(t('A brief description of your block.'))
@@ -187,34 +206,18 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
       ->setDisplayConfigurable('form', TRUE)
       ->addConstraint('UniqueField', []);
 
-    $fields['revision_log'] = BaseFieldDefinition::create('string_long')
-      ->setLabel(t('Revision log message'))
-      ->setDescription(t('The log entry explaining the changes in this revision.'))
-      ->setRevisionable(TRUE)
-      ->setDisplayOptions('form', [
-        'type' => 'string_textarea',
-        'weight' => 25,
-        'settings' => [
-          'rows' => 4,
-        ],
-      ]);
-
     $fields['changed'] = BaseFieldDefinition::create('changed')
       ->setLabel(t('Changed'))
       ->setDescription(t('The time that the custom block was last edited.'))
       ->setTranslatable(TRUE)
       ->setRevisionable(TRUE);
 
-    $fields['revision_created'] = BaseFieldDefinition::create('created')
-      ->setLabel(t('Revision create time'))
-      ->setDescription(t('The time that the current revision was created.'))
-      ->setRevisionable(TRUE);
-
-    $fields['revision_user'] = BaseFieldDefinition::create('entity_reference')
-      ->setLabel(t('Revision user'))
-      ->setDescription(t('The user ID of the author of the current revision.'))
-      ->setSetting('target_type', 'user')
-      ->setRevisionable(TRUE);
+    $fields['reusable'] = BaseFieldDefinition::create('boolean')
+      ->setLabel(t('Reusable'))
+      ->setDescription(t('A boolean indicating whether this block is reusable.'))
+      ->setTranslatable(FALSE)
+      ->setRevisionable(FALSE)
+      ->setDefaultValue(TRUE);
 
     return $fields;
   }
@@ -296,6 +299,27 @@ class BlockContent extends ContentEntityBase implements BlockContentInterface {
   public function setRevisionLogMessage($revision_log_message) {
     $this->set('revision_log', $revision_log_message);
     return $this;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function isReusable() {
+    return (bool) $this->get('reusable')->value;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setReusable() {
+    return $this->set('reusable', TRUE);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setNonReusable() {
+    return $this->set('reusable', FALSE);
   }
 
   /**

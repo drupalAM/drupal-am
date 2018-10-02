@@ -4,9 +4,9 @@ namespace Drupal\Tests\content_moderation\Kernel;
 
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
+use Drupal\Tests\content_moderation\Traits\ContentModerationTestTrait;
 use Drupal\Tests\views\Kernel\ViewsKernelTestBase;
 use Drupal\views\Views;
-use Drupal\workflows\Entity\Workflow;
 
 /**
  * Tests the views integration of content_moderation.
@@ -14,6 +14,8 @@ use Drupal\workflows\Entity\Workflow;
  * @group content_moderation
  */
 class ViewsDataIntegrationTest extends ViewsKernelTestBase {
+
+  use ContentModerationTestTrait;
 
   /**
    * {@inheritdoc}
@@ -44,7 +46,7 @@ class ViewsDataIntegrationTest extends ViewsKernelTestBase {
       'type' => 'page',
     ]);
     $node_type->save();
-    $workflow = Workflow::load('editorial');
+    $workflow = $this->createEditorialWorkflow();
     $workflow->getTypePlugin()->addEntityTypeAndBundle('node', 'page');
     $workflow->getTypePlugin()->addEntityTypeAndBundle('entity_test_mulrevpub', 'entity_test_mulrevpub');
     $workflow->save();
@@ -108,20 +110,41 @@ class ViewsDataIntegrationTest extends ViewsKernelTestBase {
     $expected_result = [
       [
         'nid' => $node->id(),
-        // @todo I would have expected that the content_moderation_state default
-        //   revision is the same one as in the node, but it isn't.
         // Joins from the base table to the default revision of the
         // content_moderation.
-        'moderation_state' => 'draft',
+        'moderation_state' => 'published',
         // Joins from the revision table to the default revision of the
         // content_moderation.
-        'moderation_state_1' => 'draft',
+        'moderation_state_1' => 'published',
         // Joins from the revision table to the revision of the
         // content_moderation.
         'moderation_state_2' => 'published',
       ],
     ];
     $this->assertIdenticalResultset($view, $expected_result, ['nid' => 'nid', 'moderation_state' => 'moderation_state', 'moderation_state_1' => 'moderation_state_1', 'moderation_state_2' => 'moderation_state_2']);
+  }
+
+  /**
+   * Tests the content moderation state views field.
+   */
+  public function testContentModerationStateField() {
+    $node = Node::create([
+      'type' => 'page',
+      'title' => 'Test title',
+    ]);
+    $node->moderation_state->value = 'published';
+    $node->save();
+
+    $view = Views::getView('test_content_moderation_field_state_test');
+    $view->execute();
+
+    $expected_result = [
+      [
+        'title' => 'Test title',
+        'moderation_state' => 'published',
+      ],
+    ];
+    $this->assertIdenticalResultset($view, $expected_result, ['title' => 'title', 'moderation_state' => 'moderation_state']);
   }
 
 }

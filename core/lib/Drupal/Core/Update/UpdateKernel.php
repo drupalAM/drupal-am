@@ -106,14 +106,16 @@ class UpdateKernel extends DrupalKernel {
 
     $this->setupRequestMatch($request);
 
-    $arguments = $controller_resolver->getArguments($request, $db_update_controller);
+    /** @var \Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface $argument_resolver */
+    $argument_resolver = $container->get('http_kernel.controller.argument_resolver');
+    $arguments = $argument_resolver->getArguments($request, $db_update_controller);
     return call_user_func_array($db_update_controller, $arguments);
   }
 
   /**
    * Boots up the session.
    *
-   * bootSession() + shutdownSession() basically simulates what
+   * This method + shutdownSession() basically simulates what
    * \Drupal\Core\StackMiddleware\Session does.
    *
    * @param \Symfony\Component\HttpFoundation\Request $request
@@ -182,7 +184,7 @@ class UpdateKernel extends DrupalKernel {
     $db_update_access = $this->getContainer()->get('access_check.db_update');
 
     if (!Settings::get('update_free_access', FALSE) && !$db_update_access->access($account)->isAllowed()) {
-      throw new AccessDeniedHttpException('In order to run update.php you need to either be logged in as admin or have set $settings[\'update_free_access\'] in your settings.php.');
+      throw new AccessDeniedHttpException('In order to run update.php you need to either have "Administer software updates" permission or have set $settings[\'update_free_access\'] in your settings.php.');
     }
   }
 

@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Form constructor for the translation import screen.
+ *
+ * @internal
  */
 class ImportForm extends FormBase {
 
@@ -44,6 +46,7 @@ class ImportForm extends FormBase {
       $container->get('language_manager')
     );
   }
+
   /**
    * Constructs a form for language import.
    *
@@ -108,6 +111,7 @@ class ImportForm extends FormBase {
       ],
       '#size' => 50,
       '#upload_validators' => $validators,
+      '#upload_location' => 'translations://',
       '#attributes' => ['class' => ['file-import-input']],
     ];
     $form['langcode'] = [
@@ -154,7 +158,7 @@ class ImportForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    $this->file = file_save_upload('file', $form['file']['#upload_validators'], 'translations://', 0);
+    $this->file = _file_save_upload_from_form($form['file'], $form_state, 0);
 
     // Ensure we have the file uploaded.
     if (!$this->file) {
@@ -172,7 +176,7 @@ class ImportForm extends FormBase {
     if (empty($language)) {
       $language = ConfigurableLanguage::createFromLangcode($form_state->getValue('langcode'));
       $language->save();
-      drupal_set_message($this->t('The language %language has been created.', ['%language' => $this->t($language->label())]));
+      $this->messenger()->addStatus($this->t('The language %language has been created.', ['%language' => $this->t($language->label())]));
     }
     $options = array_merge(_locale_translation_default_update_options(), [
       'langcode' => $form_state->getValue('langcode'),

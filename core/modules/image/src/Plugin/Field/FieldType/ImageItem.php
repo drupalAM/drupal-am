@@ -263,7 +263,7 @@ class ImageItem extends FileItem {
       '#type' => 'checkbox',
       '#title' => t('Enable <em>Alt</em> field'),
       '#default_value' => $settings['alt_field'],
-      '#description' => t('The alt attribute may be used by search engines, screen readers, and when the image cannot be loaded. Enabling this field is recommended.'),
+      '#description' => t('Short description of the image used by screen readers and displayed when the image is not loaded. Enabling this field is recommended.'),
       '#weight' => 9,
     ];
     $element['alt_field_required'] = [
@@ -344,8 +344,8 @@ class ImageItem extends FileItem {
     if (!isset($images[$extension][$min_resolution][$max_resolution]) || count($images[$extension][$min_resolution][$max_resolution]) <= 5) {
       $tmp_file = drupal_tempnam('temporary://', 'generateImage_');
       $destination = $tmp_file . '.' . $extension;
-      file_unmanaged_move($tmp_file, $destination, FILE_CREATE_DIRECTORY);
-      if ($path = $random->image(drupal_realpath($destination), $min_resolution, $max_resolution)) {
+      file_unmanaged_move($tmp_file, $destination);
+      if ($path = $random->image(\Drupal::service('file_system')->realpath($destination), $min_resolution, $max_resolution)) {
         $image = File::create();
         $image->setFileUri($path);
         $image->setOwnerId(\Drupal::currentUser()->id());
@@ -354,7 +354,7 @@ class ImageItem extends FileItem {
         $destination_dir = static::doGetUploadLocation($settings);
         file_prepare_directory($destination_dir, FILE_CREATE_DIRECTORY);
         $destination = $destination_dir . '/' . basename($path);
-        $file = file_move($image, $destination, FILE_CREATE_DIRECTORY);
+        $file = file_move($image, $destination);
         $images[$extension][$min_resolution][$max_resolution][$file->id()] = $file;
       }
       else {
@@ -433,7 +433,7 @@ class ImageItem extends FileItem {
     $element['default_image']['alt'] = [
       '#type' => 'textfield',
       '#title' => t('Alternative text'),
-      '#description' => t('This text will be used by screen readers, search engines, and when the image cannot be loaded.'),
+      '#description' => t('Short description of the image used by screen readers and displayed when the image is not loaded. This is important for accessibility.'),
       '#default_value' => $settings['default_image']['alt'],
       '#maxlength' => 512,
     ];

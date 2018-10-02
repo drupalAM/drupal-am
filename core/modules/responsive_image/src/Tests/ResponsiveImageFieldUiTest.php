@@ -2,7 +2,6 @@
 
 namespace Drupal\responsive_image\Tests;
 
-
 use Drupal\field_ui\Tests\FieldUiTestTrait;
 use Drupal\simpletest\WebTestBase;
 use Drupal\responsive_image\Entity\ResponsiveImageStyle;
@@ -78,7 +77,7 @@ class ResponsiveImageFieldUiTest extends WebTestBase {
       ])
       ->addImageStyleMapping('responsive_image_test_module.narrow', '1x', [
         'image_mapping_type' => 'image_style',
-        'image_mapping' => 'medium'
+        'image_mapping' => 'medium',
       ])
       // Test the normal output of mapping to an image style.
       ->addImageStyleMapping('responsive_image_test_module.wide', '1x', [

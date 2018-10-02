@@ -15,7 +15,7 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
  *
  * @MigrateSource(
  *   id = "d7_field",
- *   source_module = "field"
+ *   source_module = "field_sql_storage"
  * )
  */
 class Field extends DrupalSqlBase {
@@ -33,6 +33,19 @@ class Field extends DrupalSqlBase {
       ->condition('fc.deleted', 0)
       ->condition('fci.deleted', 0);
     $query->join('field_config_instance', 'fci', 'fc.id = fci.field_id');
+
+    // If the Drupal 7 Title module is enabled, we don't want to migrate the
+    // fields it provides. The values of those fields will be migrated to the
+    // base fields they were replacing.
+    if ($this->moduleExists('title')) {
+      $title_fields = [
+        'title_field',
+        'name_field',
+        'description_field',
+        'subject_field',
+      ];
+      $query->condition('fc.field_name', $title_fields, 'NOT IN');
+    }
 
     return $query;
   }

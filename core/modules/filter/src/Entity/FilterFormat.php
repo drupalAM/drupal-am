@@ -16,6 +16,13 @@ use Drupal\filter\Plugin\FilterInterface;
  * @ConfigEntityType(
  *   id = "filter_format",
  *   label = @Translation("Text format"),
+ *   label_collection = @Translation("Text formats"),
+ *   label_singular = @Translation("text format"),
+ *   label_plural = @Translation("text formats"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count text format",
+ *     plural = "@count text formats",
+ *   ),
  *   handlers = {
  *     "form" = {
  *       "add" = "Drupal\filter\FilterFormatAddForm",
@@ -269,7 +276,7 @@ class FilterFormat extends ConfigEntityBase implements FilterFormatInterface, En
    */
   public function getHtmlRestrictions() {
     // Ignore filters that are disabled or don't have HTML restrictions.
-    $filters = array_filter($this->filters()->getAll(), function($filter) {
+    $filters = array_filter($this->filters()->getAll(), function ($filter) {
       if (!$filter->status) {
         return FALSE;
       }
@@ -286,7 +293,7 @@ class FilterFormat extends ConfigEntityBase implements FilterFormatInterface, En
       // From the set of remaining filters (they were filtered by array_filter()
       // above), collect the list of tags and attributes that are allowed by all
       // filters, i.e. the intersection of all allowed tags and attributes.
-      $restrictions = array_reduce($filters, function($restrictions, $filter) {
+      $restrictions = array_reduce($filters, function ($restrictions, $filter) {
         $new_restrictions = $filter->getHTMLRestrictions();
 
         // The first filter with HTML restrictions provides the initial set.

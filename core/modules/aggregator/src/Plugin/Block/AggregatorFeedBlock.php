@@ -57,7 +57,6 @@ class AggregatorFeedBlock extends BlockBase implements ContainerFactoryPluginInt
     $this->itemStorage = $item_storage;
   }
 
-
   /**
    * {@inheritdoc}
    */
@@ -70,7 +69,6 @@ class AggregatorFeedBlock extends BlockBase implements ContainerFactoryPluginInt
       $container->get('entity_type.manager')->getStorage('aggregator_item')
     );
   }
-
 
   /**
    * {@inheritdoc}
@@ -167,8 +165,10 @@ class AggregatorFeedBlock extends BlockBase implements ContainerFactoryPluginInt
    */
   public function getCacheTags() {
     $cache_tags = parent::getCacheTags();
-    $feed = $this->feedStorage->load($this->configuration['feed']);
-    return Cache::mergeTags($cache_tags, $feed->getCacheTags());
+    if ($feed = $this->feedStorage->load($this->configuration['feed'])) {
+      $cache_tags = Cache::mergeTags($cache_tags, $feed->getCacheTags());
+    }
+    return $cache_tags;
   }
 
 }

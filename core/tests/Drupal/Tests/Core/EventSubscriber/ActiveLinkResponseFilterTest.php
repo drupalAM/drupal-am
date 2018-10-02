@@ -42,7 +42,7 @@ class ActiveLinkResponseFilterTest extends UnitTestCase {
       'a',
       // Unfortunately, it must also work on list items.
       'li',
-      // … and therefor, on *any* tag, really.
+      // … and therefore, on *any* tag, really.
       'foo',
     ];
     $contents = [
@@ -237,6 +237,19 @@ class ActiveLinkResponseFilterTest extends UnitTestCase {
     $situations[] = ['context' => $context, 'is active' => FALSE, 'attributes' => $attributes + ['data-drupal-link-query' => TRUE]];
     $situations[] = ['context' => $context, 'is active' => FALSE, 'attributes' => $attributes + ['hreflang' => 'en', 'data-drupal-link-query' => ""]];
     $situations[] = ['context' => $context, 'is active' => FALSE, 'attributes' => $attributes + ['hreflang' => 'en', 'data-drupal-link-query' => TRUE]];
+
+    // Query with unsorted keys must match when the attribute is in sorted form.
+    $context = [
+      'path' => 'myfrontpage',
+      'front' => TRUE,
+      'language' => 'en',
+      'query' => ['foo' => 'bar', 'baz' => 'qux'],
+    ];
+    $attributes = [
+      'data-drupal-link-system-path' => 'myfrontpage',
+      'data-drupal-link-query' => Json::encode(['baz' => 'qux', 'foo' => 'bar']),
+    ];
+    $situations[] = ['context' => $context, 'is active' => TRUE, 'attributes' => $attributes];
 
     // Loop over the surrounding HTML variations.
     $data = [];

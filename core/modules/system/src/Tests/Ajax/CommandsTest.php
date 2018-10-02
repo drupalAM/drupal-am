@@ -29,6 +29,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  * @group Ajax
  */
 class CommandsTest extends AjaxTestBase {
+
   /**
    * Tests the various Ajax Commands.
    */
@@ -124,7 +125,7 @@ class CommandsTest extends AjaxTestBase {
    * Regression test: Settings command exists regardless of JS aggregation.
    */
   public function testAttachedSettings() {
-    $assert = function($message) {
+    $assert = function ($message) {
       $response = new AjaxResponse();
       $response->setAttachments([
         'library' => ['core/drupalSettings'],

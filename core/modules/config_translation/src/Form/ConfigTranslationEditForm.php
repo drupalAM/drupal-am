@@ -7,6 +7,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Defines a form for editing configuration translations.
+ *
+ * @internal
  */
 class ConfigTranslationEditForm extends ConfigTranslationFormBase {
 
@@ -34,7 +36,7 @@ class ConfigTranslationEditForm extends ConfigTranslationFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
-    drupal_set_message($this->t('Successfully updated @language translation.', ['@language' => $this->language->getName()]));
+    $this->messenger()->addStatus($this->t('Successfully updated @language translation.', ['@language' => $this->language->getName()]));
   }
 
 }

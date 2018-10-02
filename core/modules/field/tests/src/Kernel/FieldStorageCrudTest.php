@@ -113,7 +113,7 @@ class FieldStorageCrudTest extends FieldKernelTestBase {
     try {
       $field_storage_definition = [
         'field_name' => 'test_field',
-        'type' => 'test_field'
+        'type' => 'test_field',
       ];
       FieldStorageConfig::create($field_storage_definition)->save();
       $this->fail('Cannot create a field without an entity type.');
@@ -188,7 +188,7 @@ class FieldStorageCrudTest extends FieldKernelTestBase {
    */
   public function testCreateWithExplicitSchema() {
     $schema = [
-      'dummy' => 'foobar'
+      'dummy' => 'foobar',
     ];
     $field_storage = FieldStorageConfig::create([
       'field_name' => 'field_2',
@@ -347,7 +347,7 @@ class FieldStorageCrudTest extends FieldKernelTestBase {
     FieldConfig::create($field_definition)->save();
     $field_storage = FieldStorageConfig::load('entity_test.' . $field_storage_definition['field_name']);
     $this->assertTrue(!empty($field_storage) && !$field_storage->isDeleted(), 'A new storage with a previously used name is created.');
-    $field = FieldConfig::load('entity_test.' . $field_definition['bundle'] . '.' . $field_definition['field_name'] );
+    $field = FieldConfig::load('entity_test.' . $field_definition['bundle'] . '.' . $field_definition['field_name']);
     $this->assertTrue(!empty($field) && !$field->isDeleted(), 'A new field for a previously used field name is created.');
 
     // Save an entity with data for the field

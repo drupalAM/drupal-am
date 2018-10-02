@@ -4,22 +4,24 @@ namespace Drupal\node;
 
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Entity\ContentEntityForm;
-use Drupal\Core\Entity\EntityManagerInterface;
+use Drupal\Core\Entity\EntityRepositoryInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\user\PrivateTempStoreFactory;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Form handler for the node edit forms.
+ *
+ * @internal
  */
 class NodeForm extends ContentEntityForm {
 
   /**
    * The tempstore factory.
    *
-   * @var \Drupal\user\PrivateTempStoreFactory
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
    */
   protected $tempStoreFactory;
 
@@ -33,9 +35,9 @@ class NodeForm extends ContentEntityForm {
   /**
    * Constructs a NodeForm object.
    *
-   * @param \Drupal\Core\Entity\EntityManagerInterface $entity_manager
-   *   The entity manager.
-   * @param \Drupal\user\PrivateTempStoreFactory $temp_store_factory
+   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
+   *   The entity repository.
+   * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store_factory
    *   The factory for the temp store object.
    * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
    *   The entity type bundle service.
@@ -44,8 +46,8 @@ class NodeForm extends ContentEntityForm {
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.
    */
-  public function __construct(EntityManagerInterface $entity_manager, PrivateTempStoreFactory $temp_store_factory, EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL, TimeInterface $time = NULL, AccountInterface $current_user) {
-    parent::__construct($entity_manager, $entity_type_bundle_info, $time);
+  public function __construct(EntityRepositoryInterface $entity_repository, PrivateTempStoreFactory $temp_store_factory, EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL, TimeInterface $time = NULL, AccountInterface $current_user) {
+    parent::__construct($entity_repository, $entity_type_bundle_info, $time);
     $this->tempStoreFactory = $temp_store_factory;
     $this->currentUser = $current_user;
   }
@@ -55,8 +57,8 @@ class NodeForm extends ContentEntityForm {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity.manager'),
-      $container->get('user.private_tempstore'),
+      $container->get('entity.repository'),
+      $container->get('tempstore.private'),
       $container->get('entity_type.bundle.info'),
       $container->get('datetime.time'),
       $container->get('current_user')
@@ -100,7 +102,7 @@ class NodeForm extends ContentEntityForm {
     if ($this->operation == 'edit') {
       $form['#title'] = $this->t('<em>Edit @type</em> @title', [
         '@type' => node_get_type_label($node),
-        '@title' => $node->label()
+        '@title' => $node->label(),
       ]);
     }
 
@@ -142,13 +144,6 @@ class NodeForm extends ContentEntityForm {
       '#wrapper_attributes' => ['class' => ['entity-meta__author']],
     ];
 
-    $form['footer'] = [
-      '#type' => 'container',
-      '#weight' => 99,
-      '#attributes' => [
-        'class' => ['node-form-footer']
-      ]
-    ];
     $form['status']['#group'] = 'footer';
 
     // Node author information for administrators.
@@ -222,7 +217,7 @@ class NodeForm extends ContentEntityForm {
   public function updateStatus($entity_type_id, NodeInterface $node, array $form, FormStateInterface $form_state) {
     $element = $form_state->getTriggeringElement();
     if (isset($element['#published_status'])) {
-      $node->setPublished($element['#published_status']);
+      $element['#published_status'] ? $node->setPublished() : $node->setUnpublished();
     }
   }
 
@@ -290,11 +285,11 @@ class NodeForm extends ContentEntityForm {
 
     if ($insert) {
       $this->logger('content')->notice('@type: added %title.', $context);
-      drupal_set_message(t('@type %title has been created.', $t_args));
+      $this->messenger()->addStatus($this->t('@type %title has been created.', $t_args));
     }
     else {
       $this->logger('content')->notice('@type: updated %title.', $context);
-      drupal_set_message(t('@type %title has been updated.', $t_args));
+      $this->messenger()->addStatus($this->t('@type %title has been updated.', $t_args));
     }
 
     if ($node->id()) {
@@ -317,7 +312,7 @@ class NodeForm extends ContentEntityForm {
     else {
       // In the unlikely case something went wrong on save, the node will be
       // rebuilt and node form redisplayed the same way as in preview.
-      drupal_set_message(t('The post could not be saved.'), 'error');
+      $this->messenger()->addError($this->t('The post could not be saved.'));
       $form_state->setRebuild();
     }
   }

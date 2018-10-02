@@ -34,8 +34,17 @@ function template_preprocess_views_view(&$variables) {
 
   $css_class = $view->display_handler->getOption('css_class');
   if (!empty($css_class)) {
-    $variables['css_class'] = preg_replace('/[^a-zA-Z0-9- ]/', '-', $css_class);
-    $variables['attributes']['class'][] = $variables['css_class'];
+    // Views uses its own sanitization method. This is preserved to keep
+    // backwards compatibility.
+    // @todo https://www.drupal.org/project/drupal/issues/2977950 Decide what to
+    //   do with the backwards compatibility layer.
+    $bc_classes = explode(' ', preg_replace('/[^a-zA-Z0-9- ]/', '-', $css_class));
+    // Sanitize the classes using the classes using the proper API.
+    $sanitized_classes = array_map('\Drupal\Component\Utility\Html::cleanCssIdentifier', explode(' ', $css_class));
+    $view_classes = array_unique(array_merge($bc_classes, $sanitized_classes));
+    // Merge the view display classes into any existing classes if they exist.
+    $variables['attributes']['class'] = !empty($variables['attributes']['class']) ? array_merge($variables['attributes']['class'], $view_classes) : $view_classes;
+    $variables['css_class'] = implode(' ', $view_classes);
   }
 
   // contextual_preprocess() only works on render elements, and since this theme
@@ -90,7 +99,8 @@ function template_preprocess_views_view_fields(&$variables) {
 
   // Loop through the fields for this view.
   $previous_inline = FALSE;
-  $variables['fields'] = []; // ensure it's at least an empty array.
+  // Ensure it's at least an empty array.
+  $variables['fields'] = [];
   /** @var \Drupal\views\ResultRow $row */
   $row = $variables['row'];
   foreach ($view->field as $id => $field) {
@@ -123,7 +133,8 @@ function template_preprocess_views_view_fields(&$variables) {
         $object->raw = $row->{$view->field[$id]->field_alias};
       }
       else {
-        $object->raw = NULL; // make sure it exists to reduce NOTICE
+        // Make sure it exists to reduce NOTICE.
+        $object->raw = NULL;
       }
 
       if (!empty($variables['options']['separator']) && $previous_inline && $object->inline && $object->content) {
@@ -573,12 +584,12 @@ function template_preprocess_views_view_table(&$variables) {
           if (!empty($column_reference['content']) && !empty($options['info'][$column]['separator'])) {
             $column_reference['content'][] = [
               'separator' => ['#markup' => $options['info'][$column]['separator']],
-              'field_output' => ['#markup' => $field_output]
+              'field_output' => ['#markup' => $field_output],
             ];
           }
           else {
             $column_reference['content'][] = [
-              'field_output' => ['#markup' => $field_output]
+              'field_output' => ['#markup' => $field_output],
             ];
           }
         }
@@ -800,7 +811,7 @@ function template_preprocess_views_view_unformatted(&$variables) {
  *   - view: A View object.
  */
 function template_preprocess_views_view_list(&$variables) {
-  $handler  = $variables['view']->style_plugin;
+  $handler = $variables['view']->style_plugin;
 
   // Fetch classes from handler options.
   if ($handler->options['class']) {
@@ -833,7 +844,7 @@ function template_preprocess_views_view_list(&$variables) {
  *   - rows: The raw row data.
  */
 function template_preprocess_views_view_rss(&$variables) {
-  $view  = $variables['view'];
+  $view = $variables['view'];
   $items = $variables['rows'];
   $style = $view->style_plugin;
 
@@ -934,7 +945,7 @@ function template_preprocess_views_view_row_rss(&$variables) {
  *   - rows: The raw row data.
  */
 function template_preprocess_views_view_opml(&$variables) {
-  $view  = $variables['view'];
+  $view = $variables['view'];
   $items = $variables['rows'];
 
   $config = \Drupal::config('system.site');

@@ -166,7 +166,7 @@ class DisplayPathTest extends UITestBase {
     unset($menu_options['@attributes']);
 
     // Convert array to make the next assertion possible.
-    $menu_options = array_map(function($element) {
+    $menu_options = array_map(function ($element) {
       return $element->getText();
     }, $menu_options);
 
@@ -208,7 +208,7 @@ class DisplayPathTest extends UITestBase {
     $edit = [
       'title[0][value]' => 'Menu title',
       'link[0][uri]' => '/admin/foo',
-      'menu_parent' => 'admin:system.admin'
+      'menu_parent' => 'admin:system.admin',
     ];
     $this->drupalPostForm('admin/structure/menu/manage/admin/add', $edit, t('Save'));
 

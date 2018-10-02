@@ -14,6 +14,13 @@ use Drupal\aggregator\FeedInterface;
  * @ContentEntityType(
  *   id = "aggregator_feed",
  *   label = @Translation("Aggregator feed"),
+ *   label_collection = @Translation("Aggregator feeds"),
+ *   label_singular = @Translation("aggregator feed"),
+ *   label_plural = @Translation("aggregator feeds"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count aggregator feed",
+ *     plural = "@count aggregator feeds",
+ *   ),
  *   handlers = {
  *     "storage" = "Drupal\aggregator\FeedStorage",
  *     "storage_schema" = "Drupal\aggregator\FeedStorageSchema",
@@ -168,6 +175,7 @@ class Feed extends ContentEntityBase implements FeedInterface {
     $fields['refresh'] = BaseFieldDefinition::create('list_integer')
       ->setLabel(t('Update interval'))
       ->setDescription(t('The length of time between feed updates. Requires a correctly configured cron maintenance task.'))
+      ->setDefaultValue(3600)
       ->setSetting('unsigned', TRUE)
       ->setRequired(TRUE)
       ->setSetting('allowed_values', $period)

@@ -6,7 +6,7 @@ use Drupal\Component\FileCache\ApcuFileCacheBackend;
 use Drupal\Component\FileCache\FileCache;
 use Drupal\Component\FileCache\FileCacheFactory;
 use Drupal\Component\Utility\Html;
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Config\Development\ConfigSchemaChecker;
 use Drupal\Core\Database\Database;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
@@ -17,12 +17,11 @@ use Drupal\Core\Extension\ExtensionDiscovery;
 use Drupal\Core\Language\Language;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\Test\TestDatabase;
-use Drupal\simpletest\AssertContentTrait;
 use Drupal\Tests\AssertHelperTrait;
 use Drupal\Tests\ConfigTestTrait;
+use Drupal\Tests\PhpunitCompatibilityTrait;
 use Drupal\Tests\RandomGeneratorTrait;
 use Drupal\Tests\TestRequirementsTrait;
-use Drupal\simpletest\TestServiceProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,21 +31,41 @@ use org\bovigo\vfs\visitor\vfsStreamPrintVisitor;
 /**
  * Base class for functional integration tests.
  *
- * Tests extending this base class can access files and the database, but the
- * entire environment is initially empty. Drupal runs in a minimal mocked
- * environment, comparable to the one in the early installer.
+ * This base class should be useful for testing some types of integrations which
+ * don't require the overhead of a fully-installed Drupal instance, but which
+ * have many dependencies on parts of Drupal which can't or shouldn't be mocked.
  *
- * Unlike \Drupal\Tests\UnitTestCase, modules specified in the $modules
- * property are automatically added to the service container for each test.
- * The module/hook system is functional and operates on a fixed module list.
- * Additional modules needed in a test may be loaded and added to the fixed
- * module list.
+ * This base class partially boots a fixture Drupal. The state of the fixture
+ * Drupal is comparable to the state of a system during the early part of the
+ * installation process.
  *
- * Unlike \Drupal\simpletest\WebTestBase, the modules are only loaded, but not
- * installed. Modules have to be installed manually, if needed.
+ * Tests extending this base class can access services and the database, but the
+ * system is initially empty. This Drupal runs in a minimal mocked filesystem
+ * which operates within vfsStream.
+ *
+ * Modules specified in the $modules property are added to the service container
+ * for each test. The module/hook system is functional. Additional modules
+ * needed in a test should override $modules. Modules specified in this way will
+ * be added to those specified in superclasses.
+ *
+ * Unlike \Drupal\Tests\BrowserTestBase, the modules are not installed. They are
+ * loaded such that their services and hooks are available, but the install
+ * process has not been performed.
+ *
+ * Other modules can be made available in this way using
+ * KernelTestBase::enableModules().
+ *
+ * Some modules can be brought into a fully-installed state using
+ * KernelTestBase::installConfig(), KernelTestBase::installSchema(), and
+ * KernelTestBase::installEntitySchema(). Alternately, tests which need modules
+ * to be fully installed could inherit from \Drupal\Tests\BrowserTestBase.
  *
  * @see \Drupal\Tests\KernelTestBase::$modules
  * @see \Drupal\Tests\KernelTestBase::enableModules()
+ * @see \Drupal\Tests\KernelTestBase::installConfig()
+ * @see \Drupal\Tests\KernelTestBase::installEntitySchema()
+ * @see \Drupal\Tests\KernelTestBase::installSchema()
+ * @see \Drupal\Tests\BrowserTestBase
  */
 abstract class KernelTestBase extends TestCase implements ServiceProviderInterface {
 
@@ -56,6 +75,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
   use RandomGeneratorTrait;
   use ConfigTestTrait;
   use TestRequirementsTrait;
+  use PhpunitCompatibilityTrait;
 
   /**
    * {@inheritdoc}
@@ -229,7 +249,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
    * Should not be called by tests. Only visible for DrupalKernel integration
    * tests.
    *
-   * @see \Drupal\system\Tests\DrupalKernel\DrupalKernelTest
+   * @see \Drupal\KernelTests\Core\DrupalKernel\DrupalKernelTest
    * @internal
    */
   protected function bootEnvironment() {
@@ -304,10 +324,10 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
   private function bootKernel() {
     $this->setSetting('container_yamls', []);
     // Allow for test-specific overrides.
-    $settings_services_file = $this->root . '/sites/default' . '/testing.services.yml';
+    $settings_services_file = $this->root . '/sites/default/testing.services.yml';
     if (file_exists($settings_services_file)) {
       // Copy the testing-specific service overrides in place.
-      $testing_services_file = $this->root . '/' . $this->siteDirectory . '/services.yml';
+      $testing_services_file = $this->siteDirectory . '/services.yml';
       copy($settings_services_file, $testing_services_file);
       $this->setSetting('container_yamls', [$testing_services_file]);
     }
@@ -440,7 +460,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
         // Replace the full table prefix definition to ensure that no table
         // prefixes of the test runner leak into the test.
         $connection_info[$target]['prefix'] = [
-          'default' => $value['prefix']['default'] . $this->databasePrefix,
+          'default' => $this->databasePrefix,
         ];
       }
     }
@@ -669,7 +689,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
    * Installs default configuration for a given list of modules.
    *
    * @param string|string[] $modules
-   *   A list of modules for which to install default configuration.
+   *   A module or list of modules for which to install default configuration.
    *
    * @throws \LogicException
    *   If any module in $modules is not enabled.
@@ -741,7 +761,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
       $all_tables_exist = TRUE;
       foreach ($tables as $table) {
         if (!$db_schema->tableExists($table)) {
-          $this->fail(SafeMarkup::format('Installed entity type table for the %entity_type entity type: %table', [
+          $this->fail(new FormattableMarkup('Installed entity type table for the %entity_type entity type: %table', [
             '%entity_type' => $entity_type_id,
             '%table' => $table,
           ]));
@@ -749,7 +769,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
         }
       }
       if ($all_tables_exist) {
-        $this->pass(SafeMarkup::format('Installed entity type tables for the %entity_type entity type: %tables', [
+        $this->pass(new FormattableMarkup('Installed entity type tables for the %entity_type entity type: %tables', [
           '%entity_type' => $entity_type_id,
           '%tables' => '{' . implode('}, {', $tables) . '}',
         ]));
@@ -759,6 +779,9 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
 
   /**
    * Enables modules for this test.
+   *
+   * This method does not install modules fully. Services and hooks for the
+   * module are available, but the install process is not performed.
    *
    * To install test modules outside of the testing environment, add
    * @code
@@ -789,7 +812,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
     // profile that is not the current profile, and we don't yet have a cached
     // way to receive inactive profile information.
     // @todo Remove as part of https://www.drupal.org/node/2186491
-    $listing = new ExtensionDiscovery(\Drupal::root());
+    $listing = new ExtensionDiscovery($this->root);
     $module_list = $listing->scan('module');
     // In ModuleHandlerTest we pass in a profile as if it were a module.
     $module_list += $listing->scan('profile');
@@ -804,7 +827,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
 
     foreach ($modules as $module) {
       if ($module_handler->moduleExists($module)) {
-        throw new \LogicException("$module module is already enabled.");
+        continue;
       }
       $module_handler->addModule($module, $module_list[$module]->getPath());
       // Maintain the list of enabled modules in configuration.
@@ -911,9 +934,30 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
    *   \Drupal\Core\Site\Settings::get() to perform custom merges.
    */
   protected function setSetting($name, $value) {
+    if ($name === 'install_profile') {
+      @trigger_error('Use \Drupal\KernelTests\KernelTestBase::setInstallProfile() to set the install profile in kernel tests. See https://www.drupal.org/node/2538996', E_USER_DEPRECATED);
+      $this->setInstallProfile($value);
+    }
     $settings = Settings::getInstance() ? Settings::getAll() : [];
     $settings[$name] = $value;
     new Settings($settings);
+  }
+
+  /**
+   * Sets the install profile and rebuilds the container to update it.
+   *
+   * @param string $profile
+   *   The install profile to set.
+   */
+  protected function setInstallProfile($profile) {
+    $this->container->get('config.factory')
+      ->getEditable('core.extension')
+      ->set('profile', $profile)
+      ->save();
+
+    // The installation profile is provided by a container parameter. Saving
+    // the configuration doesn't automatically trigger invalidation
+    $this->container->get('kernel')->rebuildContainer();
   }
 
   /**
@@ -1002,7 +1046,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
    * Test authors should follow the provided instructions and adjust their tests
    * accordingly.
    *
-   * @deprecated in Drupal 8.0.x, will be removed before Drupal 8.2.0.
+   * @deprecated in Drupal 8.0.0, will be removed before Drupal 9.0.0.
    */
   public function __get($name) {
     if (in_array($name, [

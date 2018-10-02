@@ -3,7 +3,7 @@
 namespace Drupal\simpletest;
 
 use Drupal\Component\Utility\Html;
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Component\Utility\Variable;
 use Drupal\Core\Config\Development\ConfigSchemaChecker;
 use Drupal\Core\Database\Database;
@@ -14,27 +14,53 @@ use Drupal\Core\Extension\ExtensionDiscovery;
 use Drupal\Core\KeyValueStore\KeyValueMemoryFactory;
 use Drupal\Core\Language\Language;
 use Drupal\Core\Site\Settings;
+use Drupal\KernelTests\TestServiceProvider;
 use Symfony\Component\DependencyInjection\Parameter;
 use Drupal\Core\StreamWrapper\StreamWrapperInterface;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Base class for integration tests.
+ * Base class for functional integration tests.
  *
- * Tests extending this base class can access files and the database, but the
- * entire environment is initially empty. Drupal runs in a minimal mocked
- * environment, comparable to the one in the early installer.
+ * This base class should be useful for testing some types of integrations which
+ * don't require the overhead of a fully-installed Drupal instance, but which
+ * have many dependencies on parts of Drupal which can't or shouldn't be mocked.
  *
- * The module/hook system is functional and operates on a fixed module list.
- * Additional modules needed in a test may be loaded and added to the fixed
- * module list.
+ * This base class partially boots a fixture Drupal. The state of the fixture
+ * Drupal is comparable to the state of a system during the early part of the
+ * installation process.
+ *
+ * Tests extending this base class can access services and the database, but the
+ * system is initially empty. This Drupal runs in a minimal mocked filesystem
+ * which operates within vfsStream.
+ *
+ * Modules specified in the $modules property are added to the service container
+ * for each test. The module/hook system is functional. Additional modules
+ * needed in a test should override $modules. Modules specified in this way will
+ * be added to those specified in superclasses.
+ *
+ * Unlike \Drupal\Tests\BrowserTestBase, the modules are not installed. They are
+ * loaded such that their services and hooks are available, but the install
+ * process has not been performed.
+ *
+ * Other modules can be made available in this way using
+ * KernelTestBase::enableModules().
+ *
+ * Some modules can be brought into a fully-installed state using
+ * KernelTestBase::installConfig(), KernelTestBase::installSchema(), and
+ * KernelTestBase::installEntitySchema(). Alternately, tests which need modules
+ * to be fully installed could inherit from \Drupal\Tests\BrowserTestBase.
+ *
+ * @see \Drupal\Tests\KernelTestBase::$modules
+ * @see \Drupal\Tests\KernelTestBase::enableModules()
+ * @see \Drupal\Tests\KernelTestBase::installConfig()
+ * @see \Drupal\Tests\KernelTestBase::installEntitySchema()
+ * @see \Drupal\Tests\KernelTestBase::installSchema()
+ * @see \Drupal\Tests\BrowserTestBase
  *
  * @deprecated in Drupal 8.0.x, will be removed before Drupal 9.0.0. Use
  *   \Drupal\KernelTests\KernelTestBase instead.
- *
- * @see \Drupal\simpletest\KernelTestBase::$modules
- * @see \Drupal\simpletest\KernelTestBase::enableModules()
  *
  * @ingroup testing
  */
@@ -76,7 +102,7 @@ abstract class KernelTestBase extends TestBase {
   /**
    * A KeyValueMemoryFactory instance to use when building the container.
    *
-   * @var \Drupal\Core\KeyValueStore\KeyValueMemoryFactory.
+   * @var \Drupal\Core\KeyValueStore\KeyValueMemoryFactory
    */
   protected $keyValueFactory;
 
@@ -121,7 +147,7 @@ abstract class KernelTestBase extends TestBase {
     $path = $this->siteDirectory . '/config_' . CONFIG_SYNC_DIRECTORY;
     $GLOBALS['config_directories'][CONFIG_SYNC_DIRECTORY] = $path;
     // Ensure the directory can be created and is writeable.
-    if (!install_ensure_config_directory(CONFIG_SYNC_DIRECTORY)) {
+    if (!file_prepare_directory($path, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS)) {
       throw new \RuntimeException("Failed to create '" . CONFIG_SYNC_DIRECTORY . "' config directory $path");
     }
     // Provide the already resolved path for tests.
@@ -173,7 +199,7 @@ EOD;
 
     // Add this test class as a service provider.
     // @todo Remove the indirection; implement ServiceProviderInterface instead.
-    $GLOBALS['conf']['container_service_providers']['TestServiceProvider'] = 'Drupal\simpletest\TestServiceProvider';
+    $GLOBALS['conf']['container_service_providers']['TestServiceProvider'] = TestServiceProvider::class;
 
     // Bootstrap a new kernel.
     $class_loader = require DRUPAL_ROOT . '/autoload.php';
@@ -200,7 +226,6 @@ EOD;
     // database connections, for example, \Drupal\Core\Config\DatabaseStorage.
     $this->kernel->shutdown();
     $this->kernel->boot();
-
 
     // Save the original site directory path, so that extensions in the
     // site-specific directory can still be discovered in the test site
@@ -453,7 +478,6 @@ EOD;
     ]));
   }
 
-
   /**
    * Installs the storage schema for a specific entity type.
    *
@@ -475,7 +499,7 @@ EOD;
       $all_tables_exist = TRUE;
       foreach ($tables as $table) {
         if (!$db_schema->tableExists($table)) {
-          $this->fail(SafeMarkup::format('Installed entity type table for the %entity_type entity type: %table', [
+          $this->fail(new FormattableMarkup('Installed entity type table for the %entity_type entity type: %table', [
             '%entity_type' => $entity_type_id,
             '%table' => $table,
           ]));
@@ -483,7 +507,7 @@ EOD;
         }
       }
       if ($all_tables_exist) {
-        $this->pass(SafeMarkup::format('Installed entity type tables for the %entity_type entity type: %tables', [
+        $this->pass(new FormattableMarkup('Installed entity type tables for the %entity_type entity type: %tables', [
           '%entity_type' => $entity_type_id,
           '%tables' => '{' . implode('}, {', $tables) . '}',
         ]));

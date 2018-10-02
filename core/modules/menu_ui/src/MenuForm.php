@@ -19,6 +19,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Base form for menu edit forms.
+ *
+ * @internal
  */
 class MenuForm extends EntityForm {
 
@@ -164,11 +166,11 @@ class MenuForm extends EntityForm {
     $status = $menu->save();
     $edit_link = $this->entity->link($this->t('Edit'));
     if ($status == SAVED_UPDATED) {
-      drupal_set_message($this->t('Menu %label has been updated.', ['%label' => $menu->label()]));
+      $this->messenger()->addStatus($this->t('Menu %label has been updated.', ['%label' => $menu->label()]));
       $this->logger('menu')->notice('Menu %label has been updated.', ['%label' => $menu->label(), 'link' => $edit_link]);
     }
     else {
-      drupal_set_message($this->t('Menu %label has been added.', ['%label' => $menu->label()]));
+      $this->messenger()->addStatus($this->t('Menu %label has been added.', ['%label' => $menu->label()]));
       $this->logger('menu')->notice('Menu %label has been added.', ['%label' => $menu->label(), 'link' => $edit_link]);
     }
 
@@ -221,7 +223,7 @@ class MenuForm extends EntityForm {
     $this->getRequest()->attributes->set('_menu_admin', FALSE);
 
     // Determine the delta; the number of weights to be made available.
-    $count = function(array $tree) {
+    $count = function (array $tree) {
       $sum = function ($carry, MenuLinkTreeElement $item) {
         return $carry + $item->count();
       };

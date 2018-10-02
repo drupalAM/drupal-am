@@ -60,7 +60,6 @@ class PathProcessorLanguage implements InboundPathProcessorInterface, OutboundPa
    */
   protected $configSubscriber;
 
-
   /**
    * Constructs a PathProcessorLanguage object.
    *
@@ -147,7 +146,7 @@ class PathProcessorLanguage implements InboundPathProcessorInterface, OutboundPa
 
     // Sort the processors list, so that their functions are called in the
     // order specified by the weight of the methods.
-    uksort($this->processors[$scope], function ($method_id_a, $method_id_b) use($weights) {
+    uksort($this->processors[$scope], function ($method_id_a, $method_id_b) use ($weights) {
       $a_weight = $weights[$method_id_a];
       $b_weight = $weights[$method_id_b];
 

@@ -159,7 +159,7 @@ class DatabaseStorage implements StorageInterface {
    * @throws \Drupal\Core\Config\StorageException
    *   If a database error occurs.
    */
-  protected function ensureTableExists()  {
+  protected function ensureTableExists() {
     try {
       if (!$this->connection->schema()->tableExists($this->table)) {
         $this->connection->schema()->createTable($this->table, static::schemaDefinition());
@@ -227,7 +227,6 @@ class DatabaseStorage implements StorageInterface {
       ->condition('name', $name)
       ->execute();
   }
-
 
   /**
    * Implements Drupal\Core\Config\StorageInterface::rename().

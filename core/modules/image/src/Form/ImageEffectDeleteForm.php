@@ -8,6 +8,8 @@ use Drupal\image\ImageStyleInterface;
 
 /**
  * Form for deleting an image effect.
+ *
+ * @internal
  */
 class ImageEffectDeleteForm extends ConfirmFormBase {
 
@@ -68,7 +70,7 @@ class ImageEffectDeleteForm extends ConfirmFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->imageStyle->deleteImageEffect($this->imageEffect);
-    drupal_set_message($this->t('The image effect %name has been deleted.', ['%name' => $this->imageEffect->label()]));
+    $this->messenger()->addStatus($this->t('The image effect %name has been deleted.', ['%name' => $this->imageEffect->label()]));
     $form_state->setRedirectUrl($this->imageStyle->urlInfo('edit-form'));
   }
 

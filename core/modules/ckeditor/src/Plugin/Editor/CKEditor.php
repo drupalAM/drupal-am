@@ -58,7 +58,7 @@ class CKEditor extends EditorBase implements ContainerFactoryPluginInterface {
   protected $renderer;
 
   /**
-   * Constructs a Drupal\Component\Plugin\PluginBase object.
+   * Constructs a \Drupal\ckeditor\Plugin\Editor\CKEditor object.
    *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.
@@ -194,7 +194,7 @@ class CKEditor extends EditorBase implements ContainerFactoryPluginInterface {
       }
     }
     // Get a list of all buttons that are provided by all plugins.
-    $all_buttons = array_reduce($this->ckeditorPluginManager->getButtons(), function($result, $item) {
+    $all_buttons = array_reduce($this->ckeditorPluginManager->getButtons(), function ($result, $item) {
       return array_merge($result, array_keys($item));
     }, []);
     // Build a fake Editor object, which we'll use to generate JavaScript
@@ -210,8 +210,8 @@ class CKEditor extends EditorBase implements ContainerFactoryPluginInterface {
              0 => [
                'name' => 'All existing buttons',
                'items' => $all_buttons,
-             ]
-           ]
+             ],
+           ],
          ],
         ],
         'plugins' => $settings['plugins'],
@@ -418,7 +418,7 @@ class CKEditor extends EditorBase implements ContainerFactoryPluginInterface {
     ];
     $this->moduleHandler->alter('ckeditor_css', $css, $editor);
     // Get a list of all enabled plugins' iframe instance CSS files.
-    $plugins_css = array_reduce($this->ckeditorPluginManager->getCssFiles($editor), function($result, $item) {
+    $plugins_css = array_reduce($this->ckeditorPluginManager->getCssFiles($editor), function ($result, $item) {
       return array_merge($result, array_values($item));
     }, []);
     $css = array_merge($css, $plugins_css);

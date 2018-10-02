@@ -7,6 +7,8 @@ use Drupal\Core\Url;
 
 /**
  * Form controller for the Views preview form.
+ *
+ * @internal
  */
 class ViewPreviewForm extends ViewFormBase {
 
@@ -75,7 +77,7 @@ class ViewPreviewForm extends ViewFormBase {
     return [
       '#attributes' => [
         'id' => 'preview-submit-wrapper',
-        'class' => ['preview-submit-wrapper']
+        'class' => ['preview-submit-wrapper'],
       ],
       'button' => [
         '#type' => 'submit',

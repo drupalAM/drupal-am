@@ -103,7 +103,6 @@ interface MigrateIdMapInterface extends \Iterator, PluginInspectionInterface {
    */
   public function importedCount();
 
-
   /**
    * Returns a count of items which are marked as needing update.
    *
@@ -197,7 +196,7 @@ interface MigrateIdMapInterface extends \Iterator, PluginInspectionInterface {
    *   The source identifier keyed values of the record, e.g. ['nid' => 5], or
    *   an empty array on failure.
    */
-  public function lookupSourceID(array $destination_id_values);
+  public function lookupSourceId(array $destination_id_values);
 
   /**
    * Looks up the destination identifier corresponding to a source key.

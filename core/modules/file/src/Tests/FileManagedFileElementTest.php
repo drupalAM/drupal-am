@@ -10,6 +10,7 @@ namespace Drupal\file\Tests;
  *   that aren't related to fields into it.
  */
 class FileManagedFileElementTest extends FileFieldTestBase {
+
   /**
    * Tests the managed_file element type.
    */
@@ -36,7 +37,7 @@ class FileManagedFileElementTest extends FileFieldTestBase {
           // was not saved.
           $last_fid_prior = $this->getLastFileId();
           $edit = [
-            $file_field_name => drupal_realpath($test_file->getFileUri()),
+            $file_field_name => \Drupal::service('file_system')->realpath($test_file->getFileUri()),
             'form_token' => 'invalid token',
           ];
           $this->drupalPostForm($path, $edit, t('Save'));
@@ -46,7 +47,7 @@ class FileManagedFileElementTest extends FileFieldTestBase {
 
           // Submit a new file, without using the Upload button.
           $last_fid_prior = $this->getLastFileId();
-          $edit = [$file_field_name => drupal_realpath($test_file->getFileUri())];
+          $edit = [$file_field_name => \Drupal::service('file_system')->realpath($test_file->getFileUri())];
           $this->drupalPostForm($path, $edit, t('Save'));
           $last_fid = $this->getLastFileId();
           $this->assertTrue($last_fid > $last_fid_prior, 'New file got saved.');
@@ -61,7 +62,7 @@ class FileManagedFileElementTest extends FileFieldTestBase {
             // Upload, then Submit.
             $last_fid_prior = $this->getLastFileId();
             $this->drupalGet($path);
-            $edit = [$file_field_name => drupal_realpath($test_file->getFileUri())];
+            $edit = [$file_field_name => \Drupal::service('file_system')->realpath($test_file->getFileUri())];
             if ($ajax) {
               $this->drupalPostAjaxForm(NULL, $edit, $input_base_name . '_upload_button');
             }
@@ -92,7 +93,7 @@ class FileManagedFileElementTest extends FileFieldTestBase {
 
             // Upload, then Remove, then Submit.
             $this->drupalGet($path);
-            $edit = [$file_field_name => drupal_realpath($test_file->getFileUri())];
+            $edit = [$file_field_name => \Drupal::service('file_system')->realpath($test_file->getFileUri())];
             if ($ajax) {
               $this->drupalPostAjaxForm(NULL, $edit, $input_base_name . '_upload_button');
             }
@@ -120,7 +121,7 @@ class FileManagedFileElementTest extends FileFieldTestBase {
 
     // The multiple file upload has additional conditions that need checking.
     $path = 'file/test/1/1/1';
-    $edit = ['files[nested_file][]' => drupal_realpath($test_file->getFileUri())];
+    $edit = ['files[nested_file][]' => \Drupal::service('file_system')->realpath($test_file->getFileUri())];
     $fid_list = [];
 
     $this->drupalGet($path);
@@ -158,7 +159,7 @@ class FileManagedFileElementTest extends FileFieldTestBase {
     $test_file = $this->getTestFile('text');
     $file_field_name = 'files[nested_file][]';
 
-    $edit = [$file_field_name => drupal_realpath($test_file->getFileUri())];
+    $edit = [$file_field_name => \Drupal::service('file_system')->realpath($test_file->getFileUri())];
     $this->drupalPostForm(NULL, $edit, t('Upload'));
 
     $fid = $this->getLastFileId();
@@ -179,7 +180,7 @@ class FileManagedFileElementTest extends FileFieldTestBase {
     $test_file = $this->getTestFile('text');
     $file_field_name = 'files[nested_file][]';
 
-    $edit = [$file_field_name => drupal_realpath($test_file->getFileUri())];
+    $edit = [$file_field_name => \Drupal::service('file_system')->realpath($test_file->getFileUri())];
     $this->drupalPostForm(NULL, $edit, t('Upload'));
     $this->drupalPostForm(NULL, [], t('Save'));
 

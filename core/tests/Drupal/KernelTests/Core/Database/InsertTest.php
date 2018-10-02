@@ -84,7 +84,8 @@ class InsertTest extends DatabaseTestBase {
     ]);
     // Check how many records are queued for insertion.
     $this->assertIdentical($query->count(), 1, 'One record is queued for insertion.');
-    $query->execute();  // This should run the insert, but leave the fields intact.
+    // This should run the insert, but leave the fields intact.
+    $query->execute();
 
     // We should be able to specify values in any order if named.
     $query->values([
@@ -197,14 +198,20 @@ class InsertTest extends DatabaseTestBase {
    * Tests that we can INSERT INTO a special named column.
    */
   public function testSpecialColumnInsert() {
-    $id = db_insert('test_special_columns')
+    $this->connection->insert('test_special_columns')
       ->fields([
         'id' => 2,
         'offset' => 'Offset value 2',
+        'function' => 'foobar',
       ])
       ->execute();
-    $saved_value = db_query('SELECT "offset" FROM {test_special_columns} WHERE id = :id', [':id' => 2])->fetchField();
-    $this->assertIdentical($saved_value, 'Offset value 2', 'Can retrieve special column name value after inserting.');
+    $result = $this->connection->select('test_special_columns')
+      ->fields('test_special_columns', ['offset', 'function'])
+      ->condition('test_special_columns.function', 'foobar')
+      ->execute();
+    $record = $result->fetch();
+    $this->assertSame('Offset value 2', $record->offset);
+    $this->assertSame('foobar', $record->function);
   }
 
 }

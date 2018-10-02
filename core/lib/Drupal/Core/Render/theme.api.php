@@ -364,7 +364,7 @@
  *   '#cache' => [
  *     'keys' => ['entity_view', 'node', $node->id()],
  *     'contexts' => ['languages'],
- *     'tags' => ['node:' . $node->id()],
+ *     'tags' => $node->getCacheTags(),
  *     'max-age' => Cache::PERMANENT,
  *   ],
  * @endcode
@@ -613,6 +613,10 @@ function hook_preprocess_HOOK(&$variables) {
  * hook called (in this case 'node__article') is available in
  * $variables['theme_hook_original'].
  *
+ * Implementations of this hook must be placed in *.module or *.theme files, or
+ * must otherwise make sure that the hook implementation is available at
+ * any given time.
+ *
  * @todo Add @code sample.
  *
  * @param array $variables
@@ -694,6 +698,10 @@ function hook_theme_suggestions_alter(array &$suggestions, array $variables, $ho
  * hook called (in this case 'node__article') is available in
  * $variables['theme_hook_original'].
  *
+ * Implementations of this hook must be placed in *.module or *.theme files, or
+ * must otherwise make sure that the hook implementation is available at
+ * any given time.
+ *
  * @todo Add @code sample.
  *
  * @param array $suggestions
@@ -756,6 +764,12 @@ function hook_extension() {
 
 /**
  * Render a template using the theme engine.
+ *
+ * It is the theme engine's responsibility to escape variables. The only
+ * exception is if a variable implements
+ * \Drupal\Component\Render\MarkupInterface. Drupal is inherently unsafe if
+ * other variables are not escaped. The helper function
+ * theme_render_and_autoescape() may be used for this.
  *
  * @param string $template_file
  *   The path (relative to the Drupal root directory) to the template to be

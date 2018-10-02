@@ -95,9 +95,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->will($this->returnValue(['id' => 'test']));
 
     $this->idMap->expects($this->once())
-      ->method('lookupDestinationId')
+      ->method('lookupDestinationIds')
       ->with(['id' => 'test'])
-      ->will($this->returnValue(['test']));
+      ->will($this->returnValue([['test']]));
 
     $source->expects($this->once())
       ->method('current')
@@ -137,9 +137,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->will($this->returnValue(['id' => 'test']));
 
     $this->idMap->expects($this->once())
-      ->method('lookupDestinationId')
+      ->method('lookupDestinationIds')
       ->with(['id' => 'test'])
-      ->will($this->returnValue(['test']));
+      ->will($this->returnValue([['test']]));
 
     $source->expects($this->once())
       ->method('current')
@@ -213,9 +213,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->method('saveMessage');
 
     $this->idMap->expects($this->once())
-      ->method('lookupDestinationId')
+      ->method('lookupDestinationIds')
       ->with(['id' => 'test'])
-      ->will($this->returnValue(['test']));
+      ->will($this->returnValue([['test']]));
 
     $this->message->expects($this->once())
       ->method('display')
@@ -269,9 +269,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->method('saveMessage');
 
     $this->idMap->expects($this->once())
-      ->method('lookupDestinationId')
+      ->method('lookupDestinationIds')
       ->with(['id' => 'test'])
-      ->will($this->returnValue(['test']));
+      ->will($this->returnValue([['test']]));
 
     $this->assertSame(MigrationInterface::RESULT_COMPLETED, $this->executable->import());
   }
@@ -319,7 +319,7 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->method('saveMessage');
 
     $this->idMap->expects($this->never())
-      ->method('lookupDestinationId');
+      ->method('lookupDestinationIds');
 
     $this->assertSame(MigrationInterface::RESULT_COMPLETED, $this->executable->import());
   }
@@ -367,9 +367,9 @@ class MigrateExecutableTest extends MigrateTestCase {
       ->method('saveMessage');
 
     $this->idMap->expects($this->once())
-      ->method('lookupDestinationId')
+      ->method('lookupDestinationIds')
       ->with(['id' => 'test'])
-      ->will($this->returnValue(['test']));
+      ->will($this->returnValue([['test']]));
 
     $this->message->expects($this->once())
       ->method('display')
@@ -384,7 +384,7 @@ class MigrateExecutableTest extends MigrateTestCase {
   public function testProcessRow() {
     $expected = [
       'test' => 'test destination',
-      'test1' => 'test1 destination'
+      'test1' => 'test1 destination',
     ];
     foreach ($expected as $key => $value) {
       $plugins[$key][0] = $this->getMock('Drupal\migrate\Plugin\MigrateProcessInterface');
@@ -437,6 +437,33 @@ class MigrateExecutableTest extends MigrateTestCase {
 
     $this->setExpectedException(MigrateException::class, 'Pipeline failed at plugin_id plugin for destination destination_id: transform_return_string received instead of an array,');
     $this->executable->processRow($row);
+  }
+
+  /**
+   * Tests the processRow method.
+   */
+  public function testProcessRowEmptyDestination() {
+    $expected = [
+      'test' => 'test destination',
+      'test1' => 'test1 destination',
+      'test2' => NULL,
+    ];
+    $row = new Row();
+    $plugins = [];
+    foreach ($expected as $key => $value) {
+      $plugin = $this->prophesize(MigrateProcessInterface::class);
+      $plugin->getPluginDefinition()->willReturn([]);
+      $plugin->transform(NULL, $this->executable, $row, $key)->willReturn($value);
+      $plugin->multiple()->willReturn(TRUE);
+      $plugins[$key][0] = $plugin->reveal();
+    }
+    $this->migration->method('getProcessPlugins')->willReturn($plugins);
+    $this->executable->processRow($row);
+    foreach ($expected as $key => $value) {
+      $this->assertSame($value, $row->getDestinationProperty($key));
+    }
+    $this->assertCount(2, $row->getDestination());
+    $this->assertSame(['test2'], $row->getEmptyDestinationProperties());
   }
 
   /**

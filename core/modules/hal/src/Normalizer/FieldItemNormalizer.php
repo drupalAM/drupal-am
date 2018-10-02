@@ -3,6 +3,7 @@
 namespace Drupal\hal\Normalizer;
 
 use Drupal\Core\Field\FieldItemInterface;
+use Drupal\Core\TypedData\TypedDataInternalPropertiesHelper;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 
 /**
@@ -87,19 +88,22 @@ class FieldItemNormalizer extends NormalizerBase {
    *   An array of field item values, keyed by property name.
    */
   protected function normalizedFieldValues(FieldItemInterface $field_item, $format, array $context) {
-    $denormalized = [];
+    $normalized = [];
     // We normalize each individual property, so each can do their own casting,
     // if needed.
     /** @var \Drupal\Core\TypedData\TypedDataInterface $property */
-    foreach ($field_item as $property_name => $property) {
-      $denormalized[$property_name] = $this->serializer->normalize($property, $format, $context);
+    $field_properties = !empty($field_item->getProperties(TRUE))
+      ? TypedDataInternalPropertiesHelper::getNonInternalProperties($field_item)
+      : $field_item->getValue();
+    foreach ($field_properties as $property_name => $property) {
+      $normalized[$property_name] = $this->serializer->normalize($property, $format, $context);
     }
 
     if (isset($context['langcode'])) {
-      $denormalized['lang'] = $context['langcode'];
+      $normalized['lang'] = $context['langcode'];
     }
 
-    return $denormalized;
+    return $normalized;
   }
 
   /**

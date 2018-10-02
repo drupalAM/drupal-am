@@ -7,6 +7,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Form builder: Builds a form that triggers a simple AJAX callback.
+ *
+ * @internal
  */
 class AjaxFormsTestValidationForm extends FormBase {
 
@@ -65,7 +67,7 @@ class AjaxFormsTestValidationForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    drupal_set_message($this->t("Validation form submitted"));
+    $this->messenger()->addStatus($this->t("Validation form submitted"));
   }
 
 }

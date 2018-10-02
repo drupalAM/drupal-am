@@ -25,49 +25,24 @@
       var farb = $.farbtastic('.color-placeholder');
 
       var reference = settings.color.reference;
-      for (i in reference) {
-        if (reference.hasOwnProperty(i)) {
-          reference[i] = farb.RGBToHSL(farb.unpack(reference[i]));
-        }
-      }
+      Object.keys(reference || {}).forEach(function (color) {
+        reference[color] = farb.RGBToHSL(farb.unpack(reference[color]));
+      });
 
       var height = [];
       var width = [];
-
-      for (i in settings.gradients) {
-        if (settings.gradients.hasOwnProperty(i)) {
-          $('.color-preview').once('color').append('<div id="gradient-' + i + '"></div>');
-          var gradient = $('.color-preview #gradient-' + i);
-
-          height.push(parseInt(gradient.css('height'), 10) / 10);
-
-          width.push(parseInt(gradient.css('width'), 10) / 10);
-
-          for (j = 0; j < (settings.gradients[i].direction === 'vertical' ? height[i] : width[i]); ++j) {
-            gradient.append('<div class="gradient-line"></div>');
-          }
-        }
-      }
-
-      form.find('#edit-scheme').on('change', function () {
-        var schemes = settings.color.schemes;
-        var colorScheme = this.options[this.selectedIndex].value;
-        if (colorScheme !== '' && schemes[colorScheme]) {
-          colors = schemes[colorScheme];
-          for (var fieldName in colors) {
-            if (colors.hasOwnProperty(fieldName)) {
-              callback($('#edit-palette-' + fieldName), colors[fieldName], false, true);
-            }
-          }
-          preview();
-        }
-      });
 
       function preview() {
         Drupal.color.callback(context, settings, form, farb, height, width);
       }
 
-      function shift_color(given, ref1, ref2) {
+      function resetScheme() {
+        form.find('#edit-scheme').each(function () {
+          this.selectedIndex = this.options.length - 1;
+        });
+      }
+
+      function shiftColor(given, ref1, ref2) {
         var d = void 0;
 
         given = farb.RGBToHSL(farb.unpack(given));
@@ -116,14 +91,14 @@
               if (!locks[j - 1] || $(locks[j - 1]).is('.is-unlocked')) {
                 break;
               }
-              matched = shift_color(color, reference[input.key], reference[inputs[j].key]);
+              matched = shiftColor(color, reference[input.key], reference[inputs[j].key]);
               callback(inputs[j], matched, false);
             }
             for (j = i - 1;; --j) {
               if (!locks[j] || $(locks[j]).is('.is-unlocked')) {
                 break;
               }
-              matched = shift_color(color, reference[input.key], reference[inputs[j].key]);
+              matched = shiftColor(color, reference[input.key], reference[inputs[j].key]);
               callback(inputs[j], matched, false);
             }
 
@@ -136,11 +111,30 @@
         }
       }
 
-      function resetScheme() {
-        form.find('#edit-scheme').each(function () {
-          this.selectedIndex = this.options.length - 1;
-        });
-      }
+      Object.keys(settings.gradients || {}).forEach(function (i) {
+        $('.color-preview').once('color').append('<div id="gradient-' + i + '"></div>');
+        var gradient = $('.color-preview #gradient-' + i);
+
+        height.push(parseInt(gradient.css('height'), 10) / 10);
+
+        width.push(parseInt(gradient.css('width'), 10) / 10);
+
+        for (j = 0; j < (settings.gradients[i].direction === 'vertical' ? height[i] : width[i]); ++j) {
+          gradient.append('<div class="gradient-line"></div>');
+        }
+      });
+
+      form.find('#edit-scheme').on('change', function () {
+        var schemes = settings.color.schemes;
+        var colorScheme = this.options[this.selectedIndex].value;
+        if (colorScheme !== '' && schemes[colorScheme]) {
+          colors = schemes[colorScheme];
+          Object.keys(colors || {}).forEach(function (fieldName) {
+            callback($('#edit-palette-' + fieldName), colors[fieldName], false, true);
+          });
+          preview();
+        }
+      });
 
       function focus(e) {
         var input = e.target;

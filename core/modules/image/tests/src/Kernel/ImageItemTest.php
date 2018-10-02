@@ -11,6 +11,7 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\Tests\field\Kernel\FieldKernelTestBase;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\file\Entity\File;
+use Drupal\user\Entity\Role;
 
 /**
  * Tests using entity fields of the image field type.
@@ -41,6 +42,14 @@ class ImageItemTest extends FieldKernelTestBase {
   protected function setUp() {
     parent::setUp();
 
+    $this->installEntitySchema('user');
+    $this->installConfig(['user']);
+    // Give anonymous users permission to access content, so that we can view
+    // and download public file.
+    $anonymous_role = Role::load(Role::ANONYMOUS_ID);
+    $anonymous_role->grantPermission('access content');
+    $anonymous_role->save();
+
     $this->installEntitySchema('file');
     $this->installSchema('file', ['file_usage']);
 
@@ -58,7 +67,7 @@ class ImageItemTest extends FieldKernelTestBase {
         'file_extensions' => 'jpg',
       ],
     ])->save();
-    file_unmanaged_copy(\Drupal::root() . '/core/misc/druplicon.png', 'public://example.jpg');
+    file_unmanaged_copy($this->root . '/core/misc/druplicon.png', 'public://example.jpg');
     $this->image = File::create([
       'uri' => 'public://example.jpg',
     ]);
@@ -91,7 +100,7 @@ class ImageItemTest extends FieldKernelTestBase {
     $this->assertEqual($entity->image_test->entity->uuid(), $this->image->uuid());
 
     // Make sure the computed entity reflects updates to the referenced file.
-    file_unmanaged_copy(\Drupal::root() . '/core/misc/druplicon.png', 'public://example-2.jpg');
+    file_unmanaged_copy($this->root . '/core/misc/druplicon.png', 'public://example-2.jpg');
     $image2 = File::create([
       'uri' => 'public://example-2.jpg',
     ]);

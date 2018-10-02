@@ -1,6 +1,7 @@
 <?php
 
 namespace Drupal\Tests\aggregator\Functional;
+
 use Drupal\aggregator\Entity\Feed;
 
 /**
@@ -9,6 +10,7 @@ use Drupal\aggregator\Entity\Feed;
  * @group aggregator
  */
 class UpdateFeedItemTest extends AggregatorTestBase {
+
   /**
    * Tests running "update items" from 'admin/config/services/aggregator' page.
    */

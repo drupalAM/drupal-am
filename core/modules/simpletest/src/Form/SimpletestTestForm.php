@@ -10,6 +10,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * List tests arranged in groups that can be selected and run.
+ *
+ * @internal
  */
 class SimpletestTestForm extends FormBase {
 
@@ -108,6 +110,10 @@ class SimpletestTestForm extends FormBase {
     ];
 
     $form['tests'] = [
+      '#cache' => [
+        'keys' => ['simpletest_ui_table'],
+        'contexts' => ['test_discovery'],
+      ],
       '#type' => 'table',
       '#id' => 'simpletest-form-table',
       '#tableselect' => TRUE,

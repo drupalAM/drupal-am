@@ -113,6 +113,8 @@ class Select extends Query implements SelectInterface {
 
   /**
    * The FOR UPDATE status
+   *
+   * @var bool
    */
   protected $forUpdate = FALSE;
 
@@ -825,9 +827,8 @@ class Select extends Query implements SelectInterface {
     }
     $query .= implode(', ', $fields);
 
-
     // FROM - We presume all queries have a FROM, as any query that doesn't won't need the query builder anyway.
-    $query .= "\nFROM ";
+    $query .= "\nFROM";
     foreach ($this->tables as $table) {
       $query .= "\n";
       if (isset($table['join type'])) {

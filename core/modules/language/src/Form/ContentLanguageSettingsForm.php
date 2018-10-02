@@ -11,6 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configure the content language settings for this site.
+ *
+ * @internal
  */
 class ContentLanguageSettingsForm extends FormBase {
 
@@ -155,7 +157,7 @@ class ContentLanguageSettingsForm extends FormBase {
           ->save();
       }
     }
-    drupal_set_message($this->t('Settings successfully updated.'));
+    $this->messenger()->addStatus($this->t('Settings successfully updated.'));
   }
 
 }

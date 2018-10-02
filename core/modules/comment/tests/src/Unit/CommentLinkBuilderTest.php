@@ -60,7 +60,7 @@ class CommentLinkBuilderTest extends UnitTestCase {
   protected $timestamp;
 
   /**
-   * @var \Drupal\comment\CommentLinkBuilderInterface;
+   * @var \Drupal\comment\CommentLinkBuilderInterface
    */
   protected $commentLinkBuilder;
 
@@ -269,7 +269,7 @@ class CommentLinkBuilderTest extends UnitTestCase {
    */
   protected function getMockNode($has_field, $comment_status, $form_location, $comment_count) {
     $node = $this->getMock('\Drupal\node\NodeInterface');
-    $node->expects($this->once())
+    $node->expects($this->any())
       ->method('hasField')
       ->willReturn($has_field);
 
@@ -310,7 +310,7 @@ class CommentLinkBuilderTest extends UnitTestCase {
 
     $url = Url::fromRoute('node.view');
     $node->expects($this->any())
-      ->method('urlInfo')
+      ->method('toUrl')
       ->willReturn($url);
     $node->expects($this->any())
       ->method('url')
@@ -324,7 +324,9 @@ class CommentLinkBuilderTest extends UnitTestCase {
 namespace Drupal\comment;
 
 if (!function_exists('history_read')) {
+
   function history_read() {
     return 0;
   }
+
 }

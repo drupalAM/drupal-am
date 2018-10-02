@@ -138,7 +138,7 @@ abstract class PathFormBase extends FormBase {
     else {
       $form['langcode'] = [
         '#type' => 'value',
-        '#value' => $this->path['langcode']
+        '#value' => $this->path['langcode'],
       ];
     }
 
@@ -191,9 +191,8 @@ abstract class PathFormBase extends FormBase {
       }
     }
 
-
     if (!$this->pathValidator->isValid(trim($source, '/'))) {
-      $form_state->setErrorByName('source', t("The path '@link_path' is either invalid or you do not have access to it.", ['@link_path' => $source]));
+      $form_state->setErrorByName('source', t("Either the path '@link_path' is invalid or you do not have access to it.", ['@link_path' => $source]));
     }
   }
 
@@ -213,7 +212,7 @@ abstract class PathFormBase extends FormBase {
 
     $this->aliasStorage->save($source, $alias, $langcode, $pid);
 
-    drupal_set_message($this->t('The alias has been saved.'));
+    $this->messenger()->addStatus($this->t('The alias has been saved.'));
     $form_state->setRedirect('path.admin_overview');
   }
 

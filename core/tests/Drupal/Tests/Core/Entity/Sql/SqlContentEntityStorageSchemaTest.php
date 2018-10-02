@@ -51,7 +51,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
   /**
    * The storage schema handler used in this test.
    *
-   * @var \Drupal\Core\Entity\Sql\SqlContentEntityStorageSchema|\PHPUnit_Framework_MockObject_MockObject.
+   * @var \Drupal\Core\Entity\Sql\SqlContentEntityStorageSchema|\PHPUnit_Framework_MockObject_MockObject
    */
   protected $storageSchema;
 
@@ -155,7 +155,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
         ],
         'domain' => [
           'type' => 'varchar',
-        ]
+        ],
       ],
       'unique keys' => [
         'email' => ['username', 'hostname', ['domain', 3]],
@@ -194,7 +194,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
         ],
         'city' => [
           'type' => 'varchar',
-        ]
+        ],
       ],
       'indexes' => [
         'country_state_city' => ['country', 'state', ['city', 10]],
@@ -370,6 +370,9 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
     $this->storage->expects($this->any())
       ->method('getTableMapping')
       ->will($this->returnValue($table_mapping));
+    $this->storage->expects($this->any())
+      ->method('getCustomTableMapping')
+      ->will($this->returnValue($table_mapping));
 
     $this->assertNull(
       $this->storageSchema->onEntityTypeCreate($this->entityType)
@@ -389,13 +392,22 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
    * @covers ::processIdentifierSchema
    */
   public function testGetSchemaRevisionable() {
-    $this->entityType = new ContentEntityType([
-      'id' => 'entity_test',
-      'entity_keys' => [
-        'id' => 'id',
-        'revision' => 'revision_id',
-      ],
-    ]);
+    $this->entityType = $this->getMockBuilder('Drupal\Core\Entity\ContentEntityType')
+      ->setConstructorArgs([
+        [
+          'id' => 'entity_test',
+          'entity_keys' => [
+            'id' => 'id',
+            'revision' => 'revision_id',
+          ],
+        ],
+      ])
+      ->setMethods(['getRevisionMetadataKeys'])
+      ->getMock();
+
+    $this->entityType->expects($this->any())
+      ->method('getRevisionMetadataKeys')
+      ->will($this->returnValue([]));
 
     $this->storage->expects($this->exactly(2))
       ->method('getRevisionTable')
@@ -420,7 +432,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'revision_id' => [
             'type' => 'int',
             'not null' => FALSE,
-          ]
+          ],
         ],
         'primary key' => ['id'],
         'unique keys' => [
@@ -431,7 +443,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'entity_test__revision' => [
             'table' => 'entity_test_revision',
             'columns' => ['revision_id' => 'revision_id'],
-          ]
+          ],
         ],
       ],
       'entity_test_revision' => [
@@ -468,6 +480,9 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
 
     $this->storage->expects($this->any())
       ->method('getTableMapping')
+      ->will($this->returnValue($table_mapping));
+    $this->storage->expects($this->any())
+      ->method('getCustomTableMapping')
       ->will($this->returnValue($table_mapping));
 
     $this->storageSchema->onEntityTypeCreate($this->entityType);
@@ -524,7 +539,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'langcode' => [
             'type' => 'varchar',
             'not null' => TRUE,
-          ]
+          ],
         ],
         'primary key' => ['id'],
         'unique keys' => [],
@@ -577,6 +592,9 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
     $this->storage->expects($this->any())
       ->method('getTableMapping')
       ->will($this->returnValue($table_mapping));
+    $this->storage->expects($this->any())
+      ->method('getCustomTableMapping')
+      ->will($this->returnValue($table_mapping));
 
     $this->assertNull(
       $this->storageSchema->onEntityTypeCreate($this->entityType)
@@ -595,14 +613,23 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
    * @covers ::processRevisionDataTable
    */
   public function testGetSchemaRevisionableTranslatable() {
-    $this->entityType = new ContentEntityType([
-      'id' => 'entity_test',
-      'entity_keys' => [
-        'id' => 'id',
-        'revision' => 'revision_id',
-        'langcode' => 'langcode',
-      ],
-    ]);
+    $this->entityType = $this->getMockBuilder('Drupal\Core\Entity\ContentEntityType')
+      ->setConstructorArgs([
+        [
+          'id' => 'entity_test',
+          'entity_keys' => [
+            'id' => 'id',
+            'revision' => 'revision_id',
+            'langcode' => 'langcode',
+          ],
+        ],
+      ])
+      ->setMethods(['getRevisionMetadataKeys'])
+      ->getMock();
+
+    $this->entityType->expects($this->any())
+      ->method('getRevisionMetadataKeys')
+      ->will($this->returnValue([]));
 
     $this->storage->expects($this->exactly(3))
       ->method('getRevisionTable')
@@ -652,7 +679,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
           'langcode' => [
             'type' => 'varchar',
             'not null' => TRUE,
-          ]
+          ],
         ],
         'primary key' => ['id'],
         'unique keys' => [
@@ -788,6 +815,9 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
     $this->storage->expects($this->any())
       ->method('getTableMapping')
       ->will($this->returnValue($table_mapping));
+    $this->storage->expects($this->any())
+      ->method('getCustomTableMapping')
+      ->will($this->returnValue($table_mapping));
 
     $this->storageSchema->onEntityTypeCreate($this->entityType);
   }
@@ -835,7 +865,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
         'color' => [
           'table' => 'color',
           'columns' => [
-            'color' => 'id'
+            'color' => 'id',
           ],
         ],
       ],
@@ -1002,7 +1032,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
         'color' => [
           'table' => 'color',
           'columns' => [
-            'color' => 'id'
+            'color' => 'id',
           ],
         ],
       ],
@@ -1285,6 +1315,9 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
     $this->storage->expects($this->any())
       ->method('getTableMapping')
       ->will($this->returnValue($table_mapping));
+    $this->storage->expects($this->any())
+      ->method('getCustomTableMapping')
+      ->will($this->returnValue($table_mapping));
 
     // Setup storage schema.
     if ($change_schema) {
@@ -1344,14 +1377,14 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
       $this->dbSchemaHandler->expects($this->any())
         ->method('createTable')
         ->with(
-          $this->callback(function($table_name) use (&$invocation_count, $expected_table_names) {
+          $this->callback(function ($table_name) use (&$invocation_count, $expected_table_names) {
             return $expected_table_names[$invocation_count] == $table_name;
           }),
-          $this->callback(function($table_schema) use (&$invocation_count, $expected_table_schemas) {
+          $this->callback(function ($table_schema) use (&$invocation_count, $expected_table_schemas) {
             return $expected_table_schemas[$invocation_count] == $table_schema;
           })
         )
-        ->will($this->returnCallback(function() use (&$invocation_count) {
+        ->will($this->returnCallback(function () use (&$invocation_count) {
           $invocation_count++;
         }));
     }
@@ -1469,6 +1502,9 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
     $this->storage->expects($this->any())
       ->method('getTableMapping')
       ->will($this->returnValue($table_mapping));
+    $this->storage->expects($this->any())
+      ->method('getCustomTableMapping')
+      ->will($this->returnValue($table_mapping));
 
     $this->storageSchema->expects($this->any())
       ->method('loadEntitySchemaData')
@@ -1496,7 +1532,7 @@ class SqlContentEntityStorageSchemaTest extends UnitTestCase {
       ->willReturn(TRUE);
     $this->dbSchemaHandler->expects($this->atLeastOnce())
       ->method('addIndex')
-      ->with('entity_test', 'entity_test__b588603cb9', [['long_index_name', 10]], $this->callback(function($actual_value) use ($expected)  {
+      ->with('entity_test', 'entity_test__b588603cb9', [['long_index_name', 10]], $this->callback(function ($actual_value) use ($expected) {
         $this->assertEquals($expected['entity_test']['indexes'], $actual_value['indexes']);
         $this->assertEquals($expected['entity_test']['fields'], $actual_value['fields']);
         // If the parameters don't match, the assertions above will throw an
