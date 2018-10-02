@@ -13,17 +13,8 @@ module:
   comment: 0
   conf_block: 0
   config: 0
-  config_site: 0
   config_update: 0
   contact: 0
-  content_blocks: 0
-  content_case_study: 0
-  content_context: 0
-  content_field_bases: 0
-  content_hero_slide: 0
-  content_paragraphs: 0
-  content_views_and_entityqueues: 0
-  content_vocabularies: 0
   context: 0
   context_groups: 0
   context_ui: 0
@@ -63,7 +54,6 @@ module:
   search_kint: 0
   serialization: 0
   shortcut: 0
-  site_settings_site: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -71,10 +61,6 @@ module:
   toolbar: 0
   update: 0
   user: 0
-  user_field_bases: 0
-  user_members: 0
-  user_roles_and_permissions: 0
-  user_vocabularies: 0
   views_ui: 0
   ds: 1
   menu_link_content: 1
