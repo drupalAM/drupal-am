@@ -3,9 +3,9 @@ Armenian Drupal Community portal
 
 http://www.drupal.am
 
-## Contributting
+## Contributing
 
-To contibute your changies to the project you need to fork the project do desired changies and request pull. Please see issues section to see current priority.
+To contribute your changies to the project you need to fork the project do desired changies and request pull. Please see issues section to see current priority.
 
 ## Installation 
 - Clone the project (dev branch)
