@@ -6,4 +6,6 @@ _core:
   default_config_hash: wWmtKRH9cneDnqwuB6X13rVaDy45SpWfD-zo3joV2SM
 id: testimonial
 label: Testimonial
+icon_uuid: null
+description: null
 behavior_plugins: {  }

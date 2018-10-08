@@ -6,4 +6,6 @@ _core:
   default_config_hash: frOWouxw06AFhz-hj3ehzcnYSA_c81Zb6er34q9XK7k
 id: card
 label: Card
+icon_uuid: null
+description: null
 behavior_plugins: {  }
