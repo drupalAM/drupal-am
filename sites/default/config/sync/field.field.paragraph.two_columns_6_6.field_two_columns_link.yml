@@ -1,0 +1,24 @@
+uuid: 03323643-8399-402c-99f0-e2f75f8fe2a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_two_columns_link
+    - paragraphs.paragraphs_type.two_columns_6_6
+  module:
+    - link
+id: paragraph.two_columns_6_6.field_two_columns_link
+field_name: field_two_columns_link
+entity_type: paragraph
+bundle: two_columns_6_6
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+  title_predefined: ''
+field_type: link

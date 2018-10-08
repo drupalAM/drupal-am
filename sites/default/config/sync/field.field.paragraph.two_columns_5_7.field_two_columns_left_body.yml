@@ -1,0 +1,21 @@
+uuid: ac7c006f-12c9-4b0c-bee8-cf2a2cfa4590
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_two_columns_left_body
+    - paragraphs.paragraphs_type.two_columns_5_7
+  module:
+    - text
+id: paragraph.two_columns_5_7.field_two_columns_left_body
+field_name: field_two_columns_left_body
+entity_type: paragraph
+bundle: two_columns_5_7
+label: 'Left Body'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
