@@ -1,0 +1,32 @@
+uuid: a6f0fc25-033c-43c0-954f-521fe1b4e58a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_section
+    - node.type.page
+  module:
+    - entity_reference_revisions
+id: node.page.field_page_section
+field_name: field_page_section
+entity_type: node
+bundle: page
+label: Section
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      card:
+        weight: 3
+        enabled: false
+      testimonial:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions
