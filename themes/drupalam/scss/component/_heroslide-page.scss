@@ -111,6 +111,8 @@
       }
 
       &:hover {
+        cursor: pointer;
+        
         img {
           @include scale(1.1);
           @include opacity(0.6);

@@ -7035,25 +7035,27 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease;
       z-index: 15; }
-    .page-node-type-hero-slide .field--name-field-heroslide-images .field--item:hover img {
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -o-transform: scale(1.1);
-      transform: scale(1.1);
-      opacity: 0.6;
-      filter: alpha(opacity=60); }
-    .page-node-type-hero-slide .field--name-field-heroslide-images .field--item:hover:before {
-      content: "";
-      display: inline-block;
-      font-family: PexetoIcons;
-      font-size: 30px;
-      color: #fff;
-      -webkit-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -o-transform: scale(1.2);
-      transform: scale(1.2);
-      opacity: 1;
-      filter: alpha(opacity=100); }
+    .page-node-type-hero-slide .field--name-field-heroslide-images .field--item:hover {
+      cursor: pointer; }
+      .page-node-type-hero-slide .field--name-field-heroslide-images .field--item:hover img {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+        opacity: 0.6;
+        filter: alpha(opacity=60); }
+      .page-node-type-hero-slide .field--name-field-heroslide-images .field--item:hover:before {
+        content: "";
+        display: inline-block;
+        font-family: PexetoIcons;
+        font-size: 30px;
+        color: #fff;
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+        opacity: 1;
+        filter: alpha(opacity=100); }
 
 /*
 To change this license header, choose License Headers in Project Properties.
