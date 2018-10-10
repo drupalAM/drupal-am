@@ -7034,6 +7034,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       -o-transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease;
+      pointer-events: none;
       z-index: 15; }
     .page-node-type-hero-slide .field--name-field-heroslide-images .field--item:hover {
       cursor: pointer; }

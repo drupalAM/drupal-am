@@ -107,12 +107,13 @@
         @include scale(2);
         @include opacity(0);
         @include transition(all 0.3s ease);
+        pointer-events: none;
         z-index: 15;
       }
 
       &:hover {
         cursor: pointer;
-        
+
         img {
           @include scale(1.1);
           @include opacity(0.6);
