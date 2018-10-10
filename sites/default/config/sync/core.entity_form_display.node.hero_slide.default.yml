@@ -14,7 +14,9 @@ dependencies:
     - node.type.hero_slide
   module:
     - field_layout
+    - focal_point
     - image
+    - layout_discovery
     - link
     - path
     - text
@@ -63,10 +65,12 @@ content:
   field_heroslide_images:
     weight: 7
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+      progress_indicator: throbber
     third_party_settings: {  }
-    type: image_image
+    type: image_focal_point
     region: content
   field_heroslide_show_cont_link:
     weight: 4

@@ -21,6 +21,8 @@ module:
   context_groups: 0
   context_ui: 0
   contextual: 0
+  crop: 0
+  ctools: 0
   dblog: 0
   default_content: 0
   default_content_deploy: 0
@@ -32,10 +34,12 @@ module:
   entity_reference_revisions: 0
   entityqueue: 0
   field: 0
+  field_group: 0
   field_layout: 0
   field_ui: 0
   file: 0
   filter: 0
+  focal_point: 0
   fontawesome: 0
   hal: 0
   heading_formatter: 0
@@ -66,6 +70,7 @@ module:
   views_ui: 0
   ds: 1
   menu_link_content: 1
+  ds_extras: 2
   views: 10
   paragraphs: 11
   linked_field: 100

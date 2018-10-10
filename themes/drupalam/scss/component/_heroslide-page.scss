@@ -1,0 +1,125 @@
+.page-node-type-hero-slide {
+  .main-container.container-fluid {
+    padding-top: 0;
+    > .row > .col-sm-12 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .page-header-container {
+    height: 400px;
+    overflow: hidden;
+    float: none;
+  }
+
+  .content-and-sidebars-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 70px 3%;
+    box-sizing: content-box;
+  }
+
+  .field--name-field-heroslide-image img {
+    width: 100%;
+  }
+
+  .page-title-wrapper {
+    position: absolute;
+    top: 150px;
+    text-align: center;
+    width: 100%;
+
+    h2 {
+      padding: 10px 0;
+      padding-top: 0;
+      color: $white;
+      text-transform: uppercase;
+      font-size: 58px;
+      font-weight: bold;
+      line-height: 1em;
+      letter-spacing: -1px;
+      display: inline-block;
+      margin-bottom: 0;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 62%;
+        height: 1px;
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 10px;
+      }
+    }
+
+    .field--name-body {
+      display: block;
+      color: $white;
+      margin: auto;
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 7px;
+      margin-top: 1px;
+    }
+  }
+
+  .field--name-field-heroslide-images {
+    min-height: 400px;
+    padding: 4%;
+    background-color: $white;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+
+    .field--item {
+      width: 260px;
+      height: auto;
+      position: relative;
+      display: inline-block;
+      float: none;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      vertical-align: top;
+
+      overflow: hidden;
+      @include transition(opacity 0.1s ease);
+      @include transition-timing-function(cubic-bezier(0.175, 0.885, 0.32, 1.275));
+      background-color: $gray-base;
+
+      img {
+        @include transition(all 0.4s ease);
+      }
+      @include pexeto-icn("\f704", $white, 30px) {
+        display: block;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        left: 50%;
+        padding: 10px;
+        margin-top: -30px;
+        margin-left: -30px;
+        line-height: 40px;
+        text-align: center;
+        background: $brand-primary;
+        border-radius: 3px;
+        @include scale(2);
+        @include opacity(0);
+        @include transition(all 0.3s ease);
+        z-index: 15;
+      }
+
+      &:hover {
+        img {
+          @include scale(1.1);
+          @include opacity(0.6);
+        }
+        @include pexeto-icn("\f704", $white, 30px) {
+          @include scale(1.2);
+          @include opacity(1);
+        }
+      }
+    }
+  }
+}

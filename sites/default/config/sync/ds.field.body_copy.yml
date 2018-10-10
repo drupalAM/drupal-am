@@ -1,0 +1,11 @@
+id: body_copy
+label: 'Body Copy'
+ui_limit: hero_slide|full
+properties:
+  content:
+    value: "[node:body]\r\n"
+    format: restricted_html
+type: token
+type_label: 'Token field'
+entities:
+  node: node

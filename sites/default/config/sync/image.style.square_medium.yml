@@ -1,0 +1,17 @@
+uuid: 9a04a3dc-2ed5-4542-9a31-c2bc4223fb2e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square_medium
+label: 'Square Medium (260x260)'
+effects:
+  b00bddcb-a9fb-46b7-a0be-56cc33e96302:
+    uuid: b00bddcb-a9fb-46b7-a0be-56cc33e96302
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 260
+      height: 260
+      crop_type: focal_point

@@ -1,0 +1,10 @@
+uuid: 04941b2a-e5ee-4cc3-a336-21ae4ee7b57b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.mainstage
+label: Mainstage
+targetEntityType: node
+cache: true
