@@ -19,24 +19,36 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: ds_1col
+      id: bs_2col
       library: null
       disable_css: false
       entity_classes: all_classes
       settings:
-        wrappers:
-          ds_content: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: ''
-        link_custom: ''
-        classes:
-          layout_class: {  }
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          left:
+            wrapper: div
+            classes:
+              col-xs-4: col-xs-4
+            add_region_classes: 1
+            attributes: ''
+          right:
+            wrapper: div
+            classes:
+              col-xs-8: col-xs-8
+            add_region_classes: 1
+            attributes: ''
     regions:
-      ds_content:
+      left:
         - node_title
         - field_term_industry
         - body
+      right:
         - field_case_study_screens
     fields:
       node_title:
@@ -57,7 +69,7 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
-    region: ds_content
+    region: left
   field_case_study_screens:
     weight: 3
     label: above
@@ -71,7 +83,7 @@ content:
       colorbox_caption_custom: ''
     third_party_settings: {  }
     type: colorbox
-    region: ds_content
+    region: right
   field_term_industry:
     weight: 1
     label: above
@@ -80,7 +92,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
-    region: ds_content
+    region: left
 hidden:
   field_case_study_image: true
   field_case_study_site_link: true
