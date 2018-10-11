@@ -6930,8 +6930,15 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   .page-node-type-hero-slide .main-container.container-fluid > .row > .col-sm-12 {
     padding-left: 0;
     padding-right: 0; }
+.page-node-type-hero-slide .region-header .block-entity-viewnode {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
 .page-node-type-hero-slide .region-header .contextual {
   top: 100px; }
+.page-node-type-hero-slide .region-header .bs-region--main {
+  padding: 0; }
 .page-node-type-hero-slide .page-header-container {
   height: 400px;
   overflow: hidden;

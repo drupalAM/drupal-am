@@ -7,8 +7,21 @@
     }
   }
 
-  .region-header .contextual {
-    top: 100px;
+  .region-header {
+    .block-entity-viewnode {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .contextual {
+      top: 100px;
+    }
+
+    .bs-region--main {
+      padding: 0;
+    }
   }
 
   .page-header-container {
