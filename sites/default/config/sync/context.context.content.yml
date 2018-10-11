@@ -1,22 +1,27 @@
 uuid: 3851a3c5-c7d2-400a-a2a5-dcca8c9c12b5
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - node
 _core:
   default_config_hash: NClvkYLAdVi-hcYiArL7lFEuH8wVnjk8NoPHkfyHpxM
 name: content
 label: Content
 group: General
 description: ''
-requireAllConditions: false
+requireAllConditions: true
 disabled: false
 conditions:
-  request_path_exclusion:
-    id: request_path_exclusion
-    pages: '<front>'
-    negate: null
-    uuid: 6a2f8aac-0ba0-4c57-a1a8-1c6eb7917f28
-    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      case_study: case_study
+      hero_slide: hero_slide
+    negate: 0
+    uuid: f576c27b-215c-4080-a5f2-2d0cb27b37b8
+    context_mapping:
+      node: '@node.node_route_context:node'
 reactions:
   blocks:
     blocks:
@@ -61,6 +66,22 @@ reactions:
         unique: 0
         context_id: content
         uuid: b5468b4c-e528-41a0-ae48-02d0ce95938b
+      1909bb40-fbcc-4497-88fd-acadf2dea154:
+        id: 'block_content:2755e61c-a966-4273-b529-662b8454bceb'
+        label: 'About us'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: full
+        region: sidebar_second
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: content
+        uuid: 1909bb40-fbcc-4497-88fd-acadf2dea154
     id: blocks
     saved: false
     uuid: 887bbc82-270b-4965-9904-436d530ae068

@@ -15,7 +15,6 @@ dependencies:
   module:
     - field_layout
     - focal_point
-    - image
     - layout_discovery
     - link
     - path
@@ -59,8 +58,10 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
     third_party_settings: {  }
-    type: image_image
+    type: image_focal_point
     region: content
   field_heroslide_images:
     weight: 7

@@ -6930,6 +6930,8 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   .page-node-type-hero-slide .main-container.container-fluid > .row > .col-sm-12 {
     padding-left: 0;
     padding-right: 0; }
+.page-node-type-hero-slide .region-header .contextual {
+  top: 100px; }
 .page-node-type-hero-slide .page-header-container {
   height: 400px;
   overflow: hidden;
@@ -6944,8 +6946,11 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 .page-node-type-hero-slide .page-title-wrapper {
   position: absolute;
   top: 150px;
+  left: 25%;
   text-align: center;
-  width: 100%; }
+  width: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px; }
   .page-node-type-hero-slide .page-title-wrapper h2 {
     padding: 10px 0;
     padding-top: 0;
@@ -6981,14 +6986,9 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15); }
   .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
-    width: 260px;
-    height: auto;
-    position: relative;
-    display: inline-block;
-    float: none;
     margin-bottom: 10px;
-    margin-left: 10px;
-    vertical-align: top;
+    padding: 0;
+    width: 100%;
     overflow: hidden;
     -moz-transition: opacity 0.1s ease;
     -o-transition: opacity 0.1s ease;
@@ -7000,11 +7000,19 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: #252525; }
+    @media (min-width: 768px) {
+      .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
+        width: 48%;
+        margin-left: 10px; } }
+    @media (min-width: 992px) {
+      .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
+        width: 31%; } }
     .page-node-type-hero-slide .field--name-field-heroslide-images .field--item img {
       -moz-transition: all 0.4s ease;
       -o-transition: all 0.4s ease;
       -webkit-transition: all 0.4s ease;
-      transition: all 0.4s ease; }
+      transition: all 0.4s ease;
+      width: 100%; }
     .page-node-type-hero-slide .field--name-field-heroslide-images .field--item:before {
       content: "";
       display: inline-block;

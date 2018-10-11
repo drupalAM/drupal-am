@@ -7,6 +7,10 @@
     }
   }
 
+  .region-header .contextual {
+    top: 100px;
+  }
+
   .page-header-container {
     height: 400px;
     overflow: hidden;
@@ -27,8 +31,11 @@
   .page-title-wrapper {
     position: absolute;
     top: 150px;
+    left: 25%;
     text-align: center;
-    width: 100%;
+    width: 50%;
+    background: rgba(0,0,0,.3);
+    padding: 15px;
 
     h2 {
       padding: 10px 0;
@@ -73,14 +80,16 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 
     .field--item {
-      width: 260px;
-      height: auto;
-      position: relative;
-      display: inline-block;
-      float: none;
       margin-bottom: 10px;
-      margin-left: 10px;
-      vertical-align: top;
+      padding: 0;
+      width: 100%;
+      @media (min-width: $screen-sm) {
+        width: 48%;
+        margin-left: 10px;
+      }
+      @media (min-width: $screen-md) {
+        width: 31%;
+      }
 
       overflow: hidden;
       @include transition(opacity 0.1s ease);
@@ -89,6 +98,7 @@
 
       img {
         @include transition(all 0.4s ease);
+        width: 100%;
       }
       @include pexeto-icn("\f704", $white, 30px) {
         display: block;

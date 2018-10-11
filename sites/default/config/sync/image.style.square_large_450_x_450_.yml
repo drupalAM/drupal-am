@@ -1,0 +1,17 @@
+uuid: 326494b3-e469-4d01-80c2-9a4754be7abb
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square_large_450_x_450_
+label: 'Square Large (450 x 450)'
+effects:
+  82b36c5f-b703-4dfc-aa0b-e3bef71bdcbc:
+    uuid: 82b36c5f-b703-4dfc-aa0b-e3bef71bdcbc
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 450
+      height: 450
+      crop_type: focal_point
