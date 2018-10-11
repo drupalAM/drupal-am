@@ -25,7 +25,7 @@
   }
 
   .page-header-container {
-    height: 400px;
+    max-height: 400px;
     overflow: hidden;
     float: none;
   }
@@ -33,7 +33,7 @@
   .content-and-sidebars-container {
     margin: 0 auto;
     max-width: 1200px;
-    padding: 70px 15px;
+    padding: 30px 15px 70px;
     box-sizing: content-box;
   }
 
@@ -43,13 +43,15 @@
 
   .page-title-wrapper {
     position: absolute;
-    top: 150px;
+    top: 115px;
+    @media (min-width: 600px) {
+      top: 180px;
+    }
     left: 0;
     right: 0;
     margin: auto;
     text-align: center;
     max-width: 1200px;
-    padding: 70px 3%;
     box-sizing: content-box;
     background: rgba(0,0,0,.3);
     padding: 15px;
@@ -59,7 +61,7 @@
       padding-top: 0;
       color: $white;
       text-transform: uppercase;
-      font-size: 58px;
+      font-size: 40px;
       font-weight: bold;
       line-height: 1em;
       letter-spacing: -1px;
@@ -78,7 +80,7 @@
     }
 
     .field--name-body {
-      display: block;
+      display: none;
       color: $white;
       margin: auto;
       text-transform: uppercase;
@@ -100,14 +102,6 @@
       margin-bottom: 10px;
       padding: 0;
       width: 100%;
-      @media (min-width: $screen-sm) {
-        width: 47%;
-        margin-left: 2%;
-      }
-      @media (min-width: $screen-md) {
-        width: 32%;
-        margin-left: 1%;
-      }
 
       overflow: hidden;
       @include transition(opacity 0.1s ease);
@@ -152,5 +146,51 @@
         }
       }
     }
+  }
+
+  @media #{$tablet} {
+    .content-and-sidebars-container {
+      padding-top: 70px;
+    }
+
+    .page-title-wrapper {
+      top: 115px;
+
+      h2 {
+        font-size: 50px;
+      }
+
+      .field--name-body {
+        display: block;
+      }
+    }
+
+    .field--name-field-heroslide-images {
+      .field--item {
+        width: 47%;
+        margin-left: 2%;
+      }
+    }
+  }
+
+  @media #{$normal} {
+    .page-title-wrapper {
+      top: 145px;
+
+      h2 {
+        font-size: 58px;
+      }
+    }
+
+    .field--name-field-heroslide-images {
+      .field--item {
+        width: 32%;
+        margin-left: 1%;
+      }
+    }
+  }
+
+  @media #{$wide} {
+
   }
 }

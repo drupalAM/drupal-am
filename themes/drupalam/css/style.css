@@ -6940,34 +6940,36 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 .page-node-type-hero-slide .region-header .bs-region--main {
   padding: 0; }
 .page-node-type-hero-slide .page-header-container {
-  height: 400px;
+  max-height: 400px;
   overflow: hidden;
   float: none; }
 .page-node-type-hero-slide .content-and-sidebars-container {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 70px 15px;
+  padding: 30px 15px 70px;
   box-sizing: content-box; }
 .page-node-type-hero-slide .field--name-field-heroslide-image img {
   width: 100%; }
 .page-node-type-hero-slide .page-title-wrapper {
   position: absolute;
-  top: 150px;
+  top: 115px;
   left: 0;
   right: 0;
   margin: auto;
   text-align: center;
   max-width: 1200px;
-  padding: 70px 3%;
   box-sizing: content-box;
   background: rgba(0, 0, 0, 0.3);
   padding: 15px; }
+  @media (min-width: 600px) {
+    .page-node-type-hero-slide .page-title-wrapper {
+      top: 180px; } }
   .page-node-type-hero-slide .page-title-wrapper h2 {
     padding: 10px 0;
     padding-top: 0;
     color: #fff;
     text-transform: uppercase;
-    font-size: 58px;
+    font-size: 40px;
     font-weight: bold;
     line-height: 1em;
     letter-spacing: -1px;
@@ -6982,7 +6984,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       margin: auto;
       margin-top: 10px; }
   .page-node-type-hero-slide .page-title-wrapper .field--name-body {
-    display: block;
+    display: none;
     color: #fff;
     margin: auto;
     text-transform: uppercase;
@@ -7011,14 +7013,6 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: #252525; }
-    @media (min-width: 768px) {
-      .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
-        width: 47%;
-        margin-left: 2%; } }
-    @media (min-width: 992px) {
-      .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
-        width: 32%;
-        margin-left: 1%; } }
     .page-node-type-hero-slide .field--name-field-heroslide-images .field--item img {
       -moz-transition: all 0.4s ease;
       -o-transition: all 0.4s ease;
@@ -7077,6 +7071,26 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
         transform: scale(1.2);
         opacity: 1;
         filter: alpha(opacity=100); }
+@media screen and (min-width: 768px) {
+  .page-node-type-hero-slide .content-and-sidebars-container {
+    padding-top: 70px; }
+  .page-node-type-hero-slide .page-title-wrapper {
+    top: 115px; }
+    .page-node-type-hero-slide .page-title-wrapper h2 {
+      font-size: 50px; }
+    .page-node-type-hero-slide .page-title-wrapper .field--name-body {
+      display: block; }
+  .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
+    width: 47%;
+    margin-left: 2%; } }
+@media screen and (min-width: 992px) {
+  .page-node-type-hero-slide .page-title-wrapper {
+    top: 145px; }
+    .page-node-type-hero-slide .page-title-wrapper h2 {
+      font-size: 58px; }
+  .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
+    width: 32%;
+    margin-left: 1%; } }
 
 /*
 To change this license header, choose License Headers in Project Properties.
