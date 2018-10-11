@@ -1,0 +1,19 @@
+uuid: 57d5ebe2-6cd7-4ca5-8b58-855578934c18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_two_columns_title
+    - paragraphs.paragraphs_type.two_columns_7_5
+id: paragraph.two_columns_7_5.field_two_columns_title
+field_name: field_two_columns_title
+entity_type: paragraph
+bundle: two_columns_7_5
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
