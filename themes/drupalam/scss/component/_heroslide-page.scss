@@ -33,7 +33,7 @@
   .content-and-sidebars-container {
     margin: 0 auto;
     max-width: 1200px;
-    padding: 70px 3%;
+    padding: 70px 15px;
     box-sizing: content-box;
   }
 
@@ -44,9 +44,13 @@
   .page-title-wrapper {
     position: absolute;
     top: 150px;
-    left: 25%;
+    left: 0;
+    right: 0;
+    margin: auto;
     text-align: center;
-    width: 50%;
+    max-width: 1200px;
+    padding: 70px 3%;
+    box-sizing: content-box;
     background: rgba(0,0,0,.3);
     padding: 15px;
 
@@ -97,11 +101,12 @@
       padding: 0;
       width: 100%;
       @media (min-width: $screen-sm) {
-        width: 48%;
-        margin-left: 10px;
+        width: 47%;
+        margin-left: 2%;
       }
       @media (min-width: $screen-md) {
-        width: 31%;
+        width: 32%;
+        margin-left: 1%;
       }
 
       overflow: hidden;

@@ -6946,16 +6946,20 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 .page-node-type-hero-slide .content-and-sidebars-container {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 70px 3%;
+  padding: 70px 15px;
   box-sizing: content-box; }
 .page-node-type-hero-slide .field--name-field-heroslide-image img {
   width: 100%; }
 .page-node-type-hero-slide .page-title-wrapper {
   position: absolute;
   top: 150px;
-  left: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
   text-align: center;
-  width: 50%;
+  max-width: 1200px;
+  padding: 70px 3%;
+  box-sizing: content-box;
   background: rgba(0, 0, 0, 0.3);
   padding: 15px; }
   .page-node-type-hero-slide .page-title-wrapper h2 {
@@ -7009,11 +7013,12 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     background-color: #252525; }
     @media (min-width: 768px) {
       .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
-        width: 48%;
-        margin-left: 10px; } }
+        width: 47%;
+        margin-left: 2%; } }
     @media (min-width: 992px) {
       .page-node-type-hero-slide .field--name-field-heroslide-images .field--item {
-        width: 31%; } }
+        width: 32%;
+        margin-left: 1%; } }
     .page-node-type-hero-slide .field--name-field-heroslide-images .field--item img {
       -moz-transition: all 0.4s ease;
       -o-transition: all 0.4s ease;
