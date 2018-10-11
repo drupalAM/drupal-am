@@ -1,0 +1,88 @@
+uuid: 21135657-cfcb-446d-99e2-bd3443ebf641
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.case_study.body
+    - field.field.node.case_study.field_case_study_image
+    - field.field.node.case_study.field_case_study_screens
+    - field.field.node.case_study.field_case_study_site_link
+    - field.field.node.case_study.field_term_industry
+    - field.field.node.case_study.field_term_project_category
+    - node.type.case_study
+  module:
+    - colorbox
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_term_industry
+        - body
+        - field_case_study_screens
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: fWgxTYNZRq0TddLFPYdvjYodgeoweJUV9OTGv9xBcRY
+id: node.case_study.full
+targetEntityType: node
+bundle: case_study
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: ds_content
+  field_case_study_screens:
+    weight: 3
+    label: above
+    settings:
+      colorbox_node_style: ''
+      colorbox_node_style_first: ''
+      colorbox_image_style: ''
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+    third_party_settings: {  }
+    type: colorbox
+    region: ds_content
+  field_term_industry:
+    weight: 1
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+hidden:
+  field_case_study_image: true
+  field_case_study_site_link: true
+  field_term_project_category: true
+  links: true
