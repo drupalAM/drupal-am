@@ -34,13 +34,13 @@ third_party_settings:
           left:
             wrapper: div
             classes:
-              col-xs-4: col-xs-4
+              col-sm-4: col-sm-4
             add_region_classes: 1
             attributes: ''
           right:
             wrapper: div
             classes:
-              col-xs-8: col-xs-8
+              col-sm-8: col-sm-8
             add_region_classes: 1
             attributes: ''
     regions:
@@ -72,7 +72,7 @@ content:
     region: left
   field_case_study_screens:
     weight: 3
-    label: above
+    label: hidden
     settings:
       colorbox_node_style: ''
       colorbox_node_style_first: ''
@@ -86,7 +86,7 @@ content:
     region: right
   field_term_industry:
     weight: 1
-    label: above
+    label: hidden
     settings:
       link: true
       view_mode: default

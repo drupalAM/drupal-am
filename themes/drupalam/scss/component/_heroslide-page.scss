@@ -1,93 +1,7 @@
 .page-node-type-hero-slide {
-  .main-container.container-fluid {
-    padding-top: 0;
-    > .row > .col-sm-12 {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
-  .region-header {
-    .block-entity-viewnode {
-      margin-right: auto;
-      margin-left: auto;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    .contextual {
-      top: 100px;
-    }
-
-    .bs-region--main {
-      padding: 0;
-    }
-  }
-
-  .page-header-container {
-    max-height: 400px;
-    overflow: hidden;
-    float: none;
-  }
-
-  .content-and-sidebars-container {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 30px 15px 70px;
-    box-sizing: content-box;
-  }
 
   .field--name-field-heroslide-image img {
     width: 100%;
-  }
-
-  .page-title-wrapper {
-    position: absolute;
-    top: 115px;
-    @media (min-width: 600px) {
-      top: 180px;
-    }
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
-    max-width: 1200px;
-    box-sizing: content-box;
-    background: rgba(0,0,0,.3);
-    padding: 15px;
-
-    h2 {
-      padding: 10px 0;
-      padding-top: 0;
-      color: $white;
-      text-transform: uppercase;
-      font-size: 36px;
-      font-weight: bold;
-      line-height: 1em;
-      letter-spacing: -1px;
-      display: inline-block;
-      margin-bottom: 0;
-
-      &:after {
-        content: "";
-        display: block;
-        width: 62%;
-        height: 1px;
-        background-color: #ffffff;
-        margin: auto;
-        margin-top: 10px;
-      }
-    }
-
-    .field--name-body {
-      display: none;
-      color: $white;
-      margin: auto;
-      text-transform: uppercase;
-      font-size: 15px;
-      letter-spacing: 7px;
-      margin-top: 1px;
-    }
   }
 
   .field--name-field-heroslide-images {
@@ -149,21 +63,6 @@
   }
 
   @media #{$tablet} {
-    .content-and-sidebars-container {
-      padding-top: 70px;
-    }
-
-    .page-title-wrapper {
-      top: 115px;
-
-      h2 {
-        font-size: 50px;
-      }
-
-      .field--name-body {
-        display: block;
-      }
-    }
 
     .field--name-field-heroslide-images {
       .field--item {
@@ -174,13 +73,6 @@
   }
 
   @media #{$normal} {
-    .page-title-wrapper {
-      top: 145px;
-
-      h2 {
-        font-size: 58px;
-      }
-    }
 
     .field--name-field-heroslide-images {
       .field--item {
