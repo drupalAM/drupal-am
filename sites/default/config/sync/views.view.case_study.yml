@@ -456,6 +456,7 @@ display:
         arguments: false
         relationships: false
         sorts: false
+        title: false
       filter_groups:
         operator: AND
         groups:
@@ -560,6 +561,7 @@ display:
           required: false
           plugin_id: standard
       sorts: {  }
+      title: 'Related Projects'
     cache_metadata:
       max-age: -1
       contexts:
