@@ -29,3 +29,9 @@ front-scripts:
     js/content-slider.js: {}
     js/content-carousel.js: {}
     js/front.js: {}
+
+case-study-scripts:
+  js:
+    js/main.js: {}
+    js/simple-image-slider.js: {}
+    js/case-study-page.js: {}

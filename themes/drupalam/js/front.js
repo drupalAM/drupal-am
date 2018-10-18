@@ -18,7 +18,7 @@
       items.slice(i, i + 2).wrapAll("<div class='page-wrapper'></div>");
     }
   }
-  $('.carousel-block .views-element-container').pexetoCarousel()
+  $('.carousel-block .views-element-container').pexetoCarousel();
   //Case study colorbox
   $('.block-views-blockcase-study-block-1 .node').on('click', ':not(.contextual)', function () {
     $(this).find('.colorbox').colorbox({open: true});

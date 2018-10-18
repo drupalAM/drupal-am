@@ -239,7 +239,7 @@
      * @return {boolean} true if they are visible and false if they are not
      */
     function areAllPagesVisible() {
-      return(itemsNumber <= columns && currentPage === 0) ? true : false;
+      return(itemsNumber <= columns && currentPage === 0);
     }
 
     /**
