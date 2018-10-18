@@ -5,6 +5,7 @@
     width: 100%;
   }
 
+  // Simple image slider
   .sis-wrapper {
     display: none;
     margin-bottom: 30px;
@@ -143,5 +144,26 @@
   }
   .sis-next-arrow {
     @include fontawsome-icn("\f105");
+  }
+
+  // Related projects carousel
+  .related-projects-block {
+    .node--view-mode-slide:hover {
+      .field--items:before {
+        pointer-events: none;
+      }
+    }
+
+
+
+    .field--name-field-case-study-screens {
+      .field--item {
+        display: none;
+
+        &:first-child {
+          display: block;
+        }
+      }
+    }
   }
 }

@@ -5,6 +5,7 @@
    * Simple Image Slider. Displays an image slider.
    * Dependencies:
    * - jQuery
+   * - Images Loaded : http://github.com/desandro/imagesloaded
    * - Touchwipe by Andreas Waltl, netCU Internetagentur (http://www.netcu.de)
    *
    * @author Karen Pirumyan
@@ -47,7 +48,6 @@
       loadSlider();
       bindEventHandlers();
       showSlider();
-      setContainerHeight();
     }
 
     /**
@@ -69,7 +69,7 @@
      * Displays slider when loaded.
      */
     function showSlider() {
-      $root.trigger('SliderLoaded');
+      $imageContainer.find('img').pexetoOnImgLoaded({callback: onSliderLoaded});
     }
 
     /**
@@ -81,8 +81,6 @@
         $larrow.on('click', doOnPreviousClicked);
         $rarrow.on('click', doOnNextClicked);
       }
-
-      $root.on('SliderLoaded', onSliderLoaded);
 
       $(window).on('resize', doOnWindowResize);
 
@@ -203,6 +201,7 @@
     function onSliderLoaded() {
       $root.fadeIn();
       $img.animate({opacity: 1}, 1000);
+      setContainerHeight();
     }
 
     /**

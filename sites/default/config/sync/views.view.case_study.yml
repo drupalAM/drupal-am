@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.carousel
+    - core.entity_view_mode.node.slide
     - entityqueue.entity_queue.homepage_case_study
     - field.storage.node.field_case_study_screens
     - field.storage.node.field_term_industry
@@ -74,7 +75,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: carousel
+          view_mode: slide
       fields:
         field_case_study_screens:
           id: field_case_study_screens
@@ -407,6 +408,20 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: item
+          default_row_class: true
+      defaults:
+        style: false
+        row: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: carousel
     cache_metadata:
       max-age: -1
       contexts:

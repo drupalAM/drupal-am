@@ -53,12 +53,12 @@ reactions:
         uuid: f543968a-7784-49c5-9ed7-3533bd669581
       b5468b4c-e528-41a0-ae48-02d0ce95938b:
         id: 'entity_view:node'
-        label: 'Entity view (Content)'
+        label: 'Page title'
         provider: ctools
         label_display: 0
         view_mode: mainstage
         region: header
-        weight: '1'
+        weight: '-1'
         context_mapping:
           entity: '@node.node_route_context:node'
         theme: drupalam

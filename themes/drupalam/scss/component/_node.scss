@@ -12,7 +12,8 @@
 
 // Case Study
 .node--type-case-study {
-  &.node--view-mode-carousel {
+  &.node--view-mode-carousel,
+  &.node--view-mode-slide {
     position: relative;
     background: $white;
     cursor: pointer;
@@ -28,7 +29,7 @@
       img {
         @include transition(all 0.4s ease);
       }
-      @include pexeto-icn("\f704", $white, 30px) {
+      &:before {
         display: block;
         position: absolute;
         width: 60px;
@@ -92,11 +93,26 @@
           @include scale(1.1);
           @include opacity(0.6);
         }
-        @include pexeto-icn("\f704", $white, 30px) {
+        &:before {
           @include scale(1.2);
           @include opacity(1);
         }
       }
     }
+  }
+
+  &.node--view-mode-carousel {
+    .field--name-field-case-study-screens,
+    &:hover .field--name-field-case-study-screens {
+      @include pexeto-icn("\f704", $white, 30px);
+    }
+  }
+
+  &.node--view-mode-slide {
+    .field--name-field-case-study-screens,
+    &:hover .field--name-field-case-study-screens {
+      @include pexeto-icn("\f703", $white, 30px);
+    }
+
   }
 }

@@ -34,4 +34,5 @@ case-study-scripts:
   js:
     js/main.js: {}
     js/simple-image-slider.js: {}
+    js/content-carousel.js: {}
     js/case-study-page.js: {}

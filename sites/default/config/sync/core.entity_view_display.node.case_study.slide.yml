@@ -1,14 +1,16 @@
-uuid: 8586159a-4b7a-4e52-ac59-759b4553a4af
+uuid: b3cfc1fc-4e1e-4619-b672-21d1cde212eb
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.slide
     - field.field.node.case_study.body
     - field.field.node.case_study.field_case_study_image
     - field.field.node.case_study.field_case_study_screens
     - field.field.node.case_study.field_case_study_site_link
     - field.field.node.case_study.field_term_industry
     - field.field.node.case_study.field_term_project_category
+    - image.style.crop_430x255
     - node.type.case_study
   module:
     - ds
@@ -44,16 +46,16 @@ third_party_settings:
         formatter: default
 _core:
   default_config_hash: KJrIh0_iSF-z7zEMqdcAvzhxHWytetcWyi7GICV9qPU
-id: node.case_study.default
+id: node.case_study.slide
 targetEntityType: node
 bundle: case_study
-mode: default
+mode: slide
 content:
   field_case_study_screens:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: crop_430x255
       image_link: content
     third_party_settings:
       ds:

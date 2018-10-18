@@ -1,0 +1,17 @@
+uuid: 603c2447-0b92-45ca-99f5-e2ef877ac6d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: large_1920_x_1080_
+label: 'Large (1920 x 1080)'
+effects:
+  474875c1-0764-4ad3-ae4f-6bbeadd2eb81:
+    uuid: 474875c1-0764-4ad3-ae4f-6bbeadd2eb81
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1080
+      crop_type: focal_point

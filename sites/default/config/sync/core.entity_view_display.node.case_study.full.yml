@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.case_study.field_case_study_site_link
     - field.field.node.case_study.field_term_industry
     - field.field.node.case_study.field_term_project_category
+    - image.style.large_1920_x_1080_
     - node.type.case_study
   module:
     - ds
@@ -74,7 +75,7 @@ content:
     weight: 4
     label: hidden
     settings:
-      image_style: ''
+      image_style: large_1920_x_1080_
       image_link: ''
     third_party_settings:
       ds:
