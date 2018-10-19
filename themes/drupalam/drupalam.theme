@@ -63,7 +63,7 @@ function drupalam_preprocess_page(&$variables) {
   if ($variables['is_front']) {
     $variables['#attached']['library'][] = 'drupalam/front-scripts';
   }
-//kint(isset($variables['node']));
+
   if (isset($variables['node']) && $variables['node']->getType() == 'case_study') {
     $variables['#attached']['library'][] = 'drupalam/case-study-scripts';
   }

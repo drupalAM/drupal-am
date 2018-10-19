@@ -1,0 +1,43 @@
+uuid: 1494b1b4-a43d-49e5-9b81-1500f806f83b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: contact
+label: Contact
+group: Pages
+description: 'Contact page'
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /contact
+    negate: 0
+    uuid: 99cb188b-9226-43c2-ab72-630c9d07dbe8
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      34039331-b980-4d4d-a333-64180ab30e3f:
+        id: 'block_content:ecee50d2-7f10-46b5-8557-a20d57e29b6c'
+        label: 'Social Icons'
+        provider: block_content
+        label_display: 0
+        status: true
+        info: ''
+        view_mode: full
+        region: sidebar_second
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: contact
+        uuid: 34039331-b980-4d4d-a333-64180ab30e3f
+    id: blocks
+    saved: false
+    uuid: 8117047f-fb30-44b9-b742-a062c6fdc611
+    include_default_blocks: 0
+weight: 0
