@@ -1,0 +1,38 @@
+uuid: d8ad9816-1379-4daf-aaf5-428bd8a72614
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_details_block
+    - field.field.block_content.contact_details_block.field_contact_email
+    - field.field.block_content.contact_details_block.field_contact_fax
+    - field.field.block_content.contact_details_block.field_contact_phone
+id: block_content.contact_details_block.default
+targetEntityType: block_content
+bundle: contact_details_block
+mode: default
+content:
+  field_contact_email:
+    weight: 2
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_contact_fax:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_phone:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

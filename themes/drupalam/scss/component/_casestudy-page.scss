@@ -1,6 +1,12 @@
 .page-node-type-case-study {
   background: #f7f7f7;
 
+  .node--type-case-study.node--view-mode-full {
+    .field--name-body {
+      margin-bottom: 30px;
+    }
+  }
+
   .field--name-field-case-study-image img {
     width: 100%;
   }
@@ -153,8 +159,6 @@
         pointer-events: none;
       }
     }
-
-
 
     .field--name-field-case-study-screens {
       .field--item {

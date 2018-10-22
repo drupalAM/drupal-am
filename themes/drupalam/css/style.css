@@ -7201,6 +7201,8 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 
 .page-node-type-case-study {
   background: #f7f7f7; }
+  .page-node-type-case-study .node--type-case-study.node--view-mode-full .field--name-body {
+    margin-bottom: 30px; }
   .page-node-type-case-study .field--name-field-case-study-image img {
     width: 100%; }
   .page-node-type-case-study .sis-wrapper {
@@ -7359,6 +7361,108 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     display: none; }
     .page-node-type-case-study .related-projects-block .field--name-field-case-study-screens .field--item:first-child {
       display: block; }
+
+.path-contact {
+  background-color: #f7f7f7; }
+  .path-contact .content-and-sidebars-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 70px; }
+  .path-contact .contact-message-feedback-form {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    padding: 4%;
+    min-height: 400px;
+    margin-bottom: 50px; }
+    .path-contact .contact-message-feedback-form label {
+      display: block;
+      line-height: 2.5em;
+      letter-spacing: 0.5px;
+      font-weight: 400;
+      margin-bottom: 0; }
+      .path-contact .contact-message-feedback-form label:after {
+        background: none;
+        content: '*';
+        font-size: 16px;
+        margin-left: 3px; }
+    .path-contact .contact-message-feedback-form input, .path-contact .contact-message-feedback-form textarea {
+      margin-bottom: 8px;
+      padding: 12px 0;
+      max-width: 100%;
+      width: 100%;
+      text-indent: 8px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      border: solid 1px rgba(0, 0, 0, 0.1);
+      background: #fcfcfc;
+      font-size: 12px;
+      color: initial;
+      box-shadow: none; }
+      .path-contact .contact-message-feedback-form input:focus, .path-contact .contact-message-feedback-form textarea:focus {
+        webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+        outline: none;
+        background: #fff; }
+    .path-contact .contact-message-feedback-form .captcha {
+      margin-bottom: 15px; }
+    .path-contact .contact-message-feedback-form #edit-submit {
+      background-color: #5bc3ff;
+      border: none;
+      padding: 12px 25px;
+      margin-top: 10px;
+      font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase; }
+    .path-contact .contact-message-feedback-form #edit-preview {
+      display: none; }
+  .path-contact .contact-social-icons {
+    margin-bottom: 40px; }
+    .path-contact .contact-social-icons ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+    .path-contact .contact-social-icons li {
+      float: left;
+      font-size: 40px;
+      margin-right: 15px; }
+  .path-contact .contact-details {
+    margin-bottom: 0;
+    font-size: 13px; }
+    .path-contact .contact-details .field--label {
+      font-weight: 400; }
+    .path-contact .contact-details .field--item {
+      margin-left: 5px; }
+  .path-contact .contact-details .block-title,
+  .path-contact .contact-social-icons .block-title {
+    margin: -5px 0 10px;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px; }
+  @media screen and (min-width: 768px) {
+    .path-contact .content-and-sidebars-container {
+      padding: 70px 0; }
+    .path-contact .contact-message-feedback-form {
+      margin-bottom: 0; }
+    .path-contact .contact-social-icons li {
+      font-size: 28px;
+      margin-right: 5px; } }
+  @media screen and (min-width: 992px) {
+    .path-contact .contact-message-feedback-form {
+      width: 95%; }
+    .path-contact .contact-social-icons li {
+      font-size: 34px;
+      margin-right: 10px; } }
+  @media screen and (min-width: 1200px) {
+    .path-contact .contact-social-icons li {
+      font-size: 40px;
+      margin-right: 15px; } }
 
 /*
 To change this license header, choose License Headers in Project Properties.

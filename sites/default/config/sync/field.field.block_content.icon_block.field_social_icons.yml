@@ -22,5 +22,5 @@ default_value_callback: ''
 settings:
   link_type: 17
   title: 5
-  title_predefined: "facebook|Facebook\r\ntwitter|Twitter\r\nplus|Google+|[node:title]\r\nlinkedin|Linkedin\r\npinterest|Pinterest\r\nvimeo|Vimeo\r\nyoutube|Youtube"
+  title_predefined: "facebook|Facebook\r\ntwitter|Twitter\r\ngoogle-plus|Google+|[node:title]\r\nlinkedin|Linkedin\r\npinterest|Pinterest\r\nvimeo|Vimeo\r\nyoutube|Youtube\r\ngithub|GitHub\r\ntelegram|Telegram"
 field_type: link

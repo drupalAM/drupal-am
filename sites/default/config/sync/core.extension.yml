@@ -8,6 +8,7 @@ module:
   block_content: 0
   bootstrap_layouts: 0
   breakpoint: 0
+  captcha: 0
   ckeditor: 0
   color: 0
   colorbox: 0
@@ -57,12 +58,14 @@ module:
   path: 0
   quickedit: 0
   rdf: 0
+  recaptcha: 0
   search: 0
   search_kint: 0
   serialization: 0
   shortcut: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   token: 0
   toolbar: 0

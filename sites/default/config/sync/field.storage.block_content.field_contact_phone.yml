@@ -1,0 +1,19 @@
+uuid: 9029109b-4344-4351-8ec7-1512bacb43e8
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - telephone
+id: block_content.field_contact_phone
+field_name: field_contact_phone
+entity_type: block_content
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

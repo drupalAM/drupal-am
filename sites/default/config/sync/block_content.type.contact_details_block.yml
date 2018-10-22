@@ -1,0 +1,8 @@
+uuid: ad330de2-1b79-4870-a792-9ee398bd87de
+langcode: en
+status: true
+dependencies: {  }
+id: contact_details_block
+label: 'Contact details block'
+revision: 0
+description: 'Contact details information'
