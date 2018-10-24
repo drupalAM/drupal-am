@@ -7464,6 +7464,62 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       font-size: 40px;
       margin-right: 15px; } }
 
+.path-user {
+  background-color: #f7f7f7; }
+  .path-user .content-and-sidebars-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 70px; }
+  .path-user .region-content {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    padding: 4%;
+    min-height: 400px; }
+  .path-user .group-left {
+    width: 100%; }
+    .path-user .group-left .field--name-user-picture {
+      margin-bottom: 30px; }
+      .path-user .group-left .field--name-user-picture img {
+        width: 100%;
+        max-width: 680px; }
+  .path-user .group-right {
+    width: 100%; }
+    .path-user .group-right .field--name-dynamic-token-fielduser-field-user-full-name {
+      font-size: 30px;
+      clear: none;
+      margin-top: 0;
+      padding: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif; }
+    .path-user .group-right .field--name-field-user-bio {
+      margin-bottom: 30px; }
+  .path-user .field--name-field-user-friends .field-label-above {
+    font-size: 18px;
+    font-weight: 100;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    padding: 10px 0;
+    color: #333332;
+    line-height: 1.7; }
+  .path-user .field--name-field-user-friends .field-user-friend {
+    margin-bottom: 40px; }
+  .path-user .field--name-field-user-friends .field--name-dynamic-token-fielduser-field-user-full-name {
+    padding: 10px 0; }
+  @media screen and (min-width: 768px) {
+    .path-user .content-and-sidebars-container {
+      padding: 70px 0; }
+    .path-user .group-left {
+      width: 46%; }
+      .path-user .group-left .field--name-user-picture img {
+        max-width: 680px; }
+    .path-user .group-right {
+      width: 50%; } }
+  @media screen and (min-width: 992px) {
+    .path-user .region-content {
+      width: 95%; } }
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates

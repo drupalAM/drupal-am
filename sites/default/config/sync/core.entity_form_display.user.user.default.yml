@@ -5,12 +5,13 @@ dependencies:
   config:
     - field.field.user.user.field_user_bio
     - field.field.user.user.field_user_first_name
+    - field.field.user.user.field_user_friends
     - field.field.user.user.field_user_last_name
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
     - field_layout
-    - image
+    - focal_point
     - layout_discovery
     - text
     - user
@@ -52,6 +53,15 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_user_friends:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_user_last_name:
     weight: 1
     settings:
@@ -71,10 +81,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   user_picture:
-    type: image_image
+    type: image_focal_point
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
     third_party_settings: {  }
     weight: 3
     region: content

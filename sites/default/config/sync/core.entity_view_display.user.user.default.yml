@@ -5,13 +5,53 @@ dependencies:
   config:
     - field.field.user.user.field_user_bio
     - field.field.user.user.field_user_first_name
+    - field.field.user.user.field_user_friends
     - field.field.user.user.field_user_last_name
     - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
+    - colorbox
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col_stacked
+      library: ds/ds_2col_stacked
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          header: div
+          left: div
+          right: div
+          footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      left:
+        - user_picture
+      right:
+        - 'dynamic_token_field:user-field_user_full_name'
+        - field_user_bio
+      footer:
+        - field_user_friends
+    fields:
+      'dynamic_token_field:user-field_user_full_name':
+        plugin_id: 'dynamic_token_field:user-field_user_full_name'
+        weight: 1
+        label: hidden
+        formatter: default
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 _core:
   default_config_hash: 6MsR-dQv_8bF8RHrgKnJyvzPYxS-jkfRpLIuD_YudX4
 id: user.user.default
@@ -20,40 +60,72 @@ bundle: user
 mode: default
 content:
   field_user_bio:
-    weight: 6
-    label: above
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_user_first_name:
-    weight: 8
+    region: right
+  field_user_friends:
+    weight: 3
     label: above
     settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_user_last_name:
-    weight: 9
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  member_for:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow: true
+            ow-el: div
+            ow-cl: field--name-field-user-friends
+            ow-at: ''
+            fis: true
+            fis-el: div
+            fis-cl: 'field--items row'
+            fis-at: ''
+            fi: true
+            fi-el: div
+            fi-cl: 'field-user-friend field--item col-xs-6 col-sm-4 col-md-3'
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis-def-at: false
+            fi-def-at: false
+    type: entity_reference_entity_view
+    region: footer
   user_picture:
-    type: image
+    type: colorbox
     weight: 0
-    region: content
+    region: left
     settings:
-      image_style: thumbnail
-      image_link: content
-    third_party_settings: {  }
+      colorbox_node_style: ''
+      colorbox_node_style_first: ''
+      colorbox_image_style: ''
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     label: hidden
-hidden: {  }
+hidden:
+  field_user_first_name: true
+  field_user_last_name: true
+  member_for: true

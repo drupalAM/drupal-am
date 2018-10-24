@@ -1,0 +1,99 @@
+.path-user {
+  background-color: #f7f7f7;
+
+  .content-and-sidebars-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 70px;
+  }
+
+  .region-content {
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    padding: 4%;
+    //width: 92%;
+    min-height: 400px;
+  }
+
+  .group-left {
+    width: 100%;
+
+    .field--name-user-picture {
+      margin-bottom: 30px;
+
+      img {
+        width: 100%;
+        max-width: 680px;
+      }
+    }
+  }
+
+  .group-right {
+    width: 100%;
+
+    .field--name-dynamic-token-fielduser-field-user-full-name {
+      font-size: 30px;
+      clear: none;
+      margin-top: 0;
+      padding: 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: $font-family-monospace;
+    }
+
+    .field--name-field-user-bio {
+      margin-bottom: 30px;
+    }
+  }
+
+  .field--name-field-user-friends {
+    .field-label-above {
+      font-size: 18px;
+      font-weight: 100;
+      font-family: $font-family-monospace;
+      padding: 10px 0;
+      color: $gray-dark;
+      line-height: 1.7;
+    }
+
+    .field-user-friend {
+      margin-bottom: 40px;
+    }
+
+    .field--name-dynamic-token-fielduser-field-user-full-name {
+      padding: 10px 0;
+    }
+  }
+
+  @media #{$tablet} {
+    .content-and-sidebars-container {
+      padding: 70px 0;
+    }
+
+    .group-left {
+      width: 46%;
+
+      .field--name-user-picture {
+        img {
+          max-width: 680px;
+        }
+      }
+    }
+
+    .group-right {
+      width: 50%;
+    }
+  }
+
+  @media #{$normal} {
+    .region-content {
+      width: 95%;
+    }
+  }
+
+  @media #{$wide} {
+
+  }
+}

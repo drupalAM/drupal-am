@@ -1,0 +1,29 @@
+uuid: e2b45fe7-5c95-4499-8034-dee736e72d56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_friends
+  module:
+    - user
+id: user.user.field_user_friends
+field_name: field_user_friends
+entity_type: user
+bundle: user
+label: Friends
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference
