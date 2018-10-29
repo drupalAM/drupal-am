@@ -1,8 +1,8 @@
 {
   "_from": "@fortawesome/fontawesome-free",
-  "_id": "@fortawesome/fontawesome-free@5.4.1",
+  "_id": "@fortawesome/fontawesome-free@5.4.2",
   "_inBundle": false,
-  "_integrity": "sha512-ZcxfUmLFl4RLG71cPeZcTXRa6rt3xLnMmomAb7aYKRzUmlRRj7E8EVqSwYSXBiV2x6XpSQmGOQmNQx6HSeSwVQ==",
+  "_integrity": "sha512-lpruVv/4AkKUujyzHCNJ8yOceBf7Na/pFaX52ZI/BFMCYkUEwiQ1P0viZg//+WelrNNEgvMOvCMDEDaOMZ/u1w==",
   "_location": "/@fortawesome/fontawesome-free",
   "_phantomChildren": {},
   "_requested": {
@@ -17,13 +17,13 @@
     "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "#DEV:/",
-    "#USER"
+    "#USER",
+    "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.4.1.tgz",
-  "_shasum": "6194786c1a705ab84253e06429834466670e3c3f",
+  "_resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.4.2.tgz",
+  "_shasum": "b2d782da69c45ea61954291e2615a8f7741c96b2",
   "_spec": "@fortawesome/fontawesome-free",
-  "_where": "C:\\wamp64\\www\\drupal-am\\libraries",
+  "_where": "C:\\Users\\User\\Desktop\\New folder",
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",
@@ -78,5 +78,5 @@
     "url": "git+https://github.com/FortAwesome/Font-Awesome.git"
   },
   "style": "css/fontawesome.css",
-  "version": "5.4.1"
+  "version": "5.4.2"
 }

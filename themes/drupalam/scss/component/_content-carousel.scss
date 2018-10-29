@@ -151,12 +151,12 @@
       }
     }
     .pc-next {
-      @include fontawsome-icn("\f105") {
+      @include fontawsome-icn($fa-var-angle-right) {
         font-size: 26px
       };
     }
     .pc-prev {
-      @include fontawsome-icn("\f104") {
+      @include fontawsome-icn($fa-var-angle-left) {
         font-size: 26px
       };
       left: 1px;

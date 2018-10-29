@@ -146,10 +146,10 @@
   }
 
   .sis-prev-arrow {
-    @include fontawsome-icn("\f104");
+    @include fontawsome-icn($fa-var-angle-left);
   }
   .sis-next-arrow {
-    @include fontawsome-icn("\f105");
+    @include fontawsome-icn($fa-var-angle-right);
   }
 
   // Related projects carousel

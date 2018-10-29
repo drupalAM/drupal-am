@@ -356,7 +356,7 @@
     margin-left: -32px;
     text-indent: -3px;
 
-    @include fontawsome-icn("\f104") {
+    @include fontawsome-icn($fa-var-angle-left) {
       font-size: 24px;
       display: inline;
     };
@@ -365,7 +365,7 @@
     right: 50%;
     text-indent: 2px;
 
-    @include fontawsome-icn("\f105") {
+    @include fontawsome-icn($fa-var-angle-right) {
       font-size: 24px;
       display: inline;
     };

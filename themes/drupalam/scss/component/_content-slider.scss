@@ -598,10 +598,10 @@ ul.cs-slider-ul li {
   line-height: 45px;
 }
 .cs-prev-arrow {
-  @include fontawsome-icn("\f104");
+  @include fontawsome-icn($fa-var-angle-left);
 }
 .cs-next-arrow {
-  @include fontawsome-icn("\f105");
+  @include fontawsome-icn($fa-var-angle-right);
 }
 
 @media screen and (max-width: 1000px){
