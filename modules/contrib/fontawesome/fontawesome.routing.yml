@@ -12,3 +12,10 @@ fontawesome.icon_dialog:
     _title: 'Add Font Awesome Icon'
   requirements:
     _entity_access: 'editor.use'
+fontawesome.autocomplete:
+  path: '/fontawesome-autocomplete'
+  defaults:
+    _controller: '\Drupal\fontawesome\Controller\AutocompleteController::handleAutocomplete'
+    _format: json
+  requirements:
+    _access: 'TRUE'

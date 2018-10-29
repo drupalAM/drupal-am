@@ -1,2 +1,6 @@
-fontawesome_use_cdn: true
-fontawesome_external_location: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+tag: 'i'
+method: 'svg'
+use_cdn: true
+external_svg_location: 'https://use.fontawesome.com/releases/v5.4.1/js/all.js'
+use_shim: true
+external_shim_location: 'https://use.fontawesome.com/releases/v5.4.1/js/v4-shims.js'

@@ -6,7 +6,11 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
-use \Drupal\editor\Entity\Editor;
+use Drupal\Core\Link;
+use Symfony\Component\Yaml\Yaml;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\TypedData\Plugin\DataType\ItemList;
 
 /**
  * Implements hook_help().
@@ -14,9 +18,9 @@ use \Drupal\editor\Entity\Editor;
 function fontawesome_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     case 'help.page.fontawesome':
-      return '<p><i class="fa fa-font-awesome fa-2x"></i> ' . t('<a href=":fontawesome_url">Font Awesome</a> is an iconic font and CSS toolkit. Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS. For more information on how to use Font Awesome, see the <a href=":fontawesome_examples_page">Font Awesome Examples page</a>.', [
-        ':fontawesome_url' => 'http://fontawesome.io',
-        ':fontawesome_examples_page' => 'http://fontawesome.io/examples/',
+      return '<p><i class="far fa-font-awesome fa-2x"></i> ' . t('<a href=":fontawesome_url">Font Awesome</a> is an iconic font and CSS toolkit. Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS. For more information on how to use Font Awesome, see the <a href=":fontawesome_examples_page">Font Awesome Examples page</a>.', [
+        ':fontawesome_url' => 'https://fontawesome.com',
+        ':fontawesome_examples_page' => 'https://fontawesome.com/how-to-use/svg-with-js',
       ]) . '</p>';
   }
 }
@@ -26,35 +30,106 @@ function fontawesome_help($route_name, RouteMatchInterface $route_match) {
  */
 function fontawesome_library_info_alter(&$libraries, $extension) {
   // Modify the Font Awesome library to use external file if user chose.
-  if ($extension == 'fontawesome' && isset($libraries['fontawesome.cdn'])) {
-    // Check if we are using external file.
-    $configuration_settings = \Drupal::config('fontawesome.settings')->get();
+  if ($extension == 'fontawesome') {
+    // Load the configuration settings.
+    $configuration_settings = \Drupal::config('fontawesome.settings');
 
-    // If the user has opted to load an external file, we load it instead.
-    if ($configuration_settings['fontawesome_use_cdn'] && !empty($configuration_settings['fontawesome_external_location'])) {
-      array_shift($libraries['fontawesome.cdn']['css']['theme']);
-      $libraries['fontawesome.cdn']['css']['theme'] = [
-        $configuration_settings['fontawesome_external_location'] => [
-          'type' => 'external',
-          'minified' => 1,
-        ],
+    // Have to modify the library if the user is using a CDN.
+    if ($configuration_settings->get('use_cdn')) {
+
+      // Handle SVG method.
+      if (isset($libraries['fontawesome.svg'])) {
+        // Modify the library.
+        $librarySettings = array_shift($libraries['fontawesome.svg']['js']);
+        $libraries['fontawesome.svg']['js'] = [
+          $configuration_settings->get('external_svg_location') => $librarySettings,
+        ];
+      }
+      // Handle webfonts method.
+      if (isset($libraries['fontawesome.webfonts'])) {
+        // Modify the library.
+        $librarySettings = array_shift($libraries['fontawesome.webfonts']['css']['theme']);
+        $libraries['fontawesome.webfonts']['css']['theme'] = [
+          $configuration_settings->get('external_svg_location') => $librarySettings,
+        ];
+      }
+
+      // Modify the shim as well.
+      if ($configuration_settings->get('use_shim')) {
+        // Handle SVG method.
+        if (isset($libraries['fontawesome.svg'])) {
+          $librarySettings = array_shift($libraries['fontawesome.svg.shim']['js']);
+          $libraries['fontawesome.svg.shim']['js'] = [
+            $configuration_settings->get('external_shim_location') => $librarySettings,
+          ];
+        }
+        // Handle webfonts method.
+        if (isset($libraries['fontawesome.webfonts'])) {
+          $librarySettings = array_shift($libraries['fontawesome.webfonts.shim']['css']['theme']);
+          $libraries['fontawesome.webfonts.shim']['css']['theme'] = [
+            $configuration_settings->get('external_shim_location') => $librarySettings,
+          ];
+        }
+      }
+    }
+
+    // Allow pseudo-elements in JS if selected.
+    if ($configuration_settings->get('allow_pseudo_elements')) {
+      // Modify the library.
+      $librarySettings = reset($libraries['fontawesome.svg']['js']);
+      $librarySource = key($libraries['fontawesome.svg']['js']);
+      // Font Awesome requires this script tag to enable pseudo elements.
+      $librarySettings['attributes'] = [
+        'data-search-pseudo-elements' => TRUE,
       ];
+      $libraries['fontawesome.svg']['js'][$librarySource] = $librarySettings;
     }
   }
 }
 
 /**
  * Implements hook_ckeditor_css_alter().
+ *
+ * This function allows for the proper functionality of the icons inside the
+ * CKEditor when using Webfonts with CSS as the Font Awesome display method.
+ *
+ * See fontawesome_editor_js_settings_alter() for allowing the use of the icons
+ * inside CKEditor when using the SVG with JS display method.
  */
 function fontawesome_ckeditor_css_alter(&$css, $editor) {
-  // Attach CSS to CKEditor where appropriate.
-  if (\Drupal::config('fontawesome.settings')->get('fontawesome_use_cdn')) {
-    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome.cdn');
+  // Attach the main library if we're using the CSS webfonts method..
+  if (\Drupal::config('fontawesome.settings')->get('method') == 'webfonts') {
+    // Load the library.
+    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome.webfonts');
+    // Attach it's CSS.
+    $css[] = $fontawesome_library['css'][0]['data'];
+  }
+}
+
+/**
+ * Check to make sure that Font Awesome is installed.
+ *
+ * @return bool
+ *   Flag indicating if the library is properly installed.
+ */
+function fontawesome_check_installed() {
+  // Load the configuration settings.
+  $configuration_settings = \Drupal::config('fontawesome.settings');
+
+  // Throw error if library file not found.
+  if ($configuration_settings->get('use_cdn')) {
+    return !empty($configuration_settings->get('external_svg_location'));
+  }
+  elseif ($configuration_settings->get('method') == 'webfonts') {
+    // Webfonts method.
+    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome.webfonts');
+    return file_exists(DRUPAL_ROOT . '/' . $fontawesome_library['css'][0]['data']);
   }
   else {
-    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome');
+    // SVG method.
+    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome.svg');
+    return file_exists(DRUPAL_ROOT . '/' . $fontawesome_library['js'][0]['data']);
   }
-  $css[] = $fontawesome_library['css'][0]['data'];
 }
 
 /**
@@ -65,19 +140,108 @@ function fontawesome_ckeditor_css_alter(&$css, $editor) {
  * necessary.
  */
 function fontawesome_page_attachments(array &$page) {
-  if (\Drupal::config('fontawesome.settings')->get('fontawesome_use_cdn')) {
-    $page['#attached']['library'][] = 'fontawesome/fontawesome.cdn';
+  // Load the configuration settings.
+  $configuration_settings = \Drupal::config('fontawesome.settings');
+
+  // Throw error if library file not found.
+  if (!fontawesome_check_installed()) {
+    \Drupal::messenger()->addWarning(t('The Font Awesome library could not be found. Please verify Font Awesome is installed correctly or that the CDN has been activated and properly configured. Please see the @adminPage and the Font Awesome module README file for more details.', [
+      '@adminPage' => Link::createFromRoute(t('admin page'), 'fontawesome.admin_settings')->toString(),
+    ]));
+    return;
+  }
+
+  // Attach the main library.
+  if ($configuration_settings->get('method') == 'webfonts') {
+    // Webfonts method.
+    $page['#attached']['library'][] = 'fontawesome/fontawesome.webfonts';
+
+    // Attach the shim file if needed.
+    if ($configuration_settings->get('use_shim')) {
+      $page['#attached']['library'][] = 'fontawesome/fontawesome.webfonts.shim';
+    }
   }
   else {
-    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome');
-    if (!file_exists(DRUPAL_ROOT . '/' . $fontawesome_library['css'][0]['data'])) {
-      drupal_set_message(t('The Font Awesome library could not be found. Please verify Font Awesome was downloaded and extracted at %directory. Please check the Font Awesome module README file for more details.', [
-        '%directory' => 'libraries/fontawesome',
-      ]), 'warning');
-    }
+    // SVG method.
+    $page['#attached']['library'][] = 'fontawesome/fontawesome.svg';
 
-    $page['#attached']['library'][] = 'fontawesome/fontawesome';
+    // Attach the shim file if needed.
+    if ($configuration_settings->get('use_shim')) {
+      $page['#attached']['library'][] = 'fontawesome/fontawesome.svg.shim';
+    }
   }
+}
+
+/**
+ * Helper function returns the prefix for an icon based on icon type.
+ *
+ * @param array $styles
+ *   An array of valid styles for the icon.
+ * @param string $default
+ *   The value to assign here if it's not a brand icon.
+ *
+ * @return string
+ *   A valid prefix for this icon.
+ */
+function fontawesome_determine_prefix(array $styles, $default = 'fas') {
+  // Determine the icon style - brands behave differently.
+  foreach ($styles as $style) {
+    if ($style == 'brands') {
+      return 'fab';
+    }
+  }
+  return $default;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function fontawesome_theme($existing, $type, $theme, $path) {
+  return [
+    'fontawesomeicons' => [
+      'variables' => [
+        'icons' => NULL,
+        'layers' => FALSE,
+      ],
+    ],
+    'fontawesomeicon' => [
+      'variables' => [
+        'tag' => 'i',
+        'name' => NULL,
+        'style' => NULL,
+        'settings' => NULL,
+        'transforms' => NULL,
+        'mask' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function fontawesome_theme_suggestions_fontawesomeicon(array $variables) {
+  // Suggest a template with the icon name if it exists.
+  if (!empty($variables['name'])) {
+    $suggestions[] = $variables['theme_hook_original'] . '__' . $variables['name'];
+  }
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function fontawesome_theme_registry_alter(&$theme_registry) {
+  /*
+   * By default, Drupal 8 does not include theme suggestions from inside the
+   * module in which they were created, so we must add them manually here.
+   */
+  $path = drupal_get_path('module', 'fontawesome');
+  $fontawesome_templates = drupal_find_theme_templates($theme_registry, '.html.twig', $path);
+  foreach ($fontawesome_templates as &$fontawesome_template) {
+    $fontawesome_template['type'] = 'module';
+  }
+  $theme_registry += $fontawesome_templates;
 }
 
 /**
@@ -104,8 +268,8 @@ function fontawesome_icon_bundle_configure(&$settings, &$form_state, &$complete_
         '%tag' => '<' . $bundle['settings']['tag'] . '>',
       ]),
       '#options' => array_combine(
-        ['i', 'span', 'div'],
-        ['i', 'span', 'div']
+        ['i', 'span'],
+        ['i', 'span']
       ),
       '#default_value' => $bundle['settings']['tag'],
     ];
@@ -124,8 +288,9 @@ function fontawesome_preprocess_icon_sprite(&$variables) {
       unset($variables['attributes']['class'][$key]);
     }
 
+    // TODO: need to add the correct class depending on icon type.
     // Add the necessary FA identifier class.
-    $variables['attributes']['class'][] = 'fa';
+    $variables['attributes']['class'][] = 'fas';
 
     // Prepend the icon with the FA prefix (which will be used as the class).
     $variables['icon'] = 'fa-' . $variables['icon'];
@@ -135,7 +300,7 @@ function fontawesome_preprocess_icon_sprite(&$variables) {
 /**
  * Implements hook_icon_bundles().
  *
- * @todo Extract icons from CSS or JSON file (currently not possible).
+ * TODO: this is waiting on an 8.x release of Icon API.
  */
 function fontawesome_icon_bundles() {
   $bundles['fontawesome'] = [
@@ -151,47 +316,155 @@ function fontawesome_icon_bundles() {
 }
 
 /**
- * Extracts all icons from the CSS file.
+ * Loads the Font Awesome metadata file.
+ *
+ * @return string
+ *   The filepath of the metadata file.
+ */
+function fontawesome_get_metadata_filepath() {
+  // Attempt to load the icons from the local library's metadata if possible.
+  $metadataFile = drupal_realpath(DRUPAL_ROOT . '/libraries/fontawesome/advanced-options/metadata/icons.yml');
+  // If we can't load the local file, use the included module icons file.
+  if (!file_exists($metadataFile)) {
+    $metadataFile = drupal_get_path('module', 'fontawesome') . '/metadata/icons.yml';
+  }
+  return $metadataFile;
+}
+
+/**
+ * Provides a list of all available Font Awesome icons from metadata.
  *
  * @return array
  *   Array containing icons.
  */
 function fontawesome_extract_icons() {
-  // If CDN is enabled, get CSS content from the CDN URL.
-  if (\Drupal::config('fontawesome.settings')->get('fontawesome_use_cdn')) {
-    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome.cdn');
-    $url = $fontawesome_library['css'][0]['data'];
+  // Check for cached icons.
+  if (!$icons = \Drupal::cache('data')->get('fontawesome.iconlist')) {
 
-    // The URL needs to have a schema to work with drupal_http_request.
-    if (strpos($url, '//') === 0) {
-      $url = 'http:' . $url;
+    // Parse the metadata file and use it to generate the icon list.
+    $icons = [];
+    foreach (Yaml::parse(file_get_contents(fontawesome_get_metadata_filepath())) as $name => $icon) {
+      // Determine the icon type - brands behave differently.
+      $type = 'solid';
+      foreach ($icon['styles'] as $style) {
+        if ($style == 'brands') {
+          $type = 'brands';
+          break;
+        }
+      }
+      $icons[$name] = [
+        'name' => $name,
+        'type' => $type,
+        'label' => $icon['label'],
+        'styles' => $icon['styles'],
+      ];
     }
 
-    $response = \Drupal::httpClient()->get($url, ['headers' => ['Accept' => 'text/plain']]);
-    $content = (string) $response->getBody();
+    // Cache the icons array.
+    \Drupal::cache('data')->set('fontawesome.iconlist', $icons, strtotime('+1 week'), ['fontawesome', 'iconlist']);
   }
-  // Otherwise get CSS content from the local library.
   else {
-    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome');
-    $filepath = DRUPAL_ROOT . '/' . $fontawesome_library['css'][0]['data'];
-
-    $content = file_exists($filepath) ? file_get_contents($filepath) : '';
+    $icons = $icons->data;
   }
 
-  // Parse the CSS content.
-  if (preg_match_all('@\.fa-([a-zA-Z0-9\-]*?):before[\s]?{[\s]*content:[\s]?"\\\\f[a-f0-9]+"@m', $content, $matches)) {
-    $icons = $matches[1];
-    asort($icons);
-    return array_combine($icons, $icons);
+  return (array) $icons;
+}
+
+/**
+ * Extract metadata for a specific icon.
+ *
+ * @param string $findIcon
+ *   The icon for which we want metadata.
+ *
+ * @return array
+ *   Array containing icons.
+ */
+function fontawesome_extract_icon_metadata($findIcon) {
+  // Parse the metadata file and use it to generate the icon list.
+  foreach (Yaml::parse(file_get_contents(fontawesome_get_metadata_filepath())) as $name => $icon) {
+    if ($name == $findIcon) {
+      // Determine the icon type - brands behave differently.
+      $type = 'solid';
+      foreach ($icon['styles'] as $style) {
+        if ($style == 'brands') {
+          $type = 'brands';
+          break;
+        }
+      }
+      return [
+        'name' => $name,
+        'type' => $type,
+        'label' => $icon['label'],
+        'styles' => $icon['styles'],
+      ];
+    }
   }
 
-  return [];
+  return FALSE;
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function fontawesome_entity_presave(EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    // Loop over the fields.
+    foreach ($entity->getFields() as $fields) {
+      if ($fields instanceof ItemList) {
+        // If this is a text field (uses an editor).
+        if (in_array($fields->getFieldDefinition()->getType(), [
+          'text',
+          'text_long',
+          'text_with_summary',
+        ])) {
+          foreach ($fields as $field) {
+            // Find and replace SVG strings with original icon HTML.
+            $fieldValue = $field->getValue();
+            $fieldValue['value'] = preg_replace('%<svg .*?class="svg-inline--fa.*?<\/svg><!--\s?(.*?)\s?-->%', '$1', $fieldValue['value']);
+            $field->setValue($fieldValue);
+          }
+        }
+      }
+    }
+  }
 }
 
 /**
  * Implements hook_editor_js_settings_alter().
+ *
+ * This function allows for the proper functionality of the icons inside the
+ * CKEditor when using SVG with JS as the Font Awesome display method. This
+ * function also provides for the use of empty tags inside the CKEditor. These
+ * tags are normally stripped, which makes the traditional method of using
+ * Font Awesome unworkable. Allowing those tags here lets users use the methods
+ * of including icons described in all of the Font Awesome guides and docs.
+ *
+ * See fontawesome_ckeditor_css_alter() for allowing the use of the icons
+ * inside CKEditor when using the Webfonts with CSS display method.
  */
 function fontawesome_editor_js_settings_alter(array &$settings) {
+  // Load the configuration settings.
+  $configuration_settings = \Drupal::config('fontawesome.settings');
+
+  // Attach our JS libraries as needed for loading inside the editor.
+  if ($configuration_settings->get('method') == 'svg') {
+    // SVG mode requires loading javascript.
+    $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome.svg');
+    if (!$configuration_settings->get('use_cdn')) {
+      $fontawesome_library['js'][0]['data'] = '/' . $fontawesome_library['js'][0]['data'];
+    }
+    $settings['editor']['fontawesome']['fontawesomeLibraries']['primary'] = $fontawesome_library['js'][0]['data'];
+
+    // Load the shim file as well if needed.
+    if ($configuration_settings->get('use_shim')) {
+      $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome.svg.shim');
+      if (!$configuration_settings->get('use_cdn')) {
+        $fontawesome_library['js'][0]['data'] = '/' . $fontawesome_library['js'][0]['data'];
+      }
+      $settings['editor']['fontawesome']['fontawesomeLibraries']['shim'] = $fontawesome_library['js'][0]['data'];
+    }
+  }
+
   // Attach the list of allowed empty tags.
   $settings['editor']['fontawesome']['allowedEmptyTags'] = ['i', 'span'];
 }

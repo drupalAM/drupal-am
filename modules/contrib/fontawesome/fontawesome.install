@@ -5,6 +5,8 @@
  * Requirements page for Font Awesome.
  */
 
+use Drupal\Core\Link;
+
 /**
  * Implements hook_requirements().
  */
@@ -14,29 +16,36 @@ function fontawesome_requirements($phase) {
   // Report the version of Font Awesome.
   if ($phase == 'runtime') {
     $requirements['fontawesome'] = [
-      'title' => t('Fontawesome'),
+      'title' => t('Font Awesome 5'),
     ];
 
-    // Don't really check for Font Awesome if we are using the CDN version.
-    if (\Drupal::config('fontawesome.settings')->get('fontawesome_use_cdn')) {
-      $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome.cdn');
-      $requirements['fontawesome']['severity'] = REQUIREMENT_OK;
-      $requirements['fontawesome']['value'] = t('Using CDN version: %version', [
-        '%version' => $fontawesome_library['css'][0]['data'],
-      ]);
-    }
-    // Check if the library exists locally.
-    else {
-      // Verify the library is installed.
-      $fontawesome_library = \Drupal::service('library.discovery')->getLibraryByName('fontawesome', 'fontawesome');
-      if (file_exists(DRUPAL_ROOT . '/' . $fontawesome_library['css'][0]['data'])) {
-        $requirements['fontawesome']['severity'] = REQUIREMENT_OK;
-        $requirements['fontawesome']['value'] = t('Font Awesome library is installed.');
+    // Load the configuration settings.
+    $configuration_settings = \Drupal::config('fontawesome.settings');
+
+    // Check if Font Awesome is installed.
+    if (fontawesome_check_installed()) {
+      // Get the version.
+      if ($configuration_settings->get('method') == 'webfonts') {
+        $version = 'Webfonts with CSS';
+      }
+      elseif ($configuration_settings->get('use_cdn')) {
+        $version = 'CDN SVG with JS';
       }
       else {
-        $requirements['fontawesome']['severity'] = REQUIREMENT_WARNING;
-        $requirements['fontawesome']['value'] = t('Font Awesome library is not installed. View the README for more information on installing Font Awesome.');
+        $version = 'SVG with JS';
       }
+      $requirements['fontawesome']['severity'] = REQUIREMENT_OK;
+      $requirements['fontawesome']['value'] = t('Font Awesome 5 library is installed. Using %version version. (@moreInfoLink)', [
+        '%version' => $version,
+        '@moreInfoLink' => Link::createFromRoute(t('more information'), 'fontawesome.admin_settings')->toString(),
+      ]);
+    }
+    else {
+      $requirements['fontawesome']['severity'] = REQUIREMENT_ERROR;
+      $requirements['fontawesome']['value'] = t('Not installed');
+      $requirements['fontawesome']['description'] = t('The Font Awesome 5 library could not be found. Please verify Font Awesome 5 is installed correctly or that the CDN has been activated and properly configured. Please see the @adminPage and the Font Awesome module README file for more details.', [
+        '@adminPage' => Link::createFromRoute(t('admin page'), 'fontawesome.admin_settings')->toString(),
+      ]);
     }
   }
 

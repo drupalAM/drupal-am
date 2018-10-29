@@ -4,14 +4,17 @@ CONTENTS OF THIS FILE
 
  * Introduction
  * Installation
+ * Usage
  * Credits
 
 
-INTRODUCTION 8.x version
+INTRODUCTION 8.2.x version
 ------------
-Font Awesome (http://fontawesome.io) is the iconic font designed for use with
-Bootstrap (http://getbootstrap.com). 8.x branch is under heavy development and
-is supposed to be used for testing and bug fixes only.
+Font Awesome (http://fontawesome.com) is the web's most popular icon set and
+toolkit. This release of the Font Awesome Icons module supports Font Awesome
+versions higher than 5.0. For older versions of Font Awesome, you should
+download and install Font Awesome Icons 8.1.x. See the Font Awesome Icons
+page on Drupal.org for more information.
 
 "fontawesome" provides integration of "Font Awesome" with Drupal. Once enabled
 "Font Awesome" icon fonts could be used as:
@@ -19,10 +22,10 @@ is supposed to be used for testing and bug fixes only.
 1. Directly inside of any HTML (node/block/view/panel). Inside HTML you can
    place Font Awesome icons just about anywhere with an <i> tag.
 
-   Example for an info icon: <i class="fa fa-info-circle"></i>
+   Example for an info icon: <i class="fas fa-camera-retro"></i>
 
    See more examples of using "Font Awesome" within HTML at:
-   http://fontawesome.io/whats-new/examples/
+   https://fontawesome.com/how-to-use/svg-with-js
 
 
 INSTALLATION
@@ -41,7 +44,10 @@ INSTALLATION
 
     and then using another drush command:-
 
+    (Drush 8)
     $ drush fa-download
+    (Drush 9)
+    $ drush fa:download
 
 2. Manually
 
@@ -49,12 +55,44 @@ INSTALLATION
        - run "drush fa-download" (recommended, it will download the right
          package and extract it at the right place for you.)
        - manual install: Download & extract "Font Awesome"
-         (http://fontawesome.io) and place inside
-         "/libraries/fontawesome" directory. The CSS file should
-         be /libraries/fontawesome/css/font-awesome.css
-         Direct link for downloading latest version (current is v4.7.0) is:
-         https://github.com/FortAwesome/Font-Awesome/archive/master.zip
+         (http://fontawesome.com) and place inside
+         "/libraries/fontawesome" directory. The JS file should
+         be at /libraries/fontawesome/js/all.js
+         Direct link for downloading latest version (current is v5.4.1) is:
+         https://use.fontawesome.com/releases/v5.4.1/fontawesome-free-5.4.1-web.zip
     b. Enable the module at Administer >> Site building >> Modules.
+
+
+USAGE
+_____
+Font Awesome can be used in many ways - you can manually insert Font Awesome
+tags wherever you see fit after enabling the module, but there are other ways
+as well. See
+  https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=svg-with-js
+for information on basic usage.
+
+CSS Pseudo-elements - if you are using the older version of Font Awesome, CSS
+with webfonts, you can use CSS Pseudo-elements for inserting your icons rather
+than the default method. See
+  https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements
+for more information on how to add the icons through CSS.
+
+Font Awesome icon field - this module includes the option to add a Font Awesome
+icon field to any of your content types without the need for coding.
+
+Font Awesome CKEditor plugin - this module includes a CKEditor plugin which
+will allow you to insert Font Awesome icons into any CKEditor text field with
+the plugin enabled. It can be enabled under
+  Configuration -> Content authoring -> Text formats and editors
+From here, simply add the icon to your active toolbar (it looks like a flag).
+Please note that in order to use SVG with JS version of Font Awesome, you will
+need to either disable the "Correct faulty and chopped off HTML" filter, or you
+will have to add the required SVG tags to the exception list. A list of SVG
+tags can be found here:
+  https://www.w3.org/TR/SVG11/eltindex.html
+  or
+  https://developer.mozilla.org/en-US/docs/Web/SVG/Element
+
 
 CREDITS
 -------
@@ -63,3 +101,4 @@ CREDITS
 * Mark Carver https://www.drupal.org/u/mark-carver
 * Brian Gilbert https://drupal.org/u/realityloop
 * Daniel Moberly https://drupal.org/u/danielmoberly
+* Truls S. Yggeseth https://drupal.org/u/truls1502

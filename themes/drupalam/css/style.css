@@ -7419,28 +7419,50 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       line-height: 20px;
       letter-spacing: 1px;
       text-transform: uppercase; }
+      .path-contact .contact-message-feedback-form #edit-submit:hover {
+        -moz-opacity: 0.7;
+        -khtml-opacity: 0.7;
+        -webkit-opacity: 0.7;
+        opacity: 0.7;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+        filter: alpha(opacity=70); }
     .path-contact .contact-message-feedback-form #edit-preview {
       display: none; }
-  .path-contact .contact-social-icons {
+  .path-contact .contact-social-icons, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 {
     margin-bottom: 40px; }
-    .path-contact .contact-social-icons ul {
+    .path-contact .contact-social-icons ul, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 ul {
       list-style-type: none;
       padding: 0;
       margin: 0; }
-    .path-contact .contact-social-icons li {
+    .path-contact .contact-social-icons li, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li {
       float: left;
       font-size: 40px;
-      margin-right: 15px; }
-  .path-contact .fa-facebook {
-    color: #4267B2; }
-  .path-contact .fa-twitter {
-    color: #1DA1F2; }
-  .path-contact .fa-google-plus {
-    color: #DD4C39; }
-  .path-contact .fa-telegram {
-    color: #179CDE; }
-  .path-contact .fa-github {
-    color: #24292E; }
+      margin-right: 15px;
+      -moz-transition: 0.3s;
+      -o-transition: 0.3s;
+      -webkit-transition: 0.3s;
+      transition: 0.3s; }
+      .path-contact .contact-social-icons li:hover, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li:hover {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        -webkit-transition: 0.3s;
+        transition: 0.3s; }
+      .path-contact .contact-social-icons li a, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a {
+        color: #777; }
+        .path-contact .contact-social-icons li a:hover .fa-facebook-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-facebook-square {
+          color: #4267B2; }
+        .path-contact .contact-social-icons li a:hover .fa-twitter-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-twitter-square {
+          color: #1DA1F2; }
+        .path-contact .contact-social-icons li a:hover .fa-google-plus-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-google-plus-square {
+          color: #DD4C39; }
+        .path-contact .contact-social-icons li a:hover .fa-telegram-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-telegram-square {
+          color: #179CDE; }
+        .path-contact .contact-social-icons li a:hover .fa-github-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-github-square {
+          color: #24292E; }
   .path-contact .contact-details {
     margin-bottom: 0;
     font-size: 13px; }
