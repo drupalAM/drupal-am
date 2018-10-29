@@ -20,38 +20,34 @@ conditions:
 reactions:
   blocks:
     blocks:
-      32614860-b99d-4140-9ec1-33b0244175fd:
-        id: 'block_content:08ef2200-c00d-4366-a33b-ccf25a371076'
+      b9f05de1-8ba7-45a7-822e-1be4cbef11b1:
+        id: 'fixed_block_content:social_icons_for_contact_page'
         label: 'We are in socials'
-        provider: block_content
+        provider: fixed_block_content
         label_display: visible
-        status: true
-        info: ''
-        view_mode: full
         region: sidebar_second
         weight: '0'
+        view_mode: ''
         context_mapping: {  }
         theme: drupalam
         css_class: contact-social-icons
         unique: 0
         context_id: contact
-        uuid: 32614860-b99d-4140-9ec1-33b0244175fd
-      49c349f8-7bc7-41bc-8acd-32896332d4a9:
-        id: 'block_content:a56f9731-cebe-4041-a63a-731f61708ab5'
+        uuid: b9f05de1-8ba7-45a7-822e-1be4cbef11b1
+      803f31bd-7675-4989-96d7-760921dca2d9:
+        id: 'fixed_block_content:contact_details'
         label: 'Contact details'
-        provider: block_content
+        provider: fixed_block_content
         label_display: visible
-        status: true
-        info: ''
-        view_mode: full
         region: sidebar_second
         weight: '1'
+        view_mode: ''
         context_mapping: {  }
         theme: drupalam
         css_class: contact-details
         unique: 0
         context_id: contact
-        uuid: 49c349f8-7bc7-41bc-8acd-32896332d4a9
+        uuid: 803f31bd-7675-4989-96d7-760921dca2d9
     id: blocks
     saved: false
     uuid: 8117047f-fb30-44b9-b742-a062c6fdc611

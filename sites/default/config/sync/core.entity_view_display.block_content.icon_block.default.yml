@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.icon_block
     - field.field.block_content.icon_block.field_social_icons
   module:
+    - ds
     - field_layout
     - linkicon
 third_party_settings:
@@ -42,7 +43,15 @@ content:
       linkicon_no_text: false
       linkicon_bundle: ''
       trim_length: 80
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: linkicon
     region: content
 hidden: {  }
