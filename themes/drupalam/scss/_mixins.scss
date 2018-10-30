@@ -119,7 +119,7 @@
   &:#{$place} {
     content: $icon;
     display: inline-block;
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
     font-size: $size;
     color: $color;
     @content;

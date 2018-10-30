@@ -7343,12 +7343,11 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       opacity: 0.9;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
       filter: alpha(opacity=90); }
-  .page-node-type-case-study .sis-prev-arrow:before {
-    content: "";
-    display: inline-block;
-    font-family: FontAwesome;
-    font-size: inherit;
-    color: inherit; }
+  .page-node-type-case-study .sis-prev-arrow:after {
+    content: "\f09a";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    font-size: 20px; }
   .page-node-type-case-study .sis-next-arrow:before {
     content: "";
     display: inline-block;

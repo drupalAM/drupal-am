@@ -52,7 +52,7 @@
      * Inits the main functionality.
      */
 
-    function init() {console.log(pageWidth);
+    function init() {
 
       var defWidth = parseInt($items.eq(0).data('defwidth'), 10);
       if ($container.hasClass('pc-no-spacing')) {
