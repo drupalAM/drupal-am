@@ -95,13 +95,20 @@ bundle: case_study
 mode: mainstage
 content:
   body:
-    type: text_summary_or_trimmed
+    type: text_trimmed
     weight: 5
     region: main
     label: hidden
     settings:
-      trim_length: 600
-    third_party_settings: {  }
+      trim_length: 200
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_case_study_image:
     type: image
     weight: 13

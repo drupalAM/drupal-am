@@ -104,10 +104,18 @@ mode: mainstage
 content:
   body:
     label: hidden
-    type: text_default
+    type: text_trimmed
     weight: 15
-    settings: {  }
-    third_party_settings: {  }
+    settings:
+      trim_length: 200
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     region: main
   field_heroslide_image:
     weight: 1
