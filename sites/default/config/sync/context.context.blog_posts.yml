@@ -21,7 +21,22 @@ conditions:
       node: '@node.node_route_context:node'
 reactions:
   blocks:
-    blocks: {  }
+    blocks:
+      cb19e8c3-4bb1-4cb8-9dbb-c3ce96dd2c62:
+        id: 'views_block:blog_posts-recent_posts_block'
+        label: ''
+        provider: views
+        label_display: visible
+        views_label: ''
+        items_per_page: none
+        region: sidebar_second
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 1
+        context_id: blog_posts
+        uuid: cb19e8c3-4bb1-4cb8-9dbb-c3ce96dd2c62
     id: blocks
     saved: false
     uuid: 241682dd-f8b2-4d4d-80c6-ebf320bd30d3

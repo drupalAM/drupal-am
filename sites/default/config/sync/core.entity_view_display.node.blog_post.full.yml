@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
     - core.entity_view_mode.node.full
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_blog_category
@@ -13,7 +12,6 @@ dependencies:
     - node.type.blog_post
   module:
     - colorbox
-    - comment
     - ds
     - text
     - user
@@ -35,16 +33,27 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - node_title
         - field_blog_image
+        - node_post_date
+        - node_submitted_by
+        - node_title
         - body
         - field_blog_category
         - field_blog_tags
-        - field_blog_comments
     fields:
+      node_post_date:
+        plugin_id: node_post_date
+        weight: 1
+        label: hidden
+        formatter: ds_post_date_long
+      node_submitted_by:
+        plugin_id: node_submitted_by
+        weight: 2
+        label: hidden
+        formatter: ds_post_date_long
       node_title:
         plugin_id: node_title
-        weight: 0
+        weight: 3
         label: hidden
         formatter: default
 _core:
@@ -56,13 +65,13 @@ mode: full
 content:
   body:
     type: text_default
-    weight: 2
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     label: hidden
     region: ds_content
   field_blog_category:
-    weight: 3
+    weight: 5
     label: above
     settings:
       view_mode: default
@@ -78,24 +87,8 @@ content:
             classes: {  }
     type: entity_reference_entity_view
     region: ds_content
-  field_blog_comments:
-    type: comment_default
-    weight: 5
-    settings:
-      pager_id: 0
-      view_mode: default
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: 'Post tags'
-            lb-col: false
-            classes: {  }
-    label: hidden
-    region: ds_content
   field_blog_image:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       colorbox_node_style: ''
@@ -110,7 +103,7 @@ content:
     region: ds_content
   field_blog_tags:
     type: entity_reference_entity_view
-    weight: 4
+    weight: 6
     settings:
       link: true
       view_mode: default
@@ -118,4 +111,5 @@ content:
     label: above
     region: ds_content
 hidden:
+  field_blog_comments: true
   links: true
