@@ -1,14 +1,12 @@
-uuid: 62fd8996-4f75-4165-9975-5317d8af8555
+uuid: 6d629757-2ddd-4d39-8400-a05049203cf8
 langcode: en
 status: true
 dependencies:
   module:
     - comment
     - node
-_core:
-  default_config_hash: ktCna9xmWvYZIUfOCUyDQvedn5RtnS4CRmEIwNmvYjc
-id: node.comment
-field_name: comment
+id: node.field_blog_comments
+field_name: field_blog_comments
 entity_type: node
 type: comment
 settings:
@@ -19,4 +17,3 @@ cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
-custom_storage: false

@@ -6,6 +6,7 @@ module:
   better_normalizers: 0
   block: 0
   block_content: 0
+  blog: 0
   bootstrap_layouts: 0
   breakpoint: 0
   captcha: 0

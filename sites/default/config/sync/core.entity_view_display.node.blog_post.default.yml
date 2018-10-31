@@ -1,0 +1,81 @@
+uuid: f1bd8663-502d-4bf6-9b25-37104eafa529
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_blog_category
+    - field.field.node.blog_post.field_blog_comments
+    - field.field.node.blog_post.field_blog_image
+    - field.field.node.blog_post.field_blog_tags
+    - node.type.blog_post
+  module:
+    - colorbox
+    - comment
+    - ds
+    - text
+    - user
+_core:
+  default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
+id: node.blog_post.default
+targetEntityType: node
+bundle: blog_post
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    label: hidden
+    region: content
+  field_blog_category:
+    weight: 3
+    label: inline
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: IN
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_blog_comments:
+    type: comment_default
+    weight: 5
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+    label: hidden
+    region: content
+  field_blog_image:
+    weight: 1
+    label: hidden
+    settings:
+      colorbox_node_style: ''
+      colorbox_node_style_first: ''
+      colorbox_image_style: ''
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+    third_party_settings: {  }
+    type: colorbox
+    region: content
+  field_blog_tags:
+    type: entity_reference_label
+    weight: 4
+    settings:
+      link: true
+    third_party_settings: {  }
+    label: hidden
+    region: content
+hidden:
+  links: true
