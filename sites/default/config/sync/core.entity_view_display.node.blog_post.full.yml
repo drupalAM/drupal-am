@@ -13,49 +13,143 @@ dependencies:
   module:
     - colorbox
     - ds
+    - field_group
     - text
     - user
 third_party_settings:
   ds:
     layout:
-      id: ds_reset
+      id: bs_1col_stacked
       library: null
       disable_css: false
       entity_classes: all_classes
       settings:
-        wrappers:
-          ds_content: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: ''
-        link_custom: ''
-        classes:
-          layout_class: {  }
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          top:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+          bottom:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
     regions:
-      ds_content:
+      top:
         - field_blog_image
-        - node_post_date
-        - node_submitted_by
+      main:
+        - group_post_info
+        - 'dynamic_token_field:node-post_date_custom_format_'
         - node_title
+        - 'dynamic_token_field:node-submitted_by_custom_'
         - body
         - field_blog_category
         - field_blog_tags
     fields:
-      node_post_date:
-        plugin_id: node_post_date
-        weight: 1
-        label: hidden
-        formatter: ds_post_date_long
-      node_submitted_by:
-        plugin_id: node_submitted_by
+      'dynamic_token_field:node-post_date_custom_format_':
+        plugin_id: 'dynamic_token_field:node-post_date_custom_format_'
         weight: 2
         label: hidden
-        formatter: ds_post_date_long
-      node_title:
-        plugin_id: node_title
+        formatter: default
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: span
+            fi-cl: field--name-field-post-date
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+      'dynamic_token_field:node-submitted_by_custom_':
+        plugin_id: 'dynamic_token_field:node-submitted_by_custom_'
         weight: 3
         label: hidden
         formatter: default
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: span
+            fi-cl: field--name-field-submitted-by
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+  field_group:
+    group_post_info:
+      children:
+        - 'dynamic_token_field:node-post_date_custom_format_'
+        - 'dynamic_token_field:node-submitted_by_custom_'
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: 'Post info'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: post-info
+      label: 'Post info'
+      region: hidden
 _core:
   default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
 id: node.blog_post.full
@@ -65,13 +159,13 @@ mode: full
 content:
   body:
     type: text_default
-    weight: 4
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     label: hidden
-    region: ds_content
+    region: main
   field_blog_category:
-    weight: 5
+    weight: 4
     label: above
     settings:
       view_mode: default
@@ -86,7 +180,7 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_entity_view
-    region: ds_content
+    region: main
   field_blog_image:
     weight: 0
     label: hidden
@@ -100,16 +194,16 @@ content:
       colorbox_caption_custom: ''
     third_party_settings: {  }
     type: colorbox
-    region: ds_content
+    region: top
   field_blog_tags:
     type: entity_reference_entity_view
-    weight: 6
+    weight: 5
     settings:
       link: true
       view_mode: default
     third_party_settings: {  }
     label: above
-    region: ds_content
+    region: main
 hidden:
   field_blog_comments: true
   links: true

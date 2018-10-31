@@ -1,0 +1,11 @@
+id: submitted_by_custom_
+label: 'Submitted by (custom)'
+ui_limit: '*|full'
+properties:
+  content:
+    value: "by <a href=\"[current-user:url]\">[current-user:account-name]</a>\r\n"
+    format: basic_html
+type: token
+type_label: 'Token field'
+entities:
+  node: node

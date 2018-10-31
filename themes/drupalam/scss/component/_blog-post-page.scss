@@ -1,0 +1,36 @@
+body.page-node-type-blog-post {
+  .main-container {
+    padding-top: 92px;
+    padding-bottom: 20px;
+    background-color: #f7f7f7;
+  }
+
+  .region-content {
+    background-color: $white;
+  }
+
+  .node--view-mode-full {
+    .bs-region--main {
+      padding: 5% 30px;
+
+    }
+
+    .post-info {
+      padding-bottom: 9px;
+      line-height: 17px;
+      letter-spacing: 2px;
+      color: #b3b3b1;
+      text-transform: uppercase;
+    }
+
+    .field--name-node-title h2 {
+      padding-bottom: 15px;
+      padding-top: 0;
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 0;
+      color: $gray-dark;
+    }
+  }
+}

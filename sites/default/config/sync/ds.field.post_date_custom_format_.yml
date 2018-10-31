@@ -1,0 +1,11 @@
+id: post_date_custom_format_
+label: 'Post date (custom format)'
+ui_limit: '*|full'
+properties:
+  content:
+    value: "[date:custom:F j, Y]\r\n"
+    format: basic_html
+type: token
+type_label: 'Token field'
+entities:
+  node: node
