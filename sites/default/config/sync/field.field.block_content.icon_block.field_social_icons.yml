@@ -22,5 +22,5 @@ default_value_callback: ''
 settings:
   link_type: 17
   title: 5
-  title_predefined: "facebook|Facebook\r\nfacebook-square|Facebook(square)\r\ntwitter|Twitter\r\ntwitter-square|Twitter(square)\r\ngoogle-plus|Google+|[node:title]\r\ngoogle-plus-square|Google+(square)|[node:title]\r\nlinkedin|Linkedin\r\npinterest|Pinterest\r\nvimeo|Vimeo\r\nyoutube|Youtube\r\ngithub|GitHub\r\ngithub-square|GitHub(square)\r\ntelegram-plane|Telegram\r\ntelegram-square|Telegram(square)"
+  title_predefined: "facebook|Facebook\r\nfacebook-square|Facebook(square)\r\ntwitter|Twitter\r\ntwitter-square|Twitter(square)\r\ngoogle-plus|Google+|[node:title]\r\ngoogle-plus-square|Google+(square)|[node:title]\r\nlinkedin|Linkedin\r\npinterest|Pinterest\r\nvimeo|Vimeo\r\nyoutube|Youtube\r\ngithub|GitHub\r\ngithub-square|GitHub(square)\r\ntelegram|Telegram\r\ntelegram-square|Telegram(square)"
 field_type: link
