@@ -59,6 +59,7 @@ third_party_settings:
         - 'dynamic_token_field:node-submitted_by_custom_'
         - body
         - field_blog_category
+        - group_blog_tags
         - field_blog_tags
     fields:
       'dynamic_token_field:node-post_date_custom_format_':
@@ -150,6 +151,24 @@ third_party_settings:
         classes: post-info
       label: 'Post info'
       region: hidden
+    group_blog_tags:
+      children:
+        - field_blog_tags
+      parent_name: ''
+      weight: 5
+      format_type: html_element
+      format_settings:
+        label: 'Blog tags wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: blog-tags
+      label: 'Blog tags wrapper'
+      region: hidden
 _core:
   default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
 id: node.blog_post.full
@@ -168,13 +187,13 @@ content:
     weight: 4
     label: above
     settings:
-      view_mode: default
+      view_mode: teaser
       link: false
     third_party_settings:
       ds:
         ds_limit: ''
         ft:
-          id: default
+          id: minimal
           settings:
             lb: IN
             lb-col: false
@@ -199,9 +218,15 @@ content:
     type: entity_reference_entity_view
     weight: 5
     settings:
-      link: true
       view_mode: default
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
     label: above
     region: main
 hidden:

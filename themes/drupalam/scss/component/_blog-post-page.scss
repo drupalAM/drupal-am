@@ -2,7 +2,7 @@ body.page-node-type-blog-post {
   .main-container {
     padding-top: 92px;
     padding-bottom: 20px;
-    background-color: #f7f7f7;
+    background-color: $brand-bg;
   }
 
   .region-content {
@@ -31,6 +31,57 @@ body.page-node-type-blog-post {
       line-height: 1.1;
       margin-bottom: 0;
       color: $gray-dark;
+    }
+
+    .field--name-body {
+      margin-bottom: 20px;
+    }
+
+    .field-name-field-blog-category {
+      line-height: 17px;
+      letter-spacing: 2px;
+      color: #b3b3b1;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      .field-label-above {
+        display: inline;
+
+      }
+
+      a {
+        color: inherit;
+        margin: 0 5px;
+      }
+    }
+
+    .blog-tags {
+      display: flex;
+      margin-top: 25px;
+
+      .field-label-above {
+        margin-right: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 11px;
+      }
+
+      h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+      }
+
+      a {
+        display: block;
+        margin-left: 5px;
+        padding: 0 5px;
+        background: $brand-bg;
+        color: $btn-default-color;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 10px;
+      }
     }
   }
 }

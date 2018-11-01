@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_blog_tags
     - node.type.blog_post
+    - taxonomy.vocabulary.tag
 _core:
   default_config_hash: 6QHl03VVngvx32KhKkKIk8bJNsq8ufW51gOQcScfDfo
 id: node.blog_post.field_blog_tags
@@ -21,8 +22,9 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      tag: tag
     sort:
       field: _none
     auto_create: true
+    auto_create_bundle: ''
 field_type: entity_reference
