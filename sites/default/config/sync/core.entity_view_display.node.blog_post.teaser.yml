@@ -1,34 +1,154 @@
-uuid: fd847641-6b8e-4574-ae02-2cfa5e1e1121
+uuid: 20ecf71a-dd1f-40d8-ae71-37a96ffba131
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_blog_category
     - field.field.node.blog_post.field_blog_comments
+    - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
+    - image.style.crop_55_x_45
     - node.type.blog_post
   module:
-    - text
+    - ds
+    - field_group
+    - image
     - user
+third_party_settings:
+  field_group:
+    group_post_info:
+      children:
+        - node_title
+        - 'dynamic_token_field:node-post_date_custom_short_format_'
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: 'Post info'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: post-info
+      label: 'Post info'
+      region: hidden
+    group_blog_tags:
+      children: {  }
+      parent_name: ''
+      weight: 17
+      format_type: html_element
+      format_settings:
+        label: 'Blog tags wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: blog-tags
+      label: 'Blog tags wrapper'
+      region: hidden
+  ds:
+    layout:
+      id: ds_reset
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_blog_image
+        - group_post_info
+        - node_title
+        - 'dynamic_token_field:node-post_date_custom_short_format_'
+    fields:
+      'dynamic_token_field:node-post_date_custom_short_format_':
+        plugin_id: 'dynamic_token_field:node-post_date_custom_short_format_'
+        weight: 3
+        label: hidden
+        formatter: default
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: div
+            fi-cl: field-post-date
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 _core:
-  default_config_hash: gqUHHx-4UwnTezIrGlysysNxX28eHO9wB-FBt5WHnf4
+  default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
 id: node.blog_post.teaser
 targetEntityType: node
 bundle: blog_post
 mode: teaser
 content:
-  body:
+  field_blog_image:
+    weight: 0
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    region: content
+      image_style: crop_55_x_45
+      image_link: content
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: ds_content
 hidden:
+  body: true
+  field_blog_category: true
   field_blog_comments: true
   field_blog_tags: true
+  links: true

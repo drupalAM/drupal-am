@@ -11,9 +11,9 @@ dependencies:
     - field.field.node.blog_post.field_blog_tags
     - node.type.blog_post
   module:
-    - colorbox
     - ds
     - field_group
+    - image
     - text
     - user
 third_party_settings:
@@ -54,13 +54,13 @@ third_party_settings:
         - field_blog_image
       main:
         - group_post_info
-        - 'dynamic_token_field:node-post_date_custom_format_'
         - node_title
-        - 'dynamic_token_field:node-submitted_by_custom_'
+        - 'dynamic_token_field:node-post_date_custom_format_'
         - body
+        - 'dynamic_token_field:node-submitted_by_custom_'
         - field_blog_category
-        - group_blog_tags
         - field_blog_tags
+        - group_blog_tags
     fields:
       'dynamic_token_field:node-post_date_custom_format_':
         plugin_id: 'dynamic_token_field:node-post_date_custom_format_'
@@ -204,15 +204,10 @@ content:
     weight: 0
     label: hidden
     settings:
-      colorbox_node_style: ''
-      colorbox_node_style_first: ''
-      colorbox_image_style: ''
-      colorbox_gallery: post
-      colorbox_gallery_custom: ''
-      colorbox_caption: auto
-      colorbox_caption_custom: ''
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: colorbox
+    type: image
     region: top
   field_blog_tags:
     type: entity_reference_entity_view

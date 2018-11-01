@@ -7552,6 +7552,42 @@ body.page-node-type-blog-post .node--view-mode-full .blog-tags {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 10px; }
+body.page-node-type-blog-post .region-sidebar-second {
+  margin-top: 20px; }
+  body.page-node-type-blog-post .region-sidebar-second .block-title {
+    margin-bottom: 15px;
+    padding: 7px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px; }
+  body.page-node-type-blog-post .region-sidebar-second .item-list ul {
+    padding: 0; }
+  body.page-node-type-blog-post .region-sidebar-second .item-list li {
+    list-style-type: none;
+    padding: 3px 0 2px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex; }
+  body.page-node-type-blog-post .region-sidebar-second .item-list .field--name-field-blog-image {
+    flex-basis: 20%; }
+    body.page-node-type-blog-post .region-sidebar-second .item-list .field--name-field-blog-image img {
+      padding: 3px;
+      margin: 8px 15px 5px 0;
+      box-sizing: content-box; }
+  body.page-node-type-blog-post .region-sidebar-second .item-list .post-info {
+    flex-basis: 80%;
+    margin-top: 10px; }
+    body.page-node-type-blog-post .region-sidebar-second .item-list .post-info .field--name-node-title h2,
+    body.page-node-type-blog-post .region-sidebar-second .item-list .post-info .field-post-date {
+      padding: 0;
+      font-size: 13px;
+      margin: 0; }
+    body.page-node-type-blog-post .region-sidebar-second .item-list .post-info .field-post-date {
+      -moz-opacity: 0.5;
+      -khtml-opacity: 0.5;
+      -webkit-opacity: 0.5;
+      opacity: 0.5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50); }
 
 .path-user {
   background-color: #f7f7f7; }
