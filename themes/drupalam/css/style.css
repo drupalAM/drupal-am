@@ -7453,15 +7453,15 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
         transition: 0.3s; }
       .path-contact .contact-social-icons li a, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a {
         color: #777; }
-        .path-contact .contact-social-icons li a:hover .fa-facebook-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-facebook-square {
+        .path-contact .contact-social-icons li a:hover .fa-facebook-f, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-facebook-f {
           color: #4267B2; }
-        .path-contact .contact-social-icons li a:hover .fa-twitter-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-twitter-square {
+        .path-contact .contact-social-icons li a:hover .fa-twitter, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-twitter {
           color: #1DA1F2; }
-        .path-contact .contact-social-icons li a:hover .fa-google-plus-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-google-plus-square {
+        .path-contact .contact-social-icons li a:hover .fa-google-plus-g, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-google-plus-g {
           color: #DD4C39; }
-        .path-contact .contact-social-icons li a:hover .fa-telegram-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-telegram-square {
+        .path-contact .contact-social-icons li a:hover .fa-telegram, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-telegram {
           color: #179CDE; }
-        .path-contact .contact-social-icons li a:hover .fa-github-square, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-github-square {
+        .path-contact .contact-social-icons li a:hover .fa-github, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a:hover .fa-github {
           color: #24292E; }
   .path-contact .contact-details {
     margin-bottom: 0;

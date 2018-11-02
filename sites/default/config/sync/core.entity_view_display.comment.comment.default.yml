@@ -5,7 +5,9 @@ dependencies:
   config:
     - comment.type.comment
     - field.field.comment.comment.comment_body
+    - field.field.comment.comment.field_image
   module:
+    - image
     - text
 _core:
   default_config_hash: 77Ye1kR-P6AaiGfEO8mnXNSr7nqtnP3PiiVBwJeGGMI
@@ -15,14 +17,23 @@ bundle: comment
 mode: default
 content:
   comment_body:
-    label: hidden
     type: text_default
     weight: 0
     region: content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
   links:
-    weight: 100
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }

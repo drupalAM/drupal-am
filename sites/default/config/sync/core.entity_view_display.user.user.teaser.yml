@@ -9,7 +9,7 @@ dependencies:
     - field.field.user.user.field_user_friends
     - field.field.user.user.field_user_last_name
     - field.field.user.user.user_picture
-    - image.style.medium
+    - image.style.focal_medium_220_220_
   module:
     - ds
     - image
@@ -52,7 +52,7 @@ content:
     weight: 0
     region: ds_content
     settings:
-      image_style: medium
+      image_style: focal_medium_220_220_
       image_link: content
     third_party_settings:
       ds:

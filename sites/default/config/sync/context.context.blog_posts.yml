@@ -37,6 +37,21 @@ reactions:
         unique: 1
         context_id: blog_posts
         uuid: cb19e8c3-4bb1-4cb8-9dbb-c3ce96dd2c62
+      33eddfb3-361a-45a1-b805-f19b4e30d60e:
+        id: 'entity_view:node'
+        label: Comments
+        provider: ctools
+        label_display: 0
+        view_mode: comment
+        region: content
+        weight: '0'
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        theme: drupalam
+        css_class: comments-block
+        unique: 0
+        context_id: blog_posts
+        uuid: 33eddfb3-361a-45a1-b805-f19b4e30d60e
     id: blocks
     saved: false
     uuid: 241682dd-f8b2-4d4d-80c6-ebf320bd30d3

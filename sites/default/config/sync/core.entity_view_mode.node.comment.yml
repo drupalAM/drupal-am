@@ -1,0 +1,10 @@
+uuid: be018440-f6ee-4f40-b3b6-6b41f641ce38
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.comment
+label: Comment
+targetEntityType: node
+cache: true

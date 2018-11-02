@@ -44,7 +44,7 @@ reactions:
         provider: system
         label_display: 0
         region: content
-        weight: '-2'
+        weight: '-1'
         context_mapping: {  }
         theme: drupalam
         css_class: ''

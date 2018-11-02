@@ -1,0 +1,17 @@
+uuid: 6dd1c42d-9122-48ce-950a-9c4964b80ce3
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: focal_medium_220_220_
+label: 'Focal medium (220×220)'
+effects:
+  c14059d7-b35f-4314-90f8-086608da618e:
+    uuid: c14059d7-b35f-4314-90f8-086608da618e
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 220
+      height: 220
+      crop_type: focal_point
