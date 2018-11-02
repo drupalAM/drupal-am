@@ -68,3 +68,7 @@ function drupalam_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'drupalam/case-study-scripts';
   }
 }
+
+function drupalam_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  //var_dump($form);
+}

@@ -3,17 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.test_comment_type.default
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_blog_category
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
-    - field.field.node.blog_post.field_comments
     - node.type.blog_post
   module:
     - colorbox
-    - comment
     - ds
     - text
     - user
@@ -68,15 +65,6 @@ content:
       link: true
     third_party_settings: {  }
     label: hidden
-    region: content
-  field_comments:
-    weight: 4
-    label: above
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    type: comment_default
     region: content
 hidden:
   field_blog_comments: true

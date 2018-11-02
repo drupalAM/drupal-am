@@ -75,10 +75,7 @@
   #}
   <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
 
-
-{#{{ kint() }}#}
-
-  <div{{ content_attributes }}>
+  <div class="comment-box"{{ content_attributes }}>
     <div class="user-name">{{ author }}</div>
     <div class="user-picture">{{ user_picture }}</div>
     <div class="changed-time">{{ new_indicator_timestamp|date('F j, Y') }}</div>

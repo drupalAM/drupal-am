@@ -1,0 +1,19 @@
+uuid: 62ec717c-ba89-4e7b-b2f3-e51c4f1217eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.storage.comment.field_comment_website
+id: comment.comment.field_comment_website
+field_name: field_comment_website
+entity_type: comment
+bundle: comment
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

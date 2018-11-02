@@ -1,17 +1,16 @@
-uuid: ce5191e3-be04-4b40-bab2-b93a4c8b09e5
+uuid: 32250e4b-d420-4499-a9c8-9cfb90eb1b24
 langcode: en
 status: true
 dependencies:
   module:
     - comment
-    - node
-id: node.field_comments
-field_name: field_comments
-entity_type: node
-type: comment
+id: comment.field_comment_body
+field_name: field_comment_body
+entity_type: comment
+type: string_long
 settings:
-  comment_type: test_comment_type
-module: comment
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

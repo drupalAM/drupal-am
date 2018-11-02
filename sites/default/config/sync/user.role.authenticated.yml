@@ -9,7 +9,10 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
+  - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
   - 'access user profiles'
+  - 'edit own comments'
+  - 'post comments'
   - 'use text format basic_html'

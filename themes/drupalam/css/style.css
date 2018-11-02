@@ -7588,6 +7588,14 @@ body.page-node-type-blog-post .region-sidebar-second {
       opacity: 0.5;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
       filter: alpha(opacity=50); }
+body.page-node-type-blog-post .comment-box {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  clear: both;
+  margin-bottom: 20px;
+  padding: 25px;
+  background-color: #fff; }
 
 .path-user {
   background-color: #f7f7f7; }

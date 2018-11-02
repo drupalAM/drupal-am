@@ -10,10 +10,10 @@ dependencies:
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
-    - field.field.node.blog_post.field_comments
     - node.type.blog_post
   module:
     - comment
+    - ds
     - user
 _core:
   default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
@@ -28,13 +28,19 @@ content:
     region: content
     label: hidden
     settings:
-      view_mode: default
       pager_id: 0
-    third_party_settings: {  }
+      view_mode: default
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: xxx
+            lb-col: false
+            classes: {  }
 hidden:
   body: true
   field_blog_category: true
   field_blog_image: true
   field_blog_tags: true
-  field_comments: true
   links: true
