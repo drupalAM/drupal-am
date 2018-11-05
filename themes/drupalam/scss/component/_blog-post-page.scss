@@ -136,6 +136,53 @@ body.page-node-type-blog-post {
     }
   }
 
+  .block-views-blockblog-posts-related-posts-block {
+    margin: 0;
+    padding: 10px 15px;
+    text-align: left;
+    color: inherit;
+
+    & > h2 {
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 20px;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: auto;
+        margin-top: 6px;
+      }
+    }
+  }
+
+  .related-posts {
+    .views-row {
+      margin-bottom: 30px;
+
+      .field--name-node-title {
+        h2 {
+          padding: 20px 0 4px 0;
+          font-size: 16px;
+          line-height: 1.4em;
+        }
+
+        a {
+          color: $gray-dark;
+        }
+      }
+    }
+  }
+
+  .page-bottom {
+    margin-top: 50px;
+  }
+
   .comment-box {
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);

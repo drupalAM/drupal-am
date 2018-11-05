@@ -1,0 +1,118 @@
+uuid: 0d8b0f0a-c801-4833-9b92-e447fea2170c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_blog_category
+    - field.field.node.blog_post.field_blog_comments
+    - field.field.node.blog_post.field_blog_image
+    - field.field.node.blog_post.field_blog_tags
+    - image.style.focal_440_x_330
+    - node.type.blog_post
+  module:
+    - ds
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_post_info:
+      children: {  }
+      parent_name: ''
+      weight: 15
+      format_type: html_element
+      format_settings:
+        label: 'Post info'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: post-info
+      label: 'Post info'
+      region: hidden
+    group_blog_tags:
+      children: {  }
+      parent_name: ''
+      weight: 16
+      format_type: html_element
+      format_settings:
+        label: 'Blog tags wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: blog-tags
+      label: 'Blog tags wrapper'
+      region: hidden
+  ds:
+    layout:
+      id: ds_reset
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_blog_image
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+_core:
+  default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
+id: node.blog_post.card
+targetEntityType: node
+bundle: blog_post
+mode: card
+content:
+  field_blog_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: focal_440_x_330
+      image_link: content
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: ds_content
+hidden:
+  body: true
+  field_blog_category: true
+  field_blog_comments: true
+  field_blog_tags: true
+  links: true

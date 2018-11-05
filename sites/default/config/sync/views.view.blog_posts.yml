@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - core.entity_view_mode.node.teaser
     - node.type.blog_post
     - taxonomy.vocabulary.blog_categories
@@ -315,6 +316,21 @@ display:
           plugin_id: taxonomy_index_tid
       defaults:
         arguments: false
+        css_class: false
+        style: false
+        row: false
+      css_class: related-posts
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: card
     cache_metadata:
       max-age: -1
       contexts:

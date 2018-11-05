@@ -3,19 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - context_groups
     - ctools
-third_party_settings:
-  context_groups:
-    x:
-      name: x
-      label: 'Additional content'
-      region: content
-      parent: ''
-      weight: '0'
-      theme: drupalam
-      class: ''
-      all_parents: {  }
 name: blog_posts
 label: 'Blog Posts'
 group: 'Content Types'
@@ -41,8 +29,8 @@ reactions:
         label_display: visible
         views_label: ''
         items_per_page: none
-        weight: '3'
         region: sidebar_second
+        weight: '2'
         parent_wrapper:
           parent: ''
         all_parents: {  }
@@ -58,12 +46,12 @@ reactions:
         provider: ctools
         label_display: 0
         view_mode: comment
-        weight: '2'
-        region: content
+        region: page_bottom
+        weight: '-1'
         parent_wrapper:
-          parent: x
+          parent: ''
         all_parents:
-          - x
+          - additional_content
         context_mapping:
           entity: '@node.node_route_context:node'
         theme: drupalam
@@ -78,12 +66,11 @@ reactions:
         label_display: visible
         views_label: 'You may also like'
         items_per_page: none
-        weight: '1'
         region: content
+        weight: '0'
         parent_wrapper:
-          parent: x
-        all_parents:
-          - x
+          parent: ''
+        all_parents: {  }
         context_mapping: {  }
         theme: drupalam
         css_class: ''

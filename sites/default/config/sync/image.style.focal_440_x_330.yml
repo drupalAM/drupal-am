@@ -1,0 +1,17 @@
+uuid: 0e5dfdc6-5e24-4948-859e-c5c23acce93a
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: focal_440_x_330
+label: 'Focal 440 x 330'
+effects:
+  4aedfaf3-a396-4d0d-8445-eece3caa8021:
+    uuid: 4aedfaf3-a396-4d0d-8445-eece3caa8021
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 440
+      height: 330
+      crop_type: focal_point
