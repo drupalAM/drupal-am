@@ -7596,6 +7596,25 @@ body.page-node-type-blog-post .comment-box {
   margin-bottom: 20px;
   padding: 25px;
   background-color: #fff; }
+body.page-node-type-blog-post .comment-info {
+  float: right;
+  padding: 0;
+  width: 100%;
+  border-bottom: 0;
+  color: #fdd200;
+  font-size: 19px;
+  line-height: 1em; }
+body.page-node-type-blog-post .comment-author-name {
+  margin-right: 10px;
+  text-transform: capitalize;
+  font-weight: bold; }
+body.page-node-type-blog-post .comment-date {
+  color: #b3b3b1;
+  font-size: 12px; }
+body.page-node-type-blog-post .comment-author-avatar {
+  float: left;
+  margin-right: 20px;
+  text-align: center; }
 
 .path-user {
   background-color: #f7f7f7; }

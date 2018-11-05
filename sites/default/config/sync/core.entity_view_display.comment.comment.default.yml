@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - comment.type.comment
+    - field.field.comment.comment.field_author
+    - field.field.comment.comment.field_author_avatar
     - field.field.comment.comment.field_comment_body
     - field.field.comment.comment.field_comment_email
     - field.field.comment.comment.field_comment_website
@@ -21,11 +23,9 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
-  links:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  field_author: true
+  field_author_avatar: true
   field_comment_email: true
   field_comment_website: true
+  links: true

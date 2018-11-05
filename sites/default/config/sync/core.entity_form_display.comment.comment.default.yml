@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - comment.type.comment
+    - field.field.comment.comment.field_author
+    - field.field.comment.comment.field_author_avatar
     - field.field.comment.comment.field_comment_body
     - field.field.comment.comment.field_comment_email
     - field.field.comment.comment.field_comment_website
@@ -21,13 +23,16 @@ targetEntityType: comment
 bundle: comment
 mode: default
 content:
-  author:
-    weight: 0
-    region: content
-    settings: {  }
+  field_author:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_comment_body:
-    weight: 3
+    weight: 0
     settings:
       rows: 5
       placeholder: ''
@@ -35,7 +40,7 @@ content:
     type: string_textarea
     region: content
   field_comment_email:
-    weight: 4
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -43,12 +48,14 @@ content:
     type: email_default
     region: content
   field_comment_website:
-    weight: 5
+    type: string_textfield
+    weight: 3
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
+  author: true
+  field_author_avatar: true
   subject: true

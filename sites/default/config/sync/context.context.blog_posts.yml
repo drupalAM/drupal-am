@@ -3,7 +3,19 @@ langcode: en
 status: true
 dependencies:
   module:
+    - context_groups
     - ctools
+third_party_settings:
+  context_groups:
+    x:
+      name: x
+      label: 'Additional content'
+      region: content
+      parent: ''
+      weight: '0'
+      theme: drupalam
+      class: ''
+      all_parents: {  }
 name: blog_posts
 label: 'Blog Posts'
 group: 'Content Types'
@@ -29,8 +41,11 @@ reactions:
         label_display: visible
         views_label: ''
         items_per_page: none
+        weight: '3'
         region: sidebar_second
-        weight: '0'
+        parent_wrapper:
+          parent: ''
+        all_parents: {  }
         context_mapping: {  }
         theme: drupalam
         css_class: ''
@@ -43,8 +58,12 @@ reactions:
         provider: ctools
         label_display: 0
         view_mode: comment
+        weight: '2'
         region: content
-        weight: '0'
+        parent_wrapper:
+          parent: x
+        all_parents:
+          - x
         context_mapping:
           entity: '@node.node_route_context:node'
         theme: drupalam
@@ -52,6 +71,25 @@ reactions:
         unique: 0
         context_id: blog_posts
         uuid: 33eddfb3-361a-45a1-b805-f19b4e30d60e
+      7e132028-08d2-4ab4-b2a4-804f0482b5f6:
+        id: 'views_block:blog_posts-related_posts_block'
+        label: 'You may also like'
+        provider: views
+        label_display: visible
+        views_label: 'You may also like'
+        items_per_page: none
+        weight: '1'
+        region: content
+        parent_wrapper:
+          parent: x
+        all_parents:
+          - x
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: blog_posts
+        uuid: 7e132028-08d2-4ab4-b2a4-804f0482b5f6
     id: blocks
     saved: false
     uuid: 241682dd-f8b2-4d4d-80c6-ebf320bd30d3

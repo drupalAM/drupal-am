@@ -70,5 +70,6 @@ function drupalam_preprocess_page(&$variables) {
 }
 
 function drupalam_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  //var_dump($form);
+  $form['actions']['submit']['#value'] = 'SUBMIT COMMENT';
+  $form['actions']['preview']['#access'] = false;
 }

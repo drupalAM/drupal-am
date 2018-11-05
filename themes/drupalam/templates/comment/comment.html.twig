@@ -76,9 +76,15 @@
   <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
 
   <div class="comment-box"{{ content_attributes }}>
-    <div class="user-name">{{ author }}</div>
-    <div class="user-picture">{{ user_picture }}</div>
-    <div class="changed-time">{{ new_indicator_timestamp|date('F j, Y') }}</div>
-    {{ content }}
+    <div class="comment-info">
+      <span class="comment-author-name">{{ author }}</span>
+      <span class="comment-date">{{ new_indicator_timestamp|date('F j, Y') }}</span>
+    </div>
+    <div class="comment-wrapper">
+      <div class="comment-author-avatar">{{ user_picture }}</div>
+      <div class="comment-text">
+        {{ content }}
+      </div>
+    </div>
   </div>
 </article>
