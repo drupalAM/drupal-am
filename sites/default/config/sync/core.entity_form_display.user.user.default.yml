@@ -8,7 +8,7 @@ dependencies:
     - field.field.user.user.field_user_friends
     - field.field.user.user.field_user_last_name
     - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - image.style.medium
   module:
     - field_layout
     - focal_point
@@ -83,10 +83,10 @@ content:
   user_picture:
     type: image_focal_point
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: medium
       preview_link: true
       offsets: '50,50'
+      progress_indicator: throbber
     third_party_settings: {  }
     weight: 3
     region: content

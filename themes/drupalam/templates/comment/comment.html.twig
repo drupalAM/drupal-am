@@ -79,11 +79,12 @@
     <div class="comment-info">
       <span class="comment-author-name">{{ author }}</span>
       <span class="comment-date">{{ new_indicator_timestamp|date('F j, Y') }}</span>
+      <span class="comment-links">{{ content.links }}</span>
     </div>
     <div class="comment-wrapper">
       <div class="comment-author-avatar">{{ user_picture }}</div>
       <div class="comment-text">
-        {{ content }}
+        {{ content.field_comment_body }}
       </div>
     </div>
   </div>
