@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_blog_tags
     - node.type.blog_post
-    - taxonomy.vocabulary.tag
+    - taxonomy.vocabulary.blog_tags
 _core:
   default_config_hash: 6QHl03VVngvx32KhKkKIk8bJNsq8ufW51gOQcScfDfo
 id: node.blog_post.field_blog_tags
@@ -22,7 +22,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tag: tag
+      blog_tags: blog_tags
     sort:
       field: _none
     auto_create: true

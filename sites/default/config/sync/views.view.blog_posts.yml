@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - node.type.blog_post
     - taxonomy.vocabulary.blog_categories
-    - taxonomy.vocabulary.tag
+    - taxonomy.vocabulary.blog_tags
   module:
     - node
     - taxonomy
@@ -290,7 +290,7 @@ display:
             limit: true
             vids:
               blog_categories: blog_categories
-              tag: tag
+              blog_tags: blog_tags
             anyall: +
             term_page: '0'
           default_argument_skip_url: false
