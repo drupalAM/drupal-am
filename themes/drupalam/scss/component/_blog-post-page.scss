@@ -183,6 +183,13 @@ body.page-node-type-blog-post {
     margin-top: 50px;
   }
 
+  .indented {
+    padding-left: 3%;
+  }
+}
+
+.page-node-type-blog-post,
+.path-comment {
   .comments-block {
     h2 {
       margin-bottom: 25px;
@@ -193,82 +200,87 @@ body.page-node-type-blog-post {
       text-transform: capitalize;
       font-size: 18px;
     }
+  }
 
-    .form-control {
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      border-radius: 2px;
-      padding: 8px;
-      border: solid 1px rgba(0, 0, 0, 0.1);
-      background: #fcfcfc;
-      font-size: 12px;
+  .form-control {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    background: #fcfcfc;
+    font-size: 12px;
 
-      &:focus {
-        -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
-        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
-        outline: none;
-        background: $white;
-      }
+    &:focus {
+      -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+      outline: none;
+      background: $white;
+    }
+  }
+
+  .form-actions {
+    margin-top: 20px;
+  }
+
+  #edit-submit,
+  #edit-cancel {
+    text-transform: uppercase;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 2px 0 30px;
+    padding: 12px 25px;
+    background: none;
+    background-color: $btn-default-color;
+    color: $white;
+    vertical-align: middle;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-size: 13px;
+    font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+    line-height: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: 0;
+    @include transition(0s);
+
+    &:active {
+      -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+      -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+      box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+      position: relative;
+      bottom: -1px;
     }
 
-    .form-actions {
-      margin-top: 20px;
-    }
-
-    #edit-submit {
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      display: inline-block;
-      margin: 2px 0;
-      padding: 12px 25px;
-      background: none;
-      background-color: $btn-default-color;
+    &:hover {
+      @include opacity(.9);
       color: $white;
-      vertical-align: middle;
-      text-align: center;
-      letter-spacing: 1px;
-      font-weight: normal;
-      font-size: 13px;
-      font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
-      line-height: 20px;
-      cursor: pointer;
-      -webkit-appearance: none;
-      border: 0;
-      @include transition(0s);
-
-      &:active {
-        -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
-        -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
-        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
-        position: relative;
-        bottom: -1px;
-      }
-
-      &:hover {
-        @include opacity(.9);
-        color: $white;
-      }
     }
+  }
+
+  #edit-cancel {
+    margin-left: 15px;
   }
 
   .comment-box {
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    clear: both;
+    display: grid;
     margin-bottom: 20px;
-    padding: 25px;
+    padding: 3%;
     background-color: $white;
   }
 
   .comment-info {
-    float: right;
     padding: 0;
     width: 100%;
     border-bottom: 0;
-    color: #fdd200;
+    color: $btn-default-color;
     font-size: 19px;
     line-height: 1em;
   }
@@ -277,6 +289,7 @@ body.page-node-type-blog-post {
     margin-right: 10px;
     text-transform: capitalize;
     font-weight: bold;
+    font-size: 14px;
   }
 
   .comment-date {
@@ -284,9 +297,43 @@ body.page-node-type-blog-post {
     font-size: 12px;
   }
 
+  .comment-links {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    color: $btn-default-color;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    line-height: 2.2em;
+
+    .list-inline {
+      margin: 0;
+
+      & li:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .comment-wrapper {
+    margin-top: 10px;
+  }
+
   .comment-author-avatar {
     float: left;
     margin-right: 20px;
     text-align: center;
+
+    img {
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      display: block;
+      margin: 0 0 10px;
+      padding: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: $white;
+    }
   }
 }
