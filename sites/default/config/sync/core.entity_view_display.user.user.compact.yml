@@ -14,6 +14,25 @@ dependencies:
     - ds
     - image
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_reset
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - user_picture
 _core:
   default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
 id: user.user.compact
@@ -24,14 +43,14 @@ content:
   user_picture:
     type: image
     weight: 0
-    region: content
+    region: ds_content
     settings:
       image_style: square_mini
       image_link: content
     third_party_settings:
       ds:
         ft:
-          id: default
+          id: minimal
           settings:
             lb: ''
             lb-col: false

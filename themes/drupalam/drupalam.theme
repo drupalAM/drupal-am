@@ -5,6 +5,8 @@
  *
  */
 
+use Drupal\node\Entity\Node;
+
 function drupalam_preprocess_views_view_list(&$variables) {
   $view = $variables['view'];
   // adds data- attributes for content-slider script
@@ -72,4 +74,11 @@ function drupalam_preprocess_page(&$variables) {
 function drupalam_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $form['actions']['submit']['#value'] = 'SUBMIT COMMENT';
   $form['actions']['preview']['#access'] = false;
+}
+
+function drupalam_preprocess_image_formatter(&$vars) {
+  $url = $vars['url'];
+  if($url && $url->getRouteName() == 'entity.user.canonical' && $url->getRouteParameters()['user'] == 0) {
+    $vars['url'] = null;
+  }
 }

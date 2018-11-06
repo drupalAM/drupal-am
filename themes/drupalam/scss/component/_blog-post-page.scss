@@ -186,10 +186,11 @@ body.page-node-type-blog-post {
   .indented {
     padding-left: 3%;
   }
-}
 
-.page-node-type-blog-post,
-.path-comment {
+  #edit-submit {
+    margin-bottom: 0;
+  }
+
   .comments-block {
     h2 {
       margin-bottom: 25px;
@@ -201,7 +202,10 @@ body.page-node-type-blog-post {
       font-size: 18px;
     }
   }
+}
 
+.page-node-type-blog-post,
+.path-comment {
   .form-control {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -220,8 +224,9 @@ body.page-node-type-blog-post {
     }
   }
 
-  .form-actions {
+  #edit-actions {
     margin-top: 20px;
+    margin-bottom: 15px;
   }
 
   #edit-submit,
@@ -231,7 +236,6 @@ body.page-node-type-blog-post {
     -moz-border-radius: 4px;
     border-radius: 4px;
     display: inline-block;
-    margin: 2px 0 30px;
     padding: 12px 25px;
     background: none;
     background-color: $btn-default-color;
@@ -280,9 +284,7 @@ body.page-node-type-blog-post {
     padding: 0;
     width: 100%;
     border-bottom: 0;
-    color: $btn-default-color;
-    font-size: 19px;
-    line-height: 1em;
+    color: $gray-base;
   }
 
   .comment-author-name {
@@ -301,7 +303,6 @@ body.page-node-type-blog-post {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    color: $btn-default-color;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 11px;

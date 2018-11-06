@@ -7619,9 +7619,9 @@ body.page-node-type-blog-post .page-bottom {
   margin-top: 50px; }
 body.page-node-type-blog-post .indented {
   padding-left: 3%; }
-
-.page-node-type-blog-post .comments-block h2,
-.path-comment .comments-block h2 {
+body.page-node-type-blog-post #edit-submit {
+  margin-bottom: 0; }
+body.page-node-type-blog-post .comments-block h2 {
   margin-bottom: 25px;
   margin-top: 20px;
   padding-bottom: 7px;
@@ -7629,6 +7629,7 @@ body.page-node-type-blog-post .indented {
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
   text-transform: capitalize;
   font-size: 18px; }
+
 .page-node-type-blog-post .form-control,
 .path-comment .form-control {
   -webkit-border-radius: 2px;
@@ -7645,9 +7646,10 @@ body.page-node-type-blog-post .indented {
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
     outline: none;
     background: #fff; }
-.page-node-type-blog-post .form-actions,
-.path-comment .form-actions {
-  margin-top: 20px; }
+.page-node-type-blog-post #edit-actions,
+.path-comment #edit-actions {
+  margin-top: 20px;
+  margin-bottom: 15px; }
 .page-node-type-blog-post #edit-submit,
 .page-node-type-blog-post #edit-cancel,
 .path-comment #edit-submit,
@@ -7657,7 +7659,6 @@ body.page-node-type-blog-post .indented {
   -moz-border-radius: 4px;
   border-radius: 4px;
   display: inline-block;
-  margin: 2px 0 30px;
   padding: 12px 25px;
   background: none;
   background-color: #5bc3ff;
@@ -7713,9 +7714,7 @@ body.page-node-type-blog-post .indented {
   padding: 0;
   width: 100%;
   border-bottom: 0;
-  color: #5bc3ff;
-  font-size: 19px;
-  line-height: 1em; }
+  color: #252525; }
 .page-node-type-blog-post .comment-author-name,
 .path-comment .comment-author-name {
   margin-right: 10px;
@@ -7731,7 +7730,6 @@ body.page-node-type-blog-post .indented {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  color: #5bc3ff;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 11px;
