@@ -193,7 +193,7 @@ content:
       ds:
         ds_limit: ''
         ft:
-          id: minimal
+          id: default
           settings:
             lb: IN
             lb-col: false

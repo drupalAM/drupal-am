@@ -77,23 +77,13 @@
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  {#{{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+  {% if comment_count > 1 %}
+    <h2>{{ comment_count }} Comments</h2>
+  {% elseif comment_count == 1 %}
+    <h2>{{ comment_count }} Comment</h2>
+  {% else %}
+    <h2>no Comment</h2>
   {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('author') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}#}
 
   <div{{ content_attributes.addClass('content') }}>
     {{ content }}

@@ -37,16 +37,17 @@ body.page-node-type-blog-post {
       margin-bottom: 20px;
     }
 
-    .field-name-field-blog-category {
+    .field--name-field-blog-category {
       line-height: 17px;
       letter-spacing: 2px;
       color: #b3b3b1;
       font-size: 12px;
       text-transform: uppercase;
 
-      .field-label-above {
+      .field--label,
+      .field--items,
+      .field--item {
         display: inline;
-
       }
 
       a {
@@ -194,11 +195,8 @@ body.page-node-type-blog-post {
   .comments-block {
     h2 {
       margin-bottom: 25px;
-      margin-top: 20px;
       padding-bottom: 7px;
-      border-bottom: 3px solid #bebebe;
       border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-      text-transform: capitalize;
       font-size: 18px;
     }
   }

@@ -7520,15 +7520,17 @@ body.page-node-type-blog-post .node--view-mode-full .field--name-node-title h2 {
   color: #333332; }
 body.page-node-type-blog-post .node--view-mode-full .field--name-body {
   margin-bottom: 20px; }
-body.page-node-type-blog-post .node--view-mode-full .field-name-field-blog-category {
+body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category {
   line-height: 17px;
   letter-spacing: 2px;
   color: #b3b3b1;
   font-size: 12px;
   text-transform: uppercase; }
-  body.page-node-type-blog-post .node--view-mode-full .field-name-field-blog-category .field-label-above {
+  body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category .field--label,
+  body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category .field--items,
+  body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category .field--item {
     display: inline; }
-  body.page-node-type-blog-post .node--view-mode-full .field-name-field-blog-category a {
+  body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category a {
     color: inherit;
     margin: 0 5px; }
 body.page-node-type-blog-post .node--view-mode-full .blog-tags {
@@ -7623,11 +7625,8 @@ body.page-node-type-blog-post #edit-submit {
   margin-bottom: 0; }
 body.page-node-type-blog-post .comments-block h2 {
   margin-bottom: 25px;
-  margin-top: 20px;
   padding-bottom: 7px;
-  border-bottom: 3px solid #bebebe;
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-  text-transform: capitalize;
   font-size: 18px; }
 body.page-node-type-blog-post .bypostauthor {
   position: static;

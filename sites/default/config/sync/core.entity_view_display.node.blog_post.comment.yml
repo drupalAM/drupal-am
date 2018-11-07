@@ -35,7 +35,7 @@ content:
         ft:
           id: default
           settings:
-            lb: xxx
+            lb: ''
             lb-col: false
             classes: {  }
 hidden:

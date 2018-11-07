@@ -59,6 +59,11 @@ function drupalam_preprocess_field(&$variables) {
     }
     unset($variables['items']);
   }
+
+  // Add comment count
+  if (isset($element['#bundle']) && $element['#bundle'] == 'blog_post' && $variables['field_name'] == 'field_blog_category') {
+    $variables['comment_count'] = $element['#object']->get('field_blog_comments')->comment_count;
+  }
 }
 
 function drupalam_preprocess_page(&$variables) {
@@ -73,12 +78,19 @@ function drupalam_preprocess_page(&$variables) {
 
 function drupalam_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   $form['actions']['submit']['#value'] = 'SUBMIT COMMENT';
-  $form['actions']['preview']['#access'] = false;
 }
 
 function drupalam_preprocess_image_formatter(&$vars) {
   $url = $vars['url'];
   if($url && $url->getRouteName() == 'entity.user.canonical' && $url->getRouteParameters()['user'] == 0) {
     $vars['url'] = null;
+  }
+}
+
+function drupalam_preprocess_node(&$variables) {
+
+  // Add comment count
+  if ($variables['node']->getType() == 'blog_post') {
+    $variables['comment_count'] = $variables['node']->get('field_blog_comments')->comment_count;
   }
 }
