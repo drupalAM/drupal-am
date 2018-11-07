@@ -7629,6 +7629,9 @@ body.page-node-type-blog-post .comments-block h2 {
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
   text-transform: capitalize;
   font-size: 18px; }
+body.page-node-type-blog-post .bypostauthor {
+  position: static;
+  border-top: 3px solid #5bc3ff; }
 
 .page-node-type-blog-post .form-control,
 .path-comment .form-control {

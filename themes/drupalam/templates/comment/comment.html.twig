@@ -66,8 +66,13 @@
  * @ingroup themeable
  */
 #}
+{% set classes = [
+    (user.id() == user_picture['#user'].id()) ? "bypostauthor" : "",
+    'js-comment'
+  ]
+%}
 
-<article{{ attributes.addClass('js-comment') }}>
+<article{{ attributes.addClass(classes) }}>
   {#
     Hide the "new" indicator by default, let a piece of JavaScript ask the
     server which comments are new for the user. Rendering the final "new"

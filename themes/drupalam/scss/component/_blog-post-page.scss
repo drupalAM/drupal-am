@@ -202,6 +202,11 @@ body.page-node-type-blog-post {
       font-size: 18px;
     }
   }
+
+  .bypostauthor {
+    position: static;
+    border-top: 3px solid $brand-primary;
+  }
 }
 
 .page-node-type-blog-post,
