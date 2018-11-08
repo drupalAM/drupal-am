@@ -56,6 +56,14 @@
 @include make-grid(xs);
 
 
+// Grid between extra small and small
+//
+// Columns, offsets, pushes, and pulls for devices like
+// smartphones(landscape).
+@media (min-width: $screen-xs-min) {
+  @include make-grid(xxs);
+}
+
 // Small grid
 //
 // Columns, offsets, pushes, and pulls for the small device range, from phones

@@ -5,14 +5,18 @@ body.page-node-type-blog-post {
     background-color: $brand-bg;
   }
 
+  .content-and-sidebars-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   .region-content {
     background-color: $white;
   }
 
   .node--view-mode-full {
-    .bs-region--main {
-      padding: 5% 30px;
-
+    .content-wrapper {
+      padding: 5% 15px;
     }
 
     .post-info {
@@ -43,6 +47,10 @@ body.page-node-type-blog-post {
       color: #b3b3b1;
       font-size: 12px;
       text-transform: uppercase;
+
+      .field--label {
+        font-weight: 400;
+      }
 
       .field--label,
       .field--items,
@@ -87,14 +95,13 @@ body.page-node-type-blog-post {
   }
 
   .region-sidebar-second {
-    margin-top: 20px;
-
     .block-title {
       margin-bottom: 15px;
-      padding: 7px 0;
+      padding: 0;
       text-transform: uppercase;
       font-weight: bold;
       font-size: 16px;
+      line-height: 1;
     }
 
     .item-list {
@@ -104,24 +111,22 @@ body.page-node-type-blog-post {
 
       li {
         list-style-type: none;
-        padding: 3px 0 2px 0;
+        padding: 8px 0 5px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        display: flex;
       }
 
       .field--name-field-blog-image {
-        flex-basis: 20%;
-
         img {
           padding: 3px;
-          margin: 8px 15px 5px 0;
+          margin-right: 10px;
           box-sizing: content-box;
+          float: left;
+          clear: both;
         }
       }
 
       .post-info {
-        flex-basis: 80%;
-        margin-top: 10px;
+        margin: 5px 0;
 
         .field--name-node-title h2,
         .field-post-date {
@@ -163,7 +168,13 @@ body.page-node-type-blog-post {
   }
 
   .related-posts {
+    .view-content {
+      margin: 0 -15px;
+    }
+
     .views-row {
+      float: left;
+      padding: 0 15px;
       margin-bottom: 30px;
 
       .field--name-node-title {
@@ -182,6 +193,7 @@ body.page-node-type-blog-post {
 
   .page-bottom {
     margin-top: 50px;
+    margin-bottom: 30px;
   }
 
   .indented {
@@ -340,4 +352,18 @@ body.page-node-type-blog-post {
       background-color: $white;
     }
   }
+}
+
+@include breakpoint(tablet_and_desktop){
+  body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category {
+    text-align: right;
+  }
+
+  .comment-links {
+    float: right;
+  }
+}
+
+@include breakpoint(laptop_and_desktop){
+
 }
