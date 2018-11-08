@@ -67,7 +67,7 @@
  */
 #}
 {% set classes = [
-    (user.id() == user_picture['#user'].id()) ? "bypostauthor" : "",
+    (user.id() == user_picture['#user'].id() and user.id() != 0) ? "bypostauthor" : "",
     'js-comment'
   ]
 %}
