@@ -6179,6 +6179,7 @@ html.js .ajax-new-content:empty {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   @media (max-width: 768px) {
     .btn, .view-hero-slide .view-content .button a {
@@ -6313,6 +6314,7 @@ body {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
   transition: all 0.3s ease; }
   #navbar .navbar-toggle {
     margin: 0;
@@ -6364,6 +6366,7 @@ body {
     -moz-transition: color 0.3s ease;
     -o-transition: color 0.3s ease;
     -webkit-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
     transition: color 0.3s ease;
     text-transform: uppercase;
     font-size: 12px;
@@ -6372,6 +6375,7 @@ body {
       -moz-transition: all 0.2s ease;
       -o-transition: all 0.2s ease;
       -webkit-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
       transition: all 0.2s ease;
       position: absolute;
       bottom: 5px;
@@ -6404,6 +6408,7 @@ body {
       -moz-transition: 0.3s;
       -o-transition: 0.3s;
       -webkit-transition: 0.3s;
+      -ms-transition: 0.3s;
       transition: 0.3s; }
       .block-socialicons ul li:hover {
         transform: scale(1.1); }
@@ -6436,6 +6441,7 @@ body:not(.path-frontpage) #navbar {
     -moz-transition: opacity 0.1s ease;
     -o-transition: opacity 0.1s ease;
     -webkit-transition: opacity 0.1s ease;
+    -ms-transition: opacity 0.1s ease;
     transition: opacity 0.1s ease;
     -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -6447,6 +6453,7 @@ body:not(.path-frontpage) #navbar {
       -moz-transition: all 0.4s ease;
       -o-transition: all 0.4s ease;
       -webkit-transition: all 0.4s ease;
+      -ms-transition: all 0.4s ease;
       transition: all 0.4s ease; }
     .node--type-case-study.node--view-mode-carousel .field--name-field-case-study-screens:before, .node--type-case-study.node--view-mode-slide .field--name-field-case-study-screens:before {
       display: block;
@@ -6475,6 +6482,7 @@ body:not(.path-frontpage) #navbar {
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
       transition: all 0.3s ease;
       z-index: 15; }
   .node--type-case-study.node--view-mode-carousel .field--name-node-title h2, .node--type-case-study.node--view-mode-slide .field--name-node-title h2 {
@@ -6944,6 +6952,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     -moz-transition: all 0.4s ease-out;
     -o-transition: all 0.4s ease-out;
     -webkit-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out; }
   .block.where-do-i-start .parallax-scaled-original {
     -moz-opacity: 1;
@@ -7027,6 +7036,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     -moz-transition: all 0.4s ease-out;
     -o-transition: all 0.4s ease-out;
     -webkit-transition: all 0.4s ease-out;
+    -ms-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out; }
   .community-members .parallax-scaled-original {
     -moz-opacity: 1;
@@ -7126,6 +7136,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     -moz-transition: all 0.1s ease;
     -o-transition: all 0.1s ease;
     -webkit-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
     transition: all 0.1s ease;
     z-index: 20;
     background-color: rgba(0, 0, 0, 0.8); }
@@ -7269,6 +7280,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     -moz-transition: opacity 0.1s ease;
     -o-transition: opacity 0.1s ease;
     -webkit-transition: opacity 0.1s ease;
+    -ms-transition: opacity 0.1s ease;
     transition: opacity 0.1s ease;
     -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -7280,6 +7292,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       -moz-transition: all 0.4s ease;
       -o-transition: all 0.4s ease;
       -webkit-transition: all 0.4s ease;
+      -ms-transition: all 0.4s ease;
       transition: all 0.4s ease;
       width: 100%; }
     .page-node-type-hero-slide .field--name-field-heroslide-images .field--item:before {
@@ -7314,6 +7327,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
       transition: all 0.3s ease;
       pointer-events: none;
       z-index: 15; }
@@ -7597,6 +7611,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       -moz-transition: 0.3s;
       -o-transition: 0.3s;
       -webkit-transition: 0.3s;
+      -ms-transition: 0.3s;
       transition: 0.3s; }
       .path-contact .contact-social-icons li:hover, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li:hover {
         -webkit-transform: scale(1.1);
@@ -7606,6 +7621,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
         -moz-transition: 0.3s;
         -o-transition: 0.3s;
         -webkit-transition: 0.3s;
+        -ms-transition: 0.3s;
         transition: 0.3s; }
       .path-contact .contact-social-icons li a, .path-contact .block-block-content560886da-2f68-4f8f-b1f4-5907534fe3a2 li a {
         color: #777; }
@@ -7699,6 +7715,46 @@ body.path-blog .title-wrapper {
     font-size: 18px;
     letter-spacing: 7px;
     margin-top: 1px; }
+body.path-blog #edit-actions {
+  display: none; }
+body.path-blog .views-exposed-form {
+  margin: 0 -15px;
+  background-color: #252525; }
+  body.path-blog .views-exposed-form .form--inline {
+    margin: 0 auto;
+    padding: 0 3%;
+    max-width: 1200px;
+    box-sizing: content-box; }
+  body.path-blog .views-exposed-form .form-item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%; }
+  body.path-blog .views-exposed-form .bef-links {
+    display: inline-block;
+    margin-left: 0;
+    padding: 0;
+    max-width: 90%;
+    cursor: default; }
+    body.path-blog .views-exposed-form .bef-links > div {
+      display: inline;
+      text-transform: capitalize;
+      font-size: 12px;
+      cursor: pointer; }
+    body.path-blog .views-exposed-form .bef-links a {
+      -moz-transition: color 0.2s ease;
+      -o-transition: color 0.2s ease;
+      -webkit-transition: color 0.2s ease;
+      -ms-transition: color 0.2s ease;
+      transition: color 0.2s ease;
+      margin: auto 8px;
+      padding: 3px 0;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      cursor: pointer; }
+  body.path-blog .views-exposed-form .bef-link-active a {
+    border-bottom: 2px solid #5bc3ff; }
 @media (min-width: 992px) {
   body.path-blog .title-wrapper h2 {
     font-size: 58px; }
@@ -7894,6 +7950,7 @@ body.page-node-type-blog-post .bypostauthor {
   -moz-transition: 0s;
   -o-transition: 0s;
   -webkit-transition: 0s;
+  -ms-transition: 0s;
   transition: 0s; }
   .page-node-type-blog-post #edit-submit:active,
   .page-node-type-blog-post #edit-cancel:active,
@@ -8322,12 +8379,14 @@ ul#cs-navigation li span {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
 ul.cs-slider-ul {
   -moz-transition: height 1s ease;
   -o-transition: height 1s ease;
   -webkit-transition: height 1s ease;
+  -ms-transition: height 1s ease;
   transition: height 1s ease;
   overflow: visible; }
 
@@ -8339,6 +8398,7 @@ ul.cs-slider-ul li {
   -moz-transition: background-color 0.5s ease;
   -o-transition: background-color 0.5s ease;
   -webkit-transition: background-color 0.5s ease;
+  -ms-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease; }
 
 /* Nivo Slider */
@@ -8505,6 +8565,7 @@ ul.cs-slider-ul li {
   -moz-transition: all 0.15s ease;
   -o-transition: all 0.15s ease;
   -webkit-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
   transition: all 0.15s ease;
   -moz-opacity: 0;
   -khtml-opacity: 0;
@@ -8622,6 +8683,7 @@ ul.cs-slider-ul li {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
   line-height: 70px; }
 
@@ -8949,6 +9011,7 @@ ul.cs-slider-ul li {
       -moz-transition: all 0.2s ease;
       -o-transition: all 0.2s ease;
       -webkit-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
       transition: all 0.2s ease;
       position: absolute;
       top: 50%;
@@ -9027,6 +9090,7 @@ ul.cs-slider-ul li {
       -moz-transition: all 0.3s ease;
       -o-transition: all 0.3s ease;
       -webkit-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
       transition: all 0.3s ease;
       top: 50%;
       left: 50%;

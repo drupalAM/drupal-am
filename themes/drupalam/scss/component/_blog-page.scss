@@ -62,11 +62,64 @@ body.path-blog {
     }
   }
 
+  #edit-actions {
+    display: none;
+  }
+
+  .views-exposed-form {
+    margin: 0 -15px;
+    background-color: $gray-base;
+
+    .form--inline {
+      margin: 0 auto;
+      padding: 0 3%;
+      max-width: 1200px;
+      box-sizing: content-box;
+    }
+
+    .form-item {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+    }
+
+    .bef-links {
+      display: inline-block;
+      margin-left: 0;
+      padding: 0;
+      max-width: 90%;
+      cursor: default;
+
+      & > div {
+        display: inline;
+        text-transform: capitalize;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      a {
+        @include transition(color 0.2s ease);
+        margin: auto 8px;
+        padding: 3px 0;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+    }
+
+    .bef-link-active a {
+      border-bottom: 2px solid $brand-primary;
+    }
+  }
+
   @include breakpoint(laptop_and_desktop) {
     .title-wrapper {
       h2 {
         font-size: 58px;
       }
+
       .field--name-field-subtitle {
         font-size: 15px;
       }

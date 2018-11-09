@@ -20,6 +20,7 @@
   -moz-transition:    $transition;
   -o-transition:      $transition;
   -webkit-transition: $transition;
+  -ms-transition:     $transition;
   transition:         $transition;
 }
 // =============================================================================
