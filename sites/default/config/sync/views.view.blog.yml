@@ -273,6 +273,7 @@ display:
         filters: false
         filter_groups: false
         exposed_form: false
+        use_ajax: false
       filter_groups:
         operator: AND
         groups:
@@ -305,6 +306,7 @@ display:
                 rewrite:
                   filter_rewrite_values: '- Any -|All'
           text_input_required_format: basic_html
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:

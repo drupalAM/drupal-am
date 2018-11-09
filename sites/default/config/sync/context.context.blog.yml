@@ -7,7 +7,7 @@ dependencies:
 name: blog
 label: Blog
 group: Pages
-description: ''
+description: 'Blog page'
 requireAllConditions: true
 disabled: false
 conditions:
@@ -24,7 +24,7 @@ reactions:
         id: 'block_content:b3fac71f-61bb-45c8-a5e9-d0b8ca994f95'
         label: Blog
         provider: block_content
-        label_display: visible
+        label_display: 0
         status: true
         info: ''
         view_mode: full

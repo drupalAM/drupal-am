@@ -7,27 +7,76 @@ dependencies:
     - field.field.block_content.page_title_block.field_image
     - field.field.block_content.page_title_block.field_subtitle
   module:
+    - ds
+    - field_group
     - image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_reset
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_image
+        - group_title_wrapper
+        - block_description
+        - field_subtitle
+    fields:
+      block_description:
+        plugin_id: block_description
+        weight: 2
+        label: hidden
+        formatter: default
+  field_group:
+    group_title_wrapper:
+      children:
+        - block_description
+        - field_subtitle
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: title-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Title wrapper'
+      region: hidden
 id: block_content.page_title_block.default
 targetEntityType: block_content
 bundle: page_title_block
 mode: default
 content:
   field_image:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
-    region: content
+    region: ds_content
   field_subtitle:
-    weight: 0
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
+    region: ds_content
 hidden: {  }

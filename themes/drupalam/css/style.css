@@ -7652,6 +7652,59 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       font-size: 40px;
       margin-right: 15px; } }
 
+body.path-blog .main-container {
+  padding-top: 0; }
+body.path-blog .region-header {
+  margin: 0 -15px; }
+  body.path-blog .region-header .field--name-field-image {
+    background-color: #051831;
+    overflow: hidden; }
+  body.path-blog .region-header img {
+    opacity: .5;
+    object-fit: cover;
+    height: 550px;
+    width: 100%; }
+body.path-blog .title-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 250px;
+  text-align: center;
+  padding: 0 3%;
+  max-width: 1200px; }
+  body.path-blog .title-wrapper h2 {
+    padding-top: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1em;
+    letter-spacing: -1px;
+    display: inline-block;
+    margin: 0; }
+    body.path-blog .title-wrapper h2:after {
+      content: "";
+      display: block;
+      width: 62%;
+      height: 1px;
+      background-color: #ffffff;
+      margin: auto;
+      margin-top: 10px; }
+  body.path-blog .title-wrapper .field--name-field-subtitle {
+    display: block;
+    color: #fff;
+    margin: auto;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 7px;
+    margin-top: 1px; }
+@media (min-width: 992px) {
+  body.path-blog .title-wrapper h2 {
+    font-size: 58px; }
+  body.path-blog .title-wrapper .field--name-field-subtitle {
+    font-size: 15px; } }
+
 body.page-node-type-blog-post .main-container {
   padding-top: 92px;
   padding-bottom: 20px;
@@ -9117,6 +9170,14 @@ ul.cs-slider-ul li {
 @font-face {
   font-family: "PexetoIcons";
   src: url("../fonts/PexetoIcons/PexetoIcons.eot?") format("eot"), url("../fonts/PexetoIcons/PexetoIcons.woff") format("woff"), url("../fonts/PexetoIcons/PexetoIcons.ttf") format("truetype"), url("../fonts/PexetoIcons/PexetoIcons.svg#PexetoIcons") format("svg"); }
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  src: url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype"); }
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.7; }

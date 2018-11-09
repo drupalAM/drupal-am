@@ -1,0 +1,76 @@
+body.path-blog {
+  .main-container {
+    padding-top: 0;
+  }
+
+  .region-header {
+    margin: 0 -15px;
+
+    .field--name-field-image {
+      background-color: rgb(5, 24, 49);
+      overflow: hidden;
+    }
+
+    img {
+      opacity: .5;
+      object-fit: cover;
+      height: 550px;
+      width: 100%;
+    }
+  }
+
+  .title-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 250px;
+    text-align: center;
+    padding: 0 3%;
+    max-width: 1200px;
+
+    h2 {
+      padding-top: 0;
+      color: $white;
+      text-transform: uppercase;
+      font-size: 38px;
+      font-weight: bold;
+      line-height: 1em;
+      letter-spacing: -1px;
+      display: inline-block;
+      margin: 0;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 62%;
+        height: 1px;
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 10px;
+      }
+    }
+
+    .field--name-field-subtitle {
+      display: block;
+      color: $white;
+      margin: auto;
+      text-transform: uppercase;
+      font-size: 18px;
+      letter-spacing: 7px;
+      margin-top: 1px;
+    }
+  }
+
+  @include breakpoint(laptop_and_desktop) {
+    .title-wrapper {
+      h2 {
+        font-size: 58px;
+      }
+      .field--name-field-subtitle {
+        font-size: 15px;
+      }
+    }
+  }
+}
+

@@ -24,6 +24,7 @@
 @import "component/heroslide-page";
 @import "component/casestudy-page";
 @import "component/contact-page";
+@import "component/blog-page";
 @import "component/blog-post-page";
 @import "component/user-page";
 // media
@@ -36,13 +37,14 @@
 
 // Fonts
 @include font-face("PexetoIcons", "../fonts/PexetoIcons/PexetoIcons",  null, null, eot woff ttf svg);
-//@include font-face("Montserrat", "../fonts/Montserrat/Montserrat",  null, null, ttf);
+@include font-face("Montserrat", "../fonts/Montserrat/Montserrat-Regular",  400, null, ttf);
+@include font-face("Montserrat", "../fonts/Montserrat/Montserrat-Bold",  700, null, ttf);
 
 body {
   font-family: $font-family-sans-serif;
   line-height: 1.7;
   @include breakpoint(no_mobile) {
-    margin-top: 0; 
+    margin-top: 0;
   }
 }
 ol, ul {
