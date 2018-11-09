@@ -1,0 +1,43 @@
+uuid: 4d4e6b1f-7481-4962-9297-7281993f7a9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+name: blog
+label: Blog
+group: Pages
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: /blog
+    negate: 0
+    uuid: 99ad4760-26cf-4fff-9a7a-95420415a76b
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      938a837c-4e80-4b02-bfda-8d42bb58cc4c:
+        id: 'block_content:b3fac71f-61bb-45c8-a5e9-d0b8ca994f95'
+        label: Blog
+        provider: block_content
+        label_display: visible
+        status: true
+        info: ''
+        view_mode: full
+        region: header
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: blog
+        uuid: 938a837c-4e80-4b02-bfda-8d42bb58cc4c
+    id: blocks
+    saved: false
+    uuid: e749e052-204e-4890-be69-472b648928eb
+    include_default_blocks: 0
+weight: 0

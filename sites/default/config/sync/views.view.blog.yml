@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.tile
     - node.type.blog_post
   module:
     - node
@@ -77,7 +77,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: tile
       fields:
         title:
           id: title
@@ -128,7 +128,7 @@ display:
           field_api_classes: false
       filters:
         status:
-          value: true
+          value: '1'
           table: node_field_data
           field: status
           plugin_id: boolean

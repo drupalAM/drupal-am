@@ -1,0 +1,101 @@
+uuid: 6a433d00-b0a7-44bf-8878-6d782c204fcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.tile
+    - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_blog_category
+    - field.field.node.blog_post.field_blog_comments
+    - field.field.node.blog_post.field_blog_image
+    - field.field.node.blog_post.field_blog_tags
+    - node.type.blog_post
+  module:
+    - ds
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_reset
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_blog_image
+        - 'dynamic_token_field:node-post_date_custom_format_'
+        - node_title
+        - body
+        - node_link
+        - field_blog_category
+    fields:
+      'dynamic_token_field:node-post_date_custom_format_':
+        plugin_id: 'dynamic_token_field:node-post_date_custom_format_'
+        weight: 1
+        label: hidden
+        formatter: default
+      node_link:
+        plugin_id: node_link
+        weight: 4
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
+id: node.blog_post.tile
+targetEntityType: node
+bundle: blog_post
+mode: tile
+content:
+  body:
+    type: text_summary_or_trimmed
+    weight: 3
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    label: hidden
+    region: ds_content
+  field_blog_category:
+    weight: 5
+    label: inline
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: IN
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+  field_blog_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: ds_content
+hidden:
+  field_blog_comments: true
+  field_blog_tags: true
+  links: true

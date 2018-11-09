@@ -1,9 +1,9 @@
 id: post_date_custom_short_format_
 label: 'Post date (custom short format)'
-ui_limit: '*|teaser'
+ui_limit: 'blog_post|*'
 properties:
   content:
-    value: "[date:custom:M jS, Y]\r\n"
+    value: "<p>[date:custom:M jS, Y]</p>\r\n"
     format: basic_html
 type: token
 type_label: 'Token field'
