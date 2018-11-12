@@ -76,6 +76,10 @@ display:
           quantity: 9
       style:
         type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -274,6 +278,9 @@ display:
         filter_groups: false
         exposed_form: false
         use_ajax: false
+        style: false
+        row: false
+        css_class: false
       filter_groups:
         operator: AND
         groups:
@@ -307,6 +314,18 @@ display:
                   filter_rewrite_values: '- Any -|All'
           text_input_required_format: basic_html
       use_ajax: true
+      style:
+        type: default
+        options:
+          row_class: col-xxs-6
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: tile
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -436,8 +455,8 @@ display:
         type: rss
       path: blog/feed
       displays:
-        blog_all: blog_all
         default: '0'
+        blog_all: '0'
         blog_block: '0'
         blog_user_all: '0'
       display_description: ''

@@ -9,9 +9,11 @@ dependencies:
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
+    - image.style.focal_600_x_325
     - node.type.blog_post
   module:
     - ds
+    - field_group
     - image
     - text
     - user
@@ -34,6 +36,7 @@ third_party_settings:
     regions:
       ds_content:
         - field_blog_image
+        - group_post_content
         - 'dynamic_token_field:node-post_date_custom_format_'
         - node_title
         - body
@@ -42,19 +45,62 @@ third_party_settings:
     fields:
       'dynamic_token_field:node-post_date_custom_format_':
         plugin_id: 'dynamic_token_field:node-post_date_custom_format_'
-        weight: 1
+        weight: 2
         label: hidden
         formatter: default
       node_link:
         plugin_id: node_link
-        weight: 4
+        weight: 5
         label: hidden
         formatter: default
+        settings:
+          'link text': 'Read more'
+          'link class': ''
+          wrapper: ''
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
       node_title:
         plugin_id: node_title
-        weight: 2
+        weight: 3
         label: hidden
         formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_group:
+    group_post_content:
+      children:
+        - 'dynamic_token_field:node-post_date_custom_format_'
+        - node_title
+        - body
+        - node_link
+        - field_blog_category
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: post-content
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Post content'
+      region: hidden
 _core:
   default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
 id: node.blog_post.tile
@@ -63,15 +109,14 @@ bundle: blog_post
 mode: tile
 content:
   body:
-    type: text_summary_or_trimmed
-    weight: 3
-    settings:
-      trim_length: 600
+    type: text_default
+    weight: 4
+    settings: {  }
     third_party_settings: {  }
     label: hidden
     region: ds_content
   field_blog_category:
-    weight: 5
+    weight: 6
     label: inline
     settings:
       view_mode: default
@@ -90,9 +135,16 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
+      image_style: focal_600_x_325
+      image_link: content
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: image
     region: ds_content
 hidden:
