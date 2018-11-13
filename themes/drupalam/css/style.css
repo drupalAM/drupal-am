@@ -7719,7 +7719,7 @@ body.path-blog .title-wrapper {
     font-size: 18px;
     letter-spacing: 7px;
     margin-top: 1px; }
-body.path-blog #edit-actions {
+body.path-blog .form-actions {
   display: none; }
 body.path-blog .view-filters,
 body.path-blog .form-group {
@@ -7747,11 +7747,6 @@ body.path-blog .views-exposed-form {
       font-size: 12px;
       cursor: pointer; }
     body.path-blog .views-exposed-form .bef-links a {
-      -moz-transition: color 0.2s ease;
-      -o-transition: color 0.2s ease;
-      -webkit-transition: color 0.2s ease;
-      -ms-transition: color 0.2s ease;
-      transition: color 0.2s ease;
       margin: auto 8px;
       padding: 3px 0;
       color: #fff;
@@ -7821,6 +7816,23 @@ body.path-blog .field--name-field-blog-category {
     display: none; }
   body.path-blog .field--name-field-blog-category a {
     color: inherit; }
+body.path-blog .pagination > li > a {
+  padding: 5px;
+  font-size: 10px;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 2px;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  body.path-blog .pagination > li > a:hover {
+    color: #fff;
+    background-color: #5bc3ff; }
+body.path-blog .pagination > .pager__item--first a, body.path-blog .pagination > .pager__item--last a, body.path-blog .pagination > .pager__item--previous a, body.path-blog .pagination > .pager__item--next a {
+  width: 60px; }
 @media (min-width: 768px) {
   body.path-blog .view-content {
     padding: 70px 3%; } }

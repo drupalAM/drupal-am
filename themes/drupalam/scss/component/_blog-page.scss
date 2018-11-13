@@ -70,7 +70,7 @@ body.path-blog {
     }
   }
 
-  #edit-actions {
+  .form-actions {
     display: none;
   }
 
@@ -110,7 +110,7 @@ body.path-blog {
       }
 
       a {
-        @include transition(color 0.2s ease);
+        //@include transition(color 0.2s ease);
         margin: auto 8px;
         padding: 3px 0;
         color: $white;
@@ -128,7 +128,6 @@ body.path-blog {
 
   .view-content {
     padding: 20px 0;
-    //padding: 20px 3%;
     margin: 0 auto;
     max-width: 1200px;
     box-sizing: content-box;
@@ -212,6 +211,32 @@ body.path-blog {
     
     a {
       color: inherit;
+    }
+  }
+
+  .pagination {
+    & > li > a {
+      padding: 5px;
+      font-size: 10px;
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+      border-radius: 2px;
+      @include transition(all 0.2s ease);
+
+      &:hover {
+        color: $white;
+        background-color: $btn-default-color;
+      }
+    }
+
+    & > .pager__item--first,
+    & > .pager__item--last,
+    & > .pager__item--previous,
+    & > .pager__item--next {
+      a {
+        width: 60px;
+      }
     }
   }
 
