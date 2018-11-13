@@ -3,7 +3,7 @@ label: 'Post date (custom format)'
 ui_limit: 'blog_post|*'
 properties:
   content:
-    value: "<p>[date:custom:F j, Y]</p>\r\n"
+    value: '[date:custom:F j, Y]'
     format: basic_html
 type: token
 type_label: 'Token field'

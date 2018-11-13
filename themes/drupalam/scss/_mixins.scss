@@ -205,6 +205,9 @@
   @else if $point == mobile {
     @media (max-width: $screen-tablet - 1)  { @content ; }
   }
+  @else if $point == mobile_and_laptop_and_desktop {
+    @media (min-width: $screen-phone) { @content ; }
+  }
 }
 
 // =============================================================================

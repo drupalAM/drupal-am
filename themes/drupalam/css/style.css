@@ -7787,7 +7787,7 @@ body.path-blog .field--name-body {
   line-height: 1.7; }
 body.path-blog .field--name-node-link a {
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   margin-top: 10px;
   padding: 4px 0;
   line-height: 1em;
@@ -7805,7 +7805,22 @@ body.path-blog .field--name-node-link a {
     font-weight: normal;
     font-size: 12px; }
 body.path-blog .field--name-field-blog-category {
-  display: none; }
+  text-align: right;
+  line-height: 17px;
+  letter-spacing: 2px;
+  color: #b3b3b1;
+  font-size: 12px;
+  text-transform: uppercase; }
+  body.path-blog .field--name-field-blog-category .field--label,
+  body.path-blog .field--name-field-blog-category .field--items,
+  body.path-blog .field--name-field-blog-category .field--item {
+    display: inline; }
+  body.path-blog .field--name-field-blog-category .field--label {
+    font-weight: normal; }
+  body.path-blog .field--name-field-blog-category .comments-number {
+    display: none; }
+  body.path-blog .field--name-field-blog-category a {
+    color: inherit; }
 @media (min-width: 768px) {
   body.path-blog .view-content {
     padding: 70px 3%; } }

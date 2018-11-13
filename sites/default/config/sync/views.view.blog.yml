@@ -317,7 +317,7 @@ display:
       style:
         type: default
         options:
-          row_class: col-xxs-6
+          row_class: col-sm-6
           default_row_class: true
           uses_fields: false
       row:

@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
-    - image.style.focal_600_x_325
+    - image.style.focal_750_x_440_
     - node.type.blog_post
   module:
     - ds
@@ -117,12 +117,13 @@ content:
     region: ds_content
   field_blog_category:
     weight: 6
-    label: inline
+    label: above
     settings:
-      view_mode: default
+      view_mode: teaser
       link: false
     third_party_settings:
       ds:
+        ds_limit: ''
         ft:
           id: default
           settings:
@@ -132,11 +133,13 @@ content:
     type: entity_reference_entity_view
     region: ds_content
   field_blog_image:
+    type: image
     weight: 0
+    region: ds_content
     label: hidden
     settings:
-      image_style: focal_600_x_325
-      image_link: content
+      image_style: focal_750_x_440_
+      image_link: ''
     third_party_settings:
       ds:
         ft:
@@ -145,8 +148,6 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: image
-    region: ds_content
 hidden:
   field_blog_comments: true
   field_blog_tags: true

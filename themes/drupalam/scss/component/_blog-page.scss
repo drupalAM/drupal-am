@@ -167,7 +167,7 @@ body.path-blog {
 
   .field--name-node-link a {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     margin-top: 10px;
     padding: 4px 0;
     line-height: 1em;
@@ -189,7 +189,30 @@ body.path-blog {
   }
 
   .field--name-field-blog-category {
-    display: none;
+    text-align: right;
+    line-height: 17px;
+    letter-spacing: 2px;
+    color: $gray-light;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    .field--label,
+    .field--items,
+    .field--item {
+      display: inline;
+    }
+
+    .field--label {
+      font-weight: normal;
+    }
+
+    .comments-number {
+      display: none;
+    }
+    
+    a {
+      color: inherit;
+    }
   }
 
   @include breakpoint(tablet_and_desktop) {
