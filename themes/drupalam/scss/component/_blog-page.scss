@@ -96,33 +96,93 @@ body.path-blog {
     }
 
     .bef-links {
-      display: inline-block;
-      margin-left: 0;
-      padding: 0;
-      max-width: 90%;
-      cursor: default;
+      transition: all 0.7s ease;
 
       & > div {
-        display: inline;
+        display: block;
         text-transform: capitalize;
         font-size: 12px;
         cursor: pointer;
+        padding: 10px 0;
+        border-top: 1px solid $gray-base;
+
+        &:active {
+          background-color: #1c689c;
+        }
+
+        &:first-child {
+          border: none;
+        }
       }
 
       a {
-        //@include transition(color 0.2s ease);
         margin: auto 8px;
         padding: 3px 0;
         color: $white;
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-size: 13px;
+        font-size: 12px;
         cursor: pointer;
       }
     }
 
     .bef-link-active a {
       border-bottom: 2px solid $brand-primary;
+    }
+
+    .filter-visible {
+      .bef-links {
+        margin-top: 10px;
+        display: block;
+        overflow-y: visible;
+        max-height: 3000px;
+        position: relative;
+        top: 0;
+        z-index: 1000;
+        max-width: 100%;
+        padding: 0;
+        min-width: 250px;
+        background: rgba(0, 0, 0, 0.8);
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+      }
+
+      & > div {
+        display: block;
+      }
+    }
+
+    .hide-filter {
+      .bef-links {
+        max-height: 0;
+        overflow-y: hidden;
+        margin-top: 0;
+      }
+    }
+
+    .bef-links-collapsed {
+      display: inline-block;
+      cursor: pointer;
+      width: 30%;
+
+      &:active {
+        background-color: #1c689c;
+      }
+
+      svg {
+        color: $white;
+        font-size: 16px;
+      }
+
+      span {
+        margin-left: 10px;
+        height: 15px;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 1.3em;
+        color: $white;
+      }
     }
   }
 
@@ -254,6 +314,30 @@ body.path-blog {
 
       .field--name-field-subtitle {
         font-size: 15px;
+      }
+    }
+
+    .views-exposed-form {
+      .bef-links {
+        display: inline-block;
+        margin-left: 0;
+        padding: 0;
+        max-width: 90%;
+        max-height: none;
+        cursor: default;
+
+        & > div {
+          display: inline;
+        }
+
+        a {
+          margin-left: 10px;
+          padding: 0 2px;
+        }
+      }
+
+      .bef-links-collapsed {
+        display: none;
       }
     }
   }

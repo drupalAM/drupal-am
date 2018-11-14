@@ -74,6 +74,10 @@ function drupalam_preprocess_page(&$variables) {
   if (isset($variables['node']) && $variables['node']->getType() == 'case_study') {
     $variables['#attached']['library'][] = 'drupalam/case-study-scripts';
   }
+
+  if (isset($variables['page']) && $variables['page']['#title'] == 'Blog posts') {
+    $variables['#attached']['library'][] = 'drupalam/blog-scripts';
+  }
 }
 
 function drupalam_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {

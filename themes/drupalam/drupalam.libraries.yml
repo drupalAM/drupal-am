@@ -36,3 +36,8 @@ case-study-scripts:
     js/simple-image-slider.js: {}
     js/content-carousel.js: {}
     js/case-study-page.js: {}
+
+blog-scripts:
+  js:
+    js/main.js: {}
+    js/blog-page.js: {}
