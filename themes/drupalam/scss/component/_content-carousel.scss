@@ -151,9 +151,17 @@
       }
     }
     .pc-next {
+      //font-family: "Font Awesome 5 Free";
       @include fontawsome-icn($fa-var-angle-right) {
         font-size: 26px
       };
+     /* &:before {
+        content: "\f167";
+        display: inline-block;
+        //font-family: "Font Awesome 5 Free";
+        font-size: 12px;
+        color: $white;
+      }*/
     }
     .pc-prev {
       @include fontawsome-icn($fa-var-angle-left) {

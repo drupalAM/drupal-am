@@ -7149,7 +7149,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     .block.testimonials .ts-left-arrow:before {
       content: "";
       display: inline-block;
-      font-family: "Font Awesome 5 Free";
+      font-family: "FontAwesome";
       font-size: inherit;
       color: inherit;
       font-size: 24px;
@@ -7160,7 +7160,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     .block.testimonials .ts-right-arrow:before {
       content: "";
       display: inline-block;
-      font-family: "Font Awesome 5 Free";
+      font-family: "FontAwesome";
       font-size: inherit;
       color: inherit;
       font-size: 24px;
@@ -7516,13 +7516,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   .page-node-type-case-study .sis-prev-arrow:before {
     content: "";
     display: inline-block;
-    font-family: "Font Awesome 5 Free";
+    font-family: "FontAwesome";
     font-size: inherit;
     color: inherit; }
   .page-node-type-case-study .sis-next-arrow:before {
     content: "";
     display: inline-block;
-    font-family: "Font Awesome 5 Free";
+    font-family: "FontAwesome";
     font-size: inherit;
     color: inherit; }
   .page-node-type-case-study .related-projects-block .node--view-mode-slide:hover .field--items:before {
@@ -8951,14 +8951,14 @@ ul.cs-slider-ul li {
 .cs-prev-arrow:before {
   content: "";
   display: inline-block;
-  font-family: "Font Awesome 5 Free";
+  font-family: "FontAwesome";
   font-size: inherit;
   color: inherit; }
 
 .cs-next-arrow:before {
   content: "";
   display: inline-block;
-  font-family: "Font Awesome 5 Free";
+  font-family: "FontAwesome";
   font-size: inherit;
   color: inherit; }
 
@@ -9166,14 +9166,23 @@ ul.cs-slider-ul li {
       .related-projects-block .views-element-container .pc-next:active,
       .related-projects-block .views-element-container .pc-prev:active {
         text-indent: 3px; }
-    .carousel-block .views-element-container .pc-next:before,
-    .related-projects-block .views-element-container .pc-next:before {
-      content: "";
-      display: inline-block;
-      font-family: "Font Awesome 5 Free";
-      font-size: inherit;
-      color: inherit;
-      font-size: 26px; }
+    .carousel-block .views-element-container .pc-next,
+    .related-projects-block .views-element-container .pc-next {
+      /* &:before {
+         content: "\f167";
+         display: inline-block;
+         //font-family: "Font Awesome 5 Free";
+         font-size: 12px;
+         color: $white;
+       }*/ }
+      .carousel-block .views-element-container .pc-next:before,
+      .related-projects-block .views-element-container .pc-next:before {
+        content: "";
+        display: inline-block;
+        font-family: "FontAwesome";
+        font-size: inherit;
+        color: inherit;
+        font-size: 26px; }
     .carousel-block .views-element-container .pc-prev,
     .related-projects-block .views-element-container .pc-prev {
       left: 1px;
@@ -9187,7 +9196,7 @@ ul.cs-slider-ul li {
       .related-projects-block .views-element-container .pc-prev:before {
         content: "";
         display: inline-block;
-        font-family: "Font Awesome 5 Free";
+        font-family: "FontAwesome";
         font-size: inherit;
         color: inherit;
         font-size: 26px; }
@@ -9364,6 +9373,14 @@ ul.cs-slider-ul li {
 @font-face {
   font-family: "PexetoIcons";
   src: url("../fonts/PexetoIcons/PexetoIcons.eot?") format("eot"), url("../fonts/PexetoIcons/PexetoIcons.woff") format("woff"), url("../fonts/PexetoIcons/PexetoIcons.ttf") format("truetype"), url("../fonts/PexetoIcons/PexetoIcons.svg#PexetoIcons") format("svg"); }
+@font-face {
+  font-family: "Font Awesome 5 Solid";
+  font-weight: 900;
+  src: url("../fonts/FA/fa-solid-900.eot?") format("eot"), url("../fonts/FA/fa-solid-900.woff") format("woff"), url("../fonts/FA/fa-solid-900.ttf") format("truetype"), url("../fonts/FA/fa-solid-900.svg#Font_Awesome_5_Solid") format("svg"); }
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: 400;
+  src: url("../fonts/FA/fontawesome-webfont.eot?") format("eot"), url("../fonts/FA/fontawesome-webfont.woff") format("woff"), url("../fonts/FA/fontawesome-webfont.ttf") format("truetype"), url("../fonts/FA/fontawesome-webfont.svg#FontAwesome") format("svg"); }
 @font-face {
   font-family: "Montserrat";
   font-weight: 400;

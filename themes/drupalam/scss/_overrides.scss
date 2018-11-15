@@ -37,6 +37,8 @@
 
 // Fonts
 @include font-face("PexetoIcons", "../fonts/PexetoIcons/PexetoIcons",  null, null, eot woff ttf svg);
+@include font-face("Font Awesome 5 Solid", "../fonts/FA/fa-solid-900",  900, null, eot woff ttf svg);
+@include font-face("FontAwesome", "../fonts/FA/fontawesome-webfont",  400, null, eot woff ttf svg);
 @include font-face("Montserrat", "../fonts/Montserrat/Montserrat-Regular",  400, null, ttf);
 @include font-face("Montserrat", "../fonts/Montserrat/Montserrat-Bold",  700, null, ttf);
 
