@@ -7783,8 +7783,6 @@ body.path-blog .views-exposed-form {
     display: inline-block;
     cursor: pointer;
     width: 30%; }
-    body.path-blog .views-exposed-form .bef-links-collapsed:active {
-      background-color: #1c689c; }
     body.path-blog .views-exposed-form .bef-links-collapsed svg {
       color: #fff;
       font-size: 16px; }
@@ -7795,7 +7793,7 @@ body.path-blog .views-exposed-form {
       font-size: 12px;
       line-height: 1.3em;
       color: #fff; }
-body.path-blog .view-content {
+body.path-blog .view-content-wrapper {
   padding: 20px 0;
   margin: 0 auto;
   max-width: 1200px;
@@ -7873,7 +7871,7 @@ body.path-blog .pagination > li > a {
 body.path-blog .pagination > .pager__item--first a, body.path-blog .pagination > .pager__item--last a, body.path-blog .pagination > .pager__item--previous a, body.path-blog .pagination > .pager__item--next a {
   width: 60px; }
 @media (min-width: 768px) {
-  body.path-blog .view-content {
+  body.path-blog .view-content-wrapper {
     padding: 70px 3%; } }
 @media (min-width: 992px) {
   body.path-blog .title-wrapper h2 {

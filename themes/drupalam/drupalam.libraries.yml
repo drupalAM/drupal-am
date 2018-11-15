@@ -40,4 +40,5 @@ case-study-scripts:
 blog-scripts:
   js:
     js/main.js: {}
+    js/masonry-min.js: {}
     js/blog-page.js: {}

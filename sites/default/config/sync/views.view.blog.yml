@@ -317,7 +317,7 @@ display:
                 rewrite:
                   filter_rewrite_values: '- Any -|All'
           text_input_required_format: basic_html
-      use_ajax: true
+      use_ajax: false
       style:
         type: default
         options:

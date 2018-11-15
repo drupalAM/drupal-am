@@ -166,10 +166,6 @@ body.path-blog {
       cursor: pointer;
       width: 30%;
 
-      &:active {
-        background-color: #1c689c;
-      }
-
       svg {
         color: $white;
         font-size: 16px;
@@ -186,11 +182,16 @@ body.path-blog {
     }
   }
 
-  .view-content {
+  .view-content-wrapper {
     padding: 20px 0;
     margin: 0 auto;
     max-width: 1200px;
     box-sizing: content-box;
+  }
+
+  .views-row {
+    //width: 50%;
+    //padding: 0 15px;
   }
 
   .post-content {
@@ -301,7 +302,7 @@ body.path-blog {
   }
 
   @include breakpoint(tablet_and_desktop) {
-    .view-content {
+    .view-content-wrapper {
       padding: 70px 3%;
     }
   }
