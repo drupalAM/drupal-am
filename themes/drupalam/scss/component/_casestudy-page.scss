@@ -2,8 +2,27 @@
   background: #f7f7f7;
 
   .node--type-case-study.node--view-mode-full {
+    .field--name-node-title h2 {
+      margin: 0;
+      padding: 0;
+      color: $text-color;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 1.3em;
+      text-transform: uppercase;
+    }
+
+    .field--name-field-term-industry {
+      padding: 4px 0 8px 0;
+      color: #b3b3b1;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
     .field--name-body {
       margin-bottom: 30px;
+      margin-top: 10px;
     }
   }
 
@@ -79,10 +98,7 @@
     z-index: 100;
     padding: 10px;
     font-size: 12px;
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
-  }
-  .sis-imgnum {
-    color: #ffffff;
+    color: $white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   }
 
@@ -154,6 +170,28 @@
 
   // Related projects carousel
   .related-projects-block {
+    box-shadow: none;
+
+    .block-title {
+      display: block;
+      margin-top: 2px;
+      margin-bottom: 3px;
+      width: auto;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 1em;
+      font-weight: 400;
+      letter-spacing: normal;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    .views-element-container {
+      margin-top: 20px;
+    }
+
     .node--view-mode-slide:hover {
       .field--items:before {
         pointer-events: none;

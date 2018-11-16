@@ -113,10 +113,16 @@ content:
     weight: 1
     label: hidden
     settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
     region: left
 hidden:
   field_case_study_image: true
