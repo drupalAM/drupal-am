@@ -45,22 +45,20 @@ reactions:
         unique: 0
         context_id: header
         uuid: 6b63985a-453e-4dc2-aaf2-cb906e0c2252
-      d1a1a622-4bfc-4083-a090-53c3e2bdb3fd:
-        id: 'block_content:ecee50d2-7f10-46b5-8557-a20d57e29b6c'
-        label: 'Social Icons'
-        provider: block_content
+      d617f526-7e73-4b93-ac82-3589819e72dd:
+        id: 'fixed_block_content:social_icons'
+        label: 'Social icons'
+        provider: fixed_block_content
         label_display: 0
-        status: true
-        info: ''
-        view_mode: full
         region: top_right
         weight: '0'
+        view_mode: ''
         context_mapping: {  }
         theme: drupalam
         css_class: block-socialicons
         unique: 0
         context_id: header
-        uuid: d1a1a622-4bfc-4083-a090-53c3e2bdb3fd
+        uuid: d617f526-7e73-4b93-ac82-3589819e72dd
     id: blocks
     saved: false
     uuid: 45d0696e-2682-4ded-8b53-7803143cdfec
