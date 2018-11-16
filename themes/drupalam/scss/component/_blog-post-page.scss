@@ -61,6 +61,11 @@ body.page-node-type-blog-post {
       a {
         color: inherit;
         margin: 0 5px;
+
+        &:hover {
+          color: $link-hover-color;
+          text-decoration: underline;
+        }
       }
     }
 

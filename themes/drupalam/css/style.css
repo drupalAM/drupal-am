@@ -7935,6 +7935,9 @@ body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-cate
   body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category a {
     color: inherit;
     margin: 0 5px; }
+    body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category a:hover {
+      color: #5bc3ff;
+      text-decoration: underline; }
 body.page-node-type-blog-post .node--view-mode-full .blog-tags {
   display: flex;
   margin-top: 25px; }

@@ -98,3 +98,9 @@ function drupalam_preprocess_node(&$variables) {
     $variables['comment_count'] = $variables['node']->get('field_blog_comments')->comment_count;
   }
 }
+
+function drupalam_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  // Set $form_name to pass to ElementInfo.php.
+  $form['#form_name'] = $form['#theme'][0];
+  // This gets the correct naming convention of views-exposed-form--view-name--view-display-name.html.twig
+}
