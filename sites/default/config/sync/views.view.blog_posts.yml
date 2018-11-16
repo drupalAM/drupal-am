@@ -216,6 +216,7 @@ display:
       display_extenders: {  }
       display_description: ''
       block_description: 'Recent blog posts Block'
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -331,6 +332,7 @@ display:
         options:
           relationship: none
           view_mode: card
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
