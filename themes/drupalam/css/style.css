@@ -7902,6 +7902,12 @@ body.page-node-type-blog-post .content-and-sidebars-container {
   margin: 0 auto; }
 body.page-node-type-blog-post .region-content {
   background-color: #fff; }
+body.page-node-type-blog-post blockquote {
+  margin: 0 0 20px;
+  padding: 0 0 0 15px;
+  border-left: 4px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font: italic 120%/170% Georgia, "Times New Roman", Times, serif; }
 body.page-node-type-blog-post .node--view-mode-full .content-wrapper {
   padding: 5% 15px; }
 body.page-node-type-blog-post .node--view-mode-full .post-info {
