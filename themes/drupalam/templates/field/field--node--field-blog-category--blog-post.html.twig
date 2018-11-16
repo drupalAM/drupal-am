@@ -68,13 +68,11 @@
 
   <span class="comments-number">
     <a href="#comments">
-      <span class="no-caps">
-        {% if comment_count > 1 %}
-            {{ comment_count }} Comments
-        {% elseif comment_count == 1 %}
+      <span>
+        {% if comment_count == 1 %}
             {{ comment_count }} Comment
         {% else %}
-          no Comment
+            {{ comment_count }} Comments
         {% endif %}
       </span>
     </a>
@@ -95,15 +93,13 @@
 
     <span class="comments-number">
       <a href="#comments">
-        <span class="no-caps">
-          {% if comment_count > 1 %}
-              {{ comment_count }} Comments
-          {% elseif comment_count == 1 %}
+        <spans>
+          {% if comment_count == 1 %}
               {{ comment_count }} Comment
           {% else %}
-            no Comment
+              {{ comment_count }} Comments
           {% endif %}
-        </span>
+        </spans>
       </a>
     </span>
 

@@ -81,8 +81,6 @@
     <h2>{{ comment_count }} Comments</h2>
   {% elseif comment_count == 1 %}
     <h2>{{ comment_count }} Comment</h2>
-  {% else %}
-    <h2>no Comment</h2>
   {% endif %}
 
   <div{{ content_attributes.addClass('content') }}>
