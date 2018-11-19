@@ -7866,14 +7866,16 @@ body.path-blog .views-exposed-form {
       line-height: 1.3em;
       color: #fff; }
 body.path-blog .view-content-wrapper {
-  padding: 20px 0;
   margin: 0 auto;
   max-width: 1200px;
   box-sizing: content-box; }
+body.path-blog .views-row {
+  margin-bottom: 45px; }
+  body.path-blog .views-row:last-child {
+    margin-bottom: 0; }
 body.path-blog .post-content {
   padding: 4%;
-  background-color: #fff;
-  margin-bottom: 45px; }
+  background-color: #fff; }
 body.path-blog .field--name-dynamic-token-fieldnode-post-date-custom-format- {
   font-size: 12px;
   letter-spacing: 2px;
@@ -7942,9 +7944,6 @@ body.path-blog .pagination > li > a {
     background-color: #5bc3ff; }
 body.path-blog .pagination > .pager__item--first a, body.path-blog .pagination > .pager__item--last a, body.path-blog .pagination > .pager__item--previous a, body.path-blog .pagination > .pager__item--next a {
   width: 60px; }
-@media (min-width: 768px) {
-  body.path-blog .view-content-wrapper {
-    padding: 70px 3%; } }
 @media (min-width: 992px) {
   body.path-blog .title-wrapper h2 {
     font-size: 58px; }

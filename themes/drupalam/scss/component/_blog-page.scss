@@ -183,16 +183,23 @@ body.path-blog {
   }
 
   .view-content-wrapper {
-    padding: 20px 0;
     margin: 0 auto;
     max-width: 1200px;
     box-sizing: content-box;
   }
 
+  .views-row {
+    margin-bottom: 45px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .post-content {
     padding: 4%;
     background-color: $white;
-    margin-bottom: 45px;
+
   }
 
   .field--name-dynamic-token-fieldnode-post-date-custom-format- {
@@ -293,12 +300,6 @@ body.path-blog {
       a {
         width: 60px;
       }
-    }
-  }
-
-  @include breakpoint(tablet_and_desktop) {
-    .view-content-wrapper {
-      padding: 70px 3%;
     }
   }
 

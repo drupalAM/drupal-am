@@ -36,6 +36,20 @@ reactions:
         unique: 0
         context_id: blog
         uuid: 938a837c-4e80-4b02-bfda-8d42bb58cc4c
+      e8d88077-4c14-4002-b319-39da688bfbfc:
+        id: 'views_exposed_filter_block:blog-blog_all'
+        label: ''
+        provider: views
+        label_display: 0
+        views_label: ''
+        region: header
+        weight: '0'
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: blog
+        uuid: e8d88077-4c14-4002-b319-39da688bfbfc
     id: blocks
     saved: false
     uuid: e749e052-204e-4890-be69-472b648928eb
