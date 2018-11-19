@@ -45,7 +45,7 @@ reactions:
         unique: 0
         context_id: header
         uuid: 6b63985a-453e-4dc2-aaf2-cb906e0c2252
-      d617f526-7e73-4b93-ac82-3589819e72dd:
+      8287918e-184b-498e-a588-70b70e3704d5:
         id: 'fixed_block_content:social_icons'
         label: 'Social icons'
         provider: fixed_block_content
@@ -58,7 +58,7 @@ reactions:
         css_class: block-socialicons
         unique: 0
         context_id: header
-        uuid: d617f526-7e73-4b93-ac82-3589819e72dd
+        uuid: 8287918e-184b-498e-a588-70b70e3704d5
     id: blocks
     saved: false
     uuid: 45d0696e-2682-4ded-8b53-7803143cdfec
