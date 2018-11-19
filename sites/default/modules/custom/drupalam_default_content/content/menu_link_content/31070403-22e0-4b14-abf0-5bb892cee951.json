@@ -28,6 +28,11 @@
             "value": "menu_link_content"
         }
     ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
     "title": [
         {
             "value": "Download",
@@ -64,11 +69,6 @@
     "expanded": [
         {
             "value": false
-        }
-    ],
-    "enabled": [
-        {
-            "value": true
         }
     ],
     "changed": [

@@ -28,6 +28,11 @@
             "value": "menu_link_content"
         }
     ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
     "title": [
         {
             "value": "Blog",
@@ -41,7 +46,7 @@
     ],
     "link": [
         {
-            "uri": "internal:\/",
+            "uri": "internal:\/blog",
             "title": "",
             "options": []
         }
@@ -66,14 +71,9 @@
             "value": false
         }
     ],
-    "enabled": [
-        {
-            "value": true
-        }
-    ],
     "changed": [
         {
-            "value": "2017-10-25T15:37:25+00:00",
+            "value": "2018-10-31T08:56:58+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
