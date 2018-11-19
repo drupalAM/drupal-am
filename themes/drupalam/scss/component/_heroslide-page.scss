@@ -1,26 +1,28 @@
 .page-node-type-hero-slide {
+  .main-container {
+    background-color: $brand-bg;
+  }
 
-  .field--name-field-heroslide-image img {
-    width: 100%;
+  .region-content {
+    background-color: $white;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .heroslide-images-wrapper {
+    padding: 4% 4% 1%;
   }
 
   .field--name-field-heroslide-images {
     min-height: 400px;
-    padding: 4%;
-    background-color: $white;
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 
     .field--item {
-      margin-bottom: 10px;
-      padding: 0;
-      width: 100%;
-
+      margin-bottom: 30px;
       overflow: hidden;
       @include transition(opacity 0.1s ease);
       @include transition-timing-function(cubic-bezier(0.175, 0.885, 0.32, 1.275));
-      background-color: $gray-base;
 
       img {
         @include transition(all 0.4s ease);
@@ -62,23 +64,14 @@
     }
   }
 
-  @media #{$tablet} {
-
-    .field--name-field-heroslide-images {
-      .field--item {
-        width: 47%;
-        margin-left: 2%;
-      }
-    }
+  .field--name-body {
+    margin: 15px 0 30px;
+    padding: 0 4%;
   }
 
-  @media #{$normal} {
-
-    .field--name-field-heroslide-images {
-      .field--item {
-        width: 32%;
-        margin-left: 1%;
-      }
+  @include breakpoint(tablet_and_desktop) {
+    .region-content {
+      margin-bottom: 0;
     }
   }
 }

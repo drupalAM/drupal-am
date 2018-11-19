@@ -1,44 +1,44 @@
-uuid: 25f1f465-776b-4041-8cad-5ae63cc501e1
+uuid: ec8fe12f-8ed2-4632-94b5-07945d40227e
 langcode: en
 status: true
 dependencies:
   module:
     - ctools
-name: case_study
-label: 'Case Study'
+name: hero_slide
+label: 'Hero Slide'
 group: 'Content Types'
 description: ''
-requireAllConditions: true
+requireAllConditions: false
 disabled: false
 conditions:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
-      case_study: case_study
+      hero_slide: hero_slide
     negate: 0
-    uuid: 5081fae3-0910-43d4-b289-fd8a05542c60
+    uuid: 876f6f0e-478d-49dc-86b5-32053bfdd9fa
     context_mapping:
       node: '@node.node_route_context:node'
 reactions:
   blocks:
     blocks:
-      bc3601c5-b787-41ed-a9b1-141fb0b1819b:
-        id: 'views_block:case_study-block_2'
+      f708465d-2974-4962-96ff-66231c95bc15:
+        id: 'views_block:blog_posts-recent_posts_block'
         label: ''
         provider: views
         label_display: visible
         views_label: ''
         items_per_page: none
-        region: content
+        region: sidebar_second
         weight: '0'
         context_mapping: {  }
         theme: drupalam
-        css_class: related-projects-block
+        css_class: ''
         unique: 0
-        context_id: case_study
-        uuid: bc3601c5-b787-41ed-a9b1-141fb0b1819b
+        context_id: hero_slide
+        uuid: f708465d-2974-4962-96ff-66231c95bc15
     id: blocks
     saved: false
-    uuid: 361bd310-3d55-4643-8a9c-e1c4ec0804e0
+    uuid: a5d91b2b-460e-4578-ba6b-28a7a0fc2f06
     include_default_blocks: 0
 weight: 0

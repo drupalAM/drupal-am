@@ -1,11 +1,9 @@
-
-
 .page-node-type-hero-slide,
 .page-node-type-case-study {
 
   .main-container.container-fluid {
     padding-top: 0;
-    > .row > .col-sm-12 {
+    .content-header-container {
       padding-left: 0;
       padding-right: 0;
     }
@@ -32,6 +30,10 @@
     max-height: 400px;
     overflow: hidden;
     float: none;
+  }
+
+  .field--name-field-heroslide-image img {
+    width: 100%;
   }
 
   .page-title-wrapper {
@@ -116,9 +118,5 @@
         font-size: 58px;
       }
     }
-  }
-
-  @media #{$wide} {
-
   }
 }

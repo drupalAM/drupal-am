@@ -25,26 +25,21 @@ third_party_settings:
     settings: {  }
   ds:
     layout:
-      id: bs_1col
+      id: ds_1col
       library: null
       disable_css: false
       entity_classes: all_classes
       settings:
-        layout:
-          wrapper: div
-          classes:
-            row: row
-          add_layout_class: 1
-          attributes: ''
-        regions:
-          main:
-            wrapper: div
-            classes:
-              col-sm-12: col-sm-12
-            add_region_classes: 1
-            attributes: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
     regions:
-      main:
+      ds_content:
         - field_heroslide_images
         - body
 _core:
@@ -57,14 +52,14 @@ content:
   body:
     type: text_default
     weight: 1
-    region: main
+    region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_heroslide_images:
     type: colorbox
     weight: 0
-    region: main
+    region: ds_content
     label: hidden
     settings:
       colorbox_node_style: square_large_450_x_450_
@@ -85,8 +80,9 @@ content:
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
-            ow-el: ''
-            ow-cl: ''
+            ow: true
+            ow-el: div
+            ow-cl: heroslide-images-wrapper
             ow-at: ''
             fis: true
             fis-el: div
@@ -101,7 +97,6 @@ content:
             suffix: ''
             lbw: false
             lb-col: false
-            ow: false
             ow-def-at: false
             ow-def-cl: false
 hidden:
