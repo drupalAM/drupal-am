@@ -20,22 +20,6 @@ conditions:
 reactions:
   blocks:
     blocks:
-      938a837c-4e80-4b02-bfda-8d42bb58cc4c:
-        id: 'block_content:b3fac71f-61bb-45c8-a5e9-d0b8ca994f95'
-        label: Blog
-        provider: block_content
-        label_display: 0
-        status: true
-        info: ''
-        view_mode: full
-        region: header
-        weight: '0'
-        context_mapping: {  }
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: blog
-        uuid: 938a837c-4e80-4b02-bfda-8d42bb58cc4c
       e8d88077-4c14-4002-b319-39da688bfbfc:
         id: 'views_exposed_filter_block:blog-blog_all'
         label: ''
@@ -50,6 +34,20 @@ reactions:
         unique: 0
         context_id: blog
         uuid: e8d88077-4c14-4002-b319-39da688bfbfc
+      1488d000-f601-4f81-8584-4878271e209a:
+        id: 'fixed_block_content:blog_tilte'
+        label: 'Blog tilte'
+        provider: fixed_block_content
+        label_display: 0
+        region: header
+        weight: '0'
+        view_mode: ''
+        context_mapping: {  }
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: blog
+        uuid: 1488d000-f601-4f81-8584-4878271e209a
     id: blocks
     saved: false
     uuid: e749e052-204e-4890-be69-472b648928eb
