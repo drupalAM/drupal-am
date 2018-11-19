@@ -556,27 +556,10 @@ display:
           require_value: false
           reduce_duplicates: true
           plugin_id: taxonomy_index_tid
-      relationships:
-        field_term_industry:
-          id: field_term_industry
-          table: node__field_term_industry
-          field: field_term_industry
-          relationship: none
-          group_type: group
-          admin_label: 'field_term_industry: Taxonomy term'
-          required: false
-          plugin_id: standard
-        field_term_project_category:
-          id: field_term_project_category
-          table: node__field_term_project_category
-          field: field_term_project_category
-          relationship: none
-          group_type: group
-          admin_label: 'field_term_project_category: Taxonomy term'
-          required: false
-          plugin_id: standard
+      relationships: {  }
       sorts: {  }
       title: 'Related Projects'
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:

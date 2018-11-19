@@ -9073,7 +9073,6 @@ ul.cs-slider-ul li {
     filter: alpha(opacity=0);
     position: relative;
     margin: 55px auto 30px auto;
-    text-align: center;
     overflow: hidden; }
     .carousel-block .views-element-container .carousel-holder,
     .related-projects-block .views-element-container .carousel-holder {
@@ -9110,7 +9109,8 @@ ul.cs-slider-ul li {
     .carousel-block .views-element-container .item,
     .related-projects-block .views-element-container .item {
       padding: 0px 6px 0 6px;
-      width: 137px; }
+      width: 137px;
+      text-align: center; }
     .carousel-block .views-element-container img,
     .related-projects-block .views-element-container img {
       position: relative;
@@ -9213,23 +9213,14 @@ ul.cs-slider-ul li {
       .related-projects-block .views-element-container .pc-next:active,
       .related-projects-block .views-element-container .pc-prev:active {
         text-indent: 3px; }
-    .carousel-block .views-element-container .pc-next,
-    .related-projects-block .views-element-container .pc-next {
-      /* &:before {
-         content: "\f167";
-         display: inline-block;
-         //font-family: "Font Awesome 5 Free";
-         font-size: 12px;
-         color: $white;
-       }*/ }
-      .carousel-block .views-element-container .pc-next:before,
-      .related-projects-block .views-element-container .pc-next:before {
-        content: "";
-        display: inline-block;
-        font-family: "FontAwesome";
-        font-size: inherit;
-        color: inherit;
-        font-size: 26px; }
+    .carousel-block .views-element-container .pc-next:before,
+    .related-projects-block .views-element-container .pc-next:before {
+      content: "";
+      display: inline-block;
+      font-family: "FontAwesome";
+      font-size: inherit;
+      color: inherit;
+      font-size: 26px; }
     .carousel-block .views-element-container .pc-prev,
     .related-projects-block .views-element-container .pc-prev {
       left: 1px;
