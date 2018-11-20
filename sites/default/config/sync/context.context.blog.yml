@@ -34,7 +34,7 @@ reactions:
         unique: 0
         context_id: blog
         uuid: e8d88077-4c14-4002-b319-39da688bfbfc
-      1488d000-f601-4f81-8584-4878271e209a:
+      e8de4211-a5bb-4b36-9782-3d9ad9bb4376:
         id: 'fixed_block_content:blog_tilte'
         label: 'Blog tilte'
         provider: fixed_block_content
@@ -47,7 +47,7 @@ reactions:
         css_class: ''
         unique: 0
         context_id: blog
-        uuid: 1488d000-f601-4f81-8584-4878271e209a
+        uuid: e8de4211-a5bb-4b36-9782-3d9ad9bb4376
     id: blocks
     saved: false
     uuid: e749e052-204e-4890-be69-472b648928eb

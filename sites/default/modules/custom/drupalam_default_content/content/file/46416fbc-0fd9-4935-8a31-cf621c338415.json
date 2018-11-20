@@ -40,7 +40,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "2993eda0-dd8f-44c9-b1d8-fb2a2487cdfd"
+                        "value": "83e2481b-fcca-4967-8efe-69534ed25100"
                     }
                 ]
             }
@@ -53,7 +53,8 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2017-10\/TBynumHomepage.jpg"
+            "value": "public:\/\/2017-10\/TBynumHomepage.jpg",
+            "url": "\/sites\/default\/files\/2017-10\/TBynumHomepage.jpg"
         }
     ],
     "filemime": [
@@ -63,7 +64,7 @@
     ],
     "filesize": [
         {
-            "value": 217664
+            "value": 0
         }
     ],
     "status": [
