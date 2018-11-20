@@ -14,14 +14,6 @@ body.page-node-type-blog-post {
     background-color: $white;
   }
 
-  blockquote {
-    margin: 0 0 20px;
-    padding: 0 0 0 15px;
-    border-left: 4px solid rgba(0, 0, 0, 0.1);
-    text-align: left;
-    font: italic 120%/170% Georgia, "Times New Roman", Times, serif;
-  }
-
   .node--view-mode-full {
     .content-wrapper {
       padding: 5% 15px;

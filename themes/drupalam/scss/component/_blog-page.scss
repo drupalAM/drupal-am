@@ -219,6 +219,10 @@ body.path-blog {
 
     a {
       color: inherit;
+
+      &:hover {
+        color: $link-hover-color;
+      }
     }
   }
 
@@ -233,8 +237,8 @@ body.path-blog {
     margin-top: 10px;
     padding: 4px 0;
     line-height: 1em;
-    border-bottom: 1px solid $btn-default-color;
-    color: $btn-default-color;
+    border-bottom: 1px solid $link-hover-color;
+    color: $link-hover-color;
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 2px;
@@ -242,11 +246,16 @@ body.path-blog {
     &:after {
       content: ">";
       position: relative;
-      top: 0px;
+      top: 0;
       display: inline-block;
       margin-left: 3px;
       font-weight: normal;
       font-size: 12px;
+    }
+
+    &:hover {
+      color: #5eb4ff;
+      border-bottom-color: #5eb4ff;
     }
   }
 
@@ -274,6 +283,10 @@ body.path-blog {
     
     a {
       color: inherit;
+      
+      &:hover {
+        color: $link-hover-color;
+      }
     }
   }
 
