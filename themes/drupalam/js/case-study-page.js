@@ -21,4 +21,7 @@
     }
   $('.related-projects-block .views-element-container').pexetoCarousel();
 
+  // Set the same heigth to carousel items by 'MatchHeight'
+  $('.related-projects-block .views-element-container .item .node').matchHeight();
+
 })(jQuery, Drupal, drupalSettings);

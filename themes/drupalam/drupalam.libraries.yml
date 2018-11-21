@@ -32,6 +32,7 @@ front-scripts:
 
 case-study-scripts:
   js:
+    js/jquery.matchHeight-min.js: {}
     js/main.js: {}
     js/simple-image-slider.js: {}
     js/content-carousel.js: {}
