@@ -54,9 +54,8 @@
      * Loads the slider once all the images are loaded.
      */
     function loadSlider() {
-      addNavigation();
-
       if (imgNum > 1) {
+        addNavigation();
         showImageNumeration();
         showImage(true);
       }
@@ -224,7 +223,7 @@
     /**
      * On window resize event handler. Resets the container size.
      */
-    function doOnWindowResize() {console.log('last');
+    function doOnWindowResize() {
       setContainerHeight();
     }
 

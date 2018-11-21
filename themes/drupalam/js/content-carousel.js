@@ -93,7 +93,7 @@
       columns = Math.floor(($container.width() - o.itemMargin) / (o.minItemWidth + o.itemMargin));
 
       if (columns <= 1) {
-        columns = 2;
+        columns = $items.length < 2 ? 1 : 2;
       }
       itemWidth = Math.floor(($container.width() + o.itemMargin - 2 * o.shadowWidth) / columns) - o.itemMargin;
       $items.width(itemWidth + 1);
@@ -123,9 +123,9 @@
           wipeRight: doOnPreviousSlide,
           preventDefaultEvents: false
         });
-
-        $(window).on('resize.' + o.namespace, doOnWindowResize);
       }
+
+      $(window).on('resize.' + o.namespace, doOnWindowResize);
 
       $root.on('destroy' + o.namespace, doOnDestroy);
     }
