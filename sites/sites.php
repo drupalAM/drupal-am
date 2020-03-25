@@ -54,11 +54,8 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 
-$sites = array(
-  'local.drupal.am' => 'default',
-  'drupal-am.drupal8.local' => 'default',
-  'demo-personal.local.drupal.am' => 'demo_personal',
-  'demo-personal.drupal-am.drupal8.local' => 'demo_personal',
-  'demo-personal.dev.drupal.am' => 'demo_personal',
-  'demo-personal.drupal.am' => 'demo_personal',
-);
+$sites = [
+  'drupal.am.local' => 'default',
+  'demo-personal.drupal.am.local' => 'demo_personal',
+  'demo-personal.dev.drupal.am' => 'demo_personal'
+];
