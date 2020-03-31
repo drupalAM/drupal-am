@@ -58,5 +58,6 @@ content:
 hidden:
   field_user_bio: true
   field_user_first_name: true
+  field_user_friends: true
   field_user_last_name: true
   member_for: true
