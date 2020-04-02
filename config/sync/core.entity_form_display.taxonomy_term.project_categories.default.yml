@@ -1,0 +1,64 @@
+uuid: a4bea5e3-a061-4e34-ac34-1e4fc989b71d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.project_categories.field_project_category_icon
+    - image.style.thumbnail
+    - taxonomy.vocabulary.project_categories
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - path
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: T7N74qdjvVnZ-8MxRwJZxuZpyUPZFTWKf8UNDftLzNs
+id: taxonomy_term.project_categories.default
+targetEntityType: taxonomy_term
+bundle: project_categories
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_project_category_icon:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
+hidden: {  }

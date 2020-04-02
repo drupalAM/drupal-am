@@ -1,0 +1,10 @@
+uuid: 282f6db8-1bf6-4188-bcee-16c1be028feb
+langcode: en
+status: true
+dependencies: {  }
+id: two_columns_6_6
+label: 'Two Columns (6-6)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

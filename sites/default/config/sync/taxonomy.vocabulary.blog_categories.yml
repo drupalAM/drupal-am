@@ -1,9 +1,0 @@
-uuid: 21e273ee-b805-470a-9a80-92e923eb8c9b
-langcode: en
-status: true
-dependencies: {  }
-name: 'Blog Categories'
-vid: blog_categories
-description: ''
-hierarchy: 0
-weight: 0

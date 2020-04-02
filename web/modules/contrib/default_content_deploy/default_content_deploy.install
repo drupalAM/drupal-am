@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall hooks for default_content_deploy module.
+ */
+
+/**
+ * Swap permission 'import content' for 'default content deploy import'.
+ */
+function default_content_deploy_update_8001() {
+  /** @var \Drupal\user\Entity\Role[] $roles */
+  $roles = \Drupal::entityTypeManager()->getStorage('user_role')->loadMultiple();
+
+  foreach ($roles as $role) {
+    if ($role->hasPermission('import content')) {
+      $role->revokePermission('import content')
+        ->grantPermission('default content deploy import')
+        ->save();
+    }
+  }
+}

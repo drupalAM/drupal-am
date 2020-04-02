@@ -1,66 +1,78 @@
 {
-    "name": "drupal/drupal",
-    "description": "Drupal is an open source content management platform powering millions of websites and applications.",
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 8 projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "require": {
-        "composer/installers": "^1.0.24",
-        "wikimedia/composer-merge-plugin": "^1.4"
-    },
-    "replace": {
-        "drupal/core": "^8.6"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "preferred-install": "dist",
-        "autoloader-suffix": "Drupal8"
-    },
-    "extra": {
-        "_readme": [
-            "By default Drupal loads the autoloader from ./vendor/autoload.php.",
-            "To change the autoloader you can edit ./autoload.php.",
-            "This file specifies the packages.drupal.org repository.",
-            "You can read more about this composer repository at:",
-            "https://www.drupal.org/node/2718229"
-        ],
-        "merge-plugin": {
-            "include": [
-                "core/composer.json"
-            ],
-            "recurse": true,
-            "replace": false,
-            "merge-extra": false
-        },
-        "installer-paths": {
-            "core": ["type:drupal-core"],
-            "modules/contrib/{$name}": ["type:drupal-module"],
-            "profiles/contrib/{$name}": ["type:drupal-profile"],
-            "themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"],
-            "modules/custom/{$name}": ["type:drupal-custom-module"],
-            "themes/custom/{$name}": ["type:drupal-custom-theme"]
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Drupal\\Core\\Composer\\": "core/lib/Drupal/Core/Composer"
-        }
-    },
-    "scripts": {
-        "pre-autoload-dump": "Drupal\\Core\\Composer\\Composer::preAutoloadDump",
-        "post-autoload-dump": "Drupal\\Core\\Composer\\Composer::ensureHtaccess",
-        "post-package-install": "Drupal\\Core\\Composer\\Composer::vendorTestCodeCleanup",
-        "post-package-update": "Drupal\\Core\\Composer\\Composer::vendorTestCodeCleanup",
-        "drupal-phpunit-upgrade-check": "Drupal\\Core\\Composer\\Composer::upgradePHPUnit",
-        "drupal-phpunit-upgrade": "@composer update phpunit/phpunit --with-dependencies --no-progress",
-        "phpcs": "phpcs --standard=core/phpcs.xml.dist --runtime-set installed_paths $($COMPOSER_BINARY config vendor-dir)/drupal/coder/coder_sniffer --",
-        "phpcbf": "phpcbf --standard=core/phpcs.xml.dist --runtime-set installed_paths $($COMPOSER_BINARY config vendor-dir)/drupal/coder/coder_sniffer --"
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
     },
     "repositories": [
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
-    ]
+    ],
+    "require": {
+        "composer/installers": "~1.7.0",
+        "drupal/admin_toolbar": "^2.2",
+        "drupal/backup_migrate": "^4.1",
+        "drupal/better_exposed_filters": "^4.0@alpha",
+        "drupal/better_normalizers": "^1.0@beta",
+        "drupal/blog": "2.x-dev",
+        "drupal/bootstrap_layouts": "^5.1",
+        "drupal/colorbox": "^1.4",
+        "drupal/conf_block": "^1.0@RC",
+        "drupal/config_ignore": "^2.2",
+        "drupal/config_update": "^1.6",
+        "drupal/context": "^4.0@beta",
+        "drupal/context_groups": "^1.0",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-recommended": "^8.8",
+        "drupal/ctools": "^3.4",
+        "drupal/default_content_deploy": "^1.0@beta",
+        "drupal/ds": "^3.5",
+        "drupal/entityqueue": "^1.0@RC",
+        "drupal/field_group": "^3.0",
+        "drupal/fixed_block_content": "^1.0",
+        "drupal/focal_point": "^1.3",
+        "drupal/fontawesome": "^2.15",
+        "drupal/libraries": "^3.0@alpha",
+        "drupal/linked_field": "^1.3",
+        "drupal/linkicon": "^1.5",
+        "drupal/paragraphs": "^1.11",
+        "drupal/recaptcha": "^2.5",
+        "drupal/token": "^1.6",
+        "drush/drush": "^9.0"
+    },
+    "require-dev": {
+        "drupal/devel": "^2.1"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "patches-file": "composer.patches.json"
+    }
 }

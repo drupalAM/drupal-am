@@ -1,0 +1,17 @@
+default_content_deploy.settings:
+  title: 'Default Content Deploy'
+  description: 'Various settings for Default Content Deploy.'
+  parent: system.admin_config_development
+  route_name: default_content_deploy.settings
+
+default_content_deploy.import:
+  title: 'Import'
+  description: 'Perform content import (drush dcdi) via UI.'
+  parent: default_content_deploy.settings
+  route_name: default_content_deploy.import
+
+default_content_deploy.export:
+  title: 'Export'
+  description: 'Perform content export (drush dcde,dcder,dcdes) via UI.'
+  parent: default_content_deploy.settings
+  route_name: default_content_deploy.export

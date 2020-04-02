@@ -1,9 +1,0 @@
-uuid: 250ced00-9df1-45fe-9385-055ad50f5759
-langcode: en
-status: true
-dependencies: {  }
-name: 'Project Categories'
-vid: project_categories
-description: ''
-hierarchy: 0
-weight: 0

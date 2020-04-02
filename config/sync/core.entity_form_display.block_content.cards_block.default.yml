@@ -1,0 +1,74 @@
+uuid: 42911ac9-677b-4e19-bba5-18f08af6737e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cards_block
+    - field.field.block_content.cards_block.field_cards_background_image
+    - field.field.block_content.cards_block.field_cards_card
+    - field.field.block_content.cards_block.field_cards_description
+    - field.field.block_content.cards_block.field_cards_title
+    - image.style.thumbnail
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - paragraphs
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: dcyd83achWVC1SwalLEApCqF9qNgaqzQ8JzTuN0ebAs
+id: block_content.cards_block.default
+targetEntityType: block_content
+bundle: cards_block
+mode: default
+content:
+  field_cards_background_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_cards_card:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: card
+    third_party_settings: {  }
+    region: content
+  field_cards_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_cards_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

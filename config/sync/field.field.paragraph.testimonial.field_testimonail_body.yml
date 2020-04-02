@@ -1,0 +1,25 @@
+uuid: c4d50e43-c527-46ed-93ac-97d6c78ca622
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testimonail_body
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - text
+_core:
+  default_config_hash: AUXqh8GLS7NgvVW8aQFBpCTlAHRUqF_41F_a2UsBErQ
+id: paragraph.testimonial.field_testimonail_body
+field_name: field_testimonail_body
+entity_type: paragraph
+bundle: testimonial
+label: Body
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

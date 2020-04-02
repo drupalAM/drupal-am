@@ -1,0 +1,27 @@
+uuid: c26ba674-9c86-41af-bfd0-883b6b166e28
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - drupalam
+_core:
+  default_config_hash: zI2ffu9p2jLqS5eTkhzHqd6ir-qEaow5SilQC0SqVng
+id: drupalam_main_menu
+theme: drupalam
+region: navigation_collapsible
+weight: -8
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

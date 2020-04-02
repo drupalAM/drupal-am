@@ -1,0 +1,25 @@
+uuid: 41e24173-ce59-472e-aaaf-720fb7d327a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.hero_slide
+  module:
+    - text
+_core:
+  default_config_hash: U4QwDGUlEyqrgBFeGYAiuu4sdLtR47gzmLyfSfPWLJI
+id: node.hero_slide.body
+field_name: body
+entity_type: node
+bundle: hero_slide
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

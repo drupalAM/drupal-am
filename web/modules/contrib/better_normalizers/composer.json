@@ -1,0 +1,36 @@
+{
+  "name": "drupal/better_normalizers",
+  "description": "Improve the normalizers in core.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "drupal/core": "^8.7.7 || ^9"
+  },
+  "homepage": "https://www.drupal.org/project/better_normalizers",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/better_normalizers",
+    "source": "https://git.drupal.org/project/better_normalizers.git"
+  },
+  "authors": [
+    {
+      "name": "Christian Fritsch (chr.fritsch)",
+      "homepage": "https://www.drupal.org/u/chrfritsch",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Andrey Postnikov (andypost)",
+      "homepage": "https://www.drupal.org/u/andypost",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Sam Becker (Sam152)",
+      "homepage": "https://www.drupal.org/u/sam152",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Lee Rowlands (larowlan)",
+      "homepage": "https://www.drupal.org/u/larowlan",
+      "role": "Maintainer"
+    }
+  ]
+}

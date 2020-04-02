@@ -1,0 +1,12 @@
+name: 'Display Suite Test'
+description: 'Test module for Display Suite'
+core: 8.x
+package: 'Display Suite'
+type: module
+dependencies:
+  - ds_extras
+
+# Information added by Drupal.org packaging script on 2019-11-26
+version: '8.x-3.5'
+project: 'ds'
+datestamp: 1574750289

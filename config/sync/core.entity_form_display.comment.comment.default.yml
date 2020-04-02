@@ -1,0 +1,45 @@
+uuid: fe1d0b3a-5b9b-48c4-bc06-b8056828d7c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.field.comment.comment.field_author
+    - field.field.comment.comment.field_author_avatar
+    - field.field.comment.comment.field_comment_body
+    - field.field.comment.comment.field_comment_email
+    - field.field.comment.comment.field_comment_website
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: I0Pa0aQvT_jawlPo9oz4FE3h_ickc55dYKTPl6gILes
+id: comment.comment.default
+targetEntityType: comment
+bundle: comment
+mode: default
+content:
+  author:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_comment_body:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  field_author: true
+  field_author_avatar: true
+  field_comment_email: true
+  field_comment_website: true
+  subject: true

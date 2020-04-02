@@ -1,0 +1,14 @@
+default_content_deploy.settings:
+  base_route: default_content_deploy.settings
+  route_name: default_content_deploy.settings
+  title: 'Settings'
+
+default_content_deploy.import:
+  base_route: default_content_deploy.settings
+  route_name: default_content_deploy.import
+  title: 'Import'
+
+default_content_deploy.export:
+  base_route: default_content_deploy.settings
+  route_name: default_content_deploy.export
+  title: 'Export'

@@ -1,9 +1,0 @@
-uuid: 8564b645-9ddd-43ee-aa0f-16910cf7d96c
-langcode: en
-status: true
-dependencies: {  }
-id: two_columns_5_7
-label: 'Two Columns (5-7)'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

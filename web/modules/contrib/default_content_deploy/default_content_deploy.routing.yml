@@ -1,0 +1,36 @@
+default_content_deploy.settings:
+  path: '/admin/config/development/dcd'
+  defaults:
+    _form: 'Drupal\default_content_deploy\Form\SettingsForm'
+    _title: Default Content Deploy settings
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+
+default_content_deploy.import:
+  path: '/admin/config/development/dcd/import'
+  defaults:
+    _form: 'Drupal\default_content_deploy\Form\ImportForm'
+    _title: 'Default Content Deploy - Import'
+  requirements:
+    _permission: 'default content deploy import'
+  options:
+    _admin_route: TRUE
+
+default_content_deploy.export:
+  path: '/admin/config/development/dcd/export'
+  defaults:
+    _form: 'Drupal\default_content_deploy\Form\ExportForm'
+    _title: 'Default Content Deploy - Export'
+  requirements:
+    _permission: 'default content deploy export'
+  options:
+    _admin_route: TRUE
+
+default_content_deploy.export.download:
+  path: '/admin/config/development/dcd/export/download'
+  defaults:
+    _controller: 'Drupal\default_content_deploy\Controller\DownloadController::downloadCompressedContent'
+  requirements:
+    _permission: 'default content deploy export'

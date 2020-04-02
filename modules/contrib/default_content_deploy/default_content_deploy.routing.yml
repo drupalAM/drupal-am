@@ -1,9 +1,0 @@
-default_content_deploy.import:
-  path: '/admin/config/development/dcd-import'
-  defaults:
-    _form: 'Drupal\default_content_deploy\Form\ImportForm'
-    _title: 'Default Content Deploy - Import'
-  requirements:
-    _permission: 'import content'
-  options:
-    _admin_route: TRUE

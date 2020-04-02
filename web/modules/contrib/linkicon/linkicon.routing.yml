@@ -1,0 +1,7 @@
+linkicon.settings:
+  path: '/admin/config/user-interface/linkicon'
+  defaults:
+    _form: '\Drupal\linkicon\Form\LinkIconSettingsForm'
+    _title: 'Linkicon'
+  requirements:
+    _permission: 'administer linkicon'

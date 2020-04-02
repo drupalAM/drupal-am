@@ -1,0 +1,13 @@
+services:
+  default_content_deploy.importer:
+    class: Drupal\default_content_deploy\Importer
+    arguments: ['@serializer', '@entity_type.manager', '@hal.link_manager', '@event_dispatcher', '@default_content.scanner', '%default_content.link_domain%', '@account_switcher', '@default_content_deploy.manager', '@module_handler', '@logger.channel.default_content_deploy', '@path.alias_storage']
+  default_content_deploy.exporter:
+    class: Drupal\default_content_deploy\Exporter
+    arguments: ['@default_content.exporter', '@database', '@default_content_deploy.manager', '@entity_type.manager', '@serializer', '@account_switcher', '@file_system']
+  default_content_deploy.manager:
+    class: Drupal\default_content_deploy\DeployManager
+    arguments: ['@entity_type.manager', '@config.factory', '@settings', '@file_system']
+  logger.channel.default_content_deploy:
+    parent: logger.channel_base
+    arguments: ['default_content_deploy']

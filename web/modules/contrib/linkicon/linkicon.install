@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Installation actions for Linkicon.
+ */
+
+/**
+ * Moved Drupal\linkicon\LinkIconSettingsForm to \\Form\LinkIconSettingsForm..
+ */
+function linkicon_update_8101() {
+  // Do nothing to clear cache.
+}
