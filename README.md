@@ -5,15 +5,18 @@ http://www.drupal.am
 
 ## Contributing
 
-To contribute your changies to the project you need to fork the project do desired changies and request pull. Please see issues section to see current priority.
+To contribute your changes to the project you need to fork the project do desired changes and request pull. Please see issues section to see current priority.
 
-## Installation 
+## Installation
 - Clone the project (dev branch)
 - Copy default settings file and make sure it has write permission
 ```sh
- $ cp sites/default/default.settings.php sites/default/settings.php
+ $ cp web/sites/default/default.settings.php web/sites/default/settings.php
  ```
- - Create database
- - Install using  **Configuration installer**
- 
+ - Set **'config_sync_directory'** path in **settings.php** file to use existing configuration
+ ```sh
+$settings['config_sync_directory'] = '../config/sync';
+```
+ - Install using  **Use existing configuration**
+
 You will have Drupal 8 site with default content and same configuration.
