@@ -41,5 +41,5 @@ web/sites/simpletest
 # Ignore SimpleTest multi-site environment.
 # simpletest
 
+web/core
 web/modules/contrib
-web/libraries
