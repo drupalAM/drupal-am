@@ -1,0 +1,21 @@
+uuid: e453c395-3565-4cf5-8d5f-249a4f105d1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_two_columns_right_body
+    - paragraphs.paragraphs_type.two_columns_5_7
+  module:
+    - text
+id: paragraph.two_columns_5_7.field_two_columns_right_body
+field_name: field_two_columns_right_body
+entity_type: paragraph
+bundle: two_columns_5_7
+label: 'Right Body'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

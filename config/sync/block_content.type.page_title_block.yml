@@ -1,0 +1,8 @@
+uuid: 9d57b5f8-2abf-4cbb-912c-fce2c615eac0
+langcode: en
+status: true
+dependencies: {  }
+id: page_title_block
+label: 'Page title block'
+revision: 0
+description: ''

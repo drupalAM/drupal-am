@@ -1,0 +1,64 @@
+uuid: d0d10d0b-dc4c-44ca-af4e-95bfaa11789d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hero_slide.body
+    - field.field.node.hero_slide.field_heroslide_external_link
+    - field.field.node.hero_slide.field_heroslide_image
+    - field.field.node.hero_slide.field_heroslide_images
+    - field.field.node.hero_slide.field_heroslide_show_cont_link
+    - field.field.node.hero_slide.field_heroslide_text_position
+    - field.field.node.hero_slide.field_heroslide_title_prefix
+    - image.style.square_medium
+    - node.type.hero_slide
+  module:
+    - ds
+    - field_layout
+    - image
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+_core:
+  default_config_hash: mI-8wSfbHhnsIL45j5gwJgks1YTQa7Ga2-hFFL7pPx8
+id: node.hero_slide.default
+targetEntityType: node
+bundle: hero_slide
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_heroslide_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_heroslide_images:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: square_medium
+      image_link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    type: image
+    region: content
+hidden:
+  field_heroslide_external_link: true
+  field_heroslide_show_cont_link: true
+  field_heroslide_text_position: true
+  field_heroslide_title_prefix: true
+  links: true

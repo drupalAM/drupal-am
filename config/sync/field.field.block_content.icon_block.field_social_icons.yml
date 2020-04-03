@@ -1,0 +1,26 @@
+uuid: a41ede3e-9d53-4c0b-8bbc-0913ae1bf878
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.icon_block
+    - field.storage.block_content.field_social_icons
+  module:
+    - link
+_core:
+  default_config_hash: lwCX2SbVZBZVAQsga7CYH2dpw6Fzr3sC6N1k-je4ZW8
+id: block_content.icon_block.field_social_icons
+field_name: field_social_icons
+entity_type: block_content
+bundle: icon_block
+label: 'Social icons'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 5
+  title_predefined: "facebook|Facebook\r\nfacebook-square|Facebook(square)\r\ntwitter|Twitter\r\ntwitter-square|Twitter(square)\r\ngoogle-plus|Google+|[node:title]\r\ngoogle-plus-square|Google+(square)|[node:title]\r\nlinkedin|Linkedin\r\npinterest|Pinterest\r\nvimeo|Vimeo\r\nyoutube|Youtube\r\ngithub|GitHub\r\ngithub-square|GitHub(square)\r\ntelegram|Telegram\r\ntelegram-square|Telegram(square)"
+field_type: link

@@ -1,4 +1,0 @@
-bundle: content
-excluded:
-  - image.style.crop_430x255
-required: true

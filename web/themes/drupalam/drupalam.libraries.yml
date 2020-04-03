@@ -1,0 +1,45 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+
+bootstrap-scripts:
+  js:
+    bootstrap/assets/javascripts/bootstrap/affix.js: {}
+    bootstrap/assets/javascripts/bootstrap/alert.js: {}
+    bootstrap/assets/javascripts/bootstrap/button.js: {}
+    bootstrap/assets/javascripts/bootstrap/carousel.js: {}
+    bootstrap/assets/javascripts/bootstrap/collapse.js: {}
+    bootstrap/assets/javascripts/bootstrap/dropdown.js: {}
+    bootstrap/assets/javascripts/bootstrap/modal.js: {}
+    bootstrap/assets/javascripts/bootstrap/tooltip.js: {}
+    bootstrap/assets/javascripts/bootstrap/popover.js: {}
+    bootstrap/assets/javascripts/bootstrap/scrollspy.js: {}
+    bootstrap/assets/javascripts/bootstrap/tab.js: {}
+    bootstrap/assets/javascripts/bootstrap/transition.js: {}
+ 
+global-scripts:
+  js:
+    js/script.js: {}
+    
+front-scripts:
+  js:
+    js/jquery-migrate-3.0.1.js: {}
+    js/main.js: {}
+    js/content-slider.js: {}
+    js/content-carousel.js: {}
+    js/front.js: {}
+
+case-study-scripts:
+  js:
+    js/jquery.matchHeight-min.js: {}
+    js/main.js: {}
+    js/simple-image-slider.js: {}
+    js/content-carousel.js: {}
+    js/case-study-page.js: {}
+
+blog-scripts:
+  js:
+    js/main.js: {}
+    js/masonry-min.js: {}
+    js/blog-page.js: {}

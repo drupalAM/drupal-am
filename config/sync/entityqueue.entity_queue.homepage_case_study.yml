@@ -1,0 +1,27 @@
+uuid: d5717743-767b-4e9c-bb0a-0dd69c56e7d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Pc1KIGGJT05f4b-6_It_iyHPPeEkmc_XjN82ynCHxSE
+id: homepage_case_study
+label: 'Homepage Case Study'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      case_study: case_study
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 1
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

@@ -1,0 +1,77 @@
+.page-node-type-hero-slide {
+  .main-container {
+    background-color: $brand-bg;
+  }
+
+  .region-content {
+    background-color: $white;
+    margin-bottom: 50px;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .heroslide-images-wrapper {
+    padding: 4% 4% 1%;
+  }
+
+  .field--name-field-heroslide-images {
+    min-height: 400px;
+
+    .field--item {
+      margin-bottom: 30px;
+      overflow: hidden;
+      @include transition(opacity 0.1s ease);
+      @include transition-timing-function(cubic-bezier(0.175, 0.885, 0.32, 1.275));
+
+      img {
+        @include transition(all 0.4s ease);
+        width: 100%;
+      }
+      @include pexeto-icn("\f704", $white, 30px) {
+        display: block;
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        left: 50%;
+        padding: 10px;
+        margin-top: -30px;
+        margin-left: -30px;
+        line-height: 40px;
+        text-align: center;
+        background: $brand-primary;
+        border-radius: 3px;
+        @include scale(2);
+        @include opacity(0);
+        @include transition(all 0.3s ease);
+        pointer-events: none;
+        z-index: 15;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        img {
+          @include scale(1.1);
+          @include opacity(0.6);
+        }
+        @include pexeto-icn("\f704", $white, 30px) {
+          @include scale(1.2);
+          @include opacity(1);
+        }
+      }
+    }
+  }
+
+  .field--name-body {
+    margin: 15px 0 30px;
+    padding: 0 4%;
+  }
+
+  @include breakpoint(tablet_and_desktop) {
+    .region-content {
+      margin-bottom: 0;
+    }
+  }
+}

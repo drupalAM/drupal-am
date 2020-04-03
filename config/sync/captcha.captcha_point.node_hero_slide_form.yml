@@ -1,0 +1,7 @@
+uuid: 74ff7aa7-3158-4387-9bb4-6486e1dd68bf
+langcode: en
+status: false
+dependencies: {  }
+formId: node_hero_slide_form
+captchaType: default
+label: null

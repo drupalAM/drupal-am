@@ -1,0 +1,373 @@
+/**
+ * Frontpage styles.
+ */
+
+.path-frontpage {
+  .main-container.container-fluid {
+    > .row > .col-sm-12 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.block.why-use-drupal {
+  @extend .container;
+  margin: 90px auto;
+  
+  .block-title {
+    text-align: center;
+  }
+  .field--name-field-cards-title h2 {
+    color: $gray-base;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-style: normal;
+    font-size: 26px;
+    font-family: $font-family-monospace;
+  }
+  .field--name-field-cards-card {
+    > .field--item {
+      @extend .col-md-3;
+      @extend .col-sm-6;
+      margin: 40px 0;
+      text-align: center;
+      @include breakpoint(no_mobile) {
+        margin: 20px 0;
+        &:nth-child(4n + 1) {
+          clear: left;
+        }
+      }
+      @include breakpoint(tablet) {
+        &:nth-child(2n + 1) {
+          clear: left;
+        }
+      }
+    }
+    .field--name-field-icon {
+      img {
+        margin: 0 auto;
+      }
+    }
+    .field--name-field-card-link {
+      padding: 10px 10px 0 10px;
+          
+      a {
+        display: block;
+        padding-top: 5px;
+        padding-bottom: 0;
+        font-weight: 600;
+        font-size: 17px;
+      }
+    }
+    .field--name-field-card-text {
+      margin: 7px 10px 10px 10px;
+    }
+  }
+}
+
+.block.where-do-i-start {
+  position: relative;
+  padding: 90px 0;
+  text-align: center;
+  color: $white;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include opacity(.6);
+    background-color: $gray-base;
+  }
+  a {
+    color: $white;
+    
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+  .field--name-field-cards-card {
+    @extend .container;
+    margin-top: 40px;
+        
+    > .field--item {
+      @extend .col-md-3;
+      @extend .col-sm-6;
+      margin-bottom: 27px;
+    }
+  }
+  .field--name-field-cards-title h2 {
+    margin-bottom: 5px;
+    color: $white;
+    text-align: center;
+    letter-spacing: normal;
+    display: table;
+    position: relative;
+    margin: auto;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1.3em;
+    
+    &:after {
+      content: "";
+      width: 62%;
+      display: block;
+      height: 2px;
+      background: $brand-primary;
+      margin: auto;
+      margin-top: 4px;
+      margin-bottom: 7px;
+    }
+  }
+  .field--name-field-cards-description {
+    @include opacity(0.8);
+    margin: 0 0 1em 0;
+    padding: 0 15px;
+    font-size: 20px;
+    line-height: 1.3em;
+    
+    p {
+      margin: 0 0 3px;
+    }
+  }
+  .field--name-field-icon {
+    background-color: $brand-primary;
+    width: 90px;
+    height: 90px;
+    display: block;
+    border-radius: 100%; 
+    margin: auto;
+    
+    img {
+      padding: 25px;
+      filter: brightness(0) invert(1);
+    }
+  }
+  .field--name-field-card-link {
+    padding-top: 12px;
+    padding-bottom: 8px;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .parallax-element {
+    @include opacity(0);
+    @include transition(all 0.4s ease-out);
+  }
+  .parallax-scaled-original {
+    @include opacity(1);
+  }
+}
+
+.community-members {
+  padding: 90px 3%;
+  text-align: center;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
+  
+  h2.block-title {
+    @extend .section-title-light;
+  }
+  .field--name-user-picture {
+    position: relative;
+    display: inline-block;
+    
+    &:after {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      z-index: 10;
+      display: block;
+      width: 230px;
+      height: 230px;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+      content: "";
+    }
+  }
+  .user--view-mode-featured {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  .field--name-dynamic-token-fielduser-field-user-full-name {
+    opacity: 0;
+    transform: scale(0.8);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: 100;
+    display: table;
+    padding: 20px;
+    width: 230px;
+    height: 230px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #252525;
+    line-height: 1.5em;
+    transition: all 0.4s ease;
+    
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      
+      a {
+        font-weight: 600;
+        font-size: 17px;
+        color: $gray-title;
+        
+        &:hover {
+          color: $brand-primary;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 2px;
+        background-color: $brand-primary;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 11px;
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+      }
+    }
+  }
+  .user--view-mode-featured:hover .field--name-dynamic-token-fielduser-field-user-full-name {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .parallax-element {
+    @include opacity(0);
+    @include scale(.5);
+    @include transition(all 0.4s ease-out);
+  }
+  .parallax-scaled-original {
+    @include opacity(1);
+    @include scale(1);
+  }
+}
+
+.block.testimonials {
+  padding: 90px 3%;
+  text-align: center;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.06) inset;
+  
+  h2.block-title {
+    @extend .section-title-light;
+    margin-bottom: 12px !important;
+  }
+  .field--name-field-testimonial {
+    @extend .container;
+    position: relative;
+    min-height: 100px;
+    padding-bottom: 50px;
+    overflow: visible !important;
+    
+    >.field--item {
+      @include opacity(0);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    &:after {
+      content: "";
+    }
+  }
+  .field--name-field-testimonial-author-photo {
+    img {
+      margin: 0 auto;
+      border-radius: 100%;
+    }
+  }
+  .field--name-field-testimonial-author h2 {
+    display: block;
+    padding: 12px 0 3px 0;
+    margin: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    color: $gray-title;
+  }
+  .field--name-field-testimonial-author-role,
+  .field--name-field-testimonail-company {
+    @include opacity(.7);
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    
+    a {
+      color: $brand-primary;
+    }
+  }
+  .field--name-field-testimonial-author-role + .field--name-field-testimonail-company {
+    &:before {
+      content: "/\00a0";
+      display: inline-block;
+    }
+  }
+  .field--name-field-testimonail-body {
+    max-width: 80%;
+    width: 80%;
+    margin: 0 auto;
+    font: italic 170%/150% Georgia, "Times New Roman", Times, serif;
+    font-weight: 300;
+    padding: 7px 0;
+    
+    @include breakpoint(mobile) {
+      font-size: 18px;
+      line-height: 1.5em;
+    }
+  }
+  .ts-arrow {
+    position: absolute;
+    bottom: -50px;
+    margin-right: -32px;
+    cursor: pointer;
+    color: $white;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 2px;
+    @include opacity(1);
+    @include transition(all 0.1s ease);
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.8);
+    &:hover {
+      background-color: $brand-primary;
+    }
+  }
+  .ts-left-arrow {
+    left: 50%;
+    margin-left: -32px;
+    text-indent: -3px;
+
+    @include fontawsome-icn($fa-var-angle-left) {
+      font-size: 24px;
+      display: inline;
+    };
+  }
+  .ts-right-arrow {
+    right: 50%;
+    text-indent: 2px;
+
+    @include fontawsome-icn($fa-var-angle-right) {
+      font-size: 24px;
+      display: inline;
+    };
+  }
+}

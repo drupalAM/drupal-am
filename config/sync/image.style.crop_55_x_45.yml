@@ -1,0 +1,17 @@
+uuid: ebf86251-23d7-4e56-abd0-572e0763942b
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: crop_55_x_45
+label: 'Crop 55 x 45'
+effects:
+  79c4ec8d-d63e-44c6-bcb2-9d9adf8f6e66:
+    uuid: 79c4ec8d-d63e-44c6-bcb2-9d9adf8f6e66
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 55
+      height: 45
+      crop_type: focal_point

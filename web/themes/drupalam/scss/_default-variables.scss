@@ -1,0 +1,115 @@
+/**
+ * Default Variables.
+ *
+ * Modify this file to provide default Bootstrap Framework variables. The
+ * Bootstrap Framework will not override any variables defined here because it
+ * uses the `!default` flag which will only set their default if not already
+ * defined here.
+ *
+ * You can copy existing variables directly from the following file:
+ * ./THEMENAME/bootstrap/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+// Set the proper directory for the Bootstrap Glyphicon font.
+$icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:              #252525 !default;
+$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:              #333332 !default;
+$gray:                   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:             #b3b3b1 !default;
+$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+$gray-title:             #102119;
+$gray-ultra-light:       #f7f7f7;
+
+$brand-primary:         #5bc3ff !default;
+$brand-red:             #c90834 !default;
+$brand-orange:          #fdd200 !default;
+$brand-bg:              $gray-ultra-light;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Global text color on `<body>`.
+$text-color:            #777777 !default;
+//** Global textual link color.
+$link-color:            $gray-base !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      $brand-primary !default;
+//** Link hover decoration.
+$link-hover-decoration: none !default;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'Open Sans', Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Montserrat, 'Open Sans', Helvetica, Arial, sans-serif !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          14px !default;
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.7 !default;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     8px !default;
+$padding-base-horizontal:   25px !default;
+
+// Basics of a navbar
+$navbar-default-color:             #777 !default;
+$navbar-default-bg:                transparent !default;
+$navbar-default-border:            transparent !default;
+$navbar-height:                    72px !default;
+$navbar-padding-vertical:          2px;
+$navbar-padding-horizontal:        14px;
+
+// Navbar links
+$navbar-default-link-color:                #ffffff !default;
+$navbar-default-link-hover-color:          rgba(255, 255, 255, 0.8) !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           transparent !default;
+$navbar-default-toggle-icon-bar-bg:        #fff !default;
+$navbar-default-toggle-border-color:       transparent !default;
+
+//=== Shared nav styles
+$nav-link-padding:                          10px 15px !default;
+$nav-link-hover-bg:                         transparent !default;
+
+
+
+//== Buttons
+
+$btn-font-weight:                normal !default;
+
+$btn-default-color:              #5bc3ff !default;
+$btn-default-bg:                 #252525 !default;
+$btn-default-border:             #252525 !default;
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 #c90834 !default;
+$btn-primary-border:             #c90834 !default;
+
+$btn-info-color:                 #fff !default;
+$btn-info-bg:                    transparent!default;
+$btn-info-border:                #fff !default;
+
+$white: #fff;
+$black: #000;
+
+$fa-var-angle-left: "\f104";
+$fa-var-angle-right: "\f105";
+

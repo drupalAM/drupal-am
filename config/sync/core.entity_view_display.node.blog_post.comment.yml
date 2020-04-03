@@ -1,0 +1,46 @@
+uuid: 3459484d-7b24-4f6c-90e3-f2995356cabf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.comment
+    - field.field.node.blog_post.body
+    - field.field.node.blog_post.field_blog_category
+    - field.field.node.blog_post.field_blog_comments
+    - field.field.node.blog_post.field_blog_image
+    - field.field.node.blog_post.field_blog_tags
+    - node.type.blog_post
+  module:
+    - comment
+    - ds
+    - user
+_core:
+  default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
+id: node.blog_post.comment
+targetEntityType: node
+bundle: blog_post
+mode: comment
+content:
+  field_blog_comments:
+    type: comment_default
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  body: true
+  field_blog_category: true
+  field_blog_image: true
+  field_blog_tags: true
+  links: true

@@ -1,0 +1,17 @@
+uuid: 8b665e25-f626-4990-8426-53fa6fa07655
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q1kh1I4aD9HFQR8atURkgb9RUJPnJ_33MVkmhgfrF8g
+name: crop_70x70
+label: 'Crop 70 x 70'
+effects:
+  da571d82-dfa0-4884-9895-60227610e8b2:
+    uuid: da571d82-dfa0-4884-9895-60227610e8b2
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 70
+      height: 70
+      anchor: center-center

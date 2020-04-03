@@ -1,0 +1,142 @@
+uuid: d5a2d538-32a6-4783-875c-920773033b2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.mainstage
+    - field.field.node.hero_slide.body
+    - field.field.node.hero_slide.field_heroslide_external_link
+    - field.field.node.hero_slide.field_heroslide_image
+    - field.field.node.hero_slide.field_heroslide_images
+    - field.field.node.hero_slide.field_heroslide_show_cont_link
+    - field.field.node.hero_slide.field_heroslide_text_position
+    - field.field.node.hero_slide.field_heroslide_title_prefix
+    - node.type.hero_slide
+  module:
+    - ds
+    - field_group
+    - field_layout
+    - image
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  field_group:
+    group_page_title_wrapper:
+      children:
+        - node_title
+        - body
+      parent_name: group_page_header
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'Page-title wrapper'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: page-title-wrapper
+      label: 'Page-title wrapper'
+      region: content
+    group_page_header:
+      children:
+        - field_heroslide_image
+        - group_page_title_wrapper
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Page header container'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: page-header-container
+      label: 'Page header container'
+      region: content
+  ds:
+    layout:
+      id: bs_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      main:
+        - group_page_header
+        - field_heroslide_image
+        - group_page_title_wrapper
+        - node_title
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 14
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: mI-8wSfbHhnsIL45j5gwJgks1YTQa7Ga2-hFFL7pPx8
+id: node.hero_slide.mainstage
+targetEntityType: node
+bundle: hero_slide
+mode: mainstage
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 15
+    settings:
+      trim_length: 200
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: main
+  field_heroslide_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image
+    region: main
+hidden:
+  field_heroslide_external_link: true
+  field_heroslide_images: true
+  field_heroslide_show_cont_link: true
+  field_heroslide_text_position: true
+  field_heroslide_title_prefix: true
+  links: true

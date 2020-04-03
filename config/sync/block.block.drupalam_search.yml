@@ -1,0 +1,23 @@
+uuid: 8dfd3d24-158c-420e-a7e9-ac625f235220
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - drupalam
+_core:
+  default_config_hash: I8N3ljiRoznRuQhOksxs0gNsO6hZYF6s8HB4KWNg-qs
+id: drupalam_search
+theme: drupalam
+region: sidebar_second
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: ''
+visibility: {  }

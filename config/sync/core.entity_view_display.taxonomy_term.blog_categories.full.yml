@@ -1,0 +1,22 @@
+uuid: 0bf73f87-e1fb-47f6-a863-ac0090bcede3
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - taxonomy.vocabulary.blog_categories
+  module:
+    - text
+id: taxonomy_term.blog_categories.full
+targetEntityType: taxonomy_term
+bundle: blog_categories
+mode: full
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

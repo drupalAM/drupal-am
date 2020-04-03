@@ -1,0 +1,355 @@
+body.path-blog {
+  .main-container {
+    padding-top: 0;
+    background-color: $brand-bg;
+  }
+
+  .region-header,
+  .region-content {
+    margin: 0 -15px;
+  }
+
+  .region-header {
+    .contextual {
+      top: 85px;
+    }
+
+    .field--name-field-image {
+      background-color: rgb(5, 24, 49);
+      overflow: hidden;
+    }
+
+    img {
+      opacity: .5;
+      object-fit: cover;
+      height: 550px;
+      width: 100%;
+    }
+  }
+
+  .title-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 250px;
+    text-align: center;
+    padding: 0 3%;
+    max-width: 1200px;
+
+    h2 {
+      padding-top: 0;
+      color: $white;
+      text-transform: uppercase;
+      font-size: 38px;
+      font-weight: bold;
+      line-height: 1em;
+      letter-spacing: -1px;
+      display: inline-block;
+      margin: 0;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 62%;
+        height: 1px;
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 10px;
+      }
+    }
+
+    .field--name-field-subtitle {
+      display: block;
+      color: $white;
+      margin: auto;
+      text-transform: uppercase;
+      font-size: 18px;
+      letter-spacing: 7px;
+      margin-top: 1px;
+    }
+  }
+
+  .form-actions {
+    display: none;
+  }
+
+  .view-filters,
+   .form-group {
+     margin: 0;
+   }
+
+  .views-exposed-form {
+    background-color: $gray-base;
+
+    .form--inline {
+      margin: 0 auto;
+      padding: 0 3%;
+      max-width: 1200px;
+      box-sizing: content-box;
+    }
+
+    .form-item {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+    }
+
+    .bef-links {
+      transition: all 0.7s ease;
+
+      & > div {
+        display: block;
+        text-transform: capitalize;
+        font-size: 12px;
+        cursor: pointer;
+        padding: 10px 0;
+        border-top: 1px solid $gray-base;
+
+        &:active {
+          background-color: #1c689c;
+        }
+
+        &:first-child {
+          border: none;
+        }
+      }
+
+      a {
+        margin: auto 8px;
+        padding: 3px 0;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+    }
+
+    .bef-link-active a {
+      border-bottom: 2px solid $brand-primary;
+    }
+
+    .filter-visible {
+      .bef-links {
+        margin-top: 10px;
+        display: block;
+        overflow-y: visible;
+        max-height: 3000px;
+        position: relative;
+        top: 0;
+        z-index: 1000;
+        max-width: 100%;
+        padding: 0;
+        min-width: 250px;
+        background: rgba(0, 0, 0, 0.8);
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+      }
+
+      & > div {
+        display: block;
+      }
+    }
+
+    .hide-filter {
+      .bef-links {
+        max-height: 0;
+        overflow-y: hidden;
+        margin-top: 0;
+      }
+    }
+
+    .bef-links-collapsed {
+      display: inline-block;
+      cursor: pointer;
+      width: 30%;
+
+      svg {
+        color: $white;
+        font-size: 16px;
+      }
+
+      span {
+        margin-left: 10px;
+        height: 15px;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 1.3em;
+        color: $white;
+      }
+    }
+  }
+
+  .view-content-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: content-box;
+  }
+
+  .views-row {
+    margin-bottom: 45px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .post-content {
+    padding: 4%;
+    background-color: $white;
+
+  }
+
+  .field--name-dynamic-token-fieldnode-post-date-custom-format- {
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: $gray-light;
+  }
+
+  .field--name-node-title {
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.3;
+    }
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
+
+  .field--name-body {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .field--name-node-link a {
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    padding: 4px 0;
+    line-height: 1em;
+    border-bottom: 1px solid $link-hover-color;
+    color: $link-hover-color;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    &:after {
+      content: ">";
+      position: relative;
+      top: 0;
+      display: inline-block;
+      margin-left: 3px;
+      font-weight: normal;
+      font-size: 12px;
+    }
+
+    &:hover {
+      color: #5eb4ff;
+      border-bottom-color: #5eb4ff;
+    }
+  }
+
+  .field--name-field-blog-category {
+    text-align: right;
+    line-height: 17px;
+    letter-spacing: 2px;
+    color: $gray-light;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    .field--label,
+    .field--items,
+    .field--item {
+      display: inline;
+    }
+
+    .field--label {
+      font-weight: normal;
+    }
+
+    .comments-number {
+      display: none;
+    }
+    
+    a {
+      color: inherit;
+      
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
+
+  .pagination {
+    & > li > a {
+      padding: 5px;
+      font-size: 10px;
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+      border-radius: 2px;
+      @include transition(all 0.2s ease);
+
+      &:hover {
+        color: $white;
+        background-color: $btn-default-color;
+      }
+    }
+
+    & > .pager__item--first,
+    & > .pager__item--last,
+    & > .pager__item--previous,
+    & > .pager__item--next {
+      a {
+        width: 60px;
+      }
+    }
+  }
+
+  @include breakpoint(laptop_and_desktop) {
+    .title-wrapper {
+      h2 {
+        font-size: 58px;
+      }
+
+      .field--name-field-subtitle {
+        font-size: 15px;
+      }
+    }
+
+    .views-exposed-form {
+      .bef-links {
+        display: inline-block;
+        margin-left: 0;
+        padding: 0;
+        max-width: 90%;
+        max-height: none;
+        cursor: default;
+
+        & > div {
+          display: inline;
+        }
+
+        a {
+          margin-left: 10px;
+          padding: 0 2px;
+        }
+      }
+
+      .bef-links-collapsed {
+        display: none;
+      }
+    }
+  }
+}
+

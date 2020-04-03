@@ -1,0 +1,17 @@
+uuid: 59cd648d-0589-4966-8182-042382c3024e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square_mini
+label: 'Square mini (50 x 50)'
+effects:
+  7616c034-0007-435d-a5d9-c94d01fd916c:
+    uuid: 7616c034-0007-435d-a5d9-c94d01fd916c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 50
+      height: 50
+      crop_type: focal_point

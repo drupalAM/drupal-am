@@ -1,0 +1,17 @@
+uuid: 0adf0193-d657-4cbb-9466-3ecc5359136a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bpb16pK86-SNxlyOPRgI6xKOGrFp7HwpzJOxhHPvLqQ
+name: crop_430x255
+label: 'Crop 430 x 255'
+effects:
+  e495432f-088d-4cca-9633-953c6d7ad737:
+    uuid: e495432f-088d-4cca-9633-953c6d7ad737
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 430
+      height: 255
+      anchor: center-center

@@ -1,0 +1,234 @@
+.carousel-block,
+.related-projects-block {
+  padding: 30px 0 0;
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
+  
+
+  h2.block-title {
+    @extend .section-title;
+  }
+  .views-element-container {
+    @extend .container;
+    @include opacity(0);
+    position: relative;
+    margin: 55px auto 30px auto;
+    overflow: hidden;
+
+    .carousel-holder {
+      position: relative;
+      float: left;
+      width: 100%;
+      height: auto;
+      padding-right: 1px;
+      padding-left: 1px;
+      clear: both;
+      overflow: hidden;
+    }
+
+    .views-field-title {
+      padding: 0;
+      padding-bottom: 0px;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    
+    .view-content {
+      position: relative;
+      display: inline-block;
+      margin-left: -6px;
+      .item {
+        display: block;
+        float: left;
+      }
+    }
+
+    .page-wrapper {
+      float: left;
+    }
+    .item {
+      padding: 0px 6px 0 6px;
+      width: 137px;
+      text-align: center;
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      vertical-align: bottom;
+    }
+
+    .carousel-title {
+      h4.small-title, .link-title {
+        display: block;
+        margin-top: 2px;
+        margin-bottom: 3px;
+        width: auto;
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: 1em;
+        font-weight: 400;
+      }
+    }
+
+    .portfolio-carousel .link-title {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: #252525;
+      border-radius: 2px;
+      padding: 4px 26px 8px 26px;
+      margin-top: 20px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 11px;
+      text-align: center;
+      .more-arrow {
+        top: 1px;
+        font-weight: bold;
+      }
+      &:hover {
+        background: #777777;
+      }
+    }
+
+    .carousel-title {
+      .link-title:before {
+        margin-right: 7px;
+        content: "";
+        @include opacity(0.5);
+        font-style: normal;
+        font-size: 15px;
+      }
+      .small-title {
+        font-weight: bold;
+      }
+      .link-title {
+        .more-arrow {
+          position: relative;
+          top: 3px;
+          left: -2px;
+        }
+        &:hover .more-arrow {
+          @include opacity(1);
+          left: 0;
+        }
+      }
+    }
+
+    .pc-next, .pc-prev {
+      border-top-left-radius: 2px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 2px;
+      background-clip: padding-box;
+      @include transition(all 0.2s ease);
+      position: absolute;
+      top: 50%;
+      margin-top: -26px;
+      right: 0;
+      padding: 4px;
+      width: 33px;
+      height: 53px;
+      background-color: #000000;
+      background-color: rgba(0, 0, 0, 0.73);
+      color: #ffffff;
+      text-align: center;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 10;
+      &:hover {
+        border-color: transparent;
+        background-color: #5bc3ff;
+      }
+      &:active {
+        text-indent: 3px;
+      }
+    }
+    .pc-next {
+      @include fontawsome-icn($fa-var-angle-right) {
+        font-size: 26px
+      };
+    }
+    .pc-prev {
+      @include fontawsome-icn($fa-var-angle-left) {
+        font-size: 26px
+      };
+      left: 1px;
+      background-position: left top;
+      border-top-left-radius: 0;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 0;
+      background-clip: padding-box;
+      &:active {
+        text-indent: -3px;
+      }
+    }
+    .ps-navigation .disabled {
+      @include opacity(.3);
+      cursor: default;
+    }
+
+    .pc-wrapper .icon-circle, .pg-item .icon-circle, .qg-img .icon-circle {
+      @include opacity(0);
+      @include scale(2);
+      @include transition(all 0.3s ease);
+      top: 50%;
+      left: 50%;
+      z-index: 15;
+      display: block;
+      margin-top: -30px;
+      margin-left: -30px;
+      padding: 0;
+      padding: 10px;
+      background: #5bc3ff;
+    }
+
+    .pg-element-loading .icon-circle {
+      @include scale(1);
+    }
+
+    .qg-overlay .icon-circle {
+      @include opacity(0);
+      @include scale(.7);
+    }
+
+    .pc-effect-icon .pc-item a:hover .icon-circle, 
+      .pg-effect-icon .pg-item:hover .icon-circle, 
+      .qg-overlay:hover .icon-circle {
+      @include scale(1.2);
+      @include opacity(1);
+    }
+
+    .pg-element-loading {
+      .pg-info {
+        .pg-icon {
+          background: url('images/ajax-loader.gif') no-repeat center center;
+          background-image: none;
+          background-size: 15px 15px;
+        }
+        @include opacity(1);
+      }
+      .icon-circle {
+        @include opacity(.8);
+        display: inline-block;
+      }
+    }
+
+    .pc-no-title {
+      .pc-header {
+        margin: 7px 0;
+        border-bottom: 0;
+      }
+      .carousel-title {
+        font-size: 18px;
+      }
+    }
+  }
+}

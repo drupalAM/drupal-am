@@ -1,3 +1,0 @@
-excluded:
-  - core.entity_view_mode.user.token
-required: true

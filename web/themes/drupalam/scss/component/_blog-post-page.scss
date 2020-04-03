@@ -1,0 +1,324 @@
+body.page-node-type-blog-post {
+  .main-container {
+    padding-top: 92px;
+    padding-bottom: 20px;
+    background-color: $brand-bg;
+  }
+
+  .content-and-sidebars-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .region-content {
+    background-color: $white;
+  }
+
+  .node--view-mode-full {
+    .content-wrapper {
+      padding: 5% 15px;
+    }
+
+    .post-info {
+      padding-bottom: 9px;
+      line-height: 17px;
+      letter-spacing: 2px;
+      color: $gray-light;
+      text-transform: uppercase;
+    }
+
+    .field--name-node-title h2 {
+      padding-bottom: 15px;
+      padding-top: 0;
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 0;
+      color: $gray-dark;
+    }
+
+    .field--name-body {
+      margin-bottom: 20px;
+    }
+
+    .field--name-field-blog-category {
+      line-height: 17px;
+      letter-spacing: 2px;
+      color: #b3b3b1;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      .field--label {
+        font-weight: 400;
+      }
+
+      .field--label,
+      .field--items,
+      .field--item {
+        display: inline;
+      }
+
+      a {
+        color: inherit;
+        margin: 0 5px;
+
+        &:hover {
+          color: $link-hover-color;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .blog-tags {
+      display: flex;
+      margin-top: 25px;
+
+      .field-label-above {
+        margin-right: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 11px;
+      }
+
+      h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+      }
+
+      a {
+        display: block;
+        margin-left: 5px;
+        padding: 0 5px;
+        background: $brand-bg;
+        color: $btn-default-color;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  .block-views-blockblog-posts-related-posts-block {
+    margin: 0;
+    padding: 10px 15px;
+    text-align: left;
+    color: inherit;
+
+    & > h2 {
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 20px;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin: auto;
+        margin-top: 6px;
+      }
+    }
+  }
+
+  .related-posts {
+    .view-content {
+      margin: 0 -15px;
+    }
+
+    .views-row {
+      margin-bottom: 30px;
+
+      .field--name-node-title {
+        h2 {
+          padding: 20px 0 4px 0;
+          font-size: 16px;
+          line-height: 1.4em;
+        }
+
+        a {
+          color: $gray-dark;
+        }
+      }
+    }
+  }
+
+  .page-bottom {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .indented {
+    padding-left: 3%;
+  }
+
+  #edit-submit {
+    margin-bottom: 0;
+  }
+
+  .comments-block {
+    h2 {
+      margin-bottom: 25px;
+      padding-bottom: 7px;
+      border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+    }
+  }
+
+  .bypostauthor {
+    position: static;
+    border-top: 3px solid $brand-primary;
+  }
+}
+
+.page-node-type-blog-post,
+.path-comment {
+  .form-control {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    background: #fcfcfc;
+    font-size: 12px;
+
+    &:focus {
+      -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+      outline: none;
+      background: $white;
+    }
+  }
+
+  #edit-actions {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  #edit-submit,
+  #edit-cancel {
+    text-transform: uppercase;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 12px 25px;
+    background: none;
+    background-color: $btn-default-color;
+    color: $white;
+    vertical-align: middle;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: normal;
+    font-size: 13px;
+    font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+    line-height: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: 0;
+    @include transition(0s);
+
+    &:active {
+      -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+      -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+      box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+      position: relative;
+      bottom: -1px;
+    }
+
+    &:hover {
+      @include opacity(.9);
+      color: $white;
+    }
+  }
+
+  #edit-cancel {
+    margin-left: 15px;
+  }
+
+  .comment-box {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    display: grid;
+    margin-bottom: 20px;
+    padding: 3%;
+    background-color: $white;
+  }
+
+  .comment-info {
+    padding: 0;
+    width: 100%;
+    border-bottom: 0;
+    color: $gray-base;
+  }
+
+  .comment-author-name {
+    margin-right: 10px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .comment-date {
+    color: #b3b3b1;
+    font-size: 12px;
+  }
+
+  .comment-links {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    line-height: 2.2em;
+
+    .list-inline {
+      margin: 0;
+
+      & li:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .comment-wrapper {
+    margin-top: 10px;
+  }
+
+  .comment-author-avatar {
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+
+    img {
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      display: block;
+      margin: 0 0 10px;
+      padding: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: $white;
+    }
+  }
+}
+
+@include breakpoint(tablet_and_desktop){
+  body.page-node-type-blog-post .node--view-mode-full .field--name-field-blog-category {
+    text-align: right;
+  }
+
+  .comment-links {
+    float: right;
+  }
+}
+
+@include breakpoint(laptop_and_desktop){
+
+}

@@ -1,0 +1,21 @@
+uuid: 8e602c60-b8da-46e6-98de-507d7ad922a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tag
+  module:
+    - text
+id: taxonomy_term.tag.default
+targetEntityType: taxonomy_term
+bundle: tag
+mode: default
+content:
+  description:
+    type: text_default
+    weight: 0
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

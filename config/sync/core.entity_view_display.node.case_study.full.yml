@@ -1,0 +1,131 @@
+uuid: 21135657-cfcb-446d-99e2-bd3443ebf641
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.case_study.body
+    - field.field.node.case_study.field_case_study_image
+    - field.field.node.case_study.field_case_study_screens
+    - field.field.node.case_study.field_case_study_site_link
+    - field.field.node.case_study.field_term_industry
+    - field.field.node.case_study.field_term_project_category
+    - image.style.large_1920_x_1080_
+    - node.type.case_study
+  module:
+    - ds
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_2col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          left:
+            wrapper: div
+            classes:
+              col-sm-4: col-sm-4
+            add_region_classes: 1
+            attributes: ''
+          right:
+            wrapper: div
+            classes:
+              col-sm-8: col-sm-8
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      left:
+        - node_title
+        - field_term_industry
+        - body
+      right:
+        - field_case_study_screens
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+_core:
+  default_config_hash: fWgxTYNZRq0TddLFPYdvjYodgeoweJUV9OTGv9xBcRY
+id: node.case_study.full
+targetEntityType: node
+bundle: case_study
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: left
+  field_case_study_screens:
+    weight: 4
+    label: hidden
+    settings:
+      image_style: large_1920_x_1080_
+      image_link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow: true
+            ow-el: div
+            ow-cl: sis-wrapper
+            ow-at: ''
+            fis: true
+            fis-el: div
+            fis-cl: sis-images
+            fis-at: ''
+            fi: true
+            fi-el: div
+            fi-cl: 'field--items hidden'
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis-def-at: false
+            fi-def-at: false
+    type: image
+    region: right
+  field_term_industry:
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: left
+hidden:
+  field_case_study_image: true
+  field_case_study_site_link: true
+  field_term_project_category: true
+  links: true

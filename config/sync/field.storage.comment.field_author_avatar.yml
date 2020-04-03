@@ -1,0 +1,30 @@
+uuid: 0029428f-e90f-4a9c-9e69-c7ebec827b70
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - file
+    - image
+id: comment.field_author_avatar
+field_name: field_author_avatar
+entity_type: comment
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: 3cfc1696-ed05-4ac2-8c78-52677fcaefd2
+    alt: ''
+    title: ''
+    width: 620
+    height: 800
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
