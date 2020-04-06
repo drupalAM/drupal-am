@@ -1,0 +1,96 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/crop\/focal_point"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/crop\/focal_point\/revision_uid": [
+            {
+                "href": "http:\/\/drupal.am.local\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "uuid": [
+        {
+            "value": "5fa2a9fe-e3f3-4bde-8562-5916f470edfa"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "focal_point"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "entity_id": [
+        {
+            "value": 9
+        }
+    ],
+    "entity_type": [
+        {
+            "value": "file"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2017-11\/abstract-mosaic-background_0.png",
+            "lang": "en"
+        }
+    ],
+    "x": [
+        {
+            "value": 1250,
+            "lang": "en"
+        }
+    ],
+    "y": [
+        {
+            "value": 938,
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-04-03T16:40:13+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/crop\/focal_point\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/drupal.am.local\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ea183928-3810-480e-a817-de11b611612d"
+                    }
+                ]
+            }
+        ]
+    },
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

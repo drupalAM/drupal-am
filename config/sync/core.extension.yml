@@ -32,7 +32,6 @@ module:
   default_content_deploy: 0
   devel: 0
   drupalam_customization: 0
-  drupalam_default_content: 0
   dynamic_page_cache: 0
   editor: 0
   empty_front: 0

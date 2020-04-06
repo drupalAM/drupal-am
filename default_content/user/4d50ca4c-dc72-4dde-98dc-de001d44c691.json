@@ -1,0 +1,117 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/drupal.am.local\/user\/16?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/user\/user\/user_picture": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ]
+    },
+    "uuid": [
+        {
+            "value": "4d50ca4c-dc72-4dde-98dc-de001d44c691"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "preferred_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "brown"
+        }
+    ],
+    "timezone": [
+        {
+            "value": "America\/Denver"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-12-28T12:48:30+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-04-03T16:40:13+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "access": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "login": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_user_first_name": [
+        {
+            "value": "Elizabeth"
+        }
+    ],
+    "field_user_last_name": [
+        {
+            "value": "Brown"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/user\/user\/user_picture": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b5782dfb-ff30-46d4-953e-b111590210bb"
+                    }
+                ],
+                "lang": "en",
+                "alt": "",
+                "title": "",
+                "width": "365",
+                "height": "365"
+            }
+        ]
+    },
+    "pass": [
+        {
+            "value": null
+        }
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card\/field_icon": [
+            {
+                "href": ""
+            }
+        ]
+    },
+    "uuid": [
+        {
+            "value": "1713a9e9-d877-4db9-86bd-3d60f2bab549"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "card"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2017-11-26T10:00:02+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "4"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "block_content"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_cards_card"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_card_link": [
+        {
+            "uri": "http:\/\/example.com",
+            "title": "Unlimited Colors",
+            "options": []
+        }
+    ],
+    "field_card_text": [
+        {
+            "value": "<p>Aliquam non congue lacus. Donec dignissim tempus cursus.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Aliquam non congue lacus. Donec dignissim tempus cursus.<\/p>"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card\/field_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5cb65a05-f4f7-4912-93bb-4ef4dd808607"
+                    }
+                ],
+                "alt": "icon",
+                "title": "",
+                "width": "200",
+                "height": "50"
+            }
+        ]
+    }
+}

@@ -1,5 +1,0 @@
-services:
-  drupalam_default_content.drupalam_default_content_subscriber:
-    class: Drupal\drupalam_default_content\DrupalAmDefaultContentSubscriber
-    tags:
-      - { name: event_subscriber }

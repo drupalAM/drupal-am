@@ -1,0 +1,95 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/drupal.am.local\/block\/9?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/icon_block"
+        }
+    },
+    "uuid": [
+        {
+            "value": "199a72c0-bdb0-406c-bac6-0791bfa2a51c"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "icon_block"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-04-06T11:27:36+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Social icons for contact page",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-04-06T11:27:36+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_social_icons": [
+        {
+            "uri": "https:\/\/facebook.com",
+            "title": "facebook",
+            "options": []
+        },
+        {
+            "uri": "https:\/\/twitter.com",
+            "title": "twitter",
+            "options": []
+        },
+        {
+            "uri": "https:\/\/plus.google.com",
+            "title": "google-plus",
+            "options": []
+        },
+        {
+            "uri": "https:\/\/telegram.org\/",
+            "title": "telegram",
+            "options": []
+        },
+        {
+            "uri": "https:\/\/github.com\/drupalAM\/drupal-am",
+            "title": "github",
+            "options": []
+        }
+    ]
+}
