@@ -126,7 +126,8 @@ body.path-blog {
       }
     }
 
-    .bef-link-active a {
+    .bef-link-active a,
+    .bef-link--selected {
       border-bottom: 2px solid $brand-primary;
     }
 
@@ -280,10 +281,10 @@ body.path-blog {
     .comments-number {
       display: none;
     }
-    
+
     a {
       color: inherit;
-      
+
       &:hover {
         color: $link-hover-color;
       }
