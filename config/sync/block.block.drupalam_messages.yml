@@ -1,4 +1,4 @@
-uuid: d2819605-77fb-433c-a6a9-0fe35d3a7f87
+uuid: 1b44d85b-1ed1-481b-8a68-16904a6a2b71
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - drupalam
 _core:
-  default_config_hash: PJd0gdW1E8BxrBVfy0t97rZb9wLLQJrRilWcX9ASS7I
+  default_config_hash: 9RnnTUBcn0WRWXfrGOnId2H0Q31uQUeu_F5TnDxl2yg
 id: drupalam_messages
 theme: drupalam
 region: header
-weight: -8
+weight: -50
 provider: null
 plugin: system_messages_block
 settings:

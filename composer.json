@@ -16,11 +16,13 @@
     ],
     "require": {
         "composer/installers": "~1.7.0",
+        "cweagans/composer-patches": "^1.6",
         "drupal/admin_toolbar": "^2.2",
         "drupal/backup_migrate": "^4.1",
         "drupal/better_exposed_filters": "^4.0@alpha",
         "drupal/better_normalizers": "^1.0@beta",
         "drupal/blog": "2.x-dev",
+        "drupal/bootstrap": "^3.21",
         "drupal/bootstrap_layouts": "^5.1",
         "drupal/colorbox": "^1.4",
         "drupal/conf_block": "^1.0@RC",

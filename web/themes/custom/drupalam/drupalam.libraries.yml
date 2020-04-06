@@ -1,9 +1,7 @@
-global-styling:
+framework:
   css:
     theme:
       css/style.css: {}
-
-bootstrap-scripts:
   js:
     bootstrap/assets/javascripts/bootstrap/affix.js: {}
     bootstrap/assets/javascripts/bootstrap/alert.js: {}
@@ -17,11 +15,11 @@ bootstrap-scripts:
     bootstrap/assets/javascripts/bootstrap/scrollspy.js: {}
     bootstrap/assets/javascripts/bootstrap/tab.js: {}
     bootstrap/assets/javascripts/bootstrap/transition.js: {}
- 
+
 global-scripts:
   js:
     js/script.js: {}
-    
+
 front-scripts:
   js:
     js/jquery-migrate-3.0.1.js: {}

@@ -1,4 +1,4 @@
-http_path = "/themes/drupalam"
+http_path = "/themes/custom/drupalam"
 css_dir = "css"
 sass_dir = "scss"
 images_dir = "images"

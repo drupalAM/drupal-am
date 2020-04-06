@@ -1,4 +1,4 @@
-uuid: f80d4185-84a2-42b3-9e7a-3891486e3964
+uuid: 7fa4b0e7-2f8e-4b7c-9fac-a34e4b33bd57
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   theme:
     - bootstrap
 _core:
-  default_config_hash: f3Dd5TnUiFDjFZp9yEGJInwt6cUzs7O6SvLTFTATSlU
+  default_config_hash: SrPItPkAevw9hGX_v5AfsVyw6vkoog7ZVLSJYqwsBHc
 id: bootstrap_tools
 theme: bootstrap
 region: sidebar_second

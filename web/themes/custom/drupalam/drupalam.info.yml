@@ -21,6 +21,8 @@ regions:
   page_bottom:            'Page bottom'
 
 libraries:
-  - 'drupalam/global-styling'
-  - 'drupalam/bootstrap-scripts'
   - 'drupalam/global-scripts'
+
+libraries-extend:
+  bootstrap/framework:
+    - drupalam/framework

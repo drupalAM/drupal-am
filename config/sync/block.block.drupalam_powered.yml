@@ -1,17 +1,17 @@
-uuid: d1e31fad-471b-4729-a790-089840c89813
+uuid: 01e39e23-a32f-45f3-815c-828e2cc5696d
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
   theme:
     - drupalam
 _core:
-  default_config_hash: Dpa5xL-ceE_tTgW-y4MhkNdS_xujBdgBKR7MwSelx5Y
+  default_config_hash: iggZSiUKz4mYP1YPJ8SsUfFu79HIgOTt6IDy3Up59aM
 id: drupalam_powered
 theme: drupalam
 region: footer
-weight: -8
+weight: -10
 provider: null
 plugin: system_powered_by_block
 settings:

@@ -1,6 +1,6 @@
-uuid: 7a2e723f-666c-499b-9b35-de52a95f7f90
+uuid: fe3c5e45-8d1a-41ab-b077-971d747c5666
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.tools
@@ -9,7 +9,7 @@ dependencies:
   theme:
     - drupalam
 _core:
-  default_config_hash: i0GyGOjijZOosH2MykoOEm34WJA8Fs3S7HPiLcjhcig
+  default_config_hash: SrPItPkAevw9hGX_v5AfsVyw6vkoog7ZVLSJYqwsBHc
 id: drupalam_tools
 theme: drupalam
 region: sidebar_second

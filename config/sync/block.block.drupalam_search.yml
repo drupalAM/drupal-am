@@ -1,13 +1,13 @@
-uuid: 8dfd3d24-158c-420e-a7e9-ac625f235220
+uuid: 6489e06b-e75c-4e0a-80f3-8121725e3733
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - search
   theme:
     - drupalam
 _core:
-  default_config_hash: I8N3ljiRoznRuQhOksxs0gNsO6hZYF6s8HB4KWNg-qs
+  default_config_hash: F3d5hyAFunLh4PhGviJF019fHn1Z3_zy5gzsQ0tX1K0
 id: drupalam_search
 theme: drupalam
 region: sidebar_second

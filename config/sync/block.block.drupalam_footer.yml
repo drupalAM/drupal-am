@@ -1,4 +1,4 @@
-uuid: 905b552f-2336-4db0-8b1e-b6cd182950cd
+uuid: 9c08b99d-47f9-4a52-a718-8220b6b24452
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   theme:
     - drupalam
 _core:
-  default_config_hash: F9aQeFNbHqBegq5zeW1Ztp1kwbdtmpUb1YxBc_bW1JE
+  default_config_hash: 4VDn3bLy009pYlPUWQBHaaGVJu8FPnxNfr2DYrAnNHI
 id: drupalam_footer
 theme: drupalam
 region: footer

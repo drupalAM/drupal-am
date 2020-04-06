@@ -7,6 +7,17 @@
 
 use Drupal\node\Entity\Node;
 
+/**
+ * Implements hook_theme_suggestions_HOOK_alter for blocks.
+ */
+function drupalam_theme_suggestions_block_alter(&$suggestions, $variables) {
+
+  // Load theme suggestions for blocks from parent theme.
+  foreach ($suggestions as &$suggestion) {
+    $suggestion = str_replace('drupalam', 'bootstrap_', $suggestion);
+  }
+}
+
 function drupalam_preprocess_views_view_list(&$variables) {
   $view = $variables['view'];
   // adds data- attributes for content-slider script

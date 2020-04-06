@@ -1,6 +1,6 @@
-uuid: 031880c4-0cb1-47c9-a5df-c9894343e50b
+uuid: 2923e26d-9ba1-4698-a350-ad28b456165c
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.account
@@ -9,11 +9,11 @@ dependencies:
   theme:
     - drupalam
 _core:
-  default_config_hash: jrvawff-UW-wZRD2Nz9BPhraWoHquqr6L85thqhwL-Y
+  default_config_hash: HrZTblWpMF4fo6BdbBcyHEu5Hp9ds1IZF3FiRd2Q8rU
 id: drupalam_account_menu
 theme: drupalam
 region: navigation_collapsible
-weight: -8
+weight: 11
 provider: null
 plugin: 'system_menu_block:account'
 settings:

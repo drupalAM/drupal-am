@@ -1,15 +1,15 @@
-uuid: e8ad55b9-fc66-4aa4-9b23-fc8dcc5abc5b
+uuid: f40c1d16-9887-4f12-a2e9-76b887c42f8c
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - drupalam
 _core:
-  default_config_hash: TE5uDfVFciiH8SLOiHh5soL2YHl1KMO7hegmxXRl1dI
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
 id: drupalam_local_actions
 theme: drupalam
 region: header
-weight: -8
+weight: 20
 provider: null
 plugin: local_actions_block
 settings:

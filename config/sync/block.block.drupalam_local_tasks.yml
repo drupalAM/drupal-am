@@ -1,15 +1,15 @@
-uuid: 829928de-c0ba-452b-a849-fe96e5352ad7
+uuid: 945339b0-0bb3-4f0d-91e0-bcdc4a87f627
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - drupalam
 _core:
-  default_config_hash: CAPvaR3H1GuELmD1fgQ8SY2LYvjyxJpAE-i1GxcGWWU
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
 id: drupalam_local_tasks
 theme: drupalam
 region: header
-weight: -8
+weight: 10
 provider: null
 plugin: local_tasks_block
 settings:

@@ -1,4 +1,4 @@
-uuid: c26ba674-9c86-41af-bfd0-883b6b166e28
+uuid: df9234d3-57ab-4dcc-8344-75196e5bbf01
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,11 @@ dependencies:
   theme:
     - drupalam
 _core:
-  default_config_hash: zI2ffu9p2jLqS5eTkhzHqd6ir-qEaow5SilQC0SqVng
+  default_config_hash: ERtUwuUKdqiRLiXjBoV7gcIIZgt2IdqWBzqsqtm63w4
 id: drupalam_main_menu
 theme: drupalam
 region: navigation_collapsible
-weight: -8
+weight: 10
 provider: null
 plugin: 'system_menu_block:main'
 settings:

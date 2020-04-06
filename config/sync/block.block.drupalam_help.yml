@@ -1,17 +1,17 @@
-uuid: 9fb351e4-f4b6-4918-89bd-59a25047b2cc
+uuid: cda22595-66c1-4386-832d-6f60a2cc850a
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - help
   theme:
     - drupalam
 _core:
-  default_config_hash: LwElmGWYxMuU7MDSJwEfbPQxFcIfgzK_Uq0KWa3ukqs
+  default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
 id: drupalam_help
 theme: drupalam
 region: help
-weight: -8
+weight: -30
 provider: null
 plugin: help_block
 settings:
