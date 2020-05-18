@@ -44,3 +44,4 @@ web/sites/simpletest
 web/core
 web/modules/contrib
 web/themes/contrib
+default_content
