@@ -5,7 +5,7 @@ http://www.drupal.am
 
 ## Contributing
 
-To contribute your changes to the project you need to fork the project do desired changes and request pull. Please see issues section to see current priority.
+To contribute your changes to the project you shoul create a pull request with description of changes. Please see issues section to see current priority.
 
 ## Installation
 - Clone the project (dev branch)
