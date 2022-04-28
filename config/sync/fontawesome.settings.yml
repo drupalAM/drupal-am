@@ -7,3 +7,4 @@ external_shim_location: 'https://use.fontawesome.com/releases/v5.4.1/js/v4-shims
 _core:
   default_config_hash: OQqnPzUKzaflQ9ORgkUDtOPZOtWnJ-FYE8uUCtvz1FA
 allow_pseudo_elements: false
+langcode: hy

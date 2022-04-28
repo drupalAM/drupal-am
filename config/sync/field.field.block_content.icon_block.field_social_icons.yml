@@ -16,7 +16,7 @@ bundle: icon_block
 label: 'Social icons'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

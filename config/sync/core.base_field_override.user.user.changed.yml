@@ -1,0 +1,18 @@
+uuid: f4771515-f880-4050-81bc-c57a4c27cbc8
+langcode: hy
+status: true
+dependencies:
+  module:
+    - user
+id: user.user.changed
+field_name: changed
+entity_type: user
+bundle: user
+label: Changed
+description: 'The time that the user was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,18 @@
+uuid: 6d32c795-4b6d-43f8-8da4-f50acc82fc00
+langcode: hy
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.featured_community_members
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: entity_subqueue.featured_community_members
+target_entity_type_id: entity_subqueue
+target_bundle: featured_community_members
+default_langcode: current_interface
+language_alterable: true

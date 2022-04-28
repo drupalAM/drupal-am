@@ -6,7 +6,7 @@ page:
   front: /front
 admin_compact_mode: false
 weight_select_max: 100
-langcode: en
-default_langcode: en
+langcode: hy
+default_langcode: hy
 _core:
   default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo

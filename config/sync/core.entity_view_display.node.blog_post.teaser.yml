@@ -1,5 +1,5 @@
 uuid: 20ecf71a-dd1f-40d8-ae71-37a96ffba131
-langcode: en
+langcode: hy
 status: true
 dependencies:
   config:
@@ -151,4 +151,5 @@ hidden:
   field_blog_category: true
   field_blog_comments: true
   field_blog_tags: true
+  langcode: true
   links: true

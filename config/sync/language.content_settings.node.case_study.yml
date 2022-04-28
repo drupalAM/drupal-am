@@ -1,0 +1,18 @@
+uuid: ccc01e61-623c-42fe-8690-e0048eafbc72
+langcode: hy
+status: true
+dependencies:
+  config:
+    - node.type.case_study
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.case_study
+target_entity_type_id: node
+target_bundle: case_study
+default_langcode: current_interface
+language_alterable: true

@@ -1,0 +1,18 @@
+uuid: fee8859d-e149-4ec6-b9b8-e16c702fecae
+langcode: hy
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.blog_tags
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.blog_tags
+target_entity_type_id: taxonomy_term
+target_bundle: blog_tags
+default_langcode: current_interface
+language_alterable: true

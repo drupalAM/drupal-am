@@ -54,4 +54,5 @@ content:
             classes: {  }
     type: linkicon
     region: content
-hidden: {  }
+hidden:
+  langcode: true

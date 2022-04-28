@@ -115,4 +115,5 @@ hidden:
   field_blog_category: true
   field_blog_comments: true
   field_blog_tags: true
+  langcode: true
   links: true

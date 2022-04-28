@@ -47,3 +47,4 @@ hidden:
   field_heroslide_show_cont_link: true
   field_heroslide_text_position: true
   field_heroslide_title_prefix: true
+  langcode: true

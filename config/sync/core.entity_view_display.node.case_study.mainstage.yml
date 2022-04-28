@@ -123,4 +123,5 @@ hidden:
   field_case_study_site_link: true
   field_term_industry: true
   field_term_project_category: true
+  langcode: true
   links: true

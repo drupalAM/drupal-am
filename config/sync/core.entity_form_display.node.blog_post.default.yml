@@ -1,5 +1,5 @@
 uuid: 33c46dfa-3058-41be-8f00-c42928623c61
-langcode: en
+langcode: hy
 status: true
 dependencies:
   config:
@@ -75,6 +75,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   path:
     type: path
     weight: 30

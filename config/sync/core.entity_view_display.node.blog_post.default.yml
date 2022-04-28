@@ -1,5 +1,5 @@
 uuid: f1bd8663-502d-4bf6-9b25-37104eafa529
-langcode: en
+langcode: hy
 status: true
 dependencies:
   config:
@@ -68,4 +68,5 @@ content:
     region: content
 hidden:
   field_blog_comments: true
+  langcode: true
   links: true

@@ -39,3 +39,4 @@ content:
 hidden:
   field_cards_background_image: true
   field_cards_description: true
+  langcode: true

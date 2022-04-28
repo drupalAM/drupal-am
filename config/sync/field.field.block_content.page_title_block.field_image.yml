@@ -6,7 +6,14 @@ dependencies:
     - block_content.type.page_title_block
     - field.storage.block_content.field_image
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: block_content.page_title_block.field_image
 field_name: field_image
 entity_type: block_content
@@ -14,7 +21,7 @@ bundle: page_title_block
 label: Image
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,18 @@
+uuid: 4bf76fb5-9f7c-47fe-b626-184c72a50db9
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.icon_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.icon_block
+target_entity_type_id: block_content
+target_bundle: icon_block
+default_langcode: current_interface
+language_alterable: true
