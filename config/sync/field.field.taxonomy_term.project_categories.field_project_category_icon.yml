@@ -6,7 +6,14 @@ dependencies:
     - field.storage.taxonomy_term.field_project_category_icon
     - taxonomy.vocabulary.project_categories
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: Q3puVZgXsOS1rKi6BChClm-4p_FuEEz8Ms4xu05kWbs
 id: taxonomy_term.project_categories.field_project_category_icon
@@ -16,7 +23,7 @@ bundle: project_categories
 label: Icon
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

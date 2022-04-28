@@ -79,4 +79,5 @@ content:
     third_party_settings: {  }
     type: string
     region: ds_content
-hidden: {  }
+hidden:
+  langcode: true

@@ -1,0 +1,18 @@
+uuid: fc7d74e2-49dd-45ae-b75b-5b81a947a968
+langcode: hy
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.two_columns_6_6
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.two_columns_6_6
+target_entity_type_id: paragraph
+target_bundle: two_columns_6_6
+default_langcode: current_interface
+language_alterable: true

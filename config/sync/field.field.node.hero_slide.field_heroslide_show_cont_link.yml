@@ -14,7 +14,7 @@ bundle: hero_slide
 label: 'Show link to content'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 1

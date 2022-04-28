@@ -6,7 +6,14 @@ dependencies:
     - field.storage.paragraph.field_testimonial_author_photo
     - paragraphs.paragraphs_type.testimonial
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: GUUkm0iW2x093zpAMDqpr5ktyMagg4-8gjpZwIiOl6E
 id: paragraph.testimonial.field_testimonial_author_photo
@@ -16,7 +23,7 @@ bundle: testimonial
 label: 'Author Photo'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

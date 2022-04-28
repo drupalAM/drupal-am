@@ -33,3 +33,4 @@ features:
   node_user_picture: true
 reset_http_request_cache: ''
 table: ''
+langcode: hy

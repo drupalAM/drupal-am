@@ -1,5 +1,5 @@
 uuid: f373caf9-c1d8-4153-8a01-1b6557ad7277
-langcode: en
+langcode: hy
 status: true
 dependencies:
   config:
@@ -16,7 +16,7 @@ bundle: blog_post
 label: 'Blog comments'
 description: 'Comments against a blog post.'
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     status: 2

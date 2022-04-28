@@ -33,3 +33,4 @@ hidden:
   field_author_avatar: true
   field_comment_email: true
   field_comment_website: true
+  langcode: true

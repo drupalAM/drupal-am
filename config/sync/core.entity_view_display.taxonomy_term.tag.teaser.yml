@@ -47,3 +47,4 @@ mode: teaser
 content: {  }
 hidden:
   description: true
+  langcode: true

@@ -1,5 +1,5 @@
 uuid: 78261772-ed51-4e96-8703-3e6d6bd562cf
-langcode: en
+langcode: hy
 status: true
 dependencies:
   config:
@@ -15,7 +15,7 @@ bundle: blog_post
 label: 'Blog tags'
 description: 'Tags to help categorize blog post.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,18 @@
+uuid: 15f2b05c-7a8d-417a-bd27-e447f25925c5
+langcode: hy
+status: true
+dependencies:
+  config:
+    - entityqueue.entity_queue.homepage_hero_slider
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: entity_subqueue.homepage_hero_slider
+target_entity_type_id: entity_subqueue
+target_bundle: homepage_hero_slider
+default_langcode: current_interface
+language_alterable: true

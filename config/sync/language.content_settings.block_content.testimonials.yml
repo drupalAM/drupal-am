@@ -1,0 +1,18 @@
+uuid: 63559909-ec17-4bb9-a989-faff19b9bc39
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.testimonials
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.testimonials
+target_entity_type_id: block_content
+target_bundle: testimonials
+default_langcode: current_interface
+language_alterable: true

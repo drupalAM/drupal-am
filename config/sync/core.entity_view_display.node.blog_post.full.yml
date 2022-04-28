@@ -248,4 +248,5 @@ content:
     region: main
 hidden:
   field_blog_comments: true
+  langcode: true
   links: true

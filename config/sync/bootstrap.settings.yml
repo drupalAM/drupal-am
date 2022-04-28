@@ -25,3 +25,4 @@ cdn_cache_ttl_assets: 0
 cdn_cache_ttl_library: 0
 reset_http_request_cache: ''
 table: ''
+langcode: hy

@@ -128,4 +128,5 @@ content:
 hidden:
   field_user_first_name: true
   field_user_last_name: true
+  langcode: true
   member_for: true

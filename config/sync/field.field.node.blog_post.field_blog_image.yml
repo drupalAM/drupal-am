@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_blog_image
     - node.type.blog_post
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.blog_post.field_blog_image
 field_name: field_blog_image
 entity_type: node
@@ -14,7 +21,7 @@ bundle: blog_post
 label: Image
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

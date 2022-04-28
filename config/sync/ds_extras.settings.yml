@@ -9,3 +9,4 @@ region_blocks: {  }
 switch_field: false
 _core:
   default_config_hash: LYs_s2QdJ4ivdf6ERxvWa1ZRSKecbSoLKA85NkzrSkw
+langcode: hy

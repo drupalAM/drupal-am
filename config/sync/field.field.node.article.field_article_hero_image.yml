@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_article_hero_image
     - node.type.article
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.article.field_article_hero_image
 field_name: field_article_hero_image
 entity_type: node
@@ -14,7 +21,7 @@ bundle: article
 label: 'Hero Image'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

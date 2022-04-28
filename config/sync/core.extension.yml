@@ -19,6 +19,7 @@ module:
   config: 0
   config_filter: 0
   config_ignore: 0
+  config_translation: 0
   config_update: 0
   contact: 0
   context: 0
@@ -52,10 +53,12 @@ module:
   help: 0
   image: 0
   kint: 0
+  language: 0
   layout_discovery: 0
   libraries: 0
   link: 0
   linkicon: 0
+  locale: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -78,7 +81,9 @@ module:
   views_ui: 0
   ds: 1
   menu_link_content: 1
+  pathauto: 1
   ds_extras: 2
+  content_translation: 10
   views: 10
   paragraphs: 11
   linked_field: 100
@@ -92,3 +97,4 @@ theme:
 profile: minimal
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+langcode: hy

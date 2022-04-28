@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_heroslide_images
     - node.type.hero_slide
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 _core:
   default_config_hash: 9lf1zUBdUwmWDTjJamRgBF8C_1ry0gBwi-R4uhlUszE
 id: node.hero_slide.field_heroslide_images
@@ -16,7 +23,7 @@ bundle: hero_slide
 label: Images
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

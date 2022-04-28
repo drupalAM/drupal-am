@@ -13,6 +13,7 @@ dependencies:
     - field_layout
     - focal_point
     - layout_discovery
+    - path
     - text
     - user
 third_party_settings:
@@ -78,6 +79,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 7
     region: content
@@ -93,4 +100,5 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-hidden: {  }
+hidden:
+  langcode: true
