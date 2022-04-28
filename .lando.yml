@@ -1,0 +1,21 @@
+name: drupal.am
+recipe: drupal8
+config:
+  php: 7.4
+  via: apache:2.4
+  composer_version: 2
+  webroot: web
+  database: mysql:5.7
+  drush: ^10
+  xdebug: false
+services:
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+  mysql:
+    type: mysql
+proxy:
+  phpmyadmin:
+    - "phpmyadmin.drupal.am.lndo.site"
+
