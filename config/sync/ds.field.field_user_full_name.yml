@@ -1,13 +1,13 @@
+_core:
+  default_config_hash: 1sU7C_BdGKtQ7fC_OmIuHxLPqh-uvQqFsjBBg4jJx1o
 id: field_user_full_name
 label: 'Full name'
 ui_limit: ''
-properties:
-  content:
-    value: "<div><a href=\"[user:url]\">[user:field_user_first_name] [user:field_user_last_name]</a></div>\r\n"
-    format: full_html
 type: token
 type_label: 'Token field'
 entities:
   user: user
-_core:
-  default_config_hash: 1sU7C_BdGKtQ7fC_OmIuHxLPqh-uvQqFsjBBg4jJx1o
+properties:
+  content:
+    value: "<div><a href=\"[user:url]\">[user:field_user_first_name] [user:field_user_last_name]</a></div>\r\n"
+    format: full_html

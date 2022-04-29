@@ -21,6 +21,8 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        classes:
+          layout_class: {  }
         wrappers:
           header: div
           left: div
@@ -30,8 +32,6 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
     regions:
       left:
         - user_picture
@@ -60,14 +60,14 @@ bundle: user
 mode: default
 content:
   field_user_bio:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: right
   field_user_friends:
-    weight: 3
+    type: entity_reference_entity_view
     label: above
     settings:
       view_mode: teaser
@@ -79,35 +79,34 @@ content:
           id: expert
           settings:
             lb: ''
-            prefix: ''
+            lbw: false
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
+            lb-col: false
             ow: true
             ow-el: div
             ow-cl: field--name-field-user-friends
             ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
             fis: true
             fis-el: div
             fis-cl: 'field--items row'
             fis-at: ''
+            fis-def-at: false
             fi: true
             fi-el: div
             fi-cl: 'field-user-friend field--item col-xs-6 col-sm-4 col-md-3'
             fi-at: ''
-            suffix: ''
-            lbw: false
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis-def-at: false
             fi-def-at: false
-    type: entity_reference_entity_view
+            prefix: ''
+            suffix: ''
+    weight: 3
     region: footer
   user_picture:
     type: colorbox
-    weight: 0
-    region: left
+    label: hidden
     settings:
       colorbox_node_style: ''
       colorbox_node_style_first: ''
@@ -124,7 +123,8 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    label: hidden
+    weight: 0
+    region: left
 hidden:
   field_user_first_name: true
   field_user_last_name: true

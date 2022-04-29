@@ -2,10 +2,13 @@ uuid: 25f1f465-776b-4041-8cad-5ae63cc501e1
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.case_study
   module:
-    - ctools
-name: case_study
+    - node
+    - views
 label: 'Case Study'
+name: case_study
 group: 'Content Types'
 description: ''
 requireAllConditions: true
@@ -13,32 +16,33 @@ disabled: false
 conditions:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      case_study: case_study
-    negate: 0
+    negate: false
     uuid: 5081fae3-0910-43d4-b289-fd8a05542c60
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      case_study: case_study
 reactions:
   blocks:
+    id: blocks
+    uuid: 361bd310-3d55-4643-8a9c-e1c4ec0804e0
     blocks:
       bc3601c5-b787-41ed-a9b1-141fb0b1819b:
+        uuid: bc3601c5-b787-41ed-a9b1-141fb0b1819b
         id: 'views_block:case_study-block_2'
         label: ''
         provider: views
         label_display: visible
-        views_label: ''
-        items_per_page: none
         region: content
         weight: '0'
-        context_mapping: {  }
+        custom_id: views_block_case_study_block_2
         theme: drupalam
         css_class: related-projects-block
         unique: 0
         context_id: case_study
-        uuid: bc3601c5-b787-41ed-a9b1-141fb0b1819b
-    id: blocks
-    saved: false
-    uuid: 361bd310-3d55-4643-8a9c-e1c4ec0804e0
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
     include_default_blocks: 0
+    saved: false
 weight: 0

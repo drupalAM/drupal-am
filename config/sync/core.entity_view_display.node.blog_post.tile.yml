@@ -25,14 +25,14 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
     regions:
       ds_content:
         - field_blog_image
@@ -87,20 +87,20 @@ third_party_settings:
         - body
         - node_link
         - field_blog_category
+      label: 'Post content'
       parent_name: ''
+      region: hidden
       weight: 1
       format_type: html_element
       format_settings:
-        id: ''
         classes: post-content
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-      label: 'Post content'
-      region: hidden
 _core:
   default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
 id: node.blog_post.tile
@@ -110,13 +110,13 @@ mode: tile
 content:
   body:
     type: text_default
-    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    label: hidden
+    weight: 4
     region: ds_content
   field_blog_category:
-    weight: 6
+    type: entity_reference_entity_view
     label: above
     settings:
       view_mode: teaser
@@ -130,16 +130,14 @@ content:
             lb: IN
             lb-col: false
             classes: {  }
-    type: entity_reference_entity_view
+    weight: 6
     region: ds_content
   field_blog_image:
     type: image
-    weight: 0
-    region: ds_content
     label: hidden
     settings:
-      image_style: focal_750_x_440_
       image_link: ''
+      image_style: focal_750_x_440_
     third_party_settings:
       ds:
         ft:
@@ -148,6 +146,8 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
+    weight: 0
+    region: ds_content
 hidden:
   field_blog_comments: true
   field_blog_tags: true

@@ -1,5 +1,5 @@
-admin: seven
-default: drupalam
 _core:
   default_config_hash: fOjer9hADYYnbCJVZMFZIIM1azTFWyg84ZkFDHfAbUg
 langcode: hy
+admin: seven
+default: drupalam

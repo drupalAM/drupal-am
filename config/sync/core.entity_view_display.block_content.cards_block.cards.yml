@@ -21,21 +21,21 @@ mode: cards
 content:
   field_cards_card:
     type: entity_reference_revisions_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 1
     region: content
   field_cards_title:
     type: heading_formatter
-    weight: 0
-    region: content
     label: hidden
     settings:
       heading_type: h2
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_cards_background_image: true
   field_cards_description: true

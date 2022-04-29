@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5a0e665ea4a7661b87c5881d57703d8",
+    "content-hash": "bd2d05c19b4abccda81a31a43bfce291",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2153,7 +2153,7 @@
         },
         {
             "name": "drupal/context_groups",
-            "version": "dev-1.x",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/context_groups.git",
@@ -2167,11 +2167,11 @@
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0+2-dev",
-                    "datestamp": "1631955676",
+                    "version": "8.x-2.x-dev",
+                    "datestamp": "1631955948",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -3837,6 +3837,60 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/linkicon",
                 "issues": "https://www.drupal.org/project/issues/linkicon"
+            }
+        },
+        {
+            "name": "drupal/module_missing_message_fixer",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/module_missing_message_fixer.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/module_missing_message_fixer-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "b1602e19ccdcb11a89bcd994efdddfd5c7611057"
+            },
+            "require": {
+                "drupal/core": "~9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1597229325",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "John Ouellet",
+                    "homepage": "https://www.drupal.org/u/labboy0276",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This module displays a list of missing modules that appear on your site and lets you fix the entries",
+            "homepage": "https://www.drupal.org/project/module_missing_message_fixer",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/module_missing_message_fixer",
+                "issues": "https://www.drupal.org/project/issues/module_missing_message_fixer"
             }
         },
         {
@@ -9982,6 +10036,7 @@
         "drupal/better_normalizers": 10,
         "drupal/blog": 20,
         "drupal/context": 10,
+        "drupal/context_groups": 20,
         "drupal/default_content": 15,
         "drupal/default_content_deploy": 10,
         "drupal/entityqueue": 5,

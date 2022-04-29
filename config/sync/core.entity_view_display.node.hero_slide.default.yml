@@ -30,31 +30,31 @@ bundle: hero_slide
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
     region: content
   field_heroslide_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_heroslide_images:
-    weight: 2
+    type: image
     label: hidden
     settings:
-      image_style: square_medium
       image_link: ''
+      image_style: square_medium
     third_party_settings:
       ds:
         ds_limit: ''
-    type: image
+    weight: 2
     region: content
 hidden:
   field_heroslide_external_link: true

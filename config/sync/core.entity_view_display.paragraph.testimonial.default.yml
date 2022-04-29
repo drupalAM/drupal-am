@@ -23,14 +23,14 @@ bundle: testimonial
 mode: default
 content:
   field_testimonail_body:
-    weight: 4
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 4
     region: content
   field_testimonail_company:
-    weight: 3
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -39,31 +39,31 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    type: link
+    weight: 3
     region: content
   field_testimonial_author:
-    weight: 1
+    type: heading_formatter
     label: hidden
     settings:
       heading_type: h2
     third_party_settings: {  }
-    type: heading_formatter
+    weight: 1
     region: content
   field_testimonial_author_photo:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: crop_90x90
       image_link: ''
+      image_style: crop_90x90
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_testimonial_author_role:
-    weight: 2
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 2
     region: content
 hidden: {  }

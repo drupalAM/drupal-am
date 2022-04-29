@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+langcode: hy
 uuid: 42dda736-9c92-42b1-864d-2753655580bc
 name: 'Drupal AM'
 mail: ''
@@ -6,7 +9,4 @@ page:
   front: /front
 admin_compact_mode: false
 weight_select_max: 100
-langcode: hy
 default_langcode: hy
-_core:
-  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo

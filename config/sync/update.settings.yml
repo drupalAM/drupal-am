@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: 2QzULf0zovJQx3J06Y9rufzzfi-CY2CTTlEfJJh2Qyw
+langcode: hy
 check:
   disabled_extensions: false
   interval_days: 1
@@ -9,6 +12,3 @@ notification:
   emails:
     - contact@drupal.am
   threshold: all
-_core:
-  default_config_hash: 2QzULf0zovJQx3J06Y9rufzzfi-CY2CTTlEfJJh2Qyw
-langcode: hy

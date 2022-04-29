@@ -21,28 +21,28 @@ bundle: icon_block
 mode: default
 content:
   field_social_icons:
-    weight: 1
+    type: linkicon
     label: hidden
     settings:
-      target: _blank
-      linkicon_prefix: fa
-      linkicon_wrapper_class: ''
-      linkicon_style: ''
-      linkicon_color: ''
-      linkicon_maxlength: 60
-      linkicon_global_title: ' '
-      linkicon_position: ''
-      linkicon_size: ''
+      trim_length: 80
       url_only: false
       url_plain: false
       rel: '0'
-      linkicon_link: false
+      target: _blank
+      linkicon_prefix: fa
+      linkicon_wrapper_class: ''
       linkicon_load: false
       linkicon_vertical: false
+      linkicon_style: ''
+      linkicon_color: ''
       linkicon_tooltip: false
       linkicon_no_text: false
+      linkicon_maxlength: 60
+      linkicon_position: ''
+      linkicon_link: false
+      linkicon_global_title: ' '
+      linkicon_size: ''
       linkicon_bundle: ''
-      trim_length: 80
     third_party_settings:
       ds:
         ds_limit: ''
@@ -52,7 +52,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: linkicon
+    weight: 1
     region: content
 hidden:
   langcode: true
