@@ -11,6 +11,9 @@ field_name: field_author_avatar
 entity_type: comment
 type: image
 settings:
+  target_type: file
+  display_field: false
+  display_default: false
   uri_scheme: public
   default_image:
     uuid: 3cfc1696-ed05-4ac2-8c78-52677fcaefd2
@@ -18,9 +21,6 @@ settings:
     title: ''
     width: 620
     height: 800
-  target_type: file
-  display_field: false
-  display_default: false
 module: image
 locked: false
 cardinality: 1

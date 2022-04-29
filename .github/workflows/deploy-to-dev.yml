@@ -1,6 +1,15 @@
 name: Deployment
 on: [push, pull_request]
 jobs:
+  build:
+    name: "Build"
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v6
+        with:
+          php_version: "7.4"
+          php_extensions: gd
   # test:
   #   ...
   deploy:
@@ -27,7 +36,7 @@ jobs:
           SSH_HOST: ${{ secrets.DEV_SSH_HOST }}
 
       - name: Check out the source
-        run: ssh dev 'cd /home4/kingpara/www/dev.drupal.am && git fetch && git reset --hard origin/master'
+        run: ssh dev 'cd /home4/kingpara/www/dev.drupal.am && git fetch && git reset --hard origin/master && composer install -n'
  
       #- name: Start the server
       #  if: ${{ always() }}

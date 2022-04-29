@@ -18,14 +18,14 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
     regions:
       ds_content:
         - field_image
@@ -43,41 +43,41 @@ third_party_settings:
       children:
         - block_description
         - field_subtitle
+      label: 'Title wrapper'
       parent_name: ''
+      region: hidden
       weight: 1
       format_type: html_element
       format_settings:
-        id: ''
         classes: title-wrapper
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-      label: 'Title wrapper'
-      region: hidden
 id: block_content.page_title_block.default
 targetEntityType: block_content
 bundle: page_title_block
 mode: default
 content:
   field_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: ds_content
   field_subtitle:
-    weight: 3
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 3
     region: ds_content
 hidden:
   langcode: true

@@ -2,10 +2,14 @@ uuid: 1494b1b4-a43d-49e5-9b81-1500f806f83b
 langcode: en
 status: true
 dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.contact_details
+    - fixed_block_content.fixed_block_content.social_icons_for_contact_page
   module:
+    - fixed_block_content
     - system
-name: contact
 label: Contact
+name: contact
 group: Pages
 description: 'Contact page'
 requireAllConditions: false
@@ -13,43 +17,45 @@ disabled: false
 conditions:
   request_path:
     id: request_path
-    pages: /contact
-    negate: 0
+    negate: false
     uuid: 99cb188b-9226-43c2-ab72-630c9d07dbe8
     context_mapping: {  }
+    pages: /contact
 reactions:
   blocks:
+    id: blocks
+    uuid: 8117047f-fb30-44b9-b742-a062c6fdc611
     blocks:
       b9f05de1-8ba7-45a7-822e-1be4cbef11b1:
+        uuid: b9f05de1-8ba7-45a7-822e-1be4cbef11b1
         id: 'fixed_block_content:social_icons_for_contact_page'
         label: 'We are in socials'
         provider: fixed_block_content
         label_display: visible
         region: sidebar_second
         weight: '0'
-        view_mode: ''
-        context_mapping: {  }
+        custom_id: fixed_block_content_social_icons_for_contact_page
         theme: drupalam
         css_class: contact-social-icons
         unique: 0
         context_id: contact
-        uuid: b9f05de1-8ba7-45a7-822e-1be4cbef11b1
+        context_mapping: {  }
+        view_mode: ''
       803f31bd-7675-4989-96d7-760921dca2d9:
+        uuid: 803f31bd-7675-4989-96d7-760921dca2d9
         id: 'fixed_block_content:contact_details'
         label: 'Contact details'
         provider: fixed_block_content
         label_display: visible
         region: sidebar_second
         weight: '1'
-        view_mode: ''
-        context_mapping: {  }
+        custom_id: fixed_block_content_contact_details
         theme: drupalam
         css_class: contact-details
         unique: 0
         context_id: contact
-        uuid: 803f31bd-7675-4989-96d7-760921dca2d9
-    id: blocks
-    saved: false
-    uuid: 8117047f-fb30-44b9-b742-a062c6fdc611
+        context_mapping: {  }
+        view_mode: ''
     include_default_blocks: 0
+    saved: false
 weight: 0

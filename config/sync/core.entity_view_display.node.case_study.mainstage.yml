@@ -55,38 +55,38 @@ third_party_settings:
     group_page_header_container:
       children:
         - field_case_study_image
+      label: 'Page header container'
       parent_name: ''
+      region: hidden
       weight: 0
       format_type: html_element
       format_settings:
-        id: ''
         classes: page-header-container
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-      label: 'Page header container'
-      region: hidden
     group_page_title_wrapper:
       children:
         - node_title
         - body
+      label: 'Page-title wrapper'
       parent_name: ''
+      region: hidden
       weight: 1
       format_type: html_element
       format_settings:
-        id: ''
         classes: page-title-wrapper
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-      label: 'Page-title wrapper'
-      region: hidden
 _core:
   default_config_hash: fWgxTYNZRq0TddLFPYdvjYodgeoweJUV9OTGv9xBcRY
 id: node.case_study.mainstage
@@ -96,8 +96,6 @@ mode: mainstage
 content:
   body:
     type: text_trimmed
-    weight: 5
-    region: main
     label: hidden
     settings:
       trim_length: 200
@@ -109,15 +107,17 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
+    weight: 5
+    region: main
   field_case_study_image:
     type: image
-    weight: 13
-    region: main
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
+    weight: 13
+    region: main
 hidden:
   field_case_study_screens: true
   field_case_study_site_link: true

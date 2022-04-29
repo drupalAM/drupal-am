@@ -1,0 +1,31 @@
+conf_form.form:
+  title: 'Conf Block settings'
+  description: 'Configure settings for Conf Block module.'
+  route_name: conf_block.conf_form
+  parent: 'system.admin_config_content'
+
+conf_form.project_config:
+  title: Project Configuration
+  parent: system.admin
+  description: 'Administer Project settings.'
+  route_name: conf_block.project_settings
+  weight: 0
+
+conf_form.project_config_blocks:
+  title: Blocks
+  parent: conf_form.project_config
+  description: 'Edit Conf Blocks'
+  route_name: conf_block.project_settings_blocks
+  weight: 0
+
+conf_form.project_config_blocks_text:
+  title: HTML Blocks
+  parent: conf_form.project_config_blocks
+  description: 'Simple Blocks'
+  route_name: conf_block.project_settings_blocks_text
+
+conf_form.project_config_blocks_view:
+  title: Views Blocks
+  parent: conf_form.project_config_blocks
+  description: 'Views Header/Footer Blocks'
+  route_name: conf_block.project_settings_blocks_text

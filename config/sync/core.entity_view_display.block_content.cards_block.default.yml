@@ -26,37 +26,37 @@ bundle: cards_block
 mode: default
 content:
   field_cards_background_image:
-    weight: 3
+    type: image
     label: above
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 3
     region: content
   field_cards_card:
     type: entity_reference_revisions_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 1
     region: content
   field_cards_description:
-    weight: 2
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
   field_cards_title:
-    weight: 0
+    type: heading_formatter
     label: hidden
     settings:
       heading_type: h2
     third_party_settings: {  }
-    type: heading_formatter
+    weight: 0
     region: content
 hidden:
   langcode: true

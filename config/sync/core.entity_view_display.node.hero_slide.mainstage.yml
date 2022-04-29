@@ -28,40 +28,40 @@ third_party_settings:
       children:
         - node_title
         - body
+      label: 'Page-title wrapper'
       parent_name: group_page_header
+      region: content
       weight: 2
       format_type: html_element
       format_settings:
         label: 'Page-title wrapper'
+        classes: page-title-wrapper
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: page-title-wrapper
-      label: 'Page-title wrapper'
-      region: content
     group_page_header:
       children:
         - field_heroslide_image
         - group_page_title_wrapper
+      label: 'Page header container'
       parent_name: ''
+      region: content
       weight: 0
       format_type: html_element
       format_settings:
         label: 'Page header container'
+        classes: page-header-container
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: page-header-container
-      label: 'Page header container'
-      region: content
   ds:
     layout:
       id: bs_1col
@@ -103,9 +103,8 @@ bundle: hero_slide
 mode: mainstage
 content:
   body:
-    label: hidden
     type: text_trimmed
-    weight: 15
+    label: hidden
     settings:
       trim_length: 200
     third_party_settings:
@@ -116,13 +115,14 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
+    weight: 15
     region: main
   field_heroslide_image:
-    weight: 1
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings:
       ds:
         ft:
@@ -131,7 +131,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: image
+    weight: 1
     region: main
 hidden:
   field_heroslide_external_link: true

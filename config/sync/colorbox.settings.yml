@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: AKL00pU-O0VFc8YjnfQak2hpuYRFW_x4r_rr4xhqTcg
+langcode: hy
 custom:
   style: default
   activate: 0
@@ -29,6 +32,3 @@ advanced:
   caption_trim: 0
   caption_trim_length: 75
   compression_type: minified
-_core:
-  default_config_hash: AKL00pU-O0VFc8YjnfQak2hpuYRFW_x4r_rr4xhqTcg
-langcode: hy

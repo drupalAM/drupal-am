@@ -22,16 +22,16 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        classes:
+          layout_class:
+            parallax-element: parallax-element
+          ds_content: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class:
-            parallax-element: parallax-element
-          ds_content: {  }
     regions:
       ds_content:
         - field_icon
@@ -45,7 +45,7 @@ bundle: card
 mode: default
 content:
   field_card_link:
-    weight: 1
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -54,27 +54,27 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 1
     region: ds_content
   field_card_text:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: ds_content
   field_icon:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: medium
       image_link: ''
+      image_style: medium
     third_party_settings:
       linked_field:
         linked: '1'
         type: field
         destination: field_card_link
         advanced: {  }
-    type: image
+    weight: 0
     region: ds_content
 hidden: {  }

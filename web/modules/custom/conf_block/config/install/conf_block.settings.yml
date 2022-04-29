@@ -1,0 +1,15 @@
+sections:
+  global:
+    label: Global
+    blocks:
+      default_block:
+        name: 'Default Block'
+      default_block_2:
+        name: 'Default Block 2'
+  homepage:
+    label: Homepage
+    blocks:
+      home_block:
+        name: 'Home Block'
+      home_block_2:
+        name: 'Home Block 2'

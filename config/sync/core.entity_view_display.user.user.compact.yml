@@ -22,14 +22,14 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
     regions:
       ds_content:
         - user_picture
@@ -42,11 +42,10 @@ mode: compact
 content:
   user_picture:
     type: image
-    weight: 0
-    region: ds_content
+    label: hidden
     settings:
-      image_style: square_mini
       image_link: content
+      image_style: square_mini
     third_party_settings:
       ds:
         ft:
@@ -55,7 +54,8 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    label: hidden
+    weight: 0
+    region: ds_content
 hidden:
   field_user_bio: true
   field_user_first_name: true

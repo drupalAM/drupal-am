@@ -17,17 +17,17 @@ bundle: comment
 mode: default
 content:
   field_comment_body:
-    weight: 1
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 1
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_author: true
   field_author_avatar: true

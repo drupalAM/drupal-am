@@ -22,27 +22,27 @@ bundle: contact_details_block
 mode: default
 content:
   field_contact_email:
-    weight: 28
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
     type: email_default
+    weight: 28
     region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
   field_contact_fax:
+    type: telephone_default
     weight: 27
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: telephone_default
-    region: content
   field_contact_phone:
+    type: telephone_default
     weight: 26
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: telephone_default
-    region: content
   info:
     type: string_textfield
     weight: -5
