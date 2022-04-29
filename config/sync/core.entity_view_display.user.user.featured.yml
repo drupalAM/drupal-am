@@ -22,14 +22,14 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
     regions:
       ds_content:
         - user_picture
@@ -49,13 +49,13 @@ mode: featured
 content:
   user_picture:
     type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+    third_party_settings: {  }
     weight: 0
     region: ds_content
-    settings:
-      image_style: medium
-      image_link: ''
-    third_party_settings: {  }
-    label: hidden
 hidden:
   field_user_bio: true
   field_user_first_name: true

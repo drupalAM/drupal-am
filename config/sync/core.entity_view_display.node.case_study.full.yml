@@ -65,18 +65,18 @@ bundle: case_study
 mode: full
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 2
     region: left
   field_case_study_screens:
-    weight: 4
+    type: image
     label: hidden
     settings:
-      image_style: large_1920_x_1080_
       image_link: ''
+      image_style: large_1920_x_1080_
     third_party_settings:
       ds:
         ds_limit: ''
@@ -84,33 +84,33 @@ content:
           id: expert
           settings:
             lb: ''
-            prefix: ''
+            lbw: false
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
+            lb-col: false
             ow: true
             ow-el: div
             ow-cl: sis-wrapper
             ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
             fis: true
             fis-el: div
             fis-cl: sis-images
             fis-at: ''
+            fis-def-at: false
             fi: true
             fi-el: div
             fi-cl: 'field--items hidden'
             fi-at: ''
-            suffix: ''
-            lbw: false
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis-def-at: false
             fi-def-at: false
-    type: image
+            prefix: ''
+            suffix: ''
+    weight: 4
     region: right
   field_term_industry:
-    weight: 1
+    type: entity_reference_label
     label: hidden
     settings:
       link: false
@@ -122,7 +122,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: entity_reference_label
+    weight: 1
     region: left
 hidden:
   field_case_study_image: true

@@ -72,29 +72,29 @@ third_party_settings:
           id: expert
           settings:
             lb: ''
-            prefix: ''
+            lbw: false
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
+            lb-col: false
+            ow: false
             ow-el: ''
             ow-cl: ''
             ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
             fis-el: ''
             fis-cl: ''
             fis-at: ''
+            fis-def-at: false
             fi: true
             fi-el: span
             fi-cl: field--name-field-post-date
             fi-at: ''
-            suffix: ''
-            lbw: false
-            lb-col: false
-            ow: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
             fi-def-at: false
+            prefix: ''
+            suffix: ''
       'dynamic_token_field:node-submitted_by_custom_':
         plugin_id: 'dynamic_token_field:node-submitted_by_custom_'
         weight: 5
@@ -104,29 +104,29 @@ third_party_settings:
           id: expert
           settings:
             lb: ''
-            prefix: ''
+            lbw: false
             lbw-el: ''
             lbw-cl: ''
             lbw-at: ''
+            lb-col: false
+            ow: false
             ow-el: ''
             ow-cl: ''
             ow-at: ''
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
             fis-el: ''
             fis-cl: ''
             fis-at: ''
+            fis-def-at: false
             fi: true
             fi-el: span
             fi-cl: field--name-field-submitted-by
             fi-at: ''
-            suffix: ''
-            lbw: false
-            lb-col: false
-            ow: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
             fi-def-at: false
+            prefix: ''
+            suffix: ''
       node_title:
         plugin_id: node_title
         weight: 3
@@ -137,39 +137,39 @@ third_party_settings:
       children:
         - 'dynamic_token_field:node-post_date_custom_format_'
         - 'dynamic_token_field:node-submitted_by_custom_'
+      label: 'Post info'
       parent_name: group_content_wrapper
+      region: hidden
       weight: 2
       format_type: html_element
       format_settings:
         label: 'Post info'
+        classes: post-info
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: post-info
-      label: 'Post info'
-      region: hidden
     group_blog_tags:
       children:
         - field_blog_tags
+      label: 'Blog tags wrapper'
       parent_name: group_content_wrapper
+      region: hidden
       weight: 6
       format_type: html_element
       format_settings:
         label: 'Blog tags wrapper'
+        classes: blog-tags
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: blog-tags
-      label: 'Blog tags wrapper'
-      region: hidden
     group_content_wrapper:
       children:
         - group_post_info
@@ -177,20 +177,20 @@ third_party_settings:
         - body
         - field_blog_category
         - group_blog_tags
+      label: 'Content wrapper'
       parent_name: ''
+      region: hidden
       weight: 1
       format_type: html_element
       format_settings:
-        id: ''
         classes: content-wrapper
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-      label: 'Content wrapper'
-      region: hidden
 _core:
   default_config_hash: xUUiZcj-EuaC4bX5euuLbtjp8IJB13zhTdOsL61avmM
 id: node.blog_post.full
@@ -200,13 +200,13 @@ mode: full
 content:
   body:
     type: text_default
-    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    label: hidden
+    weight: 4
     region: main
   field_blog_category:
-    weight: 5
+    type: entity_reference_entity_view
     label: above
     settings:
       view_mode: teaser
@@ -220,20 +220,20 @@ content:
             lb: IN
             lb-col: false
             classes: {  }
-    type: entity_reference_entity_view
+    weight: 5
     region: main
   field_blog_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: top
   field_blog_tags:
     type: entity_reference_entity_view
-    weight: 5
+    label: above
     settings:
       view_mode: default
       link: false
@@ -244,7 +244,7 @@ content:
           id: reset
           settings:
             lb: ''
-    label: above
+    weight: 5
     region: main
 hidden:
   field_blog_comments: true

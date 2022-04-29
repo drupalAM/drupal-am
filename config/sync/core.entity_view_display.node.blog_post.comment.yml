@@ -24,12 +24,10 @@ mode: comment
 content:
   field_blog_comments:
     type: comment_default
-    weight: 0
-    region: content
     label: hidden
     settings:
-      pager_id: 0
       view_mode: default
+      pager_id: 0
     third_party_settings:
       ds:
         ft:
@@ -38,6 +36,8 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
+    weight: 0
+    region: content
 hidden:
   body: true
   field_blog_category: true

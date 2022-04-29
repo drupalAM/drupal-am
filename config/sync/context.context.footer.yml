@@ -2,8 +2,14 @@ uuid: 1bba3faf-443a-445e-a793-d1cbc0ab411f
 langcode: en
 status: true
 dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.social_icons
+    - system.menu.footer
   module:
+    - conf_block
     - context_groups
+    - fixed_block_content
+    - system
 third_party_settings:
   context_groups:
     footer_columns:
@@ -46,8 +52,8 @@ third_party_settings:
         - footer_bottom
 _core:
   default_config_hash: 2VadMlFW_Md1HcATLZ7Y6RD1Z8cMQZDRZAMFAg68sHk
-name: footer
 label: Footer
+name: footer
 group: General
 description: ''
 requireAllConditions: false
@@ -55,84 +61,89 @@ disabled: false
 conditions: {  }
 reactions:
   blocks:
+    id: blocks
+    uuid: d20a6f69-417b-4afa-9b52-4a959123de06
     blocks:
       12e7abb0-489c-4035-b02b-0d528034cea4:
+        uuid: 12e7abb0-489c-4035-b02b-0d528034cea4
         id: 'system_menu_block:footer'
         label: Footer
         provider: system
-        label_display: 0
+        label_display: '0'
+        region: footer
+        weight: '3'
+        custom_id: system_menu_block_footer
+        theme: drupalam
+        css_class: col-sm-6
+        unique: 0
+        context_id: footer
+        context_mapping: {  }
         level: '1'
         depth: '0'
-        weight: '3'
-        region: footer
+        expand_all_items: false
         parent_wrapper:
           parent: footer_bottom_container
         all_parents:
           - footer_bottom
           - footer_bottom_container
-        context_mapping: {  }
-        theme: drupalam
-        css_class: col-sm-6
-        unique: 0
-        context_id: general
-        uuid: 12e7abb0-489c-4035-b02b-0d528034cea4
       cd26a454-fbc4-4c87-8c18-0feacb2958c6:
+        uuid: cd26a454-fbc4-4c87-8c18-0feacb2958c6
         id: 'conf_block_block:global__footer_text'
         label: 'About Us'
         provider: conf_block
         label_display: visible
-        weight: '1'
         region: footer
+        weight: '1'
+        custom_id: conf_block_block_global__footer_text
+        theme: drupalam
+        css_class: 'col-md-3 col-sm-4'
+        unique: 0
+        context_id: footer
+        context_mapping: {  }
         parent_wrapper:
           parent: footer_columns
         all_parents:
           - footer_column_container
           - footer_columns
-        context_mapping: {  }
-        theme: drupalam
-        css_class: 'col-md-3 col-sm-4'
-        unique: 0
-        context_id: footer
-        uuid: cd26a454-fbc4-4c87-8c18-0feacb2958c6
       a03183b4-32a8-4481-91c5-e7e3eae55fab:
+        uuid: a03183b4-32a8-4481-91c5-e7e3eae55fab
         id: 'conf_block_block:global__copyright'
         label: Copyright
         provider: conf_block
-        label_display: 0
-        weight: '2'
+        label_display: '0'
         region: footer
+        weight: '2'
+        custom_id: conf_block_block_global__copyright
+        theme: drupalam
+        css_class: 'col-sm-6 copyright'
+        unique: 0
+        context_id: footer
+        context_mapping: {  }
         parent_wrapper:
           parent: footer_bottom_container
         all_parents:
           - footer_bottom
           - footer_bottom_container
-        context_mapping: {  }
-        theme: drupalam
-        css_class: 'col-sm-6 copyright'
-        unique: 0
-        context_id: footer
-        uuid: a03183b4-32a8-4481-91c5-e7e3eae55fab
       183945fe-b504-4849-acb5-ade050adf9e5:
+        uuid: 183945fe-b504-4849-acb5-ade050adf9e5
         id: 'fixed_block_content:social_icons'
         label: 'Social icons'
         provider: fixed_block_content
-        label_display: 0
-        weight: '4'
+        label_display: '0'
         region: footer
+        weight: '4'
+        custom_id: fixed_block_content_social_icons
+        theme: drupalam
+        css_class: 'visible-xs block-socialicons'
+        unique: 1
+        context_id: footer
+        context_mapping: {  }
         parent_wrapper:
           parent: footer_bottom_container
         all_parents:
           - footer_bottom
           - footer_bottom_container
         view_mode: ''
-        context_mapping: {  }
-        theme: drupalam
-        css_class: 'visible-xs block-socialicons'
-        unique: 1
-        context_id: footer
-        uuid: 183945fe-b504-4849-acb5-ade050adf9e5
-    id: blocks
-    saved: false
-    uuid: d20a6f69-417b-4afa-9b52-4a959123de06
     include_default_blocks: 0
+    saved: false
 weight: 0

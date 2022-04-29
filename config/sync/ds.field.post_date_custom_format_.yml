@@ -1,11 +1,11 @@
 id: post_date_custom_format_
 label: 'Post date (custom format)'
 ui_limit: 'blog_post|*'
-properties:
-  content:
-    value: '[date:custom:F j, Y]'
-    format: basic_html
 type: token
 type_label: 'Token field'
 entities:
   node: node
+properties:
+  content:
+    value: '[date:custom:F j, Y]'
+    format: basic_html

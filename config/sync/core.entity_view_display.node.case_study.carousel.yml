@@ -24,14 +24,14 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
     regions:
       ds_content:
         - field_case_study_screens
@@ -52,7 +52,7 @@ bundle: case_study
 mode: carousel
 content:
   field_case_study_screens:
-    weight: 0
+    type: colorbox
     label: hidden
     settings:
       colorbox_node_style: hide
@@ -65,24 +65,24 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
-    type: colorbox
+    weight: 0
     region: ds_content
   field_term_industry:
     type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
     weight: 3
     region: ds_content
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
   field_term_project_category:
     type: entity_reference_label
-    weight: 2
-    region: ds_content
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
+    weight: 2
+    region: ds_content
 hidden:
   body: true
   field_case_study_image: true

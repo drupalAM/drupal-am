@@ -1,11 +1,17 @@
 uuid: 86af88d4-d42f-464f-ab56-74174e0082fd
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - fixed_block_content.fixed_block_content.social_icons
+    - system.menu.main
+  module:
+    - fixed_block_content
+    - system
 _core:
   default_config_hash: h7hBxvQIDMDoOUDQa1S02PwWW0s2_U1g2G6xojH8AJw
-name: header
 label: Header
+name: header
 group: General
 description: ''
 requireAllConditions: false
@@ -13,54 +19,58 @@ disabled: false
 conditions: {  }
 reactions:
   blocks:
+    id: blocks
+    uuid: 45d0696e-2682-4ded-8b53-7803143cdfec
     blocks:
       f07be5f6-1d68-434c-a683-6a0813d7c1a0:
+        uuid: f07be5f6-1d68-434c-a683-6a0813d7c1a0
         id: system_branding_block
         label: 'Site branding'
         provider: system
-        label_display: 0
+        label_display: '0'
+        region: navigation
+        weight: '-10'
+        custom_id: system_branding_block
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: header
+        context_mapping: {  }
         use_site_logo: 1
         use_site_name: 0
         use_site_slogan: 0
-        region: navigation
-        weight: '-10'
-        context_mapping: {  }
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: header
-        uuid: f07be5f6-1d68-434c-a683-6a0813d7c1a0
       6b63985a-453e-4dc2-aaf2-cb906e0c2252:
+        uuid: 6b63985a-453e-4dc2-aaf2-cb906e0c2252
         id: 'system_menu_block:main'
         label: 'Main navigation'
         provider: system
-        label_display: 0
-        level: '1'
-        depth: '0'
+        label_display: '0'
         region: navigation_collapsible
         weight: '-1'
-        context_mapping: {  }
+        custom_id: system_menu_block_main
         theme: drupalam
         css_class: ''
         unique: 0
         context_id: header
-        uuid: 6b63985a-453e-4dc2-aaf2-cb906e0c2252
+        context_mapping: {  }
+        level: '1'
+        depth: '0'
+        expand_all_items: false
       8287918e-184b-498e-a588-70b70e3704d5:
+        uuid: 8287918e-184b-498e-a588-70b70e3704d5
         id: 'fixed_block_content:social_icons'
         label: 'Social icons'
         provider: fixed_block_content
-        label_display: 0
+        label_display: '0'
         region: top_right
         weight: '0'
-        view_mode: ''
-        context_mapping: {  }
+        custom_id: fixed_block_content_social_icons
         theme: drupalam
         css_class: block-socialicons
         unique: 0
         context_id: header
-        uuid: 8287918e-184b-498e-a588-70b70e3704d5
-    id: blocks
-    saved: false
-    uuid: 45d0696e-2682-4ded-8b53-7803143cdfec
+        context_mapping: {  }
+        view_mode: ''
     include_default_blocks: 0
+    saved: false
 weight: 0

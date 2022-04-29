@@ -2,6 +2,9 @@
   "patches": {
     "drupal/core": {
 
+    },
+    "drupal/context_groups": {
+      "#3177784 Too few arguments to function ContextBlockPageVariant": "https://www.drupal.org/files/issues/2020-11-25/Too_few_arguments_to_function_ContextBlockPageVariant-3177784-6.patch"
     }
   }
 }

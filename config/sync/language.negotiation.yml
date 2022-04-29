@@ -1,3 +1,6 @@
+_core:
+  default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM
+langcode: hy
 session:
   parameter: language
 url:
@@ -5,10 +8,8 @@ url:
   prefixes:
     en: en
     hy: hy
+    '': null
   domains:
     en: ''
     hy: ''
 selected_langcode: site_default
-_core:
-  default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM
-langcode: hy

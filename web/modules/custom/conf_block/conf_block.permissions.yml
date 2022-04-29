@@ -1,0 +1,11 @@
+access project settings:
+  title: 'Configure project settings'
+  description: 'Configure custom settings of current project'
+  restrict access: true
+administer conf blocks:
+  title: 'Configure page blocks'
+  description: 'Configure page blocks of current project'
+  restrict access: true
+edit conf blocks:
+  title: 'Edit content of page blocks'
+  description: 'Edit page blocks values'

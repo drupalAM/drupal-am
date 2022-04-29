@@ -20,38 +20,38 @@ third_party_settings:
   field_group:
     group_post_info:
       children: {  }
+      label: 'Post info'
       parent_name: ''
+      region: hidden
       weight: 15
       format_type: html_element
       format_settings:
         label: 'Post info'
+        classes: post-info
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: post-info
-      label: 'Post info'
-      region: hidden
     group_blog_tags:
       children: {  }
+      label: 'Blog tags wrapper'
       parent_name: ''
+      region: hidden
       weight: 16
       format_type: html_element
       format_settings:
         label: 'Blog tags wrapper'
+        classes: blog-tags
+        id: ''
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
-        id: ''
-        classes: blog-tags
-      label: 'Blog tags wrapper'
-      region: hidden
   ds:
     layout:
       id: ds_reset
@@ -59,14 +59,14 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        classes:
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
-        classes:
-          layout_class: {  }
     regions:
       ds_content:
         - field_blog_image
@@ -95,11 +95,11 @@ bundle: blog_post
 mode: card
 content:
   field_blog_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: focal_440_x_330
       image_link: content
+      image_style: focal_440_x_330
     third_party_settings:
       ds:
         ft:
@@ -108,7 +108,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: image
+    weight: 0
     region: ds_content
 hidden:
   body: true

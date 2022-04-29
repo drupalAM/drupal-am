@@ -3,3 +3,4 @@ description: 'Creates an empty page for front pages that are based on blocks'
 package: Custom
 type: module
 core: 8.x
+core_version_requirement: ^8 || ^9

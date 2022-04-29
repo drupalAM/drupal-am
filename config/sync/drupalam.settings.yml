@@ -1,14 +1,24 @@
-schemas:
-  bootstrap: 8000
-  drupalam: 8000
-SETTING_NAME: SETTING_VALUE
 _core:
   default_config_hash: PKJ-BDn7CVR3yi6Ff9ILGdoL-P2qYTZZ0ECIuYq6_O8
+langcode: hy
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: themes/custom/drupalam/favicon.ico
   url: 'http://drupal.am.local/themes/custom/drupalam/favicon.ico'
   use_default: false
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: themes/custom/drupalam/logo.png
+  url: ''
+  use_default: false
+schemas:
+  bootstrap: 8000
+  drupalam: 8000
+SETTING_NAME: SETTING_VALUE
 region_wells:
   navigation: ''
   navigation_collapsible: ''
@@ -20,17 +30,7 @@ region_wells:
   sidebar_first: ''
   sidebar_second: ''
   footer: ''
-logo:
-  path: themes/custom/drupalam/logo.png
-  url: ''
-  use_default: false
 fluid_container: 1
 navbar_position: fixed-top
-features:
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: true
-  node_user_picture: true
 reset_http_request_cache: ''
 table: ''
-langcode: hy

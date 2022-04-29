@@ -30,6 +30,6 @@ settings:
         weight: 3
         enabled: false
       testimonial:
-        enabled: true
         weight: 4
+        enabled: true
 field_type: entity_reference_revisions
