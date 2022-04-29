@@ -18,21 +18,23 @@
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^2.2",
-        "drupal/backup_migrate": "^4.1",
-        "drupal/better_exposed_filters": "^4.0@alpha",
+        "drupal/backup_migrate": "^5.0",
+        "drupal/better_exposed_filters": "^5.0",
         "drupal/better_normalizers": "^1.0@beta",
         "drupal/blog": "2.x-dev",
         "drupal/bootstrap": "^3.21",
         "drupal/bootstrap_layouts": "^5.1",
         "drupal/colorbox": "^1.4",
-        "drupal/conf_block": "^1.0@RC",
         "drupal/config_ignore": "^2.2",
         "drupal/config_update": "^1.6",
         "drupal/context": "^4.0@beta",
         "drupal/context_groups": "^1.0",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-recommended": "^8.8",
+        "drupal/core": "^9",
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-project-message": "^9",
+        "drupal/core-recommended": "^9",
         "drupal/ctools": "^3.4",
+        "drupal/default_content": "^2.0@alpha",
         "drupal/default_content_deploy": "^1.0@beta",
         "drupal/ds": "^3.5",
         "drupal/entityqueue": "^1.0@RC",
@@ -45,12 +47,13 @@
         "drupal/linkicon": "^1.5",
         "drupal/paragraphs": "^1.11",
         "drupal/pathauto": "^1.10",
-        "drupal/recaptcha": "^2.5",
+        "drupal/recaptcha": "^3.0",
         "drupal/token": "^1.6",
-        "drush/drush": "^9.0"
+        "drupal/upgrade_status": "^3.14",
+        "drush/drush": "^10.0"
     },
     "require-dev": {
-        "drupal/devel": "^2.1"
+        "drupal/devel": "^4.1.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -62,7 +65,8 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
-            "drupal/core-composer-scaffold": true
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true
         }
     },
     "extra": {
