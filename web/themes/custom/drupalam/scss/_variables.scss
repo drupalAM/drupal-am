@@ -5,3 +5,12 @@ $tablet:              "screen and (min-width: #{$screen-sm-min})";
 $normal:              "screen and (min-width: #{$screen-md-min})";
 $wide:                "screen and (min-width: #{$screen-lg-min})";
 $grid-breakpoint:     "screen and (min-width: #{$grid-float-breakpoint})";
+
+// Drupal.am colors
+// Primary colors
+$pm-dark-blue: #0678BE;
+$pm-light-blue: #53B0EB;
+
+// Secondary colors
+$sc-pale-gray: #F6F6F2;
+$sc-black: #222222;
