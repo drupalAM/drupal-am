@@ -6642,6 +6642,28 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       text-decoration: underline; }
       .footer .context-groups-footer_columns a:hover {
         color: #5bc3ff; }
+    .footer .context-groups-footer_columns .block-socialicons {
+      text-align: center;
+      margin-top: 10px;
+      max-width: 100%;
+      width: max-content;
+      display: inline-block; }
+      .footer .context-groups-footer_columns .block-socialicons ul li {
+        padding: 2px 3px; }
+        .footer .context-groups-footer_columns .block-socialicons ul li a {
+          display: inline-block;
+          border-radius: 2px;
+          width: 25px;
+          height: 25px;
+          border: 0px;
+          background: rgba(255, 255, 255, 0.1); }
+          .footer .context-groups-footer_columns .block-socialicons ul li a .fa {
+            -moz-opacity: 0.7;
+            -khtml-opacity: 0.7;
+            -webkit-opacity: 0.7;
+            opacity: 0.7;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+            filter: alpha(opacity=70); }
   .footer .context-groups-footer_bottom {
     padding: 25px 0;
     width: 100%;
@@ -6683,25 +6705,6 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
             color: #fff; }
         .footer .context-groups-footer_bottom ul.menu li:last-child a:after {
           content: none; }
-    .footer .context-groups-footer_bottom .block-socialicons {
-      text-align: center;
-      margin-top: 10px; }
-      .footer .context-groups-footer_bottom .block-socialicons ul li {
-        padding: 2px 3px; }
-        .footer .context-groups-footer_bottom .block-socialicons ul li a {
-          display: inline-block;
-          border-radius: 2px;
-          width: 25px;
-          height: 25px;
-          border: 0px;
-          background: rgba(255, 255, 255, 0.1); }
-          .footer .context-groups-footer_bottom .block-socialicons ul li a .fa {
-            -moz-opacity: 0.7;
-            -khtml-opacity: 0.7;
-            -webkit-opacity: 0.7;
-            opacity: 0.7;
-            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-            filter: alpha(opacity=70); }
     .footer .context-groups-footer_bottom.row {
       margin-left: 0; }
 
