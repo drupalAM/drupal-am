@@ -6193,15 +6193,23 @@ body {
       z-index: 100;
       left: 0;
       width: 100%;
-      background: rgba(17, 17, 17, 0.96);
+      background: #fff;
       text-transform: uppercase;
       font-size: 12px; }
       #navbar .navbar-collapse .region-navigation-collapsible nav {
         float: none; }
-        #navbar .navbar-collapse .region-navigation-collapsible nav ul li a {
-          display: block;
-          padding: 15px 3%;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.07); } }
+        #navbar .navbar-collapse .region-navigation-collapsible nav ul {
+          text-align: center;
+          padding-top: 15px; }
+          #navbar .navbar-collapse .region-navigation-collapsible nav ul li a {
+            display: block;
+            padding: 15px 3%;
+            color: black;
+            border-bottom: 0.3px solid #a9a9a9; }
+            #navbar .navbar-collapse .region-navigation-collapsible nav ul li a .is-active {
+              color: #0678BE; }
+          #navbar .navbar-collapse .region-navigation-collapsible nav ul li:last-child a {
+            border-bottom: unset; } }
   #navbar .logo {
     margin-right: -15px;
     padding-right: 15px;
@@ -6222,13 +6230,21 @@ body {
       color: #222222; }
       #navbar.navbar-scrolled-top .navbar-nav li a:hover {
         color: #0678BE; }
+      @media (max-width: 767px) {
+        #navbar.navbar-scrolled-top .navbar-nav li a {
+          color: black; } }
     #navbar.navbar-scrolled-top .logo {
       background: #0678BE; }
     #navbar.navbar-scrolled-top .navbar-toggle .icon-bar {
       background: #0678BE; }
   @media screen and (max-width: 767px) {
     #navbar {
-      min-height: 60px; } }
+      background: #fff;
+      min-height: 60px; }
+      #navbar .logo {
+        background: #0678BE; }
+      #navbar .navbar-toggle .icon-bar {
+        background: #0678BE; } }
 
 .region-navigation-collapsible nav {
   float: right; }
@@ -7079,6 +7095,10 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 .page-node-type-hero-slide .main-container.container-fluid,
 .page-node-type-case-study .main-container.container-fluid {
   padding-top: 80px; }
+  @media screen and (max-width: 767px) {
+    .page-node-type-hero-slide .main-container.container-fluid,
+    .page-node-type-case-study .main-container.container-fluid {
+      padding-top: 60px; } }
   .page-node-type-hero-slide .main-container.container-fluid .content-header-container,
   .page-node-type-case-study .main-container.container-fluid .content-header-container {
     padding-left: 0;

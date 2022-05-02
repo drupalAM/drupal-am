@@ -3,6 +3,10 @@
 
   .main-container.container-fluid {
     padding-top: 80px;
+
+    @media #{$mobile} {
+      padding-top: 60px;
+    }
     .content-header-container {
       padding-left: 0;
       padding-right: 0;
