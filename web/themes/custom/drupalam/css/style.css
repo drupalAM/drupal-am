@@ -6169,6 +6169,7 @@ body {
     max-width: 1140px; } }
 
 #navbar {
+  min-height: 80px;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 0;
@@ -6180,6 +6181,12 @@ body {
   #navbar .navbar-toggle {
     margin: 0;
     padding: 5px 10px; }
+  #navbar .navbar-collapse ul li a {
+    font-family: Josefin Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 600; }
+  #navbar .navbar-collapse ul li a.is-active {
+    color: #0678BE; }
   @media (max-width: 767px) {
     #navbar .navbar-collapse {
       position: absolute;
@@ -6210,13 +6217,18 @@ body {
       #navbar .logo img {
         width: 75px; } }
   #navbar.navbar-scrolled-top {
-    background-color: rgba(37, 37, 37, 0.95);
-    min-height: 42px;
-    padding-top: 7px;
-    padding-bottom: 7px; }
-    @media (min-width: 767px) {
-      #navbar.navbar-scrolled-top {
-        min-height: 52px; } }
+    background-color: #fff; }
+    #navbar.navbar-scrolled-top .navbar-nav li a {
+      color: #222222; }
+      #navbar.navbar-scrolled-top .navbar-nav li a:hover {
+        color: #0678BE; }
+    #navbar.navbar-scrolled-top .logo {
+      background: #0678BE; }
+    #navbar.navbar-scrolled-top .navbar-toggle .icon-bar {
+      background: #0678BE; }
+  @media screen and (max-width: 767px) {
+    #navbar {
+      min-height: 60px; } }
 
 .region-navigation-collapsible nav {
   float: right; }
@@ -6247,7 +6259,6 @@ body {
       width: 0px;
       height: 0px;
       background: #fff;
-      content: '-';
       text-indent: -999em;
       border-radius: 7px; }
     .region-navigation-collapsible nav ul li a:hover:after {
@@ -6281,7 +6292,18 @@ body:not(.path-frontpage) .main-container {
   padding-top: 100px; }
 
 body:not(.path-frontpage) #navbar {
-  background-color: rgba(37, 37, 37, 0.95); }
+  background: #fff; }
+  body:not(.path-frontpage) #navbar li a {
+    color: #222222; }
+    body:not(.path-frontpage) #navbar li a:hover {
+      color: #53B0EB; }
+  body:not(.path-frontpage) #navbar .logo {
+    background: #0678BE; }
+  body:not(.path-frontpage) #navbar .navbar-toggle .icon-bar {
+    background: #0678BE; }
+
+body:not(.path-frontpage) #navbar.navbar-scrolled-top {
+  background: #fff; }
 
 body:not(.path-frontpage) .content-and-sidebars-container {
   margin: 0 auto;
@@ -7056,7 +7078,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 
 .page-node-type-hero-slide .main-container.container-fluid,
 .page-node-type-case-study .main-container.container-fluid {
-  padding-top: 0; }
+  padding-top: 80px; }
   .page-node-type-hero-slide .main-container.container-fluid .content-header-container,
   .page-node-type-case-study .main-container.container-fluid .content-header-container {
     padding-left: 0;

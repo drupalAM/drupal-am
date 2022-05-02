@@ -4,7 +4,31 @@ body:not(.path-frontpage) {
   }
 
   #navbar {
-    background-color: rgba(37, 37, 37, 0.95);
+    background: $white;
+
+    li {
+      a {
+        color: $sc-black;
+
+        &:hover {
+          color: $pm-light-blue;
+        }
+      }
+    }
+
+    .logo {
+      background: $pm-dark-blue;
+    }
+
+    .navbar-toggle{
+      .icon-bar{
+        background: $pm-dark-blue;
+      }
+    }
+  }
+
+  #navbar.navbar-scrolled-top {
+    background: $white;
   }
 
   .content-and-sidebars-container {

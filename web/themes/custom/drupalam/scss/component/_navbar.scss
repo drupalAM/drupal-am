@@ -52,16 +52,29 @@ body {
 }
 
 #navbar {
+  min-height: 80px;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 0;
   @include transition(all 0.3s ease);
-  
+
   .navbar-toggle {
     margin: 0;
     padding: 5px 10px;
   }
   .navbar-collapse {
+    ul {
+      li {
+        a {
+          font-family: $font-josefin;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        a.is-active{
+          color: $pm-dark-blue;
+        }
+      }
+    }
     @include breakpoint(mobile) {
       position: absolute;
       z-index: 100;
@@ -70,10 +83,10 @@ body {
       background: rgba(17, 17, 17, 0.96);
       text-transform: uppercase;
       font-size: 12px;
-      
+
       .region-navigation-collapsible nav {
         float: none;
-        
+
         ul {
           li {
             a {
@@ -106,14 +119,38 @@ body {
     }
   }
   &.navbar-scrolled-top {
-    background-color: rgba(37, 37, 37, 0.95);
-    min-height: 42px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    //background-color: rgba(37, 37, 37, 0.95);
+    background-color: $white;
+    //min-height: 42px;
+    //padding-top: 7px;
+    //padding-bottom: 7px;
     @include breakpoint(no_mobile) {
-      min-height: 52px;
+      //min-height: 52px;
     }
-    
+
+    .navbar-nav{
+      li{
+        a{
+          //color: #3e7de4;
+          color: $sc-black;
+
+          &:hover{
+            color: $pm-dark-blue;
+          }
+        }
+      }
+    }
+
+    .logo {
+      background: $pm-dark-blue;
+    }
+
+    .navbar-toggle .icon-bar{
+      background: $pm-dark-blue;
+    }
+  }
+  @media #{$mobile} {
+    min-height: 60px;
   }
 }
 
@@ -130,7 +167,7 @@ body {
         text-transform: uppercase;
         font-size: 12px;
         letter-spacing: 1px;
-        
+
         &:after {
           @include transition(all 0.2s ease);
           position: absolute;
@@ -142,7 +179,7 @@ body {
           width: 0px;
           height: 0px;
           background: $white;
-          content: '-';
+          //content: '-';
           text-indent: -999em;
           border-radius: 7px;
         }
@@ -152,7 +189,7 @@ body {
             height: 2px;
             width: 40px;
             margin-left: -20px;
-            margin-top: -2px; 
+            margin-top: -2px;
           }
         }
       }
@@ -163,17 +200,17 @@ body {
 // Social icons
 .block-socialicons {
   text-align: right;
-  
+
   ul {
     list-style: none;
     margin-bottom: 0;
     padding-left: 0;
-    
+
     li {
       display: inline-block;
       padding: 2px 5px;
       @include transition(.3s);
-      
+
       &:hover {
         transform: scale(1.1);
       }
