@@ -1,0 +1,8 @@
+mymodule:
+  version: 1.x
+  js:
+    js/test.js: {}
+  dependencies:
+    - core/jquery #Just to be safe
+    - core/drupal.dialog.ajax #Required for dialogs
+    - core/jquery.form #If you also want to use Ajax for form operations

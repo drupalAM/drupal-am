@@ -7,7 +7,7 @@ function signin_popup_theme() {
   return [
     'join_now_block' => [
       'variables' => [
-        'data' => [],
+        'title' => 'Default title',
       ],
     ],
   ];

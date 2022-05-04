@@ -5,7 +5,7 @@ namespace Drupal\signin_popup\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides a 'Join Now' Block.
+ * Provides a Copyright block.
  *
  * @Block(
  *   id = "join_now_block",

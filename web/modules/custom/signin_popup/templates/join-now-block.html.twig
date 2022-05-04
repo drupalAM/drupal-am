@@ -1,0 +1,11 @@
+<div>
+{#  <a href="#" id="join-now">Join now</a>#}
+{#  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#join-now">#}
+{#    Launch demo modal#}
+{#  </button>#}
+
+  <a href="{{ path('entity.webform.canonical', {'webform': 'cpd_enquiry'}) }}"
+     class="request cpd use-ajax text-decoration-none" data-dialog-type="modal"
+     data-dialog-options="{&quot;dialogClass&quot;:&quot;cpd-modal&quot;,&quot;width&quot;:600,&quot;title&quot;: &quot;REQUEST VIRTUAL CPD&quot;}">
+    {{ "REQUEST VIRTUAL CPD" | t }}</a>
+</div>
