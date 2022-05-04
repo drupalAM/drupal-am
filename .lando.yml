@@ -1,5 +1,5 @@
 name: drupal.am
-recipe: drupal8
+recipe: drupal9
 config:
   php: 7.4
   via: apache:2.4
