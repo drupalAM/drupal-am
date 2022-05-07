@@ -18,9 +18,11 @@ class JoinBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    $is_anonymous = \Drupal::currentUser()->isAnonymous();
+
     return [
       '#theme' => 'join_now_block',
+      '#is_anonymous' => $is_anonymous,
     ];
   }
-
 }

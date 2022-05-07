@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if route_name == 'user.login' %}
+  <div class="row signin-form-wrapper">
+    <div class="col-6 signin-form left-side">
+      <div class="form-wrapper">
+        <h3 class="form-title-hardcoded">Welcome Back</h3>
+      <form{{ attributes }}>
+        {{ children }}
+      </form>
+      <div class="register-user-wrapper">
+      <span>  {{ 'Not joined yet? '|t }}
+       <a href="{{ path('user.register') }}"
+          class="btn-join-now use-ajax text-decoration-none"
+          data-dialog-type="modal"
+          data-dialog-options="{&quot;dialogClass&quot;:&quot;cpd-modal&quot;,&quot;width&quot;:900,&quot;title&quot;: &quot;Join Community&quot;}">
+        {{ "Join Community" | t }}</a>
+      </span>
+      </div>
+      </div>
+    </div>
+    <div class="col-6 signin-image right-side">
+      <div class="image-wrapper">
+        <img src="/{{ directory }}/images/signin.jpg" alt="image.jpg">
+      </div>
+    </div>
+  </div>
+{% else %}
+  <form{{ attributes }}>
+    {{ children }}
+  </form>
+{% endif %}
