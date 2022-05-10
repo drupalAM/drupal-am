@@ -1,0 +1,75 @@
+uuid: cb4b06aa-8248-4a91-abae-a2839096fdef
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.register
+    - field.field.user.user.field_user_bio
+    - field.field.user.user.field_user_first_name
+    - field.field.user.user.field_user_friends
+    - field.field.user.user.field_user_last_name
+    - field.field.user.user.user_picture
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: 9qa-3tnXWNWjfyEMryAihNnE0izTidEW3zjc8cM9R2w
+id: user.user.register
+targetEntityType: user
+bundle: user
+mode: register
+content:
+  account:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_user_bio:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_user_first_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_user_last_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  language:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_user_friends: true
+  langcode: true
+  path: true
+  timezone: true
+  user_picture: true

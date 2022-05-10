@@ -51,12 +51,16 @@ body {
   }
 }
 
+header{
+  z-index: 100!important;
+}
+
 #navbar {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 0;
   @include transition(all 0.3s ease);
-  
+
   .navbar-toggle {
     margin: 0;
     padding: 5px 10px;
@@ -70,10 +74,12 @@ body {
       background: rgba(17, 17, 17, 0.96);
       text-transform: uppercase;
       font-size: 12px;
-      
-      .region-navigation-collapsible nav {
+
+      .region-navigation-collapsible {
+        display: block;
+      nav {
         float: none;
-        
+
         ul {
           li {
             a {
@@ -83,7 +89,7 @@ body {
             }
           }
         }
-      }
+      }}
     }
   }
   .logo {
@@ -113,13 +119,17 @@ body {
     @include breakpoint(no_mobile) {
       min-height: 52px;
     }
-    
+
   }
 }
 
 // Main menu
-.region-navigation-collapsible nav {
-  float: right;
+.region-navigation-collapsible {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  nav {
+  //float: right;
   @include breakpoint(no_mobile) {
     margin-top: 5px;
   }
@@ -130,7 +140,7 @@ body {
         text-transform: uppercase;
         font-size: 12px;
         letter-spacing: 1px;
-        
+
         &:after {
           @include transition(all 0.2s ease);
           position: absolute;
@@ -152,28 +162,28 @@ body {
             height: 2px;
             width: 40px;
             margin-left: -20px;
-            margin-top: -2px; 
+            margin-top: -2px;
           }
         }
       }
     }
   }
-}
+}}
 
 // Social icons
 .block-socialicons {
   text-align: right;
-  
+
   ul {
     list-style: none;
     margin-bottom: 0;
     padding-left: 0;
-    
+
     li {
       display: inline-block;
       padding: 2px 5px;
       @include transition(.3s);
-      
+
       &:hover {
         transform: scale(1.1);
       }

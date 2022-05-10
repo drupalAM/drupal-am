@@ -1,6 +1,5 @@
 <?php
 
-use Drupal\Core\Url;
 
 /**
  * Implements hook_theme().
@@ -16,31 +15,3 @@ function signin_popup_theme(){
   ];
 }
 
-/**
- * Implements hook_form_alter().
- */
-//function signin_popup_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-//  if ($form_id == 'user_login_form') {
-//
-//    // add prefix to <form> tag
-//    $form['#prefix'] = '<div class="row signin-form-wrapper"><div class="col-6 signin-form left-side">';
-//    // add suffix to </form> tag
-//    $form['#suffix'] = '</div>'. '<div class="col-6 signin-image right-side"><div class="image-wrapper"><img src="images/signin.jpg" alt="image.jpg"></div></div>'. '</div>';
-//    //add a class in form tag <form class="col-6 ..."
-////    $form['#attributes']['class'][] = 'col-6';
-//
-//    $form['html_markup'] = [];
-//
-//    $form['register_user'] = [
-//      '#type' => 'link',
-//      '#title' => t('Join Community'),
-//      '#url' => Url::fromRoute('user.register'),
-//      '#attributes' => array('class' => array('item', 'use-ajax', 'text-decoration-none'),
-//        'data-dialog-type' => "modal",
-//        'data-dialog-options' => '{"dialogClass":"cpd-modal","width":1200,"title": "Join now"}',
-//      ),
-//    ];
-//    $form['register_user']['#prefix'] = "<div class=\"register-user-wrapper\"> <span>" . t("Not joined yet? ") . "</span>";
-//    $form['register_user']['#suffix'] = "</div>";
-//  }
-//}

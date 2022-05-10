@@ -1,7 +1,5 @@
 script:
   version: 1.x
-  js:
-    js/test.js: { }
   dependencies:
     - core/jquery
     - core/drupal
