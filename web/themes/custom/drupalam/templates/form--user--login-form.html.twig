@@ -25,7 +25,7 @@
        <a href="{{ path('user.register') }}"
           class="btn-join-now use-ajax text-decoration-none"
           data-dialog-type="modal"
-          data-dialog-options="{&quot;dialogClass&quot;:&quot;cpd-modal&quot;,&quot;width&quot;:900,&quot;title&quot;: &quot;Join Community&quot;}">
+          data-dialog-options="{&quot;dialogClass&quot;:&quot;signin-modal&quot;,&quot;width&quot;:1100,&quot;title&quot;: &quot;Join Community&quot;}">
         {{ "Join Community" | t }}</a>
       </span>
       </div>
@@ -35,6 +35,32 @@
       <div class="image-wrapper">
         <img src="/{{ directory }}/images/signin.jpg" alt="image.jpg">
       </div>
+    </div>
+  </div>
+{% elseif route_name == 'user.register' %}
+  <div class="row signin-form-wrapper signup-form-wrapper">
+    <div class="col-6 signin-form signup-form left-side">
+      <div class="form-wrapper">
+        <h3 class="form-title-hardcoded">Join the Community</h3>
+        <form{{ attributes }}>
+          {{ children }}
+        </form>
+      </div>
+    </div>
+    <div class="col-6 signin-image signup-image right-side">
+      <div class="image-wrapper">
+        <img src="/{{ directory }}/images/signup.jpg" alt="image.jpg">
+      </div>
+      <div class="register-user-wrapper signin-to-account-wrapper">
+      <div class="join-user"><span>{{ 'Already joined ? '|t }}</span>
+        <a href="{{ path('user.login') }}"
+          class="btn-join-now use-ajax text-decoration-none"
+          data-dialog-type="modal"
+          data-dialog-options="{&quot;dialogClass&quot;:&quot;signin-modal&quot;,&quot;width&quot;:1100,&quot;title&quot;: &quot;Join Community&quot;}">
+        {{ "Sign In" | t }}</a>
+      </div>
+      </div>
+
     </div>
   </div>
 {% else %}

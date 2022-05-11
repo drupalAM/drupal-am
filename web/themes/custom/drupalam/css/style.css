@@ -8320,6 +8320,57 @@ body.page-node-type-blog-post .bypostauthor {
           width: 100%; }
         .ui-dialog.signin-modal .ui-dialog-content .signin-form-wrapper .signin-image {
           display: none; } }
+    .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper {
+      align-items: flex-end;
+      padding-bottom: 25px; }
+      .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form {
+        max-width: 45%; }
+        .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper {
+          width: 400px; }
+          .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter {
+            height: 5px;
+            border-radius: 30px; }
+            .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator {
+              border-radius: 30px 0 0 30px; }
+            .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator.is-weak {
+              background-color: red; }
+            .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator.is-fair {
+              background-color: #ea8c12; }
+            .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator.is-good {
+              background-color: #b9ea0a; }
+            .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator.is-strong {
+              background-color: #16da06;
+              border-radius: 30px; }
+          .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-suggestions {
+            margin-top: -30px; }
+          .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-confirm-message, .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength__title, .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-form .form-wrapper .form-item .password-suggestions {
+            font-size: 12px; }
+      .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-image {
+        max-width: 55%; }
+        .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-image .signin-to-account-wrapper .join-user {
+          display: flex;
+          flex-direction: column;
+          width: max-content;
+          margin: 0 auto; }
+          .ui-dialog.signin-modal .ui-dialog-content .signup-form-wrapper .signup-image .signin-to-account-wrapper .join-user a {
+            width: 300px;
+            border-radius: 30px;
+            background: #0678BE;
+            border-color: #0678BE;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px 0; }
+    .ui-dialog.signin-modal .ui-dialog-content::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 30px; }
+    .ui-dialog.signin-modal .ui-dialog-content::-webkit-scrollbar-thumb {
+      background: #0678be;
+      border-radius: 30px; }
+    .ui-dialog.signin-modal .ui-dialog-content::-webkit-scrollbar-track {
+      background: #93b4f9;
+      border-radius: 30px; }
 
 .ui-widget-overlay {
   opacity: unset;
