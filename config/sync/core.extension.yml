@@ -61,6 +61,7 @@ module:
   link: 0
   linkicon: 0
   locale: 0
+  media: 0
   menu_ui: 0
   module_missing_message_fixer: 0
   node: 0
