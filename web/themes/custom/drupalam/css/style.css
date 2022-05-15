@@ -6642,6 +6642,10 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       text-decoration: underline; }
       .footer .context-groups-footer_columns a:hover {
         color: #5bc3ff; }
+    .footer .context-groups-footer_columns p {
+      color: #939393;
+      text-decoration: none;
+      font-size: 16px; }
   .footer .context-groups-footer_bottom {
     padding: 25px 0;
     width: 100%;

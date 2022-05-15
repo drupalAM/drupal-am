@@ -5,7 +5,10 @@ dependencies:
   config:
     - fixed_block_content.fixed_block_content.social_icons
     - system.menu.footer
+  content:
+    - 'block_content:basic:2755e61c-a966-4273-b529-662b8454bceb'
   module:
+    - block_content
     - conf_block
     - context_groups
     - fixed_block_content
@@ -56,7 +59,7 @@ label: Footer
 name: footer
 group: General
 description: ''
-requireAllConditions: false
+requireAllConditions: true
 disabled: false
 conditions: {  }
 reactions:
@@ -71,7 +74,7 @@ reactions:
         provider: system
         label_display: '0'
         region: footer
-        weight: '3'
+        weight: '1'
         custom_id: system_menu_block_footer
         theme: drupalam
         css_class: col-sm-6
@@ -81,25 +84,6 @@ reactions:
         level: '1'
         depth: '0'
         expand_all_items: false
-        parent_wrapper:
-          parent: footer_bottom_container
-        all_parents:
-          - footer_bottom
-          - footer_bottom_container
-      cd26a454-fbc4-4c87-8c18-0feacb2958c6:
-        uuid: cd26a454-fbc4-4c87-8c18-0feacb2958c6
-        id: 'conf_block_block:global__footer_text'
-        label: 'About Us'
-        provider: conf_block
-        label_display: visible
-        region: footer
-        weight: '1'
-        custom_id: conf_block_block_global__footer_text
-        theme: drupalam
-        css_class: 'col-md-3 col-sm-4'
-        unique: 0
-        context_id: footer
-        context_mapping: {  }
         parent_wrapper:
           parent: footer_columns
         all_parents:
@@ -131,7 +115,7 @@ reactions:
         provider: fixed_block_content
         label_display: '0'
         region: footer
-        weight: '4'
+        weight: '2'
         custom_id: fixed_block_content_social_icons
         theme: drupalam
         css_class: 'visible-xs block-socialicons'
@@ -139,11 +123,34 @@ reactions:
         context_id: footer
         context_mapping: {  }
         parent_wrapper:
-          parent: footer_bottom_container
+          parent: footer_columns
         all_parents:
-          - footer_bottom
-          - footer_bottom_container
+          - footer_column_container
+          - footer_columns
         view_mode: ''
+      a3663177-fed4-4a77-a577-1a4ff1156e98:
+        uuid: a3663177-fed4-4a77-a577-1a4ff1156e98
+        id: 'block_content:2755e61c-a966-4273-b529-662b8454bceb'
+        label: 'About us'
+        provider: block_content
+        label_display: '0'
+        region: footer
+        weight: '0'
+        custom_id: block_content_2755e61c_a966_4273_b529_662b8454bceb
+        theme: drupalam
+        css_class: col-sm-3
+        unique: 0
+        context_id: footer
+        context_mapping: {  }
+        status: true
+        info: ''
+        view_mode: full
+        parent_wrapper:
+          parent: footer_columns
+        all_parents:
+          - footer_column_container
+          - footer_columns
+        third_party_settings: {  }
     include_default_blocks: 0
     saved: false
 weight: 0

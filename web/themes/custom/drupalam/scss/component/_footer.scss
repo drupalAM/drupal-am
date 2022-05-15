@@ -8,10 +8,10 @@
   height: auto;
   background-color: $gray-base;
   font-size: 13px;
-  
+
   .context-groups-footer_columns {
     margin-top: 50px;
-    
+
     .block {
       margin-bottom: 10px;
       color: $white;
@@ -29,10 +29,15 @@
     a {
       color: $white;
       text-decoration: underline;
-      
+
       &:hover {
         color: $brand-primary;
       }
+    }
+    p {
+      color: #939393;
+      text-decoration: none;
+      font-size: 16px;
     }
   }
   .context-groups-footer_bottom {
@@ -59,18 +64,18 @@
       @include breakpoint(no_mobile) {
         text-align: right;
       }
-      
+
       li {
         display: inline-block;
         letter-spacing: 1px;
-        
+
         a {
           @include anchor_color();
           text-transform: uppercase;
           letter-spacing: 2px;
           font-size: 10px;
           padding: 0;
-          
+
           &:after {
             content: "/";
             margin-left: 10px;
@@ -92,11 +97,11 @@
     .block-socialicons {
       text-align: center;
       margin-top: 10px;
-      
+
       ul {
         li {
           padding: 2px 3px;
-          
+
           a {
             display: inline-block;
             border-radius: 2px;
@@ -104,9 +109,9 @@
             height: 25px;
             border: 0px;
             background: rgba(255, 255, 255, 0.1);
-            
+
             .fa {
-              @include opacity(0.7);  
+              @include opacity(0.7);
             }
           }
         }
