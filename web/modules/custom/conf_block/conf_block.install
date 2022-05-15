@@ -1,2 +1,36 @@
 <?php
 
+use Drupal\block_content\Entity\BlockContent;
+
+/**
+ * Create Social links block .
+ */
+function conf_block_update_9001() {
+  // Create Document Listing sorting.
+  $uuid = 'fbb06f75_7c43_422b_80a6_4ab2998e2a45';
+  $blocks = \Drupal::entityTypeManager()
+    ->getStorage('block_content')
+    ->loadByProperties([
+      'uuid' => $uuid,
+    ]);
+  if (!empty($blocks)) {
+    return;
+  }
+
+  $block = BlockContent::create([
+    'info' => 'Footer Social links',
+    'type' => 'basic',
+    'langcode' => 'en',
+    'body' => [
+      'value' => '<a href="https://facebook.com">
+  <i class="fa fa-facebook"></i>
+</a>
+<a href="https://t.me/drupal_armenia">
+  <i class="fab fa-telegram-plane"></i>
+</a>',
+      'format' => 'restricted_html',
+    ],
+    'uuid' => $uuid,
+  ]);
+  $block->save();
+}
