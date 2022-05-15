@@ -6,8 +6,7 @@ use Drupal\block_content\Entity\BlockContent;
  * Create Social links block .
  */
 function conf_block_update_9001() {
-  // Create Document Listing sorting.
-  $uuid = 'fbb06f75_7c43_422b_80a6_4ab2998e2a45';
+  $uuid = 'fbb06f75-7c43-422b-80a6-4ab2998e2a45';
   $blocks = \Drupal::entityTypeManager()
     ->getStorage('block_content')
     ->loadByProperties([
@@ -28,6 +27,35 @@ function conf_block_update_9001() {
 <a href="https://t.me/drupal_armenia">
   <i class="fab fa-telegram-plane"></i>
 </a>',
+      'format' => 'restricted_html',
+    ],
+    'uuid' => $uuid,
+  ]);
+  $block->save();
+}
+
+/**
+ * Create License block .
+ */
+function conf_block_update_9002() {
+  $uuid = '7978101d-0d7d-4789-a404-a2e4dcc86bd6';
+  $blocks = \Drupal::entityTypeManager()
+    ->getStorage('block_content')
+    ->loadByProperties([
+      'uuid' => $uuid,
+    ]);
+  if (!empty($blocks)) {
+    return;
+  }
+
+  $block = BlockContent::create([
+    'info' => 'License',
+    'type' => 'basic',
+    'langcode' => 'en',
+    'body' => [
+      'value' => '<p>The content of the site is published under the <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CreativeCommons Attribution-ShareAlike 3.0</a> license or later. Program codes in the text of articles - under license <a href="/rules#license">GNU GPL v2</a> or later.</p>
+<p>Code is published under the <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html" target="_blank">GNU General Public License</a> version 2 or later</p>
+<p>Drupal is a <a href="http://drupal.com/trademark" target="_blank">registered trademark</a> of <a href="https://dri.es" target="_blank">Dries Buytaert</a>.</p>',
       'format' => 'restricted_html',
     ],
     'uuid' => $uuid,

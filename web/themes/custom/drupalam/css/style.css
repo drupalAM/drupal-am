@@ -6696,21 +6696,20 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
           color: #fff;
           cursor: pointer; }
   .footer .context-groups-footer_bottom {
-    padding: 25px 0;
-    width: 100%;
-    height: auto;
-    background-color: #1f1f1f; }
-    .footer .context-groups-footer_bottom .copyright {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 10px;
-      color: #b3b3b1;
-      text-align: center;
-      margin: 10px 0; }
-      @media (min-width: 767px) {
-        .footer .context-groups-footer_bottom .copyright {
-          text-align: left;
-          margin: 0; } }
+    border-top: 1px solid #282828;
+    text-align: center;
+    padding-top: 35px;
+    background-color: #000;
+    padding-bottom: 20px; }
+    .footer .context-groups-footer_bottom .license .field--name-body {
+      color: #fff;
+      font-size: 13px; }
+      .footer .context-groups-footer_bottom .license .field--name-body a {
+        text-decoration: underline;
+        color: #eee; }
+        .footer .context-groups-footer_bottom .license .field--name-body a:hover {
+          color: #fff;
+          text-decoration: none; }
     .footer .context-groups-footer_bottom ul.menu {
       line-height: 1em;
       text-align: center; }

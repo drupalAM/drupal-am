@@ -112,21 +112,24 @@
     }
   }
   .context-groups-footer_bottom {
-    padding: 25px 0;
-    width: 100%;
-    height: auto;
-    background-color: #1f1f1f;
+    border-top: 1px solid #282828;
+    text-align: center;
+    padding-top: 35px;
+    background-color: #000;
+    padding-bottom: 20px;
 
-    .copyright {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 10px;
-      color: $gray-light;
-      text-align: center;
-      margin: 10px 0;
-      @include breakpoint(no_mobile) {
-        text-align: left;
-        margin: 0;
+    .license {
+      .field--name-body {
+        color: #fff;
+        font-size: 13px;
+        a {
+          text-decoration: underline;
+          color: #eee;
+          &:hover {
+            color: #fff;
+            text-decoration: none;
+          }
+        }
       }
     }
     ul.menu {
