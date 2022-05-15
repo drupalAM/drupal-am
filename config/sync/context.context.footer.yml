@@ -116,7 +116,7 @@ reactions:
       3936dc5b-8c28-405d-97f5-f07c8abe3712:
         uuid: 3936dc5b-8c28-405d-97f5-f07c8abe3712
         id: 'system_menu_block:footer-second'
-        label: 'Footer second'
+        label: About
         provider: system
         label_display: visible
         region: footer
