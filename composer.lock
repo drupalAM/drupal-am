@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd2d05c19b4abccda81a31a43bfce291",
+    "content-hash": "af9425afaf4de66748c5994c1074ea14",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3840,6 +3840,50 @@
             }
         },
         {
+            "name": "drupal/media_delete_all",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_delete_all.git",
+                "reference": "1.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_delete_all-1.3.1.zip",
+                "reference": "1.3.1",
+                "shasum": "af3110df6ddc7c5859255abe0cb52524122f33b1"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.3.1",
+                    "datestamp": "1595003105",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "ashutosh.mishra",
+                    "homepage": "https://www.drupal.org/user/3565900"
+                }
+            ],
+            "description": "Allows deletion of all medias, . Useful for development or prior to launching a site.",
+            "homepage": "https://www.drupal.org/project/media_delete_all",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_delete_all"
+            }
+        },
+        {
             "name": "drupal/module_missing_message_fixer",
             "version": "2.0.2",
             "source": {
@@ -4123,6 +4167,86 @@
             "support": {
                 "source": "https://git.drupal.org/project/recaptcha.git",
                 "issues": "https://www.drupal.org/project/issues/recaptcha"
+            }
+        },
+        {
+            "name": "drupal/schema",
+            "version": "2.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/schema.git",
+                "reference": "2.0.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/schema-2.0.0-alpha1.zip",
+                "reference": "2.0.0-alpha1",
+                "shasum": "5506d4729c1f2ff35cad01c522d8be2f189be9b6"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha1",
+                    "datestamp": "1638887927",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "bjaspan",
+                    "homepage": "https://www.drupal.org/user/46413"
+                },
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
+                {
+                    "name": "jcnventura",
+                    "homepage": "https://www.drupal.org/user/122464"
+                },
+                {
+                    "name": "joachim",
+                    "homepage": "https://www.drupal.org/user/107701"
+                },
+                {
+                    "name": "karschsp",
+                    "homepage": "https://www.drupal.org/user/138216"
+                },
+                {
+                    "name": "matason",
+                    "homepage": "https://www.drupal.org/user/81488"
+                },
+                {
+                    "name": "mikeryan",
+                    "homepage": "https://www.drupal.org/user/4420"
+                },
+                {
+                    "name": "moshe weitzman",
+                    "homepage": "https://www.drupal.org/user/23"
+                },
+                {
+                    "name": "msonnabaum",
+                    "homepage": "https://www.drupal.org/user/75278"
+                }
+            ],
+            "description": "Provides the schema module.",
+            "homepage": "https://www.drupal.org/project/schema",
+            "support": {
+                "source": "https://git.drupalcode.org/project/schema"
             }
         },
         {
@@ -10040,7 +10164,8 @@
         "drupal/default_content": 15,
         "drupal/default_content_deploy": 10,
         "drupal/entityqueue": 5,
-        "drupal/libraries": 15
+        "drupal/libraries": 15,
+        "drupal/schema": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
