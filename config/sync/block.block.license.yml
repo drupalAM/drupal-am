@@ -1,0 +1,45 @@
+uuid: b4e8062a-1621-4608-b2d9-e66579c80a6c
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7978101d-0d7d-4789-a404-a2e4dcc86bd6'
+  module:
+    - block_content
+    - context
+  theme:
+    - drupalam
+id: license
+theme: drupalam
+region: hidden
+weight: 0
+provider: null
+plugin: 'block_content:7978101d-0d7d-4789-a404-a2e4dcc86bd6'
+settings:
+  id: 'block_content:7978101d-0d7d-4789-a404-a2e4dcc86bd6'
+  label: License
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  context:
+    id: context
+    negate: null
+    values: ''
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
