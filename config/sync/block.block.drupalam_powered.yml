@@ -11,7 +11,7 @@ _core:
 id: drupalam_powered
 theme: drupalam
 region: footer
-weight: -10
+weight: -5
 provider: null
 plugin: system_powered_by_block
 settings:

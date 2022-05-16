@@ -56,7 +56,6 @@ module:
   heading_formatter: 0
   help: 0
   image: 0
-  kint: 0
   language: 0
   layout_discovery: 0
   libraries: 0
@@ -64,6 +63,7 @@ module:
   linkicon: 0
   locale: 0
   media: 0
+  media_delete_all: 0
   menu_ui: 0
   module_missing_message_fixer: 0
   node: 0
@@ -73,6 +73,7 @@ module:
   path_alias: 0
   rdf: 0
   recaptcha: 0
+  schema: 0
   search: 0
   serialization: 0
   shortcut: 0

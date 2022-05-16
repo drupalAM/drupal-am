@@ -1,0 +1,6 @@
+schema_database_connection: default
+schema_status_report: true
+schema_suppress_type_warnings: false
+_core:
+  default_config_hash: uqHTtEm7CxR0JU-rz9I_NCmWN1NMqpB5tTBOSi8aHgg
+langcode: hy
