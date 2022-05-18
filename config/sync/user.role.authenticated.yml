@@ -9,6 +9,7 @@ dependencies:
     - contact
     - filter
     - fontawesome
+    - media
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -25,3 +26,4 @@ permissions:
   - 'edit own comments'
   - 'post comments'
   - 'use text format basic_html'
+  - 'view media'

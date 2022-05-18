@@ -21,6 +21,7 @@
         "drupal/backup_migrate": "^5.0",
         "drupal/better_exposed_filters": "^5.0",
         "drupal/better_normalizers": "^1.0@beta",
+        "drupal/blazy": "^2.11",
         "drupal/blog": "2.x-dev",
         "drupal/bootstrap": "^3.21",
         "drupal/bootstrap_layouts": "^5.1",
