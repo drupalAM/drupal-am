@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "457c74431601fa692a1096992c71ffd0",
+    "content-hash": "548d639f7e458cfc29b8599b2afea2c7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4871,6 +4871,15 @@
                 "source": "https://github.com/enlightn/security-checker/tree/v1.10.0"
             },
             "time": "2022-02-21T22:40:16+00:00"
+        },
+        {
+            "name": "furf/jquery-ui-touch-punch",
+            "version": "dev-master",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/furf/jquery-ui-touch-punch/archive/master.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "google/recaptcha",
@@ -10365,7 +10374,8 @@
         "drupal/default_content_deploy": 10,
         "drupal/entityqueue": 5,
         "drupal/libraries": 15,
-        "drupal/schema": 15
+        "drupal/schema": 15,
+        "furf/jquery-ui-touch-punch": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
