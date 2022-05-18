@@ -12,7 +12,7 @@ label: Content
 name: content
 group: General
 description: ''
-requireAllConditions: true
+requireAllConditions: false
 disabled: false
 conditions:
   node_type:

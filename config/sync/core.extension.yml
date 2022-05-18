@@ -8,6 +8,7 @@ module:
   backup_migrate: 0
   better_exposed_filters: 0
   better_normalizers: 0
+  blazy: 0
   block: 0
   block_content: 0
   blog: 0
@@ -55,12 +56,19 @@ module:
   heading_formatter: 0
   help: 0
   image: 0
+  image_delta_formatter: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
+  jquery_ui_touch_punch: 0
   language: 0
   layout_discovery: 0
   libraries: 0
   link: 0
   linkicon: 0
   locale: 0
+  media: 0
+  media_delete_all: 0
   menu_ui: 0
   module_missing_message_fixer: 0
   node: 0
@@ -70,9 +78,11 @@ module:
   path_alias: 0
   rdf: 0
   recaptcha: 0
+  schema: 0
   search: 0
   serialization: 0
   shortcut: 0
+  stage_file_proxy: 0
   system: 0
   taxonomy: 0
   telephone: 0

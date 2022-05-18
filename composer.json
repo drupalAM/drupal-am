@@ -12,6 +12,22 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "furf/jquery-ui-touch-punch",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/furf/jquery-ui-touch-punch/archive/master.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -21,6 +37,7 @@
         "drupal/backup_migrate": "^5.0",
         "drupal/better_exposed_filters": "^5.0",
         "drupal/better_normalizers": "^1.0@beta",
+        "drupal/blazy": "^2.11",
         "drupal/blog": "2.x-dev",
         "drupal/bootstrap": "^3.21",
         "drupal/bootstrap_layouts": "^5.1",
@@ -38,20 +55,25 @@
         "drupal/default_content_deploy": "^1.0@beta",
         "drupal/ds": "^3.5",
         "drupal/entityqueue": "^1.0@RC",
-        "drupal/field_group": "^3.0",
+        "drupal/field_group": "^3.2",
         "drupal/fixed_block_content": "^1.0",
         "drupal/focal_point": "^1.3",
         "drupal/fontawesome": "^2.15",
+        "drupal/image_delta_formatter": "^1.1",
         "drupal/libraries": "^3.0@alpha",
         "drupal/linked_field": "^1.3",
         "drupal/linkicon": "^1.5",
+        "drupal/media_delete_all": "^1.3",
         "drupal/module_missing_message_fixer": "^2.0",
         "drupal/paragraphs": "^1.11",
         "drupal/pathauto": "^1.10",
         "drupal/recaptcha": "^3.0",
+        "drupal/schema": "^2.0@alpha",
+        "drupal/stage_file_proxy": "^1.2",
         "drupal/token": "^1.6",
         "drupal/upgrade_status": "^3.14",
-        "drush/drush": "^10.0"
+        "drush/drush": "^10.0",
+        "furf/jquery-ui-touch-punch": "dev-master"
     },
     "require-dev": {
         "drupal/devel": "^4.1.5"
@@ -78,7 +100,11 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "vendor:npm-asset",
+                "vendor:bower-asset"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],

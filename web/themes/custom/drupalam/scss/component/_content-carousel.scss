@@ -3,10 +3,18 @@
   padding: 30px 0 0;
   background-color: #f7f7f7;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
-  
 
   h2.block-title {
     @extend .section-title;
+  }
+
+  .views-row {
+    margin-bottom: 20px;
+    height: 350px;
+  }
+
+  .container {
+    padding-top: 25px;
   }
   .views-element-container {
     @extend .container;
@@ -36,7 +44,7 @@
       font-size: 18px;
       letter-spacing: 1px;
     }
-    
+
     .view-content {
       position: relative;
       display: inline-block;
@@ -185,7 +193,6 @@
       display: block;
       margin-top: -30px;
       margin-left: -30px;
-      padding: 0;
       padding: 10px;
       background: #5bc3ff;
     }
@@ -199,8 +206,8 @@
       @include scale(.7);
     }
 
-    .pc-effect-icon .pc-item a:hover .icon-circle, 
-      .pg-effect-icon .pg-item:hover .icon-circle, 
+    .pc-effect-icon .pc-item a:hover .icon-circle,
+      .pg-effect-icon .pg-item:hover .icon-circle,
       .qg-overlay:hover .icon-circle {
       @include scale(1.2);
       @include opacity(1);
