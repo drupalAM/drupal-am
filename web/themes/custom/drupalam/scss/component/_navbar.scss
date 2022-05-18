@@ -71,7 +71,7 @@ body {
           font-weight: 600;
         }
         a.is-active{
-          color: $pm-dark-blue;
+          color: $dark-blue;
         }
       }
     }
@@ -80,7 +80,6 @@ body {
       z-index: 100;
       left: 0;
       width: 100%;
-      //background: rgba(17, 17, 17, 0.96);
       background: $white;
       text-transform: uppercase;
       font-size: 12px;
@@ -99,7 +98,7 @@ body {
               border-bottom: 0.3px solid #a9a9a9;
 
               & .is-active{
-                color: $pm-dark-blue;
+                color: $dark-blue;
               }
             }
             &:last-child{
@@ -138,10 +137,10 @@ body {
       li{
         a{
           //color: #3e7de4;
-          color: $sc-black;
+          color: $black;
 
           &:hover{
-            color: $pm-dark-blue;
+            color: $dark-blue;
           }
 
           @include breakpoint(mobile) {
@@ -152,11 +151,13 @@ body {
     }
 
     .logo {
-      background: $pm-dark-blue;
+      img {
+        filter: brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(10%) hue-rotate(320deg) brightness(91%) contrast(84%);
+      }
     }
 
     .navbar-toggle .icon-bar{
-      background: $pm-dark-blue;
+      background: $dark-blue;
     }
   }
   @media #{$mobile} {
@@ -164,11 +165,13 @@ body {
     min-height: 60px;
 
     .logo {
-      background: $pm-dark-blue;
+      img {
+        filter: brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(10%) hue-rotate(320deg) brightness(91%) contrast(84%);
+      }
     }
 
     .navbar-toggle .icon-bar{
-      background: $pm-dark-blue;
+      background: $dark-blue;
     }
   }
 }

@@ -8,21 +8,23 @@ body:not(.path-frontpage) {
 
     li {
       a {
-        color: $sc-black;
+        color: $black;
 
         &:hover {
-          color: $pm-light-blue;
+          color: $light-blue;
         }
       }
     }
 
     .logo {
-      background: $pm-dark-blue;
+      img {
+        filter: brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(10%) hue-rotate(320deg) brightness(91%) contrast(84%);
+      }
     }
 
     .navbar-toggle{
       .icon-bar{
-        background: $pm-dark-blue;
+        background: $dark-blue;
       }
     }
   }

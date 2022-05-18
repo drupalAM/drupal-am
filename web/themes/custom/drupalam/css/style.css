@@ -6233,16 +6233,16 @@ body {
       @media (max-width: 767px) {
         #navbar.navbar-scrolled-top .navbar-nav li a {
           color: black; } }
-    #navbar.navbar-scrolled-top .logo {
-      background: #0678BE; }
+    #navbar.navbar-scrolled-top .logo img {
+      filter: brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(10%) hue-rotate(320deg) brightness(91%) contrast(84%); }
     #navbar.navbar-scrolled-top .navbar-toggle .icon-bar {
       background: #0678BE; }
   @media screen and (max-width: 767px) {
     #navbar {
       background: #fff;
       min-height: 60px; }
-      #navbar .logo {
-        background: #0678BE; }
+      #navbar .logo img {
+        filter: brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(10%) hue-rotate(320deg) brightness(91%) contrast(84%); }
       #navbar .navbar-toggle .icon-bar {
         background: #0678BE; } }
 
@@ -6313,8 +6313,8 @@ body:not(.path-frontpage) #navbar {
     color: #222222; }
     body:not(.path-frontpage) #navbar li a:hover {
       color: #53B0EB; }
-  body:not(.path-frontpage) #navbar .logo {
-    background: #0678BE; }
+  body:not(.path-frontpage) #navbar .logo img {
+    filter: brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(10%) hue-rotate(320deg) brightness(91%) contrast(84%); }
   body:not(.path-frontpage) #navbar .navbar-toggle .icon-bar {
     background: #0678BE; }
 
