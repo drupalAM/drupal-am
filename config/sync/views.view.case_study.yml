@@ -359,9 +359,9 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
-          row_class: item
+          row_class: 'item col-xs-12 col-sm-6 col-md-3'
           default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -414,9 +414,9 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
-          row_class: item
+          row_class: 'item col-xs-12 col-sm-6 col-md-3'
           default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:

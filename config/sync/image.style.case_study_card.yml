@@ -1,0 +1,17 @@
+uuid: 8dfe81ae-ef20-4d77-bb96-4b1c260153b1
+langcode: hy
+status: true
+dependencies:
+  module:
+    - focal_point
+name: case_study_card
+label: 'crop 400 x 478'
+effects:
+  75387630-f40f-4386-afab-e574c71b2f40:
+    uuid: 75387630-f40f-4386-afab-e574c71b2f40
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 478
+      crop_type: focal_point
