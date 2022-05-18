@@ -37,8 +37,9 @@ jobs:
 
       - name: Check out the source
         run: ssh dev 'cd /home4/kingpara/www/dev.drupal.am && git fetch && git reset --hard origin/master'
-        run: ssh dev 'cd /home4/kingpara/www/dev.drupal.am && /opt/cpanel/composer/bin/composer install -n'
- 
+      
+      - name: composer install
+        run: ssh dev 'cd /home4/kingpara/www/dev.drupal.am && /opt/cpanel/composer/bin/composer install -n' 
       #- name: Start the server
       #  if: ${{ always() }}
       #  run: ssh staging 'sudo systemctl start my-application'
