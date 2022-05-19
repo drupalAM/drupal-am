@@ -74,146 +74,6 @@
   .ui-dialog-content{
     overflow-x: hidden;
     padding: 0 0 20px;
-    .signin-form-wrapper{
-      max-width: 100%;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-
-      .signin-form{
-        max-width: 40%;
-        width: 50%;
-        overflow: hidden;
-
-          .form-wrapper{
-            width: 300px;
-            margin: 0 auto;
-            h3.form-title-hardcoded{
-              font-weight: 600;
-            }
-            .form-item {
-              input {
-                border-radius: 30px;
-              }
-            }
-            .form-actions {
-              .button {
-                width: 100%;
-                border-radius: 30px;
-                background: $pm-dark-blue;
-                border-color: $pm-dark-blue;
-                color: $white;
-                font-weight: 600;
-                text-transform: uppercase;
-              }
-            }
-            .register-user-wrapper{
-              margin-top: 10px;
-              span{
-                a{
-                  color: $pm-dark-blue;
-                }
-              }
-            }
-          }
-      }
-
-      .signin-image{
-        max-width: 60%;
-        overflow: hidden;
-          .image-wrapper{
-            img{
-              max-width: 100%;
-            }
-          }
-      }
-
-      @include breakpoint(mobile) {
-        .signin-form{
-          max-width: 100%;
-          width: 100%;
-        }
-        .signin-image{
-          display: none;
-        }
-      }
-    }
-
-    //SignUp
-    .signup-form-wrapper {
-      align-items: flex-end;
-      padding-bottom: 25px;
-
-      .signup-form {
-        max-width: 45%;
-
-        .form-wrapper {
-          width: 400px;
-
-          .form-item {
-              .password-strength {
-                .password-strength__meter {
-                  height: 5px;
-                  border-radius: 30px;
-
-                  .password-strength__indicator {
-                    border-radius: 30px 0 0 30px;
-                  }
-
-                  .password-strength__indicator.is-weak {
-                    background-color: red;
-                  }
-
-                  .password-strength__indicator.is-fair {
-                    background-color: #ea8c12;
-                  }
-
-                  .password-strength__indicator.is-good {
-                    background-color: #b9ea0a;
-                  }
-
-                  .password-strength__indicator.is-strong {
-                    background-color: #16da06;
-                    border-radius: 30px;
-                  }
-                }
-              }
-              .password-suggestions{
-                margin-top: -30px;
-              }
-              .password-confirm-message, .password-strength__title, .password-suggestions {
-                font-size: 12px;
-              }
-          }
-        }
-      }
-
-      .signup-image {
-        max-width: 55%;
-
-        .signin-to-account-wrapper {
-          .join-user {
-            display: flex;
-            flex-direction: column;
-            width: max-content;
-            margin: 0 auto;
-
-            a {
-              width: 300px;
-              border-radius: 30px;
-              background: #0678BE;
-              border-color: #0678BE;
-              color: #fff;
-              font-weight: 600;
-              text-transform: uppercase;
-              text-align: center;
-              padding: 10px 0;
-            }
-          }
-        }
-      }
-    }
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -235,4 +95,152 @@
 .ui-widget-overlay{
   opacity: unset;
   background: #000000a1;
+}
+
+.signin-form-wrapper{
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .signin-form{
+    max-width: 40%;
+    width: 50%;
+    overflow: hidden;
+
+    .form-wrapper{
+      width: 300px;
+      margin: 0 auto;
+      h3.form-title-hardcoded{
+        font-weight: 600;
+      }
+      .form-item {
+        input {
+          //border-radius: 30px;
+          border-radius: 5px;
+        }
+      }
+      .form-actions {
+        .button {
+          width: 100%;
+          border-radius: 5px;
+          background: $pm-dark-blue;
+          border-color: $pm-dark-blue;
+          color: $white;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+      .register-user-wrapper{
+        margin-top: 10px;
+        span{
+          a{
+            color: $pm-dark-blue;
+          }
+        }
+      }
+    }
+  }
+
+  .signin-image{
+    max-width: 60%;
+    overflow: hidden;
+    .image-wrapper{
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    .signin-form{
+      max-width: 100%;
+      width: 100%;
+    }
+    .signin-image{
+      display: none;
+    }
+  }
+}
+
+//SignUp
+.signup-form-wrapper {
+  align-items: flex-end;
+  padding-bottom: 25px;
+
+  .signup-form {
+    max-width: 45%;
+
+    .form-wrapper {
+      width: 400px;
+
+      .form-item {
+        .password-strength {
+          .password-strength__meter {
+            height: 5px;
+            border-radius: 30px;
+
+            .password-strength__indicator {
+              border-radius: 30px 0 0 30px;
+            }
+
+            .password-strength__indicator.is-weak {
+              background-color: red;
+            }
+
+            .password-strength__indicator.is-fair {
+              background-color: #ea8c12;
+            }
+
+            .password-strength__indicator.is-good {
+              background-color: #b9ea0a;
+            }
+
+            .password-strength__indicator.is-strong {
+              background-color: #16da06;
+              border-radius: 30px;
+            }
+          }
+        }
+        .password-suggestions{
+          margin-top: -20px;
+        }
+        .password-confirm-message, .password-strength__title, .password-suggestions {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .signup-image {
+    max-width: 55%;
+
+    .signin-to-account-wrapper {
+      .join-user {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        margin: 0 auto;
+
+        a {
+          width: 300px;
+          border-radius: 5px;
+          //background: #0678BE;
+          //border-color: #0678BE;
+          color: #fff;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-align: center;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+}
+
+.path-user {
+  .region-content {
+    margin: 0 auto;
+  }
 }

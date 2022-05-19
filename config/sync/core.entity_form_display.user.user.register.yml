@@ -12,7 +12,6 @@ dependencies:
   module:
     - field_layout
     - layout_discovery
-    - text
     - user
 third_party_settings:
   field_layout:
@@ -31,21 +30,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  contact:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_user_bio:
-    type: text_textarea_with_summary
-    weight: 3
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   field_user_first_name:
     type: string_textfield
     weight: 0
@@ -62,14 +46,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  language:
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  contact: true
+  field_user_bio: true
   field_user_friends: true
   langcode: true
+  language: true
   path: true
   timezone: true
   user_picture: true
