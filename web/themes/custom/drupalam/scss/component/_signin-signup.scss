@@ -13,6 +13,11 @@
         border-radius: 50px;
         border: 2px solid #ffffff;
         transition: .3s ease;
+
+        @include breakpoint(mobile) {
+          background: #0678BE;
+          border-color: $dark-blue;
+        }
       }
     }
   }
@@ -169,7 +174,7 @@
   align-items: flex-end;
   padding-bottom: 25px;
 
-  .signup-form {
+    .signup-form {
     max-width: 45%;
 
     .form-wrapper {
@@ -233,6 +238,35 @@
           text-transform: uppercase;
           text-align: center;
           padding: 10px 0;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    align-items: center;
+
+    .signup-form{
+      max-width: 100%;
+    }
+
+    .signup-image{
+      display: block;
+      max-width: 100%;
+      justify-content: center;
+
+      .image-wrapper{
+        display: none;
+      }
+      .signin-to-account-wrapper{
+        .join-user{
+          width: 100%;
+          margin-top: 20px;
+
+          a{
+            width: 400px;
+          }
         }
       }
     }

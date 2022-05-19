@@ -6199,11 +6199,10 @@ header {
       background: #fff;
       text-transform: uppercase;
       font-size: 12px; }
-      #navbar .navbar-collapse .region-navigation-collapsible nav {
-        float: none; }
-        #navbar .navbar-collapse .region-navigation-collapsible nav ul {
-          text-align: center;
-          padding-top: 15px; }
+      #navbar .navbar-collapse .region-navigation-collapsible {
+        display: block; }
+        #navbar .navbar-collapse .region-navigation-collapsible nav {
+          float: none; }
           #navbar .navbar-collapse .region-navigation-collapsible nav ul li a {
             display: block;
             padding: 15px 3%;
@@ -6249,8 +6248,10 @@ header {
       #navbar .navbar-toggle .icon-bar {
         background: #0678BE; } }
 
-.region-navigation-collapsible nav {
-  float: right; }
+.region-navigation-collapsible {
+  display: flex;
+  justify-content: end;
+  align-items: center; }
   @media (min-width: 767px) {
     .region-navigation-collapsible nav {
       margin-top: 5px; } }
@@ -8417,6 +8418,10 @@ body.page-node-type-blog-post .bypostauthor {
   border-radius: 50px;
   border: 2px solid #ffffff;
   transition: .3s ease; }
+  @media (max-width: 767px) {
+    .navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+      background: #0678BE;
+      border-color: #0678BE; } }
 
 .navbar-scrolled-top .block-signin-popup.block-join-now-block .join-block-wrapper a {
   background: #0678BE;
@@ -8552,6 +8557,23 @@ body.page-node-type-blog-post .bypostauthor {
         text-transform: uppercase;
         text-align: center;
         padding: 10px 0; }
+  @media (max-width: 767px) {
+    .signup-form-wrapper {
+      flex-direction: column;
+      align-items: center; }
+      .signup-form-wrapper .signup-form {
+        max-width: 100%; }
+      .signup-form-wrapper .signup-image {
+        display: block;
+        max-width: 100%;
+        justify-content: center; }
+        .signup-form-wrapper .signup-image .image-wrapper {
+          display: none; }
+        .signup-form-wrapper .signup-image .signin-to-account-wrapper .join-user {
+          width: 100%;
+          margin-top: 20px; }
+          .signup-form-wrapper .signup-image .signin-to-account-wrapper .join-user a {
+            width: 400px; } }
 
 .path-user .region-content {
   margin: 0 auto; }

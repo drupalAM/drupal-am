@@ -40,6 +40,7 @@ module:
   drupalam_default_content: 0
   dynamic_page_cache: 0
   editor: 0
+  email_registration: 0
   empty_front: 0
   entity_reference_revisions: 0
   entityqueue: 0
@@ -81,8 +82,8 @@ module:
   schema: 0
   search: 0
   serialization: 0
-  signin_popup: 0
   shortcut: 0
+  signin_popup: 0
   stage_file_proxy: 0
   system: 0
   taxonomy: 0

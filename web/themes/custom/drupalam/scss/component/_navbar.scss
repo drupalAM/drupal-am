@@ -88,27 +88,30 @@ header{
       text-transform: uppercase;
       font-size: 12px;
 
-      .region-navigation-collapsible nav {
-        float: none;
+      .region-navigation-collapsible {
+        display: block;
 
-        ul {
-          text-align: center;
-          padding-top: 15px;
-          li {
-            a {
-              display: block;
-              padding: 15px 3%;
-              color: black;
-              border-bottom: 0.3px solid #a9a9a9;
+        nav {
+          float: none;
 
-              & .is-active{
-                color: $dark-blue;
+          ul {
+            li {
+              a {
+                display: block;
+                padding: 15px 3%;
+                color: black;
+                border-bottom: 0.3px solid #a9a9a9;
+
+                & .is-active {
+                  color: $dark-blue;
+                }
               }
-            }
-            &:last-child{
-             a{
-               border-bottom: unset;
-             }
+
+              &:last-child {
+                a {
+                  border-bottom: unset;
+                }
+              }
             }
           }
         }
@@ -181,8 +184,12 @@ header{
 }
 
 // Main menu
-.region-navigation-collapsible nav {
-  float: right;
+.region-navigation-collapsible {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  nav {
+  //float: right;
   @include breakpoint(no_mobile) {
     margin-top: 5px;
   }
@@ -209,6 +216,7 @@ header{
           text-indent: -999em;
           border-radius: 7px;
         }
+
         &:hover {
           &:after {
             bottom: 0;
@@ -220,6 +228,7 @@ header{
         }
       }
     }
+   }
   }
 }
 
