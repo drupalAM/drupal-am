@@ -66,11 +66,12 @@ reactions:
         weight: '0'
         custom_id: fixed_block_content_social_icons
         theme: drupalam
-        css_class: block-socialicons
+        css_class: 'visible-xs block-socialicons'
         unique: 0
         context_id: header
         context_mapping: {  }
         view_mode: ''
+        third_party_settings: {  }
     include_default_blocks: 0
     saved: false
 weight: 0
