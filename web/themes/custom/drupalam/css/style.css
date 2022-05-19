@@ -6772,31 +6772,40 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       text-transform: uppercase;
       margin-top: 0;
       padding-top: 0; }
-    .footer .context-groups-footer_columns .menu {
+    .footer .context-groups-footer_columns .menu,
+    .footer .context-groups-footer_columns .item-list ul {
       margin-left: 0;
       padding-left: 0;
-      margin-bottom: 16px; }
-      .footer .context-groups-footer_columns .menu li {
+      margin-bottom: 16px;
+      list-style-type: none; }
+      .footer .context-groups-footer_columns .menu li,
+      .footer .context-groups-footer_columns .item-list ul li {
         border-bottom: 2px solid #282828;
         padding: 6px 0;
         width: 200px; }
-        .footer .context-groups-footer_columns .menu li.last {
+        .footer .context-groups-footer_columns .menu li.last, .footer .context-groups-footer_columns .menu li:last-child,
+        .footer .context-groups-footer_columns .item-list ul li.last,
+        .footer .context-groups-footer_columns .item-list ul li:last-child {
           border-bottom: none; }
-        .footer .context-groups-footer_columns .menu li a {
+        .footer .context-groups-footer_columns .menu li a,
+        .footer .context-groups-footer_columns .item-list ul li a {
           padding-left: 0;
           color: #939393;
           text-decoration: none;
           font-size: 14px; }
-          .footer .context-groups-footer_columns .menu li a:before {
+          .footer .context-groups-footer_columns .menu li a:before,
+          .footer .context-groups-footer_columns .item-list ul li a:before {
             content: "\f105";
             display: inline-block;
             font-family: FontAwesome;
             margin-right: 10px;
             color: #fff; }
-          .footer .context-groups-footer_columns .menu li a:hover {
+          .footer .context-groups-footer_columns .menu li a:hover,
+          .footer .context-groups-footer_columns .item-list ul li a:hover {
             text-decoration: underline;
             color: #fff; }
-            .footer .context-groups-footer_columns .menu li a:hover:before {
+            .footer .context-groups-footer_columns .menu li a:hover:before,
+            .footer .context-groups-footer_columns .item-list ul li a:hover:before {
               color: #939393; }
     .footer .context-groups-footer_columns .text-with-logo img {
       margin-bottom: 20px;
