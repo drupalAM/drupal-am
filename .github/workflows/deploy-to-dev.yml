@@ -42,7 +42,7 @@ jobs:
         run: ssh dev 'cd /home4/kingpara/www/dev.drupal.am && /opt/cpanel/composer/bin/composer install -n' 
       
       - name: Updb, config sync and clear cache
-        run: ssh dev 'cd /home4/kingpara/www/dev.drupal.am && drush updb -y && drush cim -y && drush cr'
+        run: ssh dev 'cd /home4/kingpara/www/dev.drupal.am && /home4/kingpara/public_html/dev.drupal.am/vendor/bin/drush updb -y && /home4/kingpara/public_html/dev.drupal.am/vendor/bin/drush cim -y && /home4/kingpara/public_html/dev.drupal.am/vendor/bin/drush cr'
       #- name: Start the server
       #  if: ${{ always() }}
       #  run: ssh staging 'sudo systemctl start my-application'
