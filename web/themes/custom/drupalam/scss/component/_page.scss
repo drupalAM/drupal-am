@@ -4,7 +4,33 @@ body:not(.path-frontpage) {
   }
 
   #navbar {
-    background-color: rgba(37, 37, 37, 0.95);
+    background: $white;
+
+    li {
+      a {
+        color: $black;
+
+        &:hover {
+          color: $light-blue;
+        }
+      }
+    }
+
+    .logo {
+      img {
+        filter: brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(10%) hue-rotate(320deg) brightness(91%) contrast(84%);
+      }
+    }
+
+    .navbar-toggle{
+      .icon-bar{
+        background: $dark-blue;
+      }
+    }
+  }
+
+  #navbar.navbar-scrolled-top {
+    background: $white;
   }
 
   .content-and-sidebars-container {

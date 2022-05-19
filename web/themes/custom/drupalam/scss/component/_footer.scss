@@ -6,51 +6,130 @@
   display: block;
   overflow: hidden;
   height: auto;
-  background-color: $gray-base;
+  background: #161616;
   font-size: 13px;
-  
+
   .context-groups-footer_columns {
-    margin-top: 50px;
-    
+    padding-top: 70px;
+    padding-bottom: 70px;
+
     .block {
       margin-bottom: 10px;
       color: $white;
     }
-    .block-title {
-      margin-bottom: 10px;
-      padding-top: 11px;
-      color: $white;
-      text-indent: 2px;
-      text-transform: uppercase;
-      letter-spacing: normal;
-      font-weight: bold;
-      font-size: 17px;
-    }
     a {
       color: $white;
       text-decoration: underline;
-      
+
       &:hover {
         color: $brand-primary;
       }
     }
+    p {
+      color: #939393;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    h2 {
+      font-weight: bolder;
+      padding-bottom: 10px;
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .menu {
+      margin-left: 0;
+      padding-left: 0;
+      margin-bottom: 16px;
+      li {
+        border-bottom: 2px solid #282828;
+        padding: 6px 0;
+        width: 200px;
+        &.last {
+          border-bottom: none;
+        }
+        a {
+          padding-left: 0;
+          color: #939393;
+          text-decoration: none;
+          font-size: 14px;
+          &:before {
+            content: "\f105";
+            display: inline-block;
+            font-family: FontAwesome;
+            margin-right: 10px;
+            color: #fff;
+          }
+          &:hover {
+            text-decoration: underline;
+            color: #fff;
+            &:before {
+              color: #939393;
+            }
+          }
+        }
+      }
+    }
+    .text-with-logo {
+      img {
+        margin-bottom: 20px;
+        margin-top: -8px;
+      }
+    }
+
+    .social_links {
+      .field--name-body {
+        padding-top: 15px;
+        a {
+          color: #fff;
+          border: none;
+          background-color: #8c8c8c;
+          padding: 10px;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          text-align: center;
+          display: inline-block;
+          line-height: 15px;
+          font-size: 15px;
+          margin-right: 4px;
+
+          &:hover {
+            background-color: #3e7de4;
+            color: #fff;
+            cursor: pointer;
+          }
+          i,
+          svg {
+
+          }
+        }
+      }
+    }
   }
   .context-groups-footer_bottom {
-    padding: 25px 0;
-    width: 100%;
-    height: auto;
-    background-color: #1f1f1f;
+    border-top: 1px solid #282828;
+    text-align: center;
+    padding-top: 35px;
+    background-color: #000;
+    padding-bottom: 20px;
 
-    .copyright {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 10px;
-      color: $gray-light;
-      text-align: center;
-      margin: 10px 0;
-      @include breakpoint(no_mobile) {
-        text-align: left;
-        margin: 0;
+    .license {
+      .field--name-body {
+        color: #fff;
+        font-size: 13px;
+        a {
+          text-decoration: underline;
+          color: #eee;
+          &:hover {
+            color: #fff;
+            text-decoration: none;
+          }
+        }
       }
     }
     ul.menu {
@@ -59,18 +138,18 @@
       @include breakpoint(no_mobile) {
         text-align: right;
       }
-      
+
       li {
         display: inline-block;
         letter-spacing: 1px;
-        
+
         a {
           @include anchor_color();
           text-transform: uppercase;
           letter-spacing: 2px;
           font-size: 10px;
           padding: 0;
-          
+
           &:after {
             content: "/";
             margin-left: 10px;
@@ -92,11 +171,11 @@
     .block-socialicons {
       text-align: center;
       margin-top: 10px;
-      
+
       ul {
         li {
           padding: 2px 3px;
-          
+
           a {
             display: inline-block;
             border-radius: 2px;
@@ -104,9 +183,9 @@
             height: 25px;
             border: 0px;
             background: rgba(255, 255, 255, 0.1);
-            
+
             .fa {
-              @include opacity(0.7);  
+              @include opacity(0.7);
             }
           }
         }

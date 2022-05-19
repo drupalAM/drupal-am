@@ -1,0 +1,8 @@
+uuid: 70587f61-465b-4c6f-ba0f-a3228451848e
+langcode: hy
+status: true
+dependencies: {  }
+id: footer-second
+label: 'Footer second'
+description: ''
+locked: false

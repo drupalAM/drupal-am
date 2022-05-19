@@ -25,6 +25,9 @@ $gray-light:             #b3b3b1 !default;
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 $gray-title:             #102119;
 $gray-ultra-light:       #f7f7f7;
+$dark-blue:              #0678BE;
+$light-blue:             #53B0EB;
+$pale-gray:              #F6F6F2;
 
 $brand-primary:         #5bc3ff !default;
 $brand-red:             #c90834 !default;
@@ -109,7 +112,7 @@ $btn-info-bg:                    transparent!default;
 $btn-info-border:                #fff !default;
 
 $white: #fff;
-$black: #000;
+$black: #222222;
 
 $fa-var-angle-left: "\f104";
 $fa-var-angle-right: "\f105";

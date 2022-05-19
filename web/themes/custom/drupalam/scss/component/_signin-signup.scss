@@ -24,7 +24,7 @@
     .join-block-wrapper {
       a {
         background: #0678BE;
-        border-color: $pm-dark-blue;
+        border-color: $dark-blue;
       }
     }
   }
@@ -61,7 +61,7 @@
       &:after{
         content: '\00d7';
         font-size: 25px;
-        color: $pm-dark-blue;
+        color: $dark-blue;
         position: absolute;
         top: 0;
         left: 0;
@@ -125,8 +125,8 @@
         .button {
           width: 100%;
           border-radius: 5px;
-          background: $pm-dark-blue;
-          border-color: $pm-dark-blue;
+          background: $dark-blue;
+          border-color: $dark-blue;
           color: $white;
           font-weight: 600;
           text-transform: uppercase;
@@ -136,7 +136,7 @@
         margin-top: 10px;
         span{
           a{
-            color: $pm-dark-blue;
+            color: $dark-blue;
           }
         }
       }

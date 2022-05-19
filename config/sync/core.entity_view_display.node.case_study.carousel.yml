@@ -10,11 +10,12 @@ dependencies:
     - field.field.node.case_study.field_case_study_site_link
     - field.field.node.case_study.field_term_industry
     - field.field.node.case_study.field_term_project_category
-    - image.style.crop_430x255
+    - image.style.case_study_card
     - node.type.case_study
   module:
-    - colorbox
     - ds
+    - field_group
+    - image_delta_formatter
     - user
 third_party_settings:
   ds:
@@ -32,18 +33,80 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
       ds_content:
         - field_case_study_screens
+        - group_card
+        - group_content
         - node_title
         - field_term_project_category
         - field_term_industry
+        - node_link
     fields:
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 7
         label: hidden
         formatter: default
+      node_link:
+        plugin_id: node_link
+        weight: 10
+        label: hidden
+        formatter: default
+        settings:
+          'link text': 'View case'
+          'link class': ''
+          wrapper: ''
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_group:
+    group_card:
+      children:
+        - group_content
+      label: card
+      parent_name: ''
+      region: ds_content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: card
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_content:
+      children:
+        - node_title
+        - field_term_project_category
+        - field_term_industry
+        - node_link
+      label: content
+      parent_name: group_card
+      region: ds_content
+      weight: 6
+      format_type: html_element
+      format_settings:
+        classes: content
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 _core:
   default_config_hash: KJrIh0_iSF-z7zEMqdcAvzhxHWytetcWyi7GICV9qPU
 id: node.case_study.carousel
@@ -52,19 +115,22 @@ bundle: case_study
 mode: carousel
 content:
   field_case_study_screens:
-    type: colorbox
+    type: image_delta_formatter
     label: hidden
     settings:
-      colorbox_node_style: hide
-      colorbox_node_style_first: crop_430x255
-      colorbox_image_style: ''
-      colorbox_gallery: post
-      colorbox_gallery_custom: ''
-      colorbox_caption: custom
-      colorbox_caption_custom: '<a href="[node:url]">[translatable-string:Read More]</a>'
+      image_link: ''
+      image_style: case_study_card
+      deltas: 0
+      deltas_reversed: false
     third_party_settings:
       ds:
         ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     weight: 0
     region: ds_content
   field_term_industry:
@@ -73,7 +139,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 9
     region: ds_content
   field_term_project_category:
     type: entity_reference_label
@@ -81,7 +147,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 8
     region: ds_content
 hidden:
   body: true
