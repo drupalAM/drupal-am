@@ -12,7 +12,7 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: themes/custom/drupalam/logo.png
+  path: themes/custom/drupalam/logo-white.svg
   url: ''
   use_default: false
 schemas:
