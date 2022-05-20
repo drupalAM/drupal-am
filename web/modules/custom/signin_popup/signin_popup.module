@@ -1,0 +1,17 @@
+<?php
+
+
+/**
+ * Implements hook_theme().
+ */
+function signin_popup_theme(){
+  return [
+    'join_now_block' => [
+      'variables' => [
+        'title' => 'Default title',
+        'is_anonymous' => NULL,
+      ],
+    ],
+  ];
+}
+

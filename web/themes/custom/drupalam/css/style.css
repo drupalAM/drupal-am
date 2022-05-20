@@ -2884,23 +2884,23 @@ fieldset[disabled] .view-hero-slide .view-content .button a,
 
 .btn-primary, .view-hero-slide .view-content .button a {
   color: #fff;
-  background-color: #c90834;
-  border-color: #c90834; }
+  background-color: #0678BE;
+  border-color: #0678BE; }
   .btn-primary:focus, .view-hero-slide .view-content .button a:focus, .btn-primary.focus, .view-hero-slide .view-content .button a.focus {
     color: #fff;
-    background-color: #980627;
-    border-color: #4e0314; }
+    background-color: #04598d;
+    border-color: #022a42; }
   .btn-primary:hover, .view-hero-slide .view-content .button a:hover {
     color: #fff;
-    background-color: #980627;
-    border-color: #8e0625; }
+    background-color: #04598d;
+    border-color: #045383; }
   .btn-primary:active, .view-hero-slide .view-content .button a:active, .btn-primary.active, .view-hero-slide .view-content .button a.active,
   .open > .btn-primary.dropdown-toggle,
   .view-hero-slide .view-content .button .open > a.dropdown-toggle {
     color: #fff;
-    background-color: #980627;
+    background-color: #04598d;
     background-image: none;
-    border-color: #8e0625; }
+    border-color: #045383; }
     .btn-primary:active:hover, .view-hero-slide .view-content .button a:active:hover, .btn-primary:active:focus, .view-hero-slide .view-content .button a:active:focus, .btn-primary:active.focus, .view-hero-slide .view-content .button a:active.focus, .btn-primary.active:hover, .view-hero-slide .view-content .button a.active:hover, .btn-primary.active:focus, .view-hero-slide .view-content .button a.active:focus, .btn-primary.active.focus, .view-hero-slide .view-content .button a.active.focus,
     .open > .btn-primary.dropdown-toggle:hover,
     .view-hero-slide .view-content .button .open > a.dropdown-toggle:hover,
@@ -2909,8 +2909,8 @@ fieldset[disabled] .view-hero-slide .view-content .button a,
     .open > .btn-primary.dropdown-toggle.focus,
     .view-hero-slide .view-content .button .open > a.dropdown-toggle.focus {
       color: #fff;
-      background-color: #76051e;
-      border-color: #4e0314; }
+      background-color: #03436a;
+      border-color: #022a42; }
   .btn-primary.disabled:hover, .view-hero-slide .view-content .button a.disabled:hover, .btn-primary.disabled:focus, .view-hero-slide .view-content .button a.disabled:focus, .btn-primary.disabled.focus, .view-hero-slide .view-content .button a.disabled.focus, .btn-primary[disabled]:hover, .view-hero-slide .view-content .button a[disabled]:hover, .btn-primary[disabled]:focus, .view-hero-slide .view-content .button a[disabled]:focus, .btn-primary[disabled].focus, .view-hero-slide .view-content .button a[disabled].focus,
   fieldset[disabled] .btn-primary:hover,
   fieldset[disabled] .view-hero-slide .view-content .button a:hover,
@@ -2921,10 +2921,10 @@ fieldset[disabled] .view-hero-slide .view-content .button a,
   fieldset[disabled] .btn-primary.focus,
   fieldset[disabled] .view-hero-slide .view-content .button a.focus,
   .view-hero-slide .view-content .button fieldset[disabled] a.focus {
-    background-color: #c90834;
-    border-color: #c90834; }
+    background-color: #0678BE;
+    border-color: #0678BE; }
   .btn-primary .badge, .view-hero-slide .view-content .button a .badge {
-    color: #c90834;
+    color: #0678BE;
     background-color: #fff; }
 
 .btn-success {
@@ -6168,6 +6168,9 @@ body {
   .related-projects-block .navbar.views-element-container {
     max-width: 1140px; } }
 
+header {
+  z-index: 100 !important; }
+
 #navbar {
   min-height: 80px;
   padding-top: 20px;
@@ -6196,11 +6199,10 @@ body {
       background: #fff;
       text-transform: uppercase;
       font-size: 12px; }
-      #navbar .navbar-collapse .region-navigation-collapsible nav {
-        float: none; }
-        #navbar .navbar-collapse .region-navigation-collapsible nav ul {
-          text-align: center;
-          padding-top: 15px; }
+      #navbar .navbar-collapse .region-navigation-collapsible {
+        display: block; }
+        #navbar .navbar-collapse .region-navigation-collapsible nav {
+          float: none; }
           #navbar .navbar-collapse .region-navigation-collapsible nav ul li a {
             display: block;
             padding: 15px 3%;
@@ -6246,8 +6248,10 @@ body {
       #navbar .navbar-toggle .icon-bar {
         background: #0678BE; } }
 
-.region-navigation-collapsible nav {
-  float: right; }
+.region-navigation-collapsible {
+  display: flex;
+  justify-content: end;
+  align-items: center; }
   @media (min-width: 767px) {
     .region-navigation-collapsible nav {
       margin-top: 5px; } }
@@ -8412,6 +8416,177 @@ body.page-node-type-blog-post .bypostauthor {
     .path-user .region-content {
       width: 95%; } }
 
+.navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+  color: #ffffff;
+  display: block;
+  font-weight: 600;
+  text-transform: uppercase;
+  max-width: max-content;
+  height: max-content;
+  padding: 7px 20px;
+  border-radius: 50px;
+  border: 2px solid #ffffff;
+  transition: .3s ease; }
+  @media (max-width: 767px) {
+    .navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+      background: #0678BE;
+      border-color: #0678BE; } }
+
+.navbar-scrolled-top .block-signin-popup.block-join-now-block .join-block-wrapper a {
+  background: #0678BE;
+  border-color: #0678BE; }
+
+.ui-dialog.signin-modal {
+  max-width: 100%; }
+  .ui-dialog.signin-modal .ui-dialog-titlebar {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid transparent;
+    height: 16px;
+    border-radius: 0;
+    display: block; }
+    .ui-dialog.signin-modal .ui-dialog-titlebar .ui-dialog-title {
+      display: none; }
+    .ui-dialog.signin-modal .ui-dialog-titlebar .ui-dialog-titlebar-close {
+      background: transparent;
+      border: none;
+      width: 0;
+      height: 0;
+      margin: 0;
+      padding: 8px;
+      top: 0;
+      right: 0;
+      bottom: 0; }
+      .ui-dialog.signin-modal .ui-dialog-titlebar .ui-dialog-titlebar-close:after {
+        content: '\00d7';
+        font-size: 25px;
+        color: #0678BE;
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 17px;
+        font-weight: 300; }
+  .ui-dialog.signin-modal .ui-dialog-content {
+    overflow-x: hidden;
+    padding: 0 0 20px; }
+    .ui-dialog.signin-modal .ui-dialog-content::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 30px; }
+    .ui-dialog.signin-modal .ui-dialog-content::-webkit-scrollbar-thumb {
+      background: #0678be;
+      border-radius: 30px; }
+    .ui-dialog.signin-modal .ui-dialog-content::-webkit-scrollbar-track {
+      background: #93b4f9;
+      border-radius: 30px; }
+
+.ui-widget-overlay {
+  opacity: unset;
+  background: #000000a1; }
+
+.signin-form-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden; }
+  .signin-form-wrapper .signin-form {
+    max-width: 40%;
+    width: 50%;
+    overflow: hidden; }
+    .signin-form-wrapper .signin-form .form-wrapper {
+      width: 300px;
+      margin: 0 auto; }
+      .signin-form-wrapper .signin-form .form-wrapper h3.form-title-hardcoded {
+        font-weight: 600; }
+      .signin-form-wrapper .signin-form .form-wrapper .form-item input {
+        border-radius: 5px; }
+      .signin-form-wrapper .signin-form .form-wrapper .form-actions .button {
+        width: 100%;
+        border-radius: 5px;
+        background: #0678BE;
+        border-color: #0678BE;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase; }
+      .signin-form-wrapper .signin-form .form-wrapper .register-user-wrapper {
+        margin-top: 10px; }
+        .signin-form-wrapper .signin-form .form-wrapper .register-user-wrapper span a {
+          color: #0678BE; }
+  .signin-form-wrapper .signin-image {
+    max-width: 60%;
+    overflow: hidden; }
+    .signin-form-wrapper .signin-image .image-wrapper img {
+      max-width: 100%; }
+  @media (max-width: 767px) {
+    .signin-form-wrapper .signin-form {
+      max-width: 100%;
+      width: 100%; }
+    .signin-form-wrapper .signin-image {
+      display: none; } }
+
+.signup-form-wrapper {
+  align-items: flex-end;
+  padding-bottom: 25px; }
+  .signup-form-wrapper .signup-form {
+    max-width: 45%; }
+    .signup-form-wrapper .signup-form .form-wrapper {
+      width: 400px; }
+      .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter {
+        height: 5px;
+        border-radius: 30px; }
+        .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator {
+          border-radius: 30px 0 0 30px; }
+        .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator.is-weak {
+          background-color: red; }
+        .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator.is-fair {
+          background-color: #ea8c12; }
+        .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator.is-good {
+          background-color: #b9ea0a; }
+        .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength .password-strength__meter .password-strength__indicator.is-strong {
+          background-color: #16da06;
+          border-radius: 30px; }
+      .signup-form-wrapper .signup-form .form-wrapper .form-item .password-suggestions {
+        margin-top: -20px; }
+      .signup-form-wrapper .signup-form .form-wrapper .form-item .password-confirm-message, .signup-form-wrapper .signup-form .form-wrapper .form-item .password-strength__title, .signup-form-wrapper .signup-form .form-wrapper .form-item .password-suggestions {
+        font-size: 12px; }
+  .signup-form-wrapper .signup-image {
+    max-width: 55%; }
+    .signup-form-wrapper .signup-image .signin-to-account-wrapper .join-user {
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+      margin: 0 auto; }
+      .signup-form-wrapper .signup-image .signin-to-account-wrapper .join-user a {
+        width: 300px;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10px 0; }
+  @media (max-width: 767px) {
+    .signup-form-wrapper {
+      flex-direction: column;
+      align-items: center; }
+      .signup-form-wrapper .signup-form {
+        max-width: 100%; }
+      .signup-form-wrapper .signup-image {
+        display: block;
+        max-width: 100%;
+        justify-content: center; }
+        .signup-form-wrapper .signup-image .image-wrapper {
+          display: none; }
+        .signup-form-wrapper .signup-image .signin-to-account-wrapper .join-user {
+          width: 100%;
+          margin-top: 20px; }
+          .signup-form-wrapper .signup-image .signin-to-account-wrapper .join-user a {
+            width: 400px; } }
+
+.path-user .region-content {
+  margin: 0 auto; }
+
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -9511,7 +9686,8 @@ ul.cs-slider-ul li {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
   filter: alpha(opacity=70); }
 
-/**
+/**  npm audit fix --force
+
  * jQuery UI autocomplete widget style overrides.
  *
  * $todo Remove once jQuery UI is no longer used?

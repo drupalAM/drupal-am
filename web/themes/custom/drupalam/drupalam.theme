@@ -92,7 +92,16 @@ function drupalam_preprocess_page(&$variables) {
 }
 
 function drupalam_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  $form['actions']['submit']['#value'] = 'SUBMIT COMMENT';
+  switch ($form_id) {
+    case 'user_login_form':
+      $form['actions']['submit']['#value'] = 'Sign In';
+      break;
+    case 'user_register_form':
+      $form['actions']['submit']['#value'] = 'Sign Up';
+      break;
+    default:
+      $form['actions']['submit']['#value'] = 'SUBMIT COMMENT';
+  }
 }
 
 function drupalam_preprocess_image_formatter(&$vars) {
@@ -114,4 +123,29 @@ function drupalam_form_views_exposed_form_alter(&$form, &$form_state, $form_id) 
   // Set $form_name to pass to ElementInfo.php.
   $form['#form_name'] = $form['#theme'][0];
   // This gets the correct naming convention of views-exposed-form--view-name--view-display-name.html.twig
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add form template suggestions.
+ *
+ */
+function drupalam_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+    if($variables['element']['#form_id'] == 'user_login_form'){
+        $suggestions[] = 'form__user__login_form';
+        return $suggestions;
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Get current route name to check in login form template
+ *
+ */
+function drupalam_preprocess_form(&$variables){
+  if($variables['element']['#form_id'] == 'user_login_form' || $variables['element']['#form_id'] == 'user_register_form') {
+    $variables['route_name'] = \Drupal::routeMatch()->getRouteName();
+  }
 }

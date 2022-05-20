@@ -19,6 +19,10 @@ framework:
 global-scripts:
   js:
     js/script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.dialog.ajax
 
 front-scripts:
   js:
@@ -41,3 +45,7 @@ blog-scripts:
     js/main.js: {}
     js/masonry-min.js: {}
     js/blog-page.js: {}
+
+dialog.ajax:
+  js:
+    js/dialog.ajax.js: { minified: true }

@@ -3,10 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - fixed_block_content.fixed_block_content.social_icons
     - system.menu.main
   module:
-    - fixed_block_content
+    - signin_popup
     - system
 _core:
   default_config_hash: h7hBxvQIDMDoOUDQa1S02PwWW0s2_U1g2G6xojH8AJw
@@ -56,21 +55,20 @@ reactions:
         level: '1'
         depth: '0'
         expand_all_items: false
-      8287918e-184b-498e-a588-70b70e3704d5:
-        uuid: 8287918e-184b-498e-a588-70b70e3704d5
-        id: 'fixed_block_content:social_icons'
-        label: 'Social icons'
-        provider: fixed_block_content
+      60ae5972-0304-42c0-b885-fc75f0d31bb6:
+        uuid: 60ae5972-0304-42c0-b885-fc75f0d31bb6
+        id: join_now_block
+        label: 'Join now'
+        provider: signin_popup
         label_display: '0'
-        region: top_right
+        region: navigation_collapsible
         weight: '0'
-        custom_id: fixed_block_content_social_icons
+        custom_id: join_now_block
         theme: drupalam
-        css_class: 'visible-xs block-socialicons'
+        css_class: ''
         unique: 0
         context_id: header
         context_mapping: {  }
-        view_mode: ''
         third_party_settings: {  }
     include_default_blocks: 0
     saved: false

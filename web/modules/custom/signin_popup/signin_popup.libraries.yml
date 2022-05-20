@@ -1,0 +1,6 @@
+script:
+  version: 1.x
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.dialog.ajax

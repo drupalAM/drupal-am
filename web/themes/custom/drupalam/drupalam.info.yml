@@ -28,3 +28,5 @@ libraries:
 libraries-extend:
   bootstrap/framework:
     - drupalam/framework
+  core/drupal.dialog.ajax:
+    - drupalam/dialog.ajax
