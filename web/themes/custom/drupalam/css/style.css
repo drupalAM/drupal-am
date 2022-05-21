@@ -6209,9 +6209,7 @@ header {
             color: black;
             border-bottom: 0.3px solid #a9a9a9; }
             #navbar .navbar-collapse .region-navigation-collapsible nav ul li a .is-active {
-              color: #0678BE; }
-          #navbar .navbar-collapse .region-navigation-collapsible nav ul li:last-child a {
-            border-bottom: unset; } }
+              color: #0678BE; } }
   #navbar .logo {
     margin-right: -15px;
     padding-right: 15px;
@@ -6255,6 +6253,9 @@ header {
   @media (min-width: 767px) {
     .region-navigation-collapsible nav {
       margin-top: 5px; } }
+  @media screen and (max-width: 767px) {
+    .region-navigation-collapsible nav ul {
+      text-align: center; } }
   .region-navigation-collapsible nav ul li a {
     -moz-transition: color 0.3s ease;
     -o-transition: color 0.3s ease;
@@ -8425,14 +8426,24 @@ body.page-node-type-blog-post .bypostauthor {
   height: max-content;
   padding: 7px 20px;
   border-radius: 50px;
-  border: 2px solid #ffffff;
+  background: #0678BE;
+  border: 2px solid #0678BE;
   transition: .3s ease; }
   @media (max-width: 767px) {
     .navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
       background: #0678BE;
+      border-color: #0678BE;
+      margin: 15px auto; } }
+
+.path-frontpage .navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+  background: transparent;
+  border-color: #fff; }
+  @media (max-width: 767px) {
+    .path-frontpage .navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+      background: #0678BE;
       border-color: #0678BE; } }
 
-.navbar-scrolled-top .block-signin-popup.block-join-now-block .join-block-wrapper a {
+.path-frontpage .navbar-scrolled-top .block-signin-popup.block-join-now-block .join-block-wrapper a {
   background: #0678BE;
   border-color: #0678BE; }
 
@@ -8475,7 +8486,7 @@ body.page-node-type-blog-post .bypostauthor {
       width: 5px;
       border-radius: 30px; }
     .ui-dialog.signin-modal .ui-dialog-content::-webkit-scrollbar-thumb {
-      background: #0678be;
+      background: #0678BE;
       border-radius: 30px; }
     .ui-dialog.signin-modal .ui-dialog-content::-webkit-scrollbar-track {
       background: #93b4f9;
@@ -8592,7 +8603,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Oct 30, 2017, 4:39:33 PM
     Author     : Developer
 */
@@ -9239,7 +9250,7 @@ ul.cs-slider-ul li {
   position: absolute;
   top: 50%;
   right: 0px;
-  z-index: 100;
+  z-index: 99;
   display: block;
   margin-top: -35px;
   width: 43px;
