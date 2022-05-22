@@ -15,3 +15,16 @@ function signin_popup_theme(){
   ];
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function signin_popup_preprocess_field(&$variables){
+  if ($variables['element']['#bundle'] == 'cta_block') {
+    if ($variables['field_name'] == 'field_cta_block_url') {
+      /** @var \Drupal\node\Entity\Node $entity */
+      $entity = $variables['element']['#object'];
+      $style = $entity->get('field_cta_block_style')->value;
+      $variables['attributes']['data-style'] = $style;
+    }
+  }
+}

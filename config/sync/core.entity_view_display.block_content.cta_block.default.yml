@@ -1,0 +1,81 @@
+uuid: c0ea83c0-301d-4238-8cc5-4724e3497fec
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_block
+    - field.field.block_content.cta_block.field_cta_block_style
+    - field.field.block_content.cta_block.field_cta_block_url
+  module:
+    - ds
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_cta_block:
+      children:
+        - field_cta_block_url
+        - 'dynamic_twig_field:block_content-block_wave'
+      label: 'CTA Block'
+      parent_name: ''
+      region: ds_content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: cta-block-wrapper
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - group_cta_block
+        - field_cta_block_url
+        - 'dynamic_twig_field:block_content-block_wave'
+    fields:
+      'dynamic_twig_field:block_content-block_wave':
+        plugin_id: 'dynamic_twig_field:block_content-block_wave'
+        weight: 5
+        label: hidden
+        formatter: default
+id: block_content.cta_block.default
+targetEntityType: block_content
+bundle: cta_block
+mode: default
+content:
+  field_cta_block_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: ds_content
+hidden:
+  field_cta_block_style: true
+  langcode: true

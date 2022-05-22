@@ -1,0 +1,33 @@
+uuid: 4be638b2-1266-48f6-a390-ed187c55ddfa
+langcode: hy
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_cta_block_style
+field_name: field_cta_block_style
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: top_wave
+      label: 'Top Wave'
+    -
+      value: bottom_wave
+      label: 'Bottom Wave'
+    -
+      value: full_wave
+      label: 'Full Wave'
+    -
+      value: no_wave
+      label: 'No Wave'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

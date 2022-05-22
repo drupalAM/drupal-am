@@ -7044,6 +7044,10 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   padding: 90px 3%;
   text-align: center;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset; }
+  .community-members .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
   .community-members .field--name-user-picture {
     position: relative;
     display: inline-block; }
@@ -8586,6 +8590,48 @@ body.page-node-type-blog-post .bypostauthor {
 
 .path-user .region-content {
   margin: 0 auto; }
+
+.cta-block-wrapper {
+  background: #0678BE; }
+  .cta-block-wrapper .field--name-field-cta-block-url a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    letter-spacing: 0;
+    line-height: 1.1;
+    margin: 0 0 18px 0;
+    background: #0678BE;
+    font-weight: 700; }
+  .cta-block-wrapper .field--name-field-cta-block-url[data-style="full_wave"] a {
+    padding: 20px 0; }
+  .cta-block-wrapper .field--name-field-cta-block-url[data-style="full_wave"]:before {
+    content: '';
+    display: block;
+    background-image: url(../images/wave-top.svg);
+    height: 50px; }
+  .cta-block-wrapper .field--name-field-cta-block-url[data-style="full_wave"]:after {
+    content: '';
+    display: block;
+    background-image: url(../images/wave.svg);
+    height: 50px; }
+  .cta-block-wrapper .field--name-field-cta-block-url[data-style="top_wave"] {
+    padding-bottom: 30px; }
+    .cta-block-wrapper .field--name-field-cta-block-url[data-style="top_wave"]:before {
+      content: '';
+      display: block;
+      background-image: url(../images/wave-top.svg);
+      height: 50px; }
+  .cta-block-wrapper .field--name-field-cta-block-url[data-style="bottom_wave"] {
+    padding-top: 70px; }
+    .cta-block-wrapper .field--name-field-cta-block-url[data-style="bottom_wave"]:after {
+      content: '';
+      display: block;
+      background-image: url(../images/wave.svg);
+      height: 50px; }
+  .cta-block-wrapper .field--name-field-cta-block-url[data-style="no_wave"] {
+    padding: 20px 0 2px; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
