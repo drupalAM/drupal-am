@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Oct 30, 2017, 4:39:33 PM
     Author     : Developer
 */
@@ -14,7 +14,7 @@ and open the template in the editor.
   overflow: hidden;
   padding: 180px 5% 130px 5%;
   color: $white;
-  
+
   .section-boxed {
     padding: 0 5%;
   }
@@ -537,7 +537,7 @@ ul.cs-slider-ul li {
   position: absolute;
   top: 50%;
   right: 0px;
-  z-index: 100;
+  z-index: 99;
   display: block;
   margin-top: -35px;
   width: 43px;
@@ -654,5 +654,5 @@ ul.cs-slider-ul li {
   .cs-title {
     font-size: 32px;
   }
-  
+
 }
