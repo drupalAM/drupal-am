@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.company.field_company_employees_quantity
     - field.field.node.company.field_company_image
     - field.field.node.company.field_company_website
+    - field.field.node.company.field_image_media
     - image.style.thumbnail
     - node.type.company
   module:
@@ -14,6 +15,7 @@ dependencies:
     - image
     - layout_discovery
     - link
+    - media_library
     - path
     - text
 third_party_settings:
@@ -64,6 +66,13 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  field_image_media:
+    type: media_library_widget
+    weight: 125
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -105,6 +114,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

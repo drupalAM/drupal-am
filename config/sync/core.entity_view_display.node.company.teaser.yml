@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.company.field_company_employees_quantity
     - field.field.node.company.field_company_image
     - field.field.node.company.field_company_website
+    - field.field.node.company.field_image_media
     - node.type.company
   module:
     - text
@@ -34,4 +35,5 @@ hidden:
   field_company_employees_quantity: true
   field_company_image: true
   field_company_website: true
+  field_image_media: true
   langcode: true
