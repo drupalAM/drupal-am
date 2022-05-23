@@ -34,6 +34,7 @@ module:
   ctools: 0
   datetime: 0
   datetime_range: 0
+  da_blocks: 0
   dblog: 0
   default_content: 0
   default_content_deploy: 0

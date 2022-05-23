@@ -14,7 +14,7 @@
 .block.why-use-drupal {
   @extend .container;
   margin: 90px auto;
-  
+
   .block-title {
     text-align: center;
   }
@@ -52,7 +52,7 @@
     }
     .field--name-field-card-link {
       padding: 10px 10px 0 10px;
-          
+
       a {
         display: block;
         padding-top: 5px;
@@ -76,7 +76,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 0;
-  
+
   &:before {
     content: ' ';
     display: block;
@@ -90,7 +90,7 @@
   }
   a {
     color: $white;
-    
+
     &:hover {
       color: $brand-primary;
     }
@@ -98,7 +98,7 @@
   .field--name-field-cards-card {
     @extend .container;
     margin-top: 40px;
-        
+
     > .field--item {
       @extend .col-md-3;
       @extend .col-sm-6;
@@ -118,7 +118,7 @@
     font-weight: bold;
     font-size: 40px;
     line-height: 1.3em;
-    
+
     &:after {
       content: "";
       width: 62%;
@@ -136,7 +136,7 @@
     padding: 0 15px;
     font-size: 20px;
     line-height: 1.3em;
-    
+
     p {
       margin: 0 0 3px;
     }
@@ -146,9 +146,9 @@
     width: 90px;
     height: 90px;
     display: block;
-    border-radius: 100%; 
+    border-radius: 100%;
     margin: auto;
-    
+
     img {
       padding: 25px;
       filter: brightness(0) invert(1);
@@ -173,14 +173,20 @@
   padding: 90px 3%;
   text-align: center;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset;
-  
+
+  .view-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   h2.block-title {
     @extend .section-title-light;
   }
   .field--name-user-picture {
     position: relative;
     display: inline-block;
-    
+
     &:after {
       position: absolute;
       top: -5px;
@@ -213,16 +219,16 @@
     color: #252525;
     line-height: 1.5em;
     transition: all 0.4s ease;
-    
+
     > div {
       display: table-cell;
       vertical-align: middle;
-      
+
       a {
         font-weight: 600;
         font-size: 17px;
         color: $gray-title;
-        
+
         &:hover {
           color: $brand-primary;
         }
@@ -261,7 +267,7 @@
   padding: 90px 3%;
   text-align: center;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.06) inset;
-  
+
   h2.block-title {
     @extend .section-title-light;
     margin-bottom: 12px !important;
@@ -272,7 +278,7 @@
     min-height: 100px;
     padding-bottom: 50px;
     overflow: visible !important;
-    
+
     >.field--item {
       @include opacity(0);
       position: absolute;
@@ -306,7 +312,7 @@
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 1px;
-    
+
     a {
       color: $brand-primary;
     }
@@ -324,7 +330,7 @@
     font: italic 170%/150% Georgia, "Times New Roman", Times, serif;
     font-weight: 300;
     padding: 7px 0;
-    
+
     @include breakpoint(mobile) {
       font-size: 18px;
       line-height: 1.5em;

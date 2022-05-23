@@ -1,0 +1,46 @@
+uuid: f6362579-4525-483e-bc15-2add6169fbec
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_block
+    - field.field.block_content.cta_block.field_cta_block_style
+    - field.field.block_content.cta_block.field_cta_block_url
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: block_content.cta_block.default
+targetEntityType: block_content
+bundle: cta_block
+mode: default
+content:
+  field_cta_block_style:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cta_block_url:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
