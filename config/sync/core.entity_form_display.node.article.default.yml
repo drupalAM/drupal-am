@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_hero_image
     - field.field.node.article.field_article_tag
+    - field.field.node.article.field_hero_image_media
     - image.style.thumbnail
     - node.type.article
   module:
     - field_layout
     - image
     - layout_discovery
+    - media_library
     - path
     - text
 third_party_settings:
@@ -58,6 +60,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_hero_image_media:
+    type: media_library_widget
+    weight: 122
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -99,6 +108,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
+    - field.field.node.blog_post.field_image_media
     - node.type.blog_post
   module:
     - ds
@@ -246,6 +247,14 @@ content:
             lb: ''
     weight: 5
     region: main
+  field_image_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_blog_comments: true
   langcode: true

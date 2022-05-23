@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
+    - field.field.node.blog_post.field_image_media
     - image.style.focal_440_x_330
     - node.type.blog_post
   module:
@@ -110,6 +111,14 @@ content:
             classes: {  }
     weight: 0
     region: ds_content
+  field_image_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   body: true
   field_blog_category: true

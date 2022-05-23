@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.blog_post.field_blog_comments
     - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
+    - field.field.node.blog_post.field_image_media
     - image.style.thumbnail
     - node.type.blog_post
   module:
@@ -15,6 +16,7 @@ dependencies:
     - field_layout
     - image
     - layout_discovery
+    - media_library
     - path
     - text
 third_party_settings:
@@ -75,6 +77,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_image_media:
+    type: media_library_widget
+    weight: 121
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -116,6 +125,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

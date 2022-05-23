@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.case_study.field_case_study_image
     - field.field.node.case_study.field_case_study_screens
     - field.field.node.case_study.field_case_study_site_link
+    - field.field.node.case_study.field_hero_image_media
+    - field.field.node.case_study.field_screens_media
     - field.field.node.case_study.field_term_industry
     - field.field.node.case_study.field_term_project_category
     - node.type.case_study
@@ -118,9 +120,18 @@ content:
     third_party_settings: {  }
     weight: 13
     region: main
+  field_screens_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
 hidden:
   field_case_study_screens: true
   field_case_study_site_link: true
+  field_hero_image_media: true
   field_term_industry: true
   field_term_project_category: true
   langcode: true

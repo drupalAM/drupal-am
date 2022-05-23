@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.case_study.field_case_study_image
     - field.field.node.case_study.field_case_study_screens
     - field.field.node.case_study.field_case_study_site_link
+    - field.field.node.case_study.field_hero_image_media
+    - field.field.node.case_study.field_screens_media
     - field.field.node.case_study.field_term_industry
     - field.field.node.case_study.field_term_project_category
     - image.style.thumbnail
@@ -17,6 +19,7 @@ dependencies:
     - image
     - layout_discovery
     - link
+    - media_library
     - path
     - text
 third_party_settings:
@@ -72,6 +75,20 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_hero_image_media:
+    type: media_library_widget
+    weight: 26
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_screens_media:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_term_industry:
     type: entity_reference_autocomplete
@@ -134,6 +151,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

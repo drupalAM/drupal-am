@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.hero_slide.body
+    - field.field.node.hero_slide.field_hero_image_media
     - field.field.node.hero_slide.field_heroslide_external_link
     - field.field.node.hero_slide.field_heroslide_image
     - field.field.node.hero_slide.field_heroslide_images
     - field.field.node.hero_slide.field_heroslide_show_cont_link
     - field.field.node.hero_slide.field_heroslide_text_position
     - field.field.node.hero_slide.field_heroslide_title_prefix
+    - field.field.node.hero_slide.field_images_media
     - image.style.thumbnail
     - node.type.hero_slide
   module:
@@ -17,6 +19,7 @@ dependencies:
     - focal_point
     - layout_discovery
     - link
+    - media_library
     - path
     - text
 third_party_settings:
@@ -46,6 +49,13 @@ content:
     weight: 9
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_hero_image_media:
+    type: media_library_widget
+    weight: 121
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_heroslide_external_link:
     type: link_default
@@ -96,6 +106,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_images_media:
+    type: media_library_widget
+    weight: 7
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -137,6 +154,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
