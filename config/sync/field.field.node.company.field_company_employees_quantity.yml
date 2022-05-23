@@ -1,0 +1,21 @@
+uuid: 0ff6b6fd-70c8-46c8-8432-f5b06f76cefd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company_employees_quantity
+    - node.type.company
+  module:
+    - options
+id: node.company.field_company_employees_quantity
+field_name: field_company_employees_quantity
+entity_type: node
+bundle: company
+label: 'Employees quantity'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

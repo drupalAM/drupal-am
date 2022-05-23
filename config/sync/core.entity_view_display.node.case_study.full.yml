@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.case_study.field_case_study_image
     - field.field.node.case_study.field_case_study_screens
     - field.field.node.case_study.field_case_study_site_link
+    - field.field.node.case_study.field_hero_image_media
+    - field.field.node.case_study.field_screens_media
     - field.field.node.case_study.field_term_industry
     - field.field.node.case_study.field_term_project_category
     - image.style.large_1920_x_1080_
@@ -109,6 +111,14 @@ content:
             suffix: ''
     weight: 4
     region: right
+  field_screens_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_term_industry:
     type: entity_reference_label
     label: hidden
@@ -127,6 +137,7 @@ content:
 hidden:
   field_case_study_image: true
   field_case_study_site_link: true
+  field_hero_image_media: true
   field_term_project_category: true
   langcode: true
   links: true

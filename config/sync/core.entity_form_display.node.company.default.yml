@@ -1,19 +1,19 @@
-uuid: 6bf71180-bdc1-4a5e-bcef-9d568b8be723
+uuid: 0e974b33-6672-486b-a916-4d78045a6aa8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
-    - field.field.node.article.field_article_hero_image
-    - field.field.node.article.field_article_tag
-    - field.field.node.article.field_hero_image_media
+    - field.field.node.company.body
+    - field.field.node.company.field_company_employees_quantity
+    - field.field.node.company.field_company_image
+    - field.field.node.company.field_company_website
     - image.style.thumbnail
-    - node.type.article
+    - node.type.company
   module:
     - field_layout
     - image
     - layout_discovery
-    - media_library
+    - link
     - path
     - text
 third_party_settings:
@@ -21,9 +21,9 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-id: node.article.default
+id: node.company.default
 targetEntityType: node
-bundle: article
+bundle: company
 mode: default
 content:
   body:
@@ -42,7 +42,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_article_hero_image:
+  field_company_employees_quantity:
+    type: options_select
+    weight: 124
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_company_image:
     type: image_image
     weight: 122
     region: content
@@ -50,22 +56,13 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_article_tag:
-    type: entity_reference_autocomplete
+  field_company_website:
+    type: link_default
     weight: 123
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_hero_image_media:
-    type: media_library_widget
-    weight: 122
-    region: content
-    settings:
-      media_types: {  }
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -108,11 +105,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  translation:
-    weight: 10
-    region: content
-    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

@@ -1,9 +1,9 @@
-uuid: 6a58781c-007e-45ce-8ffb-67284dc1927c
-langcode: en
+uuid: d2f5f2c0-5cc3-4e5a-87db-c82c3293179d
+langcode: hy
 status: true
 dependencies:
   config:
-    - node.type.news
+    - node.type.event
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.news
+id: node.event
 target_entity_type_id: node
-target_bundle: news
+target_bundle: event
 default_langcode: current_interface
 language_alterable: false

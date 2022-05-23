@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_hero_image
     - field.field.node.article.field_article_tag
+    - field.field.node.article.field_hero_image_media
     - node.type.article
   module:
     - image
@@ -39,6 +40,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_hero_image_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

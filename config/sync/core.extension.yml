@@ -32,6 +32,8 @@ module:
   contextual: 0
   crop: 0
   ctools: 0
+  datetime: 0
+  datetime_range: 0
   da_blocks: 0
   dblog: 0
   default_content: 0
@@ -70,7 +72,6 @@ module:
   linkicon: 0
   locale: 0
   media: 0
-  media_delete_all: 0
   media_library: 0
   menu_ui: 0
   module_missing_message_fixer: 0

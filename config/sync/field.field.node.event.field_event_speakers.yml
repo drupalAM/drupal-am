@@ -1,0 +1,29 @@
+uuid: f01f9b8b-15d5-477c-8be0-f3990fd0f57e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_speakers
+    - node.type.event
+id: node.event.field_event_speakers
+field_name: field_event_speakers
+entity_type: node
+bundle: event
+label: 'Speakers from the community'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

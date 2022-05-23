@@ -1,0 +1,21 @@
+uuid: ffca2ea3-e332-43f2-9051-30ab19131f0a
+langcode: hy
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_location
+    - node.type.event
+  module:
+    - text
+id: node.event.field_event_location
+field_name: field_event_location
+entity_type: node
+bundle: event
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

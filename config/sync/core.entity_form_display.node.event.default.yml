@@ -1,17 +1,17 @@
-uuid: 6bf71180-bdc1-4a5e-bcef-9d568b8be723
-langcode: en
+uuid: e27500d4-ff8d-4ad0-86c0-c5df47bccf39
+langcode: hy
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
-    - field.field.node.article.field_article_hero_image
-    - field.field.node.article.field_article_tag
-    - field.field.node.article.field_hero_image_media
-    - image.style.thumbnail
-    - node.type.article
+    - field.field.node.event.body
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_speakers
+    - node.type.event
   module:
+    - datetime_range
     - field_layout
-    - image
     - layout_discovery
     - media_library
     - path
@@ -21,9 +21,9 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-id: node.article.default
+id: node.event.default
 targetEntityType: node
-bundle: article
+bundle: event
 mode: default
 content:
   body:
@@ -42,30 +42,36 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_article_hero_image:
-    type: image_image
+  field_event_date:
+    type: daterange_default
+    weight: 124
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_image:
+    type: media_library_widget
+    weight: 123
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_event_location:
+    type: text_textarea
     weight: 122
     region: content
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-  field_article_tag:
+  field_event_speakers:
     type: entity_reference_autocomplete
-    weight: 123
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_hero_image_media:
-    type: media_library_widget
-    weight: 122
-    region: content
-    settings:
-      media_types: {  }
     third_party_settings: {  }
   langcode:
     type: language_select

@@ -5,12 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.mainstage
     - field.field.node.hero_slide.body
+    - field.field.node.hero_slide.field_hero_image_media
     - field.field.node.hero_slide.field_heroslide_external_link
     - field.field.node.hero_slide.field_heroslide_image
     - field.field.node.hero_slide.field_heroslide_images
     - field.field.node.hero_slide.field_heroslide_show_cont_link
     - field.field.node.hero_slide.field_heroslide_text_position
     - field.field.node.hero_slide.field_heroslide_title_prefix
+    - field.field.node.hero_slide.field_images_media
     - node.type.hero_slide
   module:
     - ds
@@ -133,7 +135,16 @@ content:
             classes: {  }
     weight: 1
     region: main
+  field_images_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
 hidden:
+  field_hero_image_media: true
   field_heroslide_external_link: true
   field_heroslide_images: true
   field_heroslide_show_cont_link: true

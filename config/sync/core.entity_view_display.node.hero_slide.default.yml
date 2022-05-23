@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.hero_slide.body
+    - field.field.node.hero_slide.field_hero_image_media
     - field.field.node.hero_slide.field_heroslide_external_link
     - field.field.node.hero_slide.field_heroslide_image
     - field.field.node.hero_slide.field_heroslide_images
     - field.field.node.hero_slide.field_heroslide_show_cont_link
     - field.field.node.hero_slide.field_heroslide_text_position
     - field.field.node.hero_slide.field_heroslide_title_prefix
+    - field.field.node.hero_slide.field_images_media
     - image.style.square_medium
     - node.type.hero_slide
   module:
@@ -36,6 +38,14 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_hero_image_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_heroslide_image:
     type: image
     label: hidden
@@ -54,6 +64,15 @@ content:
     third_party_settings:
       ds:
         ds_limit: ''
+    weight: 2
+    region: content
+  field_images_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
     weight: 2
     region: content
 hidden:
