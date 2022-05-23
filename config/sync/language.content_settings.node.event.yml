@@ -1,0 +1,16 @@
+uuid: d2f5f2c0-5cc3-4e5a-87db-c82c3293179d
+langcode: hy
+status: true
+dependencies:
+  config:
+    - node.type.event
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.event
+target_entity_type_id: node
+target_bundle: event
+default_langcode: current_interface
+language_alterable: false
