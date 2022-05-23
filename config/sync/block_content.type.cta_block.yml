@@ -1,0 +1,8 @@
+uuid: 092f21d5-1ea5-4266-b9b8-8f42884be168
+langcode: hy
+status: true
+dependencies: {  }
+id: cta_block
+label: 'CTA Block'
+revision: 0
+description: 'A custom CTA block with wave style'

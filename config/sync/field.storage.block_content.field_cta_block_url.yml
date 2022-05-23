@@ -1,0 +1,19 @@
+uuid: 34a71605-ee82-481a-b412-0991ca2a0ce9
+langcode: hy
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_cta_block_url
+field_name: field_cta_block_url
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

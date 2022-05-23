@@ -1,0 +1,24 @@
+uuid: 6a971c89-a107-4da0-a03c-6d78430299d3
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_block
+    - field.storage.block_content.field_cta_block_url
+  module:
+    - link
+id: block_content.cta_block.field_cta_block_url
+field_name: field_cta_block_url
+entity_type: block_content
+bundle: cta_block
+label: URL
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+  title_predefined: ''
+field_type: link
