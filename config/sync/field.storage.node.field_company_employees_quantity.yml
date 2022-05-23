@@ -1,0 +1,36 @@
+uuid: 2d8564c0-81b1-4a24-ac02-9fd9eec7b572
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_company_employees_quantity
+field_name: field_company_employees_quantity
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 0-5
+      label: 0-5
+    -
+      value: 5-15
+      label: 5-15
+    -
+      value: 20-50
+      label: 20-50
+    -
+      value: 50-150
+      label: 50-150
+    -
+      value: 150+
+      label: 150+
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
