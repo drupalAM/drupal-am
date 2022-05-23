@@ -66,7 +66,7 @@ display:
           entity_type: file
           entity_field: filename
           plugin_id: field
-          label: Անուն
+          label: Name
           exclude: false
           alter:
             alter_text: false
