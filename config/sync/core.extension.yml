@@ -70,6 +70,7 @@ module:
   locale: 0
   media: 0
   media_delete_all: 0
+  media_library: 0
   menu_ui: 0
   module_missing_message_fixer: 0
   node: 0
