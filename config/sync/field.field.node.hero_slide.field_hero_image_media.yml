@@ -12,7 +12,7 @@ entity_type: node
 bundle: hero_slide
 label: 'Hero Image'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

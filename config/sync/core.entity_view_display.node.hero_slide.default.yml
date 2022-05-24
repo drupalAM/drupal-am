@@ -6,18 +6,14 @@ dependencies:
     - field.field.node.hero_slide.body
     - field.field.node.hero_slide.field_hero_image_media
     - field.field.node.hero_slide.field_heroslide_external_link
-    - field.field.node.hero_slide.field_heroslide_image
-    - field.field.node.hero_slide.field_heroslide_images
     - field.field.node.hero_slide.field_heroslide_show_cont_link
     - field.field.node.hero_slide.field_heroslide_text_position
     - field.field.node.hero_slide.field_heroslide_title_prefix
     - field.field.node.hero_slide.field_images_media
-    - image.style.square_medium
     - node.type.hero_slide
   module:
     - ds
     - field_layout
-    - image
     - text
     - user
 third_party_settings:
@@ -36,44 +32,40 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_hero_image_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
     weight: 4
     region: content
-  field_heroslide_image:
-    type: image
+  field_hero_image_media:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_heroslide_images:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: square_medium
+      view_mode: full_image
+      link: false
     third_party_settings:
       ds:
-        ds_limit: ''
-    weight: 2
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 1
     region: content
   field_images_media:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: square_medium
       link: false
-    third_party_settings: {  }
-    weight: 2
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 3
     region: content
 hidden:
   field_heroslide_external_link: true

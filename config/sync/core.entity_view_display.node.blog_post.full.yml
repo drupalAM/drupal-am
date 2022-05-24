@@ -7,14 +7,12 @@ dependencies:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_blog_category
     - field.field.node.blog_post.field_blog_comments
-    - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
     - field.field.node.blog_post.field_image_media
     - node.type.blog_post
   module:
     - ds
     - field_group
-    - image
     - text
     - user
 third_party_settings:
@@ -25,6 +23,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         layout:
           wrapper: div
           classes:
@@ -52,15 +51,15 @@ third_party_settings:
             attributes: ''
     regions:
       top:
-        - field_blog_image
+        - field_image_media
       main:
         - group_content_wrapper
         - group_post_info
         - node_title
-        - 'dynamic_token_field:node-post_date_custom_format_'
         - body
-        - field_blog_tags
+        - 'dynamic_token_field:node-post_date_custom_format_'
         - field_blog_category
+        - field_blog_tags
         - 'dynamic_token_field:node-submitted_by_custom_'
         - group_blog_tags
     fields:
@@ -140,11 +139,10 @@ third_party_settings:
         - 'dynamic_token_field:node-submitted_by_custom_'
       label: 'Post info'
       parent_name: group_content_wrapper
-      region: hidden
+      region: main
       weight: 2
       format_type: html_element
       format_settings:
-        label: 'Post info'
         classes: post-info
         id: ''
         element: div
@@ -158,11 +156,10 @@ third_party_settings:
         - field_blog_tags
       label: 'Blog tags wrapper'
       parent_name: group_content_wrapper
-      region: hidden
+      region: main
       weight: 6
       format_type: html_element
       format_settings:
-        label: 'Blog tags wrapper'
         classes: blog-tags
         id: ''
         element: div
@@ -180,7 +177,7 @@ third_party_settings:
         - group_blog_tags
       label: 'Content wrapper'
       parent_name: ''
-      region: hidden
+      region: main
       weight: 1
       format_type: html_element
       format_settings:
@@ -223,15 +220,6 @@ content:
             classes: {  }
     weight: 5
     region: main
-  field_blog_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
-    weight: 0
-    region: top
   field_blog_tags:
     type: entity_reference_entity_view
     label: above
@@ -248,13 +236,21 @@ content:
     weight: 5
     region: main
   field_image_media:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
+      view_mode: full_image
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     weight: 0
-    region: content
+    region: top
 hidden:
   field_blog_comments: true
   langcode: true

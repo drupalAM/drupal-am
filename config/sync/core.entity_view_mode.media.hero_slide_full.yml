@@ -1,0 +1,10 @@
+uuid: efc03dff-1817-4592-94ba-42e9aa103bbd
+langcode: hy
+status: true
+dependencies:
+  module:
+    - media
+id: media.hero_slide_full
+label: 'Hero slide full'
+targetEntityType: media
+cache: true

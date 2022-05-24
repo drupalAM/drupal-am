@@ -7,15 +7,12 @@ dependencies:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_blog_category
     - field.field.node.blog_post.field_blog_comments
-    - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
     - field.field.node.blog_post.field_image_media
-    - image.style.crop_55_x_45
     - node.type.blog_post
   module:
     - ds
     - field_group
-    - image
     - user
 third_party_settings:
   field_group:
@@ -25,11 +22,10 @@ third_party_settings:
         - 'dynamic_token_field:node-post_date_custom_short_format_'
       label: 'Post info'
       parent_name: ''
-      region: hidden
+      region: ds_content
       weight: 1
       format_type: html_element
       format_settings:
-        label: 'Post info'
         classes: post-info
         id: ''
         element: div
@@ -43,10 +39,9 @@ third_party_settings:
       label: 'Blog tags wrapper'
       parent_name: ''
       region: hidden
-      weight: 17
+      weight: 18
       format_type: html_element
       format_settings:
-        label: 'Blog tags wrapper'
         classes: blog-tags
         id: ''
         element: div
@@ -70,9 +65,10 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
       ds_content:
-        - field_blog_image
+        - field_image_media
         - group_post_info
         - node_title
         - 'dynamic_token_field:node-post_date_custom_short_format_'
@@ -131,12 +127,12 @@ targetEntityType: node
 bundle: blog_post
 mode: teaser
 content:
-  field_blog_image:
-    type: image
+  field_image_media:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: content
-      image_style: crop_55_x_45
+      view_mode: article_teaser
+      link: false
     third_party_settings:
       ds:
         ft:
@@ -147,14 +143,6 @@ content:
             classes: {  }
     weight: 0
     region: ds_content
-  field_image_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
   body: true
   field_blog_category: true

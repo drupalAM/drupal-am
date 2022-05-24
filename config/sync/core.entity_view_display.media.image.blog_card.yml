@@ -1,0 +1,39 @@
+uuid: 5224697e-881f-4bf8-9443-b0cfe55674f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.blog_card
+    - field.field.media.image.field_media_image
+    - image.style.focal_440_x_330
+    - media.type.image
+  module:
+    - ds
+    - image
+id: media.image.blog_card
+targetEntityType: media
+bundle: image
+mode: blog_card
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: focal_440_x_330
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

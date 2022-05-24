@@ -1,0 +1,10 @@
+uuid: 0bf31829-b5ce-40fd-a7e9-c45b90e7e264
+langcode: hy
+status: true
+dependencies:
+  module:
+    - media
+id: media.article_teaser
+label: 'Article teaser'
+targetEntityType: media
+cache: true

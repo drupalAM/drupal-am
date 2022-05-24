@@ -1,0 +1,39 @@
+uuid: e0c9de5c-6de1-46b6-a0d6-878d9b80bc67
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.square_medium
+    - field.field.media.image.field_media_image
+    - image.style.focal_750_x_440_
+    - media.type.image
+  module:
+    - ds
+    - image
+id: media.image.square_medium
+targetEntityType: media
+bundle: image
+mode: square_medium
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: focal_750_x_440_
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

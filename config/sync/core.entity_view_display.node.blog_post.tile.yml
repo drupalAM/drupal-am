@@ -7,15 +7,12 @@ dependencies:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_blog_category
     - field.field.node.blog_post.field_blog_comments
-    - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
     - field.field.node.blog_post.field_image_media
-    - image.style.focal_750_x_440_
     - node.type.blog_post
   module:
     - ds
     - field_group
-    - image
     - text
     - user
 third_party_settings:
@@ -34,9 +31,10 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
       ds_content:
-        - field_blog_image
+        - field_image_media
         - group_post_content
         - 'dynamic_token_field:node-post_date_custom_format_'
         - node_title
@@ -49,6 +47,21 @@ third_party_settings:
         weight: 2
         label: hidden
         formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 3
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
       node_link:
         plugin_id: node_link
         weight: 5
@@ -58,21 +71,6 @@ third_party_settings:
           'link text': 'Read more'
           'link class': ''
           wrapper: ''
-          class: ''
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-      node_title:
-        plugin_id: node_title
-        weight: 3
-        label: hidden
-        formatter: default
-        settings:
-          link: true
-          wrapper: h2
           class: ''
         ft:
           id: default
@@ -90,7 +88,7 @@ third_party_settings:
         - field_blog_category
       label: 'Post content'
       parent_name: ''
-      region: hidden
+      region: ds_content
       weight: 1
       format_type: html_element
       format_settings:
@@ -133,12 +131,12 @@ content:
             classes: {  }
     weight: 6
     region: ds_content
-  field_blog_image:
-    type: image
+  field_image_media:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: focal_750_x_440_
+      view_mode: article_tile
+      link: false
     third_party_settings:
       ds:
         ft:
@@ -149,14 +147,6 @@ content:
             classes: {  }
     weight: 0
     region: ds_content
-  field_image_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
   field_blog_comments: true
   field_blog_tags: true

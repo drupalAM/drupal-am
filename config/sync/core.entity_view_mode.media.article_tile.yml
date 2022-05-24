@@ -1,0 +1,10 @@
+uuid: ad92beda-0317-4392-9e56-bf524b4f6091
+langcode: hy
+status: true
+dependencies:
+  module:
+    - media
+id: media.article_tile
+label: 'Article tile'
+targetEntityType: media
+cache: true
