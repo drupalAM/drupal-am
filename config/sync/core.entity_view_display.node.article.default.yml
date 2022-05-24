@@ -4,12 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.field_article_hero_image
     - field.field.node.article.field_article_tag
     - field.field.node.article.field_hero_image_media
     - node.type.article
   module:
-    - image
+    - ds
     - text
     - user
 id: node.article.default
@@ -22,16 +21,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  field_article_hero_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
   field_article_tag:
     type: entity_reference_label
@@ -39,21 +29,28 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_hero_image_media:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: full_image
       link: false
-    third_party_settings: {  }
-    weight: 102
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true

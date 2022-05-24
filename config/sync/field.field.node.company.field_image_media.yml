@@ -1,18 +1,18 @@
-uuid: dde6b086-e7b2-4f8e-8920-3ce8787621e9
-langcode: en
+uuid: 02ac403a-588b-4bc8-b0d3-15d46472c393
+langcode: hy
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hero_image_media
+    - field.storage.node.field_image_media
     - media.type.image
-    - node.type.hero_slide
-id: node.hero_slide.field_hero_image_media
-field_name: field_hero_image_media
+    - node.type.company
+id: node.company.field_image_media
+field_name: field_image_media
 entity_type: node
-bundle: hero_slide
-label: 'Hero Image'
+bundle: company
+label: Logo
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

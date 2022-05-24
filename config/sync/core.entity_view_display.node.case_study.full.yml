@@ -5,18 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.case_study.body
-    - field.field.node.case_study.field_case_study_image
-    - field.field.node.case_study.field_case_study_screens
     - field.field.node.case_study.field_case_study_site_link
     - field.field.node.case_study.field_hero_image_media
     - field.field.node.case_study.field_screens_media
     - field.field.node.case_study.field_term_industry
     - field.field.node.case_study.field_term_project_category
-    - image.style.large_1920_x_1080_
     - node.type.case_study
   module:
     - ds
-    - image
     - text
     - user
 third_party_settings:
@@ -27,6 +23,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         layout:
           wrapper: div
           classes:
@@ -51,8 +48,7 @@ third_party_settings:
         - node_title
         - field_term_industry
         - body
-      right:
-        - field_case_study_screens
+        - field_screens_media
     fields:
       node_title:
         plugin_id: node_title
@@ -73,52 +69,23 @@ content:
     third_party_settings: {  }
     weight: 2
     region: left
-  field_case_study_screens:
-    type: image
+  field_screens_media:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: large_1920_x_1080_
+      view_mode: large
+      link: false
     third_party_settings:
       ds:
         ds_limit: ''
         ft:
-          id: expert
+          id: default
           settings:
             lb: ''
-            lbw: false
-            lbw-el: ''
-            lbw-cl: ''
-            lbw-at: ''
             lb-col: false
-            ow: true
-            ow-el: div
-            ow-cl: sis-wrapper
-            ow-at: ''
-            ow-def-at: false
-            ow-def-cl: false
-            fis: true
-            fis-el: div
-            fis-cl: sis-images
-            fis-at: ''
-            fis-def-at: false
-            fi: true
-            fi-el: div
-            fi-cl: 'field--items hidden'
-            fi-at: ''
-            fi-def-at: false
-            prefix: ''
-            suffix: ''
-    weight: 4
-    region: right
-  field_screens_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
+            classes: {  }
+    weight: 3
+    region: left
   field_term_industry:
     type: entity_reference_label
     label: hidden
@@ -135,7 +102,6 @@ content:
     weight: 1
     region: left
 hidden:
-  field_case_study_image: true
   field_case_study_site_link: true
   field_hero_image_media: true
   field_term_project_category: true

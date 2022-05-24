@@ -6,17 +6,13 @@ dependencies:
     - field.field.node.hero_slide.body
     - field.field.node.hero_slide.field_hero_image_media
     - field.field.node.hero_slide.field_heroslide_external_link
-    - field.field.node.hero_slide.field_heroslide_image
-    - field.field.node.hero_slide.field_heroslide_images
     - field.field.node.hero_slide.field_heroslide_show_cont_link
     - field.field.node.hero_slide.field_heroslide_text_position
     - field.field.node.hero_slide.field_heroslide_title_prefix
     - field.field.node.hero_slide.field_images_media
-    - image.style.thumbnail
     - node.type.hero_slide
   module:
     - field_layout
-    - focal_point
     - layout_discovery
     - link
     - media_library
@@ -64,26 +60,6 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
-  field_heroslide_image:
-    type: image_focal_point
-    weight: 3
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-      preview_link: true
-      offsets: '50,50'
-    third_party_settings: {  }
-  field_heroslide_images:
-    type: image_focal_point
-    weight: 7
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-      preview_link: true
-      offsets: '50,50'
     third_party_settings: {  }
   field_heroslide_show_cont_link:
     type: boolean_checkbox

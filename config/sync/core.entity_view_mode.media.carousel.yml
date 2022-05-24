@@ -1,0 +1,10 @@
+uuid: e75aaacb-51a9-4f79-ad6c-74afa79c8304
+langcode: hy
+status: true
+dependencies:
+  module:
+    - media
+id: media.carousel
+label: Carousel
+targetEntityType: media
+cache: true

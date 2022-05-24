@@ -1,24 +1,26 @@
-uuid: fc0560f2-da43-4e72-89d9-63ff166c687e
+uuid: e86de21e-fa95-4ac0-89d1-a61c3e993156
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.article_tile
     - field.field.media.image.field_media_image
+    - image.style.focal_750_x_440_
     - media.type.image
   module:
     - ds
     - image
-id: media.image.default
+id: media.image.article_tile
 targetEntityType: media
 bundle: image
-mode: default
+mode: article_tile
 content:
   field_media_image:
     type: image
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: focal_750_x_440_
     third_party_settings:
       ds:
         ft:

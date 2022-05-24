@@ -5,16 +5,16 @@ dependencies:
   config:
     - entityqueue.entity_queue.homepage_hero_slider
     - field.storage.node.body
+    - field.storage.node.field_hero_image_media
     - field.storage.node.field_heroslide_external_link
-    - field.storage.node.field_heroslide_image
     - field.storage.node.field_heroslide_show_cont_link
     - field.storage.node.field_heroslide_text_position
     - field.storage.node.field_heroslide_title_prefix
     - node.type.hero_slide
   module:
     - entityqueue
-    - image
     - link
+    - media
     - node
     - options
     - text
@@ -37,10 +37,10 @@ display:
     display_options:
       title: ''
       fields:
-        field_heroslide_image:
-          id: field_heroslide_image
-          table: node__field_heroslide_image
-          field: field_heroslide_image
+        field_hero_image_media:
+          id: field_hero_image_media
+          table: node__field_hero_image_media
+          field: field_hero_image_media
           relationship: none
           group_type: group
           admin_label: ''
@@ -87,11 +87,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: media_thumbnail
           settings:
             image_link: ''
             image_style: ''
-          group_column: ''
+          group_column: target_id
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -700,8 +700,8 @@ display:
       tags:
         - 'config:entityqueue.entity_queue.homepage_hero_slider'
         - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_hero_image_media'
         - 'config:field.storage.node.field_heroslide_external_link'
-        - 'config:field.storage.node.field_heroslide_image'
         - 'config:field.storage.node.field_heroslide_show_cont_link'
         - 'config:field.storage.node.field_heroslide_text_position'
         - 'config:field.storage.node.field_heroslide_title_prefix'
@@ -724,8 +724,8 @@ display:
       tags:
         - 'config:entityqueue.entity_queue.homepage_hero_slider'
         - 'config:field.storage.node.body'
+        - 'config:field.storage.node.field_hero_image_media'
         - 'config:field.storage.node.field_heroslide_external_link'
-        - 'config:field.storage.node.field_heroslide_image'
         - 'config:field.storage.node.field_heroslide_show_cont_link'
         - 'config:field.storage.node.field_heroslide_text_position'
         - 'config:field.storage.node.field_heroslide_title_prefix'

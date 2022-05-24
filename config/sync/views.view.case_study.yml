@@ -6,16 +6,13 @@ dependencies:
     - core.entity_view_mode.node.carousel
     - core.entity_view_mode.node.slide
     - entityqueue.entity_queue.homepage_case_study
-    - field.storage.node.field_case_study_screens
     - field.storage.node.field_term_industry
     - field.storage.node.field_term_project_category
-    - image.style.crop_430x255
     - node.type.case_study
     - taxonomy.vocabulary.industries
     - taxonomy.vocabulary.project_categories
   module:
     - entityqueue
-    - image
     - node
     - taxonomy
     - user
@@ -37,70 +34,6 @@ display:
     display_options:
       title: 'Case Study'
       fields:
-        field_case_study_screens:
-          id: field_case_study_screens
-          table: node__field_case_study_screens
-          field: field_case_study_screens
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_link: ''
-            image_style: crop_430x255
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 1
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -400,7 +333,6 @@ display:
         - user.permissions
       tags:
         - 'config:entityqueue.entity_queue.homepage_case_study'
-        - 'config:field.storage.node.field_case_study_screens'
         - 'config:field.storage.node.field_term_industry'
         - 'config:field.storage.node.field_term_project_category'
         - entity_field_info
@@ -436,7 +368,6 @@ display:
         - user.permissions
       tags:
         - 'config:entityqueue.entity_queue.homepage_case_study'
-        - 'config:field.storage.node.field_case_study_screens'
         - 'config:field.storage.node.field_term_industry'
         - 'config:field.storage.node.field_term_project_category'
         - entity_field_info
@@ -579,6 +510,5 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_case_study_screens'
         - 'config:field.storage.node.field_term_industry'
         - 'config:field.storage.node.field_term_project_category'

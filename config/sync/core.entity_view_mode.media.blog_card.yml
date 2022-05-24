@@ -1,0 +1,10 @@
+uuid: cbaad7fc-f2f0-4bec-a636-5e990eb75d04
+langcode: hy
+status: true
+dependencies:
+  module:
+    - media
+id: media.blog_card
+label: 'Blog card'
+targetEntityType: media
+cache: true

@@ -5,11 +5,10 @@ dependencies:
   config:
     - field.field.node.company.body
     - field.field.node.company.field_company_employees_quantity
-    - field.field.node.company.field_company_image
     - field.field.node.company.field_company_website
+    - field.field.node.company.field_image_media
     - node.type.company
   module:
-    - image
     - link
     - options
     - text
@@ -33,15 +32,6 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
-  field_company_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-    third_party_settings: {  }
-    weight: 102
-    region: content
   field_company_website:
     type: link
     label: above
@@ -53,6 +43,14 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_image_media:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   links:
     settings: {  }

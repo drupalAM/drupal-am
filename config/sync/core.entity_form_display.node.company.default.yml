@@ -5,15 +5,14 @@ dependencies:
   config:
     - field.field.node.company.body
     - field.field.node.company.field_company_employees_quantity
-    - field.field.node.company.field_company_image
     - field.field.node.company.field_company_website
-    - image.style.thumbnail
+    - field.field.node.company.field_image_media
     - node.type.company
   module:
     - field_layout
-    - image
     - layout_discovery
     - link
+    - media_library
     - path
     - text
 third_party_settings:
@@ -48,14 +47,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_company_image:
-    type: image_image
-    weight: 122
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
   field_company_website:
     type: link_default
     weight: 123
@@ -63,6 +54,13 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_image_media:
+    type: media_library_widget
+    weight: 125
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -105,6 +103,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

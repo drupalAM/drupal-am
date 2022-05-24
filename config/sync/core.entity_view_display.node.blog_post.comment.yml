@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_blog_category
     - field.field.node.blog_post.field_blog_comments
-    - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
     - field.field.node.blog_post.field_image_media
     - node.type.blog_post
@@ -39,18 +38,10 @@ content:
             classes: {  }
     weight: 0
     region: content
-  field_image_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   body: true
   field_blog_category: true
-  field_blog_image: true
   field_blog_tags: true
+  field_image_media: true
   langcode: true
   links: true

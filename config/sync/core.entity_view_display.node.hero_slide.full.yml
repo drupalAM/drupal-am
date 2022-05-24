@@ -7,16 +7,12 @@ dependencies:
     - field.field.node.hero_slide.body
     - field.field.node.hero_slide.field_hero_image_media
     - field.field.node.hero_slide.field_heroslide_external_link
-    - field.field.node.hero_slide.field_heroslide_image
-    - field.field.node.hero_slide.field_heroslide_images
     - field.field.node.hero_slide.field_heroslide_show_cont_link
     - field.field.node.hero_slide.field_heroslide_text_position
     - field.field.node.hero_slide.field_heroslide_title_prefix
     - field.field.node.hero_slide.field_images_media
-    - image.style.square_large_450_x_450_
     - node.type.hero_slide
   module:
-    - colorbox
     - ds
     - field_layout
     - text
@@ -40,9 +36,10 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
       ds_content:
-        - field_heroslide_images
+        - field_images_media
         - body
 _core:
   default_config_hash: mI-8wSfbHhnsIL45j5gwJgks1YTQa7Ga2-hFFL7pPx8
@@ -58,61 +55,26 @@ content:
     third_party_settings: {  }
     weight: 1
     region: ds_content
-  field_heroslide_images:
-    type: colorbox
+  field_images_media:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      colorbox_node_style: square_large_450_x_450_
-      colorbox_node_style_first: ''
-      colorbox_image_style: ''
-      colorbox_gallery: post
-      colorbox_gallery_custom: ''
-      colorbox_caption: auto
-      colorbox_caption_custom: ''
+      view_mode: hero_slide_full
+      link: false
     third_party_settings:
       ds:
         ds_limit: ''
         ft:
-          id: expert
+          id: default
           settings:
             lb: ''
-            lbw: false
-            lbw-el: ''
-            lbw-cl: ''
-            lbw-at: ''
             lb-col: false
-            ow: true
-            ow-el: div
-            ow-cl: heroslide-images-wrapper
-            ow-at: ''
-            ow-def-at: false
-            ow-def-cl: false
-            fis: true
-            fis-el: div
-            fis-cl: 'field--name-field-heroslide-images row'
-            fis-at: ''
-            fis-def-at: true
-            fi: true
-            fi-el: div
-            fi-cl: 'field--item col-xs-12 col-sm-6 col-md-4'
-            fi-at: ''
-            fi-def-at: true
-            prefix: ''
-            suffix: ''
+            classes: {  }
     weight: 0
     region: ds_content
-  field_images_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
   field_hero_image_media: true
   field_heroslide_external_link: true
-  field_heroslide_image: true
   field_heroslide_show_cont_link: true
   field_heroslide_text_position: true
   field_heroslide_title_prefix: true

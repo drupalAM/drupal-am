@@ -7,8 +7,6 @@ dependencies:
     - field.field.node.hero_slide.body
     - field.field.node.hero_slide.field_hero_image_media
     - field.field.node.hero_slide.field_heroslide_external_link
-    - field.field.node.hero_slide.field_heroslide_image
-    - field.field.node.hero_slide.field_heroslide_images
     - field.field.node.hero_slide.field_heroslide_show_cont_link
     - field.field.node.hero_slide.field_heroslide_text_position
     - field.field.node.hero_slide.field_heroslide_title_prefix
@@ -18,7 +16,7 @@ dependencies:
     - ds
     - field_group
     - field_layout
-    - image
+    - media
     - text
     - user
 third_party_settings:
@@ -33,10 +31,9 @@ third_party_settings:
       label: 'Page-title wrapper'
       parent_name: group_page_header
       region: content
-      weight: 2
+      weight: 3
       format_type: html_element
       format_settings:
-        label: 'Page-title wrapper'
         classes: page-title-wrapper
         id: ''
         element: div
@@ -47,7 +44,7 @@ third_party_settings:
         speed: fast
     group_page_header:
       children:
-        - field_heroslide_image
+        - field_hero_image_media
         - group_page_title_wrapper
       label: 'Page header container'
       parent_name: ''
@@ -55,7 +52,6 @@ third_party_settings:
       weight: 0
       format_type: html_element
       format_settings:
-        label: 'Page header container'
         classes: page-header-container
         id: ''
         element: div
@@ -71,6 +67,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         layout:
           wrapper: div
           classes:
@@ -87,7 +84,7 @@ third_party_settings:
     regions:
       main:
         - group_page_header
-        - field_heroslide_image
+        - field_hero_image_media
         - group_page_title_wrapper
         - node_title
         - body
@@ -119,36 +116,20 @@ content:
             classes: {  }
     weight: 15
     region: main
-  field_heroslide_image:
-    type: image
+  field_hero_image_media:
+    type: media_thumbnail
     label: hidden
     settings:
       image_link: ''
       image_style: ''
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-    weight: 1
-    region: main
-  field_images_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
     third_party_settings: {  }
-    weight: 16
-    region: content
+    weight: 2
+    region: main
 hidden:
-  field_hero_image_media: true
   field_heroslide_external_link: true
-  field_heroslide_images: true
   field_heroslide_show_cont_link: true
   field_heroslide_text_position: true
   field_heroslide_title_prefix: true
+  field_images_media: true
   langcode: true
   links: true

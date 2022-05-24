@@ -1,24 +1,26 @@
-uuid: fc0560f2-da43-4e72-89d9-63ff166c687e
+uuid: 0ffa9c83-badb-4f6b-b4c2-dd9b595ab88c
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.article_teaser
     - field.field.media.image.field_media_image
+    - image.style.crop_55_x_45
     - media.type.image
   module:
     - ds
     - image
-id: media.image.default
+id: media.image.article_teaser
 targetEntityType: media
 bundle: image
-mode: default
+mode: article_teaser
 content:
   field_media_image:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: crop_55_x_45
     third_party_settings:
       ds:
         ft:

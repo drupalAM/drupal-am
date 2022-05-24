@@ -1,32 +1,26 @@
-uuid: fc0560f2-da43-4e72-89d9-63ff166c687e
+uuid: b6f11f42-3dd5-4838-9484-fb2b72906f2c
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.carousel
     - field.field.media.image.field_media_image
+    - image.style.large
     - media.type.image
   module:
-    - ds
     - image
-id: media.image.default
+id: media.image.carousel
 targetEntityType: media
 bundle: image
-mode: default
+mode: carousel
 content:
   field_media_image:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
-      image_style: ''
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
+      image_style: large
+    third_party_settings: {  }
     weight: 0
     region: content
 hidden:

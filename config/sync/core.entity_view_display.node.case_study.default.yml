@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.case_study.body
-    - field.field.node.case_study.field_case_study_image
-    - field.field.node.case_study.field_case_study_screens
     - field.field.node.case_study.field_case_study_site_link
     - field.field.node.case_study.field_hero_image_media
     - field.field.node.case_study.field_screens_media
@@ -14,7 +12,6 @@ dependencies:
     - node.type.case_study
   module:
     - ds
-    - image
     - user
 third_party_settings:
   ds:
@@ -51,23 +48,6 @@ targetEntityType: node
 bundle: case_study
 mode: default
 content:
-  field_case_study_screens:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: ''
-    third_party_settings:
-      ds:
-        ds_limit: ''
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-    weight: 0
-    region: ds_content
   field_hero_image_media:
     type: entity_reference_label
     label: above
@@ -103,7 +83,6 @@ content:
     region: ds_content
 hidden:
   body: true
-  field_case_study_image: true
   field_case_study_site_link: true
   langcode: true
   links: true

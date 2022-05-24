@@ -7,15 +7,12 @@ dependencies:
     - field.field.node.blog_post.body
     - field.field.node.blog_post.field_blog_category
     - field.field.node.blog_post.field_blog_comments
-    - field.field.node.blog_post.field_blog_image
     - field.field.node.blog_post.field_blog_tags
     - field.field.node.blog_post.field_image_media
-    - image.style.focal_440_x_330
     - node.type.blog_post
   module:
     - ds
     - field_group
-    - image
     - user
 third_party_settings:
   field_group:
@@ -24,10 +21,9 @@ third_party_settings:
       label: 'Post info'
       parent_name: ''
       region: hidden
-      weight: 15
+      weight: 19
       format_type: html_element
       format_settings:
-        label: 'Post info'
         classes: post-info
         id: ''
         element: div
@@ -41,10 +37,9 @@ third_party_settings:
       label: 'Blog tags wrapper'
       parent_name: ''
       region: hidden
-      weight: 16
+      weight: 20
       format_type: html_element
       format_settings:
-        label: 'Blog tags wrapper'
         classes: blog-tags
         id: ''
         element: div
@@ -68,9 +63,10 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
       ds_content:
-        - field_blog_image
+        - field_image_media
         - node_title
     fields:
       node_title:
@@ -95,12 +91,12 @@ targetEntityType: node
 bundle: blog_post
 mode: card
 content:
-  field_blog_image:
-    type: image
+  field_image_media:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: content
-      image_style: focal_440_x_330
+      view_mode: blog_card
+      link: false
     third_party_settings:
       ds:
         ft:
@@ -111,14 +107,6 @@ content:
             classes: {  }
     weight: 0
     region: ds_content
-  field_image_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
   body: true
   field_blog_category: true

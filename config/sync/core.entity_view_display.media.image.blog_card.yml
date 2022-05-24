@@ -1,24 +1,26 @@
-uuid: fc0560f2-da43-4e72-89d9-63ff166c687e
+uuid: 5224697e-881f-4bf8-9443-b0cfe55674f5
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.blog_card
     - field.field.media.image.field_media_image
+    - image.style.focal_440_x_330
     - media.type.image
   module:
     - ds
     - image
-id: media.image.default
+id: media.image.blog_card
 targetEntityType: media
 bundle: image
-mode: default
+mode: blog_card
 content:
   field_media_image:
     type: image
     label: visually_hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: focal_440_x_330
     third_party_settings:
       ds:
         ft:
