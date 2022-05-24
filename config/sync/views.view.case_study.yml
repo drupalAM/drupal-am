@@ -1,6 +1,6 @@
 uuid: 81cce83f-04ad-4459-9222-4725a459aa6c
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.carousel
