@@ -1,17 +1,18 @@
-uuid: fc0560f2-da43-4e72-89d9-63ff166c687e
+uuid: db18d901-f198-4d52-be1f-9d6c49972d53
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.full_image
     - field.field.media.image.field_media_image
     - media.type.image
   module:
     - ds
     - image
-id: media.image.default
+id: media.image.full_image
 targetEntityType: media
 bundle: image
-mode: default
+mode: full_image
 content:
   field_media_image:
     type: image

@@ -5,19 +5,15 @@ dependencies:
   config:
     - core.entity_view_mode.node.slide
     - field.field.node.case_study.body
-    - field.field.node.case_study.field_case_study_image
-    - field.field.node.case_study.field_case_study_screens
     - field.field.node.case_study.field_case_study_site_link
     - field.field.node.case_study.field_hero_image_media
     - field.field.node.case_study.field_screens_media
     - field.field.node.case_study.field_term_industry
     - field.field.node.case_study.field_term_project_category
-    - image.style.case_study_card
     - node.type.case_study
   module:
     - ds
     - field_group
-    - image_delta_formatter
     - user
 third_party_settings:
   ds:
@@ -38,11 +34,10 @@ third_party_settings:
         label: ''
     regions:
       ds_content:
-        - field_case_study_screens
+        - group_card
         - node_title
         - field_term_project_category
         - field_term_industry
-        - group_card
         - node_link
         - group_content
     fields:
@@ -74,7 +69,7 @@ third_party_settings:
       label: card
       parent_name: ''
       region: ds_content
-      weight: 4
+      weight: 0
       format_type: html_element
       format_settings:
         classes: card
@@ -116,33 +111,6 @@ targetEntityType: node
 bundle: case_study
 mode: slide
 content:
-  field_case_study_screens:
-    type: image_delta_formatter
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: case_study_card
-      deltas: 0
-      deltas_reversed: false
-    third_party_settings:
-      ds:
-        ds_limit: ''
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
-    weight: 0
-    region: ds_content
-  field_screens_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_term_industry:
     type: entity_reference_label
     label: hidden
@@ -161,8 +129,8 @@ content:
     region: ds_content
 hidden:
   body: true
-  field_case_study_image: true
   field_case_study_site_link: true
   field_hero_image_media: true
+  field_screens_media: true
   langcode: true
   links: true

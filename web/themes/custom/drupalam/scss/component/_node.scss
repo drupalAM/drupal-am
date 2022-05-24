@@ -36,7 +36,7 @@ blockquote {
     overflow: hidden;
     height: 100%;
 
-    .field--name-field-case-study-screens {
+    .field--name-field-screens-media {
       position: relative;
       overflow: hidden;
       @include transition(opacity 0.1s ease);
@@ -45,7 +45,9 @@ blockquote {
       height: 100%;
       pointer-events: none;
 
-      .field--item {
+      .field--item,
+      .contextual-region,
+      .field--name-field-media-image {
         height: 100%;
       }
 
@@ -119,7 +121,7 @@ blockquote {
       }
     }
     &:hover {
-      .field--name-field-case-study-screens {
+      .field--name-field-screens-media {
         img {
           height: 110%;
           @include opacity(0.6);

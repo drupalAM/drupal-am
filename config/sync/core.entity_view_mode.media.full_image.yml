@@ -1,0 +1,10 @@
+uuid: 9750bc20-8ba5-4617-bdbe-8f515757c663
+langcode: hy
+status: true
+dependencies:
+  module:
+    - media
+id: media.full_image
+label: 'Full image'
+targetEntityType: media
+cache: true

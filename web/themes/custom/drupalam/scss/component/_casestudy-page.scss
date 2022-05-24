@@ -26,8 +26,9 @@
     }
   }
 
-  .field--name-field-case-study-image img {
+  .field--name-field-hero-image-media img {
     width: 100%;
+    object-fit: cover;
   }
 
   // Simple image slider
@@ -198,7 +199,7 @@
       }
     }
 
-    .field--name-field-case-study-screens {
+    .field--name-field-screens-media {
       .field--item {
         display: none;
 
