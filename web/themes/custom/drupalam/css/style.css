@@ -8878,6 +8878,7 @@ ul#cs-navigation li span {
   height: 100%;
   background-position: center center;
   background-size: cover;
+  -webkit-background-size: cover;
   background-attachment: fixed;
   -moz-opacity: 0.3;
   -khtml-opacity: 0.3;
