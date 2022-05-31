@@ -7047,8 +7047,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 
 .community-members {
   padding: 90px 3%;
-  text-align: center;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset; }
+  text-align: center; }
   .community-members .view-content {
     display: flex;
     flex-wrap: wrap;
@@ -7139,8 +7138,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 
 .block.testimonials {
   padding: 90px 3%;
-  text-align: center;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.06) inset; }
+  text-align: center; }
   .block.testimonials h2.block-title {
     margin-bottom: 12px !important; }
   .block.testimonials .field--name-field-testimonial {
@@ -8886,6 +8884,7 @@ ul#cs-navigation li span {
   height: 100%;
   background-position: center center;
   background-size: cover;
+  -webkit-background-size: cover;
   background-attachment: fixed;
   -moz-opacity: 0.3;
   -khtml-opacity: 0.3;
@@ -9435,9 +9434,7 @@ ul.cs-slider-ul li {
 
 .carousel-block,
 .related-projects-block {
-  padding: 30px 0 0;
-  background-color: #f7f7f7;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.03) inset; }
+  padding: 30px 0 0; }
   .carousel-block .views-row,
   .related-projects-block .views-row {
     margin-bottom: 20px;
