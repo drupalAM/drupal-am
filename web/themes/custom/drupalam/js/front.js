@@ -11,6 +11,15 @@
     "buttons": true,
     "arrows": true
   });
+
+  // For iOS mobile devices create custom background-attachment:fixed effect
+  if ($(window).width() < 768) {
+    $(window).scroll(function () {
+      let scrolledY = $(window).scrollTop();
+      $('.full-bg-image').css('background-position', 'left ' + ((scrolledY)) + 'px');
+    });
+  }
+
   // Case study slider
   var items = $('.block-views-blockcase-study-block-1 .views-element-container .item');
   if (items.length > 2) {
