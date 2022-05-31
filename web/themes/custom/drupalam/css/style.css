@@ -7699,10 +7699,6 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       margin-top: 20px; }
     .page-node-type-case-study .related-projects-block .node--view-mode-slide:hover .field--items:before {
       pointer-events: none; }
-    .page-node-type-case-study .related-projects-block .field--name-field-screens-media .field--item {
-      display: none; }
-      .page-node-type-case-study .related-projects-block .field--name-field-screens-media .field--item:first-child {
-        display: block; }
 
 .path-contact {
   background-color: #f7f7f7; }

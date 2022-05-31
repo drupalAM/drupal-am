@@ -198,15 +198,5 @@
         pointer-events: none;
       }
     }
-
-    .field--name-field-screens-media {
-      .field--item {
-        display: none;
-
-        &:first-child {
-          display: block;
-        }
-      }
-    }
   }
 }

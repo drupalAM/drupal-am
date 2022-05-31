@@ -34,6 +34,7 @@ third_party_settings:
         label: ''
     regions:
       ds_content:
+        - field_screens_media
         - group_card
         - node_title
         - field_term_project_category
@@ -69,7 +70,7 @@ third_party_settings:
       label: card
       parent_name: ''
       region: ds_content
-      weight: 0
+      weight: 1
       format_type: html_element
       format_settings:
         classes: card
@@ -111,6 +112,23 @@ targetEntityType: node
 bundle: case_study
 mode: slide
 content:
+  field_screens_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: carousel
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: '1'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
+    region: ds_content
   field_term_industry:
     type: entity_reference_label
     label: hidden
@@ -131,6 +149,5 @@ hidden:
   body: true
   field_case_study_site_link: true
   field_hero_image_media: true
-  field_screens_media: true
   langcode: true
   links: true
