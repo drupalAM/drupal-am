@@ -200,6 +200,10 @@
     .form-wrapper {
       width: 400px;
 
+      @include breakpoint(mobile) {
+        width: 300px;
+      }
+
       .form-item {
         .password-strength {
           .password-strength__meter {
@@ -286,6 +290,9 @@
 
           a{
             width: 400px;
+            @include breakpoint(mobile) {
+              width: 300px;
+            }
           }
         }
       }
