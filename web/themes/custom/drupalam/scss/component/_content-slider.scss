@@ -212,7 +212,12 @@ ul#cs-navigation li span {
   background-position: center center;
   background-size: cover;
   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-attachment: fixed;
+  @include breakpoint(mobile) {
+    background-attachment: scroll;
+  }
   @include opacity(0.3);
 }
 .cs-content-centered {

@@ -8885,6 +8885,8 @@ ul#cs-navigation li span {
   background-position: center center;
   background-size: cover;
   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-attachment: fixed;
   -moz-opacity: 0.3;
   -khtml-opacity: 0.3;
@@ -8892,6 +8894,9 @@ ul#cs-navigation li span {
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30); }
+  @media (max-width: 767px) {
+    .full-bg-image {
+      background-attachment: scroll; } }
 
 .cs-content-centered {
   float: none;
