@@ -1,0 +1,10 @@
+uuid: 3c37ebce-6b50-4768-b248-470caf24f496
+langcode: hy
+status: true
+dependencies: {  }
+id: company
+label: Company
+icon_uuid: null
+icon_default: null
+description: 'Member company'
+behavior_plugins: {  }
