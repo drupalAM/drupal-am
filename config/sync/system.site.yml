@@ -3,10 +3,13 @@ _core:
 langcode: hy
 uuid: 42dda736-9c92-42b1-864d-2753655580bc
 name: 'Drupal AM'
-mail: ''
+mail: admin@drupal.am
 slogan: ''
 page:
+  403: ''
+  404: ''
   front: /front
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: hy
+mail_notification: admin@drupal.am
