@@ -2,6 +2,23 @@
   background: #f7f7f7;
 
   .node--type-case-study.node--view-mode-full {
+    background: #fff;
+    margin: 0;
+
+    .bs-region--left {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      .field--name-node-title,
+      .field--name-field-term-industry,
+      .field--name-body {
+        padding-left: 15px;
+      }
+    }
+
+    .bs-region--right {
+      padding-right: 0;
+    }
+
     .field--name-node-title h2 {
       margin: 0;
       padding: 0;
@@ -199,14 +216,8 @@
       }
     }
 
-    .field--name-field-screens-media {
-      .field--item {
-        display: none;
-
-        &:first-child {
-          display: block;
-        }
-      }
+    .views-row {
+      padding-left: 0;
     }
   }
 }
