@@ -4,6 +4,8 @@
   Drupal.behaviors.boostrapTheme = {
     attach: function (context, settings) {
       $('.node--type-case-study .field--name-field-screens-media').slick();
+      $('.node--type-case-study .field--name-field-screens-media .slick-prev').text('');
+      $('.node--type-case-study .field--name-field-screens-media .slick-next').text('');
     }
   };
 

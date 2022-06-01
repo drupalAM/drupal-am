@@ -3,7 +3,7 @@
   &:hover {
     .slick-prev,
     .slick-next {
-
+      opacity: 1;
     }
   }
   .slick-next,
@@ -22,27 +22,18 @@
     background-color: rgba(37, 37, 37, 0.8);
     line-height: 50px;
     cursor: pointer;
-    -webkit-border-top-left-radius: 3px;
-    -moz-border-radius-topleft: 3px;
     border-top-left-radius: 3px;
-    -webkit-border-top-right-radius: 0px;
-    -moz-border-radius-topright: 0px;
-    border-top-right-radius: 0px;
-    -webkit-border-bottom-right-radius: 0px;
-    -moz-border-radius-bottomright: 0px;
-    border-bottom-right-radius: 0px;
-    -webkit-border-bottom-left-radius: 3px;
-    -moz-border-radius-bottomleft: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     border-bottom-left-radius: 3px;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
     background-clip: padding-box;
-    -moz-opacity: 0.9;
-    -khtml-opacity: 0.9;
-    -webkit-opacity: 0.9;
-    opacity: 0.9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
-    filter: alpha(opacity=90);
+    opacity: 0.5;
+    border: none;
+    font-family: FontAwesome;
+    &:hover {
+      color: #000;
+      background-color: #fdd200;
+    }
   }
 
   .slick-prev {
@@ -52,21 +43,19 @@
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     line-height: 70px;
-    -webkit-border-top-left-radius: 0px;
-    -moz-border-radius-topleft: 0px;
-    border-top-left-radius: 0px;
-    -webkit-border-top-right-radius: 3px;
-    -moz-border-radius-topright: 3px;
+    left: 0;
+    right: inherit;
+    border-top-left-radius: 0;
     border-top-right-radius: 3px;
-    -webkit-border-bottom-right-radius: 3px;
-    -moz-border-radius-bottomright: 3px;
     border-bottom-right-radius: 3px;
-    -webkit-border-bottom-left-radius: 0px;
-    -moz-border-radius-bottomleft: 0px;
-    border-bottom-left-radius: 0px;
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
+    border-bottom-left-radius: 0;
     background-clip: padding-box;
+    padding-left: 3px;
+    &:before {
+      font-family: FontAwesome;
+      display: inline-block;
+      content: '\f053';
+    }
   }
   .slick-next {
     -webkit-transition: all 0.2s ease;
@@ -75,5 +64,11 @@
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     line-height: 70px;
+    padding-right: 3px;
+    &:before {
+      font-family: FontAwesome;
+      display: inline-block;
+      content: '\f054';
+    }
   }
 }
