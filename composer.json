@@ -54,7 +54,7 @@
         "drupal/default_content": "^2.0@alpha",
         "drupal/default_content_deploy": "^1.0@beta",
         "drupal/ds": "^3.5",
-        "drupal/email_registration": "^1.x-dev",
+        "drupal/email_registration": "^1.1",
         "drupal/entityqueue": "^1.0@RC",
         "drupal/field_group": "^3.2",
         "drupal/fixed_block_content": "^1.0",
