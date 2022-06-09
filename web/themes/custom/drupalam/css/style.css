@@ -8424,7 +8424,12 @@ body.page-node-type-blog-post .bypostauthor {
     .path-user .region-content {
       width: 95%; } }
 
-.navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+.navbar .header-blocks {
+  display: flex; }
+  .navbar .header-blocks .col-md-10.col-sm-10 {
+    padding-right: 0; }
+
+.navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
   color: #ffffff;
   display: block;
   font-weight: 600;
@@ -8437,22 +8442,61 @@ body.page-node-type-blog-post .bypostauthor {
   border: 2px solid #0678BE;
   transition: .3s ease; }
   @media (max-width: 767px) {
-    .navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+    .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
       background: #0678BE;
       border-color: #0678BE;
       margin: 15px auto; } }
 
-.path-frontpage .navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+.navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper {
+  width: 30px;
+  height: 30px;
+  text-align: center; }
+  .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .btn, .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .view-hero-slide .view-content .button a, .view-hero-slide .view-content .button .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown a {
+    background: transparent;
+    padding: 0;
+    height: 15px; }
+    .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .btn svg, .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .view-hero-slide .view-content .button a svg, .view-hero-slide .view-content .button .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown a svg {
+      width: 15px; }
+    .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .btn a, .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .view-hero-slide .view-content .button a a, .view-hero-slide .view-content .button .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown a a {
+      font-size: 14px;
+      color: #222222;
+      font-weight: 600;
+      padding: 7px 20px; }
+  .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .dropdown-menu {
+    border: 3px solid #53B0EB;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    top: 35px; }
+    .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .dropdown-menu .dropdown-item a {
+      font-size: 16px;
+      font-family: Josefin Sans, sans-serif;
+      font-weight: 600;
+      padding: 5px 15px; }
+  .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown.open {
+    background: #53B0EB;
+    padding-bottom: 15px; }
+
+.path-frontpage .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
   background: transparent;
   border-color: #fff; }
   @media (max-width: 767px) {
-    .path-frontpage .navbar .block-signin-popup.block-join-now-block .join-block-wrapper a {
+    .path-frontpage .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
       background: #0678BE;
       border-color: #0678BE; } }
 
-.path-frontpage .navbar-scrolled-top .block-signin-popup.block-join-now-block .join-block-wrapper a {
+.path-frontpage .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .btn svg, .path-frontpage .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .view-hero-slide .view-content .button a svg, .view-hero-slide .view-content .button .path-frontpage .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown a svg {
+  fill: #fff; }
+  @media (max-width: 767px) {
+    .path-frontpage .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .btn svg, .path-frontpage .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .view-hero-slide .view-content .button a svg, .view-hero-slide .view-content .button .path-frontpage .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown a svg {
+      fill: #222222; } }
+
+.path-frontpage .navbar-scrolled-top .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
   background: #0678BE;
   border-color: #0678BE; }
+
+.path-frontpage .navbar-scrolled-top .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .btn svg, .path-frontpage .navbar-scrolled-top .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown .view-hero-slide .view-content .button a svg, .view-hero-slide .view-content .button .path-frontpage .navbar-scrolled-top .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper .dropdown a svg {
+  fill: #222222; }
 
 .ui-dialog.signin-modal {
   max-width: 100%; }
