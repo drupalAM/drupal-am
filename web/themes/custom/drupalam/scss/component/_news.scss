@@ -57,6 +57,11 @@
 .news.teaser {
   margin-bottom: 45px;
   background: #fff;
+  display: flex;
+  .news-image {
+    max-width: 200px;
+    align-self: center;
+  }
   .post-content {
     padding: 4%;
   }
@@ -127,3 +132,119 @@
     }
   }
 }
+
+.node--type-news.node--view-mode-mainstage {
+  max-height: 400px;
+  height: 400px;
+  .col-sm-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .bs-region.bs-region--main {
+    max-height: 400px;
+    height: 400px;
+    position: relative;
+  }
+  .media--image {
+    max-height: 400px;
+    height: 400px;
+    position: relative;
+    &:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      display: block;
+      background: rgba(0, 0, 0, 0.3);
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+  }
+  .field--name-node-title {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    h1 {
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 50px;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.news.full {
+  .submitted {
+    line-height: 17px;
+    letter-spacing: 2px;
+    color: #b3b3b1;
+    padding-top: 0;
+    padding-bottom: 9px;
+    text-transform: uppercase;
+    font-size: 12px;
+    a {
+      text-decoration: underline;
+    }
+  }
+  p {
+    margin: 7px 0;
+  }
+
+  .comments {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: auto;
+    background: #f7f7f7;
+    padding-top: 50px;
+    > section {
+      padding-left: 15px;
+      padding-right: 15px;
+      h2 {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        padding-bottom: 7px;
+        border-bottom: 3px solid #bebebe;
+        border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+        text-transform: capitalize;
+        font-size: 18px;
+      }
+    }
+    .form-actions {
+      margin-top: 10px;
+    }
+  }
+}
+
+.news.tile {
+  display: flex;
+  padding: 3px 0 2px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  .news-image {
+    width: 55px;
+    margin-right: 10px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    img {
+      max-width: 100%;
+    }
+  }
+  .post-content {
+    margin-top: 13px;
+  }
+}
+

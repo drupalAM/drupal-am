@@ -77,25 +77,19 @@
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  <div class="news-image">
-    {{ content.field_news_images }}
-  </div>
-
   <div class="post-content">
     <div class="submitted">
       {% trans %}{{ date }} by {{ author_name }}{% endtrans %}
       {{ metadata }}
     </div>
 
-    {{ title_prefix }}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-    {{ title_suffix }}
-
     <div{{ content_attributes.addClass('content') }}>
-      {{ content|without('field_news_images') }}
+      {{ content|without('field_news_images', 'field_blog_comments') }}
+{#   Insert other blocks here   #}
+      <div class="comments">
+        {{ content.field_blog_comments }}
+      </div>
     </div>
   </div>
-
 </article>
+

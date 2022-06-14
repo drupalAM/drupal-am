@@ -82,16 +82,14 @@
   </div>
 
   <div class="post-content">
+    {{ title_prefix }}
+    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    {{ title_suffix }}
+
     <div class="submitted">
-      {% trans %}{{ date }} by {{ author_name }}{% endtrans %}
+      {% trans %} {{ date }} {% endtrans %}
       {{ metadata }}
     </div>
-
-    {{ title_prefix }}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-    {{ title_suffix }}
 
     <div{{ content_attributes.addClass('content') }}>
       {{ content|without('field_news_images') }}

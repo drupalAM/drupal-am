@@ -6359,7 +6359,11 @@ header {
 
 .news.teaser {
   margin-bottom: 45px;
-  background: #fff; }
+  background: #fff;
+  display: flex; }
+  .news.teaser .news-image {
+    max-width: 200px;
+    align-self: center; }
   .news.teaser .post-content {
     padding: 4%; }
   .news.teaser .field-name-user-picture {
@@ -6412,6 +6416,101 @@ header {
       color: #000;
       border-bottom: 1px solid #000; }
 
+.node--type-news.node--view-mode-mainstage {
+  max-height: 400px;
+  height: 400px; }
+  .node--type-news.node--view-mode-mainstage .col-sm-12 {
+    padding-left: 0;
+    padding-right: 0; }
+  .node--type-news.node--view-mode-mainstage .bs-region.bs-region--main {
+    max-height: 400px;
+    height: 400px;
+    position: relative; }
+  .node--type-news.node--view-mode-mainstage .media--image {
+    max-height: 400px;
+    height: 400px;
+    position: relative; }
+    .node--type-news.node--view-mode-mainstage .media--image:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      display: block;
+      background: rgba(0, 0, 0, 0.3);
+      left: 0;
+      top: 0;
+      z-index: 2; }
+    .node--type-news.node--view-mode-mainstage .media--image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7; }
+  .node--type-news.node--view-mode-mainstage .field--name-node-title {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); }
+    .node--type-news.node--view-mode-mainstage .field--name-node-title h1 {
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 50px;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto; }
+
+.news.full .submitted {
+  line-height: 17px;
+  letter-spacing: 2px;
+  color: #b3b3b1;
+  padding-top: 0;
+  padding-bottom: 9px;
+  text-transform: uppercase;
+  font-size: 12px; }
+  .news.full .submitted a {
+    text-decoration: underline; }
+
+.news.full p {
+  margin: 7px 0; }
+
+.news.full .comments {
+  margin-left: -15px;
+  margin-right: -15px;
+  width: auto;
+  background: #f7f7f7;
+  padding-top: 50px; }
+  .news.full .comments > section {
+    padding-left: 15px;
+    padding-right: 15px; }
+    .news.full .comments > section h2 {
+      margin-top: 20px;
+      margin-bottom: 25px;
+      padding-bottom: 7px;
+      border-bottom: 3px solid #bebebe;
+      border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+      text-transform: capitalize;
+      font-size: 18px; }
+  .news.full .comments .form-actions {
+    margin-top: 10px; }
+
+.news.tile {
+  display: flex;
+  padding: 3px 0 2px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  .news.tile .news-image {
+    width: 55px;
+    margin-right: 10px;
+    margin-top: 8px;
+    margin-bottom: 5px; }
+    .news.tile .news-image img {
+      max-width: 100%; }
+  .news.tile .post-content {
+    margin-top: 13px; }
+
 body:not(.path-frontpage) .main-container {
   padding-top: 100px; }
 
@@ -6438,6 +6537,32 @@ body:not(.path-frontpage) .content-and-sidebars-container {
 @media screen and (min-width: 768px) {
   body:not(.path-frontpage) .content-and-sidebars-container {
     padding: 70px 3%; } }
+
+body.page-node-type-news:not(.path-frontpage) .main-content {
+  background: #f7f7f7; }
+  body.page-node-type-news:not(.path-frontpage) .main-content > .content-and-sidebars-container > div > .col-sm-9 {
+    background: #fff; }
+    body.page-node-type-news:not(.path-frontpage) .main-content > .content-and-sidebars-container > div > .col-sm-9 .breadcrumb {
+      background: none;
+      margin-top: 10px; }
+    body.page-node-type-news:not(.path-frontpage) .main-content > .content-and-sidebars-container > div > .col-sm-9 .tabs {
+      margin-bottom: 20px; }
+
+body.page-node-type-news:not(.path-frontpage) .main-container {
+  padding-top: 0; }
+
+body.page-node-type-news:not(.path-frontpage) #navbar {
+  background: transparent; }
+  body.page-node-type-news:not(.path-frontpage) #navbar.navbar-scrolled-top {
+    background: #fff; }
+
+.region-sidebar-second h2 {
+  margin-top: -5px;
+  margin-bottom: 20px;
+  padding: 0 0 7px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px; }
 
 /**
  * Node styling.
