@@ -78,9 +78,9 @@
 <article {{ attributes.addClass(classes) }}>
 
   {% if comment_count > 1 %}
-    <h2>{{ comment_count }} Comments</h2>
+    <h2>{{ comment_count }} {{ 'Comments'|t }}</h2>
   {% elseif comment_count == 1 %}
-    <h2>{{ comment_count }} Comment</h2>
+    <h2>{{ comment_count }} {{ 'Comment'|t }}</h2>
   {% endif %}
 
   <div{{ content_attributes.addClass('content') }}>

@@ -4,7 +4,7 @@
 
   CollapsibleFilter();
   MasonryGrid();
-  
+
   function CollapsibleFilter() {
     var $filter = $('.path-blog .views-exposed-form .form-item');
     var $activeCategory =  $('.active-category');
@@ -32,14 +32,6 @@
         ? $filter.removeClass('hide-filter')
         : $filter.addClass('hide-filter');
     })
-  }
-
-  function MasonryGrid() {
-    $('.view-content').masonry({
-      itemSelector: '.views-row',
-      columnWidth: '.col-sm-6',
-      percentPosition: true
-    });
   }
 
 })(jQuery, Drupal, drupalSettings);
