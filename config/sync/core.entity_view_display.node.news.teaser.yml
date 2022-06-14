@@ -11,6 +11,7 @@ dependencies:
   module:
     - blazy
     - ds
+    - linked_field
     - text
     - user
 id: node.news.teaser
@@ -63,13 +64,19 @@ content:
       grid_small: ''
     third_party_settings:
       ds:
-        ds_limit: '1'
+        ds_limit: ''
         ft:
           id: default
           settings:
             lb: ''
             lb-col: false
             classes: {  }
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: 'internal:/node/[node:nid]'
+        advanced: {  }
+        token: ''
     weight: 0
     region: content
   links:

@@ -7407,7 +7407,9 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     .page-node-type-hero-slide .page-title-wrapper,
     .page-node-type-case-study .page-title-wrapper {
       top: 180px; } }
+  .page-node-type-hero-slide .page-title-wrapper h1,
   .page-node-type-hero-slide .page-title-wrapper h2,
+  .page-node-type-case-study .page-title-wrapper h1,
   .page-node-type-case-study .page-title-wrapper h2 {
     padding: 10px 0;
     padding-top: 0;
@@ -7419,7 +7421,9 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     letter-spacing: -1px;
     display: inline-block;
     margin-bottom: 0; }
+    .page-node-type-hero-slide .page-title-wrapper h1:after,
     .page-node-type-hero-slide .page-title-wrapper h2:after,
+    .page-node-type-case-study .page-title-wrapper h1:after,
     .page-node-type-case-study .page-title-wrapper h2:after {
       content: "";
       display: block;
@@ -7452,7 +7456,9 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   .page-node-type-hero-slide .page-title-wrapper,
   .page-node-type-case-study .page-title-wrapper {
     top: 115px; }
+    .page-node-type-hero-slide .page-title-wrapper h1,
     .page-node-type-hero-slide .page-title-wrapper h2,
+    .page-node-type-case-study .page-title-wrapper h1,
     .page-node-type-case-study .page-title-wrapper h2 {
       font-size: 50px; }
     .page-node-type-hero-slide .page-title-wrapper .field--name-body,
@@ -7464,6 +7470,8 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   .page-node-type-case-study .page-title-wrapper {
     top: 145px; }
     .page-node-type-hero-slide .page-title-wrapper h2,
+    .page-node-type-hero-slide .page-title-wrapper h2,
+    .page-node-type-case-study .page-title-wrapper h2,
     .page-node-type-case-study .page-title-wrapper h2 {
       font-size: 58px; } }
 
