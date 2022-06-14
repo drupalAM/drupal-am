@@ -1,0 +1,129 @@
+.path-news {
+  .main-content {
+    background: #f7f7f7;
+  }
+  .content-header-container {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    min-height: 240px;
+    height: 240px;
+    padding-bottom: 20px;
+    position: relative;
+    background-color: #252525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .region-header {
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      padding: 10px 0;
+      padding-top: 0;
+      color: #ffffff;
+      vertical-align: middle;
+      text-transform: uppercase;
+      font-size: 58px;
+      font-weight: bold;
+      line-height: 1em;
+      text-align: center;
+      display: inline-block;
+      letter-spacing: -1px;
+      border-bottom: 0;
+      &:after {
+        content: "";
+        display: block;
+        width: 62%;
+        height: 1px;
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 10px;
+      }
+    }
+    .breadcrumb {
+      background:none;
+      width: 100%;
+      display: block;
+      margin-bottom: 0;
+      text-align: center;
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.news.teaser {
+  margin-bottom: 45px;
+  background: #fff;
+  .post-content {
+    padding: 4%;
+  }
+  .field-name-user-picture {
+    border-radius: 50%;
+  }
+  .submitted {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #b3b3b1;
+    line-height: 17px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 9px;
+    a {
+      color: #b3b3b1;
+      &:hover {
+        color: #53B0EB;
+      }
+    }
+    & > span {
+      margin-right: 8px;
+    }
+    span:last-child {
+      margin-left: 8px;
+    }
+  }
+  h2 {
+    padding-bottom: 15px;
+    padding-top: 0;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 0;
+    a {
+      color: #333332;
+      &:hover {
+        color: #53B0EB;
+      }
+    }
+  }
+  .content {
+    p {
+      margin: 7px 0;
+      padding: 0;
+    }
+  }
+  .links {
+    li {
+      margin-right: 10px;
+    }
+    a {
+      color: #53B0EB;
+      border-bottom: 1px solid #53B0EB;
+      display: inline-block;
+      margin-bottom: 5px;
+      margin-top: 10px;
+      padding: 4px 0;
+      line-height: 1em;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+      &:hover {
+        color: #000;
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@ _core:
 id: drupalam_local_tasks
 theme: drupalam
 region: header
-weight: 10
+weight: -5
 provider: null
 plugin: local_tasks_block
 settings:

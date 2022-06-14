@@ -2,17 +2,14 @@ uuid: 756fe684-08d3-4179-8872-433584992235
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:fbb06f75-7c43-422b-80a6-4ab2998e2a45'
   module:
-    - block_content
     - context
   theme:
     - drupalam
 id: footer_social_links
 theme: drupalam
 region: hidden
-weight: 0
+weight: -8
 provider: null
 plugin: 'block_content:fbb06f75-7c43-422b-80a6-4ab2998e2a45'
 settings:

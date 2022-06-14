@@ -70,6 +70,23 @@ reactions:
         context_id: header
         context_mapping: {  }
         third_party_settings: {  }
+      6d0c4b5b-b8b2-401a-beaf-3426498f734f:
+        uuid: 6d0c4b5b-b8b2-401a-beaf-3426498f734f
+        id: local_tasks_block
+        label: Tabs
+        provider: core
+        label_display: '0'
+        region: content
+        weight: '-1'
+        custom_id: local_tasks_block
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: header
+        context_mapping: {  }
+        primary: 1
+        secondary: 1
+        third_party_settings: {  }
     include_default_blocks: 0
     saved: false
 weight: 0

@@ -11,7 +11,7 @@ _core:
 id: drupalam_breadcrumbs
 theme: drupalam
 region: header
-weight: -100
+weight: -6
 provider: null
 plugin: system_breadcrumb_block
 settings:

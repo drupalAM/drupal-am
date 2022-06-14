@@ -159,7 +159,7 @@ display:
           submit_button: 'Apply filters'
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Դասակարգել ըստ'
           expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -421,7 +421,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Լեզու
             description: ''
             use_operator: false
             operator: langcode_op
@@ -487,7 +487,7 @@ display:
       tags: {  }
   page:
     id: page
-    display_title: Page
+    display_title: Էջ
     display_plugin: page
     position: 1
     display_options:

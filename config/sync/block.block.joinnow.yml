@@ -1,25 +1,23 @@
-uuid: b4e8062a-1621-4608-b2d9-e66579c80a6c
+uuid: 3d0a19cc-05c8-4c5a-b359-58d97598e4b9
 langcode: en
 status: true
 dependencies:
   module:
     - context
+    - signin_popup
   theme:
     - drupalam
-id: license
+id: joinnow
 theme: drupalam
-region: hidden
+region: navigation_collapsible
 weight: -7
 provider: null
-plugin: 'block_content:7978101d-0d7d-4789-a404-a2e4dcc86bd6'
+plugin: join_now_block
 settings:
-  id: 'block_content:7978101d-0d7d-4789-a404-a2e4dcc86bd6'
-  label: License
-  label_display: visible
-  provider: block_content
-  status: true
-  info: ''
-  view_mode: full
+  id: join_now_block
+  label: 'Join now'
+  label_display: '0'
+  provider: signin_popup
 visibility:
   context:
     id: context

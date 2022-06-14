@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_blog_comments
     - field.field.node.news.field_news_images
     - node.type.news
   module:
+    - comment
     - field_layout
     - layout_discovery
     - media_library
@@ -35,6 +37,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_blog_comments:
+    type: comment_default
+    weight: 123
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -8,7 +8,7 @@
      Only "getter" methods (method names starting with "get", "has", or "is")
      and a few common methods such as "id" and "label" are available. Calling
      other methods (such as node.delete) will result in an exception.
- * - label: The title of the node.
+ * - label: (optional) The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -16,8 +16,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: Themed creation date field.
- * - author_name: Themed author name field.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -67,24 +67,33 @@
 #}
 {%
   set classes = [
-    node.bundle|clean_class,
-    node.isPromoted() ? 'is-promoted',
-    node.isSticky() ? 'is-sticky',
-    not node.isPublished() ? 'is-unpublished',
-    view_mode ? view_mode|clean_class,
-    'clearfix',
-  ]
+  node.bundle|clean_class,
+  node.isPromoted() ? 'is-promoted',
+  node.isSticky() ? 'is-sticky',
+  not node.isPublished() ? 'is-unpublished',
+  view_mode ? view_mode|clean_class,
+  'clearfix',
+]
 %}
-<article {{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes) }}>
 
-  {% if comment_count > 1 %}
-    <h2>{{ comment_count }} Comments</h2>
-  {% elseif comment_count == 1 %}
-    <h2>{{ comment_count }} Comment</h2>
-  {% endif %}
+  {{ content.field_news_images }}
 
-  <div{{ content_attributes.addClass('content') }}>
-    {{ content }}
+  <div class="post-content">
+    <div class="submitted">
+      {% trans %}{{ date }} by {{ author_name }}{% endtrans %}
+      {{ metadata }}
+    </div>
+
+    {{ title_prefix }}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+    {{ title_suffix }}
+
+    <div{{ content_attributes.addClass('content') }}>
+      {{ content|without('field_news_images') }}
+    </div>
   </div>
 
 </article>

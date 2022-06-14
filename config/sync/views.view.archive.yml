@@ -49,7 +49,7 @@ display:
           submit_button: Apply
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Դասակարգել ըստ'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -227,7 +227,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Էջ
     display_plugin: page
     position: 2
     display_options:

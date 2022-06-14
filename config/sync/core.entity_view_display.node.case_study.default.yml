@@ -29,18 +29,31 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
       ds_content:
-        - field_case_study_screens
+        - field_screens_media
         - node_title
         - field_term_project_category
         - field_term_industry
+        - field_hero_image_media
     fields:
       node_title:
         plugin_id: node_title
         weight: 1
         label: hidden
         formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h1
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 _core:
   default_config_hash: KJrIh0_iSF-z7zEMqdcAvzhxHWytetcWyi7GICV9qPU
 id: node.case_study.default
@@ -50,21 +63,21 @@ mode: default
 content:
   field_hero_image_media:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     weight: 4
-    region: content
+    region: ds_content
   field_screens_media:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
     weight: 0
-    region: content
+    region: ds_content
   field_term_industry:
     type: entity_reference_label
     label: hidden

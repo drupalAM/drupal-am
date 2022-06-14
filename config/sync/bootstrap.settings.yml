@@ -4,7 +4,7 @@ langcode: hy
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: ''
-  url: 'http://drupal.am.local/themes/contrib/bootstrap/favicon.ico'
+  url: 'https://drupal-am.local/themes/contrib/bootstrap/favicon.ico'
   use_default: true
 features:
   comment_user_picture: true
@@ -26,3 +26,4 @@ cdn_cache_ttl_assets: 0
 cdn_cache_ttl_library: 0
 reset_http_request_cache: ''
 table: ''
+breadcrumb_home: 1
