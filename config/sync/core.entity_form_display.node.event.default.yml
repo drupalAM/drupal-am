@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_blog_comments
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_speakers
     - node.type.event
   module:
+    - comment
     - datetime_range
     - field_layout
     - layout_discovery
@@ -39,6 +41,12 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_blog_comments:
+    type: comment_default
+    weight: 126
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -129,5 +137,10 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

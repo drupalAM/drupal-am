@@ -58,8 +58,8 @@ third_party_settings:
         - node_title
         - body
         - 'dynamic_token_field:node-post_date_custom_format_'
-        - field_blog_category
         - field_blog_tags
+        - field_blog_category
         - 'dynamic_token_field:node-submitted_by_custom_'
         - group_blog_tags
     fields:
@@ -132,6 +132,17 @@ third_party_settings:
         weight: 3
         label: hidden
         formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h1
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_group:
     group_post_info:
       children:
