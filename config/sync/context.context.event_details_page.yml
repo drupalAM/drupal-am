@@ -2,9 +2,12 @@ uuid: dc954f9f-d0b9-4eaf-82b3-bc86c6b58b7a
 langcode: en
 status: true
 dependencies:
+  config:
+    - views.view.all_events
   module:
     - ctools
     - node
+    - views
 label: 'Event details page'
 name: event_details_page
 group: 'Content Types'
@@ -41,6 +44,23 @@ reactions:
         context_mapping:
           entity: '@node.node_route_context:node'
         view_mode: mainstage
+        third_party_settings: {  }
+      137f617a-b102-4dc4-913e-51f848b7ccc9:
+        uuid: 137f617a-b102-4dc4-913e-51f848b7ccc9
+        id: 'views_block:all_events-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '0'
+        custom_id: views_block_all_events_block_1
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: event_details_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
         third_party_settings: {  }
     include_default_blocks: 0
     saved: false

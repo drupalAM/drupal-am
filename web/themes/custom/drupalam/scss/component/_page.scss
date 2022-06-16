@@ -47,7 +47,8 @@ body:not(.path-frontpage) {
   }
 }
 
-body.page-node-type-news:not(.path-frontpage) {
+body.page-node-type-news:not(.path-frontpage),
+body.page-node-type-event:not(.path-frontpage) {
   .main-content {
     background: #f7f7f7;
     & > .content-and-sidebars-container > div > .col-sm-9 {
