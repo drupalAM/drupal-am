@@ -6,10 +6,10 @@ dependencies:
     - views.view.case_study
     - views.view.community_members
     - views.view.hero_slide
+    - views.view.homepage_companies
   content:
     - 'block_content:cards_block:0c75389a-6acf-4065-a5aa-7ad62a90d4e5'
     - 'block_content:cards_block:f7d022f8-cb5a-4277-b43a-2b49241e65e2'
-    - 'block_content:companies:23c0cdc9-84c7-44c7-83fc-5974b15f0dff'
     - 'block_content:testimonials:99a16204-a743-4ef3-b20a-2d707c3a9dff'
   module:
     - block_content
@@ -134,23 +134,22 @@ reactions:
         status: true
         info: ''
         view_mode: full
-      86ebe4ed-18f8-4019-9997-335a703dec92:
-        uuid: 86ebe4ed-18f8-4019-9997-335a703dec92
-        id: 'block_content:23c0cdc9-84c7-44c7-83fc-5974b15f0dff'
+      37ff2031-4ed5-4684-96d5-afd010e2ec42:
+        uuid: 37ff2031-4ed5-4684-96d5-afd010e2ec42
+        id: 'views_block:homepage_companies-block_1'
         label: Companies
-        provider: block_content
-        label_display: '0'
+        provider: views
+        label_display: visible
         region: content
         weight: '0'
-        custom_id: block_content_23c0cdc9_84c7_44c7_83fc_5974b15f0dff
+        custom_id: views_block_homepage_companies_block_1
         theme: drupalam
         css_class: ''
         unique: 0
         context_id: front
         context_mapping: {  }
-        status: true
-        info: ''
-        view_mode: full
+        views_label: Companies
+        items_per_page: none
         third_party_settings: {  }
     include_default_blocks: 0
     saved: false
