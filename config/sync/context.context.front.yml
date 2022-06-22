@@ -6,6 +6,7 @@ dependencies:
     - views.view.case_study
     - views.view.community_members
     - views.view.hero_slide
+    - views.view.homepage_companies
   content:
     - 'block_content:cards_block:0c75389a-6acf-4065-a5aa-7ad62a90d4e5'
     - 'block_content:cards_block:f7d022f8-cb5a-4277-b43a-2b49241e65e2'
@@ -133,6 +134,23 @@ reactions:
         status: true
         info: ''
         view_mode: full
+      37ff2031-4ed5-4684-96d5-afd010e2ec42:
+        uuid: 37ff2031-4ed5-4684-96d5-afd010e2ec42
+        id: 'views_block:homepage_companies-block_1'
+        label: Companies
+        provider: views
+        label_display: visible
+        region: content
+        weight: '0'
+        custom_id: views_block_homepage_companies_block_1
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: front
+        context_mapping: {  }
+        views_label: Companies
+        items_per_page: none
+        third_party_settings: {  }
     include_default_blocks: 0
     saved: false
 weight: 0

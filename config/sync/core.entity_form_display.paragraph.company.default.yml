@@ -1,0 +1,41 @@
+uuid: 5d6ac0ef-097a-4607-9b49-333dc16c7102
+langcode: hy
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.company.field_company_link
+    - field.field.paragraph.company.field_company_logo
+    - paragraphs.paragraphs_type.company
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.company.default
+targetEntityType: paragraph
+bundle: company
+mode: default
+content:
+  field_company_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_company_logo:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

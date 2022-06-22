@@ -1,0 +1,29 @@
+uuid: 44d72d96-d117-4806-9392-1653a08baeb1
+langcode: hy
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_company_logo
+    - media.type.image
+    - paragraphs.paragraphs_type.company
+id: paragraph.company.field_company_logo
+field_name: field_company_logo
+entity_type: paragraph
+bundle: company
+label: Logo
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

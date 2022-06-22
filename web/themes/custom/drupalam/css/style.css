@@ -5928,6 +5928,78 @@ html.js .form-item .input-group-addon .input-group-addon {
 html.js .ajax-new-content:empty {
   display: none !important; }
 
+.block--bundle--companies h2,
+.block-views-blockhomepage-companies-block-1 h2 {
+  text-align: center; }
+
+.field--name-field-companies {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  @media (min-width: 992px) {
+    .field--name-field-companies {
+      justify-content: center; } }
+  .field--name-field-companies > .field__item {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    align-self: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    .field--name-field-companies > .field__item img {
+      filter: grayscale(100%);
+      opacity: .4;
+      transition: opacity 300ms;
+      margin: auto; }
+      .field--name-field-companies > .field__item img:hover {
+        filter: unset;
+        opacity: 1; }
+    @media (min-width: 992px) {
+      .field--name-field-companies > .field__item {
+        -webkit-box-flex: 0;
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+        margin-top: 20px;
+        margin-bottom: 20px; } }
+
+.block-views-blockhomepage-companies-block-1 .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  @media (min-width: 992px) {
+    .block-views-blockhomepage-companies-block-1 .view-content {
+      justify-content: center; } }
+  .block-views-blockhomepage-companies-block-1 .view-content > .views-row {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    align-self: center;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    .block-views-blockhomepage-companies-block-1 .view-content > .views-row img {
+      filter: grayscale(100%);
+      opacity: .4;
+      transition: opacity 300ms;
+      margin: auto; }
+      .block-views-blockhomepage-companies-block-1 .view-content > .views-row img:hover {
+        filter: unset;
+        opacity: 1; }
+    @media (min-width: 992px) {
+      .block-views-blockhomepage-companies-block-1 .view-content > .views-row {
+        -webkit-box-flex: 0;
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+        margin-top: 20px;
+        margin-bottom: 20px; } }
+
 /**
  * $file
  * Visual styles for fields.

@@ -1,0 +1,26 @@
+uuid: 4d248405-d54f-441b-8463-e51dd83665d8
+langcode: hy
+status: true
+dependencies:
+  module:
+    - node
+id: companies_frontpage
+label: 'Homepage Companies'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      company: company
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

@@ -13,10 +13,13 @@ use Drupal\media\Entity\Media;
  * Implements hook_theme_suggestions_HOOK_alter for blocks.
  */
 function drupalam_theme_suggestions_block_alter(&$suggestions, $variables) {
-
   // Load theme suggestions for blocks from parent theme.
   foreach ($suggestions as &$suggestion) {
     $suggestion = str_replace('drupalam', 'bootstrap_', $suggestion);
+  }
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
   }
 }
 

@@ -1,0 +1,14 @@
+uuid: 858a1719-33fb-4107-aa86-d37ec204a17b
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: community_members
+label: 'Community members'
+type: 'canonical_entities:user'
+pattern: '/community-members/[user:account-name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

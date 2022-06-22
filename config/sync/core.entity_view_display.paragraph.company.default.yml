@@ -1,29 +1,34 @@
-uuid: 45fbe43e-8ff7-4809-bcfe-4c0205540512
-langcode: en
+uuid: d51cea1b-7152-49ab-ab9c-8890997336ec
+langcode: hy
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
-    - field.field.node.company.body
-    - field.field.node.company.field_address_text
-    - field.field.node.company.field_company_employees_quantity
-    - field.field.node.company.field_company_website
-    - field.field.node.company.field_contact_email
-    - field.field.node.company.field_contact_phone
-    - field.field.node.company.field_image_media
+    - field.field.paragraph.company.field_company_link
+    - field.field.paragraph.company.field_company_logo
     - image.style.company_logo
-    - node.type.company
+    - paragraphs.paragraphs_type.company
   module:
     - blazy
     - ds
-    - linked_field
-    - user
-id: node.company.teaser
-targetEntityType: node
+    - link
+id: paragraph.company.default
+targetEntityType: paragraph
 bundle: company
-mode: teaser
+mode: default
 content:
-  field_image_media:
+  field_company_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_company_logo:
     type: blazy_media
     label: hidden
     settings:
@@ -66,20 +71,6 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-      linked_field:
-        linked: '1'
-        type: custom
-        destination: 'internal:/node/[nid]'
-        advanced: {  }
-        token: ''
     weight: 0
     region: content
-hidden:
-  body: true
-  field_address_text: true
-  field_company_employees_quantity: true
-  field_company_website: true
-  field_contact_email: true
-  field_contact_phone: true
-  langcode: true
-  links: true
+hidden: {  }

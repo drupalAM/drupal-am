@@ -1,0 +1,35 @@
+uuid: 43a36718-ddc9-4da0-9a00-af1f995d88b7
+langcode: hy
+status: true
+dependencies:
+  module:
+    - image_effects
+name: company_logo
+label: 'Company logo 233x150'
+effects:
+  20d77aee-10f4-4e86-b6ce-d33eaf55dd5f:
+    uuid: 20d77aee-10f4-4e86-b6ce-d33eaf55dd5f
+    id: image_scale
+    weight: 1
+    data:
+      width: 233
+      height: 150
+      upscale: true
+  e46cf048-9352-40a7-9251-206163c4fa20:
+    uuid: e46cf048-9352-40a7-9251-206163c4fa20
+    id: image_effects_set_canvas
+    weight: 2
+    data:
+      canvas_size: exact
+      canvas_color: ''
+      exact:
+        width: '233'
+        height: '150'
+        placement: center-center
+        x_offset: 0
+        y_offset: 0
+      relative:
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0

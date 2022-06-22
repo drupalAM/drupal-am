@@ -3397,6 +3397,125 @@
             }
         },
         {
+            "name": "drupal/file_mdm",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/file_mdm.git",
+                "reference": "8.x-2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/file_mdm-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "f0611a95417d35e98b7792dfffb569afe8bd6e7c"
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "lsolesen/pel": "^0.9.12",
+                "phenx/php-font-lib": "^0.5.4"
+            },
+            "require-dev": {
+                "drupal/image_effects": "*",
+                "drupal/vendor_stream_wrapper": "^2",
+                "fileeye/linuxlibertine-fonts": "^5.3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.4",
+                    "datestamp": "1645440700",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mondrake",
+                    "homepage": "https://www.drupal.org/user/1307444"
+                }
+            ],
+            "description": "Provides a service to manage file metadata.",
+            "homepage": "https://www.drupal.org/project/file_mdm",
+            "support": {
+                "source": "https://git.drupalcode.org/project/file_mdm"
+            }
+        },
+        {
+            "name": "drupal/file_mdm_exif",
+            "version": "2.4.0",
+            "require": {
+                "drupal/core": "^9.2",
+                "drupal/file_mdm": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.4",
+                    "datestamp": "1645440700",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mondrake",
+                    "homepage": "https://www.drupal.org/user/1307444"
+                }
+            ],
+            "description": "Provides a file metadata plugin for EXIF image information.",
+            "homepage": "https://www.drupal.org/project/file_mdm",
+            "support": {
+                "source": "https://git.drupalcode.org/project/file_mdm"
+            }
+        },
+        {
+            "name": "drupal/file_mdm_font",
+            "version": "2.4.0",
+            "require": {
+                "drupal/core": "^9.2",
+                "drupal/file_mdm": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.4",
+                    "datestamp": "1645440700",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mondrake",
+                    "homepage": "https://www.drupal.org/user/1307444"
+                }
+            ],
+            "description": "Provides a file metadata plugin for TTF/OTF/WOFF font information.",
+            "homepage": "https://www.drupal.org/project/file_mdm",
+            "support": {
+                "source": "https://git.drupalcode.org/project/file_mdm"
+            }
+        },
+        {
             "name": "drupal/fixed_block_content",
             "version": "1.1.0",
             "source": {
@@ -3612,6 +3731,66 @@
             "homepage": "https://www.drupal.org/project/image_delta_formatter",
             "support": {
                 "source": "https://git.drupalcode.org/project/image_delta_formatter"
+            }
+        },
+        {
+            "name": "drupal/image_effects",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/image_effects.git",
+                "reference": "8.x-3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/image_effects-8.x-3.2.zip",
+                "reference": "8.x-3.2",
+                "shasum": "c45e2b9493758183813aac3807a16be5872f0caa"
+            },
+            "require": {
+                "drupal/core": "^9.2",
+                "drupal/file_mdm_exif": "^2.2",
+                "drupal/file_mdm_font": "^2.2"
+            },
+            "conflict": {
+                "drupal/imagemagick": "<3",
+                "drupal/jquery_colorpicker": "<2"
+            },
+            "require-dev": {
+                "drupal/imagemagick": "^3.3",
+                "drupal/jquery_colorpicker": "^2",
+                "drupal/vendor_stream_wrapper": "^1 | ^2",
+                "fileeye/linuxlibertine-fonts": "^5.3"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.2",
+                    "datestamp": "1639923532",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "mondrake",
+                    "homepage": "https://www.drupal.org/user/1307444"
+                },
+                {
+                    "name": "slashrsm",
+                    "homepage": "https://www.drupal.org/user/744628"
+                }
+            ],
+            "description": "Provides effects and operations for the Image API.",
+            "homepage": "https://www.drupal.org/project/image_effects",
+            "support": {
+                "source": "https://git.drupalcode.org/project/image_effects"
             }
         },
         {
@@ -5938,6 +6117,66 @@
             "time": "2021-07-09T08:23:52+00:00"
         },
         {
+            "name": "lsolesen/pel",
+            "version": "0.9.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pel/pel.git",
+                "reference": "b95fe29cdacf9d36330da277f10910a13648c84c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pel/pel/zipball/b95fe29cdacf9d36330da277f10910a13648c84c",
+                "reference": "b95fe29cdacf9d36330da277f10910a13648c84c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "ext-exif": "*",
+                "ext-gd": "*",
+                "php-coveralls/php-coveralls": ">2.4",
+                "squizlabs/php_codesniffer": ">3.5",
+                "symfony/phpunit-bridge": "^4 || ^5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "lsolesen\\pel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Olesen",
+                    "email": "lars@intraface.dk",
+                    "homepage": "http://intraface.dk",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Martin Geisler",
+                    "email": "martin@geisler.net",
+                    "homepage": "http://geisler.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Exif Library. A library for reading and writing Exif headers in JPEG and TIFF images using PHP.",
+            "homepage": "http://pel.github.com/pel/",
+            "keywords": [
+                "exif",
+                "image"
+            ],
+            "support": {
+                "issues": "https://github.com/pel/pel/issues",
+                "source": "https://github.com/pel/pel/tree/0.9.12"
+            },
+            "time": "2022-02-18T13:20:54+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.7.5",
             "source": {
@@ -6457,6 +6696,50 @@
                 "source": "https://github.com/pear/PEAR_Exception"
             },
             "time": "2021-03-21T15:43:46+00:00"
+        },
+        {
+            "name": "phenx/php-font-lib",
+            "version": "0.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/php-font-lib.git",
+                "reference": "dd448ad1ce34c63d09baccd05415e361300c35b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/php-font-lib/zipball/dd448ad1ce34c63d09baccd05415e361300c35b4",
+                "reference": "dd448ad1ce34c63d09baccd05415e361300c35b4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3 || ^4 || ^5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FontLib\\": "src/FontLib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "support": {
+                "issues": "https://github.com/dompdf/php-font-lib/issues",
+                "source": "https://github.com/dompdf/php-font-lib/tree/0.5.4"
+            },
+            "time": "2021-12-17T19:44:54+00:00"
         },
         {
             "name": "phpstan/phpstan",

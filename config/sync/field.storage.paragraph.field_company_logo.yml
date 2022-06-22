@@ -1,0 +1,20 @@
+uuid: bd5c05c2-1bac-4508-8a7a-8cac47fd2370
+langcode: hy
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_company_logo
+field_name: field_company_logo
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
