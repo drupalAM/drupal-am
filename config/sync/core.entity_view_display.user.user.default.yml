@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_company
     - field.field.user.user.field_user_bio
     - field.field.user.user.field_user_first_name
     - field.field.user.user.field_user_friends
@@ -32,18 +33,22 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
+      header:
+        - blog__personal_blog_link
       left:
         - user_picture
       right:
         - 'dynamic_token_field:user-field_user_full_name'
         - field_user_bio
+        - field_company
       footer:
         - field_user_friends
     fields:
       'dynamic_token_field:user-field_user_full_name':
         plugin_id: 'dynamic_token_field:user-field_user_full_name'
-        weight: 1
+        weight: 2
         label: hidden
         formatter: default
         ft:
@@ -59,12 +64,25 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  blog__personal_blog_link:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: header
+  field_company:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: right
   field_user_bio:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: right
   field_user_friends:
     type: entity_reference_entity_view
@@ -102,7 +120,7 @@ content:
             fi-def-at: false
             prefix: ''
             suffix: ''
-    weight: 3
+    weight: 5
     region: footer
   user_picture:
     type: colorbox
@@ -123,7 +141,7 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    weight: 0
+    weight: 1
     region: left
 hidden:
   field_user_first_name: true

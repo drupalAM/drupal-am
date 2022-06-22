@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f308c44df5ffd3e3235a9ec6a3c030d",
+    "content-hash": "8272f8ce60749fe74e64640f6492a619",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4304,6 +4304,86 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/module_missing_message_fixer",
                 "issues": "https://www.drupal.org/project/issues/module_missing_message_fixer"
+            }
+        },
+        {
+            "name": "drupal/node_title_validation",
+            "version": "1.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/node_title_validation.git",
+                "reference": "8.x-1.22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/node_title_validation-8.x-1.22.zip",
+                "reference": "8.x-1.22",
+                "shasum": "0cb94e5c21fe0bb033b314aabb723787be042543"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.22",
+                    "datestamp": "1605654981",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Mashir",
+                    "homepage": "https://www.drupal.org/user/3245674"
+                },
+                {
+                    "name": "N.kishorekumar",
+                    "homepage": "https://www.drupal.org/user/2887361"
+                },
+                {
+                    "name": "cgomezg",
+                    "homepage": "https://www.drupal.org/user/3535094"
+                },
+                {
+                    "name": "harika gujjula",
+                    "homepage": "https://www.drupal.org/user/2978505"
+                },
+                {
+                    "name": "jcisio",
+                    "homepage": "https://www.drupal.org/user/210762"
+                },
+                {
+                    "name": "krknth",
+                    "homepage": "https://www.drupal.org/user/2659743"
+                },
+                {
+                    "name": "mahaveer003",
+                    "homepage": "https://www.drupal.org/user/3063119"
+                },
+                {
+                    "name": "neerajskydiver",
+                    "homepage": "https://www.drupal.org/user/227792"
+                },
+                {
+                    "name": "xaiwant",
+                    "homepage": "https://www.drupal.org/user/2598494"
+                }
+            ],
+            "description": "Node Title Validation is used to validate node titles with min/max characters, Blacklist special characters/words and unique node titles.",
+            "homepage": "https://www.drupal.org/project/node_title_validation",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/node_title_validation",
+                "issues": "https://www.drupal.org/project/issues/node_title_validation"
             }
         },
         {

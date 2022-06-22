@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - node.type.company
   module:
     - comment
     - contact
     - filter
     - fontawesome
     - media
+    - node
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -23,7 +25,10 @@ permissions:
   - 'access fontawesome additional settings'
   - 'access site-wide contact form'
   - 'access user profiles'
+  - 'create company content'
+  - 'delete own company content'
   - 'edit own comments'
+  - 'edit own company content'
   - 'post comments'
   - 'use text format basic_html'
   - 'view media'

@@ -80,6 +80,7 @@ module:
   menu_ui: 0
   module_missing_message_fixer: 0
   node: 0
+  node_title_validation: 0
   options: 0
   page_cache: 0
   path: 0
