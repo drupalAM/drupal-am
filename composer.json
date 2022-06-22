@@ -72,8 +72,10 @@
         "drupal/recaptcha": "^3.0",
         "drupal/schema": "^2.0@alpha",
         "drupal/stage_file_proxy": "^1.2",
+        "drupal/svg_image": "^1.16",
         "drupal/token": "^1.6",
         "drupal/upgrade_status": "^3.14",
+        "drupal/webp": "^1.0@beta",
         "drush/drush": "^10.0",
         "furf/jquery-ui-touch-punch": "dev-master"
     },
