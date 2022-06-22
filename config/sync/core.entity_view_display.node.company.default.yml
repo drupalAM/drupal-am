@@ -10,12 +10,67 @@ dependencies:
     - field.field.node.company.field_contact_email
     - field.field.node.company.field_contact_phone
     - field.field.node.company.field_image_media
+    - image.style.company_logo
     - node.type.company
   module:
+    - blazy
+    - ds
     - link
     - options
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_2col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          left:
+            wrapper: div
+            classes:
+              col-xs-12: col-xs-12
+              col-sm-5: col-sm-5
+              col-md-4: col-md-4
+              col-lg-3: col-lg-3
+            add_region_classes: 1
+            attributes: ''
+          right:
+            wrapper: div
+            classes:
+              col-xs-12: col-xs-12
+              col-sm-7: col-sm-7
+              col-md-8: col-md-8
+              col-lg-9: col-lg-9
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      left:
+        - field_image_media
+        - field_address_text
+        - field_company_website
+        - field_contact_phone
+        - field_contact_email
+        - field_company_employees_quantity
+      right:
+        - node_title
+        - body
+        - links
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 6
+        label: hidden
+        formatter: default
 id: node.company.default
 targetEntityType: node
 bundle: company
@@ -26,25 +81,25 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
-    region: content
+    weight: 7
+    region: right
   field_address_text:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
-    region: content
+    weight: 1
+    region: left
   field_company_employees_quantity:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 6
-    region: content
+    weight: 5
+    region: left
   field_company_website:
     type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -52,35 +107,72 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
-    region: content
+    weight: 2
+    region: left
   field_contact_email:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
-    region: content
+    weight: 4
+    region: left
   field_contact_phone:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
-    region: content
+    weight: 3
+    region: left
   field_image_media:
-    type: entity_reference_label
-    label: above
+    type: blazy_media
+    label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
+      caption:
+        title: '0'
+        alt: '0'
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
+      view_mode: default
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: company_logo
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
+    region: left
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 7
-    region: content
+    weight: 8
+    region: right
 hidden:
   langcode: true
