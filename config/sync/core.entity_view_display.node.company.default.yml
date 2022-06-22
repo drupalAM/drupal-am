@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.company.body
+    - field.field.node.company.field_address_text
     - field.field.node.company.field_company_employees_quantity
     - field.field.node.company.field_company_website
+    - field.field.node.company.field_contact_email
+    - field.field.node.company.field_contact_phone
     - field.field.node.company.field_image_media
     - node.type.company
   module:
@@ -23,14 +26,21 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 0
+    region: content
+  field_address_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_company_employees_quantity:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 104
+    weight: 6
     region: content
   field_company_website:
     type: link
@@ -42,7 +52,22 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 103
+    weight: 3
+    region: content
+  field_contact_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_contact_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_image_media:
     type: entity_reference_label
@@ -50,12 +75,12 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 105
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 7
     region: content
 hidden:
   langcode: true

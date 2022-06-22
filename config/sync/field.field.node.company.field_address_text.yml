@@ -1,0 +1,21 @@
+uuid: d0b5a259-bf97-4322-9d87-ea312ee0ccab
+langcode: hy
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address_text
+    - node.type.company
+  module:
+    - text
+id: node.company.field_address_text
+field_name: field_address_text
+entity_type: node
+bundle: company
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

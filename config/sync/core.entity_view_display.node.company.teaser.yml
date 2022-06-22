@@ -5,8 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.company.body
+    - field.field.node.company.field_address_text
     - field.field.node.company.field_company_employees_quantity
     - field.field.node.company.field_company_website
+    - field.field.node.company.field_contact_email
+    - field.field.node.company.field_contact_phone
     - field.field.node.company.field_image_media
     - image.style.company_logo
     - node.type.company
@@ -73,7 +76,10 @@ content:
     region: content
 hidden:
   body: true
+  field_address_text: true
   field_company_employees_quantity: true
   field_company_website: true
+  field_contact_email: true
+  field_contact_phone: true
   langcode: true
   links: true

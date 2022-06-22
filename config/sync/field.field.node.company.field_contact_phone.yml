@@ -1,0 +1,19 @@
+uuid: e331378a-365e-4c5d-9124-22b63710d155
+langcode: hy
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_phone
+    - node.type.company
+id: node.company.field_contact_phone
+field_name: field_contact_phone
+entity_type: node
+bundle: company
+label: 'Contact phone'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
