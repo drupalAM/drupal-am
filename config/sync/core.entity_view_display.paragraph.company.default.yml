@@ -1,0 +1,76 @@
+uuid: d51cea1b-7152-49ab-ab9c-8890997336ec
+langcode: hy
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.company.field_company_link
+    - field.field.paragraph.company.field_company_logo
+    - image.style.company_logo
+    - paragraphs.paragraphs_type.company
+  module:
+    - blazy
+    - ds
+    - link
+id: paragraph.company.default
+targetEntityType: paragraph
+bundle: company
+mode: default
+content:
+  field_company_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_company_logo:
+    type: blazy_media
+    label: hidden
+    settings:
+      caption:
+        title: '0'
+        alt: '0'
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
+      view_mode: default
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: company_logo
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
+    region: content
+hidden: {  }

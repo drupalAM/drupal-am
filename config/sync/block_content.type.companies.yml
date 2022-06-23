@@ -1,0 +1,8 @@
+uuid: 8a678421-9116-44e0-b183-ead57d30a9b3
+langcode: hy
+status: true
+dependencies: {  }
+id: companies
+label: Companies
+revision: 0
+description: 'Member companies'

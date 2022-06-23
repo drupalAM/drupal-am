@@ -1,7 +1,7 @@
 {
   "patches": {
     "drupal/core": {
-
+      "#3226117 Uncaught RfcComplianceException thrown when sending email from a site whose name contains a comma": "https://www.drupal.org/files/issues/2022-03-21/drupal-3226117-phpmail-from-not-rfc-compliant-38.patch"
     },
     "drupal/context_groups": {
       "#3177784 Too few arguments to function ContextBlockPageVariant": "https://www.drupal.org/files/issues/2020-11-25/Too_few_arguments_to_function_ContextBlockPageVariant-3177784-6.patch"

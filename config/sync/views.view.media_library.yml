@@ -29,7 +29,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Media
+      title: Մեդիա
       fields:
         media_bulk_form:
           id: media_bulk_form

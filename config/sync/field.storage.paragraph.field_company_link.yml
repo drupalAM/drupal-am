@@ -1,0 +1,19 @@
+uuid: ffb62d5e-83d6-4c31-84dc-b6d296ae7c7a
+langcode: hy
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_company_link
+field_name: field_company_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

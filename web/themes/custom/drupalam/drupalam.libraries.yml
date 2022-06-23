@@ -32,13 +32,21 @@ front-scripts:
     js/content-carousel.js: {}
     js/front.js: {}
 
+slick_slider:
+  js:
+    js/slick/slick.min.js: { minified: true }
+  css:
+    theme:
+      js/slick/slick.css: { }
+
 case-study-scripts:
   js:
     js/jquery.matchHeight-min.js: {}
     js/main.js: {}
-    js/simple-image-slider.js: {}
     js/content-carousel.js: {}
     js/case-study-page.js: {}
+  dependencies:
+    - drupalam/slick_slider
 
 blog-scripts:
   js:

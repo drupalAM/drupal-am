@@ -5,33 +5,81 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.company.body
+    - field.field.node.company.field_address_text
     - field.field.node.company.field_company_employees_quantity
     - field.field.node.company.field_company_website
+    - field.field.node.company.field_contact_email
+    - field.field.node.company.field_contact_phone
     - field.field.node.company.field_image_media
+    - image.style.company_logo
     - node.type.company
   module:
-    - text
+    - blazy
+    - ds
+    - linked_field
     - user
 id: node.company.teaser
 targetEntityType: node
 bundle: company
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
+  field_image_media:
+    type: blazy_media
     label: hidden
     settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+      caption:
+        title: '0'
+        alt: '0'
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
+      view_mode: default
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: company_logo
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: 'internal:/node/[nid]'
+        advanced: {  }
+        token: ''
+    weight: 0
     region: content
 hidden:
+  body: true
+  field_address_text: true
   field_company_employees_quantity: true
   field_company_website: true
-  field_image_media: true
+  field_contact_email: true
+  field_contact_phone: true
   langcode: true
+  links: true

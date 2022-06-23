@@ -1,0 +1,24 @@
+uuid: 386109bc-8719-4e77-99ff-8f6f9574bc80
+langcode: hy
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_company_link
+    - paragraphs.paragraphs_type.company
+  module:
+    - link
+id: paragraph.company.field_company_link
+field_name: field_company_link
+entity_type: paragraph
+bundle: company
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+  title_predefined: ''
+field_type: link
