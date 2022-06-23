@@ -8426,8 +8426,21 @@ body.page-node-type-blog-post .bypostauthor {
 
 .navbar .header-blocks {
   display: flex; }
+  @media (max-width: 767px) {
+    .navbar .header-blocks .navbar-header {
+      width: 100%;
+      padding-right: 0; } }
   .navbar .header-blocks .col-md-10.col-sm-10 {
     padding-right: 0; }
+    @media (max-width: 767px) {
+      .navbar .header-blocks .col-md-10.col-sm-10 {
+        position: absolute;
+        width: 100%;
+        top: 71px; } }
+
+@media (max-width: 767px) {
+  .navbar .block-signin-popup.block-join-now-block .join-block-wrapper {
+    padding-right: 15px; } }
 
 .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
   color: #ffffff;

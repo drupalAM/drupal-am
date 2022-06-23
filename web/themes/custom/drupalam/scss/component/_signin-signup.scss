@@ -3,13 +3,30 @@
   .header-blocks{
     display: flex;
 
+    .navbar-header {
+      @include breakpoint(mobile){
+      width: 100%;
+      padding-right: 0;
+      }
+    }
+
     .col-md-10.col-sm-10{
       padding-right: 0;
+
+      @include breakpoint(mobile){
+        position: absolute;
+        width: 100%;
+        top: 71px;
+      }
     }
   }
   .block-signin-popup.block-join-now-block {
     .join-block-wrapper {
-      .login-btn-wrapper {
+      @include breakpoint(mobile) {
+        padding-right: 15px;
+      }
+
+        .login-btn-wrapper {
         a {
           color: #ffffff;
           display: block;
