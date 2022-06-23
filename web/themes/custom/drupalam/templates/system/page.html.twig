@@ -72,36 +72,36 @@
       {% if not navbar_attributes.hasClass(container) %}
         <div class="{{ nav_container }}">
       {% endif %}
-      <div class="row">
-        <div class="navbar-header col-sm-2">
-          {{ page.navigation }}
-          {# .btn-navbar is used as the toggle for collapsed navbar content #}
-          {% if page.navigation_collapsible %}
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-              <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          {% endif %}
-        </div>
+          <div class="row header-blocks">
+            <div class="navbar-header col-sm-2">
+              {{ page.navigation }}
+              {# .btn-navbar is used as the toggle for collapsed navbar content #}
+              {% if page.navigation_collapsible %}
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                  <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              {% endif %}
+            </div>
 
-        {# Navigation (collapsible) #}
-        <div class="col-md-10 col-sm-10">
-        {% if page.navigation_collapsible %}
-          <div id="navbar-collapse" class="navbar-collapse collapse">
-            {{ page.navigation_collapsible }}
-          </div>
-        {% endif %}
-        </div>
+            {# Navigation (collapsible) #}
+            <div class="col-md-10 col-sm-10">
+              {% if page.navigation_collapsible %}
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                  {{ page.navigation_collapsible }}
+                </div>
+              {% endif %}
+            </div>
 
-        {# Top Right #}
-        {% if page.top_right%}
-          <div class="col-md-2 col-sm-2 hidden-xs">
-            {{ page.top_right }}
+            {# Top Right #}
+            {% if page.top_right %}
+              <div class="region-top--right">
+                {{ page.top_right }}
+              </div>
+            {% endif %}
           </div>
-        {% endif %}
-      </div>
       {% if not navbar_attributes.hasClass(container) %}
         </div>
       {% endif %}

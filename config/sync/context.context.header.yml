@@ -45,7 +45,7 @@ reactions:
         provider: system
         label_display: '0'
         region: navigation_collapsible
-        weight: '-1'
+        weight: '-10'
         custom_id: system_menu_block_main
         theme: drupalam
         css_class: ''
@@ -61,8 +61,8 @@ reactions:
         label: 'Join now'
         provider: signin_popup
         label_display: '0'
-        region: navigation_collapsible
-        weight: '0'
+        region: top_right
+        weight: '-1'
         custom_id: join_now_block
         theme: drupalam
         css_class: ''
