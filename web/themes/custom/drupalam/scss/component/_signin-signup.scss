@@ -2,6 +2,7 @@
 .navbar {
   .header-blocks{
     display: flex;
+    align-items: center;
 
     .navbar-header {
       @include breakpoint(mobile){
@@ -43,7 +44,6 @@
           @include breakpoint(mobile) {
             background: $dark-blue;
             border-color: $dark-blue;
-            margin: 15px auto;
           }
         }
       }

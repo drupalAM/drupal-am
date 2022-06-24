@@ -8507,7 +8507,8 @@ body.page-node-type-blog-post .bypostauthor {
       width: 95%; } }
 
 .navbar .header-blocks {
-  display: flex; }
+  display: flex;
+  align-items: center; }
   @media (max-width: 767px) {
     .navbar .header-blocks .navbar-header {
       width: 100%;
@@ -8539,8 +8540,7 @@ body.page-node-type-blog-post .bypostauthor {
   @media (max-width: 767px) {
     .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
       background: #0678BE;
-      border-color: #0678BE;
-      margin: 15px auto; } }
+      border-color: #0678BE; } }
 
 .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper {
   width: 30px;
