@@ -111,6 +111,9 @@ function drupalam_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_
     case 'user_register_form':
       $form['actions']['submit']['#value'] = 'Sign Up';
       break;
+    case 'user_form':
+      $form['actions']['submit']['#value'] = 'Save';
+      break;
     default:
       $form['actions']['submit']['#value'] = 'SUBMIT COMMENT';
   }
