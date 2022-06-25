@@ -3,15 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - fixed_block_content.fixed_block_content.latest_news
+    - fixed_block_content.fixed_block_content.slogan
+    - fixed_block_content.fixed_block_content.upcoming_events
     - views.view.case_study
     - views.view.community_members
     - views.view.hero_slide
+    - views.view.homepage_companies
   content:
     - 'block_content:cards_block:0c75389a-6acf-4065-a5aa-7ad62a90d4e5'
     - 'block_content:cards_block:f7d022f8-cb5a-4277-b43a-2b49241e65e2'
-    - 'block_content:testimonials:99a16204-a743-4ef3-b20a-2d707c3a9dff'
   module:
     - block_content
+    - fixed_block_content
     - system
     - views
 _core:
@@ -41,7 +45,7 @@ reactions:
         provider: views
         label_display: '0'
         region: content
-        weight: '-2'
+        weight: '-4'
         custom_id: views_block_hero_slide_block_1
         theme: drupalam
         css_class: ''
@@ -57,7 +61,7 @@ reactions:
         provider: block_content
         label_display: '0'
         region: content
-        weight: '-1'
+        weight: '-2'
         custom_id: block_content_f7d022f8_cb5a_4277_b43a_2b49241e65e2
         theme: drupalam
         css_class: why-use-drupal
@@ -90,7 +94,7 @@ reactions:
         provider: block_content
         label_display: '0'
         region: content
-        weight: '1'
+        weight: '2'
         custom_id: block_content_0c75389a_6acf_4065_a5aa_7ad62a90d4e5
         theme: drupalam
         css_class: where-do-i-start
@@ -107,7 +111,7 @@ reactions:
         provider: views
         label_display: visible
         region: content
-        weight: '2'
+        weight: '3'
         custom_id: views_block_community_members_block_1
         theme: drupalam
         css_class: community-members
@@ -116,23 +120,71 @@ reactions:
         context_mapping: {  }
         views_label: ''
         items_per_page: none
-      00e7a719-0604-47bc-927f-92727747167e:
-        uuid: 00e7a719-0604-47bc-927f-92727747167e
-        id: 'block_content:99a16204-a743-4ef3-b20a-2d707c3a9dff'
-        label: Testimonaials
-        provider: block_content
+      37ff2031-4ed5-4684-96d5-afd010e2ec42:
+        uuid: 37ff2031-4ed5-4684-96d5-afd010e2ec42
+        id: 'views_block:homepage_companies-block_1'
+        label: Companies
+        provider: views
         label_display: visible
         region: content
-        weight: '3'
-        custom_id: block_content_99a16204_a743_4ef3_b20a_2d707c3a9dff
+        weight: '1'
+        custom_id: views_block_homepage_companies_block_1
         theme: drupalam
-        css_class: testimonials
+        css_class: ''
         unique: 0
         context_id: front
         context_mapping: {  }
-        status: true
-        info: ''
-        view_mode: full
+        views_label: Companies
+        items_per_page: none
+        third_party_settings: {  }
+      0870b3a1-e0ba-4510-888a-95688afe1a9b:
+        uuid: 0870b3a1-e0ba-4510-888a-95688afe1a9b
+        id: 'fixed_block_content:latest_news'
+        label: 'Latest News'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '-1'
+        custom_id: fixed_block_content_latest_news
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: front
+        context_mapping: {  }
+        view_mode: ''
+        third_party_settings: {  }
+      20431b93-5ea9-47d7-bcbe-fec94dfc3388:
+        uuid: 20431b93-5ea9-47d7-bcbe-fec94dfc3388
+        id: 'fixed_block_content:upcoming_events'
+        label: 'Upcoming Events'
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '-3'
+        custom_id: fixed_block_content_upcoming_events
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: front
+        context_mapping: {  }
+        view_mode: ''
+        third_party_settings: {  }
+      f5046e91-a137-4d7c-b572-983494b21f32:
+        uuid: f5046e91-a137-4d7c-b572-983494b21f32
+        id: 'fixed_block_content:slogan'
+        label: Slogan
+        provider: fixed_block_content
+        label_display: '0'
+        region: content
+        weight: '4'
+        custom_id: fixed_block_content_slogan
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: front
+        context_mapping: {  }
+        view_mode: ''
+        third_party_settings: {  }
     include_default_blocks: 0
     saved: false
 weight: 0

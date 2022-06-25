@@ -1,0 +1,19 @@
+uuid: a68bf3fb-5882-474f-8469-21c2cb8f161e
+langcode: hy
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_address_text
+field_name: field_address_text
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

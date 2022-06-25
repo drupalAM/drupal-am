@@ -53,6 +53,9 @@ module:
   field_layout: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
+  file_mdm_exif: 0
+  file_mdm_font: 0
   filter: 0
   fixed_block_content: 0
   focal_point: 0
@@ -62,6 +65,7 @@ module:
   help: 0
   image: 0
   image_delta_formatter: 0
+  image_effects: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
@@ -90,6 +94,7 @@ module:
   shortcut: 0
   signin_popup: 0
   stage_file_proxy: 0
+  svg_image: 0
   system: 0
   taxonomy: 0
   telephone: 0
@@ -99,6 +104,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  webp: 0
   ds: 1
   menu_link_content: 1
   pathauto: 1

@@ -1,0 +1,25 @@
+uuid: a7c4358a-e5f3-45d2-b2d3-8e93079b7f51
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.companies
+    - field.field.block_content.companies.field_companies
+  module:
+    - entity_reference_revisions
+id: block_content.companies.default
+targetEntityType: block_content
+bundle: companies
+mode: default
+content:
+  field_companies:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

@@ -1,24 +1,102 @@
 // Join now and logout button
 .navbar {
+  .header-blocks{
+    display: flex;
+
+    .navbar-header {
+      @include breakpoint(mobile){
+      width: 100%;
+      padding-right: 0;
+      }
+    }
+
+    .col-md-10.col-sm-10{
+      padding-right: 0;
+
+      @include breakpoint(mobile){
+        position: absolute;
+        width: 100%;
+        top: 71px;
+      }
+    }
+  }
   .block-signin-popup.block-join-now-block {
     .join-block-wrapper {
-      a {
-        color: #ffffff;
-        display: block;
-        font-weight: 600;
-        text-transform: uppercase;
-        max-width: max-content;
-        height: max-content;
-        padding: 7px 20px;
-        border-radius: 50px;
-        background: $dark-blue;
-        border: 2px solid $dark-blue;
-        transition: .3s ease;
+      @include breakpoint(mobile) {
+        padding-right: 15px;
+      }
 
-        @include breakpoint(mobile) {
+        .login-btn-wrapper {
+        a {
+          color: #ffffff;
+          display: block;
+          font-weight: 600;
+          text-transform: uppercase;
+          max-width: max-content;
+          height: max-content;
+          padding: 7px 20px;
+          border-radius: 50px;
           background: $dark-blue;
-          border-color: $dark-blue;
-          margin: 15px auto;
+          border: 2px solid $dark-blue;
+          transition: .3s ease;
+
+          @include breakpoint(mobile) {
+            background: $dark-blue;
+            border-color: $dark-blue;
+            margin: 15px auto;
+          }
+        }
+      }
+    }
+
+    .logout-wrapper {
+      .dropdown-menu-wrapper {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        .dropdown {
+          .btn {
+            background: transparent;
+            padding: 0;
+            height: 15px;
+
+            svg {
+              width: 15px;
+            }
+
+            a {
+              font-size: 14px;
+              color: $black;
+              font-weight: 600;
+              padding: 7px 20px;
+
+              //@include breakpoint(mobile) {
+              //}
+            }
+
+          }
+
+          .dropdown-menu{
+            border: 3px solid $light-blue;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+            top: 35px;
+
+              .dropdown-item{
+                a{
+                  font-size: 16px;
+                  font-family: $font-josefin;
+                  font-weight: 600;
+                  padding: 5px 15px;
+                }
+              }
+          }
+        }
+
+        .dropdown.open{
+          background: $light-blue;
+          padding-bottom: 15px;
         }
       }
     }
@@ -29,16 +107,35 @@
   .navbar {
     .block-signin-popup.block-join-now-block {
       .join-block-wrapper {
-        a {
-          background: transparent;
-          border-color: $white;
+        .login-btn-wrapper {
+          a {
+            background: transparent;
+            border-color: $white;
 
-          @include breakpoint(mobile) {
-            background: $dark-blue;
-            border-color: $dark-blue;
+            @include breakpoint(mobile) {
+              background: $dark-blue;
+              border-color: $dark-blue;
+            }
           }
         }
       }
+
+      .logout-wrapper {
+        .dropdown-menu-wrapper {
+          .dropdown {
+            .btn {
+              svg {
+                fill: $white;
+
+                @include breakpoint(mobile) {
+                  fill: $black;
+                }
+              }
+            }
+          }
+        }
+      }
+
     }
   }
 
@@ -46,9 +143,23 @@
   .navbar-scrolled-top {
     .block-signin-popup.block-join-now-block {
       .join-block-wrapper {
-        a {
-          background: $dark-blue;
-          border-color: $dark-blue;
+        .login-btn-wrapper {
+          a {
+            background: $dark-blue;
+            border-color: $dark-blue;
+          }
+        }
+      }
+
+      .logout-wrapper {
+        .dropdown-menu-wrapper {
+          .dropdown {
+            .btn {
+              svg {
+                fill: $black;
+              }
+            }
+          }
         }
       }
     }

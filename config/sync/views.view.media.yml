@@ -11,7 +11,7 @@ dependencies:
 _core:
   default_config_hash: mF_CA96Q4unIl78LRoLKR5YPUDGdxn0wbSqyUbvrQjc
 id: media
-label: Media
+label: Մեդիա
 module: views
 description: 'Find and manage media.'
 tag: ''
@@ -24,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Media
+      title: Մեդիա
       fields:
         media_bulk_form:
           id: media_bulk_form
@@ -880,7 +880,7 @@ display:
       tags: {  }
   media_page_list:
     id: media_page_list
-    display_title: Media
+    display_title: Մեդիա
     display_plugin: page
     position: 1
     display_options:
@@ -889,7 +889,7 @@ display:
       path: admin/content/media
       menu:
         type: tab
-        title: Media
+        title: Մեդիա
         description: ''
         weight: 0
         expanded: false

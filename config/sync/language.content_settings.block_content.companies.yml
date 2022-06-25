@@ -1,0 +1,11 @@
+uuid: 574d92c4-b07f-466e-a7fa-c0d854fc5175
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.companies
+id: block_content.companies
+target_entity_type_id: block_content
+target_bundle: companies
+default_langcode: site_default
+language_alterable: false

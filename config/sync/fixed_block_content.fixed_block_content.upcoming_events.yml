@@ -1,0 +1,14 @@
+uuid: 53d23de9-cad8-4385-8f78-fd9ff1f48b3f
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_block
+  content:
+    - 'block_content:cta_block:4817224a-e26f-41fd-a11c-43cf0fb7605d'
+id: upcoming_events
+title: 'Upcoming Events'
+block_content_bundle: cta_block
+default_content: '{"_links":{"self":{"href":"https:\/\/drupal.am.lndo.site\/hy\/block\/31?_format=hal_json"},"type":{"href":"http:\/\/fixed_block_content.drupal.org\/rest\/type\/block_content\/cta_block"},"http:\/\/fixed_block_content.drupal.org\/rest\/relation\/block_content\/cta_block\/content_translation_uid":[{"href":"https:\/\/drupal.am.lndo.site\/en\/user\/1?_format=hal_json","lang":"hy"}]},"langcode":[{"value":"hy","lang":"hy"}],"type":[{"target_id":"cta_block"}],"status":[{"value":true,"lang":"hy"}],"info":[{"value":"Upcoming Events","lang":"hy"}],"reusable":[{"value":true}],"default_langcode":[{"value":true,"lang":"hy"}],"revision_translation_affected":[{"value":true,"lang":"hy"}],"content_translation_source":[{"value":"und","lang":"hy"}],"content_translation_outdated":[{"value":false,"lang":"hy"}],"_embedded":{"http:\/\/fixed_block_content.drupal.org\/rest\/relation\/block_content\/cta_block\/content_translation_uid":[{"_links":{"self":{"href":"https:\/\/drupal.am.lndo.site\/en\/user\/1?_format=hal_json"},"type":{"href":"http:\/\/fixed_block_content.drupal.org\/rest\/type\/user\/user"}},"uuid":[{"value":"f816bbd3-5791-4987-97ac-d92d22e17612"}],"lang":"hy"}]},"content_translation_created":[{"value":"2022-06-23T11:57:34+00:00","lang":"hy","format":"Y-m-d\\TH:i:sP"}],"field_cta_block_style":[{"value":"bottom_wave"}],"field_cta_block_url":[{"uri":"internal:\/","title":"Drupal community meetup on June 15","options":[]}]}'
+auto_export: 2
+protected: false

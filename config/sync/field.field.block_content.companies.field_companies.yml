@@ -1,0 +1,52 @@
+uuid: 9899bfc8-5e8c-47e0-826a-76be6b123c80
+langcode: hy
+status: true
+dependencies:
+  config:
+    - block_content.type.companies
+    - field.storage.block_content.field_companies
+    - paragraphs.paragraphs_type.company
+  module:
+    - entity_reference_revisions
+id: block_content.companies.field_companies
+field_name: field_companies
+entity_type: block_content
+bundle: companies
+label: Companies
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      company: company
+    negate: 0
+    target_bundles_drag_drop:
+      card:
+        weight: 9
+        enabled: false
+      company:
+        weight: 10
+        enabled: true
+      testimonial:
+        weight: 11
+        enabled: false
+      two_columns_4_8:
+        weight: 12
+        enabled: false
+      two_columns_5_7:
+        weight: 13
+        enabled: false
+      two_columns_6_6:
+        weight: 14
+        enabled: false
+      two_columns_7_5:
+        weight: 15
+        enabled: false
+      two_columns_8_4:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

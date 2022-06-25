@@ -62,6 +62,7 @@
         "drupal/focal_point": "^1.3",
         "drupal/fontawesome": "^2.15",
         "drupal/image_delta_formatter": "^1.1",
+        "drupal/image_effects": "^3.2",
         "drupal/libraries": "^3.0@alpha",
         "drupal/linked_field": "^1.3",
         "drupal/linkicon": "^1.5",
@@ -73,8 +74,10 @@
         "drupal/redirect": "^1.7",
         "drupal/schema": "^2.0@alpha",
         "drupal/stage_file_proxy": "^1.2",
+        "drupal/svg_image": "^1.16",
         "drupal/token": "^1.6",
         "drupal/upgrade_status": "^3.14",
+        "drupal/webp": "^1.0@beta",
         "drush/drush": "^10.0",
         "furf/jquery-ui-touch-punch": "dev-master"
     },

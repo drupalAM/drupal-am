@@ -4,6 +4,8 @@
  * Implements hook_theme().
  */
 function signin_popup_theme(){
+  $user_id = \Drupal::currentUser()->id();
+
   return [
     'join_now_block' => [
       'variables' => [
