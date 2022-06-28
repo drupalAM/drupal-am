@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a146d231dbd7f952007afaa873fce683",
+    "content-hash": "c7357e54068d82a926a9fd07dd2dc106",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4387,6 +4387,86 @@
             }
         },
         {
+            "name": "drupal/node_title_validation",
+            "version": "1.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/node_title_validation.git",
+                "reference": "8.x-1.22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/node_title_validation-8.x-1.22.zip",
+                "reference": "8.x-1.22",
+                "shasum": "0cb94e5c21fe0bb033b314aabb723787be042543"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.22",
+                    "datestamp": "1605654981",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Mashir",
+                    "homepage": "https://www.drupal.org/user/3245674"
+                },
+                {
+                    "name": "N.kishorekumar",
+                    "homepage": "https://www.drupal.org/user/2887361"
+                },
+                {
+                    "name": "cgomezg",
+                    "homepage": "https://www.drupal.org/user/3535094"
+                },
+                {
+                    "name": "harika gujjula",
+                    "homepage": "https://www.drupal.org/user/2978505"
+                },
+                {
+                    "name": "jcisio",
+                    "homepage": "https://www.drupal.org/user/210762"
+                },
+                {
+                    "name": "krknth",
+                    "homepage": "https://www.drupal.org/user/2659743"
+                },
+                {
+                    "name": "mahaveer003",
+                    "homepage": "https://www.drupal.org/user/3063119"
+                },
+                {
+                    "name": "neerajskydiver",
+                    "homepage": "https://www.drupal.org/user/227792"
+                },
+                {
+                    "name": "xaiwant",
+                    "homepage": "https://www.drupal.org/user/2598494"
+                }
+            ],
+            "description": "Node Title Validation is used to validate node titles with min/max characters, Blacklist special characters/words and unique node titles.",
+            "homepage": "https://www.drupal.org/project/node_title_validation",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/node_title_validation",
+                "issues": "https://www.drupal.org/project/issues/node_title_validation"
+            }
+        },
+        {
             "name": "drupal/paragraphs",
             "version": "1.14.0",
             "source": {
@@ -4828,6 +4908,57 @@
             }
         },
         {
+            "name": "drupal/svg_image",
+            "version": "1.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/svg_image.git",
+                "reference": "8.x-1.16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/svg_image-8.x-1.16.zip",
+                "reference": "8.x-1.16",
+                "shasum": "e29b6fff49aacfaf81e58059b09551b45325f633"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "enshrined/svg-sanitize": ">=0.15 <1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.16",
+                    "datestamp": "1647314248",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Yaroslav Lushnikov",
+                    "homepage": "https://www.drupal.org/user/2870933",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/2887125/committers"
+                }
+            ],
+            "description": "Overrides the standard image formatter and widget to support SVG files.",
+            "homepage": "http://drupal.org/project/svg_image",
+            "support": {
+                "source": "http://cgit.drupalcode.org/svg_image",
+                "issues": "http://drupal.org/project/svg_image"
+            }
+        },
+        {
             "name": "drupal/token",
             "version": "1.10.0",
             "source": {
@@ -4969,6 +5100,61 @@
             "homepage": "http://drupal.org/project/upgrade_status",
             "support": {
                 "source": "https://git.drupalcode.org/project/upgrade_status"
+            }
+        },
+        {
+            "name": "drupal/webp",
+            "version": "1.0.0-beta6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/webp.git",
+                "reference": "8.x-1.0-beta6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webp-8.x-1.0-beta6.zip",
+                "reference": "8.x-1.0-beta6",
+                "shasum": "8e8edd2f4a407c41724046a09b612c5b9a20f637"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "ext-gd": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta6",
+                    "datestamp": "1642191512",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Bart Vanhoutte",
+                    "homepage": "https://www.drupal.org/user/1133754",
+                    "email": "bart@croquemonsieur.be",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "alexmoreno",
+                    "homepage": "https://www.drupal.org/user/145609"
+                }
+            ],
+            "description": "Generates WebP copies of image style derivatives.",
+            "homepage": "https://www.drupal.org/project/webp",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/webp",
+                "issues": "https://www.drupal.org/project/issues/webp"
             }
         },
         {
@@ -5249,6 +5435,51 @@
                 "source": "https://github.com/enlightn/security-checker/tree/v1.10.0"
             },
             "time": "2022-02-21T22:40:16+00:00"
+        },
+        {
+            "name": "enshrined/svg-sanitize",
+            "version": "0.15.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/darylldoyle/svg-sanitizer.git",
+                "reference": "e50b83a2f1f296ca61394fe88fbfe3e896a84cf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/e50b83a2f1f296ca61394fe88fbfe3e896a84cf4",
+                "reference": "e50b83a2f1f296ca61394fe88fbfe3e896a84cf4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "php": "^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5 || ^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "enshrined\\svgSanitize\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Daryll Doyle",
+                    "email": "daryll@enshrined.co.uk"
+                }
+            ],
+            "description": "An SVG sanitizer for PHP",
+            "support": {
+                "issues": "https://github.com/darylldoyle/svg-sanitizer/issues",
+                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.15.4"
+            },
+            "time": "2022-02-21T09:13:59+00:00"
         },
         {
             "name": "furf/jquery-ui-touch-punch",
@@ -10944,6 +11175,7 @@
         "drupal/entityqueue": 5,
         "drupal/libraries": 15,
         "drupal/schema": 15,
+        "drupal/webp": 10,
         "furf/jquery-ui-touch-punch": 20
     },
     "prefer-stable": true,

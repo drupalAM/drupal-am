@@ -90,6 +90,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image_focal_point
     weight: 3
