@@ -34,10 +34,12 @@
 
   Drupal.behaviors.blogPostsListing = {
     attach: function (context, settings) {
-      $('.view-blog.view-display-id-blog_all .view-content').masonry({
-        itemSelector: '.views-row',
-        columnWidth: '.col-sm-6',
-        percentPosition: true
+      once('blogPostsListingBehavior', '.view-blog.view-display-id-blog_all .view-content', context).forEach(function (element) {
+        var msnry = new Masonry( element, {
+          itemSelector: '.views-row',
+          columnWidth: '.col-sm-6',
+          percentPosition: true
+        });
       });
     }
   };
