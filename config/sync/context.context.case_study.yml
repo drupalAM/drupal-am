@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.case_study
   module:
+    - ctools
     - node
     - views
 label: 'Case Study'
@@ -34,7 +35,7 @@ reactions:
         provider: views
         label_display: visible
         region: content
-        weight: '0'
+        weight: '6'
         custom_id: views_block_case_study_block_2
         theme: drupalam
         css_class: related-projects-block
@@ -43,6 +44,23 @@ reactions:
         context_mapping: {  }
         views_label: ''
         items_per_page: none
+      4f74bcdd-ba62-435b-9bf2-4bab0e313533:
+        uuid: 4f74bcdd-ba62-435b-9bf2-4bab0e313533
+        id: 'entity_view:node'
+        label: 'Entity view (Content)'
+        provider: ctools
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: entity_view_node
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: case_study
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: mainstage
+        third_party_settings: {  }
     include_default_blocks: 0
     saved: false
 weight: 0

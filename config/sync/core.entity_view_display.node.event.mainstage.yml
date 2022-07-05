@@ -1,0 +1,171 @@
+uuid: 6de3a651-d464-4a07-a603-4245767ec639
+langcode: hy
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.mainstage
+    - field.field.node.event.body
+    - field.field.node.event.field_blog_comments
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_speakers
+    - node.type.event
+  module:
+    - blazy
+    - datetime_range
+    - ds
+    - field_group
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      main:
+        - field_event_image
+        - group_title_wrapper
+        - node_title
+        - field_event_date
+        - field_event_location
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 21
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h1
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_group:
+    group_title_wrapper:
+      children:
+        - group_title_inner
+      label: title-wrapper
+      parent_name: ''
+      region: main
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: title-wrapper
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_title_inner:
+      children:
+        - node_title
+        - field_event_date
+        - field_event_location
+      label: title-inner
+      parent_name: group_title_wrapper
+      region: hidden
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: title-inner
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.event.mainstage
+targetEntityType: node
+bundle: event
+mode: mainstage
+content:
+  field_event_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 22
+    region: main
+  field_event_image:
+    type: blazy_media
+    label: hidden
+    settings:
+      caption: {  }
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
+      view_mode: default
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: lazy
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+    third_party_settings: {  }
+    weight: 0
+    region: main
+  field_event_location:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 23
+    region: main
+hidden:
+  body: true
+  field_blog_comments: true
+  field_event_speakers: true
+  langcode: true
+  links: true

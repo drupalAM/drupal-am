@@ -195,7 +195,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: entity_operations
-          label: Operations
+          label: Գործողություններ
           exclude: false
           alter:
             alter_text: false
@@ -249,10 +249,10 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Ֆիլտր
           reset_button: true
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Դասակարգել ըստ'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -423,7 +423,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Լեզու
             description: ''
             use_operator: false
             operator: langcode_op
@@ -586,7 +586,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Էջ
     display_plugin: page
     position: 1
     display_options:

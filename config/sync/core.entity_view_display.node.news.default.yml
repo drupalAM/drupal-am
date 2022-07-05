@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
+    - field.field.node.news.field_blog_comments
     - field.field.node.news.field_news_images
     - node.type.news
   module:
+    - blazy
+    - ds
     - text
     - user
 id: node.news.default
@@ -19,21 +22,55 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_news_images:
-    type: entity_reference_entity_view
-    label: above
+    type: blazy_media
+    label: hidden
     settings:
+      caption:
+        title: '0'
+        alt: '0'
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
       view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 102
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+    third_party_settings:
+      ds:
+        ds_limit: '1'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
     region: content
 hidden:
+  field_blog_comments: true
   langcode: true
+  links: true

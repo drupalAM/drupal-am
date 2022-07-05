@@ -13,7 +13,7 @@ _core:
 id: drupalam_main_menu
 theme: drupalam
 region: navigation_collapsible
-weight: 10
+weight: -8
 provider: null
 plugin: 'system_menu_block:main'
 settings:

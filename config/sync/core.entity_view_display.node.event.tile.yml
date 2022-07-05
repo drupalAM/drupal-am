@@ -1,0 +1,100 @@
+uuid: 505fb333-2398-4450-92ab-350dce013982
+langcode: hy
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.tile
+    - field.field.node.event.body
+    - field.field.node.event.field_blog_comments
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_speakers
+    - image.style.crop_90x90
+    - node.type.event
+  module:
+    - blazy
+    - datetime_range
+    - ds
+    - linked_field
+    - text
+    - user
+id: node.event.tile
+targetEntityType: node
+bundle: event
+mode: tile
+content:
+  field_event_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_event_image:
+    type: blazy_media
+    label: hidden
+    settings:
+      caption:
+        title: '0'
+        alt: '0'
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
+      view_mode: default
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: crop_90x90
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: 'internal:/node/[node:nid]'
+        advanced: {  }
+        token: ''
+    weight: 0
+    region: content
+  field_event_location:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_blog_comments: true
+  field_event_speakers: true
+  langcode: true
+  links: true

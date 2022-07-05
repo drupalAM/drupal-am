@@ -59,6 +59,11 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  blog__personal_blog_link:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_user_bio:
     type: text_default
     label: hidden

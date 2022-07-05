@@ -1,0 +1,113 @@
+uuid: be5b37fd-cb44-448a-a53e-03e15fa20525
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.mainstage
+    - field.field.node.news.body
+    - field.field.node.news.field_blog_comments
+    - field.field.node.news.field_news_images
+    - node.type.news
+  module:
+    - blazy
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bs_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        layout:
+          wrapper: div
+          classes:
+            row: row
+          add_layout_class: 1
+          attributes: ''
+        regions:
+          main:
+            wrapper: div
+            classes:
+              col-sm-12: col-sm-12
+            add_region_classes: 1
+            attributes: ''
+    regions:
+      main:
+        - field_news_images
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h1
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.news.mainstage
+targetEntityType: node
+bundle: news
+mode: mainstage
+content:
+  field_news_images:
+    type: blazy_media
+    label: hidden
+    settings:
+      caption:
+        title: '0'
+        alt: '0'
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
+      view_mode: default
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+    third_party_settings:
+      ds:
+        ds_limit: '1'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    weight: 0
+    region: main
+hidden:
+  body: true
+  field_blog_comments: true
+  langcode: true
+  links: true

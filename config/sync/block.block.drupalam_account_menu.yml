@@ -12,8 +12,8 @@ _core:
   default_config_hash: HrZTblWpMF4fo6BdbBcyHEu5Hp9ds1IZF3FiRd2Q8rU
 id: drupalam_account_menu
 theme: drupalam
-region: navigation_collapsible
-weight: 11
+region: hidden
+weight: -6
 provider: null
 plugin: 'system_menu_block:account'
 settings:

@@ -1,0 +1,42 @@
+uuid: f1793989-420a-4a32-8ce8-b5069d467077
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Events listing'
+name: events_listing
+group: null
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 99755243-6162-44a3-b8a1-c9f77d825640
+    context_mapping: {  }
+    pages: /events
+reactions:
+  blocks:
+    id: blocks
+    uuid: e86818d4-0009-4694-b15d-b922246965e8
+    blocks:
+      0467c3d3-dc13-45be-92bc-2ec05379c1bc:
+        uuid: 0467c3d3-dc13-45be-92bc-2ec05379c1bc
+        id: page_title_block
+        label: 'Page title'
+        provider: core
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: page_title_block
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: events_listing
+        context_mapping: {  }
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

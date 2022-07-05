@@ -9,7 +9,7 @@ _core:
 id: drupalam_local_actions
 theme: drupalam
 region: header
-weight: 20
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:

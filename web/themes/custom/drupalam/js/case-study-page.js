@@ -1,7 +1,7 @@
 (function ($, Drupal, drupalSettings) {
   'use strict';
 
-  Drupal.behaviors.boostrapTheme = {
+  Drupal.behaviors.caseStudyPage = {
     attach: function (context, settings) {
       $('.node--type-case-study .field--name-field-screens-media').slick();
       $('.node--type-case-study .field--name-field-screens-media .slick-prev').text('');

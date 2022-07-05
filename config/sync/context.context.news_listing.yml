@@ -1,0 +1,42 @@
+uuid: a1fdae6f-b739-4b5b-9f72-2d9eeb78be1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'News listing'
+name: news_listing
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: ff62020a-a9dc-4e59-8b3a-ae44f6fd4a8c
+    context_mapping: {  }
+    pages: /news
+reactions:
+  blocks:
+    id: blocks
+    uuid: 10042f48-153c-4450-906c-e7ade0a77426
+    blocks:
+      e95f6477-e0ae-4a38-ab9c-77f499eb581c:
+        uuid: e95f6477-e0ae-4a38-ab9c-77f499eb581c
+        id: page_title_block
+        label: 'Page title'
+        provider: core
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: page_title_block
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: news_listing
+        context_mapping: {  }
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

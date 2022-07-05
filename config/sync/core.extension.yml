@@ -42,6 +42,7 @@ module:
   drupalam_customization: 0
   drupalam_default_content: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
   email_registration: 0
   empty_front: 0
@@ -79,6 +80,7 @@ module:
   media_library: 0
   menu_ui: 0
   module_missing_message_fixer: 0
+  mysql: 0
   node: 0
   options: 0
   page_cache: 0
@@ -86,6 +88,7 @@ module:
   path_alias: 0
   rdf: 0
   recaptcha: 0
+  redirect: 0
   schema: 0
   search: 0
   serialization: 0

@@ -3,8 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
-    - node
     - system
 _core:
   default_config_hash: NClvkYLAdVi-hcYiArL7lFEuH8wVnjk8NoPHkfyHpxM
@@ -14,23 +12,28 @@ group: General
 description: ''
 requireAllConditions: false
 disabled: false
-conditions:
-  node_type:
-    id: node_type
-    negate: false
-    uuid: f576c27b-215c-4080-a5f2-2d0cb27b37b8
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      case_study: case_study
-      hero_slide: hero_slide
+conditions: {  }
 reactions:
   blocks:
     id: blocks
     uuid: 887bbc82-270b-4965-9904-436d530ae068
     blocks:
-      bec5f574-415d-4b90-980a-93f09a04bc42:
-        uuid: bec5f574-415d-4b90-980a-93f09a04bc42
+      f543968a-7784-49c5-9ed7-3533bd669581:
+        uuid: f543968a-7784-49c5-9ed7-3533bd669581
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '1'
+        custom_id: system_main_block
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: content
+        context_mapping: {  }
+      18db889e-1d96-4784-aab9-6d24d7df3e77:
+        uuid: 18db889e-1d96-4784-aab9-6d24d7df3e77
         id: system_messages_block
         label: Messages
         provider: system
@@ -43,36 +46,7 @@ reactions:
         unique: 0
         context_id: content
         context_mapping: {  }
-      f543968a-7784-49c5-9ed7-3533bd669581:
-        uuid: f543968a-7784-49c5-9ed7-3533bd669581
-        id: system_main_block
-        label: 'Main page content'
-        provider: system
-        label_display: '0'
-        region: content
-        weight: '-1'
-        custom_id: system_main_block
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: content
-        context_mapping: {  }
-      b5468b4c-e528-41a0-ae48-02d0ce95938b:
-        uuid: b5468b4c-e528-41a0-ae48-02d0ce95938b
-        id: 'entity_view:node'
-        label: 'Page title'
-        provider: ctools
-        label_display: '0'
-        region: header
-        weight: '-1'
-        custom_id: entity_view_node
-        theme: drupalam
-        css_class: ''
-        unique: 0
-        context_id: content
-        context_mapping:
-          entity: '@node.node_route_context:node'
-        view_mode: mainstage
+        third_party_settings: {  }
     include_default_blocks: 0
     saved: false
 weight: 0
