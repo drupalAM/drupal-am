@@ -12,7 +12,7 @@ dependencies:
     - image.style.focal_medium_220_220_
   module:
     - ds
-    - image
+    - svg_image
     - user
 third_party_settings:
   ds:
@@ -47,12 +47,23 @@ targetEntityType: user
 bundle: user
 mode: teaser
 content:
+  blog__personal_blog_link:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   user_picture:
     type: image
     label: hidden
     settings:
       image_link: content
       image_style: focal_medium_220_220_
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
     third_party_settings:
       ds:
         ft:

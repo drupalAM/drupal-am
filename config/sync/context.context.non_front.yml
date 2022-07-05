@@ -1,0 +1,59 @@
+uuid: 48fe0a49-40ce-44cd-908b-226773b0d45e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Non front'
+name: non_front
+group: General
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: true
+    uuid: 8d09a6c2-91b7-4634-a642-ad1bf4102d7e
+    context_mapping: {  }
+    pages: '<front>'
+reactions:
+  blocks:
+    id: blocks
+    uuid: 07984bc0-74f1-4e15-96d2-ab5fd2d3e26d
+    blocks:
+      b0eb6c73-89b2-4c84-b7dc-6a799428382d:
+        uuid: b0eb6c73-89b2-4c84-b7dc-6a799428382d
+        id: local_tasks_block
+        label: Tabs
+        provider: core
+        label_display: '0'
+        region: content
+        weight: '-5'
+        custom_id: local_tasks_block
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: non_front
+        context_mapping: {  }
+        primary: 1
+        secondary: 1
+        third_party_settings: {  }
+      56a028d2-8660-4a21-9c4f-1bf220dbfeb8:
+        uuid: 56a028d2-8660-4a21-9c4f-1bf220dbfeb8
+        id: system_breadcrumb_block
+        label: Breadcrumbs
+        provider: system
+        label_display: visible
+        region: content
+        weight: '-6'
+        custom_id: system_breadcrumb_block
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: non_front
+        context_mapping: {  }
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

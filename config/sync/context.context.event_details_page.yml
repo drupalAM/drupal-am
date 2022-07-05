@@ -1,0 +1,67 @@
+uuid: dc954f9f-d0b9-4eaf-82b3-bc86c6b58b7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.all_events
+  module:
+    - ctools
+    - node
+    - views
+label: 'Event details page'
+name: event_details_page
+group: 'Content Types'
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5e2b4263-e237-4569-a470-6cd552f97e20
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      event: event
+reactions:
+  blocks:
+    id: blocks
+    uuid: 30e067f3-8bd6-425f-9883-1e2061358329
+    blocks:
+      48f4be72-4620-472b-b576-e9d1925f7b36:
+        uuid: 48f4be72-4620-472b-b576-e9d1925f7b36
+        id: 'entity_view:node'
+        label: 'Entity view (Content)'
+        provider: ctools
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: entity_view_node
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: event_details_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: mainstage
+        third_party_settings: {  }
+      137f617a-b102-4dc4-913e-51f848b7ccc9:
+        uuid: 137f617a-b102-4dc4-913e-51f848b7ccc9
+        id: 'views_block:all_events-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '0'
+        custom_id: views_block_all_events_block_1
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: event_details_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

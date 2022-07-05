@@ -45,13 +45,23 @@ third_party_settings:
         - node_title
         - body
         - field_hero_image_media
-        - group_image_wrapper
     fields:
       node_title:
         plugin_id: node_title
         weight: 4
         label: hidden
         formatter: default
+        settings:
+          link: false
+          'link class': ''
+          wrapper: h1
+          class: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_group:
     group_page_header_container:
       children:

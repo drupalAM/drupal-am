@@ -2,17 +2,14 @@ uuid: b4e8062a-1621-4608-b2d9-e66579c80a6c
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:7978101d-0d7d-4789-a404-a2e4dcc86bd6'
   module:
-    - block_content
     - context
   theme:
     - drupalam
 id: license
 theme: drupalam
 region: hidden
-weight: 0
+weight: -7
 provider: null
 plugin: 'block_content:7978101d-0d7d-4789-a404-a2e4dcc86bd6'
 settings:

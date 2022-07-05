@@ -7,12 +7,12 @@ dependencies:
 id: company
 label: Company
 type: 'canonical_entities:node'
-pattern: 'company/[node:title]'
+pattern: 'companies/[node:title]'
 selection_criteria:
-  e09fcd13-7c66-4ff2-81bc-3987eaf68e9c:
+  05e1539f-8c85-4160-9429-8fc406cf9df9:
     id: 'entity_bundle:node'
     negate: false
-    uuid: e09fcd13-7c66-4ff2-81bc-3987eaf68e9c
+    uuid: 05e1539f-8c85-4160-9429-8fc406cf9df9
     context_mapping:
       node: node
     bundles:

@@ -48,6 +48,7 @@ third_party_settings:
         - node_title
         - field_term_industry
         - body
+      right:
         - field_screens_media
     fields:
       node_title:
@@ -85,7 +86,7 @@ content:
             lb-col: false
             classes: {  }
     weight: 3
-    region: left
+    region: right
   field_term_industry:
     type: entity_reference_label
     label: hidden

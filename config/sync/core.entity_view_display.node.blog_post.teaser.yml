@@ -11,8 +11,10 @@ dependencies:
     - field.field.node.blog_post.field_image_media
     - node.type.blog_post
   module:
+    - blazy
     - ds
     - field_group
+    - linked_field
     - user
 third_party_settings:
   field_group:
@@ -39,7 +41,7 @@ third_party_settings:
       label: 'Blog tags wrapper'
       parent_name: ''
       region: hidden
-      weight: 18
+      weight: 17
       format_type: html_element
       format_settings:
         classes: blog-tags
@@ -47,6 +49,25 @@ third_party_settings:
         element: div
         show_label: false
         label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+    group_news_image:
+      children:
+        - field_image_media
+      label: 'News image'
+      parent_name: ''
+      region: ds_content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: news-image
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
         attributes: ''
         effect: none
         speed: fast
@@ -68,6 +89,7 @@ third_party_settings:
         label: ''
     regions:
       ds_content:
+        - group_news_image
         - field_image_media
         - group_post_info
         - node_title
@@ -128,11 +150,40 @@ bundle: blog_post
 mode: teaser
 content:
   field_image_media:
-    type: entity_reference_entity_view
+    type: blazy_media
     label: hidden
     settings:
-      view_mode: article_teaser
-      link: false
+      caption:
+        title: '0'
+        alt: '0'
+      class: ''
+      id: ''
+      image: ''
+      link: ''
+      overlay: ''
+      title: ''
+      vanilla: false
+      layout: ''
+      view_mode: default
+      cache: 0
+      skin: ''
+      lazy: ''
+      style: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
     third_party_settings:
       ds:
         ft:
@@ -141,7 +192,13 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    weight: 0
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: 'internal:/node/[node:nid]'
+        advanced: {  }
+        token: ''
+    weight: 1
     region: ds_content
 hidden:
   body: true

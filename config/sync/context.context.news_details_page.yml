@@ -1,0 +1,67 @@
+uuid: 3eac54cd-aac5-46e5-bb2f-2b02b6379230
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_news
+  module:
+    - ctools
+    - node
+    - views
+label: 'News details page'
+name: news_details_page
+group: 'Content Types'
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 0d6a4f34-9fe1-43f2-b401-00d085fca4c7
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news: news
+reactions:
+  blocks:
+    id: blocks
+    uuid: aab5eedc-e47e-46e9-9f84-2d9e694afcea
+    blocks:
+      73a6bca7-5459-4731-b56b-acdd8f98031e:
+        uuid: 73a6bca7-5459-4731-b56b-acdd8f98031e
+        id: 'entity_view:node'
+        label: 'Entity view (Content)'
+        provider: ctools
+        label_display: '0'
+        region: header
+        weight: '0'
+        custom_id: entity_view_node
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: news_details_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: mainstage
+        third_party_settings: {  }
+      1d1afd77-d774-408a-a27b-6c6c360ea502:
+        uuid: 1d1afd77-d774-408a-a27b-6c6c360ea502
+        id: 'views_block:latest_news-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '0'
+        custom_id: views_block_latest_news_block_1
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: news_details_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

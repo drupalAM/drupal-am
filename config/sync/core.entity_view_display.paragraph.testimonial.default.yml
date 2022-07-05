@@ -12,8 +12,8 @@ dependencies:
     - paragraphs.paragraphs_type.testimonial
   module:
     - heading_formatter
-    - image
     - link
+    - svg_image
     - text
 _core:
   default_config_hash: '-edZhS2Ylt0i-dLhLoPkeZ1raSUrWfeOWpjzJnaRiaE'
@@ -55,6 +55,12 @@ content:
     settings:
       image_link: ''
       image_style: crop_90x90
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 0
     region: content

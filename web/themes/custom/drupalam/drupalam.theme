@@ -124,9 +124,8 @@ function drupalam_preprocess_image_formatter(&$vars) {
 }
 
 function drupalam_preprocess_node(&$variables) {
-
-  // Add comment count
-  if ($variables['node']->getType() == 'blog_post') {
+  // Add comment count.
+  if (in_array($variables['node']->getType(), ['blog_post', 'news'])) {
     $variables['comment_count'] = $variables['node']->get('field_blog_comments')->comment_count;
   }
 }

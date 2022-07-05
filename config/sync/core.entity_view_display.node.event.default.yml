@@ -3,13 +3,16 @@ langcode: hy
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.event.body
+    - field.field.node.event.field_blog_comments
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_speakers
     - node.type.event
   module:
+    - comment
     - datetime_range
     - text
     - user
@@ -24,6 +27,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_blog_comments:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_event_date:
     type: daterange_default

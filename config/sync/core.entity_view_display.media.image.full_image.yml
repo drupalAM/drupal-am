@@ -8,7 +8,7 @@ dependencies:
     - media.type.image
   module:
     - ds
-    - image
+    - svg_image
 id: media.image.full_image
 targetEntityType: media
 bundle: image
@@ -20,6 +20,12 @@ content:
     settings:
       image_link: ''
       image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
     third_party_settings:
       ds:
         ft:

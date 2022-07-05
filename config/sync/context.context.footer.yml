@@ -126,14 +126,14 @@ reactions:
         unique: 0
         context_id: footer
         context_mapping: {  }
+        status: true
+        info: ''
+        view_mode: full
         parent_wrapper:
           parent: footer_columns
         all_parents:
           - footer_column_container
           - footer_columns
-        status: true
-        info: ''
-        view_mode: full
         third_party_settings: {  }
       076e1ad9-577f-49c4-a39a-a253a141d008:
         uuid: 076e1ad9-577f-49c4-a39a-a253a141d008
@@ -149,14 +149,14 @@ reactions:
         unique: 0
         context_id: footer
         context_mapping: {  }
+        status: true
+        info: ''
+        view_mode: full
         parent_wrapper:
           parent: footer_bottom_container
         all_parents:
           - footer_bottom
           - footer_bottom_container
-        status: true
-        info: ''
-        view_mode: full
         third_party_settings: {  }
       f1338038-fb71-4ddd-a173-673a5e76cf16:
         uuid: f1338038-fb71-4ddd-a173-673a5e76cf16

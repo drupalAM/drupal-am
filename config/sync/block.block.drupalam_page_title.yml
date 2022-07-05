@@ -2,6 +2,8 @@ uuid: 0237f6a7-09ec-4255-aecc-f7ef640c76b8
 langcode: en
 status: true
 dependencies:
+  module:
+    - context
   theme:
     - drupalam
 _core:
@@ -9,7 +11,7 @@ _core:
 id: drupalam_page_title
 theme: drupalam
 region: header
-weight: 0
+weight: -8
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,23 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  context:
+    id: context
+    negate: null
+    values: case_study
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid

@@ -74,7 +74,7 @@ reactions:
         provider: views
         label_display: visible
         region: content
-        weight: '0'
+        weight: '7'
         custom_id: views_block_blog_posts_related_posts_block
         theme: drupalam
         css_class: ''
