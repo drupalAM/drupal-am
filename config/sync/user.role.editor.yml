@@ -1,11 +1,196 @@
 uuid: 9575053c-589c-4df1-9dd1-56b803a02150
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - entityqueue.entity_queue.featured_community_members
+    - entityqueue.entity_queue.homepage_case_study
+    - entityqueue.entity_queue.homepage_hero_slider
+    - media.type.image
+    - node.type.article
+    - node.type.blog_post
+    - node.type.case_study
+    - node.type.company
+    - node.type.event
+    - node.type.hero_slide
+    - node.type.news
+    - node.type.page
+    - taxonomy.vocabulary.blog_categories
+    - taxonomy.vocabulary.blog_tags
+    - taxonomy.vocabulary.industries
+    - taxonomy.vocabulary.project_categories
+    - taxonomy.vocabulary.tag
+  module:
+    - block_content
+    - comment
+    - content_translation
+    - entityqueue
+    - file
+    - locale
+    - media
+    - menu_link_content
+    - node
+    - paragraphs
+    - path
+    - redirect
+    - schema
+    - search
+    - stage_file_proxy
+    - system
+    - taxonomy
+    - toolbar
 _core:
   default_config_hash: ql369IKCseDxfsxdeAurgCSBb2lBnJeGyjlj3-1bYYs
 id: editor
 label: Editor
 weight: 3
 is_admin: false
-permissions: {  }
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'administer comments'
+  - 'administer content translation'
+  - 'administer media'
+  - 'administer media types'
+  - 'administer nodes'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer schema'
+  - 'administer search'
+  - 'administer stage_file_proxy settings'
+  - 'administer taxonomy'
+  - 'create article content'
+  - 'create blog_post content'
+  - 'create case_study content'
+  - 'create company content'
+  - 'create content translations'
+  - 'create event content'
+  - 'create hero_slide content'
+  - 'create image media'
+  - 'create media'
+  - 'create news content'
+  - 'create page content'
+  - 'create terms in blog_categories'
+  - 'create terms in blog_tags'
+  - 'create terms in industries'
+  - 'create terms in project_categories'
+  - 'create terms in tag'
+  - 'create url aliases'
+  - 'delete all revisions'
+  - 'delete any article content'
+  - 'delete any blog_post content'
+  - 'delete any case_study content'
+  - 'delete any company content'
+  - 'delete any event content'
+  - 'delete any hero_slide content'
+  - 'delete any image media'
+  - 'delete any media'
+  - 'delete any news content'
+  - 'delete any page content'
+  - 'delete article revisions'
+  - 'delete blog_post revisions'
+  - 'delete case_study revisions'
+  - 'delete company revisions'
+  - 'delete content translations'
+  - 'delete event revisions'
+  - 'delete hero_slide revisions'
+  - 'delete media'
+  - 'delete news revisions'
+  - 'delete own article content'
+  - 'delete own blog_post content'
+  - 'delete own case_study content'
+  - 'delete own company content'
+  - 'delete own event content'
+  - 'delete own hero_slide content'
+  - 'delete own image media'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'delete terms in blog_categories'
+  - 'delete terms in blog_tags'
+  - 'delete terms in industries'
+  - 'delete terms in project_categories'
+  - 'delete terms in tag'
+  - 'edit any article content'
+  - 'edit any blog_post content'
+  - 'edit any case_study content'
+  - 'edit any company content'
+  - 'edit any event content'
+  - 'edit any hero_slide content'
+  - 'edit any image media'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit own article content'
+  - 'edit own blog_post content'
+  - 'edit own case_study content'
+  - 'edit own company content'
+  - 'edit own event content'
+  - 'edit own hero_slide content'
+  - 'edit own image media'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit terms in blog_categories'
+  - 'edit terms in blog_tags'
+  - 'edit terms in industries'
+  - 'edit terms in project_categories'
+  - 'edit terms in tag'
+  - 'manipulate all entityqueues'
+  - 'manipulate entityqueues'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert blog_post revisions'
+  - 'revert case_study revisions'
+  - 'revert company revisions'
+  - 'revert event revisions'
+  - 'revert hero_slide revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'skip comment approval'
+  - 'translate any entity'
+  - 'translate article node'
+  - 'translate block_content'
+  - 'translate blog_categories taxonomy_term'
+  - 'translate blog_post node'
+  - 'translate blog_tags taxonomy_term'
+  - 'translate case_study node'
+  - 'translate company node'
+  - 'translate editable entities'
+  - 'translate event node'
+  - 'translate featured_community_members entity_subqueue'
+  - 'translate hero_slide node'
+  - 'translate homepage_case_study entity_subqueue'
+  - 'translate homepage_hero_slider entity_subqueue'
+  - 'translate image media'
+  - 'translate industries taxonomy_term'
+  - 'translate interface'
+  - 'translate menu_link_content'
+  - 'translate news node'
+  - 'translate page node'
+  - 'translate paragraph'
+  - 'translate project_categories taxonomy_term'
+  - 'translate tag taxonomy_term'
+  - 'translate user'
+  - 'update any media'
+  - 'update companies_frontpage entityqueue'
+  - 'update content translations'
+  - 'update featured_community_members entityqueue'
+  - 'update homepage_case_study entityqueue'
+  - 'update homepage_hero_slider entityqueue'
+  - 'update media'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view article revisions'
+  - 'view blog_post revisions'
+  - 'view case_study revisions'
+  - 'view company revisions'
+  - 'view event revisions'
+  - 'view hero_slide revisions'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view unpublished paragraphs'
