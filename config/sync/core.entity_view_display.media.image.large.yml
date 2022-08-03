@@ -21,12 +21,12 @@ content:
     settings:
       image_link: ''
       image_style: large_1920_x_1080_
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: ''
-        height: ''
-      svg_render_as_image: true
     third_party_settings:
       ds:
         ft:
