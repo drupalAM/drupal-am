@@ -8802,26 +8802,9 @@ ul#cs-navigation li span {
   border-radius: 0;
   cursor: pointer; }
 
-
-.navbar .header-blocks {
-  display: flex;
-  align-items: center; }
-  @media (max-width: 767px) {
-    .navbar .header-blocks .navbar-header {
-      width: 100%;
-      padding-right: 0; } }
-  .navbar .header-blocks .col-md-10.col-sm-10 {
-    padding-right: 0; }
-    @media (max-width: 767px) {
-      .navbar .header-blocks .col-md-10.col-sm-10 {
-        position: absolute;
-        width: 100%;
-        top: 71px; } }
-
 .cs-prev-arrow {
   left: 0;
   background-position: left top; }
-
 
 .cs-thumbnail {
   position: absolute;
@@ -8836,26 +8819,8 @@ ul#cs-navigation li span {
   filter: alpha(opacity=0);
   transition: all 0.5s ease; }
 
-.navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
-  color: #ffffff;
-  display: block;
-  font-weight: 600;
-  text-transform: uppercase;
-  max-width: max-content;
-  height: max-content;
-  padding: 7px 20px;
-  border-radius: 50px;
-  background: #0678BE;
-  border: 2px solid #0678BE;
-  transition: .3s ease; }
-  @media (max-width: 767px) {
-    .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
-      background: #0678BE;
-      border-color: #0678BE; } }
-
 .cs-next-arrow .cs-thumbnail {
   left: -50px; }
-
 
 .cs-prev-arrow .cs-thumbnail {
   right: -50px;
@@ -9878,7 +9843,8 @@ body.page-node-type-blog-post .page-bottom {
       width: 95%; } }
 
 .navbar .header-blocks {
-  display: flex; }
+  display: flex;
+  align-items: center; }
   @media (max-width: 767px) {
     .navbar .header-blocks .navbar-header {
       width: 100%;
@@ -9890,6 +9856,9 @@ body.page-node-type-blog-post .page-bottom {
         position: absolute;
         width: 100%;
         top: 71px; } }
+
+.navbar .block-join-now-block .contextual {
+  right: -28px; }
 
 @media (max-width: 767px) {
   .navbar .block-signin-popup.block-join-now-block .join-block-wrapper {
@@ -9910,8 +9879,7 @@ body.page-node-type-blog-post .page-bottom {
   @media (max-width: 767px) {
     .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
       background: #0678BE;
-      border-color: #0678BE;
-      margin: 15px auto; } }
+      border-color: #0678BE; } }
 
 .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper {
   width: 30px;
