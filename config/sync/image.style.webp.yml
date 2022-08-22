@@ -1,0 +1,13 @@
+uuid: 74d9472b-4516-4b43-8055-7e4cc1d4818f
+langcode: hy
+status: true
+dependencies: {  }
+name: webp
+label: WebP
+effects:
+  7f8cd7db-3880-4008-944f-b65a77521056:
+    uuid: 7f8cd7db-3880-4008-944f-b65a77521056
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp
