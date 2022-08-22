@@ -33,3 +33,9 @@ effects:
         right: 0
         top: 0
         bottom: 0
+  84f29c52-e2b9-4bf0-8ce0-279eeafa2285:
+    uuid: 84f29c52-e2b9-4bf0-8ce0-279eeafa2285
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
