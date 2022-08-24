@@ -1,0 +1,17 @@
+uuid: fb4325d0-ad3f-4cc5-8ff3-ddab59e9c0a7
+langcode: hy
+status: true
+dependencies:
+  module:
+    - focal_point
+name: ava
+label: 'Ava 220x220'
+effects:
+  818979fe-3a7e-4ead-bd6c-eabd4b164175:
+    uuid: 818979fe-3a7e-4ead-bd6c-eabd4b164175
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 220
+      height: 220
+      crop_type: focal_point
