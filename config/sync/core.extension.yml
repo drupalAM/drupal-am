@@ -15,6 +15,7 @@ module:
   bootstrap_layouts: 0
   breakpoint: 0
   captcha: 0
+  checklistapi: 0
   ckeditor: 0
   color: 0
   colorbox: 0
@@ -60,6 +61,7 @@ module:
   fixed_block_content: 0
   focal_point: 0
   fontawesome: 0
+  gdpr: 0
   hal: 0
   heading_formatter: 0
   help: 0
@@ -84,6 +86,7 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraph_view_mode: 0
   path: 0
   path_alias: 0
   rdf: 0

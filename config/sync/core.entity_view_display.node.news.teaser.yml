@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
     - field.field.node.news.field_blog_comments
+    - field.field.node.news.field_card_paragraph
     - field.field.node.news.field_news_images
     - node.type.news
   module:
@@ -86,4 +87,5 @@ content:
     region: content
 hidden:
   field_blog_comments: true
+  field_card_paragraph: true
   langcode: true
