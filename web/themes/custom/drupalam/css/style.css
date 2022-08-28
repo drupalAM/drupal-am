@@ -6281,7 +6281,26 @@ header {
             color: black;
             border-bottom: 0.3px solid #a9a9a9; }
             #navbar .navbar-collapse .region-navigation-collapsible nav ul li a .is-active {
-              color: #0678BE; } }
+              color: #0678BE; }
+          #navbar .navbar-collapse .region-navigation-collapsible nav ul li:last-child a {
+            border-bottom: 3px solid #a9a9a9; }
+        #navbar .navbar-collapse .region-navigation-collapsible .language-switcher-language-url .links {
+          padding-left: 0;
+          margin-bottom: 0;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 15px;
+          padding-bottom: 15px; }
+          #navbar .navbar-collapse .region-navigation-collapsible .language-switcher-language-url .links li {
+            list-style: none;
+            border-right: 3px solid #000;
+            line-height: 150%;
+            padding-right: 5px;
+            padding-left: 5px; }
+            #navbar .navbar-collapse .region-navigation-collapsible .language-switcher-language-url .links li:last-child {
+              border-right: 0; } }
   #navbar .logo {
     margin-right: -15px;
     padding-right: 15px;
@@ -6320,11 +6339,12 @@ header {
 
 .region-navigation-collapsible {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center; }
   @media (min-width: 767px) {
     .region-navigation-collapsible nav {
-      margin-top: 5px; } }
+      margin-top: 5px;
+      order: 2; } }
   @media screen and (max-width: 767px) {
     .region-navigation-collapsible nav ul {
       text-align: center; } }
@@ -6360,6 +6380,21 @@ header {
       width: 40px;
       margin-left: -20px;
       margin-top: -2px; }
+  @media (min-width: 767px) {
+    .region-navigation-collapsible .language-switcher-language-url {
+      order: 1; } }
+  .region-navigation-collapsible .language-switcher-language-url > .links {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0; }
+    .region-navigation-collapsible .language-switcher-language-url > .links li {
+      list-style: none;
+      border-right: 3px solid #000;
+      line-height: 150%;
+      padding-right: 5px;
+      padding-left: 5px; }
+      .region-navigation-collapsible .language-switcher-language-url > .links li:last-child {
+        border-right: 0; }
 
 .block-socialicons {
   text-align: right; }
