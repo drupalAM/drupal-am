@@ -1,0 +1,11 @@
+uuid: 7f8ee645-01d0-44ad-9ed0-6cc02a9840e9
+langcode: hy
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_file
+label: 'Convert File Entity Bundles'
+type: file
+plugin: convert_bundles_action_base
+configuration: {  }

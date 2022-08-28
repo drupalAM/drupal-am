@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6a5291d3e96146ab29de5e2ab42ec3e",
+    "content-hash": "5d29079e66d4f7ca651b64d6ede38102",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2409,6 +2409,50 @@
             }
         },
         {
+            "name": "drupal/convert_bundles",
+            "version": "1.0.0-alpha7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/convert_bundles.git",
+                "reference": "8.x-1.0-alpha7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/convert_bundles-8.x-1.0-alpha7.zip",
+                "reference": "8.x-1.0-alpha7",
+                "shasum": "54687536c1ebbbc19b28d44ccee903cee497562c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-alpha7",
+                    "datestamp": "1621952571",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "el1_1el",
+                    "homepage": "https://www.drupal.org/user/1795292"
+                }
+            ],
+            "description": "Convert entity bundles from one value to another",
+            "homepage": "https://www.drupal.org/project/convert_bundles",
+            "support": {
+                "source": "https://git.drupalcode.org/project/convert_bundles"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "9.4.3",
             "source": {
@@ -4358,6 +4402,56 @@
                 "source": "https://www.drupal.org/project/jquery_ui_touch_punch",
                 "issues": "https://www.drupal.org/project/issues/jquery_ui_touch_punch",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/language_switcher_langcode",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/language_switcher_langcode.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/language_switcher_langcode-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "cd54cd413489f55c8cf6bae65c7170185288de4c"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1645791216",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "George Anderson (geoanders)",
+                    "homepage": "https://www.drupal.org/u/geoanders",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "jlbellido",
+                    "homepage": "https://www.drupal.org/user/1225098"
+                }
+            ],
+            "description": "Alters the core Language Switcher block to display the language code for each of the links.",
+            "homepage": "https://drupal.org/project/language_switcher_langcode",
+            "support": {
+                "source": "https://git.drupalcode.org/project/language_switcher_langcode",
+                "issues": "https://drupal.org/project/issues/language_switcher_langcode"
             }
         },
         {
@@ -11479,6 +11573,7 @@
         "drupal/blog": 20,
         "drupal/context": 10,
         "drupal/context_groups": 20,
+        "drupal/convert_bundles": 15,
         "drupal/default_content": 15,
         "drupal/entityqueue": 5,
         "drupal/gdpr": 15,

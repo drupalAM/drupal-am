@@ -1,0 +1,11 @@
+uuid: 9cfd079d-dd0e-41a9-8741-8ae8eada7010
+langcode: hy
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_base_field_override
+label: 'Convert Base field override Entity Bundles'
+type: base_field_override
+plugin: convert_bundles_action_base
+configuration: {  }

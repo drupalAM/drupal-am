@@ -1,0 +1,11 @@
+uuid: 19090537-f821-4b6c-a8cb-0d973dd3fce1
+langcode: hy
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_image_style
+label: 'Convert Image style Entity Bundles'
+type: image_style
+plugin: convert_bundles_action_base
+configuration: {  }
