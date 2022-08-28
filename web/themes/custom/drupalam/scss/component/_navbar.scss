@@ -115,7 +115,7 @@ header{
         }
 
         .language-switcher-language-url {
-          .links {
+          & > .links {
             padding-left: 0;
             margin-bottom: 0;
             text-align: center;
@@ -187,6 +187,25 @@ header{
     .navbar-toggle .icon-bar{
       background: $dark-blue;
     }
+
+    .language-switcher-language-url {
+      & > .links {
+        li {
+          @include breakpoint(no_mobile) {
+            border-right: 3px solid #000;
+            &:last-child {
+              border-right: 0;
+            }
+            a {
+              color: #252525;
+              &.is-active {
+                color: #0678BE !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   @media #{$mobile} {
     background: $white;
@@ -257,7 +276,6 @@ header{
   .language-switcher-language-url {
     @include breakpoint(no_mobile) {
       order: 1;
-
     }
     & > .links {
       display: flex;
@@ -265,15 +283,27 @@ header{
       margin-bottom: 0;
       li {
         list-style: none;
-        border-right: 3px solid #000;
+
         line-height: 150%;
         padding-right: 5px;
         padding-left: 5px;
+        @include breakpoint(no_mobile) {
+          border-right: 3px solid #fff;
+        }
         &:last-child {
-          border-right: 0;
+          @include breakpoint(no_mobile) {
+            border-right: 0;
+          }
+        }
+        a {
+          @include breakpoint(no_mobile) {
+            color: #fff;
+            &.is-active {
+              color: #fff !important;
+            }
+          }
         }
       }
-
     }
   }
 }
