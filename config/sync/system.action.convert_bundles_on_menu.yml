@@ -1,0 +1,11 @@
+uuid: abbe65ca-0fff-4fc2-a048-06a35363bdf0
+langcode: hy
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_menu
+label: 'Convert Menu Entity Bundles'
+type: menu
+plugin: convert_bundles_action_base
+configuration: {  }

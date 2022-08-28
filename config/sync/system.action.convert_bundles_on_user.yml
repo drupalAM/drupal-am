@@ -1,0 +1,11 @@
+uuid: a20b7665-469d-4fe3-9af6-842b618db9f8
+langcode: hy
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_user
+label: 'Convert User Entity Bundles'
+type: user
+plugin: convert_bundles_action_base
+configuration: {  }

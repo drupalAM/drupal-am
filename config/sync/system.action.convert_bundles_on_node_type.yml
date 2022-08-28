@@ -1,0 +1,11 @@
+uuid: f054f18d-eeb6-4320-8575-ef4fa5b76f97
+langcode: hy
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_node_type
+label: 'Convert Content type Entity Bundles'
+type: node_type
+plugin: convert_bundles_action_base
+configuration: {  }

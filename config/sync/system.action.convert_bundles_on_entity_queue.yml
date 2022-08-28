@@ -1,0 +1,11 @@
+uuid: ff47a24a-b8b2-4b2d-971a-0f00e0ed20e2
+langcode: hy
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_entity_queue
+label: 'Convert Entity queue Entity Bundles'
+type: entity_queue
+plugin: convert_bundles_action_base
+configuration: {  }

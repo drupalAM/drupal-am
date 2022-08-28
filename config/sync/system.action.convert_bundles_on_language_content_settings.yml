@@ -1,0 +1,11 @@
+uuid: f1b17317-7217-4c5e-8254-1b83518b453f
+langcode: hy
+status: true
+dependencies:
+  module:
+    - convert_bundles
+id: convert_bundles_on_language_content_settings
+label: 'Convert Content Language Settings Entity Bundles'
+type: language_content_settings
+plugin: convert_bundles_action_base
+configuration: {  }

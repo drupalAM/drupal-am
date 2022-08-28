@@ -46,6 +46,7 @@
         "drupal/config_update": "^1.6",
         "drupal/context": "^4.0@beta",
         "drupal/context_groups": "^2.x-dev",
+        "drupal/convert_bundles": "^1.0@alpha",
         "drupal/core": "^9.4.1",
         "drupal/core-composer-scaffold": "9.4.3",
         "drupal/core-project-message": "9.4.3",
