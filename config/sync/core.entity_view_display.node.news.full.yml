@@ -7,10 +7,12 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.news.body
     - field.field.node.news.field_blog_comments
+    - field.field.node.news.field_card_paragraph
     - field.field.node.news.field_news_images
     - node.type.news
   module:
     - comment
+    - entity_reference_revisions
     - text
     - user
 id: node.news.full
@@ -32,12 +34,21 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_card_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   field_news_images: true

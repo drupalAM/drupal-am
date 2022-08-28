@@ -1,0 +1,52 @@
+uuid: 4a6408b2-e3b7-45f1-aa93-aab42d5c6d30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_card_paragraph
+    - node.type.news
+    - paragraphs.paragraphs_type.card
+  module:
+    - entity_reference_revisions
+id: node.news.field_card_paragraph
+field_name: field_card_paragraph
+entity_type: node
+bundle: news
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+    negate: 0
+    target_bundles_drag_drop:
+      card:
+        weight: 9
+        enabled: true
+      company:
+        weight: 10
+        enabled: false
+      testimonial:
+        weight: 11
+        enabled: false
+      two_columns_4_8:
+        weight: 12
+        enabled: false
+      two_columns_5_7:
+        weight: 13
+        enabled: false
+      two_columns_6_6:
+        weight: 14
+        enabled: false
+      two_columns_7_5:
+        weight: 15
+        enabled: false
+      two_columns_8_4:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

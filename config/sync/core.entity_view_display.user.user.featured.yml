@@ -59,21 +59,14 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ava
+      image_style: medium
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
       image_loading:
         attribute: lazy
-    third_party_settings:
-      ds:
-        ft:
-          id: default
-          settings:
-            lb: ''
-            lb-col: false
-            classes: {  }
+    third_party_settings: {  }
     weight: 0
     region: ds_content
 hidden:

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.tile
     - field.field.node.news.body
     - field.field.node.news.field_blog_comments
+    - field.field.node.news.field_card_paragraph
     - field.field.node.news.field_news_images
     - image.style.crop_90x90
     - node.type.news
@@ -74,5 +75,6 @@ content:
 hidden:
   body: true
   field_blog_comments: true
+  field_card_paragraph: true
   langcode: true
   links: true
