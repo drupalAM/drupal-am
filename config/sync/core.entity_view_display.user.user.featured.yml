@@ -9,7 +9,7 @@ dependencies:
     - field.field.user.user.field_user_friends
     - field.field.user.user.field_user_last_name
     - field.field.user.user.user_picture
-    - image.style.medium
+    - image.style.ava
   module:
     - ds
     - svg_image
@@ -30,9 +30,11 @@ third_party_settings:
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
       ds_content:
         - user_picture
+        - blog__personal_blog_link
         - 'dynamic_token_field:user-field_user_full_name'
     fields:
       'dynamic_token_field:user-field_user_full_name':
@@ -51,7 +53,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
-    region: content
+    region: ds_content
   user_picture:
     type: image
     label: hidden

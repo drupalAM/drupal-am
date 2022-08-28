@@ -11,6 +11,8 @@ function signin_popup_theme(){
       'variables' => [
         'title' => 'Default title',
         'is_anonymous' => NULL,
+        'is_editor' => NULL,
+        'langcode' => NULL,
       ],
     ],
   ];
