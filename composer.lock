@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d29079e66d4f7ca651b64d6ede38102",
+    "content-hash": "9aec76a93df1de21fcaf2d1668459e27",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4857,6 +4857,57 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/node_title_validation",
                 "issues": "https://www.drupal.org/project/issues/node_title_validation"
+            }
+        },
+        {
+            "name": "drupal/paragraph_view_mode",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/paragraph_view_mode.git",
+                "reference": "2.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/paragraph_view_mode-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "b48942ab063425c0f65f0b55a4cea6590a15add4"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9.0",
+                "drupal/paragraphs": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.3",
+                    "datestamp": "1638119867",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mariusz Andrzejewski (sayco)",
+                    "homepage": "https://www.drupal.org/u/sayco",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "volodymyr.umanets",
+                    "homepage": "https://www.drupal.org/user/3565617"
+                }
+            ],
+            "description": "This tiny module is meant to easily reuse the same paragraph types with different view mode (display mode).",
+            "homepage": "https://www.drupal.org/project/paragraph_view_mode",
+            "support": {
+                "source": "https://git.drupalcode.org/project/paragraph_view_mode",
+                "issues": "https://www.drupal.org/project/issues/paragraph_view_mode"
             }
         },
         {
