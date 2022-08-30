@@ -26,7 +26,28 @@ settings:
       card:
         weight: 3
         enabled: false
+      company:
+        weight: 11
+        enabled: false
       testimonial:
         weight: 4
+        enabled: false
+      text:
+        weight: 13
+        enabled: false
+      two_columns_4_8:
+        weight: 14
+        enabled: false
+      two_columns_5_7:
+        weight: 15
+        enabled: false
+      two_columns_6_6:
+        weight: 16
+        enabled: false
+      two_columns_7_5:
+        weight: 17
+        enabled: false
+      two_columns_8_4:
+        weight: 18
         enabled: false
 field_type: entity_reference_revisions
