@@ -34,7 +34,6 @@ third_party_settings:
     regions:
       ds_content:
         - user_picture
-        - blog__personal_blog_link
         - 'dynamic_token_field:user-field_user_full_name'
     fields:
       'dynamic_token_field:user-field_user_full_name':
@@ -49,27 +48,30 @@ targetEntityType: user
 bundle: user
 mode: featured
 content:
-  blog__personal_blog_link:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: ds_content
   user_picture:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: medium
+      image_style: ava
       svg_attributes:
         width: null
         height: null
       svg_render_as_image: true
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     weight: 0
     region: ds_content
 hidden:
+  blog__personal_blog_link: true
   field_user_bio: true
   field_user_first_name: true
   field_user_friends: true
