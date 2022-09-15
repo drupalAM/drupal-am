@@ -21,6 +21,11 @@
       }
     }
   }
+  .block-join-now-block {
+    .contextual {
+      right: -28px;
+    }
+  }
   .block-signin-popup.block-join-now-block {
     .join-block-wrapper {
       @include breakpoint(mobile) {

@@ -93,7 +93,6 @@ header{
 
         nav {
           float: none;
-
           ul {
             li {
               a {
@@ -101,17 +100,39 @@ header{
                 padding: 15px 3%;
                 color: black;
                 border-bottom: 0.3px solid #a9a9a9;
-
                 & .is-active {
                   color: $dark-blue;
                 }
               }
 
-              //&:last-child {
-              //  a {
-              //    border-bottom: unset;
-              //  }
-              //}
+              &:last-child {
+                a {
+                  border-bottom: 3px solid #a9a9a9;
+                }
+              }
+            }
+          }
+        }
+
+        .language-switcher-language-url {
+          & > .links {
+            padding-left: 0;
+            margin-bottom: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            li {
+              list-style: none;
+              border-right: 3px solid #000;
+              line-height: 150%;
+              padding-right: 5px;
+              padding-left: 5px;
+              &:last-child {
+                border-right: 0;
+              }
             }
           }
         }
@@ -166,6 +187,25 @@ header{
     .navbar-toggle .icon-bar{
       background: $dark-blue;
     }
+
+    .language-switcher-language-url {
+      & > .links {
+        li {
+          @include breakpoint(no_mobile) {
+            border-right: 3px solid #000;
+            &:last-child {
+              border-right: 0;
+            }
+            a {
+              color: #252525;
+              &.is-active {
+                color: #0678BE !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   @media #{$mobile} {
     background: $white;
@@ -186,52 +226,85 @@ header{
 // Main menu
 .region-navigation-collapsible {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   nav {
-  //float: right;
-  @include breakpoint(no_mobile) {
-    margin-top: 5px;
-  }
-  ul {
-    @media #{$mobile} {
-      text-align: center;
+    @include breakpoint(no_mobile) {
+      margin-top: 5px;
+      order: 2;
     }
+    ul {
+      @media #{$mobile} {
+        text-align: center;
+      }
       li {
-      a {
-        @include transition(color 0.3s ease);
-        text-transform: uppercase;
-        font-size: 12px;
-        letter-spacing: 1px;
+        a {
+          @include transition(color 0.3s ease);
+          text-transform: uppercase;
+          font-size: 12px;
+          letter-spacing: 1px;
 
-        &:after {
-          @include transition(all 0.2s ease);
-          position: absolute;
-          bottom: 5px;
-          left: 50%;
-          display: block;
-          overflow: hidden;
-          margin-left: 0px;
-          width: 0px;
-          height: 0px;
-          background: $white;
-          //content: '-';
-          text-indent: -999em;
-          border-radius: 7px;
-        }
-
-        &:hover {
           &:after {
-            bottom: 0;
-            height: 2px;
-            width: 40px;
-            margin-left: -20px;
-            margin-top: -2px;
+            @include transition(all 0.2s ease);
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            display: block;
+            overflow: hidden;
+            margin-left: 0px;
+            width: 0px;
+            height: 0px;
+            background: $white;
+            //content: '-';
+            text-indent: -999em;
+            border-radius: 7px;
+          }
+
+          &:hover {
+            &:after {
+              bottom: 0;
+              height: 2px;
+              width: 40px;
+              margin-left: -20px;
+              margin-top: -2px;
+            }
           }
         }
       }
     }
-   }
+  }
+  .language-switcher-language-url {
+    @include breakpoint(no_mobile) {
+      order: 1;
+    }
+    & > .links {
+      display: flex;
+      padding-left: 0;
+      margin-bottom: 0;
+      li {
+        list-style: none;
+
+        line-height: 150%;
+        padding-right: 5px;
+        padding-left: 5px;
+        @include breakpoint(no_mobile) {
+          border-right: 3px solid #fff;
+        }
+        &:last-child {
+          @include breakpoint(no_mobile) {
+            border-right: 0;
+          }
+        }
+        a {
+          @include breakpoint(no_mobile) {
+            color: #fff;
+            &.is-active {
+              color: #fff !important;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

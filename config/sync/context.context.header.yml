@@ -5,6 +5,7 @@ dependencies:
   config:
     - system.menu.main
   module:
+    - language
     - signin_popup
     - system
 _core:
@@ -86,6 +87,21 @@ reactions:
         context_mapping: {  }
         primary: 1
         secondary: 1
+        third_party_settings: {  }
+      93cc73b7-5c83-441e-a1b6-1a9719f5dbd3:
+        uuid: 93cc73b7-5c83-441e-a1b6-1a9719f5dbd3
+        id: 'language_block:language_interface'
+        label: 'Language switcher'
+        provider: language
+        label_display: '0'
+        region: navigation_collapsible
+        weight: '0'
+        custom_id: language_block_language_interface
+        theme: drupalam
+        css_class: ''
+        unique: 0
+        context_id: header
+        context_mapping: {  }
         third_party_settings: {  }
     include_default_blocks: 0
     saved: false

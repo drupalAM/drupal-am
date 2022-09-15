@@ -8,17 +8,24 @@
       {{ "Join now" | t }}</a>
   </div>
   {% else %}
-<div class="dropdown-menu-wrapper">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="User">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 288c79.53 0 144-64.47 144-144s-64.47-144-144-144c-79.52 0-144 64.47-144 144S176.5 288 256 288zM351.1 320H160c-88.36 0-160 71.63-160 160c0 17.67 14.33 32 31.1 32H480c17.67 0 31.1-14.33 31.1-32C512 391.6 440.4 320 351.1 320z"/></svg>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-        <li class="dropdown-item"><a href="{{ path('entity.user.canonical', {'user': user.id}) }}">{{ 'My Account'|t }}</a></li>
-        <li class="dropdown-item"><a href="{{ path('entity.user.edit_form', {'user': user.id}) }}">{{ 'Edit Profile'|t }}</a></li>
-        <li class="dropdown-item"><a href="{{ path('user.logout') }}">{{ "Log out" | t }}</a></li>
-      </ul>
+    <div class="dropdown-menu-wrapper">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 288c79.53 0 144-64.47 144-144s-64.47-144-144-144c-79.52 0-144 64.47-144 144S176.5 288 256 288zM351.1 320H160c-88.36 0-160 71.63-160 160c0 17.67 14.33 32 31.1 32H480c17.67 0 31.1-14.33 31.1-32C512 391.6 440.4 320 351.1 320z"/></svg>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            {% if is_editor %}
+              <li class="dropdown-item"><a href="/{{ langcode }}/node/add/news">{{ 'Add News'|t }}</a></li>
+              <li class="dropdown-item"><a href="/{{ langcode }}/node/add/blog_post">{{ 'Add Blog post'|t }}</a></li>
+              <li class="dropdown-item"><a href="/{{ langcode }}/node/add/event">{{ 'Add Event'|t }}</a></li>
+              <li class="dropdown-item"><a href="/{{ langcode }}/node/add/case_study">{{ 'Add Case study'|t }}</a></li>
+              <li class="dropdown-item"><a href="/{{ langcode }}/node/add/company">{{ 'Add Company'|t }}</a></li>
+            {% endif %}
+            <li class="dropdown-item"><a href="{{ path('entity.user.canonical', {'user': user.id}) }}">{{ 'My Account'|t }}</a></li>
+            <li class="dropdown-item"><a href="{{ path('entity.user.edit_form', {'user': user.id}) }}">{{ 'Edit Profile'|t }}</a></li>
+            <li class="dropdown-item"><a href="{{ path('user.logout') }}">{{ "Log out" | t }}</a></li>
+          </ul>
+        </div>
     </div>
-</div>
   {% endif %}
 </div>

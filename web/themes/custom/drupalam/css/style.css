@@ -6281,7 +6281,26 @@ header {
             color: black;
             border-bottom: 0.3px solid #a9a9a9; }
             #navbar .navbar-collapse .region-navigation-collapsible nav ul li a .is-active {
-              color: #0678BE; } }
+              color: #0678BE; }
+          #navbar .navbar-collapse .region-navigation-collapsible nav ul li:last-child a {
+            border-bottom: 3px solid #a9a9a9; }
+        #navbar .navbar-collapse .region-navigation-collapsible .language-switcher-language-url > .links {
+          padding-left: 0;
+          margin-bottom: 0;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 15px;
+          padding-bottom: 15px; }
+          #navbar .navbar-collapse .region-navigation-collapsible .language-switcher-language-url > .links li {
+            list-style: none;
+            border-right: 3px solid #000;
+            line-height: 150%;
+            padding-right: 5px;
+            padding-left: 5px; }
+            #navbar .navbar-collapse .region-navigation-collapsible .language-switcher-language-url > .links li:last-child {
+              border-right: 0; } }
   #navbar .logo {
     margin-right: -15px;
     padding-right: 15px;
@@ -6309,6 +6328,15 @@ header {
       filter: brightness(0) saturate(100%) invert(7%) sepia(7%) saturate(10%) hue-rotate(320deg) brightness(91%) contrast(84%); }
     #navbar.navbar-scrolled-top .navbar-toggle .icon-bar {
       background: #0678BE; }
+    @media (min-width: 767px) {
+      #navbar.navbar-scrolled-top .language-switcher-language-url > .links li {
+        border-right: 3px solid #000; }
+        #navbar.navbar-scrolled-top .language-switcher-language-url > .links li:last-child {
+          border-right: 0; }
+        #navbar.navbar-scrolled-top .language-switcher-language-url > .links li a {
+          color: #252525; }
+          #navbar.navbar-scrolled-top .language-switcher-language-url > .links li a.is-active {
+            color: #0678BE !important; } }
   @media screen and (max-width: 767px) {
     #navbar {
       background: #fff;
@@ -6320,11 +6348,12 @@ header {
 
 .region-navigation-collapsible {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center; }
   @media (min-width: 767px) {
     .region-navigation-collapsible nav {
-      margin-top: 5px; } }
+      margin-top: 5px;
+      order: 2; } }
   @media screen and (max-width: 767px) {
     .region-navigation-collapsible nav ul {
       text-align: center; } }
@@ -6360,6 +6389,29 @@ header {
       width: 40px;
       margin-left: -20px;
       margin-top: -2px; }
+  @media (min-width: 767px) {
+    .region-navigation-collapsible .language-switcher-language-url {
+      order: 1; } }
+  .region-navigation-collapsible .language-switcher-language-url > .links {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0; }
+    .region-navigation-collapsible .language-switcher-language-url > .links li {
+      list-style: none;
+      line-height: 150%;
+      padding-right: 5px;
+      padding-left: 5px; }
+      @media (min-width: 767px) {
+        .region-navigation-collapsible .language-switcher-language-url > .links li {
+          border-right: 3px solid #fff; } }
+      @media (min-width: 767px) {
+        .region-navigation-collapsible .language-switcher-language-url > .links li:last-child {
+          border-right: 0; } }
+      @media (min-width: 767px) {
+        .region-navigation-collapsible .language-switcher-language-url > .links li a {
+          color: #fff; }
+          .region-navigation-collapsible .language-switcher-language-url > .links li a.is-active {
+            color: #fff !important; } }
 
 .block-socialicons {
   text-align: right; }
@@ -8802,26 +8854,9 @@ ul#cs-navigation li span {
   border-radius: 0;
   cursor: pointer; }
 
-
-.navbar .header-blocks {
-  display: flex;
-  align-items: center; }
-  @media (max-width: 767px) {
-    .navbar .header-blocks .navbar-header {
-      width: 100%;
-      padding-right: 0; } }
-  .navbar .header-blocks .col-md-10.col-sm-10 {
-    padding-right: 0; }
-    @media (max-width: 767px) {
-      .navbar .header-blocks .col-md-10.col-sm-10 {
-        position: absolute;
-        width: 100%;
-        top: 71px; } }
-
 .cs-prev-arrow {
   left: 0;
   background-position: left top; }
-
 
 .cs-thumbnail {
   position: absolute;
@@ -8836,26 +8871,8 @@ ul#cs-navigation li span {
   filter: alpha(opacity=0);
   transition: all 0.5s ease; }
 
-.navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
-  color: #ffffff;
-  display: block;
-  font-weight: 600;
-  text-transform: uppercase;
-  max-width: max-content;
-  height: max-content;
-  padding: 7px 20px;
-  border-radius: 50px;
-  background: #0678BE;
-  border: 2px solid #0678BE;
-  transition: .3s ease; }
-  @media (max-width: 767px) {
-    .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
-      background: #0678BE;
-      border-color: #0678BE; } }
-
 .cs-next-arrow .cs-thumbnail {
   left: -50px; }
-
 
 .cs-prev-arrow .cs-thumbnail {
   right: -50px;
@@ -9878,7 +9895,8 @@ body.page-node-type-blog-post .page-bottom {
       width: 95%; } }
 
 .navbar .header-blocks {
-  display: flex; }
+  display: flex;
+  align-items: center; }
   @media (max-width: 767px) {
     .navbar .header-blocks .navbar-header {
       width: 100%;
@@ -9890,6 +9908,9 @@ body.page-node-type-blog-post .page-bottom {
         position: absolute;
         width: 100%;
         top: 71px; } }
+
+.navbar .block-join-now-block .contextual {
+  right: -28px; }
 
 @media (max-width: 767px) {
   .navbar .block-signin-popup.block-join-now-block .join-block-wrapper {
@@ -9910,8 +9931,7 @@ body.page-node-type-blog-post .page-bottom {
   @media (max-width: 767px) {
     .navbar .block-signin-popup.block-join-now-block .join-block-wrapper .login-btn-wrapper a {
       background: #0678BE;
-      border-color: #0678BE;
-      margin: 15px auto; } }
+      border-color: #0678BE; } }
 
 .navbar .block-signin-popup.block-join-now-block .logout-wrapper .dropdown-menu-wrapper {
   width: 30px;

@@ -1,12 +1,18 @@
 uuid: ade44180-5787-4383-8da2-0c00858e56c8
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - paragraph_view_mode
+third_party_settings:
+  paragraph_view_mode:
+    enabled: true
+    label: P
 _core:
   default_config_hash: frOWouxw06AFhz-hj3ehzcnYSA_c81Zb6er34q9XK7k
 id: card
 label: Card
 icon_uuid: null
 icon_default: null
-description: null
+description: ''
 behavior_plugins: {  }
