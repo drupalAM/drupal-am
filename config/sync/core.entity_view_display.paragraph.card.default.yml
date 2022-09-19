@@ -6,7 +6,8 @@ dependencies:
     - field.field.paragraph.card.field_card_link
     - field.field.paragraph.card.field_card_text
     - field.field.paragraph.card.field_icon
-    - image.style.medium
+    - field.field.paragraph.card.paragraph_view_mode
+    - image.style.crop_90x90
     - paragraphs.paragraphs_type.card
   module:
     - ds
@@ -23,15 +24,14 @@ third_party_settings:
       entity_classes: all_classes
       settings:
         classes:
-          layout_class:
-            parallax-element: parallax-element
-          ds_content: {  }
+          layout_class: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        label: ''
     regions:
       ds_content:
         - field_icon
@@ -68,19 +68,28 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: medium
+      image_style: crop_90x90
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: ''
-        height: ''
-      svg_render_as_image: true
     third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
       linked_field:
         linked: '1'
         type: field
         destination: field_card_link
         advanced: {  }
+        token: ''
     weight: 0
     region: ds_content
-hidden: {  }
+hidden:
+  paragraph_view_mode: true

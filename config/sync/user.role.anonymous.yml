@@ -9,6 +9,7 @@ dependencies:
     - contact
     - filter
     - media
+    - search
     - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
@@ -23,5 +24,7 @@ permissions:
   - 'access user profiles'
   - 'edit own comments'
   - 'post comments'
+  - 'search content'
+  - 'use advanced search'
   - 'use text format restricted_html'
   - 'view media'

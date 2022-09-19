@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - media.type.image
   module:
     - comment
     - contact
     - filter
     - fontawesome
     - media
+    - node
+    - search
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -23,7 +26,17 @@ permissions:
   - 'access fontawesome additional settings'
   - 'access site-wide contact form'
   - 'access user profiles'
+  - 'create image media'
+  - 'create media'
+  - 'delete media'
+  - 'delete own image media'
   - 'edit own comments'
+  - 'edit own image media'
   - 'post comments'
+  - 'search content'
+  - 'update media'
+  - 'use advanced search'
   - 'use text format basic_html'
   - 'view media'
+  - 'view own unpublished content'
+  - 'view own unpublished media'

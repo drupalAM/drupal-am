@@ -6,13 +6,15 @@ dependencies:
     - field.field.paragraph.card.field_card_link
     - field.field.paragraph.card.field_card_text
     - field.field.paragraph.card.field_icon
+    - field.field.paragraph.card.paragraph_view_mode
     - image.style.thumbnail
     - paragraphs.paragraphs_type.card
   module:
     - field_layout
-    - image
     - layout_discovery
     - link
+    - paragraph_view_mode
+    - svg_image
     - text
 third_party_settings:
   field_layout:
@@ -49,6 +51,20 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    region: content
+    settings:
+      view_modes:
+        default: Default
+      default_view_mode: default
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
