@@ -44,7 +44,7 @@
         "drupal/colorbox": "^1.4",
         "drupal/config_ignore": "^2.2",
         "drupal/config_update": "^1.6",
-        "drupal/context": "^4.0@beta",
+        "drupal/context": "4.x-dev",
         "drupal/context_groups": "^2.x-dev",
         "drupal/core": "^9.4.1",
         "drupal/core-composer-scaffold": "9.4.3",

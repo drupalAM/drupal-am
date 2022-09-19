@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1373fc5a80fecd211cba1b5681a82e0a",
+    "content-hash": "c56049a34c671bbbc591ebcbed60bbb5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2097,29 +2097,26 @@
         },
         {
             "name": "drupal/context",
-            "version": "4.1.0",
+            "version": "dev-4.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/context.git",
-                "reference": "8.x-4.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/context-8.x-4.1.zip",
-                "reference": "8.x-4.1",
-                "shasum": "5cfee680f7299d82b584502479c85566bb4285c1"
+                "reference": "86f2ca419bc0d89bc38541283e48bbfd622486e2"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-4.1",
-                    "datestamp": "1628187190",
+                    "version": "8.x-4.1+13-dev",
+                    "datestamp": "1662386887",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2133,14 +2130,6 @@
                     "homepage": "http://www.oddhill.se/",
                     "email": "christoffer.palm@oddhill.se",
                     "role": "Developer"
-                },
-                {
-                    "name": "Steven Jones",
-                    "homepage": "https://www.drupal.org/user/99644"
-                },
-                {
-                    "name": "alex_b",
-                    "homepage": "https://www.drupal.org/user/53995"
                 },
                 {
                     "name": "boshtian",
@@ -2179,12 +2168,20 @@
                     "homepage": "https://www.drupal.org/user/4481"
                 },
                 {
+                    "name": "NormySan",
+                    "homepage": "https://www.drupal.org/user/112352"
+                },
+                {
                     "name": "patricksettle",
                     "homepage": "https://www.drupal.org/user/26618"
                 },
                 {
                     "name": "paulocs",
                     "homepage": "https://www.drupal.org/user/3640109"
+                },
+                {
+                    "name": "Steven Jones",
+                    "homepage": "https://www.drupal.org/user/99644"
                 },
                 {
                     "name": "tekante",
@@ -11171,7 +11168,7 @@
     "stability-flags": {
         "drupal/better_normalizers": 10,
         "drupal/blog": 20,
-        "drupal/context": 10,
+        "drupal/context": 20,
         "drupal/context_groups": 20,
         "drupal/default_content": 15,
         "drupal/entityqueue": 5,

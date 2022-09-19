@@ -1072,7 +1072,7 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.7;
-  color: #424242;
+  color: #000000;
   background-color: #fff; }
 
 input,
@@ -2333,7 +2333,7 @@ output {
   padding-top: 9px;
   font-size: 14px;
   line-height: 1.7;
-  color: #7a7a7a; }
+  color: #000000; }
 
 .form-control {
   display: block;
@@ -2342,7 +2342,7 @@ output {
   padding: 8px 25px;
   font-size: 14px;
   line-height: 1.7;
-  color: #7a7a7a;
+  color: #000000;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -3515,7 +3515,7 @@ tbody.collapse.in {
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
-  color: #7a7a7a;
+  color: #000000;
   text-align: center;
   background-color: white;
   border: 1px solid #ccc;
@@ -3642,7 +3642,7 @@ tbody.collapse.in {
       .nav-tabs > li > a:hover {
         border-color: white white #ddd; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-      color: #424242;
+      color: #000000;
       cursor: default;
       background-color: #fff;
       border: 1px solid #ddd;
@@ -4137,7 +4137,7 @@ tbody.collapse.in {
       color: #ccc;
       content: "/ "; }
   .breadcrumb > .active {
-    color: #424242; }
+    color: #000000; }
 
 .pagination {
   display: inline-block;
@@ -4408,7 +4408,7 @@ a.badge:hover, a.badge:focus {
     margin-left: auto; }
   .thumbnail .caption {
     padding: 9px;
-    color: #777777; }
+    color: #000000; }
 
 a.thumbnail:hover,
 a.thumbnail:focus,
@@ -7076,7 +7076,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       .footer .context-groups-footer_columns a:hover {
         color: #5bc3ff; }
     .footer .context-groups-footer_columns p {
-      color: #b7b7b7;
+      color: #939393;
       text-decoration: none;
       font-size: 16px; }
     .footer .context-groups-footer_columns h2 {
@@ -7106,7 +7106,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
         .footer .context-groups-footer_columns .menu li a,
         .footer .context-groups-footer_columns .item-list ul li a {
           padding-left: 0;
-          color: #b7b7b7;
+          color: #939393;
           text-decoration: none;
           font-size: 14px; }
           .footer .context-groups-footer_columns .menu li a:before,
@@ -7843,7 +7843,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     .page-node-type-case-study .node--type-case-study.node--view-mode-full .field--name-node-title h2 {
       margin: 0;
       padding: 0;
-      color: #777777;
+      color: #000000;
       font-weight: bold;
       font-size: 22px;
       line-height: 1.3em;
@@ -8059,7 +8059,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   -moz-border-radius: 2px;
   border-radius: 2px;
   padding: 8px;
-  border: solid 1px rgba(0, 0, 0, 0.8);
+  border: solid 1px rgba(0, 0, 0, 0.1);
   background: #fcfcfc;
   font-size: 12px; }
   .form-control:focus {
@@ -8082,7 +8082,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   padding: 12px 25px;
   background: none;
   background-color: #5bc3ff;
-  color: black;
+  color: #fff;
   vertical-align: middle;
   text-align: center;
   letter-spacing: 1px;
@@ -8425,7 +8425,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
         font-weight: bold; }
       .carousel-block .views-element-container .portfolio-carousel .link-title:hover,
       .related-projects-block .views-element-container .portfolio-carousel .link-title:hover {
-        background: #777777; }
+        background: #000000; }
     .carousel-block .views-element-container .carousel-title .link-title:before,
     .related-projects-block .views-element-container .carousel-title .link-title:before {
       margin-right: 7px;
@@ -10419,7 +10419,7 @@ body.page-node-type-blog-post .page-bottom {
 .event.full .submitted {
   line-height: 17px;
   letter-spacing: 2px;
-  color: #424242;
+  color: #000000;
   padding-top: 0;
   padding-bottom: 9px;
   text-transform: uppercase;
@@ -10444,18 +10444,18 @@ body.page-node-type-blog-post .page-bottom {
       margin-bottom: 25px;
       padding-bottom: 7px;
       border-bottom: 3px solid #bebebe;
-      border-bottom: 3px solid rgba(0, 0, 0, 0.8);
+      border-bottom: 3px solid rgba(0, 0, 0, 0.1);
       text-transform: capitalize;
       font-size: 18px; }
   .event.full .comments .form-actions {
     margin-top: 10px; }
 
 .event.tile {
-  display: block;
+  display: flex;
   padding: 3px 0 2px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
   .event.tile .news-image {
-    width: 100px;
+    width: 250px;
     margin-right: 10px;
     margin-top: 8px;
     margin-bottom: 5px; }
@@ -10469,13 +10469,15 @@ body.page-node-type-blog-post .page-bottom {
     font-family: FontAwesome;
     margin-right: 5px; }
   .event.tile .field--name-field-event-location p {
-    display: inline; }
+    display: inline-block; }
   .event.tile .field--name-field-event-location:before {
     content: "\f041";
     display: inline-block;
     font-family: FontAwesome;
     margin-right: 5px; }
-
+  .field--name-field-event-location{
+    display: flex;
+  }
 /**  npm audit fix --force
 
  * jQuery UI autocomplete widget style overrides.
